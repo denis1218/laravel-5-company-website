@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('dashboard');
 });
+
+Route::get('/patient', function () {
+    return view('patient');
+});
+
+
+Route::get('/doctor', function () {
+    return view('doctor');
+});
+
+Route::get('/appo', function () {
+    return view('appointment');
+});
+
+

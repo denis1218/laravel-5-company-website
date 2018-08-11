@@ -33,10 +33,25 @@
 
 <!-- Sparkline -->
 <script src="dashboard/js/plugins/sparkline/jquery.sparkline.min.js"></script>
-
+<script src="dashboard/js/plugins/clockpicker/clockpicker.js"></script>
 <!-- Sparkline demo data  -->
 <script src="dashboard/js/demo/sparkline-demo.js"></script>
+<script src="dashboard/js/plugins/iCheck/icheck.min.js"></script>
+<script src="dashboard/js/plugins/select2/select2.full.min.js"></script>
 
+{{-- calnder javascripts --}}
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green',
+        });
+    });
+</script>
 <script>
     $(document).ready(function() {
         $('.chart').easyPieChart({
@@ -46,6 +61,7 @@
             lineWidth: 4,
             size: 80
         });
+
 
         $('.chart2').easyPieChart({
             barColor: '#1c84c6',
