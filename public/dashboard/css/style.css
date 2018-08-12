@@ -8091,3 +8091,13 @@ body.md-skin {
     display: none;
   }
 }
+
+#listhar.ul.list-group:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+#listhar.list-group-item {
+  float: left;
+}

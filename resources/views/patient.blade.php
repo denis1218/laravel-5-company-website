@@ -1,12 +1,26 @@
 @extends('master')
+@section('style')
+    <style rel="stylesheet">
+        ul.list-group:after {
+            clear: both;
+            display: block;
+            content: "";
+        }
 
+        .list-group-item {
+            float: left;
+        }
+    </style>
+    @endsection
 
 @section('content')
 
+
+
     <div class="col-lg-12">
-        <div class="ibox float-e-margins">
+        <div class="ibox">
             <div class="ibox-title">
-                <h5>Patient Registration locally </h5>
+                <h5>Patient Registration</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -26,141 +40,258 @@
                 </div>
             </div>
             <div class="ibox-content">
-                <div class="row">
+                <h2>
+                    Validation Wizard Form
+                </h2>
+                <p>
+                    This example show how to use Steps with jQuery Validation plugin.
+                </p>
 
-                    <form method="get" class="form-horizontal">
+                <form id="form" action="#" class="wizard-big">
+                    <h1>Patient</h1>
+                    <fieldset>
+                        <h2>Patient Information</h2>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <button class="btn btn-success"><li class="fa fa-plus"></li>&nbsp;&nbsp;New Patient</button>
+                                <button class="btn btn-success">Second Appointment</button>
+                                <br/>
+                                <br/>
+                                <div class="form-group">
+                                    <label>PID</label>
+                                        <input type="text" class="form-control" placeholder="P-ID" value="P-333">
 
-                        <div class="form-group"><label class="col-sm-2 control-label">PID</label>
-
-                            <div class="col-sm-5"><input type="text" disabled="" class="form-control" placeholder="P-332"></div>
-                        </div>
-
-                    <div class="form-group"><label class="col-sm-2 control-label">Full name</label>
-
-                        <div class="col-sm-5"><input type="text" class="form-control"></div>
-                    </div>
-
-
-
-                    <div class="form-group"><label class="col-sm-2 control-label">Phone</label>
-
-                        <div class="col-sm-5"><input type="text" class="form-control"></div>
-                    </div>
-
-
-
-                    <div class="form-group"><label class="col-sm-2 control-label">Age</label>
-
-                        <div class="col-sm-5"><input type="text" class="form-control"></div>
-                    </div>
-
-                        <div class="form-group"><label class="col-sm-2 control-label">Gender</label>
-
-                            <div class="col-sm-1"><div class="i-checks"><label> <input type="radio" value="option1" name="a"> <i></i> Male </label></div></div>
-                            <div class="col-sm-1"><div class="i-checks"><label> <input type="radio" value="option1" name="a"> <i></i> Female </label></div></div>
-                        </div>
-
-
-
-                        <div class="form-group"><label class="col-sm-2 control-label">Address</label>
-
-                            <div class="col-sm-5"><input type="text" class="form-control"></div>
-                        </div>
-
+                                </div>
+                                <div class="form-group">
+                                    <label>Full Name *</label>
+                                    <input id="name" name="name" type="text" class="form-control required">
+                                </div>
+                                <div class="form-group">
+                                    <label>Gender &nbsp;&nbsp;&nbsp;</label>
+                                    <label> <input type="radio" value="option1" name="a"> <i></i> Male </label>&nbsp;&nbsp;
+                                    <label> <input type="radio" value="option1" name="a"> <i></i> Female </label>
+                                </div>
+                                <div class="form-group">
+                                    <label>Age *</label>
+                                    <input id="age" name="age" type="number" class="form-control required">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone *</label>
+                                    <input id="phone" name="phone" type="phone" class="form-control required">
+                                </div>
 
 
-                        <div class="form-group"><label class="col-sm-2 control-label">Appointment</label>
-                            <div class="col-sm-2"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                    Check time with doctor
-                                </button></div>
-                        </div>
+                                <div class="form-group">
+                                    <label>Address *</label>
+                                    <input id="address" name="address" type="text" class="form-control required">
+                                </div>
 
-                        <div class="form-group">
-                            <div class="col-sm-4 col-sm-offset-2">
-                                <button class="btn btn-white" type="submit">Cancel</button>
-                                <button class="btn btn-primary" type="submit">Save</button>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="text-center">
+                                    <div style="margin-top: 20px">
+                                        <i class="fa fa-sign-in" style="font-size: 180px;color: #e5e5e5 "></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </form>
+
+                    </fieldset>
+                    <h1>Appointment</h1>
+                    <fieldset>
+                        <h2>Take free time with doctor</h2>
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="form-group">
+                                    <label>Department *</label>
+                                    <select class="form-control col-lg-5">
+                                        <option value="1">Select Department</option>
+                                        <option value="1">regular basis</option>
+                                        <option value="2">Orthodontist</option>
+                                        <option value="3">Oral and maxillofacial surgeon</option>
+                                        <option value="4">Periodontist</option>
+                                        <option value="5">Prosthodontist</option>
+                                        <option value="5">Endodontist</option>
+                                    </select>
+                                </div>
+                            <br/>
+                                <div class="form-group">
+                                    <label>Doctor name *</label>
+                                    <select class="form-control col-lg-5">
+                                        <option value="1">Select Doctor</option>
+                                        <option value="1">Dr.Ahmad</option>
+                                        <option value="2">Dr.Jalal</option>
+                                        <option value="3">Dr.Omid</option>
+                                        <option value="4">Dr.Mostafa</option>
+                                        <option value="5">Dr.Hakim</option>
+                                        <option value="5">Dr.Samim</option>
+                                    </select>
+                                </div>
+                            </div>
+                        <br/>
+                            <div class="col-lg-7">
+                                <div class="form-group">
+                                    <label>Best Free time </label>
+                                    <select class="form-control col-lg-5" multiple="">
+                                        <option>4:00AM to 5:00AM</option>
+                                        <option>5:00AM to 6:00AM</option>
+                                        <option>6:AM to 7:00AM</option>
+                                        <option>1:00PM to 2:00PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="text-center">
+                                    <div style="margin-top: 10px">
+                                        <i class="fa fa-clock-o" style="font-size: 180px;color: #5be560 "></i>
+                                    </div>
+                                    <h3>Appointment</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <h1>Finish</h1>
+
+                    <fieldset>
+                        <h1>All information patient</h1>
+                        <br/>
+                        <br/>
+                        <div class="col-lg-5">
 
 
-                </div>
-
-
+                        <table>
+                            <thead>
+                                <td><b>Info</b></td><td><b>Details</b></td>
+                            </thead>
+                            <tr>
+                                <td>P-ID:</td><td>P-223</td>
+                            </tr>
+                            <tr>
+                                <td>Name:</td><td>Ahamd</td>
+                            </tr>
+                            <tr>
+                                <td>Gender:</td><td>Male</td>
+                            </tr>
+                            <tr>
+                                <td>Age:</td><td>25</td>
+                            </tr>
+                            <tr>
+                                <td>Phone:</td><td>0780552233</td>
+                            </tr>
+                            <tr>
+                                <td>Address:</td><td>Carte Char, Pole Sourkhe, Kabul, Afghanistan</td>
+                            </tr>
+                        </table>
+                        </div>
+                        <div class="col-lg-5">
+                            <h1>Time Visite 10:35AM</h1>
+                            <h1>After 35 Minites</h1>
+                        </div>
+                    </fieldset>
+                </form>
             </div>
         </div>
     </div>
 
 
-    {{-- mode patient get time with doctor--}}
-    <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content animated bounceInRight">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <i class="fa fa-clock-o modal-icon"></i>
-                    <h4 class="modal-title">Appointment locally</h4>
-                    <small class="font-bold">Take time with doctros is time empty exist.</small>
-                </div>
-                <div class="modal-body">
+@endsection
 
-                    <div class="form-group"><label>Department</label> <select class="select2_demo_1 form-control">
-                            <option value="1">Select Department</option>
-                            <option value="1">regular basis</option>
-                            <option value="2">Orthodontist</option>
-                            <option value="3">Oral and maxillofacial surgeon</option>
-                            <option value="4">Periodontist</option>
-                            <option value="5">Prosthodontist</option>
-                            <option value="5">Endodontist</option>
-                        </select></div>
-                    <div class="form-group"><label>Doctor</label>
-                        <select class="select2_demo_1 form-control">
-                            <option value="1">Select Doctor</option>
-                            <option value="1">Dr.Ahmad</option>
-                            <option value="2">Dr.Jalal</option>
-                            <option value="3">Dr.Omid</option>
-                            <option value="4">Dr.Mostafa</option>
-                            <option value="5">Dr.Hakim</option>
-                            <option value="5">Dr.Samim</option>
-                        </select>
-                    </div>
 
-                    <div class="form-group"><label><span class="text-navy">Empty time today 7:00AM to 8:00PM</span></label>
-                        <select class="form-control" multiple="">
-                            <option>4:00AM to 5:00AM</option>
-                            <option>5:00AM to 6:00AM</option>
-                            <option>6:AM to 7:00AM</option>
-                            <option>1:00PM to 2:00PM</option>
-                        </select>
+@section('script')
 
-                    </div>
+    <!-- Steps -->
+    <script src="dashboard/js/plugins/staps/jquery.steps.min.js"></script>
 
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <span><b>Total: 2000 Afg</b></span>
-                        </div>
-                        <div class="col-md-3">
+    <!-- Jquery Validate -->
+    <script src="dashboard/js/plugins/validate/jquery.validate.min.js"></script>
 
-                            <input type="number" placeholder="Discount" class="form-control">
+    <!-- Custom and plugin javascript -->
+    <script src="dashboard/js/inspinia.js"></script>
+    <script src="dashboard/js/plugins/pace/pace.min.js"></script>
 
-                        </div>
-                        <div class="col-md-3">
-                            <lable><b>Total:</b></lable>
-                            <lable><b>1500 Afg</b></lable>
-                        </div>
-                    </div>
-                    <br/><br/>
-                    <div class="form-group">
-                        <label>Payment price</label>
-                        <input type="number" placeholder="Price" class="form-control">
-                    </div>
+    <script>
+        $(document).ready(function(){
+            $("#wizard").steps();
+            $("#form").steps({
+                bodyTag: "fieldset",
+                onStepChanging: function (event, currentIndex, newIndex)
+                {
+                    // Always allow going backward even if the current step contains invalid fields!
+                    if (currentIndex > newIndex)
+                    {
+                        return true;
+                    }
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endsection
+                    // Forbid suppressing "Warning" step if the user is to young
+                    if (newIndex === 3 && Number($("#age").val()) < 18)
+                    {
+                        return false;
+                    }
+
+                    var form = $(this);
+
+                    // Clean up if user went backward before
+                    if (currentIndex < newIndex)
+                    {
+                        // To remove error styles
+                        $(".body:eq(" + newIndex + ") label.error", form).remove();
+                        $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+                    }
+
+                    // Disable validation on fields that are disabled or hidden.
+                    form.validate().settings.ignore = ":disabled,:hidden";
+
+                    // Start validation; Prevent going forward if false
+                    return form.valid();
+                },
+                onStepChanged: function (event, currentIndex, priorIndex)
+                {
+                    // Suppress (skip) "Warning" step if the user is old enough.
+                    if (currentIndex === 2 && Number($("#age").val()) >= 18)
+                    {
+                        $(this).steps("next");
+                    }
+
+                    // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+                    if (currentIndex === 2 && priorIndex === 3)
+                    {
+                        $(this).steps("previous");
+                    }
+                },
+                onFinishing: function (event, currentIndex)
+                {
+                    var form = $(this);
+
+                    // Disable validation on fields that are disabled.
+                    // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+                    form.validate().settings.ignore = ":disabled";
+
+                    // Start validation; Prevent form submission if false
+                    return form.valid();
+                },
+                onFinished: function (event, currentIndex)
+                {
+                    var form = $(this);
+
+                    // Submit form input
+                    form.submit();
+                }
+            }).validate({
+                errorPlacement: function (error, element)
+                {
+                    element.before(error);
+                },
+                rules: {
+                    confirm: {
+                        equalTo: "#password"
+                    }
+                }
+            });
+        });
+
+    </script>
+
+
+
+@endsection

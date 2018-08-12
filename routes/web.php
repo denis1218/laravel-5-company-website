@@ -28,4 +28,16 @@ Route::get('/appo', function () {
     return view('appointment');
 });
 
+Route::get('/reception', function () {
+    return view('reception');
+});
+
+Route::get('/detailinvoice', function () {
+    return view('detailsReception');
+});
+
+
+Route::get('/doctor_operation', function () {
+    return view('doctor_operation');
+});
 

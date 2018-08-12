@@ -41,6 +41,7 @@
 
 {{-- calnder javascripts --}}
 
+@yield('script')
 
 
 

@@ -27,18 +27,21 @@
 
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Department</span></a>
+                    <a href="/doctor_operation"><i class="fa fa-diamond"></i> <span class="nav-label">Department</span></a>
                 </li>
 
                 <li>
-                    <a href="#"><i class="fa fa-envelope"></i> <span class="nav-label">Doctors </span><span class="label label-warning pull-right">16/24</span></a>
+                    <a href="/doctor"><i class="fa fa-envelope"></i> <span class="nav-label">Doctors </span><span class="label label-warning pull-right">16/24</span></a>
 
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">Patient</span>  </a>
+                    <a href="/patient"><i class="fa fa-pie-chart"></i> <span class="nav-label">Patient</span>  </a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">Appointment</span></a>
+                    <a href="/appo"><i class="fa fa-flask"></i> <span class="nav-label">List Appointment</span></a>
+                </li>
+                <li>
+                    <a href="/reception"><i class="fa fa-flask"></i> <span class="nav-label">Reception</span></a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Setting</span><span class="fa arrow"></span></a>

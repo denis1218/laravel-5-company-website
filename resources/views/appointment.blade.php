@@ -31,6 +31,12 @@
             <div class="ibox-content">
 
                 <div class="row">
+                    <div class="col-md-3">
+                        <a href="/patient"><button class="btn btn-success"><li class="fa fa-plus"></li>&nbsp;  Add new Appointment</button></a>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
                     <div class="col-md-4">
                         <div class="btn-group">
                             <button class="btn btn-white" type="button">Pre day</button>
@@ -44,12 +50,10 @@
                     </div>
 
                 </div>
-
+            <br/>
                     <div class="row">
-                        <div class="col-lg-8">
+                        <div class="col-lg-10">
                             <div class="ibox float-e-margins">
-
-
                                     <table class="table table-hover no-margins">
                                         <thead>
                                         <tr>
@@ -60,17 +64,19 @@
                                             <th>Patient Name</th>
                                             <th>Doctor Name</th>
                                             <th>Register type</th>
+                                            <th>Details</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td><small>Pending...</small></td>
+                                            <td><small>Waiting...</small></td>
                                             <td><i class="fa fa-clock-o"></i> 11:20pm</td>
                                             <td><i class="fa fa-clock-o"></i> 2018/8/1</td>
                                             <td><i class="fa fa-clock-o"></i> Monday</td>
                                             <td>Samantha</td>
                                             <td class="text-navy"> <i class="fa fa-user-md"></i> Ahmad </td>
                                             <td class=""> <i class="fa fa-book"></i> Online </td>
+                                            <td class=""> <i class=""></i><button class="btn btn-xs btn-info">Details</button></td>
                                         </tr>
                                         <tr>
                                             <td><span class="label label-warning">Canceled</span> </td>
@@ -80,51 +86,57 @@
                                             <td>Monica</td>
                                             <td class="text-navy"> <i class="fa fa-user-md"></i> Ahmad </td>
                                             <td> <i class="fa fa-book"></i> Online </td>
+                                            <td class=""> <i class=""></i><button class="btn btn-xs btn-info">Details</button></td>
                                         </tr>
                                         <tr>
-                                            <td><small>Pending...</small> </td>
+                                            <td><small>Waiting...</small> </td>
                                             <td><i class="fa fa-clock-o"></i> 01:30pm</td>
                                             <td><i class="fa fa-clock-o"></i> 2018/8/1</td>
                                             <td><i class="fa fa-clock-o"></i> Monday</td>
                                             <td>John</td>
                                             <td class="text-navy"> <i class="fa fa-user-md"></i> Nemat </td>
                                             <td> <i class="fa fa-book"></i> Local </td>
+                                            <td class=""> <i class=""></i><button class="btn btn-xs btn-info">Details</button></td>
                                         </tr>
                                         <tr>
-                                            <td><small>Pending...</small> </td>
+                                            <td><small>Waiting...</small> </td>
                                             <td><i class="fa fa-clock-o"></i> 02:20pm</td>
                                             <td><i class="fa fa-clock-o"></i> 2018/8/1</td>
                                             <td><i class="fa fa-clock-o"></i> Monday</td>
                                             <td>Agnes</td>
                                             <td class="text-navy"> <i class="fa fa-user-md"></i> Mike </td>
                                             <td> <i class="fa fa-book"></i> Local </td>
+                                            <td class=""> <i class=""></i><button class="btn btn-xs btn-info">Details</button></td>
                                         </tr>
                                         <tr>
-                                            <td><small>Pending...</small> </td>
+                                            <td><small>Waiting...</small> </td>
                                             <td><i class="fa fa-clock-o"></i> 09:40pm</td>
                                             <td><i class="fa fa-clock-o"></i> 2018/8/1</td>
                                             <td><i class="fa fa-clock-o"></i> Monday</td>
                                             <td>Janet</td>
                                             <td class="text-navy"> <i class="fa fa-user-md"></i> Ahmad </td>
                                             <td> <i class="fa fa-book"></i> Online </td>
+                                            <td class=""> <i class=""></i><button class="btn btn-xs btn-info">Details</button></td>
                                         </tr>
                                         <tr>
-                                            <td><span class="label label-primary">Completed</span> </td>
+                                            <td><span class="label label-primary">Visited</span> </td>
                                             <td><i class="fa fa-clock-o"></i> 04:10am</td>
                                             <td><i class="fa fa-clock-o"></i> 2018/8/1</td>
                                             <td><i class="fa fa-clock-o"></i> Monday</td>
                                             <td>Amelia</td>
                                             <td class="text-navy"> <i class="fa fa-user-md"></i> Rahm </td>
                                             <td> <i class="fa fa-book"></i> Online </td>
+                                            <td class=""> <i class=""></i><button class="btn btn-xs btn-info">Details</button></td>
                                         </tr>
                                         <tr>
-                                            <td><small>Pending...</small> </td>
+                                            <td><small>Waiting...</small> </td>
                                             <td><i class="fa fa-clock-d"></i> 12:08am</td>
                                             <td><i class="fa fa-clock-o"></i> 2018/8/1</td>
                                             <td><i class="fa fa-clock-o"></i> Monday</td>
                                             <td>Damian</td>
                                             <td class="text-navy"> <i class="fa fa-user-md"></i> Rahamt </td>
                                             <td> <i class="fa fa-book"></i> Local </td>
+                                            <td class=""> <i class=""></i><button class="btn btn-xs btn-info">Details</button></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -133,26 +145,7 @@
 
 
                                 {{-- content details of patient appointment --}}
-                                <div class="col-md-4">
-                                    <div class="ibox-content text-left">
 
-                                        <div class="m-b-sm">
-                                            <img alt="image" class="img-circle" src="img/imageGirl.png">
-                                        </div>
-                                        <p class="font-bold" style="margin-left: 25px;">Patient PID : 552</p>
-
-                                        <div class="text-left">
-                                            <h8>Name: Nicki Smith - </h8>
-                                            <span>Age: 25</span><br/>
-                                            <span class="fa fa-user-md"></span><lable>  Doctor: Ahmad (Dep: Orthodontist) </lable><br/>
-                                            <span class="fa fa-clock-o"></span><lable>  11:20AM <b>TO</b> 12:20AM</lable><br/>
-                                            <span class="fa fa-at"></span><lable>  nicki@gmail.com</lable>
-                                        </div>
-                                        <div class="text-center">
-                                            <button class="btn btn-success btn-rounded">Examination</button>
-                                        </div>
-                                    </div>
-                            </div>
 
 
                         </div>
