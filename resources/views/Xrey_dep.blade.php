@@ -271,7 +271,7 @@
                                         <button class="btn btn-xs btn-primary">Image <i class="fa fa-image"></i> </button>
                                     </td>
                                     <td class="">
-                                        <button class="btn btn-xs btn-primary">Edit <i class="fa fa-edit"></i> </button>
+                                        <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Edit <i class="fa fa-edit"></i> </button>
                                         <button class="btn btn-xs btn-danger demo3">Delete <i class="fa fa-remove"></i> </button>
                                     </td>
                                 </tr>
@@ -286,11 +286,10 @@
                                         <button class="btn btn-xs btn-primary">Image <i class="fa fa-image"></i> </button>
                                     </td>
                                     <td class="">
-                                        <button class="btn btn-xs btn-primary">Edit <i class="fa fa-edit"></i> </button>
+                                        <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4" >Edit <i class="fa fa-edit"></i> </button>
                                         <button class="btn btn-xs btn-danger demo3">Delete <i class="fa fa-remove"></i> </button>
                                     </td>
                                 </tr>
-
                                 </tbody>
                             </table>
                             <div class="row">
@@ -416,6 +415,31 @@
 
                 </div>
 
+            </div>
+        </div>
+    </div>
+
+    <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <i class="fa fa-edit modal-icon text-primary"></i>
+                    <h4 class="modal-title">Edit Xray details</h4>
+                    <small>Edit content of X-Ray operation</small>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group"><label>Tooth number</label> <input type="text" placeholder="Tooth number" value="25 UP" class="form-control"></div>
+                    <div class="form-group"><label>Date & Time</label> <input type="date" placeholder="Date & Time"  class="form-control"></div>
+                    <div class="form-group"><label>Doctor Treatment</label> <input type="text" placeholder="Doctor Treatment" value="Dr.Tamim" class="form-control"></div>
+                    <div class="form-group"><label>Estimate Fee</label> <input type="number" placeholder="Estimate Fee" value="300" class="form-control"></div>
+                    <div class="form-group"><label>X-Ray ID image</label> <input type="text" placeholder="X-Ray ID image" value="X-256535" class="form-control"></div>
+                    <div><h4>Note : You cann't change image X-Ray or you have to delete the record!.</h4></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
     </div>
