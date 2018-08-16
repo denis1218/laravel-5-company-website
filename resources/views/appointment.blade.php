@@ -48,7 +48,6 @@
                         <div class="input-group"><input type="text" placeholder="Search patient name" class="input-sm form-control"> <span class="input-group-btn">
                                         <button type="button" class="btn btn-sm btn-primary"> Go!</button> </span></div>
                     </div>
-
                 </div>
             <br/>
                     <div class="row">

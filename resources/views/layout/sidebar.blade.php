@@ -27,7 +27,11 @@
 
                 </li>
                 <li>
-                    <a href="/doctor_operation"><i class="fa fa-diamond"></i> <span class="nav-label">Department</span></a>
+                    <a href="/doctor_operations"><i class="fa fa-diamond"></i> <span class="nav-label">Department</span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="/doctor_operations">Treatment</a></li>
+                        <li><a href="/xray">X-Ray</a></li>
+                    </ul>
                 </li>
 
                 <li>

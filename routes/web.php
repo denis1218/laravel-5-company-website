@@ -37,7 +37,11 @@ Route::get('/detailinvoice', function () {
 });
 
 
-Route::get('/doctor_operation', function () {
-    return view('doctor_operation');
+Route::get('/doctor_operations', function () {
+    return view('doctor_operations');
+});
+
+Route::get('/xray', function () {
+    return view('Xrey_dep');
 });
 
