@@ -268,7 +268,7 @@
                                     <td>300 AFG</td>
                                     <td>X-252635</td>
                                     <td class="">
-                                        <button class="btn btn-xs btn-primary">Image <i class="fa fa-image"></i> </button>
+                                        <button class="btn btn-xs btn-primary"  data-toggle="modal" data-target="#myModal4image">Image <i class="fa fa-image"></i> </button>
                                     </td>
                                     <td class="">
                                         <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Edit <i class="fa fa-edit"></i> </button>
@@ -283,7 +283,7 @@
                                     <td>300 AFG</td>
                                     <td>X-252635</td>
                                     <td class="">
-                                        <button class="btn btn-xs btn-primary">Image <i class="fa fa-image"></i> </button>
+                                        <button class="btn btn-xs btn-primary " data-toggle="modal" data-target="#myModal4image">Image <i class="fa fa-image"></i> </button>
                                     </td>
                                     <td class="">
                                         <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4" >Edit <i class="fa fa-edit"></i> </button>
@@ -295,6 +295,13 @@
                             <div class="row">
                                 <div class="col-md-10">
                                     <button class="btn btn-primary demo2">Send X-Ray to Doctor</button>
+
+                                </div>
+                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -439,10 +446,31 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button>
+
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="modal inmodal" id="myModal4image" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <i class="fa fa-image modal-icon text-primary"></i>
+                    <h4 class="modal-title">Image X-Ray of Tooth</h4>
+                    <small>X-Ray Tooth No: 25 UP</small>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="img/xray.jpg" width="250px" height="200px"/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
 
 @section('script')

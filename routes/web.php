@@ -45,3 +45,5 @@ Route::get('/xray', function () {
     return view('Xrey_dep');
 });
 
+
+
