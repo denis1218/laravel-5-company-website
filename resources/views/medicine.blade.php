@@ -46,11 +46,14 @@
 
     <div class="row wrapper border-bottom white-bg page-heading" style="margin-top:-20px; margin-bottom: 10px;">
         <div class="col-md-2">
-            <h2><a class="btn btn-primary" style="height:70px; margin-left:25px;" href="/doctor_operations"><i class="fa fa-stethoscope" style="color:#ffc000; font-size: 30px;"></i> <br/> Treatment operation</a></h2>
+            <h2><a class="btn btn-primary" style="height:70px; margin-left:15px;" href="/doctor_operations"><i class="fa fa-stethoscope"  style="font-size: 30px; color:#ff9f00 ;"></i><br/> Treatment Operation</a></h2>
         </div>
-            <div class="col-md-2">
-                <h2><a class="btn btn-primary" style="height:70px; width:155px" href="/medicine"><img src="img/medicine.png"/> <br/> medicine</a></h2>
-            </div>
+        <div class="col-md-2">
+            <h2><a class="btn btn-primary" style="height:70px; width:155px" href="/medicine"><img src="img/medicine.png"/> <br/> medicine</a></h2>
+        </div>
+        <div class="col-md-2">
+            <h2><a class="btn btn-primary" style="height:70px; width:155px" href="/medicine"><img src="img/medicine.png"/> <br/> medicine</a></h2>
+        </div>
     </div>
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
@@ -119,7 +122,7 @@
                                         <span class="font-m">Date Reg:<b>&nbsp;2018/5/26</b>&nbsp;<i class="fa fa-calendar"></i></span>
                                     </td>
                                     <td>
-                                        <span class="font-m text-success">Cash:<b>&nbsp;paid</b>&nbsp;<i class="fa fa-money"></i></span>
+
                                     </td>
                                 </tr>
                                 </tbody>
@@ -127,114 +130,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-md-10"><h3>Choose Tooth</h3></div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="" style="">
-                            <ul class="list-group checked-list-box">
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="" style="">
-                            <ul class="list-group checked-list-box">
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="" style="">
-                            <ul class="list-group checked-list-box">
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="" style="">
-                            <ul class="list-group checked-list-box">
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="30px"/></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Select Dental Defect *</label>
-                            <select class="form-control col-md-3">
-                                <option value="1">Select Dental Defect</option>
-                                <option value="1">Crown Fracture</option>
-                                <option value="1">BDR</option>
-                                <option value="2">G-Caries</option>
-                                <option value="3">Attrision</option>
-                                <option value="4">Calculus</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Treatment *</label>
-                            <select class="form-control col-md-3">
-                                <option value="1">Select Treatment</option>
-                                <option value="1">PF (Permanent Filling)</option>
-                                <option value="2">RCT (Root Canal) </option>
-                                <option value="3">Extraction</option>
-                                <option value="4">Pulpotomy</option>
-                                <option value="5">Apexification</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Estimate Fee *</label>
-                            <input type="text" class="form-control" placeholder="Fee"/>
-                        </div>
-                    </div>
-                </div>
-                <br/>
-                <div class="row">
-                    <div class="col-md-5">
-                        <button class="btn btn-primary"> Save </button>
-                        <button class="btn btn-gray"> Cancel </button>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
@@ -262,77 +157,104 @@
                     </a>
                 </div>
             </div>
-
             <div class="ibox-content">
                 <div class="row">
-                    <div class="col-md-12">
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Tooth NO</th>
-                            <th>Dental Defect</th>
-                            <th>Treatment</th>
-                            <th>Estimated Fee</th>
-                            <th>Minimum Fee</th>
-                            <th>Fee Paid</th>
-                            <th>X-Ray</th>
+                    <div class="col-md-8">
+                        <br/>
 
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>25</td>
-                            <td>BDR</td>
-                            <td>RCT</td>
-                            <td>2690 AFG</td>
-                            <td>1690 AFG</td>
-                            <td>1690 AFG</td>
-                            <td class=""> <i class=""></i>
-                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details</button></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>12</td>
-                            <td>BDR</td>
-                            <td>RCT</td>
-                            <td>2880 AFG</td>
-                            <td>1880 AFG</td>
-                            <td>1880 AFG</td>
-                            <td class=""> <i class=""></i>
-                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details</button></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    </div>
+                        <form role="form" method="get" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Drug Name :</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" placeholder="Drug name">
+                                </div>
+                            </div>
 
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="col-lg-9">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Drugs per day :</label>
+                                <div class="col-sm-6">
+                                    <label class="radio-inline"><input type="radio" name="each_day" checked>1</label>
+                                    <label class="radio-inline"><input type="radio" name="each_day">2</label>
+                                    <label class="radio-inline"><input type="radio" name="each_day">3</label>
+                                    <label class="radio-inline"><input type="radio" name="each_day">4</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Each packet tablet :</label>
+                                <div class="col-sm-6">
+                                    <label class="radio-inline"><input type="radio" name="packet" checked>10</label>
+                                    <label class="radio-inline"><input type="radio" name="packet">20</label>
+                                    <label class="radio-inline"><input type="radio" name="packet">30</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">For Days :</label>
+                                <div class="col-sm-6">
+                                    <input type="number" placeholder="For Days" class="form-control"/>
+                                </div>
+                            </div>
+
+                            {{--<div class="hr-line-dashed"></div>--}}
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Descriptions</label>
+                                <div class="col-sm-6">
+                                    <textarea class="form-control" placeholder="Write Description about Drug" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <div class="col-lg-3 text-right">
-                        <table class="table text-right table-striped " >
-                            <tr>
-                                <td><strong>Total Estimate :</strong></td>
-                                <td>2500 AFG</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Total Paid :</strong></td>
-                                <td>1000 AFG</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Total Remaining:</strong></td>
-                                <td>1500 AFG</td>
-                            </tr>
-                        </table>
+                    <div class="col-md-4">
+    `                   <div class="ibox float-e-margins">
+                            <div class="ibox-content">
+                                <table class="table table-hover no-margins table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Name Drug</th>
+                                        <th>Each day</th>
+                                        <th>Total Days</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Ampicinile</td>
+                                        <td>1+1+1</td>
+                                        <td>2 days</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Ampicinile</td>
+                                        <td>1+1+1</td>
+                                        <td>2 days</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Ampicinile</td>
+                                        <td>1+1+1</td>
+                                        <td>2 days</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Ampicinile</td>
+                                        <td>1+1+1</td>
+                                        <td>2 days</td>
+                                    </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+
+    {{-- modal window example --}}
     <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"  aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content animated fadeIn">
@@ -435,5 +357,4 @@
             });
         });
     </script>
-
 @endsection

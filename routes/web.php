@@ -45,5 +45,9 @@ Route::get('/xray', function () {
     return view('Xrey_dep');
 });
 
+Route::get('/medicine', function () {
+    return view('medicine');
+});
+
 
 
