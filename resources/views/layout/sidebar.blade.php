@@ -34,10 +34,9 @@
                     </ul>
                 </li>
 
-                <li>
-                    <a href="/doctor"><i class="fa fa-envelope"></i> <span class="nav-label">Doctors </span><span class="label label-warning pull-right">16/24</span></a>
-
-                </li>
+                {{--<li>--}}
+                    {{--<a href="/doctor"><i class="fa fa-envelope"></i> <span class="nav-label">Doctors </span><span class="label label-warning pull-right">16/24</span></a>--}}
+                {{--</li>--}}
                 <li>
                     <a href="/patient"><i class="fa fa-pie-chart"></i> <span class="nav-label">Patient</span>  </a>
                 </li>
@@ -49,23 +48,22 @@
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Setting</span><span class="fa arrow"></span></a>
-
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">Reports</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
-
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="#">Patients</a></li>
+                        <li><a href="#">Doctors</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Finance</span><span class="fa arrow"></span></a>
-
                 </li>
-                <li>
-                    <a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Employees</span><span class="label label-info pull-right">NEW</span></a>
+                {{--<li>--}}
+                    {{--<a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Employees</span><span class="label label-info pull-right">NEW</span></a>--}}
 
-                    </ul>
-                </li>
-
-
+                 {{----}}
+                {{--</li>--}}
             </ul>
 
         </div>

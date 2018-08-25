@@ -48,6 +48,7 @@
                 </p>
 
                 <form id="form" action="#" class="wizard-big">
+
                     <h1>Patient</h1>
                     <fieldset>
                         <h2>Patient Information</h2>
@@ -79,24 +80,48 @@
                                     <label>Phone *</label>
                                     <input id="phone" name="phone" type="phone" class="form-control required">
                                 </div>
-
-
                                 <div class="form-group">
                                     <label>Address *</label>
                                     <input id="address" name="address" type="text" class="form-control required">
                                 </div>
-
                             </div>
                             <div class="col-lg-4">
                                 <div class="text-center">
                                     <div style="margin-top: 20px">
-                                        <i class="fa fa-sign-in" style="font-size: 180px;color: #e5e5e5 "></i>
+                                        <i class="fa fa-sign-in  text-success" style="font-size: 180px;color: #e5e5e5 "></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                     </fieldset>
+
+                    <h1>Problems</h1>
+                    <fieldset>
+                        <h2>What's is general problem of tooth</h2>
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="form-group">
+                                    <label>Patient problem *</label>
+                                    <select id="dental_problame" onchange="document.getElementById('preview').src = this.value" class="form-control">
+                                        <option value="">Select Dental Problem</option>
+                                        <option value="img/thoot_ache.jpg">Toothache</option>
+                                        <option value="img/stained_teeth.jpg">Stained Teeth</option>
+                                        <option value="img/tooth_decay.jpg">Cavities</option>
+                                        <option value="img/impacted_tooth.jpg">Impacted Teeth</option>
+                                        <option value="img/cracked_tooth.jpg">Cracked Tooth</option>
+                                        <option value="img/crooked.jpg">Crooked Teeth</option>
+                                        <option value="img/wisdom_teeth.jpg">Wisdom Teeth</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <img id="preview"  style="border-radius: 20px;"/>
+                            </div>
+                        </div>
+                    </fieldset>
+
+
                     <h1>Appointment</h1>
                     <fieldset>
                         <h2>Take free time with doctor</h2>
@@ -124,7 +149,7 @@
                                         <option value="3">Dr.Omid</option>
                                         <option value="4">Dr.Mostafa</option>
                                         <option value="5">Dr.Hakim</option>
-                                        <option value="5">Dr.Samim</option>
+                                        <option value="6">Dr.Samim</option>
                                     </select>
                                 </div>
                             </div>
@@ -224,7 +249,7 @@
                     }
 
                     // Forbid suppressing "Warning" step if the user is to young
-                    if (newIndex === 3 && Number($("#age").val()) < 18)
+                    if (newIndex === 2 && Number($("#age").val()) < 18)
                     {
                         return false;
                     }
@@ -248,13 +273,13 @@
                 onStepChanged: function (event, currentIndex, priorIndex)
                 {
                     // Suppress (skip) "Warning" step if the user is old enough.
-                    if (currentIndex === 2 && Number($("#age").val()) >= 18)
+                    if (currentIndex === 3 && Number($("#age").val()) >= 18)
                     {
                         $(this).steps("next");
                     }
 
                     // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
-                    if (currentIndex === 2 && priorIndex === 3)
+                    if (currentIndex === 3 && priorIndex === 4)
                     {
                         $(this).steps("previous");
                     }
