@@ -52,6 +52,12 @@ Route::get('/medicine', function () {
 Route::get('/next_appointment', function () {
     return view('next_appointment');
 });
-
+Route::get('fullcalender',function (){
+   return view('fullcalender');
+});
+Route::get('test',"CalenderController@index");
+Route::get('iframe',function (){
+   return view('iframe') ;
+});
 
 
