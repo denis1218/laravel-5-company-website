@@ -1,11 +1,9 @@
 @extends('master')
 
 @section('style')
-
-
-
-
+    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
     <style rel="stylesheet">
+
 
         .font-m{
             font-size: 1.5em;
@@ -283,6 +281,7 @@
                             <th>Minimum Fee</th>
                             <th>Fee Paid</th>
                             <th>X-Ray</th>
+                            <th>Edit</th>
 
                         </tr>
                         </thead>
@@ -297,6 +296,10 @@
                             <td>1690 AFG</td>
                             <td class=""> <i class=""></i>
                                 <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details</button></td>
+                            <td class=""> <i class=""></i>
+                                <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="#editteeth">&nbsp;Delete</button>
+                                <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#editteeth">&nbsp;Edit</button>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
@@ -308,6 +311,10 @@
                             <td>1880 AFG</td>
                             <td class=""> <i class=""></i>
                                 <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details</button></td>
+                            <td class=""> <i class=""></i>
+                                <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="">&nbsp;Delete</button>
+                                <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#editteeth">&nbsp;Edit</button>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
@@ -318,7 +325,7 @@
                 <div class="row">
                     <div class="col-lg-9">
                     </div>
-                    <div class="col-lg-3 text-right">
+                    <div class="col-lg-3 text-right" style="">
                         <table class="table text-right table-striped " >
                             <tr>
                                 <td><strong>Total Estimate :</strong></td>
@@ -335,10 +342,17 @@
                         </table>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <button class="btn btn-primary ">Send to reception &nbsp;<i class="fa fa-arrow-right"></i></button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
+
+    {{-- Modal Window to show X-ray image details --}}
     <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"  aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content animated fadeIn">
@@ -358,9 +372,41 @@
             </div>
         </div>
     </div>
+    {{-- end of modal window --}}
+
+
+    {{-- modal window to show editing detail of teeth --}}
+    <div class="modal inmodal" id="editteeth" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeIn">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <i class="fa fa-edit modal-icon text-primary"></i>
+                    <h4 class="modal-title">Edit Treatment operation</h4>
+                    <small>Edit content of Treatment operation</small>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group"><label>Tooth number</label> <input type="text" placeholder="Tooth number" value="25 UP" class="form-control"></div>
+                    <div class="form-group"><label>Dental Defect</label> <input type="text" placeholder="Dental Defect"  value="BDR" class="form-control"></div>
+                    <div class="form-group"><label>Treatment</label> <input type="text" placeholder="Doctor Treatment" value="Dr.Tamim" class="form-control"></div>
+                    <div class="form-group"><label>Estimate Fee</label> <input type="number" placeholder="Estimate Fee" value="300" class="form-control"></div>
+                    {{--<div class="form-group"><label>X-Ray ID image</label> <input type="text" placeholder="X-Ray ID image" value="X-256535" class="form-control"></div>--}}
+                    {{--<div><h4>Note : You cann't change image X-Ray or you have to delete the record!.</h4></div>--}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- end of modal window--}}
+
 
 @endsection
 @section('script')
+    <script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
     <script>
         $(function () {
             $('.list-group.checked-list-box .list-group-item').each(function () {
@@ -441,5 +487,59 @@
             });
         });
     </script>
+    <script>
+        $(document).ready(function () {
 
+            $('.demo1').click(function(){
+                swal({
+                    title: "Welcome in Alerts",
+                    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                });
+            });
+
+            $('.demo2').click(function(){
+                swal({
+                    title: "Successfully Send!",
+                    text: "X-Ray Document Successfully send to doctor!",
+                    type: "success"
+                });
+            });
+
+            $('.demo3').click(function () {
+                swal({
+                    title: "Are you sure?",
+                    text: "You will not be able to recover this imaginary file!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, delete it!",
+                    closeOnConfirm: false
+                }, function () {
+                    swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                });
+            });
+
+            $('.demo4').click(function () {
+                swal({
+                        title: "Are you sure?",
+                        text: "Your will not be able to recover this imaginary file!",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Yes, delete it!",
+                        cancelButtonText: "No, cancel plx!",
+                        closeOnConfirm: false,
+                        closeOnCancel: false },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                            swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                        } else {
+                            swal("Cancelled", "Your imaginary file is safe :)", "error");
+                        }
+                    });
+            });
+
+
+        });
+    </script>
 @endsection
