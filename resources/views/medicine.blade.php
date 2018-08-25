@@ -55,6 +55,11 @@
             <h2><a class="btn btn-primary" style="height:70px; width:155px" href="/next_appointment"><i class="fa fa-calendar" style="font-size: 30px; color:#ff9f00 ;"></i> <br/> Next Appointment</a></h2>
         </div>
     </div>
+
+
+
+
+    {{-- details of patient  --}}
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -133,6 +138,9 @@
             </div>
         </div>
     </div>
+    {{-- end of details --}}
+
+
 
 
     <div class="col-lg-12">
@@ -247,6 +255,11 @@
                                 </table>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <button class="btn btn-success"> Print Bill &nbsp;<i class="fa fa-print"></i></button>
                     </div>
                 </div>
             </div>
