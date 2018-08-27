@@ -10,11 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('dashboard');
+    return view('login');
 });
-
 Route::get('/patient', function () {
     return view('patient');
 });
@@ -52,6 +50,23 @@ Route::get('/medicine', function () {
 Route::get('/next_appointment', function () {
     return view('next_appointment');
 });
+Route::get('fullcalender',function (){
+   return view('fullcalender');
+});
+Route::get('test',"CalenderController@index");
+Route::get('iframe',function (){
+   return view('iframe') ;
+});
+Route::get('login',function (){
+    return view('login');
+});
 
-
-
+Route::get('/dash',function (){
+    return view('dash');
+});
+Route::get('account',function (){
+   return view('account');
+});
+Route::get('create_account',function(){
+   return view('create_account');
+});
