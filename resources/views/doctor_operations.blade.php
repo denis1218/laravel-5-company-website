@@ -1,10 +1,10 @@
 @extends('master')
 
 @section('style')
+
     <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
+
     <style rel="stylesheet">
-
-
         .font-m{
             font-size: 1.5em;
         }
@@ -297,7 +297,7 @@
                             <td class=""> <i class=""></i>
                                 <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details</button></td>
                             <td class=""> <i class=""></i>
-                                <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="#editteeth">&nbsp;Delete</button>
+                                <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="">&nbsp;Delete</button>
                                 <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#editteeth">&nbsp;Edit</button>
                             </td>
                         </tr>
@@ -487,6 +487,8 @@
             });
         });
     </script>
+
+    {{-- start of sweet alert --}}
     <script>
         $(document).ready(function () {
 

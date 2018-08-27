@@ -23,7 +23,7 @@
                     </div>
                 </li>
                 <li class="active">
-                    <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
+                    <a href="/"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
 
                 </li>
                 <li>
@@ -58,6 +58,11 @@
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Finance</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="#">Expenditure</a></li>
+                        <li><a href="#">Income</a></li>
+
+                    </ul>
                 </li>
                 {{--<li>--}}
                     {{--<a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Employees</span><span class="label label-info pull-right">NEW</span></a>--}}
