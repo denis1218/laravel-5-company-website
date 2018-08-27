@@ -11,7 +11,14 @@
             float: left;
         }
     </style>
-    @endsection
+    <link href="dashboard/css/bootstrap.min.css" rel="stylesheet">
+    <link href="dashboard/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="dashboard/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="dashboard/css/animate.css" rel="stylesheet">
+    <link href="dashboard/css/style.css" rel="stylesheet">
+
+
+@endsection
 
 @section('content')
 
@@ -95,6 +102,31 @@
                         </div>
 
                     </fieldset>
+                    <h1>Medical</h1>
+                    <fieldset>
+                        <h2>Choose Medical</h2>
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="form-group">
+
+                                    <div class="col-sm-10">
+                                        <div class="i-checks"><label> <input type="checkbox" value="option1" name="a"> <i></i> Blood Pressure</label></div>
+                                        <div class="i-checks"><label> <input type="checkbox" value="option2" name="a"> <i></i>Diabetics</label></div>
+                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Hepatitics</label></div>
+                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Bleeding Problems</label></div>
+                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Jaundice</label></div>
+                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Asthma</label></div>
+                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Allergy to Penicillin</label></div>
+                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Allergy to Sulpers</label></div>
+                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Allergy to Anaesthetic</label></div>
+                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Pregnency</label></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+
 
                     <h1>Problems</h1>
                     <fieldset>
@@ -120,7 +152,6 @@
                             </div>
                         </div>
                     </fieldset>
-
 
                     <h1>Appointment</h1>
                     <fieldset>
@@ -249,7 +280,7 @@
                     }
 
                     // Forbid suppressing "Warning" step if the user is to young
-                    if (newIndex === 2 && Number($("#age").val()) < 18)
+                    if (newIndex === 5 && Number($("#age").val()) < 18)
                     {
                         return false;
                     }
@@ -273,13 +304,13 @@
                 onStepChanged: function (event, currentIndex, priorIndex)
                 {
                     // Suppress (skip) "Warning" step if the user is old enough.
-                    if (currentIndex === 3 && Number($("#age").val()) >= 18)
-                    {
-                        $(this).steps("next");
-                    }
+//                    if (currentIndex === 3 && Number($("#age").val()) >= 18)
+//                    {
+//                        $(this).steps("next");
+//                    }
 
                     // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
-                    if (currentIndex === 3 && priorIndex === 4)
+                    if (currentIndex === 4 && priorIndex === 5)
                     {
                         $(this).steps("previous");
                     }

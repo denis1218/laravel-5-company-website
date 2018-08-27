@@ -148,7 +148,9 @@
                                 <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
                             </ul>
                         </div>
+                        <div class="hr-line-solid"></div>
                     </div>
+
 
                     <div class="col-lg-6">
                         <div class="" style="">
@@ -163,6 +165,7 @@
                                 <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
                             </ul>
                         </div>
+                        <div class="hr-line-solid"></div>
                     </div>
 
                     <div class="col-lg-6">
@@ -177,8 +180,11 @@
                                 <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
                                 <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
                             </ul>
+
                         </div>
+                        <div class="hr-line-solid"></div>
                     </div>
+
 
                     <div class="col-lg-6">
                         <div class="" style="">
@@ -193,6 +199,8 @@
                                 <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
                             </ul>
                         </div>
+                        <div class="hr-line-solid"></div>
+
                     </div>
                 </div>
 
