@@ -127,7 +127,7 @@
                                             <td>Damian</td>
                                             <td class="text-navy"> <i class="fa fa-user-md"></i> Rahamt </td>
                                             <td> <i class="fa fa-book"></i> Local </td>
-                                            <td class=""> <i class=""></i><button class="btn btn-xs btn-info">Details</button></td>
+                                            <td class=""> <i class=""></i><button class="btn btn-xs btn-info" data-toggle="modal" data-target="#info_patient" >Details</button></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -145,17 +145,41 @@
             <div class="modal-content animated fadeIn">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <i class="fa fa-edit modal-icon text-primary"></i>
-                    <h4 class="modal-title">Edit Treatment operation</h4>
-                    <small>Edit content of Treatment operation</small>
+                    <i class=" modal-icon"><img src="dashboard/img/a5.jpg" class="rounded-circle"/></i>
+                    <h4 class="modal-title">Halima Qullami</h4>
+                    <h8>Patient ID : P-0785511252</h8>
                 </div>
                 <div class="modal-body">
-                 {{-- content area --}}
-
+                    <table class=" table table-striped" style="font-size: 1.3em;">
+                        <tr>
+                            <td>Full Name :</td>
+                            <td>Halima Qullami</td>
+                        </tr>
+                        <tr>
+                            <td>Gender :</td>
+                            <td>Female</td>
+                        </tr>
+                        <tr>
+                            <td>Age :</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>Address :</td>
+                            <td>Darul-aman, Kabul, Afghanistan</td>
+                        </tr>
+                        <tr>
+                            <td>Encounter visites :</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Date Register :</td>
+                            <td>2018/5/2</td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-success">More History &nbsp;<i class="fa fa-file-o"></i></button>
                 </div>
             </div>
         </div>
