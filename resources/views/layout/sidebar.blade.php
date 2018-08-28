@@ -58,6 +58,10 @@
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Finance</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="/expenditure">Expenditure</a></li>
+                        <li><a href="/income">Income</a></li>
+                    </ul>
                 </li>
                 {{--<li>--}}
                     {{--<a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Employees</span><span class="label label-info pull-right">NEW</span></a>--}}

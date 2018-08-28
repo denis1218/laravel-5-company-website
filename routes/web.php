@@ -45,17 +45,36 @@ Route::get('/xray', function () {
     return view('Xrey_dep');
 });
 
+
 Route::get('/medicine', function () {
     return view('medicine');
 });
 
+
 Route::get('/next_appointment', function () {
     return view('next_appointment');
 });
+
+
 Route::get('fullcalender',function (){
    return view('fullcalender');
 });
+
+Route::get('/expenditure', function () {
+    return view('expenditure');
+});
+
+Route::get('/income', function () {
+    return view('income');
+});
+
+Route::get('/ext_income', function () {
+    return view('ext_income');
+});
+
+
 Route::get('test',"CalenderController@index");
+
 Route::get('iframe',function (){
    return view('iframe') ;
 });
