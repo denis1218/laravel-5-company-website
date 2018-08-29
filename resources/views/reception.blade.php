@@ -24,9 +24,7 @@
         </div>
         <div class="ibox-content">
             <div class="row">
-
                 <form action="" method="post">
-
                     <div class="input-group col-md-4"><input type="text" class="form-control" placeholder="Search Patient P-ID" style="margin-left: 20px">
                         <span class="input-group-btn">
                         <button type="button" class="btn btn-primary">Search
@@ -47,7 +45,7 @@
                                 <th>Doctor Name</th>
                                 <th>Register type</th>
                                 <th>Details</th>
-                                <th>History</th>
+                                {{--<th>History</th>--}}
                             </tr>
                             </thead>
                             <tbody>
@@ -60,7 +58,7 @@
                                 <td class="text-navy"> <i class="fa fa-user-md"></i> Ahmad </td>
                                 <td class=""> <i class="fa fa-book"></i> Online </td>
                                 <td class=""> <i class=""></i><button class="btn btn-xs btn-info">Details</button></td>
-                                <td class=""> <i class=""></i><button class="btn btn-xs btn-success">History</button></td>
+                                {{--<td class=""> <i class=""></i><button class="btn btn-xs btn-success">History</button></td>--}}
                             </tr>
                             <tr>
                                 <td><span class="label label-warning">Canceled</span> </td>
@@ -71,7 +69,7 @@
                                 <td class="text-navy"> <i class="fa fa-user-md"></i> Ahmad </td>
                                 <td> <i class="fa fa-book"></i> Online </td>
                                 <td class=""> <i class=""></i><button class="btn btn-xs btn-info">Details</button></td>
-                                <td class=""> <i class=""></i><button class="btn btn-xs btn-success">History</button></td>
+                                {{--<td class=""> <i class=""></i><button class="btn btn-xs btn-success">History</button></td>--}}
                             </tr>
                             <tr>
                                 <td><small>Waiting...</small> </td>
@@ -82,7 +80,7 @@
                                 <td class="text-navy"> <i class="fa fa-user-md"></i> Nemat </td>
                                 <td> <i class="fa fa-book"></i> Local </td>
                                 <td class=""> <i class=""></i><button class="btn btn-xs btn-info">Details</button></td>
-                                <td class=""> <i class=""></i><button class="btn btn-xs btn-success">History</button></td>
+                                {{--<td class=""> <i class=""></i><button class="btn btn-xs btn-success">History</button></td>--}}
                             </tr>
                             <tr>
                                 <td><span class="label label-primary">Visited</span> </td>
@@ -93,7 +91,7 @@
                                 <td class="text-navy"> <i class="fa fa-user-md"></i> Mike </td>
                                 <td> <i class="fa fa-book"></i> Local </td>
                                 <td class=""> <i class=""></i><button class="btn btn-xs btn-info">Details</button></td>
-                                <td class=""> <i class=""></i><button class="btn btn-xs btn-success">History</button></td>
+                                {{--<td class=""> <i class=""></i><button class="btn btn-xs btn-success">History</button></td>--}}
                             </tr>
                             <tr>
                                 <td><small>Waiting...</small> </td>
@@ -104,7 +102,7 @@
                                 <td class="text-navy"> <i class="fa fa-user-md"></i> Ahmad </td>
                                 <td> <i class="fa fa-book"></i> Online </td>
                                 <td class=""> <i class=""></i><button class="btn btn-xs btn-info">Details</button></td>
-                                <td class=""> <i class=""></i><button class="btn btn-xs btn-success">History</button></td>
+                                {{--<td class=""> <i class=""></i><button class="btn btn-xs btn-success">History</button></td>--}}
                             </tr>
                             <tr>
                                 <td><span class="label label-primary">Visited</span> </td>
@@ -115,7 +113,7 @@
                                 <td class="text-navy"> <i class="fa fa-user-md"></i> Rahm </td>
                                 <td> <i class="fa fa-book"></i> Online </td>
                                 <td class=""> <i class=""></i><button class="btn btn-xs btn-info">Details</button></td>
-                                <td class=""> <i class=""></i><button class="btn btn-xs btn-success">History</button></td>
+                                {{--<td class=""> <i class=""></i><button class="btn btn-xs btn-success">History</button></td>--}}
                             </tr>
                             <tr>
                                 <td><small>Waiting...</small> </td>
@@ -126,15 +124,13 @@
                                 <td class="text-navy"> <i class="fa fa-user-md"></i> Rahamt </td>
                                 <td> <i class="fa fa-book"></i> Local </td>
                                 <td class=""> <i class=""></i><button class="btn btn-xs btn-info">Details</button></td>
-                                <td class=""> <i class=""></i><button class="btn btn-xs btn-success">History</button></td>
+                                {{--<td class=""> <i class=""></i><button class="btn btn-xs btn-success">History</button></td>--}}
                             </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
