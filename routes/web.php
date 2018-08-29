@@ -13,6 +13,7 @@
 Route::get('/', function () {
     return view('login');
 });
+
 Route::get('/patient', function () {
     return view('patient');
 });
@@ -45,22 +46,45 @@ Route::get('/xray', function () {
     return view('Xrey_dep');
 });
 
+
+
 // medicine page in treatement -> medicine route
 Route::get('/medicine', function () {
     return view('medicine');
 });
 
+
 // next appointment page
+
 Route::get('/next_appointment', function () {
     return view('next_appointment');
 });
 
-// full calandar show next Visit appointment with patient
+
 Route::get('fullcalender',function (){
    return view('fullcalender');
 });
 
-// iframe take own src from fullCalendar do not delete fullcalendar
+
+Route::get('/expenditure', function () {
+    return view('expenditure');
+});
+
+Route::get('/income', function () {
+    return view('income');
+});
+
+Route::get('/ext_income', function () {
+    return view('ext_income');
+});
+
+
+Route::get('test',"CalenderController@index");
+
+Route::get('iframe',function (){
+   return view('iframe') ;
+});
+
 Route::get('/iframe',function (){
    return view('/iframe') ;
 });

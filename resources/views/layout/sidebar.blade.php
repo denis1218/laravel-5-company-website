@@ -62,11 +62,18 @@
                     </ul>
                 </li>
                 <li>
+<<<<<<< HEAD
+                    <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Finance</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="/expenditure">Expenditure</a></li>
+                        <li><a href="/income">Income</a></li>
+=======
                     <a href="#"><i class="fa fa-clipboard"></i> <span class="nav-label">Finance</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="#">Expenditure</a></li>
                         <li><a href="#">Income</a></li>
 
+>>>>>>> bb5c5612b3e362ebf20613d0aafd0c214900b26b
                     </ul>
                 </li>
                 {{--<li>--}}

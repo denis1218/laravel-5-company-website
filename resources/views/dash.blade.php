@@ -1,6 +1,6 @@
 @extends('master')
 
-        @section('content')
+        @section('content')~
 
             <div class="col-lg-3">
                 <div class="ibox float-e-margins">
