@@ -322,7 +322,7 @@
                             <td class=""> <i class=""></i>
                                 <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details &nbsp;<i class="fa fa-check"></i></button></td>
                             <td class=""> <i class=""></i>
-                                <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="">&nbsp;Delete</button>
+                                <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="#editteeth">&nbsp;Delete</button>
                                 <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#editteeth">&nbsp;Edit</button>
                             </td>
                         </tr>

@@ -1,8 +1,7 @@
 @extends('master')
 
+
 @section('style')
-
-
 
     @endsection
 
