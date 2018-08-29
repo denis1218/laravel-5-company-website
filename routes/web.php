@@ -84,3 +84,13 @@ Route::get('account',function (){
 Route::get('create_account',function(){
    return view('create_account');
 });
+
+// report patient
+Route::get('report_patient',function(){
+    return view('report_patient');
+});
+
+// report doctors
+Route::get('report_doctors',function(){
+    return view('report_doctors');
+});
