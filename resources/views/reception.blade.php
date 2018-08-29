@@ -127,7 +127,7 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <i class=" modal-icon"><img src="dashboard/img/a9.jpg" class="rounded-circle"/></i>
                 <h4 class="modal-title">Sita Qasimi</h4>
-                <h8>Patient ID : P-0785511252</h8>
+                <h5>Patient ID : P-0785511252</h5>
             </div>
             <div class="modal-body">
                 <table class=" table table-striped" style="font-size: 1.3em;">
@@ -176,7 +176,7 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <i class=" modal-icon"><img src="dashboard/img/a5.jpg" class="rounded-circle"/></i>
                 <h4 class="modal-title">Sita Qasimi</h4>
-                <h8>Patient ID : P-0785511252</h8>
+                <h5>Patient ID : P-0785511252</h5>
                 <hr>
             </div>
             <div class="modal-body">
