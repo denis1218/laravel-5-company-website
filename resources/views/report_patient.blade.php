@@ -7,16 +7,98 @@
 @endsection
 
 @section('content')
+    <div class="row page-wrapper border-bottom white-bg " style="margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
+        <div class="row">
+            <div class="col-md-5" style="margin-top:15px; margin-left:20px;">
+                <h3>Report Patient</h3>
+            </div>
+        </div>
+            <div class="col-md-2">
+                <h2><a class="btn" style="height:70px; width:155px; margin-left:15px; background: #f56138" href="/doctor_operations"><i class="fa fa-bookmark"  style="font-size: 30px; color:#ff9f00 ;"></i><br/>Daily</a></h2>
+            </div>
+            <div class="col-md-2">
+                <h2><a class="btn" style="height:70px; width:155px; background: #2f284f" href="#"><img src="img/medicine.png"/> <br/> Weekly</a></h2>
+            </div>
+            <div class="col-md-2">
+                <h2><a class="btn" style="height:70px; width:155px; background: #199b8a" href="#"><i class="fa fa-calendar-o" style="font-size: 30px; color:#ff9f00 ;"></i> <br/>Monthly</a></h2>
+            </div>
+            <div class="col-md-2">
+                <h2><a class="btn" style="height:70px; width:155px;background: #505050" href="#"><i class="fa fa-calendar" style="font-size: 30px; color:#ff9f00 ;"></i> <br/>Date</a></h2>
+            </div>
+            <div class="col-md-2">
+                <h2><a class="btn" style="height:70px; width:155px;background: #e7d450;" href="#"><i class="fa fa-line-chart" style="font-size: 30px; color:#ff9f00 ;"></i> <br/>Trend Graph</a></h2>
+            </div>
 
-    <div class="row wrapper border-bottom white-bg page-heading" style="margin-top:-20px; margin-bottom: 10px;">
-        <div class="col-md-2">
-            <h2><a class="btn btn-primary" style="height:70px; margin-left:15px;" href="/doctor_operations"><i class="fa fa-stethoscope"  style="font-size: 30px; color:#ff9f00 ;"></i><br/> Treatment Operation</a></h2>
+    </div>
+    <div class="row page-wrapper border-bottom white-bg " style="margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
+            <div class="col-md-2">
+                <h2><a class="btn btn-primary" style="height:70px; width:155px; margin-left:15px;" href="/doctor_operations"><i class="fa fa-bookmark"  style="font-size: 30px; color:#ff9f00 ;"></i><br/>Income</a></h2>
+            </div>
+            <div class="col-md-2">
+                <h2><a class="btn btn-primary" style="height:70px; width:155px" href="#"><img src="img/medicine.png"/> <br/> Expenditure</a></h2>
+            </div>
+            <div class="col-md-2">
+                <h2><a class="btn btn-primary" style="height:70px; width:155px" href="#"><i class="fa fa-calendar-o" style="font-size: 30px; color:#ff9f00 ;"></i> <br/>Patient</a></h2>
+            </div>
+            <div class="col-md-2">
+                <h2><a class="btn btn-primary" style="height:70px; width:155px" href="#"><i class="fa fa-calendar" style="font-size: 30px; color:#ff9f00 ;"></i> <br/>Doctors</a></h2>
+            </div>
+
+
+    </div>
+
+
+    <div class="col-lg-3">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <span class="label label-success pull-right">To day</span>
+                <h5>Income</h5>
+            </div>
+            <div class="ibox-content">
+                <h1 class="no-margins">886,200</h1>
+                <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
+                <small>Total income</small>
+            </div>
         </div>
-        <div class="col-md-2">
-            <h2><a class="btn btn-primary" style="height:70px; width:155px" href="/medicine"><img src="img/medicine.png"/> <br/> medicine</a></h2>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <span class="label label-info pull-right">Today</span>
+                <h5>Patient</h5>
+            </div>
+            <div class="ibox-content">
+                <h1 class="no-margins">275,800</h1>
+                <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
+                <small>New orders</small>
+            </div>
         </div>
-        <div class="col-md-2">
-            <h2><a class="btn btn-primary" style="height:70px; width:155px" href="/next_appointment"><i class="fa fa-calendar" style="font-size: 30px; color:#ff9f00 ;"></i> <br/> Next Appointment</a></h2>
+    </div>
+    <div class="col-lg-3">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <span class="label label-primary pull-right">Today</span>
+                <h5>Doctors</h5>
+            </div>
+            <div class="ibox-content">
+                <h1 class="no-margins">106,120</h1>
+                <div class="stat-percent font-bold text-navy">44% <i class="fa fa-level-up"></i></div>
+                <small>Doctors</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <span class="label label-danger pull-right">Today</span>
+                <h5>Appointment</h5>
+            </div>
+            <div class="ibox-content">
+                <h1 class="no-margins">80,600</h1>
+                <div class="stat-percent font-bold text-danger">38% <i class="fa fa-level-down"></i></div>
+                <small>In first month</small>
+            </div>
         </div>
     </div>
 
@@ -51,9 +133,6 @@
         </div>
     </div>
     {{-- end of details of patient --}}
-
-
-
 
     {{-- modal for edit record medicine --}}
     <div class="modal inmodal" id="editMedicine" tabindex="-1" role="dialog"  aria-hidden="true">

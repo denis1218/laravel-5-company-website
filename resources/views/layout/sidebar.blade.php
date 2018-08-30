@@ -5,7 +5,7 @@
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="img/icon_co.png" width="50px"/>
+                            <img alt="image" class="img-circle" src="img/icon_co.png"/>
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">HK Dental Clinic</strong>
@@ -71,11 +71,6 @@
 
                     </ul>
                 </li>
-                {{--<li>--}}
-                    {{--<a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Employees</span><span class="label label-info pull-right">NEW</span></a>--}}
-
-                 {{----}}
-                {{--</li>--}}
             </ul>
 
         </div>
