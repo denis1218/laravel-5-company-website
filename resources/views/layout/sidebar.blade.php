@@ -5,7 +5,7 @@
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="img/icon_co.png" width="50px"/>
+                            <img alt="image" class="img-circle" src="img/icon_co.png"/>
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">HK Dental Clinic</strong>
@@ -23,7 +23,7 @@
                     </div>
                 </li>
                 <li class="active">
-                    <a href="/"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
+                    <a href="/dash"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
 
                 </li>
                 <li>
@@ -33,10 +33,6 @@
                         <li><a href="/xray">X-Ray</a></li>
                     </ul>
                 </li>
-
-                {{--<li>--}}
-                    {{--<a href="/doctor"><i class="fa fa-envelope"></i> <span class="nav-label">Doctors </span><span class="label label-warning pull-right">16/24</span></a>--}}
-                {{--</li>--}}
                 <li>
                     <a href="/patient"><i class="fa fa-user-plus"></i> <span class="nav-label">Patient Registeration</span>  </a>
                 </li>
@@ -52,13 +48,12 @@
                         <li><a href="account">Accounts</a></li>
                         <li><a href="#">Backup Database </a></li>
                     </ul>
-
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-file"></i> <span class="nav-label">Reports</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="#">Patients</a></li>
-                        <li><a href="#">Doctors</a></li>
+                        <li><a href="/report_patient">Patients</a></li>
+                        <li><a href="/report_doctors">Doctors</a></li>
                     </ul>
                 </li>
                 <li>
@@ -76,11 +71,6 @@
 
                     </ul>
                 </li>
-                {{--<li>--}}
-                    {{--<a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Employees</span><span class="label label-info pull-right">NEW</span></a>--}}
-
-                 {{----}}
-                {{--</li>--}}
             </ul>
 
         </div>
