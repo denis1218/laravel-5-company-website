@@ -105,10 +105,13 @@ Route::get('create_account',function(){
    return view('create_account');
 });
 
-
-// report patient
-Route::get('report_patient',function(){
-    return view('report_patient');
+// Financial report
+Route::get('finance_report',function(){
+    return view('finance_report');
+});
+// Patient report
+Route::get('patient_report',function(){
+    return view('patient_report');
 });
 
 // report doctors
