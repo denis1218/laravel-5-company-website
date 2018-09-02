@@ -5,7 +5,7 @@
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="img/icon_co.png"/>
+                            <img alt="image" class="" src="img/Dentaa3.png" width="100px">
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">HK Dental Clinic</strong>
@@ -19,7 +19,7 @@
                         </ul>
                     </div>
                     <div class="logo-element">
-                        HK
+                        <img src="img/small_logo_denta.png" width="30px"/>
                     </div>
                 </li>
                 <li class="active">
