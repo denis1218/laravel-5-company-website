@@ -48,10 +48,10 @@
             </div>
             <div class="ibox-content">
                 <h2>
-                    Validation Wizard Form
+                    Patient Ragistration Form
                 </h2>
                 <p>
-                    This example show how to use Steps with jQuery Validation plugin.
+                    This form have 4 steps to get info of patient
                 </p>
 
                 <form id="form" action="#" class="wizard-big">

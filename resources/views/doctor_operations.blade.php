@@ -1,10 +1,10 @@
 @extends('master')
 
 @section('style')
+
     <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
+
     <style rel="stylesheet">
-
-
         .font-m{
             font-size: 1.5em;
         }
@@ -230,11 +230,17 @@
                             <input type="text" class="form-control" placeholder="Fee"/>
                         </div>
                     </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Discount *</label>
+                            <input type="number" class="form-control" placeholder="Discount"/>
+                        </div>
+                    </div>
                 </div>
                 <br/>
                 <div class="row">
                     <div class="col-md-5">
-                        <button class="btn btn-primary"> Save </button>
+                        <button class="btn btn-primary"> Save &nbsp;<i class="fa fa-save"></i></button>
                         <button class="btn btn-gray"> Cancel </button>
                     </div>
                 </div>
@@ -297,7 +303,11 @@
                             <td class=""> <i class=""></i>
                                 <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details</button></td>
                             <td class=""> <i class=""></i>
+<<<<<<< HEAD
                                 <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal">&nbsp;Delete</button>
+=======
+                                <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="">&nbsp;Delete</button>
+>>>>>>> a4ce6408779fba8a183dfdd4ba1ffe8adb490394
                                 <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#editteeth">&nbsp;Edit</button>
                             </td>
                         </tr>
@@ -310,9 +320,9 @@
                             <td>1880 AFG</td>
                             <td>1880 AFG</td>
                             <td class=""> <i class=""></i>
-                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details</button></td>
+                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details &nbsp;<i class="fa fa-check"></i></button></td>
                             <td class=""> <i class=""></i>
-                                <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="">&nbsp;Delete</button>
+                                <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="#editteeth">&nbsp;Delete</button>
                                 <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#editteeth">&nbsp;Edit</button>
                             </td>
                         </tr>
@@ -365,6 +375,7 @@
                 <div class="modal-body text-center">
 
                     <img src="img/xray.jpg" width="400px" height="300px"/>
+                    <h3>This xray paid 300AFG</h3>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
@@ -487,6 +498,7 @@
             });
         });
     </script>
+    {{-- start of sweet alert --}}
     <script>
         $(document).ready(function () {
 
