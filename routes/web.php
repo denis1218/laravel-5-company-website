@@ -18,7 +18,6 @@ Route::get('/patient', function () {
     return view('patient');
 });
 
-
 Route::get('/doctor', function () {
     return view('doctor');
 });
@@ -30,7 +29,6 @@ Route::get('/appo', function () {
 Route::get('/reception', function () {
     return view('reception');
 });
-
 
 Route::get('/detailinvoice', function () {
     return view('detailsReception');
@@ -45,8 +43,6 @@ Route::get('/doctor_operations', function () {
 Route::get('/xray', function () {
     return view('Xrey_dep');
 });
-
-
 
 // medicine page in treatement -> medicine route
 Route::get('/medicine', function () {
@@ -107,4 +103,15 @@ Route::get('account',function (){
 // create new users
 Route::get('create_account',function(){
    return view('create_account');
+});
+
+
+// report patient
+Route::get('report_patient',function(){
+    return view('report_patient');
+});
+
+// report doctors
+Route::get('report_doctors',function(){
+    return view('report_doctors');
 });

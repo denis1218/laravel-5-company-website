@@ -140,7 +140,7 @@
     {{-- end of all box content --}}
 
     {{-- modal window to show editing detail of teeth --}}
-    <div class="modal inmodal" id="info_patient" tabindex="-1" role="dialog"  aria-hidden="true">
+    <dgitiv class="modal inmodal" id="info_patient" tabindex="-1" role="dialog"  aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content animated fadeIn">
                 <div class="modal-header">
