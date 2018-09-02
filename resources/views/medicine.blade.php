@@ -84,7 +84,7 @@
             <h2><a class="btn btn-primary" style="height:70px; width:155px" href="/medicine"><img src="img/medicine.png"/> <br/> medicine</a></h2>
         </div>
         <div class="col-md-2">
-            <h2><a class="btn btn-primary" style="height:70px; width:155px" href="/next_appointment"><i class="fa fa-calendar" style="font-size: 30px; color:#ff9f00 ;"></i> <br/> Next Appointment</a></h2>
+            <h2><a class="btn btn-primary" style="height:70px; width:155px" href="/iframe"><i class="fa fa-calendar" style="font-size: 30px; color:#ff9f00 ;"></i> <br/> Next Appointment</a></h2>
         </div>
     </div>
 

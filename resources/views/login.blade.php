@@ -19,11 +19,10 @@
 
 <body class="gray-bg">
 
-    <div class="middle-box text-center loginscreen animated fadeInDown">
+    <div class="middle-box text-center loginscreen animated fadeInDown" style="margin-top: 100px;">
         <div>
             <div>
-
-              <center><img src="/img/denta4.png" width="200px"  class="img-responsive img-circle" alt=""></center>
+              <img src="/img/Dentaa3.png" width="650px"  class="img-responsive" alt="">
             </div>
             <h3>Welcome to HK|Clinic</h3>
             <form class="m-t" role="form" action="/dash">
@@ -43,7 +42,7 @@
                 <div class="form-group">
                     <input type="password" class="form-control" placeholder="Password" required="">
                 </div>
-                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+                <button type="submit" class="btn btn-success block full-width m-b">Login</button>
 
                 <a href="#"><small>Forgot password?</small></a>
             </form>

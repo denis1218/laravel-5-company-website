@@ -5,7 +5,7 @@
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="img/icon_co.png"/>
+                            <img alt="image" class="" src="img/Dentaa3.png" width="100px">
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">HK Dental Clinic</strong>
@@ -15,11 +15,11 @@
                             {{--<li><a href="#">Contacts</a></li>--}}
                             {{--<li><a href="#">Mailbox</a></li>--}}
                             <li class="divider"></li>
-                            <li><a href="#">Logout</a></li>
+                            <li><a href="/login">Logout</a></li>
                         </ul>
                     </div>
                     <div class="logo-element">
-                        HK
+                        <img src="img/small_logo_denta.png" width="30px"/>
                     </div>
                 </li>
                 <li class="active">
@@ -46,7 +46,7 @@
                     <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="account">Accounts</a></li>
-                        <li><a href="#">Backup Database </a></li>
+                        <li><a href="explore_backups">Backup DB</a></li>
                     </ul>
                 </li>
                 <li>

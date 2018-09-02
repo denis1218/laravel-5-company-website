@@ -47,7 +47,7 @@
 
     <div class="row wrapper border-bottom white-bg page-heading" style="margin-top:-20px; margin-bottom: 10px;">
         <div class="col-md-2">
-            <h2><a class="btn btn-primary" style="height:70px; width:155px" href="#"><i class="fa fa-users"  style="font-size: 30px; color:#ff9f00 ;"></i><br>List Of Accounts</a></h2>
+            <h2><a class="btn btn-primary" style="height:70px; width:155px" href="/account"><i class="fa fa-users"  style="font-size: 30px; color:#ff9f00 ;"></i><br>List Of Accounts</a></h2>
         </div>
         <div class="col-md-2">
             <h2><a class="btn btn-primary" style="height:70px; margin-left:25px;" href="/create_account"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>Create Account</a></h2>
