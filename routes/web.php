@@ -105,6 +105,7 @@ Route::get('create_account',function(){
    return view('create_account');
 });
 
+
 Route::get('restore',function(){
    return view('restore');
 });
@@ -119,6 +120,15 @@ Route::get('create_backups',function (){
 // report patient
 Route::get('report_patient',function(){
     return view('report_patient');
+
+// Financial report
+Route::get('finance_report',function(){
+    return view('finance_report');
+});
+// Patient report
+Route::get('report_patient',function(){
+    return view('report_patient');
+
 });
 
 // report doctors
