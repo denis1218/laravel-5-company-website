@@ -111,19 +111,11 @@
                                 <div class="form-group"><center><label><input type="radio" name="first" value="Disable" id="radio_two" checked> from Device :&nbsp;&nbsp;&nbsp;&nbsp;</label></center></div>
                             </div>
                             <div class="col-sm-4">
-                            <div class="input-group selecttwo">
-                                <input type="text" class="form-control">
-                                <span class="input-group-addon selecttwo" id="get_file2">
-                                    <span><b>...</b></span>
-                                </span>
+                            <select class="form-control col-md-3 selecttwo" id="get_file2">
+                                <option value="1">Select Database Backup</option>
+
+                            </select>
                             </div>
-                            </div>
-
-                                                {{--<select class="form-control col-md-3 selecttwo" id="get_file2">--}}
-                                                    {{--<option value="1">Select Database Backup</option>--}}
-
-                                                {{--</select>--}}
-
                             <input type="file" id="my_file2" style="display: none;" accept=".sql">
                         </div>
                         <div class="row">
@@ -170,11 +162,13 @@
            $("select.selectone").attr('disabled',true);
            $('input:radio#radio_one').click(function () {
               $('select.selectone').attr('disabled',false);
-              $('input.selecttwo').attr('disabled',true);
+              $('select.selecttwo').attr('disabled',true);
+
            });
            $('input:radio#radio_two').click(function(){
               $('select.selectone').attr('disabled',true);
               $('select.selecttwo').attr('disabled',false);
+
            });
         });
         //Show Alert Message Script
