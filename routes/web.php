@@ -117,20 +117,16 @@ Route::get('create_backups',function (){
 
 
 // report patient
-Route::get('report_patient',function() {
-    return view('report_patient');
+Route::get('patient_report',function() {
+    return view('patient_report');
 });
 // Financial report
     Route::get('finance_report', function () {
         return view('finance_report');
     });
-// Patient report
-    Route::get('report_patient', function () {
-        return view('report_patient');
 
-    });
 
-// report doctors
+    // report doctors
     Route::get('report_doctors', function () {
         return view('report_doctors');
     });
