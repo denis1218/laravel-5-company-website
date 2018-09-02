@@ -85,6 +85,13 @@
                                     </div>
                                     <div class="hr-line-dashed"></div>
                                     <div class="form-group">
+                                        <label class="col-sm-2 control-label">Phone#:</label>
+                                        <div class="col-sm-10">
+                                            <input type="number" class="form-control" name="phone" placeholder="Dealer phone number" style="width:50%" required>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    <div class="form-group">
                                         <label class="col-sm-2 control-label">Purpose:</label>
                                         <div class="col-sm-10">
                                             <input type="text" placeholder="Purpose" class="form-control" style="width:50%" required>
@@ -143,6 +150,7 @@
                             <tr>
                                 <th>Given Amount</th>
                                 <th>From_Whom</th>
+                                <th>Phone#</th>
                                 <th>Purpose</th>
                                 <th>Edit</th>
                             </tr>
@@ -151,6 +159,7 @@
                             <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -161,6 +170,7 @@
                            <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -171,6 +181,7 @@
                             <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -181,6 +192,7 @@
                              <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -191,6 +203,7 @@
                            <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -201,6 +214,7 @@
                             <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -211,6 +225,7 @@
                               <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -221,6 +236,7 @@
                            <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -231,6 +247,7 @@
                             <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -241,6 +258,7 @@
                              <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -251,6 +269,7 @@
                            <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -261,6 +280,7 @@
                             <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -270,6 +290,7 @@
                              <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -280,6 +301,7 @@
                            <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -290,6 +312,7 @@
                             <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -300,6 +323,7 @@
                              <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -310,6 +334,7 @@
                            <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -320,6 +345,7 @@
                             <tr class="gradeX">
                                 <td>900</td>
                                 <td>Ahmad</td>
+                                <td>0799256221</td>
                                 <td>lunch</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>

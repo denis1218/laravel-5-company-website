@@ -11,13 +11,13 @@
 <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
 
 
-   
-
-    
 
 
 
-@endsection 
+
+
+
+@endsection
 
 
 
@@ -144,7 +144,7 @@
                                     </div>
                                 </div>
                                 <div class="ibox-content">
-                                    
+
                                     <!-- Table -->
 
                 <div class="table-responsive">
@@ -161,6 +161,8 @@
                                 <th>Item</th>
                                 <th>Price</th>
                                 <th>Description</th>
+                                <th>Remaining</th>
+                                <th>Loan</th>
                                 <th>Edit</th>
                             </tr>
                         </thead>
@@ -172,7 +174,13 @@
                                 <td>lunch</td>
                                 <td>Tooth Material</td>
                                 <td>750</td>
-                                <td>remaining is:150Af</td>
+                              <td>remaining is:150Af</td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
+                                </td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
@@ -188,6 +196,12 @@
                                 <td>740</td>
                                 <td>remaining is:260Af</td>
                                 <td>
+                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
+                                </td>
+                                <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
                                 </td>
@@ -201,6 +215,12 @@
                                 <td>Tooth Material</td>
                                 <td>740</td>
                                 <td>remaining is:260Af</td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
+                                </td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
@@ -216,6 +236,12 @@
                                 <td>740</td>
                                 <td>remaining is:260Af</td>
                                 <td>
+                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
+                                </td>
+                                <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
                                 </td>
@@ -228,6 +254,12 @@
                                 <td>Tooth Material</td>
                                 <td>740</td>
                                 <td>remaining is:260Af</td>
+                                  <td>
+                                    <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
+                                  </td>
+                                  <td>
+                                    <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
+                                  </td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
@@ -243,6 +275,12 @@
                                 <td>740</td>
                                 <td>remaining is:260Af</td>
                                 <td>
+                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
+                                </td>
+                                <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
                                 </td>
@@ -256,6 +294,12 @@
                                 <td>sadgah</td>
                                 <td>500</td>
                                 <td>remaining is:500Af</td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
+                                </td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
@@ -271,6 +315,12 @@
                                 <td>740</td>
                                 <td>remaining is:260Af</td>
                                 <td>
+                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
+                                </td>
+                                <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
                                 </td>
@@ -285,6 +335,12 @@
                                 <td>740</td>
                                 <td>remaining is:260Af</td>
                                 <td>
+                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
+                                </td>
+                                <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
                                 </td>
@@ -297,6 +353,12 @@
                                 <td>Tooth Material</td>
                                 <td>740</td>
                                 <td>remaining is:260Af</td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
+                                </td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
@@ -312,6 +374,12 @@
                                 <td>740</td>
                                 <td>remaining is:260Af</td>
                                 <td>
+                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
+                                </td>
+                                <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
                                 </td>
@@ -324,6 +392,12 @@
                                 <td>Tooth Material</td>
                                 <td>740</td>
                                 <td>remaining is:260Af</td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
+                                </td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
@@ -339,6 +413,12 @@
                                 <td>740</td>
                                 <td>remaining is:260Af</td>
                                 <td>
+                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
+                                </td>
+                                <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
                                 </td>
@@ -353,6 +433,12 @@
                                 <td>740</td>
                                 <td>remaining is:260Af</td>
                                 <td>
+                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
+                                </td>
+                                <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
                                 </td>
@@ -365,6 +451,12 @@
                                 <td>Tooth Material</td>
                                 <td>740</td>
                                 <td>remaining is:260Af</td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
+                                </td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
@@ -380,6 +472,12 @@
                                 <td>740</td>
                                 <td>remaining is:260Af</td>
                                 <td>
+                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
+                                </td>
+                                <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
                                 </td>
@@ -394,7 +492,7 @@
                         </div>
                     </div>
                 </div>
-                   
+
                     <!-- edit model -->
                 <div class="modal inmodal" id="eprice" tabindex="-1" role="dialog"  aria-hidden="true">
                     <div class="modal-dialog">
@@ -413,7 +511,7 @@
                                 <div class="form-group"><label>Item</label> <input type="text" placeholder="Purchased item" value="" class="form-control"></div>
                                 <div class="form-group"><label>Price</label> <input type="text" placeholder="Price" value="" class="form-control"></div>
                                 <div class="form-group"><label>Calculated Result</label> <input type="text" placeholder="" value="" class="form-control" readonly></div>
-                                
+
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
@@ -424,13 +522,13 @@
                     </div>
                 </div>
                 <!-- end of model -->
-       
 
 
 
 
 
-@endsection 
+
+@endsection
 
 @section('script')
 <!-- script -->
@@ -541,9 +639,6 @@
 
     });
 
-    
+
 </script>
 @endsection
-
-
-
