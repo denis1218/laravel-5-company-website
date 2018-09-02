@@ -70,3 +70,12 @@ Route::get('account',function (){
 Route::get('create_account',function(){
    return view('create_account');
 });
+Route::get('restore',function(){
+   return view('restore');
+});
+Route::get('explore_backups',function (){
+   return view('explore_backups');
+});
+Route::get('create_backups',function (){
+   return view('create_backups');
+});

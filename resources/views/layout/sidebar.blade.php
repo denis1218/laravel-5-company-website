@@ -15,7 +15,7 @@
                             <li><a href="#">Contacts</a></li>
                             <li><a href="#">Mailbox</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Logout</a></li>
+                            <li><a href="/login">Logout</a></li>
                         </ul>
                     </div>
                     <div class="logo-element">d
@@ -50,7 +50,7 @@
                     <a href="setting"><i class="fa fa-edit"></i> <span class="nav-label">Setting</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="account">Accounts</a></li>
-                        <li><a href="#">Backup Database </a></li>
+                        <li><a href="explore_backups">Backup DB</a></li>
                     </ul>
 
                 </li>

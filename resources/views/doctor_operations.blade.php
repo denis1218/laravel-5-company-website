@@ -55,10 +55,6 @@
         <div class="col-md-2">
             <h2><a class="btn btn-primary" style="height:70px; width:155px" href="/iframe"><i class="fa fa-calendar" style="font-size: 30px; color:#ff9f00 ;"></i> <br/> Next Appointment</a></h2>
         </div>
-
-
-
-
     </div>
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
@@ -108,7 +104,7 @@
                                 <tbody>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Gender:<b>&nbsp;Male</b>&nbsp;<i class="fa fa-male"></span>
+                                        <span class="font-m">Gender:<b>&nbsp;Male</b>&nbsp;<i class="fa fa-male"></i></span>
                                     </td>
                                     <td>
                                         <span class="font-m">Age:<b>&nbsp;25</b>&nbsp;<i class=""></i></span>
@@ -301,7 +297,7 @@
                             <td class=""> <i class=""></i>
                                 <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details</button></td>
                             <td class=""> <i class=""></i>
-                                <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="#editteeth">&nbsp;Delete</button>
+                                <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal">&nbsp;Delete</button>
                                 <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#editteeth">&nbsp;Edit</button>
                             </td>
                         </tr>

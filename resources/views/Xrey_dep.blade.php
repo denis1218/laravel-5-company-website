@@ -265,6 +265,7 @@
                                     <th>X-Ray Image ID</th>
                                     <th>X-Ray Image</th>
                                     <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -280,6 +281,9 @@
                                     </td>
                                     <td class="">
                                         <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Edit <i class="fa fa-edit"></i> </button>
+                                    </td>
+
+                                    <td class="">
                                         <button class="btn btn-xs btn-danger demo3">Delete <i class="fa fa-remove"></i> </button>
                                     </td>
                                 </tr>
@@ -295,6 +299,8 @@
                                     </td>
                                     <td class="">
                                         <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4" >Edit <i class="fa fa-edit"></i> </button>
+                                    </td>
+                                    <td class="">
                                         <button class="btn btn-xs btn-danger demo3">Delete <i class="fa fa-remove"></i> </button>
                                     </td>
                                 </tr>
