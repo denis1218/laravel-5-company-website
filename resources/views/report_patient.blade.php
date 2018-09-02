@@ -43,9 +43,6 @@
             <div class="col-md-2">
                 <h2><a class="btn btn-primary" style="height:70px; width:155px" href="#"><i class="fa fa-calendar" style="font-size: 30px; color:#ff9f00 ;"></i> <br/>Doctors</a></h2>
             </div>
-
-
-
     </div>
 
 

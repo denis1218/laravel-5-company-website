@@ -80,7 +80,11 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">From Whom:</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="password" placeholder="Who pays" style="width:50%" required>
+                                            <select class="form-control" style="width:50%" required>
+                                              <option value="">Select the payer</option>
+                                              <option value="1">Bank</option>
+                                              <option value="1">Sponsor</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="hr-line-dashed"></div>

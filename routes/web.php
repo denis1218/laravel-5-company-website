@@ -74,7 +74,6 @@ Route::get('/ext_income', function () {
     return view('ext_income');
 });
 
-
 Route::get('test',"CalenderController@index");
 
 Route::get('iframe',function (){
@@ -106,12 +105,34 @@ Route::get('create_account',function(){
 });
 
 
-// report patient
-Route::get('report_patient',function(){
-    return view('report_patient');
+Route::get('restore',function(){
+   return view('restore');
+});
+Route::get('explore_backups',function (){
+   return view('explore_backups');
+});
+Route::get('create_backups',function (){
+   return view('create_backups');
 });
 
-// report doctors
-Route::get('report_doctors',function(){
-    return view('report_doctors');
+
+// report patient
+Route::get('report_patient',function() {
+    return view('report_patient');
 });
+// Financial report
+    Route::get('finance_report', function () {
+        return view('finance_report');
+    });
+// Patient report
+    Route::get('report_patient', function () {
+        return view('report_patient');
+
+    });
+
+// report doctors
+    Route::get('report_doctors', function () {
+        return view('report_doctors');
+    });
+
+

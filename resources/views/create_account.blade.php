@@ -55,7 +55,7 @@
             </div>
             <div class="ibox-content">
 
-                <form id="form" action="#" class="wizard-big">
+                <form id="form" method="post" class="wizard-big">
 
                     <h1>Account</h1>
                     <fieldset>
