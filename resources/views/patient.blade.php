@@ -11,12 +11,7 @@
             float: left;
         }
     </style>
-    <link href="dashboard/css/bootstrap.min.css" rel="stylesheet">
-    <link href="dashboard/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="dashboard/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
-
 
 @endsection
 

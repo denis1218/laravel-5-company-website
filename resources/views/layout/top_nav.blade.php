@@ -13,16 +13,12 @@
                 <li>
                     <span class="m-r-sm text-muted welcome-message">Welcome to Hakim Alokozay Mng.</span>
                 </li>
-                <li class="dropdown">
 
-
-                </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
                         <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
                     </a>
                     <ul class="dropdown-menu dropdown-alerts">
-
                         <li class="divider"></li>
                         <li>
                             <a href="profile.html">
@@ -59,11 +55,24 @@
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
                 </li>
-                <li>
-                    <a class="right-sidebar-toggle">
-                        <i class="fa fa-tasks"></i>
+                {{-- current exchange --}}
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-exchange">&nbsp;Current Ex</i>
                     </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <h5><span class="text-info">Today Exchange</span> : One Dollar to AFG</h5>
+                        </li>
+                        <li>
+                            <form>
+                                <input type="number" placeholder="Dollars Today" class="form-control"/><br/>
+                                <input type="submit" class="btn btn-primary"/>
+                            </form>
+                        </li>
+                    </ul>
                 </li>
+                {{-- current exchange --}}
             </ul>
 
         </nav>
