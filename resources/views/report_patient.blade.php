@@ -28,8 +28,8 @@
             <div class="col-md-2">
                 <h2><a class="btn" style="height:70px; width:155px;background: #e7d450;" href="#"><i class="fa fa-line-chart" style="font-size: 30px; color:#ff9f00 ;"></i> <br/>Trend Graph</a></h2>
             </div>
-
     </div>
+
     <div class="row page-wrapper border-bottom white-bg " style="margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
             <div class="col-md-2">
                 <h2><a class="btn btn-primary" style="height:70px; width:155px; margin-left:15px;" href="/doctor_operations"><i class="fa fa-bookmark"  style="font-size: 30px; color:#ff9f00 ;"></i><br/>Income</a></h2>

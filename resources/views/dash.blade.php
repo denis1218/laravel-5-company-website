@@ -5,22 +5,8 @@
 
     @endsection
 
-
         @section('content')
-
-            <div class="col-lg-3">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <span class="label label-success pull-right">To day</span>
-                        <h5>Income</h5>
-                    </div>
-                    <div class="ibox-content">
-                        <h1 class="no-margins">886,200</h1>
-                        <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
-                        <small>Total income</small>
-                    </div>
-                </div>
-            </div>
+            {{-- Top Card area --}}
 
             <div class="col-lg-3">
                 <div class="ibox float-e-margins">
@@ -29,9 +15,9 @@
                         <h5>Patient</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">275,800</h1>
+                        <h1 class="no-margins">35</h1>
                         <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
-                        <small>New orders</small>
+                        <small>Total patient for today</small>
                     </div>
                 </div>
             </div>
@@ -42,9 +28,9 @@
                         <h5>Doctors</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">106,120</h1>
-                        <div class="stat-percent font-bold text-navy">44% <i class="fa fa-level-up"></i></div>
-                        <small>Doctors</small>
+                        <h1 class="no-margins">7<img  src="img/doctors.png" width="60px;"style="float: right;"/></h1>
+                        <div class="stat-percent font-bold text-navy"></div>
+                        <small>Total Doctors Available</small>
                     </div>
                 </div>
             </div>
@@ -52,18 +38,21 @@
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <span class="label label-danger pull-right">Today</span>
-                        <h5>Appointment</h5>
+                        <h5>Appointment patients</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">80,600</h1>
-                        <div class="stat-percent font-bold text-danger">38% <i class="fa fa-level-down"></i></div>
-                        <small>In first month</small>
+                        <h1 class="no-margins">25</h1>
+                        <div class="stat-percent font-bold text-danger"> <i class="fa fa-level-down"></i></div>
+                        <small>Total Appointment</small>
                     </div>
                 </div>
             </div>
+            {{-- End of Card area --}}
 
+            {{-- Dash area --}}
             <div class="wrapper wrapper-content">
                 <div class="row">
+                    {{-- Graph Area --}}
                     <div class="col-lg-8">
                         <div class="ibox float-e-margins">
                             <div class="ibox-content">
@@ -97,12 +86,72 @@
                             </div>
                         </div>
                     </div>
+                    {{-- End Graph--}}
+                    <div class="col-lg-4">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>Quick Enter Expenses</h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        <li><a href="#">Config option 1</a>
+                                        </li>
+                                        <li><a href="#">Config option 2</a>
+                                        </li>
+                                    </ul>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <form>
+                                        <input type="text" placeholder="To whom" class="form-control" required/><br/>
+                                        <input type="text" placeholder="Amount" class="form-control" required/><br/>
+                                        <input type="text" placeholder="Purpose" class="form-control" required/><br/>
+                                        <button type="submit"  value="Pay" class="btn btn-primary">Save &nbsp;<i class="fa fa-save"></i></button>
+                                        <button  value="Pay" class="btn btn-warning" data-toggle="modal" data-target="#remaining">Remainder &nbsp;<i class="fa fa-arrow-circle-down"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
 
 
 
             </div>
+            {{-- Graph area --}}
+
+            {{-- Modal Window for remaining cash --}}
+            <div class="modal inmodal" id="remaining" tabindex="-1" role="dialog"  aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content animated fadeIn">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            {{--<i class="fa fa-edit modal-icon text-primary"></i>--}}
+                            <h4 class="modal-title">Remaining cash</h4>
+                            <small>Give back money from expenses</small>
+                        </div>
+                        <div class="modal-body">
+                            {{--<div class="form-group"><label>ID</label> <input type="text" placeholder="Id" value="" class="form-control"></div>--}}
+                            <div class="form-group"><label>Remain :</label><input type="number" placeholder="Amount"  value="" class="form-control"></div>
+                            <div class="form-group"><label>From Whom :</label><input type="text" placeholder="Receiver" value="" class="form-control"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- Modal Window for remaining cash --}}
 
 
 

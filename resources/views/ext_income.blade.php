@@ -10,13 +10,7 @@
 <link href="dashboard/css/style.css" rel="stylesheet">
 <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
 
-
-
-
-
-
-
-
+    <link href="css/hover/hover-min.css" rel="stylesheet">
 @endsection
 
 
@@ -25,17 +19,17 @@
 
 
 
-<!-- Nav-buttons -->
-<div class="row wrapper border-bottom white-bg page-heading" style="margin-top:-20px; margin-bottom: 10px;">
-<h3 style="margin-left:43px;margin-top:10px;">Income Details</h3>
-<div class="col-md-2">
-<h2><a class="btn btn-primary" style="height:70px;width:155px; margin-left:25px;" href="/income"><i class="fa fa-usd" style="color:#ffc000; font-size: 30px;"></i></i> <br/> Patient Related</a></h2>
-</div>
-<div class="col-md-2">
-    <h2><a class="btn btn-primary" style="height:70px; width:155px" href="/ext_income"><i class="fa fa-usd" style="color:#ffc000; font-size: 30px;"></i> <br/> Other</a></h2>
-</div>
-</div>
-<!-- End of navButtons -->
+    <!-- Nav-buttons -->
+    <div class="row wrapper border-bottom white-bg page-heading" style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
+        <h3 style="margin-left:43px;margin-top:10px;">Income Details</h3>
+        <div class="col-md-2 ">
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px;width:155px; margin-left:25px;" href="/income"><i class="fa fa-money" style="color:#ffc000; font-size: 30px;"></i> <br/> Patient Related</a></h2>
+        </div>
+        <div class="col-md-2 ">
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px" href="/ext_income"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> Other</a></h2>
+        </div>
+    </div>
+    <!-- End of navButtons -->
 
                 <div class="wrapper wrapper-content animated fadeInRight">
                     <div class="row">
@@ -101,13 +95,14 @@
                                             <input type="text" placeholder="Purpose" class="form-control" style="width:50%" required>
                                         </div>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="col-sm-12 text-left">
-                                            <button type="submit" class="btn btn-primary btn-md" style="margin-left:177px;">SAVE</button>
-                                            <input type="reset" class="btn btn-white btn-md" value="Reset" name="" id="">
+                                    <div class="form-group">
+                                        <label class="col-sm-1 control-label"></label>
+                                        <div class="col-sm-10">
+                                            <button type="submit" class="btn btn-primary btn-md" style="margin-left:110px;">Save &nbsp;<i class="fa fa-save"></i></button>
+                                            <input type="reset" class="btn btn-white btn-md" value="Reset">
                                         </div>
                                     </div>
+
                                 </form>
 
                                 </div>
@@ -147,13 +142,19 @@
 
                 <div class="table-responsive">
                     <!-- Expenditure Table -->
+                        <div class="btn-group">
+                            <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Show reports <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="/finance_report_daily" class="font-bold">Daily</a></li>
+                                <li><a href="/finance_report_date" class="font-bold">Weekly & monthly</a></li>
+                            </ul>
+                        </div>
 
-                    <button type="button" class="btn btn-md btn-primary">Show Report</button>
                     <table class="table table-striped table-bordered table-hover " id="editable">
                         <thead>
                             <tr>
                                 <th>Given Amount</th>
-                                <th>From_Whom</th>
+                                <th>From Whom</th>
                                 <th>Phone#</th>
                                 <th>Purpose</th>
                                 <th>Edit</th>
@@ -379,7 +380,7 @@
                             </div>
                             <div class="modal-body">
                                 <div class="form-group"><label>Amount</label> <input type="number" placeholder="Amount"  value="" class="form-control"></div>
-                                <div class="form-group"><label>From_Whom</label> <input type="text" placeholder="The one who pays" value="" class="form-control"></div>
+                                <div class="form-group"><label>From Whom</label> <input type="text" placeholder="The one who pays" value="" class="form-control"></div>
                                 <div class="form-group"><label>Purpose</label> <input type="text" placeholder="purpose" value="" class="form-control"></div>
                             </div>
                             <div class="modal-footer">

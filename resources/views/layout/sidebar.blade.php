@@ -24,7 +24,6 @@
                 </li>
                 <li class="active">
                     <a href="/dash"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
-
                 </li>
                 <li>
                     <a href="/doctor_operations"><i class="fa fa-sitemap"></i> <span class="nav-label">Department</span><span class="fa arrow"></span></a>
@@ -45,8 +44,9 @@
                 <li>
                     <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="account">Accounts</a></li>
-                        <li><a href="explore_backups">Backup DB</a></li>
+                        <li><a href="account"><i class="fa fa-user-plus"></i>&nbsp;Accounts</a></li>
+                        <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
+                        <li><a href="#"><i class="fa fa-exchange"></i> &nbsp;Exchange</a></li>
                     </ul>
                 </li>
                 <li>
@@ -61,8 +61,11 @@
                     <ul class="nav nav-second-level collapse">
                         <li><a href="/expenditure">Expenditure</a></li>
                         <li><a href="/income">Income</a></li>
-                        <li><a href="/finance_report">Financial report</a></li>
-
+                        <li><a href="/finance_report">Financial report<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li><a href="/finance_report_daily">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Daily</a></li>
+                                <li><a href="/finance_report_date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date</a></li>
+                            </ul></li>
                     </ul>
                 </li>
             </ul>

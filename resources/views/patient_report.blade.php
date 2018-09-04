@@ -873,5 +873,5 @@
 // });
 
 
-</script>
+//</script>
 @endsection
