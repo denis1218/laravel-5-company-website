@@ -52,7 +52,7 @@
                 <li>
                     <a href="#"><i class="fa fa-file"></i> <span class="nav-label">Reports</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="/patient_report">Patients & Doctors</a></li>
+                        <li><a href="/report_patient">Patients & Doctors</a></li>
                     </ul>
                 </li>
                 <li>

@@ -115,11 +115,6 @@ Route::get('create_backups',function (){
    return view('create_backups');
 });
 
-
-// report patient
-Route::get('report_patient',function() {
-    return view('report_patient');
-});
 // Financial report
     Route::get('finance_report', function () {
         return view('finance_report');
@@ -134,5 +129,3 @@ Route::get('report_patient',function() {
     Route::get('report_doctors', function () {
         return view('report_doctors');
     });
-
-
