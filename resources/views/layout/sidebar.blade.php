@@ -46,26 +46,27 @@
                     <ul class="nav nav-second-level collapse">
                         <li><a href="account"><i class="fa fa-user-plus"></i>&nbsp;Accounts</a></li>
                         <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
-                        <li><a href="#"><i class="fa fa-exchange"></i> &nbsp;Exchange</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-file"></i> <span class="nav-label">Reports</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="/patient_report">Patients & Doctors</a></li>
+                        <li><a href="/patient_report"><i class="fa fa-user"></i>Patients</a></li>
+                        <li><a href="/doctor_report"><i class="fa fa-user-md"></i>Doctors</a></li>
                     </ul>
                 </li>
                 <li>
 
-                    <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Finance</span><span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-clipboard"></i> <span class="nav-label">Finance</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="/expenditure">Expenditure</a></li>
-                        <li><a href="/income">Income</a></li>
+                        <li><a href="/expenditure"><i class="fa fa-shopping-cart"></i>Expenditure</a></li>
+                        <li><a href="/income"><i class="fa fa-arrow-circle-o-down"></i>Income</a></li>
                         <li><a href="/finance_report">Financial report<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
-                                <li><a href="/finance_report_daily">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Daily</a></li>
-                                <li><a href="/finance_report_date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date</a></li>
-                            </ul></li>
+                                <li><a href="/finance_report_daily"><i class="fa fa-tag"></i>&nbsp;&nbsp;Daily</a></li>
+                                <li><a href="/finance_report_date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;&nbsp;Date</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
             </ul>

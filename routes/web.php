@@ -121,6 +121,12 @@ Route::get('patient_report',function() {
     return view('patient_report');
 });
 
+// report doctors
+Route::get('doctor_report', function () {
+    return view('doctor_report');
+});
+
+
 // Financial report daily
 Route::get('finance_report_daily', function () {
     return view('finance_report.finance_report_daily');
@@ -131,10 +137,7 @@ Route::get('finance_report_date', function () {
     return view('finance_report.finance_report_date');
 });
 
-// report doctors
-    Route::get('report_doctors', function () {
-        return view('report_doctors');
-    });
+
 
 Route::get('date_report_patient', function () {
     return view('date_report_patient');
