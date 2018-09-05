@@ -2,7 +2,7 @@
 
 @section('style')
 
-    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
+
 
     <style rel="stylesheet">
         .font-m {
@@ -202,14 +202,14 @@
                     <div class="col-lg-6">
                         <div class="" style="">
                             <ul class="list-group checked-list-box">
-                                <li class="list-group-item"><img src="img/teeths/16.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/15.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/14.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/13.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/12.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/11.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/10.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/9.png" width="25px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/16.png" width="30px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/15.png" width="30px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/14.png" width="30px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/13.png" width="30px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/12.png" width="30px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/11.png" width="30px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/10.png" width="30px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/9.png" width="30px"/></li>
                             </ul>
                         </div>
                     </div>
@@ -303,7 +303,7 @@
                 <br/>
                 <div class="row">
                     <div class="col-md-5">
-                        <button class="btn btn-primary"> Save &nbsp;<i class="fa fa-save"></i></button>
+                        <button class="btn btn-primary demo_save"> Save &nbsp;<i class="fa fa-save"></i></button>
                         <button class="btn btn-gray"> Cancel</button>
                     </div>
                 </div>
@@ -372,7 +372,7 @@
                                     </button>
                                 </td>
                                 <td class=""><i class=""></i>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
+                                    <button class="btn btn-xs btn-danger fa fa-remove demo_delete">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#editteeth">&nbsp;Edit
                                     </button>
                                 </td>
@@ -390,7 +390,7 @@
                                         Details &nbsp;<i class="fa fa-check"></i></button>
                                 </td>
                                 <td class=""><i class=""></i>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
+                                    <button class="btn btn-xs btn-danger fa fa-remove demo_delete">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#editteeth">&nbsp;Edit</button>
                                 </td>
                             </tr>
@@ -422,7 +422,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-3">
-                        <button class="btn btn-primary ">Send to reception &nbsp;<i class="fa fa-arrow-right"></i>
+                        <button class="btn btn-primary demo_recp">Send to reception &nbsp;<i class="fa fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
@@ -492,7 +492,7 @@
 
 @endsection
 @section('script')
-    <script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
+
     <script>
         $(function () {
             $('.list-group.checked-list-box .list-group-item').each(function () {
@@ -574,7 +574,8 @@
             });
         });
     </script>
-    {{-- start of sweet alert --}}
+
+    {{-- sweet alert --}}
     <script>
         $(document).ready(function () {
 
@@ -585,15 +586,15 @@
                 });
             });
 
-            $('.demo2').click(function () {
+            $('.demo_recp').click(function () {
                 swal({
-                    title: "Successfully Send!",
-                    text: "X-Ray Document Successfully send to doctor!",
+                    title: "Successfully Send to Receptions!",
+                    text: "Receptions will check it!",
                     type: "success"
                 });
             });
 
-            $('.demo3').click(function () {
+            $('.demo_delete').click(function () {
                 swal({
                     title: "Are you sure?",
                     text: "You will not be able to recover this imaginary file!",
@@ -631,4 +632,6 @@
 
         });
     </script>
+    {{-- sweet alert --}}
+
 @endsection

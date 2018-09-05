@@ -48,18 +48,20 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                   <i class="fa fa-lock">localization</i>
-                </li>
-                <li>
-                    <a href="login">
-                        <i class="fa fa-sign-out"></i> Log out
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-language text-navy">&nbsp;</i><strong>Language |</strong>
                     </a>
+                    <ul class="dropdown-menu dropdown-alerts" style="width: 150px;">
+                        <a href="#" class="hvr-glow"><li><img src="img/afg.png" width="20px;"/><strong>&nbsp;&nbsp;دری</strong></li></a>
+                        <a href="#" class="hvr-glow"><li><img src="img/un.png" width="20px"/><strong>&nbsp;&nbsp;English</strong></li></a>
+                    </ul>
                 </li>
+
                 {{-- current exchange --}}
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-exchange">&nbsp;Current Ex</i>
+                        <i class="fa fa-exchange">&nbsp;<strong>Current Ex |</strong></i>
                     </a>
                     <ul class="dropdown-menu dropdown-alerts">
                         <li>
@@ -72,6 +74,11 @@
                             </form>
                         </li>
                     </ul>
+                </li>
+                <li>
+                    <a href="login">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
                 </li>
                 {{-- current exchange --}}
             </ul>
