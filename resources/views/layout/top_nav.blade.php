@@ -48,8 +48,9 @@
                         </li>
                     </ul>
                 </li>
-
-
+                <li>
+                   <i class="fa fa-lock">localization</i>
+                </li>
                 <li>
                     <a href="login">
                         <i class="fa fa-sign-out"></i> Log out

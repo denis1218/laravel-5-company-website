@@ -16,7 +16,7 @@
     <link href="dashboard/css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
     <link href="dashboard/css/animate.css" rel="stylesheet">
     <link href="dashboard/css/style.css" rel="stylesheet">
-
+    <link href="css/hover/hover-min.css" rel="stylesheet">
     {{-- calender style link --}}
     @yield('style')
 
