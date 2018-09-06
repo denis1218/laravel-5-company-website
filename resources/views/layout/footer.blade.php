@@ -38,7 +38,7 @@
 <script src="dashboard/js/demo/sparkline-demo.js"></script>
 <script src="dashboard/js/plugins/iCheck/icheck.min.js"></script>
 <script src="dashboard/js/plugins/select2/select2.full.min.js"></script>
-
+<script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
 {{-- calnder javascripts --}}
 
 @yield('script')
@@ -53,6 +53,67 @@
         });
     });
 </script>
+
+{{-- sweet alert --}}
+<script>
+    $(document).ready(function () {
+
+        $('.demo1').click(function () {
+            swal({
+                title: "Welcome in Alerts",
+                text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            });
+        });
+
+        $('.demo_save').click(function () {
+            swal({
+                title: "Successfully Save!",
+                text: "Data inserted into database!",
+                type: "success"
+            });
+        });
+
+        $('.demo_delete').click(function () {
+            swal({
+                title: "Are you sure?",
+                text: "You will not be able to recover this imaginary file!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false
+            }, function () {
+                swal("Deleted!", "Your imaginary file has been deleted.", "success");
+            });
+        });
+
+        $('.demo4').click(function () {
+            swal({
+                    title: "Are you sure?",
+                    text: "Your will not be able to recover this imaginary file!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, delete it!",
+                    cancelButtonText: "No, cancel plx!",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                    } else {
+                        swal("Cancelled", "Your imaginary file is safe :)", "error");
+                    }
+                });
+        });
+
+
+    });
+</script>
+{{-- sweet alert --}}
+
+
 <script>
     $(document).ready(function() {
         $('.chart').easyPieChart({

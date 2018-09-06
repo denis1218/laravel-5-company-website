@@ -2,6 +2,7 @@
 
 @section('style')
     <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
+    <link href="css/hover/hover-min.css" rel="stylesheet">
     <style rel="stylesheet">
 
 
@@ -45,12 +46,12 @@
 
 @section('content')
 
-    <div class="row wrapper border-bottom white-bg page-heading" style="margin-top:-20px; margin-bottom: 10px;">
+    <div class="row wrapper border-bottom white-bg page-heading" style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
         <div class="col-md-2">
-            <h2><a class="btn btn-primary" style="height:70px; width:155px" href="/account"><i class="fa fa-users"  style="font-size: 30px; color:#ff9f00 ;"></i><br>List Of Accounts</a></h2>
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left: 30px; " href="/account"><i class="fa fa-users"  style="font-size: 30px; color:#ffac1b ;"></i><br>List of account</a></h2>
         </div>
         <div class="col-md-2">
-            <h2><a class="btn btn-primary" style="height:70px; margin-left:25px;" href="/create_account"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>Create Account</a></h2>
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left:0px;" href="/create_account"><i class="fa fa-user" style="color:#ffac1b; font-size: 30px;"></i> <br/>Create account</a></h2>
         </div>
 
     </div>
@@ -59,7 +60,7 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Treatment Operation (Mostafa Ahamdi) </h5>
+                        <h5>List of account </h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -82,7 +83,7 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-md-12">
-                                <table class="table table-hover">
+                                <table class="table table-hover table-borderd table-striped">
                                     <thead>
                                     <tr>
                                         <th>#</th>
@@ -92,6 +93,7 @@
                                         <th>Username</th>
                                         <th>PhoneNumber</th>
                                         <th>Email</th>
+                                        <th>Password</th>
                                         <th>Department</th>
                                         <th>Details</th>
                                         <th>Edit</th>
@@ -108,6 +110,7 @@
                                         <td>tamimahmadi</td>
                                         <td>0780######</td>
                                         <td>tamimahmadi@gmail.com</td>
+                                        <td>**************</td>
                                         <td>Doctor</td>
                                         <td class=""> <i class=""></i>
                                             <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#account_details">Details</button></td>
@@ -121,13 +124,14 @@
 
                                     </tr>
                                     <tr>
-                                        <td>1</td>
+                                        <td>2</td>
                                         <td>1</td>
                                         <td>tamim</td>
                                         <td>ahmadi</td>
                                         <td>tamimahmadi</td>
                                         <td>0780######</td>
                                         <td>tamimahmadi@gmail.com</td>
+                                        <td>*************</td>
                                         <td>Doctor</td>
                                         <td class=""> <i class=""></i>
                                             <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#account_details">Details</button></td>
@@ -218,18 +222,10 @@
         <div class="modal-dialog">
             <div class="modal-content animated fadeIn">
                 <div class="modal-header">
-                    {{--<div class="col-lg-2">--}}
-                        {{--<button class="btn btn-primary btn-xray" name="Take X-Ray" id="get_file" value="Grab file" type="button"><img src="img/a4.jpg" class="img-circle circle-border m-b-md" alt="profile"><i class="fa fa-file-excel-o"></i></button>--}}
-                        {{--<input type="file" id="my_file">--}}
-                    {{--</div>--}}
-                    {{----}}
-
 
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <a href="#" id="get_file"><img src="img/a4.jpg" class="img-circle circle-border m-b-md" alt="profile"> </a>
                     <input type="file" id="my_file">
-
-
                     <h4 class="modal-title">Edit Doctor Information</h4>
                 </div>
                 <div class="modal-body">
@@ -249,32 +245,6 @@
             </div>
         </div>
     </div>
-    {{-- end of modal window--}}
-    {{-- modal window to delete details of doctor--}}
-    {{--<div class="modal inmodal" id="deleteaccount" tabindex="-1" role="dialog"  aria-hidden="true">--}}
-        {{--<div class="modal-dialog">--}}
-            {{--<div class="modal-content animated fadeIn">--}}
-                {{--<div class="modal-header">--}}
-                    {{--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>--}}
-                    {{--<i class="fa fa-edit modal-icon text-primary"></i>--}}
-                    {{--<h4 class="modal-title">Delete Doctor Information</h4>--}}
-                {{--</div>--}}
-                {{--<div class="modal-body">--}}
-                    {{--<div class="form-group"><label>First Name</label> <input type="text" placeholder="First Name" value="25 UP" class="form-control"></div>--}}
-                    {{--<div class="form-group"><label>Dental Defect</label> <input type="text" placeholder="Dental Defect"  value="BDR" class="form-control"></div>--}}
-                    {{--<div class="form-group"><label>Treatment</label> <input type="text" placeholder="Doctor Treatment" value="Dr.Tamim" class="form-control"></div>--}}
-                    {{--<div class="form-group"><label>Estimate Fee</label> <input type="number" placeholder="Estimate Fee" value="300" class="form-control"></div>--}}
-                    {{--<div class="form-group"><label>X-Ray ID image</label> <input type="text" placeholder="X-Ray ID image" value="X-256535" class="form-control"></div>--}}
-                    {{--<div><h4>Note : You cann't change image X-Ray or you have to delete the record!.</h4></div>--}}
-                {{--</div>--}}
-                {{--<div class="modal-footer">--}}
-                    {{--<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>--}}
-                    {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
-
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
 
     {{-- end of modal window--}}
 @endsection

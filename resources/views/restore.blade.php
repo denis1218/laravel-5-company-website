@@ -1,34 +1,37 @@
 @extends('master')
 @section('style')
 
-    <link href="dashboard/tstrap.min.css" rel="stylesheet">
-    <link href="dashboard/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
-
     <!-- Toastr style -->
     <link href="dashboard/css/plugins/toastr/toastr.min.css" rel="stylesheet">
-
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
 
 
 @endsection
 
 @section('content')
-    <div class="row wrapper border-bottom white-bg page-heading" style="margin-top:-20px; margin-bottom: 10px;">
 
-        <div class="col-md-2">
-            <h2><a class="btn btn-primary" style=" margin-left:25px;" href="/explore_backups"></i><i class="fa fa-search" style="color:#ffc000; font-size: 30px;"></i><br/>Explor<br/>Database Backups<br/></a></h2>
+
+
+    {{-- buttons --}}
+    <div class="row wrapper border-bottom white-bg page-heading"
+         style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
+
+        <div class="col-md-2 ">
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height: 65px; width:130px;" href="/explore_backups"></i>
+                    <img src="img/db.png" width="30px"/><br/>Backup list<br/></a></h2>
         </div>
-        <div class="col-md-2">
-            <h2><a class="btn btn-primary" style=" margin-left:25px;" href="/create_backups"></i><i class="fa fa-plus-circle" style="color:#ffc000; font-size: 30px;"></i><br/>Create New<br/>Database Backup<br/></a></h2>
+        <div class="col-md-2" style="margin-left:-50px;">
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height: 65px;" href="/create_backups"></i>
+                    <img src="img/db_plus.png" width="30px"/><br/>Database Backup<br/></a></h2>
         </div>
-        <div class="col-md-2">
-            <h2><a class="btn btn-primary" style=" margin-left:25px;" href="/restore"></i><i class="fa fa-refresh" style="color:#ffc000; font-size: 30px;"></i><br/><br/>Restore Database<br/></a></h2>
+        <div class="col-md-2" style="margin-left:-40px;">
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height: 65px;" href="/restore">
+                    <img src="img/db_restor.png" width="30px"/>
+                    <br/>Restore Database<br/></a></h2>
         </div>
     </div>
+    {{-- buttons --}}
+
+
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -51,88 +54,90 @@
                     </a>
                 </div>
             </div>
-                    <div class="ibox-content">
+            <div class="ibox-content">
 
-                       <div class="col-md-2"><h5>Destination for Restore</h5></div>
-                        <hr class="hr hr-line-solid"/>
-                        <br/><br/>
-                        <h5>Select or type the name of a new or existing database for your restore operation</h5>
-                        <br/>
-                        <div class="row">
-                                <div class="col-md-2"><h5>To database :</h5> </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <select class="form-control col-md-3 ">
-                                                    <option value="1">Select Database</option>
-                                                    <option value="1">Adventure work</option>
-                                                    <option value="2">Test Database</option>
-                                                    <option value="3">Denta Database</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-md-2">To apoint in time :</div>
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <select class="form-control col-md-3" id="get_file">
-                                        <option value="1">Most Recent possible</option>
-
-                                    </select>
-                                </div>
-                            </div>
-
+                <div class="col-md-2"><h5>Destination for Restore</h5></div>
+                <hr class="hr hr-line-solid"/>
+                <br/><br/>
+                <h5>Select or type the name of a new or existing database for your restore operation</h5>
+                <br/>
+                <div class="row">
+                    <div class="col-md-2"><h5>To database :</h5></div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <select class="form-control col-md-3 ">
+                                <option value="1">Select Database</option>
+                                <option value="1">Adventure work</option>
+                                <option value="2">Test Database</option>
+                                <option value="3">Denta Database</option>
+                            </select>
                         </div>
-                        <br><br><br>
-                          <div class="col-md-2"><h5>Source For Restore</h5></div>
-                            <hr class="hr hr-line-solid"/>
-                            <br/><br/>
-                            <h5>Specify the source and location of backup sets and restore</h5>
-                            <br>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="form-group"><center><label><input type="radio"  name="first" value="Enable" id="radio_one"> from database :</label></center></div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <select class="form-control col-md-3 selectone">
-                                        <option value="1">Select Database</option>
-                                        <option value="1">Adventure work</option>
-                                        <option value="2">Test Database</option>
-                                        <option value="3">Denta Database</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="form-group"><center><label><input type="radio" name="first" value="Disable" id="radio_two" checked> from Device :&nbsp;&nbsp;&nbsp;&nbsp;</label></center></div>
-                            </div>
-                            <div class="col-sm-4">
-                            <select class="form-control col-md-3 selecttwo" id="get_file2">
-                                <option value="1">Select Database Backup</option>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-2">To apoint in time :</div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <select class="form-control col-md-3" id="get_file">
+                                <option value="1">Most Recent possible</option>
 
                             </select>
-                            </div>
-                            <input type="file" id="my_file2" style="display: none;" accept=".sql">
                         </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="form-group"> <button type="button" class="btn btn-w-m btn-primary ">Restore</button></div>
-
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                <button type="button" class="btn btn-w-m btn-primary" id="showsimple">Test</button>
-                                </div>
-                            </div>
-
-                        </div>
-
                     </div>
+
+                </div>
+                <br><br><br>
+                <div class="col-md-2"><h5>Source For Restore</h5></div>
+                <hr class="hr hr-line-solid"/>
+                <br/><br/>
+                <h5>Specify the source and location of backup sets and restore</h5>
+                <br>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <center><label><input type="radio" name="first" value="Enable" id="radio_one"> from database
+                                    :</label></center>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <select class="form-control col-md-3 selectone">
+                                <option value="1">Select Database</option>
+                                <option value="1">Adventure work</option>
+                                <option value="2">Test Database</option>
+                                <option value="3">Denta Database</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label><input type="radio" name="first" value="Disable" id="radio_two" checked> from Device :&nbsp;&nbsp;&nbsp;&nbsp;</label></center>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 ">
+                        <select class="form-control col-md-3 selecttwo" id="get_file2">
+                            <option value="1">Select Database Backup</option>
+                        </select>
+                    </div>
+                    <input type="file" id="my_file2" style="display: none;" accept=".sql">
+                </div><br/>
+                <div class="row">
+                    <div class="col-md-2" >
+                        <button type="button" class="btn btn-w-m btn-primary demo_restore"><i class="fa fa-repeat"></i>&nbsp;Restore</button>
+                    </div>
+                    <div class="col-md-2" style="margin-left: -75px;">
+                        <button type="button" class="btn btn-w-m btn-info demo_connection" id=""><i class="fa fa-refresh"></i>&nbsp;Test Connection DB</button>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
+    </div>
     </div>
 
 
@@ -159,23 +164,90 @@
             document.getElementById('my_file2').click();
         }
         $(document).ready(function () {
-           $("select.selectone").attr('disabled',true);
-           $('input:radio#radio_one').click(function () {
-              $('select.selectone').attr('disabled',false);
-              $('select.selecttwo').attr('disabled',true);
+            $("select.selectone").attr('disabled', true);
+            $('input:radio#radio_one').click(function () {
+                $('select.selectone').attr('disabled', false);
+                $('select.selecttwo').attr('disabled', true);
 
-           });
-           $('input:radio#radio_two').click(function(){
-              $('select.selectone').attr('disabled',true);
-              $('select.selecttwo').attr('disabled',false);
+            });
+            $('input:radio#radio_two').click(function () {
+                $('select.selectone').attr('disabled', true);
+                $('select.selecttwo').attr('disabled', false);
 
-           });
+            });
         });
         //Show Alert Message Script
-        $('#showsimple').click(function (){
+        $('#showsimple').click(function () {
             // Display a success toast, with a title
             toastr.success('Your Database Successfully inserted !')
         });
     </script>
 
-    @endsection
+
+    {{-- sweet alert --}}
+    <script>
+        $(document).ready(function () {
+
+            $('.demo1').click(function () {
+                swal({
+                    title: "Welcome in Alerts",
+                    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                });
+            });
+
+            $('.demo_connection').click(function () {
+                swal({
+                    title: "Successfully Connected to database!",
+                    text: "Application Connected to DB!",
+                    type: "success"
+                });
+            });
+
+            $('.demo_restore').click(function () {
+                swal({
+                    title: "Successfully Restore!",
+                    text: "All Data restore to your Database!",
+                    type: "success"
+                });
+            });
+
+            $('.demo_delete').click(function () {
+                swal({
+                    title: "Are you sure?",
+                    text: "You will not be able to recover this imaginary file!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, delete it!",
+                    closeOnConfirm: false
+                }, function () {
+                    swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                });
+            });
+
+            $('.demo4').click(function () {
+                swal({
+                        title: "Are you sure?",
+                        text: "Your will not be able to recover this imaginary file!",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Yes, delete it!",
+                        cancelButtonText: "No, cancel plx!",
+                        closeOnConfirm: false,
+                        closeOnCancel: false
+                    },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                            swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                        } else {
+                            swal("Cancelled", "Your imaginary file is safe :)", "error");
+                        }
+                    });
+            });
+
+
+        });
+    </script>
+    {{-- sweet alert --}}
+@endsection

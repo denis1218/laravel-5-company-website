@@ -104,35 +104,55 @@ Route::get('create_account',function(){
    return view('create_account');
 });
 
-
 Route::get('restore',function(){
    return view('restore');
 });
+
 Route::get('explore_backups',function (){
    return view('explore_backups');
 });
+
 Route::get('create_backups',function (){
    return view('create_backups');
 });
 
-
 // report patient
-Route::get('report_patient',function() {
-    return view('report_patient');
+Route::get('patient_report',function() {
+    return view('patient_report');
 });
+
+
+// report doctors
+Route::get('doctor_report', function () {
+    return view('doctor_report');
+});
+
+
 // Financial report
     Route::get('finance_report', function () {
         return view('finance_report');
     });
-// Patient report
-    Route::get('report_patient', function () {
-        return view('report_patient');
 
-    });
 
-// report doctors
+    // report doctors
     Route::get('report_doctors', function () {
         return view('report_doctors');
     });
 
+
+// Financial report daily
+Route::get('finance_report_daily', function () {
+    return view('finance_report.finance_report_daily');
+});
+
+// Financial report date
+Route::get('finance_report_date', function () {
+    return view('finance_report.finance_report_date');
+});
+
+
+
+Route::get('date_report_patient', function () {
+    return view('date_report_patient');
+});
 

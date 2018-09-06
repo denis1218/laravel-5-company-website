@@ -13,16 +13,12 @@
                 <li>
                     <span class="m-r-sm text-muted welcome-message">Welcome to Hakim Alokozay Mng.</span>
                 </li>
-                <li class="dropdown">
 
-
-                </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
                         <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
                     </a>
                     <ul class="dropdown-menu dropdown-alerts">
-
                         <li class="divider"></li>
                         <li>
                             <a href="profile.html">
@@ -52,18 +48,39 @@
                         </li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-language text-navy">&nbsp;</i><strong>Language |</strong>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts" style="width: 150px;">
+                        <a href="#" class="hvr-glow"><li><img src="img/afg.png" width="20px;"/><strong>&nbsp;&nbsp;دری</strong></li></a>
+                        <a href="#" class="hvr-glow"><li><img src="img/un.png" width="20px"/><strong>&nbsp;&nbsp;English</strong></li></a>
+                    </ul>
+                </li>
 
-
+                {{-- current exchange --}}
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-exchange">&nbsp;<strong>Current Ex |</strong></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <h5><span class="text-info">Today Exchange</span> : One Dollar to AFG</h5>
+                        </li>
+                        <li>
+                            <form>
+                                <input type="number" placeholder="Dollars Today" class="form-control"/><br/>
+                                <input type="submit" class="btn btn-primary"/>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
                 <li>
                     <a href="login">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
                 </li>
-                <li>
-                    <a class="right-sidebar-toggle">
-                        <i class="fa fa-tasks"></i>
-                    </a>
-                </li>
+                {{-- current exchange --}}
             </ul>
 
         </nav>
