@@ -52,7 +52,7 @@
                     <div class="input-group">
                       <input type="text" placeholder="Patient ID" class="input-sm form-control">
                        <span class="input-group-btn">
-                        <button type="button" class="btn btn-sm btn-primary"> Search</button></span>
+                        <button type="button" class="btn btn-sm btn-primary"><i class="fa fa-search"></i> Search</button></span>
                     </div>
                 </div>
                 <div class="col-sm-7 text-right animate fadeInRight">
@@ -82,7 +82,7 @@
                         <tbody>
                             <tr class="gradeX">
                                 <td>1</td>
-                                <td>RDB</td>
+                                <td>Periodontist</td>
                                 <td>1900</td>
                                 <td>70</td>
                                 <td>1830</td>
@@ -91,8 +91,8 @@
                                 <td>paid</td>
                             </tr>
                              <tr class="gradeX">
-                                <td>1</td>
-                                <td>RSD</td>
+                                <td>2</td>
+                                <td>Endodontist</td>
                                 <td>1300</td>
                                 <td>100</td>
                                 <td>1200</td>
@@ -101,11 +101,21 @@
                                 <td>not paid</td>
                             </tr>
                              <tr class="gradeX">
-                                <td>1</td>
+                                <td>3</td>
                                 <td>RSD</td>
                                 <td>1300</td>
                                 <td>100</td>
                                 <td>1200</td>
+                                <td>28/08/18</td>
+                                <td><input type="checkbox"></td>
+                                <td>not paid</td>
+                            </tr>
+                            <tr class="gradeX">
+                                <td>3</td>
+                                <td>X-Ray</td>
+                                <td>300</td>
+                                <td>300</td>
+                                <td>250</td>
                                 <td>28/08/18</td>
                                 <td><input type="checkbox"></td>
                                 <td>not paid</td>

@@ -46,12 +46,12 @@
 
 @section('content')
 
-    <div class="row wrapper border-bottom white-bg page-heading" style="margin-top:-20px; margin-bottom: 10px;">
+    <div class="row wrapper border-bottom white-bg page-heading" style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
         <div class="col-md-2">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left: 30px; " href="/account"><i class="fa fa-users"  style="font-size: 30px; color:#ffcf1c ;"></i><br>List of account</a></h2>
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left: 30px; " href="/account"><i class="fa fa-users"  style="font-size: 30px; color:#ffac1b ;"></i><br>List of account</a></h2>
         </div>
         <div class="col-md-2">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left:0px;" href="/create_account"><i class="fa fa-user" style="color:#ffcf1c; font-size: 30px;"></i> <br/>Create account</a></h2>
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left:0px;" href="/create_account"><i class="fa fa-user" style="color:#ffac1b; font-size: 30px;"></i> <br/>Create account</a></h2>
         </div>
 
     </div>
@@ -83,7 +83,7 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-md-12">
-                                <table class="table table-hover table-borderd">
+                                <table class="table table-hover table-borderd table-striped">
                                     <thead>
                                     <tr>
                                         <th>#</th>
@@ -93,6 +93,7 @@
                                         <th>Username</th>
                                         <th>PhoneNumber</th>
                                         <th>Email</th>
+                                        <th>Password</th>
                                         <th>Department</th>
                                         <th>Details</th>
                                         <th>Edit</th>
@@ -109,6 +110,7 @@
                                         <td>tamimahmadi</td>
                                         <td>0780######</td>
                                         <td>tamimahmadi@gmail.com</td>
+                                        <td>**************</td>
                                         <td>Doctor</td>
                                         <td class=""> <i class=""></i>
                                             <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#account_details">Details</button></td>
@@ -122,13 +124,14 @@
 
                                     </tr>
                                     <tr>
-                                        <td>1</td>
+                                        <td>2</td>
                                         <td>1</td>
                                         <td>tamim</td>
                                         <td>ahmadi</td>
                                         <td>tamimahmadi</td>
                                         <td>0780######</td>
                                         <td>tamimahmadi@gmail.com</td>
+                                        <td>*************</td>
                                         <td>Doctor</td>
                                         <td class=""> <i class=""></i>
                                             <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#account_details">Details</button></td>

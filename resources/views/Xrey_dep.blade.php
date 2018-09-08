@@ -61,7 +61,7 @@
     <div class="col-lg-9">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Doctor Registration </h5>
+                <h5>X-Ray Patient </h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -83,7 +83,7 @@
 
             <div class="ibox-content">
 
-                <div class="row">
+                <div class="row" style="margin-left:30px;">
                     <div class="row m-b-lg m-t-lg">
                         <div class="col-md-6">
                             <div class="profile-image">
@@ -93,9 +93,15 @@
                                 <div class="">
                                     <div>
                                         <h2 class="no-margins font-b">
-                                            ID: P-504075
+                                            Mostafa Ahmadi
                                         </h2>
-                                        <h4>Mostafa Ahmadi</h4>
+                                        <h4>ID: P-504075</h4>
+                                        <small style="font-size: 10px;">
+                                            <span style="font-size: 10px; font-weight: bold;">Problem teeth : </span>Orthodontist,
+                                            Periodontist <br/>
+                                            <span style="font-size: 10px; font-weight: bold;">Problem Health : </span>Blood
+                                            Pressure , Allergy to Penicillin , Allergy to Anaesthetic
+                                        </small>
                                     </div>
                                 </div>
                             </div>
@@ -138,14 +144,14 @@
                     <div class="col-lg-6">
                         <div class="" style="">
                             <ul class="list-group checked-list-box">
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <span class="bg-khatar"><li class="list-group-item"><img src="img/tho.png" width="15px"/></li></span>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/16.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/15.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/14.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/13.png" width="15px"/></li>
+                                <span class="bg-khatar"><li class="list-group-item"><img src="img/teeths/12.png" width="15px"/></li></span>
+                                <li class="list-group-item"><img src="img/teeths/11.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/10.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/9.png" width="15px"/></li>
                             </ul>
                         </div>
                         <div class="hr-line-solid"></div>
@@ -155,14 +161,14 @@
                     <div class="col-lg-6">
                         <div class="" style="">
                             <ul class="list-group">
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/8.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/7.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/6.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/5.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/4.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/3.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/2.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/1.png" width="15px"/></li>
                             </ul>
                         </div>
                         <div class="hr-line-solid"></div>
@@ -171,14 +177,14 @@
                     <div class="col-lg-6">
                         <div class="" style="">
                             <ul class="list-group">
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/17.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/18.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/19.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/20.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/21.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/22.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/23.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/24.png" width="15px"/></li>
                             </ul>
 
                         </div>
@@ -189,14 +195,14 @@
                     <div class="col-lg-6">
                         <div class="" style="">
                             <ul class="list-group">
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/tho.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/25.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/26.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/27.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/28.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/29.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/30.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/31.png" width="15px"/></li>
+                                <li class="list-group-item"><img src="img/teeths/32.png" width="15px"/></li>
                             </ul>
                         </div>
                         <div class="hr-line-solid"></div>
@@ -222,7 +228,7 @@
                         <div class="col-lg-10"><input type="text" placeholder="Fee Afg" class="form-control"></div>
                     </div>
                     <div class="col-lg-3" style="margin-top:30px;">
-                        <button class="btn btn-primary">Save</button>&nbsp;&nbsp;
+                        <button class="btn btn-primary demo_save">Save <i class="fa fa-save"></i></button>&nbsp;&nbsp;
                         <button class="btn btn-white">Cancel</button>
                     </div>
                 </div>
@@ -284,7 +290,7 @@
                                     </td>
 
                                     <td class="">
-                                        <button class="btn btn-xs btn-danger demo3">Delete <i class="fa fa-remove"></i> </button>
+                                        <button class="btn btn-xs btn-danger demo_delete">Delete <i class="fa fa-remove"></i> </button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -301,23 +307,11 @@
                                         <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4" >Edit <i class="fa fa-edit"></i> </button>
                                     </td>
                                     <td class="">
-                                        <button class="btn btn-xs btn-danger demo3">Delete <i class="fa fa-remove"></i> </button>
+                                        <button class="btn btn-xs btn-danger demo_delete">Delete <i class="fa fa-remove"></i> </button>
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <button class="btn btn-primary demo2">Send X-Ray to Doctor</button>
-
-                                </div>
-                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

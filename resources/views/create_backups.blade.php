@@ -1,32 +1,33 @@
 @extends('master')
 @section('style')
-    <link href="dashboard/css/bootstrap.min.css" rel="stylesheet">
-    <link href="dashboard/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
 
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
-    @endsection
+@endsection
 @section('content')
-    <div class="row wrapper border-bottom white-bg page-heading" style="margin-top:-20px; margin-bottom: 10px;">
 
-        <div class="col-md-2">
-            <h2><a class="btn btn-primary" style=" margin-left:25px;" href="/explore_backups"></i><i class="fa fa-search" style="color:#ffc000; font-size: 30px;"></i><br/>Explor<br/>Database Backups<br/></a></h2>
+
+    {{-- buttons --}}
+    <div class="row wrapper border-bottom white-bg page-heading"
+         style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
+
+        <div class="col-md-2 ">
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height: 65px; width:130px;"
+                   href="/explore_backups"></i>
+                    <img src="img/db.png" width="30px"/><br/>Backup list<br/></a></h2>
         </div>
-        <div class="col-md-2">
-            <h2><a class="btn btn-primary" style=" margin-left:25px;" href="/create_backups"></i><i class="fa fa-plus-circle" style="color:#ffc000; font-size: 30px;"></i><br/>Create New<br/>Database Backup<br/></a></h2>
+        <div class="col-md-2" style="margin-left:-50px;">
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height: 65px;" href="/create_backups"></i>
+                    <img src="img/db_plus.png" width="30px"/><br/>Database Backup<br/></a></h2>
         </div>
-        <div class="col-md-2">
-            <h2><a class="btn btn-primary" style=" margin-left:25px;" href="/restore"></i><i class="fa fa-refresh" style="color:#ffc000; font-size: 30px;"></i><br/><br/>Restore Database<br/></a></h2>
+        <div class="col-md-2" style="margin-left:-40px;">
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height: 65px;" href="/restore">
+                    <img src="img/db_restor.png" width="30px"/>
+                    <br/>Restore Database<br/></a></h2>
         </div>
     </div>
+    {{-- buttons --}}
+
+
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -63,69 +64,132 @@
                 </div>
 
                 <div class="hr-line-dashed"></div>
-                    <div class="row">
+                <div class="row">
 
-                                <div class="ibox-content">
-                                    <h3>Backup Method</h3>
-                                    <table class="table">
-                                        <tbody>
-                                        <tr>
-                                            <td class="col-md-3"><div class="i-checks">
-                                                <label> <input type="radio" value="option1" name="a"> <i class="fa fa-dropbox" ></i> Dropbox </label>
-                                                </div>
-                                            </td>
-                                            <th class="col-xs-1"><center>Path:</center></th>
-                                            <td class="col-md-3">
-                                                <div class="form-group"><input type="text" class="form-control" value="C:\Document\Dropbox\Backups" readonly>
-                                                </div>
-                                            </td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="i-checks">
-                                                    <label> <input type="radio" value="option1" name="a"> <i class="fa fa-location-arrow" ></i> Local Network Drive </label>
-                                                </div></td>
-                                            <th class="col-xs-1"><center>Path:</center></th>
-                                            <td class="col-md-3">
-                                                <div class="form-group"><input type="text" class="form-control" value="C:\Document\Local Drive\Backups" readonly>
-                                                </div>
-                                            </td>
-                                            <td></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <p><button type="button" class="btn btn-w-m btn-primary ">Create Backup</button></p>
-                                </div>
+                    <div class="ibox-content">
+                        <h3>Backup Method</h3>
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <td class="col-md-3">
+                                    <div class="i-checks">
+                                        <label> <input type="radio" value="option1" name="a"> <i
+                                                    class="fa fa-dropbox"></i> Dropbox </label>
+                                    </div>
+                                </td>
+                                <th class="col-xs-1">
+                                    <center>Path:</center>
+                                </th>
+                                <td class="col-md-3">
+                                    <div class="form-group"><input type="text" class="form-control"
+                                                                   value="C:\Document\Dropbox\Backups" readonly>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="i-checks">
+                                        <label> <input type="radio" value="option1" name="a"> <i
+                                                    class="fa fa-location-arrow"></i> Local Network Drive </label>
+                                    </div>
+                                </td>
+                                <th class="col-xs-1">
+                                    <center>Path:</center>
+                                </th>
+                                <td class="col-md-3">
+                                    <div class="form-group"><input type="text" class="form-control"
+                                                                   value="C:\Document\Local Drive\Backups" readonly>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p>
+                            <button type="button" class="btn btn-w-m btn-primary demo_DB_create">Create Backup</button>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <script>
+            $(document).ready(function () {
+                $('.i-checks').iCheck({
+                    checkboxClass: 'icheckbox_square-green',
+                    radioClass: 'iradio_square-green',
+                });
+            });
+        </script>
     </div>
-        <script src="dashboard/js/jquery-2.1.1.js"></script>
-        <script src="dashboard/js/bootstrap.min.js"></script>
-        <script src="dashboard/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-        <script src="dashboard/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+@endsection
 
-        <!-- Custom and plugin javascript -->
-        <script src="dashboard/js/inspinia.js"></script>
-        <script src="dashboard/js/plugins/pace/pace.min.js"></script>
-    <!-- Mainly scripts -->
-    <script src="dashboard/js/jquery-2.1.1.js"></script>
-    <script src="dashboard/js/bootstrap.min.js"></script>
-    <script src="dashboard/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="dashboard/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
-    <!-- Custom and plugin javascript -->
-    <script src="dashboard/js/inspinia.js"></script>
-    <script src="dashboard/js/plugins/pace/pace.min.js"></script>
-
-    <!-- iCheck -->
-    <script src="dashboard/js/plugins/iCheck/icheck.min.js"></script>
+@section('script')
+    {{-- sweet alert --}}
     <script>
         $(document).ready(function () {
-            $('.i-checks').iCheck({
-                checkboxClass: 'icheckbox_square-green',
-                radioClass: 'iradio_square-green',
+
+            $('.demo1').click(function () {
+                swal({
+                    title: "Welcome in Alerts",
+                    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                });
             });
+
+            $('.demo_DB_create').click(function () {
+                swal({
+                    title: "Successfully Backup it DB!",
+                    text: "You have Backup DB file!",
+                    type: "success"
+                });
+            });
+
+            $('.demo_restore').click(function () {
+                swal({
+                    title: "Successfully Restore!",
+                    text: "All Data restore to your Database!",
+                    type: "success"
+                });
+            });
+
+            $('.demo_delete').click(function () {
+                swal({
+                    title: "Are you sure?",
+                    text: "You will not be able to recover this imaginary file!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, delete it!",
+                    closeOnConfirm: false
+                }, function () {
+                    swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                });
+            });
+
+            $('.demo4').click(function () {
+                swal({
+                        title: "Are you sure?",
+                        text: "Your will not be able to recover this imaginary file!",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Yes, delete it!",
+                        cancelButtonText: "No, cancel plx!",
+                        closeOnConfirm: false,
+                        closeOnCancel: false
+                    },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                            swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                        } else {
+                            swal("Cancelled", "Your imaginary file is safe :)", "error");
+                        }
+                    });
+            });
+
+
         });
     </script>
-    </div>
-    @endsection
+    {{-- sweet alert --}}
+@endsection
