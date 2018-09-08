@@ -61,7 +61,7 @@
                 {{-- current exchange --}}
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-exchange">&nbsp;<strong>Current Ex |</strong></i>
+                        <i class="fa fa-exchange text-info">&nbsp;</i><strong>Current Ex |</strong>
                     </a>
                     <ul class="dropdown-menu dropdown-alerts">
                         <li>
@@ -77,7 +77,7 @@
                 </li>
                 <li>
                     <a href="login">
-                        <i class="fa fa-sign-out"></i> Log out
+                        <i class="fa fa-sign-out text-warning"></i>Log out
                     </a>
                 </li>
                 {{-- current exchange --}}
