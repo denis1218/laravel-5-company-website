@@ -1,9 +1,6 @@
 @extends('master')
 
 @section('style')
-
-
-
     <style rel="stylesheet">
         .font-m {
             font-size: 1.5em;
@@ -47,8 +44,6 @@
 @endsection
 
 @section('content')
-
-
 
     {{-- search area --}}
     <div class="row wrapper border-bottom white-bg page-heading"
@@ -342,7 +337,7 @@
             <div class="ibox-content">
                 <div class="row">
                     <div class="col-md-12">
-                        <table class="table table-hover">
+                        <table class="table table-hover table-bordered">
                             <thead>
                             <tr>
                                 <th>#</th>
@@ -354,7 +349,6 @@
                                 <th>Fee Paid</th>
                                 <th>X-Ray</th>
                                 <th>Edit</th>
-
                             </tr>
                             </thead>
                             <tbody>
@@ -399,12 +393,11 @@
                     </div>
 
                 </div>
-                <hr/>
+
                 <div class="row">
-                    <div class="col-lg-9">
-                    </div>
-                    <div class="col-lg-3 text-right" style="">
-                        <table class="table text-right table-striped ">
+
+                    <div class="col-lg-3 text-left pull-left" style="">
+                        <table class="table text-left table-striped ">
                             <tr>
                                 <td><strong>Total Estimate :</strong></td>
                                 <td>2500 AFG</td>
@@ -418,12 +411,6 @@
                                 <td>1500 AFG</td>
                             </tr>
                         </table>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <button class="btn btn-primary demo_recp">Send to reception &nbsp;<i class="fa fa-arrow-right"></i>
-                        </button>
                     </div>
                 </div>
             </div>
