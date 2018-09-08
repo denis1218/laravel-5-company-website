@@ -20,7 +20,7 @@
 @endsection
 
 @section('content')
-    <div class="row wrapper border-bottom white-bg page-heading" style="margin-top:-20px; margin-bottom: 10px;">
+    <div class="row wrapper border-bottom white-bg page-heading" style="margin-left:1px;margin-top:-20px; margin-bottom: 10px;">
         <div class="col-md-2">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left:30px;" href="/account"><i class="fa fa-users"  style="font-size: 30px; color:#ffcf1c ;"></i><br>List Of Accounts</a></h2>
         </div>

@@ -84,8 +84,11 @@
                                             Omid Ahamdi
                                         </h2>
                                         <h4>ID: P-0780504075</h4>
-                                        <small class="font-m">
-                                            There are many variations of passages of Lorem Ipsum available, but the majority
+                                        <small style="font-size: 15px;">
+                                            <span style="font-size: 15px; font-weight: bold;">Problem teeth : </span>Orthodontist,
+                                            Periodontist <br/>
+                                            <span style="font-size: 15px; font-weight: bold;">Problem Health : </span>Blood
+                                            Pressure , Allergy to Penicillin , Allergy to Anaesthetic
                                         </small>
                                     </div>
                                 </div>

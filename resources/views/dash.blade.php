@@ -7,7 +7,6 @@
 
         @section('content')
             {{-- Top Card area --}}
-
             <div class="col-lg-3">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
@@ -15,8 +14,7 @@
                         <h5>Patient</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">35</h1>
-                        <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
+                        <h1 class="no-margins">35<img  src="img/patienticon2.png" width="45px;"style="float: right;"/></h1>
                         <small>Total patient for today</small>
                     </div>
                 </div>
@@ -41,8 +39,8 @@
                         <h5>Appointment patients</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">25</h1>
-                        <div class="stat-percent font-bold text-danger"> <i class="fa fa-level-down"></i></div>
+                        <h1 class="no-margins">25<img  src="img/appintmentincon.png" width="60px;"style="float: right;"/></h1>
+                        <div class="stat-percent font-bold text-danger"></div>
                         <small>Total Appointment</small>
                     </div>
                 </div>
