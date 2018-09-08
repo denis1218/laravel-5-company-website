@@ -337,6 +337,57 @@
             <div class="ibox-content">
                 <div class="row">
                     <div class="col-md-12">
+<<<<<<< HEAD
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Tooth NO</th>
+                            <th>Dental Defect</th>
+                            <th>Treatment</th>
+                            <th>Estimated Fee</th>
+                            <th>Minimum Fee</th>
+                            <th>Fee Paid</th>
+                            <th>X-Ray</th>
+                            <th>Edit</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>25</td>
+                            <td>BDR</td>
+                            <td>RCT</td>
+                            <td>2690 AFG</td>
+                            <td>1690 AFG</td>
+                            <td>1690 AFG</td>
+                            <td class=""> <i class=""></i>
+                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details</button></td>
+                            <td class=""> <i class=""></i>
+                                <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal">&nbsp;Delete</button>
+
+                                <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#editteeth">&nbsp;Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>12</td>
+                            <td>BDR</td>
+                            <td>RCT</td>
+                            <td>2880 AFG</td>
+                            <td>1880 AFG</td>
+                            <td>1880 AFG</td>
+                            <td class=""> <i class=""></i>
+                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details &nbsp;</button></td>
+                            <td class=""> <i class=""></i>
+                                <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="#editteeth">&nbsp;Delete</button>
+                                <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#editteeth">&nbsp;Edit</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+=======
                         <table class="table table-hover table-bordered">
                             <thead>
                             <tr>
@@ -390,6 +441,7 @@
                             </tr>
                             </tbody>
                         </table>
+>>>>>>> a40a74d7f2ca1898a65d58da64a90e4e131bacc3
                     </div>
 
                 </div>
@@ -413,6 +465,15 @@
                         </table>
                     </div>
                 </div>
+<<<<<<< HEAD
+                <div class="row">
+                    <div class="col-md-3">
+                        <button class="btn btn-primary"style="width:11em">Send to reception &nbsp;<i class="fa fa-arrow-right"></i></button>
+                        <button class="btn btn-primary " style="width:11em">Send to X-Ray &nbsp;<i class="fa fa-arrow-right"></i></button>
+                    </div>
+                </div>
+=======
+>>>>>>> a40a74d7f2ca1898a65d58da64a90e4e131bacc3
             </div>
         </div>
     </div>
