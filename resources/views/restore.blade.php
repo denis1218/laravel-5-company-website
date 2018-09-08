@@ -110,7 +110,7 @@
                             <div class="col-sm-3">
                                 <div class="form-group"><center><label><input type="radio" name="first" value="Disable" id="radio_two" checked> from Device :&nbsp;&nbsp;&nbsp;&nbsp;</label></center></div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-4 ">
                             <select class="form-control col-md-3 selecttwo" id="get_file2">
                                 <option value="1">Select Database Backup</option>
 

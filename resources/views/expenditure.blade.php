@@ -10,13 +10,6 @@
 <link href="dashboard/css/style.css" rel="stylesheet">
 <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
 
-
-
-
-
-
-
-
 @endsection
 
 
@@ -54,12 +47,7 @@
                                 <!-- form -->
 
                             <form method="get" class="form-horizontal">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">ID:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="Enter the ID" style="width:50%" required>
-                                    </div>
-                                </div>
+
                                 <div class="hr-line-dashed"></div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Amount:</label>
@@ -105,8 +93,8 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-12 text-left">
-                                        <button type="submit" class="btn btn-primary btn-md" style="margin-left:177px;">SAVE</button>
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="btn btn-primary btn-md" style="margin-left:180px;">Save &nbsp;<i class="fa fa-save"></i></button>
                                         <input type="reset" class="btn btn-white btn-md" value="Reset" name="" id="">
                                     </div>
                                 </div>
@@ -144,19 +132,25 @@
                                     </div>
                                 </div>
                                 <div class="ibox-content">
-
                                     <!-- Table -->
-
-                <div class="table-responsive">
+                                    <div class="table-responsive">
                     <!-- Expenditure Table -->
 
-                    <button type="button" class="btn btn-md btn-primary">Show Report</button>
+                    <h5>Quick show reports:</h5>
+                    <div class="btn-group">
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Show reports <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="/finance_report_daily" class="font-bold">Daily</a></li>
+                            <li><a href="/finance_report_date" class="font-bold">Weekly & monthly</a></li>
+                        </ul>
+                    </div>
+                    <hr/>
                     <table class="table table-striped table-bordered table-hover " id="editable">
                         <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Given Amount</th>
-                                <th>To_Whom</th>
+                                <th>To Whom</th>
                                 <th>Purpose</th>
                                 <th>Item</th>
                                 <th>Price</th>
@@ -499,19 +493,18 @@
                         <div class="modal-content animated fadeIn">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                <i class="fa fa-edit modal-icon text-primary"></i>
+                                {{--<i class="fa fa-edit modal-icon text-primary"></i>--}}
                                 <h4 class="modal-title">Edit Content</h4>
                                 <small>Edit expenditure details</small>
                             </div>
                             <div class="modal-body">
-                                <div class="form-group"><label>ID</label> <input type="text" placeholder="Id" value="" class="form-control"></div>
+                                {{--<div class="form-group"><label>ID</label> <input type="text" placeholder="Id" value="" class="form-control"></div>--}}
                                 <div class="form-group"><label>Amount</label> <input type="number" placeholder="Amount"  value="" class="form-control"></div>
                                 <div class="form-group"><label>To Whom</label> <input type="text" placeholder="Receiver" value="" class="form-control"></div>
                                 <div class="form-group"><label>Purpose</label> <input type="text" placeholder="purpose" value="" class="form-control"></div>
                                 <div class="form-group"><label>Item</label> <input type="text" placeholder="Purchased item" value="" class="form-control"></div>
                                 <div class="form-group"><label>Price</label> <input type="text" placeholder="Price" value="" class="form-control"></div>
                                 <div class="form-group"><label>Calculated Result</label> <input type="text" placeholder="" value="" class="form-control" readonly></div>
-
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>

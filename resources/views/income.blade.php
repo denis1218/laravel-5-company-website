@@ -1,17 +1,20 @@
 @extends('master')
 
+@section('style')
+    <link href="css/hover/hover-min.css" rel="stylesheet">
+    @endsection
 
 @section('content')
 
 
             <!-- Nav-buttons -->
-        <div class="row wrapper border-bottom white-bg page-heading" style="margin-top:-20px; margin-bottom: 10px;">
+        <div class="row wrapper border-bottom white-bg page-heading" style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
         <h3 style="margin-left:43px;margin-top:10px;">Income Details</h3>
-        <div class="col-md-2">
-            <h2><a class="btn btn-primary" style="height:70px;width:155px; margin-left:25px;" href="/income"><i class="fa fa-usd" style="color:#ffc000; font-size: 30px;"></i> <br/> Patient Related</a></h2>
+        <div class="col-md-2 ">
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px;width:155px; margin-left:25px;" href="/income"><i class="fa fa-money" style="color:#ffc000; font-size: 30px;"></i> <br/> Patient Related</a></h2>
         </div>
-        <div class="col-md-2">
-                <h2><a class="btn btn-primary" style="height:70px; width:155px" href="/ext_income"><i class="fa fa-usd" style="color:#ffc000; font-size: 30px;"></i> <br/> Other</a></h2>
+        <div class="col-md-2 ">
+                <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px" href="/ext_income"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> From Other</a></h2>
         </div>
         </div>
         <!-- End of navButtons -->
@@ -47,7 +50,7 @@
                 <!--Search -->
                 <div class="col-sm-5">
                     <div class="input-group">
-                      <input type="text" placeholder="Insert Patient ID" class="input-sm form-control">
+                      <input type="text" placeholder="Patient ID" class="input-sm form-control">
                        <span class="input-group-btn">
                         <button type="button" class="btn btn-sm btn-primary"> Search</button></span>
                     </div>
@@ -116,17 +119,17 @@
                             <table class="table table-striped table-bordered table-hover" style="margin-left:30px;">
                                 <tr>
                                     <td style="text-align:right"><label style="margin-top:8px;"><strong>Total Discount</strong></label></td>
-                                    <td><input type=" text" class="form-control" readonly></td>
+                                    <td><input type=" text" class="form-control" value="270" readonly></td>
                                 </tr>
 
                                 <tr>
                                     <td style="text-align:right"><label style="margin-top:8px;"><strong>Total</strong></label></td>
-                                    <td><input type=" text" class="form-control" readonly></td>
+                                    <td><input type=" text" class="form-control" value="1500" readonly></td>
                                 </tr>
 
                                 <tr>
                                     <td style="text-align:right"><label style="margin-top:8px;"><strong>Remaining</strong></label></td>
-                                    <td><input type=" text" class="form-control" readonly></td>
+                                    <td><input type=" text" class="form-control" value="4230" readonly></td>
                                 </tr>
 
                                 <tr>
@@ -138,8 +141,7 @@
                             </table>
                     </div>
                     <div class="col-4-lg">
-
-                         <button class="btn btn-primary" style="position:relative;margin-top:170px; margin-left:30px;"> Save &nbsp<i class="fa fa-save"></i></button>
+                         <button class="btn btn-primary" style="position:relative;margin-top:170px; margin-left:30px;"> Save paid &nbsp<i class="fa fa-save"></i></button>
                     </div>
                 </div>
             </div>

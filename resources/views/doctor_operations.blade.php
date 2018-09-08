@@ -56,6 +56,8 @@
             <h2><a class="btn btn-primary" style="height:70px; width:155px" href="/iframe"><i class="fa fa-calendar" style="font-size: 30px; color:#ff9f00 ;"></i> <br/> Next Appointment</a></h2>
         </div>
     </div>
+
+    {{-- patient info --}}
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -248,8 +250,9 @@
             </div>
         </div>
     </div>
+    {{-- patient info --}}
 
-
+    {{-- table treatment patient --}}
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -303,11 +306,8 @@
                             <td class=""> <i class=""></i>
                                 <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details</button></td>
                             <td class=""> <i class=""></i>
-<<<<<<< HEAD
                                 <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal">&nbsp;Delete</button>
-=======
-                                <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="">&nbsp;Delete</button>
->>>>>>> a4ce6408779fba8a183dfdd4ba1ffe8adb490394
+
                                 <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#editteeth">&nbsp;Edit</button>
                             </td>
                         </tr>
@@ -320,7 +320,7 @@
                             <td>1880 AFG</td>
                             <td>1880 AFG</td>
                             <td class=""> <i class=""></i>
-                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details &nbsp;<i class="fa fa-check"></i></button></td>
+                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details &nbsp;</button></td>
                             <td class=""> <i class=""></i>
                                 <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="#editteeth">&nbsp;Delete</button>
                                 <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#editteeth">&nbsp;Edit</button>
@@ -354,12 +354,14 @@
                 </div>
                 <div class="row">
                     <div class="col-md-3">
-                        <button class="btn btn-primary ">Send to reception &nbsp;<i class="fa fa-arrow-right"></i></button>
+                        <button class="btn btn-primary"style="width:11em">Send to reception &nbsp;<i class="fa fa-arrow-right"></i></button>
+                        <button class="btn btn-primary " style="width:11em">Send to X-Ray &nbsp;<i class="fa fa-arrow-right"></i></button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {{-- table treatment patient --}}
 
 
     {{-- Modal Window to show X-ray image details --}}

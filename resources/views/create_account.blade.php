@@ -16,17 +16,16 @@
     <link href="dashboard/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="dashboard/css/animate.css" rel="stylesheet">
     <link href="dashboard/css/style.css" rel="stylesheet">
-
-
+    <link href="css/hover/hover-min.css" rel="stylesheet">
 @endsection
 
 @section('content')
     <div class="row wrapper border-bottom white-bg page-heading" style="margin-top:-20px; margin-bottom: 10px;">
         <div class="col-md-2">
-            <h2><a class="btn btn-primary" style="height:70px; width:155px" href="/account"><i class="fa fa-users"  style="font-size: 30px; color:#ff9f00 ;"></i><br>List Of Accounts</a></h2>
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left:30px;" href="/account"><i class="fa fa-users"  style="font-size: 30px; color:#ffcf1c ;"></i><br>List Of Accounts</a></h2>
         </div>
         <div class="col-md-2">
-            <h2><a class="btn btn-primary" style="height:70px; margin-left:25px;" href="/create_account"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>Create Account</a></h2>
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px;" href="/create_account"><i class="fa fa-user" style="color:#ffcf1c; font-size: 30px;"></i> <br/>Create Account</a></h2>
         </div>
     </div>
 
@@ -87,7 +86,7 @@
 
                     <h1>Profile</h1>
                     <fieldset>
-                        <h2>Profile Information</h2>
+
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
@@ -138,7 +137,7 @@
                     <fieldset>
                         <div class="row">
                             <div class="col-lg-5">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered text-bold table-striped hvr-glow">
                                     <thead>
                                     <td><b>Info</b></td><td><b>Details</b></td>
                                     </thead>
@@ -176,7 +175,7 @@
                         <div class="col-lg-5">
                             <div class="text-center">
                                 <div style="margin-top: 10px">
-                                    <i class="fa fa-clock-o" style="font-size: 180px;color: #5be560 "></i>
+                                    <i class="fa fa-check" style="font-size: 180px;color: #5be560 "></i>
                                 </div>
                                 <h3>Account Successfully Created!</h3>
                             </div>
