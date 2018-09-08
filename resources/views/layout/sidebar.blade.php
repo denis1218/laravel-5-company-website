@@ -25,6 +25,7 @@
                             <img src="img/small_logo_denta.png" width="30px"/>
                         </div>
                     </li>
+
                 <li class="active">
                     <a href="/dash"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
                 </li>
