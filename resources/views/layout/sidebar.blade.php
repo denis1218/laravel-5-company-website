@@ -49,6 +49,7 @@
                     <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="account"><i class="fa fa-user-plus"></i>&nbsp;Accounts</a></li>
+                        <li><a href="employee"><i class="fa fa-user-plus"></i>&nbsp;Emp-Registeration</a></li>
                         <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
                     </ul>
                 </li>

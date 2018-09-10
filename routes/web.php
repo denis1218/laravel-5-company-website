@@ -17,9 +17,9 @@ Route::get('/', function () {
 Route::get('/patient', function () {
     return view('patient');
 });
-
-Route::get('/doctor', function () {
-    return view('doctor');
+// Employee Registration
+Route::get('/employee', function () {
+    return view('employee');
 });
 
 Route::get('/appo', function () {
