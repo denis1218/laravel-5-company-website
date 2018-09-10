@@ -17,9 +17,9 @@ Route::get('/', function () {
 Route::get('/patient', function () {
     return view('patient');
 });
-
-Route::get('/doctor', function () {
-    return view('doctor');
+// Employee Registration
+Route::get('/employee', function () {
+    return view('employee');
 });
 
 Route::get('/appo', function () {
@@ -127,7 +127,6 @@ Route::get('doctor_report', function () {
     return view('doctor_report');
 });
 
-
 // Financial report
     Route::get('finance_report', function () {
         return view('finance_report');
@@ -138,6 +137,7 @@ Route::get('doctor_report', function () {
     Route::get('report_doctors', function () {
         return view('report_doctors');
     });
+
 
 
 // Financial report daily
@@ -155,4 +155,3 @@ Route::get('finance_report_date', function () {
 Route::get('date_report_patient', function () {
     return view('date_report_patient');
 });
-
