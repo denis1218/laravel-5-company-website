@@ -1,5 +1,10 @@
 @extends('master')
 @section('style')
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <style rel="stylesheet">
         ul.list-group:after {
             clear: both;
@@ -11,7 +16,6 @@
             float: left;
         }
     </style>
-    <link href="dashboard/css/plugins/iCheck/custom.css" rel="stylesheet">
 
 @endsection
 
@@ -49,17 +53,101 @@
                     This form have 4 steps to get info of patient
                 </p>
 
-                <form id="form" action="#" class="wizard-big">
+                <form id="form" action="appo" class="wizard-big">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    <h1>Doctor available</h1>
+                    <fieldset>
+                        <h2>select doctor</h2>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <table class="table table-hover table-borderd table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>ID</th>
+                                        <th>Doctor Name</th>
+                                        <th>Doctor Available</th>
+                                        <th>date & Time</th>
+                                        <th>Max work time</th>
+                                        <th>Select Doctor</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>tamim</td>
+                                        <td>8-4</td>
+                                        <td>2018/5/1</td>
+                                        <td>15</td>
+                                        <td>
+                                            <div class="i-checks"><input type="radio"  value="option2" name="a"></div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>Ahmad</td>
+                                        <td>8-12</td>
+                                        <td>2018/6/1</td>
+                                        <td>10</td>
+                                        <td>
+                                            <div class="i-checks"><input type="radio"  value="option2" name="a"></div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>3</td>
+                                        <td>Samim</td>
+                                        <td>8-11</td>
+                                        <td>2018/5/1</td>
+                                        <td>5</td>
+                                        <td>
+                                            <div class="i-checks"><input type="radio"  value="option2" name="a"></div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>4</td>
+                                        <td>Naweed</td>
+                                        <td>1-4</td>
+                                        <td>2018/8/1</td>
+                                        <td>5</td>
+                                        <td>
+                                            <div class="i-checks"><input type="radio"  value="option2" name="a"></div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>5</td>
+                                        <td>Qasim</td>
+                                        <td>2-7</td>
+                                        <td>2018/5/1</td>
+                                        <td>7</td>
+                                        <td>
+                                            <div class="i-checks"><input type="radio"  value="option2" name="a"></div>
+                                        </td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-lg-5">
+                                <img id="preview"  style="border-radius: 20px;"/>
+                            </div>
+                        </div>
+                    </fieldset>
 
                     <h1>Patient</h1>
                     <fieldset>
                         <h2>Patient Information</h2>
                         <div class="row">
                             <div class="col-lg-8">
-                                <button class="btn btn-success"><li class="fa fa-plus"></li>&nbsp;&nbsp;New Patient</button>
-                                <button class="btn btn-success">Second Appointment</button>
-                                <br/>
-                                <br/>
                                 <div class="form-group">
                                     <label>PID</label>
                                         <input type="text" class="form-control" placeholder="P-ID" value="P-333">
@@ -83,8 +171,12 @@
                                     <input id="phone" name="phone" type="phone" class="form-control required">
                                 </div>
                                 <div class="form-group">
-                                    <label>Address *</label>
-                                    <input id="address" name="address" type="text" class="form-control required">
+                                    <label>Status *</label>
+                                    <select class="form-control" required>
+                                        <option value="1">First Time</option>
+                                        <option value="2">Second Time</option>
+                                        <option value="3">Third Time</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-lg-4">
@@ -97,9 +189,9 @@
                         </div>
 
                     </fieldset>
-                    <h1>Medical</h1>
+                    <h1>Problem Health</h1>
                     <fieldset>
-                        <h2>Choose Medical</h2>
+                        <h2>Choose Problem</h2>
                         <div class="row">
                             <div class="col-lg-7">
                                 <div class="form-group">
@@ -119,125 +211,6 @@
                                 </div>
                             </div>
 
-                        </div>
-                    </fieldset>
-
-
-                    <h1>Problems</h1>
-                    <fieldset>
-                        <h2>What's is general problem of tooth</h2>
-                        <div class="row">
-                            <div class="col-lg-7">
-                                <div class="form-group">
-                                    <label>Patient problem *</label>
-                                    <select id="dental_problame" onchange="document.getElementById('preview').src = this.value" class="form-control">
-                                        <option value="">Select Dental Problem</option>
-                                        <option value="img/thoot_ache.jpg">Toothache</option>
-                                        <option value="img/stained_teeth.jpg">Stained Teeth</option>
-                                        <option value="img/tooth_decay.jpg">Cavities</option>
-                                        <option value="img/impacted_tooth.jpg">Impacted Teeth</option>
-                                        <option value="img/cracked_tooth.jpg">Cracked Tooth</option>
-                                        <option value="img/crooked.jpg">Crooked Teeth</option>
-                                        <option value="img/wisdom_teeth.jpg">Wisdom Teeth</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-5">
-                                <img id="preview"  style="border-radius: 20px;"/>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <h1>Appointment</h1>
-                    <fieldset>
-                        <h2>Take free time with doctor</h2>
-                        <div class="row">
-                            <div class="col-lg-7">
-                                <div class="form-group">
-                                    <label>Department *</label>
-                                    <select class="form-control col-lg-5">
-                                        <option value="1">Select Department</option>
-                                        <option value="1">regular basis</option>
-                                        <option value="2">Orthodontist</option>
-                                        <option value="3">Oral and maxillofacial surgeon</option>
-                                        <option value="4">Periodontist</option>
-                                        <option value="5">Prosthodontist</option>
-                                        <option value="5">Endodontist</option>
-                                    </select>
-                                </div>
-                            <br/>
-                                <div class="form-group">
-                                    <label>Doctor name *</label>
-                                    <select class="form-control col-lg-5">
-                                        <option value="1">Select Doctor</option>
-                                        <option value="1">Dr.Ahmad</option>
-                                        <option value="2">Dr.Jalal</option>
-                                        <option value="3">Dr.Omid</option>
-                                        <option value="4">Dr.Mostafa</option>
-                                        <option value="5">Dr.Hakim</option>
-                                        <option value="6">Dr.Samim</option>
-                                    </select>
-                                </div>
-                            </div>
-                        <br/>
-                            <div class="col-lg-7">
-                                <div class="form-group">
-                                    <label>Best Free time </label>
-                                    <select class="form-control col-lg-5" multiple="">
-                                        <option>4:00AM to 5:00AM</option>
-                                        <option>5:00AM to 6:00AM</option>
-                                        <option>6:AM to 7:00AM</option>
-                                        <option>1:00PM to 2:00PM</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="text-center">
-                                    <div style="margin-top: 10px">
-                                        <i class="fa fa-clock-o" style="font-size: 180px;color: #5be560 "></i>
-                                    </div>
-                                    <h3>Appointment</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <h1>Finish</h1>
-
-                    <fieldset>
-                        <h1>All information patient</h1>
-                        <br/>
-                        <br/>
-                        <div class="col-lg-5">
-
-
-                        <table>
-                            <thead>
-                                <td><b>Info</b></td><td><b>Details</b></td>
-                            </thead>
-                            <tr>
-                                <td>P-ID:</td><td>P-223</td>
-                            </tr>
-                            <tr>
-                                <td>Name:</td><td>Ahamd</td>
-                            </tr>
-                            <tr>
-                                <td>Gender:</td><td>Male</td>
-                            </tr>
-                            <tr>
-                                <td>Age:</td><td>25</td>
-                            </tr>
-                            <tr>
-                                <td>Phone:</td><td>0780552233</td>
-                            </tr>
-                            <tr>
-                                <td>Address:</td><td>Carte Char, Pole Sourkhe, Kabul, Afghanistan</td>
-                            </tr>
-                        </table>
-                        </div>
-                        <div class="col-lg-5">
-                            <h1>Time Visite 10:35AM</h1>
-                            <h1>After 35 Minites</h1>
                         </div>
                     </fieldset>
                 </form>
@@ -261,8 +234,14 @@
     <script src="dashboard/js/inspinia.js"></script>
     <script src="dashboard/js/plugins/pace/pace.min.js"></script>
 
+    <!-- Date range picker -->
+    <script src="dashboard/js/plugins/daterangepicker/daterangepicker.js"></script>
+
+    <!-- Select2 -->
+    <script src="dashboard/js/plugins/select2/select2.full.min.js"></script>
     <script>
         $(document).ready(function(){
+
             $("#wizard").steps();
             $("#form").steps({
                 bodyTag: "fieldset",
@@ -275,7 +254,7 @@
                     }
 
                     // Forbid suppressing "Warning" step if the user is to young
-                    if (newIndex === 5 && Number($("#age").val()) < 18)
+                    if (newIndex === 4 && Number($("#age").val()) < 18)
                     {
                         return false;
                     }
@@ -299,13 +278,13 @@
                 onStepChanged: function (event, currentIndex, priorIndex)
                 {
                     // Suppress (skip) "Warning" step if the user is old enough.
-//                    if (currentIndex === 3 && Number($("#age").val()) >= 18)
-//                    {
-//                        $(this).steps("next");
-//                    }
+                    if (currentIndex === 3 && Number($("#age").val()) >= 18)
+                    {
+                        $(this).steps("next");
+                    }
 
                     // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
-                    if (currentIndex === 4 && priorIndex === 5)
+                    if (currentIndex === 2 && priorIndex === 5)
                     {
                         $(this).steps("previous");
                     }
@@ -340,6 +319,7 @@
                 }
             });
         });
+
 
     </script>
 

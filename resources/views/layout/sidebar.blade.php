@@ -36,15 +36,13 @@
                             <li><a href="/xray"><i class="fa fa-flash"></i>X-Ray</a></li>
                         </ul>
                     </li>
+
                     <li>
-                        <a href="/patient"><i class="fa fa-user-plus"></i> <span
-                                    class="nav-label">Patient Registeration</span> </a>
-                    </li>
-                    <li>
-                        <a href="/appo"><i class="fa fa-list-alt"></i> <span class="nav-label">List Patients</span></a>
-                    </li>
-                    <li>
-                        <a href="/reception"><i class="fa fa-money"></i> <span class="nav-label">Reception</span></a>
+                        <a href="/reception"><i class="fa fa-money"></i> <span class="nav-label">Reception</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="/patient"><i class="fa fa-user-md"></i>Patient Registration</a></li>
+                            <li><a href="/appo"><i class="fa fa-flash"></i>List of Patient</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span><span
