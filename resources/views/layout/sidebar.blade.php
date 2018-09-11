@@ -25,7 +25,6 @@
                             <img src="img/small_logo_denta.png" width="30px"/>
                         </div>
                     </li>
-<<<<<<< HEAD
                     <li class="active">
                         <a href="/dash"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
                     </li>
@@ -39,7 +38,8 @@
                     </li>
 
                     <li>
-                        <a href="/reception"><i class="fa fa-money"></i> <span class="nav-label">Reception</span><span class="fa arrow"></span></a>
+                        <a href="/reception"><i class="fa fa-money"></i> <span class="nav-label">Reception</span><span
+                                    class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/patient"><i class="fa fa-user-md"></i>Patient Registration</a></li>
                             <li><a href="/appo"><i class="fa fa-flash"></i>List of Patient</a></li>
@@ -50,6 +50,8 @@
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="account"><i class="fa fa-user-plus"></i>&nbsp;Accounts</a></li>
+                            <li><a href="employee"><i class="fa fa-user-plus"></i>&nbsp;Emp-Registeration</a></li>
+
                             <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
                         </ul>
                     </li>
@@ -60,46 +62,8 @@
                             <li><a href="/patient_report"><i class="fa fa-user"></i>Patients</a></li>
                             <li><a href="/doctor_report"><i class="fa fa-user-md"></i>Doctors</a></li>
                         </ul>
-=======
 
-                <li class="active">
-                    <a href="/dash"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
-                </li>
-                <li>
-                    <a href="/doctor_operations"><i class="fa fa-sitemap"></i> <span class="nav-label">Department</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="/doctor_operations">Doctor</a></li>
-                        <li><a href="/xray">X-Ray</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="/patient"><i class="fa fa-user-plus"></i> <span class="nav-label">Patient Registeration</span>  </a>
-                </li>
-                <li>
-                    <a href="/appo"><i class="fa fa-list-alt"></i> <span class="nav-label">List Patients</span></a>
-                </li>
-                <li>
-                    <a href="/reception"><i class="fa fa-money"></i> <span class="nav-label">Reception</span></a>
-                </li>
-                <li>
-                    <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="account"><i class="fa fa-user-plus"></i>&nbsp;Accounts</a></li>
-                        <li><a href="employee"><i class="fa fa-user-plus"></i>&nbsp;Emp-Registeration</a></li>
-                        <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-file"></i> <span class="nav-label">Reports</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <!-- <li><a href="/report_patient">Patients & Doctors</a></li> -->
-                        <li><a href="/patient_report"><i class="fa fa-user"></i>Patients</a></li>
-                        <li><a href="/doctor_report"><i class="fa fa-user-md"></i>Doctors</a></li>
-                    </ul>
-                </li>
-                <li>
->>>>>>> ef8b7f7320635205244e91d0f6567e0675411322
-                    </li>
+
                     <li>
                         <a href="#"><i class="fa fa-clipboard"></i> <span class="nav-label">Finance</span><span
                                     class="fa arrow"></span></a>

@@ -158,7 +158,7 @@ Route::get('finance_report_date', function () {
 Route::get('date_report_patient', function () {
     return view('date_report_patient');
 });
-<<<<<<< HEAD
+
 Route::get('patient_history_print',function (){
    return view('patient_history_print');
 });
@@ -166,5 +166,3 @@ Route::get('next_appointment_list',function (){
    return view('next_appointment_list');
 });
 
-=======
->>>>>>> ef8b7f7320635205244e91d0f6567e0675411322
