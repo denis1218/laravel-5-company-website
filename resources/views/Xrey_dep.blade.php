@@ -4,24 +4,32 @@
     <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
     <style rel="stylesheet">
 
+        #img_all_tooth {
+            border-radius: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border: 20px;
+        }
+
         #my_file {
             display: none;
         }
 
-        .btn-xray{
+        .btn-xray {
             height: 57px;
         }
 
-        .bg-khatar{
+        .bg-khatar {
             background: #ff0004;
         }
 
-        .font-m{
+        .font-m {
             font-size: 1.2em;
         }
-        .font-b{
+
+        .font-b {
             font-size: 1.5em;
         }
+
         ul.list-group:after {
             clear: both;
             display: block;
@@ -42,6 +50,7 @@
         .state-icon {
             left: -5px;
         }
+
         .list-group-item-primary {
             color: rgb(255, 255, 255);
             background-color: rgb(88, 198, 202);
@@ -83,17 +92,14 @@
 
             <div class="ibox-content">
 
-                <div class="row" style="margin-left:30px;">
+                <div class="row" style="margin-bottom: -30px;">
                     <div class="row m-b-lg m-t-lg">
                         <div class="col-md-6">
-                            <div class="profile-image">
-                                <img src="img/a4.jpg" class="img-circle circle-border m-b-md" alt="profile">
-                            </div>
                             <div class="profile-info">
                                 <div class="">
                                     <div>
                                         <h2 class="no-margins font-b">
-                                            Mostafa Ahmadi
+                                            Ahmad Farid
                                         </h2>
                                         <h4>ID: P-504075</h4>
                                         <small style="font-size: 10px;">
@@ -119,18 +125,22 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Doctor:<b>&nbsp;Dr.Ahmadi</b>&nbsp;<i class="fa fa-user-md"></i></span>
+                                        <span class="font-m">Doctor:<b>&nbsp;Dr.Ahmadi</b>&nbsp;<i
+                                                    class="fa fa-user-md"></i></span>
                                     </td>
                                     <td>
-                                        <span class="font-m">Visited:<b>&nbsp;First Time</b>&nbsp;<i class=""></i></span>
+                                        <span class="font-m">Visited:<b>&nbsp;First Time</b>&nbsp;<i
+                                                    class=""></i></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Date Reg:<b>&nbsp;2018/5/26</b>&nbsp;<i class="fa fa-calendar"></i></span>
+                                        <span class="font-m">Date Reg:<b>&nbsp;2018/5/26</b>&nbsp;<i
+                                                    class="fa fa-calendar"></i></span>
                                     </td>
                                     <td>
-                                        <span class="font-m text-info">Cash:<b>&nbsp;Paid</b>&nbsp;<i class="fa fa-money"></i></span>
+                                        <span class="font-m text-info">Cash X-Ray:<b>&nbsp;Paid</b>&nbsp;<i
+                                                    class="fa fa-money"></i></span>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -138,102 +148,38 @@
                         </div>
                     </div>
                 </div>
-
+                <hr class="bg-primary"/>
                 <div class="row">
-                    <div class="col-md-10"><h3>Tooth selected for X-Ray Number : <b class="text-danger">12 UP</b></h3></div>
-                    <div class="col-lg-6">
-                        <div class="" style="">
-                            <ul class="list-group checked-list-box">
-                                <li class="list-group-item"><img src="img/teeths/16.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/15.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/14.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/13.png" width="15px"/></li>
-                                <span class="bg-khatar"><li class="list-group-item"><img src="img/teeths/12.png" width="15px"/></li></span>
-                                <li class="list-group-item"><img src="img/teeths/11.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/10.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/9.png" width="15px"/></li>
-                            </ul>
-                        </div>
-                        <div class="hr-line-solid"></div>
+                    <div class="col-md-5">
+                        <table class="table table-condensed table-bordered text-center">
+                            <tr>
+                                <td><strong>Tooth Image :</strong></td>
+                                <td><img src="img/teeths/4.png"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tooth Number :</strong></td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tooth Position :</strong></td>
+                                <td>Upper Right</td>
+                            </tr>
+                        </table>
                     </div>
-
-
-                    <div class="col-lg-6">
-                        <div class="" style="">
-                            <ul class="list-group">
-                                <li class="list-group-item"><img src="img/teeths/8.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/7.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/6.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/5.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/4.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/3.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/2.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/1.png" width="15px"/></li>
-                            </ul>
-                        </div>
-                        <div class="hr-line-solid"></div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="" style="">
-                            <ul class="list-group">
-                                <li class="list-group-item"><img src="img/teeths/17.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/18.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/19.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/20.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/21.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/22.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/23.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/24.png" width="15px"/></li>
-                            </ul>
-
-                        </div>
-                        <div class="hr-line-solid"></div>
-                    </div>
-
-
-                    <div class="col-lg-6">
-                        <div class="" style="">
-                            <ul class="list-group">
-                                <li class="list-group-item"><img src="img/teeths/25.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/26.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/27.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/28.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/29.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/30.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/31.png" width="15px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/32.png" width="15px"/></li>
-                            </ul>
-                        </div>
-                        <div class="hr-line-solid"></div>
-
+                    <div class="col-md-7">
+                        <img src="img/all_tooth.jpg" class="img-responsive" id="img_all_tooth"/>
                     </div>
                 </div>
-
                 <div class="row">
-
-                    <div class="col-lg-2">
-                        <button class="btn btn-primary btn-xray" name="Take X-Ray" id="get_file" value="Grab file" type="button">Take X-Ray &nbsp;<i class="fa fa-file-excel-o"></i></button>
-                        <input type="file" id="my_file">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="img/xray.jpg" width="75px" height="60px"/>&nbsp;&nbsp; X-Ray image ID : <b>X-256585</b>
-                    </div>
-
-                </div>
-                <br/>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <label class="col-lg-3 control-label">Fee Price</label>
-                        <div class="col-lg-10"><input type="text" placeholder="Fee Afg" class="form-control"></div>
-                    </div>
                     <div class="col-lg-3" style="margin-top:30px;">
-                        <button class="btn btn-primary demo_save">Save <i class="fa fa-save"></i></button>&nbsp;&nbsp;
+                        <button class="btn btn-success xray">Save <i class="fa fa-save"></i></button>&nbsp;&nbsp;
                         <button class="btn btn-white">Cancel</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        {{-- table xray One patient --}}
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
@@ -260,58 +206,82 @@
                     <div class="row">
                         {{-- table of content of X-Ray of petient --}}
                         <div class="col-md-12">
+
+                            <div class="row text-center">
+                                <span>Navigate between days :</span>
+                                    <div class="btn-group">
+                                        <button class="btn btn-white"><i class="fa fa-arrow-left text-success"></i>&nbsp;&nbsp;Last day</button>
+                                        <button class="btn btn-success">To Day</button>
+                                        <button class="btn btn-white">Next day &nbsp;<i class="fa fa-arrow-right text-success"></i></button>
+                                    </div>
+
+                            </div>
+                            <br/>
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>Patient PID</th>
                                     <th>Tooth NO</th>
                                     <th>Date & Time</th>
                                     <th>Doctor Treatment</th>
-                                    <th>Estimate Fee</th>
-                                    <th>X-Ray Image ID</th>
-                                    <th>X-Ray Image</th>
+                                    <th>Cash X-Ray</th>
                                     <th>Edit</th>
-                                    <th>Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>25 UP</td>
-                                    <td>2018/5/4 - 12:33 am</td>
-                                    <td>Dr.Tamim</td>
-                                    <td>300 AFG</td>
-                                    <td>X-252635</td>
-                                    <td class="">
-                                        <button class="btn btn-xs btn-primary"  data-toggle="modal" data-target="#myModal4image">Image <i class="fa fa-image"></i> </button>
-                                    </td>
-                                    <td class="">
-                                        <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Edit <i class="fa fa-edit"></i> </button>
-                                    </td>
-
-                                    <td class="">
-                                        <button class="btn btn-xs btn-danger demo_delete">Delete <i class="fa fa-remove"></i> </button>
+                                    <td>P-078565552</td>
+                                    <td>7</td>
+                                    <td>2018/5/25</td>
+                                    <td>Dr. Tamim</td>
+                                    <td>Paid</td>
+                                    <td>
+                                        <button class="btn btn-xs btn-primary" data-toggle="modal"
+                                                data-target="#myModal4image">Edit <i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-xs btn-danger demo_delete">Delete <i
+                                                    class="fa fa-remove"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>12 UP</td>
-                                    <td>2018/5/4 - 12:40 am</td>
-                                    <td>Dr.Tamim</td>
-                                    <td>300 AFG</td>
-                                    <td>X-252635</td>
-                                    <td class="">
-                                        <button class="btn btn-xs btn-primary " data-toggle="modal" data-target="#myModal4image">Image <i class="fa fa-image"></i> </button>
+                                    <td>P-07778582</td>
+                                    <td>26</td>
+                                    <td>2018/5/26</td>
+                                    <td>Dr. Yasin</td>
+                                    <td>Paid</td>
+                                    <td>
+                                        <button class="btn btn-xs btn-primary" data-toggle="modal"
+                                                data-target="#myModal4image">Edit <i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-xs btn-danger demo_delete">Delete <i
+                                                    class="fa fa-remove"></i></button>
                                     </td>
-                                    <td class="">
-                                        <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4" >Edit <i class="fa fa-edit"></i> </button>
-                                    </td>
-                                    <td class="">
-                                        <button class="btn btn-xs btn-danger demo_delete">Delete <i class="fa fa-remove"></i> </button>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>P-07752536</td>
+                                    <td>23</td>
+                                    <td>2018/5/25</td>
+                                    <td>Dr. Samim</td>
+                                    <td>Paid</td>
+                                    <td>
+                                        <button class="btn btn-xs btn-primary" data-toggle="modal"
+                                                data-target="#myModal4image">Edit <i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-xs btn-danger demo_delete">Delete <i
+                                                    class="fa fa-remove"></i></button>
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <strong>Result X-Ray</strong>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Current table X-Ray: 3</strong>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -319,6 +289,7 @@
         </div>
     </div>
 
+    {{-- list of patient xray --}}
     <div class="col-lg-3">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -328,102 +299,52 @@
                 </div>
             </div>
             <div class="ibox-content">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="btn-group">
-                            <button class="btn btn-primary">List of Done &nbsp; <i class="fa fa-check"></i></button>
-                            <button class="btn btn-info">List of Pending &nbsp; <i class="fa fa-spinner"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <br/>
-                <div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="input-group">
-                                <input type="text" placeholder="Search patient name" class="input-sm form-control"> <span class="input-group-btn">
-                                    <button type="button" class="btn btn-sm btn-primary"> Go!</button> </span></div>
-                        </div>
-                    </div>
-                    <br/>
-                    <div class="feed-activity-list">
 
+                <div>
+                    <div class="feed-activity-list">
                         <div class="feed-element">
-                            <a href="profile.html" class="pull-left">
-                                <img alt="image" class="img-circle" src="img/profile.jpg">
-                            </a>
-                            <div class="media-body ">
-                                <small class="pull-right">5m ago</small><br/>
+                            <div class="media-body " style="margin-top: -20px;">
+                                <small class="pull-right">5m ago</small>
+                                <br/>
                                 <small class="pull-right"><i class="fa fa-spinner text-info"></i>&nbsp;Pending</small>
-                                <strong>P-665522</strong> <br/><strong>Ahamd Farid </strong><br>
+                                <a href="#"><strong>P-665522</strong> <br/><strong>Ahamd Farid </strong><br></a>
                                 <small class="text-muted">Today 5:60 pm - 12.06.2018</small>
                             </div>
                         </div>
-
                         <div class="feed-element">
-                            <a href="profile.html" class="pull-left">
-                                <img alt="image" class="img-circle" src="img/a2.jpg">
-                            </a>
-                            <div class="media-body ">
-                                <small class="pull-right">2m ago</small><br/>
+                            <div class="media-body " style="margin-top: -20px;">
+                                <small class="pull-right">5m ago</small>
+                                <br/>
                                 <small class="pull-right"><i class="fa fa-spinner text-info"></i>&nbsp;Pending</small>
-                                <strong>P-554845</strong><br/> <strong>Yasin Rahamti</strong> site. <br>
-                                <small class="text-muted">Today 2:10 pm - 12.06.2018</small>
+                                <a href="#"><strong>P-665522</strong> <br/><strong>Ahamd Farid </strong><br></a>
+                                <small class="text-muted">Today 5:60 pm - 12.06.2018</small>
                             </div>
                         </div>
                         <div class="feed-element">
-                            <a href="profile.html" class="pull-left">
-                                <img alt="image" class="img-circle" src="img/a3.jpg">
-                            </a>
-                            <div class="media-body ">
-                                <small class="pull-right">15m ago</small><br/>
+                            <div class="media-body " style="margin-top: -20px;">
+                                <small class="pull-right">5m ago</small>
+                                <br/>
                                 <small class="pull-right"><i class="fa fa-spinner text-info"></i>&nbsp;Pending</small>
-                                <strong>P-343565</strong><br/><strong>Tamim Rahim</strong>. <br>
-                                <small class="text-muted">Today 1:43 am - 11.06.2018</small>
+                                <a href="#"><strong>P-665522</strong> <br/><strong>Ahamd Farid </strong><br></a>
+                                <small class="text-muted">Today 5:60 pm - 12.06.2018</small>
                             </div>
                         </div>
                         <div class="feed-element">
-                            <a href="profile.html" class="pull-left">
-                                <img alt="image" class="img-circle" src="img/a4.jpg">
-                            </a>
-                            <div class="media-body ">
-                                <small class="pull-right text-navy">36m ago</small><br/>
+                            <div class="media-body " style="margin-top: -20px;">
+                                <small class="pull-right">5m ago</small>
+                                <br/>
                                 <small class="pull-right"><i class="fa fa-spinner text-info"></i>&nbsp;Pending</small>
-                                <strong>p-334556</strong><br/><strong>Wasiq Safari</strong><br>
-                                <small class="text-muted">Today 1:21pm - 11.06.2018</small>
+                                <a href="#"><strong>P-665522</strong> <br/><strong>Ahamd Farid </strong><br></a>
+                                <small class="text-muted">Today 5:60 pm - 12.06.2018</small>
                             </div>
                         </div>
                         <div class="feed-element">
-                            <a href="profile.html" class="pull-left">
-                                <img alt="image" class="img-circle" src="img/a5.jpg">
-                            </a>
-                            <div class="media-body ">
-                                <small class="pull-right">2m ago</small><br/>
+                            <div class="media-body " style="margin-top: -20px;">
+                                <small class="pull-right">5m ago</small>
+                                <br/>
                                 <small class="pull-right"><i class="fa fa-spinner text-info"></i>&nbsp;Pending</small>
-                                <strong>P-445686</strong><br/><strong>Mahdi Safari</strong><br>
-                                <small class="text-muted">Today 5:20 pm - 12.06.2018</small>
-                            </div>
-                        </div>
-                        <div class="feed-element">
-                            <a href="profile.html" class="pull-left">
-                                <img alt="image" class="img-circle" src="img/profile.jpg">
-                            </a>
-                            <div class="media-body ">
-                                <small class="pull-right">23m ago</small><br/>
-                                <small class="pull-right"><i class="fa fa-spinner text-info"></i>&nbsp;Pending</small>
-                                <strong>P-335632</strong> <br/> <strong>Qullam Rasoli</strong>. <br>
-                                <small class="text-muted">Today at 2:30 am - 11.06.2018</small>
-                            </div>
-                        </div>
-                        <div class="feed-element">
-                            <a href="profile.html" class="pull-left">
-                                <img alt="image" class="img-circle" src="img/a7.jpg">
-                            </a>
-                            <div class="media-body ">
-                                <small class="pull-right">46m ago</small><br/>
-                                <small class="pull-right"><i class="fa fa-spinner text-info"></i>&nbsp;Pending</small>
-                                <strong>P-552345</strong><br/><strong>Nadim Ghallami</strong>. <br>
-                                <small class="text-muted">Today at 7:58 pm - 10.06.2018</small>
+                                <a href="#"><strong>P-665522</strong> <br/><strong>Ahamd Farid </strong><br></a>
+                                <small class="text-muted">Today 5:60 pm - 12.06.2018</small>
                             </div>
                         </div>
                     </div>
@@ -434,21 +355,33 @@
         </div>
     </div>
 
-    <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog"  aria-hidden="true">
+
+    {{-- modal window --}}
+    <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content animated fadeIn">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <i class="fa fa-edit modal-icon text-primary"></i>
                     <h4 class="modal-title">Edit Xray details</h4>
                     <small>Edit content of X-Ray operation</small>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group"><label>Tooth number</label> <input type="text" placeholder="Tooth number" value="25 UP" class="form-control"></div>
-                    <div class="form-group"><label>Date & Time</label> <input type="date" placeholder="Date & Time"  class="form-control"></div>
-                    <div class="form-group"><label>Doctor Treatment</label> <input type="text" placeholder="Doctor Treatment" value="Dr.Tamim" class="form-control"></div>
-                    <div class="form-group"><label>Estimate Fee</label> <input type="number" placeholder="Estimate Fee" value="300" class="form-control"></div>
-                    <div class="form-group"><label>X-Ray ID image</label> <input type="text" placeholder="X-Ray ID image" value="X-256535" class="form-control"></div>
+                    <div class="form-group"><label>Tooth number</label> <input type="text" placeholder="Tooth number"
+                                                                               value="25 UP" class="form-control"></div>
+                    <div class="form-group"><label>Date & Time</label> <input type="date" placeholder="Date & Time"
+                                                                              class="form-control"></div>
+                    <div class="form-group"><label>Doctor Treatment</label> <input type="text"
+                                                                                   placeholder="Doctor Treatment"
+                                                                                   value="Dr.Tamim"
+                                                                                   class="form-control"></div>
+                    <div class="form-group"><label>Estimate Fee</label> <input type="number" placeholder="Estimate Fee"
+                                                                               value="300" class="form-control"></div>
+                    <div class="form-group"><label>X-Ray ID image</label> <input type="text"
+                                                                                 placeholder="X-Ray ID image"
+                                                                                 value="X-256535" class="form-control">
+                    </div>
                     <div><h4>Note : You cann't change image X-Ray or you have to delete the record!.</h4></div>
                 </div>
                 <div class="modal-footer">
@@ -460,11 +393,12 @@
         </div>
     </div>
 
-    <div class="modal inmodal" id="myModal4image" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal inmodal" id="myModal4image" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content animated fadeIn">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <i class="fa fa-image modal-icon text-primary"></i>
                     <h4 class="modal-title">Image X-Ray of Tooth</h4>
                     <small>X-Ray Tooth No: 25 UP</small>
@@ -484,7 +418,7 @@
 @section('script')
     <script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
     <script>
-        document.getElementById('get_file').onclick = function() {
+        document.getElementById('get_file').onclick = function () {
             document.getElementById('my_file').click();
         };
 
@@ -492,17 +426,17 @@
     <script>
         $(document).ready(function () {
 
-            $('.demo1').click(function(){
+            $('.demo1').click(function () {
                 swal({
                     title: "Welcome in Alerts",
                     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
                 });
             });
 
-            $('.demo2').click(function(){
+            $('.xray').click(function () {
                 swal({
-                    title: "Successfully Send!",
-                    text: "X-Ray Document Successfully send to doctor!",
+                    title: "Successfully X-Ray tooth!",
+                    text: "X-Ray Details Successfully send to doctor!",
                     type: "success"
                 });
             });
@@ -531,7 +465,8 @@
                         confirmButtonText: "Yes, delete it!",
                         cancelButtonText: "No, cancel plx!",
                         closeOnConfirm: false,
-                        closeOnCancel: false },
+                        closeOnCancel: false
+                    },
                     function (isConfirm) {
                         if (isConfirm) {
                             swal("Deleted!", "Your imaginary file has been deleted.", "success");
