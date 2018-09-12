@@ -98,6 +98,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     {{-- End Graph--}}
                     <div class="col-lg-4">
                         <div class="ibox float-e-margins">
