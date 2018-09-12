@@ -153,7 +153,7 @@
                     <div class="col-md-5">
                         <table class="table table-condensed table-bordered text-center">
                             <tr>
-                                <td><strong>Tooth Image :</strong></td>
+                                <td><strong style="margin-top:30px;">Tooth Image :</strong></td>
                                 <td><img src="img/teeths/4.png"/></td>
                             </tr>
                             <tr>

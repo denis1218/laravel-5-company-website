@@ -45,16 +45,7 @@
                             <li><a href="/appo"><i class="fa fa-flash"></i>List of Patient</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span><span
-                                    class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="account"><i class="fa fa-user-plus"></i>&nbsp;Accounts</a></li>
-                            <li><a href="employee"><i class="fa fa-user-plus"></i>&nbsp;Emp-Registeration</a></li>
 
-                            <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
-                        </ul>
-                    </li>
                     <li>
                         <a href="#"><i class="fa fa-file"></i> <span class="nav-label">Reports</span> <span
                                     class="pull-right label label-primary">SPECIAL</span></a>
@@ -72,12 +63,22 @@
                             <li><a href="/income"><i class="fa fa-arrow-circle-o-down"></i>Income</a></li>
                             <li><a href="/finance_report">Financial report<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level collapse">
-                                    <li><a href="/finance_report_daily"><i class="fa fa-tag"></i>&nbsp;&nbsp;Daily</a>
+                                    <li><a href="/finance_report_income"><i class="fa fa-tag"></i>&nbsp;&nbsp;Income</a>
                                     </li>
-                                    <li><a href="/finance_report_date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;&nbsp;Date</a>
+                                    <li><a href="/finance_report_expenses"><i class="fa fa-tag"></i>&nbsp;&nbsp;Expenses</a>
+                                    </li>
+                                    <li><a href="/finance_report_profit"><i class="fa fa-tag"></i>&nbsp;&nbsp;Profit</a>
                                     </li>
                                 </ul>
                             </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span><span
+                                    class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="account"><i class="fa fa-user-plus"></i>&nbsp;Accounts</a></li>
+                            <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
                         </ul>
                     </li>
                 </ul>
