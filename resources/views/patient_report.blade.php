@@ -74,14 +74,12 @@
                 <div class="row" style="padding-left:30px; font-size: 20px;">
                     <div class="row m-b-lg m-t-lg">
                         <div class="col-md-6">
-                            <div class="profile-image">
-                                <img src="img/a4.jpg" class="img-circle circle-border m-b-md" alt="profile">
-                            </div>
+
                             <div class="profile-info">
                                 <div class="">
                                     <div>
                                         <h2 class="no-margins font-b">
-                                            Omid Ahamdi
+                                            Omid Rahmati
                                         </h2>
                                         <h4>ID: P-0780504075</h4>
                                         <small style="font-size: 15px;">

@@ -144,16 +144,14 @@ Route::get('doctor_report', function () {
 
 
 // Financial report daily
-Route::get('finance_report_daily', function () {
-    return view('finance_report.finance_report_daily');
+Route::get('finance_report_income', function () {
+    return view('finance_report.finance_report_income');
 });
 
 // Financial report date
-Route::get('finance_report_date', function () {
-    return view('finance_report.finance_report_date');
+Route::get('finance_report_expenses', function () {
+    return view('finance_report.finance_report_expenses');
 });
-
-
 
 Route::get('date_report_patient', function () {
     return view('date_report_patient');
