@@ -21,12 +21,12 @@
 
     <!-- Nav-buttons -->
     <div class="row wrapper border-bottom white-bg page-heading" style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
-        <h3 style="margin-left:43px;margin-top:10px;">Income Details</h3>
+        <h3 style="margin-left:43px;margin-top:10px;">Other income</h3>
         <div class="col-md-2 ">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px;width:155px; margin-left:25px;" href="/income"><i class="fa fa-money" style="color:#ffc000; font-size: 30px;"></i> <br/> Patient Related</a></h2>
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px;width:155px; margin-left:25px;" href="/income"><i class="fa fa-money" style="color:#ffc000; font-size: 30px;"></i> <br/>From Patient</a></h2>
         </div>
         <div class="col-md-2 ">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px" href="/ext_income"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> Other</a></h2>
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px;margin-left:15px;" href="/ext_income"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>From Others</a></h2>
         </div>
     </div>
     <!-- End of navButtons -->
@@ -36,7 +36,7 @@
                         <div class="col-lg-12">
                             <div class="ibox float-e-margins">
                                 <div class="ibox-title">
-                                    <h5>Other Income</h5>
+                                    <h5>Other income</h5>
                                     <div class="ibox-tools">
                                         <a class="collapse-link">
                                             <i class="fa fa-chevron-up"></i>
@@ -63,36 +63,50 @@
 
                                 <form method="get" class="form-horizontal">
 
+                                    {{-- <div class="hr-line-dashed"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">ID:</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" placeholder="Enter the ID" style="width:50%" required>
+                                        </div>
+                                    </div> --}}
+
+                                    {{-- <div class="hr-line-dashed"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Name:</label>
+                                        <div class="col-sm-10">
+                                             <input type="text" class="form-control" placeholder="Enter the name of payer" style="width:50%" required>
+                                        </div>
+                                    </div> --}}
+
                                     <div class="hr-line-dashed"></div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Amount:</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" placeholder="Amount of money" style="width:50%" required>
+                                             <input type="text" class="form-control" placeholder="Enter the amount of money" style="width:50%" required>
                                         </div>
                                     </div>
-                                    <div class="hr-line-dashed"></div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">From Whom:</label>
-                                        <div class="col-sm-10">
-                                            <select class="form-control" style="width:50%" required>
-                                              <option value="">Select the payer</option>
-                                              <option value="1">Bank</option>
-                                              <option value="1">Sponsor</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="hr-line-dashed"></div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">Phone#:</label>
-                                        <div class="col-sm-10">
-                                            <input type="number" class="form-control" name="phone" placeholder="Dealer phone number" style="width:50%" required>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="hr-line-dashed"></div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Purpose:</label>
                                         <div class="col-sm-10">
-                                            <input type="text" placeholder="Purpose" class="form-control" style="width:50%" required>
+                                            <input type="text" class="form-control" name="phone" placeholder="purpose" style="width:50%" required>
+                                        </div>
+                                    </div>
+                                    {{-- <div class="hr-line-dashed"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Phone#:</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" placeholder="Phone# of payer" class="form-control" style="width:50%" required>
+                                        </div>
+                                    </div> --}}
+
+                                    <div class="hr-line-dashed"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Description:</label>
+                                        <div class="col-sm-10">
+                                             <textarea class="form-control" placeholder="Enter more information" style="width:50%" required></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -115,7 +129,7 @@
                         <div class="col-lg-12">
                             <div class="ibox float-e-margins">
                                 <div class="ibox-title">
-                                    <h5>Income Table</h5>
+                                    <h5>Ohter Income Table</h5>
                                     <div class="ibox-tools">
                                         <a class="collapse-link">
                                             <i class="fa fa-chevron-up"></i>
@@ -142,41 +156,36 @@
 
                 <div class="table-responsive">
                     <!-- Expenditure Table -->
-                        <div class="btn-group">
+                        {{-- <div class="btn-group">
                             <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Show reports <span class="caret"></span></button>
                             <ul class="dropdown-menu">
                                 <li><a href="/finance_report_daily" class="font-bold">Daily</a></li>
                                 <li><a href="/finance_report_date" class="font-bold">Weekly & monthly</a></li>
                             </ul>
-                        </div>
+                        </div> --}}
 
                     <table class="table table-striped table-bordered table-hover " id="editable">
                         <thead>
                             <tr>
-                                <th>Given Amount</th>
-                                <th>From Whom</th>
-                                <th>Phone#</th>
+                                <th>ID</th>
+                                {{-- <th>Name</th> --}}
+                                <th>Amount</th>
                                 <th>Purpose</th>
+                                {{-- <th>Phone#</th>
+                                <th>Date</th> --}}
+                                <th>Description</th>
                                 <th>Edit</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                           <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
+                                <td>001</td>
+                                {{-- <td>Ahmad</td> --}}
+                                <td>132000</td>
+                                <td>Hiering New doctores</td>
+                                {{-- <td>0799256221</td>
+                                <td>05-sep-18</td> --}}
+                                <td>Money was taken to hier new doctors</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
@@ -184,10 +193,13 @@
                             </tr>
 
                             <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
+                                <td>002</td>
+                                {{-- <td>Ali</td> --}}
+                                <td>32000</td>
+                                <td>Making new block</td>
+                                {{-- <td>0799256221</td>
+                                <td>03-sep-18</td> --}}
+                                <td>Money was taken to build a new block</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
@@ -195,163 +207,13 @@
                             </tr>
 
                              <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                           <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                              <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                           <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                             <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                           <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-                             <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                           <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                             <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                           <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="gradeX">
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>0799256221</td>
-                                <td>lunch</td>
+                                <td>003</td>
+                                {{-- <td>Ehsan</td> --}}
+                                <td>2000</td>
+                                <td>Purchasing an ambulance</td>
+                                {{-- <td>0799256221</td>
+                                <td>06-sep-18</td> --}}
+                                <td>Money was taken to buy an ambulance</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                     <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
@@ -376,12 +238,15 @@
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                                 <i class="fa fa-edit modal-icon text-primary"></i>
                                 <h4 class="modal-title">Edit Content</h4>
-                                <small>Edit Income details</small>
                             </div>
                             <div class="modal-body">
-                                <div class="form-group"><label>Amount</label> <input type="number" placeholder="Amount"  value="" class="form-control"></div>
-                                <div class="form-group"><label>From Whom</label> <input type="text" placeholder="The one who pays" value="" class="form-control"></div>
+                                <div class="form-group"><label>ID</label> <input type="number" placeholder="ID"  value="" class="form-control"></div>
+                                {{-- <div class="form-group"><label>Name</label> <input type="text" placeholder="Name of payer" value="" class="form-control"></div> --}}
+                                <div class="form-group"><label>Amount</label> <input type="text" placeholder="Paid amount" value="" class="form-control"></div>
                                 <div class="form-group"><label>Purpose</label> <input type="text" placeholder="purpose" value="" class="form-control"></div>
+                                {{-- <div class="form-group"><label>Phone#</label> <input type="text" placeholder="Phone#" value="" class="form-control"></div> --}}
+                                {{-- <div class="form-group"><label>Date of payment</label> <input type="text" placeholder="Date of payment" value="" class="form-control"></div> --}}
+                                <div class="form-group"><label>Discription</label> <input type="text" placeholder="Discription" value="" class="form-control"></div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>

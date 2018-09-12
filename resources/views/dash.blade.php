@@ -45,6 +45,20 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-lg-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-info pull-right">Logged in</span>
+                        <h5>Current User</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins">Name<img  src="img/people.png" width="60px;"style="float: right;"/></h1>
+                        <div class="stat-percent font-bold text-danger"></div>
+                        <small>Position</small>
+                    </div>
+                </div>
+            </div>
             {{-- End of Card area --}}
 
             {{-- Dash area --}}
@@ -109,11 +123,27 @@
                             </div>
                             <div class="ibox-content">
                                 <form>
-                                        <input type="text" placeholder="To whom" class="form-control" required/><br/>
-                                        <input type="text" placeholder="Amount" class="form-control" required/><br/>
-                                        <input type="text" placeholder="Purpose" class="form-control" required/><br/>
+                                    <div class="row">
+                                      <div class="col">
+                                        <input type="text" class="form-control" style="width:100%" placeholder="Money receiver"><br>
+                                        <input type="text" class="form-control" style="width:100%" placeholder="Paid Amount"><br>
+                                        
+                                        <select class="form-control" style="width:100%">
+                                            <option value="1" disabled selected>Select The Category</option>
+                                            <option value="1">Rent</option>
+                                            <option value="2">Office Supply</option>
+                                            <option value="3">Personal</option>
+                                            <option value="4">Taxes</option>
+                                            <option value="5">Employee Salary</option>
+                                            <option value="6">Clinical Instrument</option>
+                                            <option value="7">Miscellaneous</option>                          
+                                        </select><br>
+
+                                        <textarea name="msg" id="" placeholder="Enter your message"  class="form-control"></textarea><br>
                                         <button type="submit"  value="Pay" class="btn btn-primary">Save &nbsp;<i class="fa fa-save"></i></button>
                                         <button  value="Pay" class="btn btn-warning" data-toggle="modal" data-target="#remaining">Remainder &nbsp;<i class="fa fa-arrow-circle-down"></i></button>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
