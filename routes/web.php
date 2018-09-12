@@ -43,6 +43,9 @@ Route::get('/doctor_operations', function () {
 Route::get('/xray', function () {
     return view('Xrey_dep');
 });
+Route::get('treatment_operation',function(){
+   return view('treatment_operation');
+});
 
 // medicine page in treatement -> medicine route
 Route::get('/medicine', function () {
@@ -141,17 +144,23 @@ Route::get('doctor_report', function () {
 
 
 // Financial report daily
-Route::get('finance_report_daily', function () {
-    return view('finance_report.finance_report_daily');
+Route::get('finance_report_income', function () {
+    return view('finance_report.finance_report_income');
 });
 
 // Financial report date
-Route::get('finance_report_date', function () {
-    return view('finance_report.finance_report_date');
+Route::get('finance_report_expenses', function () {
+    return view('finance_report.finance_report_expenses');
 });
-
-
 
 Route::get('date_report_patient', function () {
     return view('date_report_patient');
 });
+
+Route::get('patient_history_print',function (){
+   return view('patient_history_print');
+});
+Route::get('next_appointment_list',function (){
+   return view('next_appointment_list');
+});
+

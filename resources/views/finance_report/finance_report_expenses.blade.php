@@ -30,35 +30,178 @@
 @endsection
 
 @section('content')
-    <div class="row page-wrapper border-bottom white-bg " style="height: 285px; margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
-        <div class="row">
-            <div class="col-md-5" style="margin-top:15px; margin-left:20px;">
-                <h3>Finance report weekly & monthly</h3>
-            </div>
+
+    <div class="row text-center">
+        <div class="col-md-12">
+            <h1>Financial Report Expenses &nbsp;&nbsp;<i class="fa fa-shopping-cart"></i></h1>
         </div>
-        <br/>
-        <div class="row">
-            <div class="form-group" style="margin-left:35px;">
-                    <label class="font-noraml">Select Range</label>
-                <div class="input-daterange input-group" id="" >
-                    <input type="date" class="input-sm form-control" name="start"/>
-                    <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
-                    <input type="date" class="input-sm form-control" name="end" />
+    </div>
+
+    <br/>
+    <br/>
+
+    {{-- financial report all report expenses --}}
+    <div class="row page-wrapper border-bottom white-bg" style=" margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
+                    <h3> Report Expense single day </h3>
                 </div>
             </div>
-        </div>
-        <div class="col-md-2">
-            <h2><div class="dropdown hvr-float-shadow" style="width: 100%;">
-                    <button class="btn btn-primary dropdown-toggle" type="submit" data-toggle="dropdown" style="width: 100%; margin-left: 6px;" href=""><i class="fa fa-calendar" style="font-size: 30px; color:#ff9f00 ;"></i>
-                        <br/>Set by date range</button>
-                    <ul class="dropdown-menu" style="margin-left:10px; font-size: 17px;">
-                        <li><a href="#income" data-toggle="collapse">Income &nbsp;<i class="fa fa-money"></i></a></li>
-                        <li><a href="#">Expenditure &nbsp;<i class="fa fa-exchange"></i></a></li>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group" style="margin-left:35px;">
+                        <label class="font-noraml">Select single day</label>
+                        <div class="input-daterange input-group" id="" >
+                            <span class="input-group-addon">&nbsp;  <i class="fa fa-calendar"></i> &nbsp;<i class="fa fa-arrow-right"></i></span>
+                            <input type="date" class="input-sm form-control" name="end" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-sm btn-primary dropdown-toggle" type="submit" data-toggle="dropdown" style="margin-top:23px;" href=""><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
+                        &nbsp;Report &nbsp;&nbsp;<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">PDF<i class="fa fa-lg fa-file-pdf-o pull-right text-danger" style="margin-top:6px;"></i></a></li>
+                        <li><a href="#">Excel<i class="fa fa-lg fa-file-excel-o pull-right text-navy" style="margin-top:6px;"></i></a></li>
                     </ul>
-                </div></h2>
-        </div>
+                </div>
+            </div>
 
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
+                    <h3> Report Expense range day</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group" style="margin-left:35px;">
+                        <label class="font-noraml">Select Range</label>
+                        <div class="input-daterange input-group" id="" >
+                            <input type="date" class="input-sm form-control" name="start"/>
+                            <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
+                            <input type="date" class="input-sm form-control" name="end" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-sm btn-primary" type="submit" data-toggle="dropdown" style="margin-top:23px; margin-left:10px;" href=""><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
+                        &nbsp;Report&nbsp;&nbsp;<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">PDF<i class="fa fa-lg fa-file-pdf-o pull-right text-danger" style="margin-top:6px;"></i></a></li>
+                        <li><a href="#">Excel<i class="fa fa-lg fa-file-excel-o pull-right text-navy" style="margin-top:6px;"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
     </div>
+    {{-- end all report --}}
+
+
+    <br/>
+    <br/>
+
+
+    {{-- finance report select by type expenses --}}
+    <div class="row page-wrapper border-bottom white-bg " style=" margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
+                    <h3> Report Expense single day</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group" style="margin-left:35px;">
+                        <label class="font-noraml">Select single day</label>
+                        <div class="input-daterange input-group" id="" >
+                            <span class="input-group-addon">&nbsp;  <i class="fa fa-calendar"></i> &nbsp;<i class="fa fa-arrow-right"></i></span>
+                            <input type="date" class="input-sm form-control" name="end" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-sm btn-primary" type="submit" data-toggle="dropdown" style="margin-top:23px;" href=""><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
+                        &nbsp;Report&nbsp;&nbsp;<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">PDF<i class="fa fa-lg fa-file-pdf-o pull-right text-danger" style="margin-top:6px;"></i></a></li>
+                        <li><a href="#">Excel<i class="fa fa-lg fa-file-excel-o pull-right text-navy" style="margin-top:6px;"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group" style="margin-left:35px;">
+                        <label class="font-noraml">Select Category Expense</label>
+                        <div class="input-daterange input-group" id="" >
+                            <span class="input-group-addon">&nbsp;  <i class="fa fa-bars"></i> &nbsp;<i class="fa fa-arrow-right"></i></span>
+                            <select type="text" class="input-sm form-control" name="end">
+                                <option class="item">Misc</option>
+                                <option class="item">Rent</option>
+                                <option class="item">Personal</option>
+                                <option class="item">Emp Salary</option>
+                                <option class="item">Office Supply</option>
+                                <option class="item">Other Expenses</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
+                    <h3> Report Expense range day</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group" style="margin-left:35px;">
+                        <label class="font-noraml">Select Range</label>
+                        <div class="input-daterange input-group" id="" >
+                            <input type="date" class="input-sm form-control" name="start"/>
+                            <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
+                            <input type="date" class="input-sm form-control" name="end" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-sm btn-primary" type="submit" data-toggle="dropdown" style="margin-top:23px; margin-left:10px;" href=""><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
+                        &nbsp;Report&nbsp;&nbsp;<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">PDF<i class="fa fa-lg fa-file-pdf-o pull-right text-danger" style="margin-top:6px;"></i></a></li>
+                        <li><a href="#">Excel<i class="fa fa-lg fa-file-excel-o pull-right text-navy" style="margin-top:6px;"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group" style="margin-left:35px;">
+                        <label class="font-noraml">Select Category Expense</label>
+                        <div class="input-daterange input-group" id="" >
+                            <span class="input-group-addon">&nbsp;  <i class="fa fa-bars"></i> &nbsp;<i class="fa fa-arrow-right"></i></span>
+                            <select type="text" class="input-sm form-control" name="end">
+                                <option class="item">Misc</option>
+                                <option class="item">Rent</option>
+                                <option class="item">Personal</option>
+                                <option class="item">Emp Salary</option>
+                                <option class="item">Office Supply</option>
+                                <option class="item">Other Expenses</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {{-- select report by type expenses --}}
+
+
 
     {{-- start tag tabs patient and otherIncome --}}
     <div class="col-lg-12 collapse" id="income" >
@@ -307,6 +450,8 @@
         </div>
     </div>
     {{-- end of tag tabs patient and other Income --}}
+
+
 
     {{-- start of expenditure --}}
     <div class="col-lg-12 collapse" id="expenditure">
