@@ -16,505 +16,237 @@
 
 @section('content')
 
-                <div class="wrapper wrapper-content animated fadeInRight">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="ibox float-e-margins">
-                                <div class="ibox-title">
-                                    <h5>Expenditure Form</h5>
-                                    <div class="ibox-tools">
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <i class="fa fa-wrench"></i>
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-user">
-                                            <li>
-                                                <a href="#">Config option 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Config option 2</a>
-                                            </li>
-                                        </ul>
-                                        <a class="close-link">
-                                            <i class="fa fa-times"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="ibox-content">
-
-                                <!-- form -->
-
-                            <form method="get" class="form-horizontal">
-
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">Amount:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" placeholder="Amount of money" style="width:50%" required>
-                                    </div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">To Whom:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="password" placeholder="Money receiver" style="width:50%" required>
-                                    </div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">Purpose:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" placeholder="Purpose" class="form-control" style="width:50%" required>
-                                    </div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">Item:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" placeholder="Enter the item" class="form-control" style="width:50%" required>
-                                    </div>
-                                </div>
-
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">Price:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" placeholder="Item cost" class="form-control" style="width:50%" required>
-                                    </div>
-                                </div>
-
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">Calculation Result:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" placeholder="" class="form-control" style="width:50%" readonly>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <button type="submit" class="btn btn-primary btn-md" style="margin-left:180px;">Save &nbsp;<i class="fa fa-save"></i></button>
-                                        <input type="reset" class="btn btn-white btn-md" value="Reset" name="" id="">
-                                    </div>
-                                </div>
-                            </form>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="ibox float-e-margins">
-                                <div class="ibox-title">
-                                    <h5>Expenditure Table</h5>
-                                    <div class="ibox-tools">
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <i class="fa fa-wrench"></i>
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-user">
-                                            <li>
-                                                <a href="#">Config option 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Config option 2</a>
-                                            </li>
-                                        </ul>
-                                        <a class="close-link">
-                                            <i class="fa fa-times"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="ibox-content">
-                                    <!-- Table -->
-                                    <div class="table-responsive">
-                    <!-- Expenditure Table -->
-
-                    <h5>Quick show reports:</h5>
-                    <div class="btn-group">
-                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Show reports <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a href="/finance_report_daily" class="font-bold">Daily</a></li>
-                            <li><a href="/finance_report_date" class="font-bold">Weekly & monthly</a></li>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Expenses</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Config option 2</a>
+                                </li>
                         </ul>
-                    </div>
-                    <hr/>
-                    <table class="table table-striped table-bordered table-hover " id="editable">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Given Amount</th>
-                                <th>To Whom</th>
-                                <th>Purpose</th>
-                                <th>Item</th>
-                                <th>Price</th>
-                                <th>Description</th>
-                                <th>Remaining</th>
-                                <th>Loan</th>
-                                <th>Edit</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="gradeX">
-                                <td>1</td>
-                                <td>900</td>
-                                <td>Ahmad</td>
-                                <td>lunch</td>
-                                <td>Tooth Material</td>
-                                <td>750</td>
-                              <td>remaining is:150Af</td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
-                                </td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="gradeX">
-                                <td>2</td>
-                                <td>1000</td>
-                                <td>Ahmad</td>
-                                <td>material purchase</td>
-                                <td>Tooth Material</td>
-                                <td>740</td>
-                                <td>remaining is:260Af</td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
-                                </td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="gradeX">
-                                <td>3</td>
-                                <td>1000</td>
-                                <td>Ahmad</td>
-                                <td>material purchase</td>
-                                <td>Tooth Material</td>
-                                <td>740</td>
-                                <td>remaining is:260Af</td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
-                                </td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="gradeX">
-                                <td>4</td>
-                                <td>1000</td>
-                                <td>Ahmad</td>
-                                <td>material purchase</td>
-                                <td>Tooth Material</td>
-                                <td>740</td>
-                                <td>remaining is:260Af</td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
-                                </td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-                            <tr class="gradeX">
-                                <td>5</td>
-                                <td>1000</td>
-                                <td>Ahmad</td>
-                                <td>material purchase</td>
-                                <td>Tooth Material</td>
-                                <td>740</td>
-                                <td>remaining is:260Af</td>
-                                  <td>
-                                    <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
-                                  </td>
-                                  <td>
-                                    <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                  </td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="gradeX">
-                                <td>6</td>
-                                <td>1000</td>
-                                <td>Ahmad</td>
-                                <td>material purchase</td>
-                                <td>Tooth Material</td>
-                                <td>740</td>
-                                <td>remaining is:260Af</td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
-                                </td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="gradeX">
-                                <td>7</td>
-                                <td>1000</td>
-                                <td>Ali</td>
-                                <td>meat</td>
-                                <td>sadgah</td>
-                                <td>500</td>
-                                <td>remaining is:500Af</td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
-                                </td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="gradeX">
-                                <td>8</td>
-                                <td>1000</td>
-                                <td>Hamid</td>
-                                <td>material purchase</td>
-                                <td>Tooth Material</td>
-                                <td>740</td>
-                                <td>remaining is:260Af</td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
-                                </td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="gradeX">
-                                <td>9</td>
-                                <td>1000</td>
-                                <td>Hadi</td>
-                                <td>material purchase</td>
-                                <td>Tooth Material</td>
-                                <td>740</td>
-                                <td>remaining is:260Af</td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
-                                </td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-                            <tr class="gradeX">
-                                <td>10</td>
-                                <td>1000</td>
-                                <td>Ahsan</td>
-                                <td>material purchase</td>
-                                <td>Tooth Material</td>
-                                <td>740</td>
-                                <td>remaining is:260Af</td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
-                                </td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="gradeX">
-                                <td>11</td>
-                                <td>1000</td>
-                                <td>Abdul</td>
-                                <td>material purchase</td>
-                                <td>Tooth Material</td>
-                                <td>740</td>
-                                <td>remaining is:260Af</td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
-                                </td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-                            <tr class="gradeX">
-                                <td>12</td>
-                                <td>1000</td>
-                                <td>Ahmad</td>
-                                <td>material purchase</td>
-                                <td>Tooth Material</td>
-                                <td>740</td>
-                                <td>remaining is:260Af</td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
-                                </td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="gradeX">
-                                <td>13</td>
-                                <td>1000</td>
-                                <td>Ahmad</td>
-                                <td>material purchase</td>
-                                <td>Tooth Material</td>
-                                <td>740</td>
-                                <td>remaining is:260Af</td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
-                                </td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="gradeX">
-                                <td>14</td>
-                                <td>1000</td>
-                                <td>Ahmad</td>
-                                <td>material purchase</td>
-                                <td>Tooth Material</td>
-                                <td>740</td>
-                                <td>remaining is:260Af</td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
-                                </td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-                            <tr class="gradeX">
-                                <td>15</td>
-                                <td>1000</td>
-                                <td>Ahmad</td>
-                                <td>material purchase</td>
-                                <td>Tooth Material</td>
-                                <td>740</td>
-                                <td>remaining is:260Af</td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
-                                </td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-
-                            <tr class="gradeX">
-                                <td>16</td>
-                                <td>1000</td>
-                                <td>Ahmad</td>
-                                <td>material purchase</td>
-                                <td>Tooth Material</td>
-                                <td>740</td>
-                                <td>remaining is:260Af</td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add Back</button>
-                                </td>
-                                <td>
-                                  <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="">&nbsp;Delete</button>
-                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <!-- End of the table -->
-                </div>
-
-                                </div>
-                            </div>
-                        </div>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
                     </div>
                 </div>
+                <div class="ibox-content">
 
-                    <!-- edit model -->
-                <div class="modal inmodal" id="eprice" tabindex="-1" role="dialog"  aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content animated fadeIn">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                {{--<i class="fa fa-edit modal-icon text-primary"></i>--}}
-                                <h4 class="modal-title">Edit Content</h4>
-                                <small>Edit expenditure details</small>
-                            </div>
-                            <div class="modal-body">
-                                {{--<div class="form-group"><label>ID</label> <input type="text" placeholder="Id" value="" class="form-control"></div>--}}
-                                <div class="form-group"><label>Amount</label> <input type="number" placeholder="Amount"  value="" class="form-control"></div>
-                                <div class="form-group"><label>To Whom</label> <input type="text" placeholder="Receiver" value="" class="form-control"></div>
-                                <div class="form-group"><label>Purpose</label> <input type="text" placeholder="purpose" value="" class="form-control"></div>
-                                <div class="form-group"><label>Item</label> <input type="text" placeholder="Purchased item" value="" class="form-control"></div>
-                                <div class="form-group"><label>Price</label> <input type="text" placeholder="Price" value="" class="form-control"></div>
-                                <div class="form-group"><label>Calculated Result</label> <input type="text" placeholder="" value="" class="form-control" readonly></div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+        <!-- form -->
 
-                            </div>
-                        </div>
+            <form method="get" class="form-horizontal">
+
+        {{-- <div class="form-group">
+            <label class="col-sm-2 control-label">Exp-ID</label>
+            <div class="col-md-4"><input type="text" class="form-control" placeholder="Exp-id"></div>
+        </div> --}}
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">To Whom</label>
+            <div class="col-md-4"><input type="text" class="form-control" placeholder="Money receiver"></div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Paid_Amount</label>
+            <div class="col-md-4"><input type="text" class="form-control" placeholder="Paid Amount"></div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Category</label>
+            <div class="col-md-4">
+                    <select class="select2_demo_1 form-control">
+                        <option value="1">Select The Category</option>
+                        <option value="1">Rent</option>
+                        <option value="2">Office Supply</option>
+                        <option value="3">Personal</option>
+                        <option value="4">Taxes</option>
+                        <option value="5">Employee Salary</option>
+                        <option value="6">Clinical Instrument</option>
+                        <option value="7">Miscellaneous</option>                          
+                    </select>
+                </div>
+        </div>
+
+
+        {{-- <div class="form-group">
+            <label class="col-sm-2 control-label">Date Of Payment</label>
+            <div class="col-md-4"><input type="date" class="form-control" id="grade" placeholder="Date of payment"></div>
+        </div> --}}
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Description</label>
+            <div class="col-md-4"><textarea class="form-control" id="grade" placeholder="Enter more information"></textarea></div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-2">
+                <button class="btn btn-white" type="submit">Cancel</button>
+                <button class="btn btn-primary" type="submit">Save</button>
+            </div>
+        </div>
+    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Expense Table</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
                     </div>
                 </div>
-                <!-- end of model -->
+                <div class="ibox-content">
+                    <!-- Table -->
+                    <div class="table-responsive">
+    <!-- Expenditure Table -->
+
+    <table class="table table-striped table-bordered table-hover " id="editable">
+        <thead>
+            <tr>
+                <th>Exp ID</th>
+                <th>To Whom</th>
+                <th>Paid Amount</th>                
+                <th>Category</th>
+                <th>Date Of Payment</th>
+                <th>Description</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="gradeX">
+                <td>1</td>
+                <td>Ahmad</td>
+                <td>900</td>                
+                <td>Clinical Instrument</td>
+                <td>10-sep-18</td>
+                <td>Artificial teeth purchased</td>
+                <td>
+                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
+                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
+                </td>
+            </tr>
+
+                <tr class="gradeX">
+                <td>2</td>
+                <td>Ali</td>
+                <td>1000</td>                
+                <td>Miscellaneous</td>
+                <td>03-sep-18</td>
+                <td>Electrical switch</td>
+                <td>
+                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
+                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
+                </td>
+            </tr>
+
+                <tr class="gradeX">
+                <td>3</td>
+                <td>Mujtaba</td>
+                <td>9200</td>                
+                <td>Personal</td>
+                <td>06-sep-18</td>
+                <td>Airline tecket booking</td>
+                <td>
+                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
+                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
+                </td>
+            </tr>
+
+                <tr class="gradeX">
+                <td>4</td>
+                <td>Ahmad</td>
+                <td>100</td>                
+                <td>Miscellaneous</td>
+                <td>06-sep-18</td>
+                <td>Chocolate for doctors</td>
+                <td>
+                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
+                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <!-- End of the table -->
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- edit model -->
+<div class="modal inmodal" id="eprice" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated fadeIn">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                {{--<i class="fa fa-edit modal-icon text-primary"></i>--}}
+                <h4 class="modal-title">Edit Content</h4>
+            </div>
+            <div class="modal-body">
+                {{--<div class="form-group"><label>ID</label> <input type="text" placeholder="Id" value="" class="form-control"></div>--}}
+                <div class="form-group"><label>Exp ID</label> <input type="number" placeholder="Exp Id"  value="" class="form-control"></div>
+                <div class="form-group"><label>To Whom</label> <input type="text" placeholder="Receiver of money" value="" class="form-control"></div>
+                <div class="form-group"><label>Paid_Amount</label> <input type="text" placeholder="Paid Amount" value="" class="form-control"></div>
+                <div class="form-group"><label>Category</label> 
+                    <select class="select2_demo_1 form-control">
+                        <option value="1">select a Category</option>
+                        <option value="1">Rent</option>
+                        <option value="2">Office Supply</option>
+                        <option value="3">Personal</option>
+                        <option value="4">Taxes</option>
+                        <option value="5">Employee Salary</option>
+                        <option value="6">Clinical Instrument</option>
+                        <option value="7">Miscellaneous</option>                          
+                    </select>
+                </div>
+                {{-- <div class="form-group"><label>Date Of Payment</label> <input type="text" placeholder="Date of payment" value="" class="form-control"></div> --}}
+                <div class="form-group"><label>Description</label> <textarea placeholder="Enter more Information" value="" class="form-control" readonly></textarea></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of model -->
 
 
 
