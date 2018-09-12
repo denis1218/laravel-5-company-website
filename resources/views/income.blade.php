@@ -14,7 +14,7 @@
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px;width:155px; margin-left:25px;" href="/income"><i class="fa fa-money" style="color:#ffc000; font-size: 30px;"></i> <br/>From Patient</a></h2>
         </div>
         <div class="col-md-2 ">
-                <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px" href="/ext_income"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> From Other</a></h2>
+                <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;" href="/ext_income"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> From Other</a></h2>
         </div>
         </div>
         <!-- End of navButtons -->
