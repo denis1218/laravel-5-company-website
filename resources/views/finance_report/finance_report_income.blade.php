@@ -58,8 +58,12 @@
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <button class="btn btn-sm btn-primary" type="submit" data-toggle="dropdown" style="margin-top:23px;" href=""><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
-                        Report</button>
+                    <button class="btn btn-sm btn-primary dropdown-toggle" type="submit" data-toggle="dropdown" style="margin-top:23px;" href=""><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
+                        &nbsp;Report &nbsp;&nbsp;<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">PDF<i class="fa fa-lg fa-file-pdf-o pull-right text-danger" style="margin-top:6px;"></i></a></li>
+                        <li><a href="#">Excel<i class="fa fa-lg fa-file-excel-o pull-right text-navy" style="margin-top:6px;"></i></a></li>
+                    </ul>
                 </div>
             </div>
 
@@ -83,7 +87,11 @@
                 </div>
                 <div class="col-md-2">
                     <button class="btn btn-sm btn-primary" type="submit" data-toggle="dropdown" style="margin-top:23px; margin-left:10px;" href=""><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
-                        Report</button>
+                        &nbsp;Report&nbsp;&nbsp;<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">PDF<i class="fa fa-lg fa-file-pdf-o pull-right text-danger" style="margin-top:6px;"></i></a></li>
+                        <li><a href="#">Excel<i class="fa fa-lg fa-file-excel-o pull-right text-navy" style="margin-top:6px;"></i></a></li>
+                    </ul>
                 </div>
             </div>
 
@@ -115,7 +123,11 @@
                 </div>
                 <div class="col-md-2">
                     <button class="btn btn-sm btn-primary" type="submit" data-toggle="dropdown" style="margin-top:23px;" href=""><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
-                        Report</button>
+                        &nbsp;Report&nbsp;&nbsp;<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">PDF<i class="fa fa-lg fa-file-pdf-o pull-right text-danger" style="margin-top:6px;"></i></a></li>
+                        <li><a href="#">Excel<i class="fa fa-lg fa-file-excel-o pull-right text-navy" style="margin-top:6px;"></i></a></li>
+                    </ul>
                 </div>
             </div>
             <div class="row">
@@ -153,7 +165,11 @@
                 </div>
                 <div class="col-md-2">
                     <button class="btn btn-sm btn-primary" type="submit" data-toggle="dropdown" style="margin-top:23px; margin-left:10px;" href=""><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
-                        Report</button>
+                        &nbsp;Report&nbsp;&nbsp;<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">PDF<i class="fa fa-lg fa-file-pdf-o pull-right text-danger" style="margin-top:6px;"></i></a></li>
+                        <li><a href="#">Excel<i class="fa fa-lg fa-file-excel-o pull-right text-navy" style="margin-top:6px;"></i></a></li>
+                    </ul>
                 </div>
             </div>
             <div class="row">

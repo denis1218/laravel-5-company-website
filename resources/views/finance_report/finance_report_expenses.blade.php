@@ -33,7 +33,7 @@
     <div class="row page-wrapper border-bottom white-bg " style="height: 285px; margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
         <div class="row">
             <div class="col-md-5" style="margin-top:15px; margin-left:20px;">
-                <h3>Finance report weekly & monthly</h3>
+                <h3>Finance report Expenses</h3>
             </div>
         </div>
         <br/>
