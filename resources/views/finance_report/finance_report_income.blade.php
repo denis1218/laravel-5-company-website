@@ -44,7 +44,7 @@
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
-                    <h3> report Income single day </h3>
+                    <h3> Report Income single day </h3>
                 </div>
             </div>
             <div class="row">
@@ -71,7 +71,7 @@
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
-                    <h3> report Income range day</h3>
+                    <h3> Report Income range day</h3>
                 </div>
             </div>
             <div class="row">
@@ -108,7 +108,7 @@
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
-                    <h3> report Income single day</h3>
+                    <h3> Report Income single day</h3>
                 </div>
             </div>
             <div class="row">
@@ -149,7 +149,7 @@
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
-                    <h3> report Income range day</h3>
+                    <h3> Report Income range day</h3>
                 </div>
             </div>
             <div class="row">

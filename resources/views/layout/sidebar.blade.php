@@ -56,7 +56,7 @@
 
 
                     <li>
-                        <a href="#"><i class="fa fa-clipboard"></i> <span class="nav-label">Finance</span><span
+                        <a href="#"><i class="fa fa-calculator"></i> <span class="nav-label">Finance</span><span
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/expenditure"><i class="fa fa-shopping-cart"></i>Expenditure</a></li>
