@@ -48,12 +48,10 @@
 
                     <li>
                         <a href="#"><i class="fa fa-file"></i> <span class="nav-label">Reports</span> <span
-                                    class="pull-right label label-primary">SPECIAL</span></a>
+                                    class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/patient_report"><i class="fa fa-user"></i>Patients</a></li>
                             <li><a href="/doctor_report"><i class="fa fa-user-md"></i>Doctors</a></li>
                         </ul>
-
 
                     <li>
                         <a href="#"><i class="fa fa-calculator"></i> <span class="nav-label">Finance</span><span

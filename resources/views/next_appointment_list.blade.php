@@ -1,5 +1,8 @@
 @extends('master')
 @section('content')
+
+    @include('part.nav_doctor')
+
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -24,30 +27,11 @@
             </div>
 
             <div class="ibox-content">
+
                 <div class="row">
-                <div class="col-md-3">
-                    <h2><a class="btn btn-primary hvr-grow-shadow" style="font-size: 20px; width: 250px;"
-                           href="/doctor_operations"><img src="img/medicine.png" class="pull-left"/>&nbsp;&nbsp;Patient List</a>
-                    </h2>
-                </div>
-                <div class="col-md-3">
-                    <h2><a class="btn btn-primary hvr-grow-shadow" style="font-size: 20px; width: 250px;"
-                           href="/treatment_operation">
-                            <i class="fa fa-stethoscope pull-left" style="color:#ffc000; font-size: 25px;"></i>&nbsp;&nbsp;Treatment
-                            operation</a></h2>
-                </div>
-                <div class="col-md-3">
-                    <h2><a class="btn btn-primary hvr-grow-shadow" style="font-size: 20px; width: 250px;"
-                           href="/next_appointment_list"><i
-                                    class="fa fa-calendar pull-left" style="color:#ffc000; font-size: 25px;"></i>Next
-                            Appointment List</a></h2>
-                </div>
-                </div>
-                <hr class="hr-line-dashed">
-                <div class="row">
-                    <div class="col-lg-10">
+                    <div class="col-lg-12">
                         <div class="ibox float-e-margins">
-                            <table class="table table-hover no-margins">
+                            <table class="table table-hover no-margins table-striped">
                                 <thead>
                                 <tr>
                                     <td>P-ID</td>

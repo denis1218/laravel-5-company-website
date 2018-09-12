@@ -11,7 +11,6 @@
             display: block;
             content: "";
         }
-
         .list-group-item {
             float: left;
         }
@@ -49,15 +48,13 @@
                 <h2>
                     Patient Ragistration Form
                 </h2>
-                <p>
-                    This form have 4 steps to get info of patient
-                </p>
 
                 <form id="form" action="appo" class="wizard-big">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    <h1>Doctor available</h1>
+                    <h1 >Doctor Available</h1>
                     <fieldset>
-                        <h2>select doctor</h2>
+                        <h2>Select Doctor</h2>
+                        <hr class="hr-line-dashed">
                         <div class="row">
                             <div class="col-lg-12">
                                 <table class="table table-hover table-borderd table-striped">
@@ -66,9 +63,9 @@
                                         <th>#</th>
                                         <th>ID</th>
                                         <th>Doctor Name</th>
-                                        <th>Doctor Available</th>
-                                        <th>date & Time</th>
-                                        <th>Max work time</th>
+                                        <th>Availability Time</th>
+                                        <th>Max Patient Accept</th>
+                                        <th>Already Have Patient</th>
                                         <th>Select Doctor</th>
 
                                     </tr>
@@ -78,9 +75,9 @@
                                         <td>1</td>
                                         <td>1</td>
                                         <td>tamim</td>
-                                        <td>8-4</td>
-                                        <td>2018/5/1</td>
+                                        <td>8:00 AM-4:00 PM</td>
                                         <td>15</td>
+                                        <td>5</td>
                                         <td>
                                             <div class="i-checks"><input type="radio"  value="option2" name="a"></div>
                                         </td>
@@ -90,9 +87,9 @@
                                         <td>1</td>
                                         <td>2</td>
                                         <td>Ahmad</td>
-                                        <td>8-12</td>
-                                        <td>2018/6/1</td>
+                                        <td>8:00 AM-12:00 PM</td>
                                         <td>10</td>
+                                        <td>6</td>
                                         <td>
                                             <div class="i-checks"><input type="radio"  value="option2" name="a"></div>
                                         </td>
@@ -102,8 +99,8 @@
                                         <td>1</td>
                                         <td>3</td>
                                         <td>Samim</td>
-                                        <td>8-11</td>
-                                        <td>2018/5/1</td>
+                                        <td>8:00 AM-11:00 AM</td>
+                                        <td>8</td>
                                         <td>5</td>
                                         <td>
                                             <div class="i-checks"><input type="radio"  value="option2" name="a"></div>
@@ -114,9 +111,9 @@
                                         <td>1</td>
                                         <td>4</td>
                                         <td>Naweed</td>
-                                        <td>1-4</td>
-                                        <td>2018/8/1</td>
+                                        <td>1:00 PM-4:00 AM</td>
                                         <td>5</td>
+                                        <td>3</td>
                                         <td>
                                             <div class="i-checks"><input type="radio"  value="option2" name="a"></div>
                                         </td>
@@ -126,8 +123,8 @@
                                         <td>1</td>
                                         <td>5</td>
                                         <td>Qasim</td>
-                                        <td>2-7</td>
-                                        <td>2018/5/1</td>
+                                        <td>2:00 PM-7:00 PM</td>
+                                        <td>10</td>
                                         <td>7</td>
                                         <td>
                                             <div class="i-checks"><input type="radio"  value="option2" name="a"></div>
@@ -150,7 +147,7 @@
                             <div class="col-lg-8">
                                 <div class="form-group">
                                     <label>PID</label>
-                                        <input type="text" class="form-control" placeholder="P-ID" value="P-333">
+                                    <input type="text" class="form-control" placeholder="P-ID" value="P-333">
 
                                 </div>
                                 <div class="form-group">
@@ -159,8 +156,10 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Gender &nbsp;&nbsp;&nbsp;</label>
-                                    <label> <input type="radio" value="option1" name="a"> <i></i> Male </label>&nbsp;&nbsp;
-                                    <label> <input type="radio" value="option1" name="a"> <i></i> Female </label>
+                                    <label>  <div class="i-checks"><input type="radio"  value="option2" name="a"></div></i> Male </label>&nbsp;&nbsp;
+                                    <label>  <div class="i-checks"><input type="radio"  value="option2" name="a"></div></i> Female </label>
+
+
                                 </div>
                                 <div class="form-group">
                                     <label>Age *</label>
@@ -171,12 +170,8 @@
                                     <input id="phone" name="phone" type="phone" class="form-control required">
                                 </div>
                                 <div class="form-group">
-                                    <label>Status *</label>
-                                    <select class="form-control" required>
-                                        <option value="1">First Time</option>
-                                        <option value="2">Second Time</option>
-                                        <option value="3">Third Time</option>
-                                    </select>
+                                    <label>Reg Date & Time</label>
+                                    <input type="datetime-local" class="form-control required">
                                 </div>
                             </div>
                             <div class="col-lg-4">
@@ -189,7 +184,7 @@
                         </div>
 
                     </fieldset>
-                    <h1>Problem Health</h1>
+                    <h1>Healths Problems</h1>
                     <fieldset>
                         <h2>Choose Problem</h2>
                         <div class="row">
@@ -197,12 +192,15 @@
                                 <div class="form-group">
 
                                     <div class="col-sm-10">
+                                        <div class="i-checks"><label> <input type="checkbox" value="option1" name="a"> <i></i> No Problem</label></div>
                                         <div class="i-checks"><label> <input type="checkbox" value="option1" name="a"> <i></i> Blood Pressure</label></div>
                                         <div class="i-checks"><label> <input type="checkbox" value="option2" name="a"> <i></i>Diabetics</label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Hepatitics</label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Bleeding Problems</label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Jaundice</label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Asthma</label></div>
+                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>AIDS</label></div>
+                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Tuberculosis </label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Allergy to Penicillin</label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Allergy to Sulpers</label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Allergy to Anaesthetic</label></div>
@@ -220,7 +218,6 @@
 
 
 @endsection
-
 
 @section('script')
 
@@ -241,7 +238,6 @@
     <script src="dashboard/js/plugins/select2/select2.full.min.js"></script>
     <script>
         $(document).ready(function(){
-
             $("#wizard").steps();
             $("#form").steps({
                 bodyTag: "fieldset",
@@ -252,15 +248,12 @@
                     {
                         return true;
                     }
-
                     // Forbid suppressing "Warning" step if the user is to young
                     if (newIndex === 4 && Number($("#age").val()) < 18)
                     {
                         return false;
                     }
-
                     var form = $(this);
-
                     // Clean up if user went backward before
                     if (currentIndex < newIndex)
                     {
@@ -268,10 +261,8 @@
                         $(".body:eq(" + newIndex + ") label.error", form).remove();
                         $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
                     }
-
                     // Disable validation on fields that are disabled or hidden.
                     form.validate().settings.ignore = ":disabled,:hidden";
-
                     // Start validation; Prevent going forward if false
                     return form.valid();
                 },
@@ -282,7 +273,6 @@
                     {
                         $(this).steps("next");
                     }
-
                     // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
                     if (currentIndex === 2 && priorIndex === 5)
                     {
@@ -292,18 +282,15 @@
                 onFinishing: function (event, currentIndex)
                 {
                     var form = $(this);
-
                     // Disable validation on fields that are disabled.
                     // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
                     form.validate().settings.ignore = ":disabled";
-
                     // Start validation; Prevent form submission if false
                     return form.valid();
                 },
                 onFinished: function (event, currentIndex)
                 {
                     var form = $(this);
-
                     // Submit form input
                     form.submit();
                 }
@@ -319,10 +306,6 @@
                 }
             });
         });
-
-
     </script>
-
-
 
 @endsection

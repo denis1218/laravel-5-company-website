@@ -18,7 +18,6 @@
 
         .list-group-item {
             float: left;
-
         }
 
         .vl {
@@ -44,150 +43,11 @@
 @endsection
 
 @section('content')
-
-    {{-- search area --}}
-    <div class="row wrapper border-bottom white-bg page-heading"
-         style="margin-top:-20px; margin-bottom: 10px; margin-left: 1px;">
-        <div class="col-md-3">
-            <h2><a class="btn btn-primary hvr-grow-shadow" style="font-size: 20px; width: 250px;"
-                   href="/doctor_operations"><img src="img/medicine.png" class="pull-left"/>&nbsp;&nbsp;Patient List</a>
-            </h2>
-        </div>
-        <div class="col-md-3">
-            <h2><a class="btn btn-primary hvr-grow-shadow" style="font-size: 20px; width: 250px;" href="/treatment_operation">
-                    <i class="fa fa-stethoscope pull-left" style="color:#ffc000; font-size: 25px;"></i>&nbsp;&nbsp;Treatment operation</a></h2>
-        </div>
-        <div class="col-md-3">
-        <h2><a class="btn btn-primary hvr-grow-shadow" style="font-size: 20px; width: 250px;" href="/iframe"><i class="fa fa-calendar pull-left" style="color:#ffc000; font-size: 25px;"></i>&nbsp;&nbsp;Next appointment</a></h2>
-        </div>
-        <div class="col-lg-12">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h5>Appointment patient </h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-wrench"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#">Config option 1</a>
-                            </li>
-                            <li><a href="#">Config option 2</a>
-                            </li>
-                        </ul>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="ibox-content">
-                    <br/>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="input-group"><input type="text" placeholder="Search patient name"
-                                                            class="input-sm form-control"> <span class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-primary"> Go!</button> </span></div>
-                        </div>
-                    </div>
-                    <br/>
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <div class="ibox float-e-margins">
-                                <table class="table table-hover no-margins">
-                                    <thead>
-                                    <tr>
-                                        <td>P-ID</td>
-                                        <th>Patient Name</th>
-                                        <th>Doctor Name</th>
-                                        <th>Status</th>
-                                        <th>Date & Time Appointment</th>
-                                        <th>Problem Health</th>
-                                        <th>Operation</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>P-0785544229</td>
-                                        <td>Ahmad</td>
-                                        <td>Dr.Samim</td>
-                                        <td>Second Time</td>
-                                        <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
-                                        <td class="">Blood pressure</td>
-                                        <td><a href="treatment_operation" class="btn btn-primary">Start Operation</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td>P-0780669022</td>
-                                        <td>Naweed</td>
-                                        <td>Dr.Samim</td>
-                                        <td>Second Time</td>
-                                        <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 9:00 AM</td>
-                                        <td class="">Diabetics</td>
-                                        <td><a href="treatment_operation" class="btn btn-primary">Start Operation</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td>P-0790446690</td>
-                                        <td>Qasim</td>
-                                        <td>Dr.Samim</td>
-                                        <td>Second Time</td>
-                                        <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 10:00 AM</td>
-                                        <td class="">Hepatitics</td>
-                                        <td><a href="treatment_operation" class="btn btn-primary">Start Operation</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td>P-0787206644</td>
-                                        <td>Mahmood</td>
-                                        <td>Dr.Samim</td>
-                                        <td>First Time</td>
-                                        <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 11:20 AM</td>
-                                        <td class="">Asthma</td>
-                                        <td><a href="treatment_operation" class="btn btn-primary">Start Operation</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td>P-0702036768</td>
-                                        <td>Ali</td>
-                                        <td>Dr.Samim</td>
-                                        <td>First Time</td>
-                                        <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 1:00 PM</td>
-                                        <td class="">Blood pressure</td>
-                                        <td><a href="treatment_operation" class="btn btn-primary">Start Operation</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td>P-0785454643</td>
-                                        <td>Mahdi</td>
-                                        <td>Dr.Samim</td>
-                                        <td>First Time</td>
-                                        <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 2:20 PM</td>
-                                        <td class="">Diabetics</td>
-                                        <td><a href="treatment_operation" class="btn btn-primary">Start Operation</a> </td>
-                                    </tr>
-                                    <tr>
-                                        <td>P-0777506070</td>
-                                        <td>Ahmad</td>
-                                        <td>Dr.Samim</td>
-                                        <td>First Time</td>
-                                        <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 3:00 PM</td>
-                                        <td class="">Blood pressure</td>
-                                        <td><a href="treatment_operation" class="btn btn-primary">Start Operation</a> </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-<<<<<<< HEAD
-=======
-            </div>
-        </div>
-    </div>
-    {{-- patient info --}}
-
-    {{-- table treatment patient --}}
+    @include('part.nav_doctor')
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Treatment Operation (Mostafa Ahamdi) </h5>
+                <h5>Appointment patient </h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -206,91 +66,114 @@
                     </a>
                 </div>
             </div>
-
             <div class="ibox-content">
+                <br/>
                 <div class="row">
                     <div class="col-md-12">
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Tooth NO</th>
-                            <th>Dental Defect</th>
-                            <th>Treatment</th>
-                            <th>Estimated Fee</th>
-                            <th>Minimum Fee</th>
-                            <th>Fee Paid</th>
-                            <th>X-Ray</th>
-                            <th>Edit</th>
-
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>25</td>
-                            <td>BDR</td>
-                            <td>RCT</td>
-                            <td>2690 AFG</td>
-                            <td>1690 AFG</td>
-                            <td>1690 AFG</td>
-                            <td class=""> <i class=""></i>
-                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details</button></td>
-                            <td class=""> <i class=""></i>
-                                <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal">&nbsp;Delete</button>
-
-                                <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#editteeth">&nbsp;Edit</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>12</td>
-                            <td>BDR</td>
-                            <td>RCT</td>
-                            <td>2880 AFG</td>
-                            <td>1880 AFG</td>
-                            <td>1880 AFG</td>
-                            <td class=""> <i class=""></i>
-                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal4">Details &nbsp;</button></td>
-                            <td class=""> <i class=""></i>
-                                <button class="btn btn-xs btn-danger fa fa-remove demo3" data-toggle="modal" data-target="#editteeth">&nbsp;Delete</button>
-                                <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#editteeth">&nbsp;Edit</button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-lg-3 text-left pull-left" style="">
-                        <table class="table text-left table-striped ">
-                            <tr>
-                                <td><strong>Total Estimate :</strong></td>
-                                <td>2500 AFG</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Total Paid :</strong></td>
-                                <td>1000 AFG</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Total Remaining:</strong></td>
-                                <td>1500 AFG</td>
-                            </tr>
-                        </table>
->>>>>>> ef8b7f7320635205244e91d0f6567e0675411322
+                        <div class="input-group"> <span
+                                    class="input-group-btn">
+                                        <button type="button" class="btn  btn-primary"> <i class="fa fa-search"></i>&nbsp;&nbsp;Search</button> </span><input
+                                    type="text" placeholder="Search patient name"
+                                    class=" form-control"></div>
                     </div>
                 </div>
+                <br/>
                 <div class="row">
-                    <div class="col-md-3">
-                        <button class="btn btn-primary"style="width:11em">Send to reception &nbsp;<i class="fa fa-arrow-right"></i></button>
+                    <div class="col-lg-10">
+                        <div class="ibox float-e-margins">
+                            <table class="table table-hover no-margins">
+                                <thead>
+                                <tr>
+                                    <td>P-ID</td>
+                                    <th>Patient Name</th>
+                                    <th>Doctor Name</th>
+                                    <th>Status</th>
+                                    <th>Date & Time Appointment</th>
+                                    <th>Problem Health</th>
+                                    <th>Operation</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>P-0785544229</td>
+                                    <td>Ahmad</td>
+                                    <td>Dr.Samim</td>
+                                    <td>Second Time</td>
+                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
+                                    <td class="">Blood pressure</td>
+                                    <td><a href="treatment_operation" class="btn btn-success">Start Operation</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>P-0780669022</td>
+                                    <td>Naweed</td>
+                                    <td>Dr.Samim</td>
+                                    <td>Second Time</td>
+                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 9:00 AM</td>
+                                    <td class="">Diabetics</td>
+                                    <td><a href="treatment_operation" class="btn btn-success">Start Operation</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>P-0790446690</td>
+                                    <td>Qasim</td>
+                                    <td>Dr.Samim</td>
+                                    <td>Second Time</td>
+                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 10:00 AM</td>
+                                    <td class="">Hepatitics</td>
+                                    <td><a href="treatment_operation" class="btn btn-success">Start Operation</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>P-0787206644</td>
+                                    <td>Mahmood</td>
+                                    <td>Dr.Samim</td>
+                                    <td>First Time</td>
+                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 11:20 AM</td>
+                                    <td class="">Asthma</td>
+                                    <td><a href="treatment_operation" class="btn btn-success">Start Operation</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>P-0702036768</td>
+                                    <td>Ali</td>
+                                    <td>Dr.Samim</td>
+                                    <td>First Time</td>
+                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 1:00 PM</td>
+                                    <td class="">Blood pressure</td>
+                                    <td><a href="treatment_operation" class="btn btn-success">Start Operation</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>P-0785454643</td>
+                                    <td>Mahdi</td>
+                                    <td>Dr.Samim</td>
+                                    <td>First Time</td>
+                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 2:20 PM</td>
+                                    <td class="">Diabetics</td>
+                                    <td><a href="treatment_operation" class="btn btn-success">Start Operation</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>P-0777506070</td>
+                                    <td>Ahmad</td>
+                                    <td>Dr.Samim</td>
+                                    <td>First Time</td>
+                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 3:00 PM</td>
+                                    <td class="">Blood pressure</td>
+                                    <td><a href="treatment_operation" class="btn btn-success">Start Operation</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
-
-
     </div>
+
 
 
 @endsection
@@ -299,7 +182,6 @@
     <script>
         $(function () {
             $('.list-group.checked-list-box .list-group-item').each(function () {
-
                 // Settings
                 var $widget = $(this),
                     $checkbox = $('<input type="checkbox" class="hidden" />'),
@@ -313,10 +195,8 @@
                             icon: ''
                         }
                     };
-
                 $widget.css('cursor', 'pointer')
                 $widget.append($checkbox);
-
                 // Event Handlers
                 $widget.on('click', function () {
                     $checkbox.prop('checked', !$checkbox.is(':checked'));
@@ -327,19 +207,15 @@
                     updateDisplay();
                 });
 
-
                 // Actions
                 function updateDisplay() {
                     var isChecked = $checkbox.is(':checked');
-
                     // Set the button's state
                     $widget.data('state', (isChecked) ? "on" : "off");
-
                     // Set the button's icon
                     $widget.find('.state-icon')
                         .removeClass()
                         .addClass('state-icon ' + settings[$widget.data('state')].icon);
-
                     // Update the button's color
                     if (isChecked) {
                         $widget.addClass(style + color + ' active');
@@ -350,13 +226,10 @@
 
                 // Initialization
                 function init() {
-
                     if ($widget.data('checked') == true) {
                         $checkbox.prop('checked', !$checkbox.is(':checked'));
                     }
-
                     updateDisplay();
-
                     // Inject the icon if applicable
                     if ($widget.find('.state-icon').length == 0) {
                         $widget.prepend('<span class="state-icon ' + settings[$widget.data('state')].icon + '"></span>');
@@ -365,7 +238,6 @@
 
                 init();
             });
-
             $('#get-checked-data').on('click', function (event) {
                 event.preventDefault();
                 var checkedItems = {}, counter = 0;
@@ -381,14 +253,12 @@
     {{-- sweet alert --}}
     <script>
         $(document).ready(function () {
-
             $('.demo1').click(function () {
                 swal({
                     title: "Welcome in Alerts",
                     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
                 });
             });
-
             $('.demo_recp').click(function () {
                 swal({
                     title: "Successfully Send to Receptions!",
@@ -396,7 +266,6 @@
                     type: "success"
                 });
             });
-
             $('.demo_delete').click(function () {
                 swal({
                     title: "Are you sure?",
@@ -410,7 +279,6 @@
                     swal("Deleted!", "Your imaginary file has been deleted.", "success");
                 });
             });
-
             $('.demo4').click(function () {
                 swal({
                         title: "Are you sure?",
@@ -431,10 +299,7 @@
                         }
                     });
             });
-
-
         });
     </script>
-    {{-- sweet alert --}}
 
 @endsection
