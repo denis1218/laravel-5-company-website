@@ -32,7 +32,7 @@
 @section('content')
     <div class="row text-center">
         <div class="col-md-12">
-            <h1>Financial Report Income&nbsp;&nbsp;<i class="fa fa-arrow-circle-down"></i></h1>
+            <h1>Financial Report Income&nbsp;&nbsp;<img src="img/income_icon.png" width="100px;"/></h1>
         </div>
     </div>
     <br/>

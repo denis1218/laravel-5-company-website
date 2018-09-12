@@ -33,7 +33,7 @@
 
     <div class="row text-center">
         <div class="col-md-12">
-            <h1>Financial Report Expenses &nbsp;&nbsp;<i class="fa fa-shopping-cart"></i></h1>
+            <h1>Financial Report Expenses &nbsp;&nbsp;<img src="img/expense_icon.png" width="100px;"/></h1>
         </div>
     </div>
 
