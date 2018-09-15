@@ -30,128 +30,541 @@
             </div>
             <div class="ibox-content">
 
+                {{--doctor's specific patients--}}
                 <div class="row">
-                    <div class="col-md-3">
-                        <a href="/patient">
-                            <button class="btn btn-success">
-                                <li class="fa fa-plus"></li>&nbsp; Add new Patient
-                            </button>
-                        </a>
-                    </div>
-                    <div class="col-md-3">
-                        <button class="btn btn-success">
-                            <li class="fa fa-list"></li>&nbsp; Next Appointment List
-                        </button>
-                    </div>
-                    <div class="col-md-3">
-                        <button class="btn btn-success">
-                            <li class="fa fa-list"></li>&nbsp; First Appointment List
-                        </button>
+                    <div class="col-12">
+                        <div class="tabs-container">
+                            <div class="tabs-left">
+                                {{--navigation list--}}
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a data-toggle="tab" href="#home">Doctors list</a></li>
+                                    <li class=""><a data-toggle="tab" href="#fst">Dr.Samim</a></li>
+                                    <li class=""><a data-toggle="tab" href="#snd">Dr.Ahmadi</a></li>
+                                    <li class=""><a data-toggle="tab" href="#trd">Dr.Jalal</a></li>
+                                    <li class=""><a data-toggle="tab" href="#frt">Dr.Tamim </a></li>
+                                </ul>
+                                {{--end of navigation list--}}
+
+                                {{--Doctors tabs--}}
+                                <div class="tab-content ">
+                                    <div id="home" class="tab-pane active">
+                                        <div class="panel-body">
+                                            <div class="row" style="margin-top:80px;">
+                                                <div class="col-10">
+                                                  <strong class="text-success" style="font-size: 20px;">ALL PATIENTS RELATED TO A SPECIFIC DOCTOR WILL BE DISPLAYED HERE!</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{--first doctor--}}
+                                    <div id="fst" class="tab-pane">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <a href="/patient">
+                                                        <button class="btn btn-success" style="width:100%;">
+                                                            <li class="fa fa-plus"></li>&nbsp; Add new Patient
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <button class="btn btn-success">
+                                                        <li class="fa fa-list"></li>&nbsp; Next Appointment List
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <button class="btn btn-success">
+                                                        <li class="fa fa-list"></li>&nbsp; First Appointment List
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row" style="margin-top:-120px;">
+                                                <div class="col-sm-5">
+                                                    <div class="input-group">
+                                                        <input type="text" placeholder="Search patient name"
+                                                               class="input-sm form-control"> <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-sm btn-success"> Go!</button> </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-5">
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-white" type="button" >Previous</button>
+                                                        <button class="btn btn-success" type="button">Today</button>
+                                                        <button class="btn btn-white" type="button">Next</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row" style="margin-top:-50px;">
+                                                <div class="col-sm-11">
+                                                        <table class="table table-hover no-margins" >
+                                                            <thead>
+                                                            <tr>
+                                                                <td>P-ID</td>
+                                                                <th>Patient Name</th>
+                                                                <th>Last Name</th>
+                                                                <th>Doctor Name</th>
+                                                                <th>Status</th>
+                                                                <th>Date & Time Appointment</th>
+                                                                <th>Healths Problem</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>P-078554422</td>
+                                                                <td>Ahmad</td>
+                                                                <td>Sultani</td>
+                                                                <td></i>Dr.Samim</td>
+                                                                <td>First Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:00 AM</td>
+                                                                <td class="">Blood pressure</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0786906677</td>
+                                                                <td>Naweed</td>
+                                                                <td>Rezayee</td>
+                                                                <td></i>Dr.Samim</td>
+                                                                <td>Second Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
+                                                                <td class="">Diabetics</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0785445580</td>
+                                                                <td>Qasim</td>
+                                                                <td>Mukhtary</td>
+                                                                <td></i>Dr.Samim</td>
+                                                                <td>First Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                                <td class="">Hepatitics</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0785564749</td>
+                                                                <td>Mahmood</td>
+                                                                <td>Hashimi</td>
+                                                                <td></i>Dr.Samim</td>
+                                                                <td>Second Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                                <td class="">Asthma</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0785786788</td>
+                                                                <td>Ali</td>
+                                                                <td>Ahmadyar</td>
+                                                                <td></i>Dr.Samim</td>
+                                                                <td>First Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00</td>
+                                                                <td class="">Blood pressure</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0785786866</td>
+                                                                <td>Mahdi</td>
+                                                                <td>Safari</td>
+                                                                <td></i>Dr.Samim</td>
+                                                                <td>Second Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 10:00 AM</td>
+                                                                <td class="">Diabetics</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-078558099</td>
+                                                                <td>Ahmad</td>
+                                                                <td>Rasuli</td>
+                                                                <td></i>Dr.Samim</td>
+                                                                <td>First Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 11:00 AM</td>
+                                                                <td class="">Blood pressure</td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{--second doctor--}}
+                                    <div id="snd" class="tab-pane">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <a href="/patient">
+                                                        <button class="btn btn-success"style="width:100%;">
+                                                            <li class="fa fa-plus"></li>&nbsp; Add new Patient
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <button class="btn btn-success">
+                                                        <li class="fa fa-list"></li>&nbsp; Next Appointment List
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <button class="btn btn-success">
+                                                        <li class="fa fa-list"></li>&nbsp; First Appointment List
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="margin-top:-120px;">
+                                                <div class="col-sm-5">
+                                                    <div class="input-group">
+                                                        <input type="text" placeholder="Search patient name"
+                                                               class="input-sm form-control"> <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-sm btn-success"> Go!</button> </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-5">
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-white" type="button" >Previous</button>
+                                                        <button class="btn btn-success" type="button">Today</button>
+                                                        <button class="btn btn-white" type="button">Next</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row" style="margin-top:-50px;">
+                                                <div class="col-sm-11">
+                                                        <table class="table table-hover no-margins" >
+                                                            <thead>
+                                                            <tr>
+                                                                <td>P-ID</td>
+                                                                <th>Patient Name</th>
+                                                                <th>Last Name</th>
+                                                                <th>Doctor Name</th>
+                                                                <th>Status</th>
+                                                                <th>Date & Time Appointment</th>
+                                                                <th>Healths Problem</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>P-078554422</td>
+                                                                <td>Rostam</td>
+                                                                <td>Baqiri</td>
+                                                                <td></i>Dr.Ahmadi</td>
+                                                                <td>First Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:00 AM</td>
+                                                                <td class="">Blood pressure</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0786906677</td>
+                                                                <td>Naweed</td>
+                                                                <td>Azizi</td>
+                                                                <td></i>Dr.Ahmadi</td>
+                                                                <td>Second Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
+                                                                <td class="">Diabetics</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0785445580</td>
+                                                                <td>Qasim</td>
+                                                                <td>Saadat</td>
+                                                                <td></i>Dr.Ahmadi</td>
+                                                                <td>First Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                                <td class="">Hepatitics</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0785564749</td>
+                                                                <td>Mahbub</td>
+                                                                <td>Faqiri</td>
+                                                                <td></i>Dr.Ahmadi</td>
+                                                                <td>Second Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                                <td class="">Asthma</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0785786788</td>
+                                                                <td>Omid</td>
+                                                                <td>Shafaq</td>
+                                                                <td></i>Dr.Ahmadi</td>
+                                                                <td>First Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00</td>
+                                                                <td class="">Blood pressure</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0785786866</td>
+                                                                <td>Mahdi</td>
+                                                                <td>Afzaly</td>
+                                                                <td></i>Dr.Ahmadi</td>
+                                                                <td>Second Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 10:00 AM</td>
+                                                                <td class="">Diabetics</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-078558099</td>
+                                                                <td>Reza</td>
+                                                                <td>Ahmadian</td>
+                                                                <td></i>Dr.Ahmadi</td>
+                                                                <td>First Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 11:00 AM</td>
+                                                                <td class="">Blood pressure</td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {{--third doctor--}}
+                                    <div id="trd" class="tab-pane">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <a href="/patient">
+                                                        <button class="btn btn-success"style="width:100%;">
+                                                            <li class="fa fa-plus"></li>&nbsp; Add new Patient
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <button class="btn btn-success">
+                                                        <li class="fa fa-list"></li>&nbsp; Next Appointment List
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <button class="btn btn-success">
+                                                        <li class="fa fa-list"></li>&nbsp; First Appointment List
+                                                    </button>
+                                                </div>
+                                            </div>
+                                           <div class="row" style="margin-top:-120px;">
+                                                <div class="col-sm-5">
+                                                    <div class="input-group">
+                                                        <input type="text" placeholder="Search patient name"
+                                                               class="input-sm form-control"> <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-sm btn-success"> Go!</button> </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-5">
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-white" type="button" >Previous</button>
+                                                        <button class="btn btn-success" type="button">Today</button>
+                                                        <button class="btn btn-white" type="button">Next</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row" style="margin-top:-50px;">
+                                                <div class="col-sm-11">
+                                                        <table class="table table-hover no-margins" >
+                                                            <thead>
+                                                            <tr>
+                                                                <td>P-ID</td>
+                                                                <th>Patient Name</th>
+                                                                <th>Last name</th>
+                                                                <th>Doctor Name</th>
+                                                                <th>Status</th>
+                                                                <th>Date & Time Appointment</th>
+                                                                <th>Healths Problem</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>P-078554422</td>
+                                                                <td>Murtaza</td>
+                                                                <td>Akhlaqi</td>
+                                                                <td>Dr.Jalal</td>
+                                                                <td>First Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:00 AM</td>
+                                                                <td class="">Blood pressure</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0786906677</td>
+                                                                <td>Hadi</td>
+                                                                <td>Paktiawal</td>
+                                                                <td>Dr.Jalal</td>
+                                                                <td>Second Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
+                                                                <td class="">Diabetics</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0785445580</td>
+                                                                <td>Soltan</td>
+                                                                <td>Pazhwak</td>
+                                                                <td>Dr.Jalal</td>
+                                                                <td>First Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                                <td class="">Hepatitics</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0785564749</td>
+                                                                <td>Fahim</td>
+                                                                <td>Kohsari</td>
+                                                                <td>Dr.Jalal</td>
+                                                                <td>Second Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                                <td class="">Asthma</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0785786788</td>
+                                                                <td>Mohsen</td>
+                                                                <td>Twassuli</td>
+                                                                <td>Dr.Jalal</td>
+                                                                <td>First Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00</td>
+                                                                <td class="">Blood pressure</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0785786866</td>
+                                                                <td>Shafiqah</td>
+                                                                <td>Enayati</td>
+                                                                <td>Dr.Jalal</td>
+                                                                <td>Second Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 10:00 AM</td>
+                                                                <td class="">Diabetics</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-078558099</td>
+                                                                <td>Fayaz</td>
+                                                                <td>Qurbani</td>
+                                                                <td>Dr.Jalal</td>
+                                                                <td>First Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 11:00 AM</td>
+                                                                <td class="">Blood pressure</td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    {{--forth doctor--}}
+                                    <div id="frt" class="tab-pane">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <a href="/patient">
+                                                        <button class="btn btn-success"style="width:100%;">
+                                                            <li class="fa fa-plus"></li>&nbsp; Add new Patient
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <button class="btn btn-success">
+                                                        <li class="fa fa-list"></li>&nbsp; Next Appointment List
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <button class="btn btn-success">
+                                                        <li class="fa fa-list"></li>&nbsp; First Appointment List
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="margin-top:-120px;">
+                                                <div class="col-sm-5">
+                                                    <div class="input-group">
+                                                        <input type="text" placeholder="Search patient name"
+                                                               class="input-sm form-control"> <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-sm btn-success"> Go!</button> </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-5">
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-white" type="button" >Previous</button>
+                                                        <button class="btn btn-success" type="button">Today</button>
+                                                        <button class="btn btn-white" type="button">Next</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row" style="margin-top:-50px;">
+                                                <div class="col-sm-11">
+                                                        <table class="table table-hover no-margins" >
+                                                            <thead>
+                                                            <tr>
+                                                                <td>P-ID</td>
+                                                                <th>Patient Name</th>
+                                                                <th>Last Name</th>
+                                                                <th>Doctor Name</th>
+                                                                <th>Status</th>
+                                                                <th>Date & Time Appointment</th>
+                                                                <th>Healths Problem</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>P-078554422</td>
+                                                                <td>Mustafa</td>
+                                                                <td>Moulayee</td>
+                                                                <td></i>Dr.Samim</td>
+                                                                <td>First Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:00 AM</td>
+                                                                <td class="">Blood pressure</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0786906677</td>
+                                                                <td>Ehsan</td>
+                                                                <td>Sarwary</td>
+                                                                <td></i>Dr.Rashid</td>
+                                                                <td>Second Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
+                                                                <td class="">Diabetics</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0785445580</td>
+                                                                <td>Abuzar</td>
+                                                                <td>Rashidi</td>
+                                                                <td></i>Dr.Ahmadi</td>
+                                                                <td>First Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                                <td class="">Hepatitics</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0785564749</td>
+                                                                <td>Rashid</td>
+                                                                <td>Mortazawi</td>
+                                                                <td></i>Dr.Ali</td>
+                                                                <td>Second Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                                <td class="">Asthma</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0785786788</td>
+                                                                <td>Amrullah</td>
+                                                                <td>Barokzay</td>
+                                                                <td></i>Dr.Samim</td>
+                                                                <td>First Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00</td>
+                                                                <td class="">Blood pressure</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-0785786866</td>
+                                                                <td>Marwa</td>
+                                                                <td>Anwary</td>
+                                                                <td></i>Dr.Naweed</td>
+                                                                <td>Second Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 10:00 AM</td>
+                                                                <td class="">Diabetics</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>P-078558099</td>
+                                                                <td>Shakib</td>
+                                                                <td>Khaliqi</td>
+                                                                <td></i>Dr.Samim</td>
+                                                                <td>First Time</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 11:00 AM</td>
+                                                                <td class="">Blood pressure</td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {{--end of doctors tabs--}}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <br/>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="input-group">
-                            <input type="text" placeholder="Search patient name"
-                                   class="input-sm form-control"> <span class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-success"> Go!</button> </span>
-                        </div>
-                    </div>
-                    <div class="col-xs-3">
-                        <div class="form-group">
-                            <select class="form-control" name="" id="">
-                                <option>Doctor</option>
-                                <option>Patient</option>
-                                <option>Date & Time</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="btn-group">
-                            <button class="btn btn-white" type="button">Previous</button>
-                            <button class="btn btn-success" type="button">Today</button>
-                            <button class="btn btn-white" type="button">Next</button>
-                        </div>
-                    </div>
-                </div>
-                <br/>
-                <div class="row">
-                    <div class="col-lg-10">
-                        <div class="ibox float-e-margins">
-                            <table class="table table-hover no-margins">
-                                <thead>
-                                <tr>
-                                    <td>P-ID</td>
-                                    <th>Patient Name</th>
-                                    <th>Doctor Name</th>
-                                    <th>Status</th>
-                                    <th>Date & Time Appointment</th>
-                                    <th>Healths Problem</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>P-078554422</td>
-                                    <td>Ahmad</td>
-                                    <td></i>Dr.Samim</td>
-                                    <td>First Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:00 AM</td>
-                                    <td class="">Blood pressure</td>
-                                </tr>
-                                <tr>
-                                    <td>P-0786906677</td>
-                                    <td>Naweed</td>
-                                    <td></i>Dr.Rashid</td>
-                                    <td>Second Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
-                                    <td class="">Diabetics</td>
-                                </tr>
-                                <tr>
-                                    <td>P-0785445580</td>
-                                    <td>Qasim</td>
-                                    <td></i>Dr.Ahmadi</td>
-                                    <td>First Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
-                                    <td class="">Hepatitics</td>
-                                </tr>
-                                <tr>
-                                    <td>P-0785564749</td>
-                                    <td>Mahmood</td>
-                                    <td></i>Dr.Ali</td>
-                                    <td>Second Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
-                                    <td class="">Asthma</td>
-                                </tr>
-                                <tr>
-                                    <td>P-0785786788</td>
-                                    <td>Ali</td>
-                                    <td></i>Dr.Samim</td>
-                                    <td>First Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00</td>
-                                    <td class="">Blood pressure</td>
-                                </tr>
-                                <tr>
-                                    <td>P-0785786866</td>
-                                    <td>Mahdi</td>
-                                    <td></i>Dr.Naweed</td>
-                                    <td>Second Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 10:00 AM</td>
-                                    <td class="">Diabetics</td>
-                                </tr>
-                                <tr>
-                                    <td>P-078558099</td>
-                                    <td>Ahmad</td>
-                                    <td></i>Dr.Samim</td>
-                                    <td>First Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 11:00 AM</td>
-                                    <td class="">Blood pressure</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+
+
             </div>
         </div>
     </div>

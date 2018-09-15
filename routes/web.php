@@ -167,4 +167,8 @@ Route::get('patient_history_print',function (){
 Route::get('next_appointment_list',function (){
    return view('next_appointment_list');
 });
+// patient report
+Route::get('print_preport', function(){
+    return view('print_preport');
+});
 

@@ -135,6 +135,7 @@
                                 <th>Patient P-ID</th>
                                 <th>Treatment</th>
                                 <th>Fee AFG</th>
+                                <th>Percentage of Salary</th>
                                 <th>Date</th>
                                 <th>Status</th>
                             </tr>
@@ -145,6 +146,7 @@
                                 <td>P-5543</td>
                                 <td>Permanent Filling</td>
                                 <td>2000</td>
+                                <td>40%</td>
                                 <td>2018/5/6</td>
                                 <td> <span class="label label-info">Complete</span></td>
                             </tr>
@@ -154,6 +156,7 @@
                                 <td>P-2665</td>
                                 <td>Extraction</td>
                                 <td>2500</td>
+                                <td>40%</td>
                                 <td>2018/5/7</td>
                                 <td> <span class="label label-info">Complete</span></td>
                             </tr>
@@ -162,6 +165,7 @@
                                 <td>P-3252</td>
                                 <td>Permanent Filling</td>
                                 <td>4500</td>
+                                <td>40%</td>
                                 <td>2018/5/6</td>
                                 <td> <span class="label label-info">Complete</span></td>
                             </tr>
@@ -170,6 +174,7 @@
                                 <td>P-3256</td>
                                 <td>Extraction</td>
                                 <td>2000</td>
+                                <td>40%</td>
                                 <td>2018/5/4</td>
                                 <td> <span class="label label-info">Complete</span></td>
                             </tr>
@@ -178,6 +183,7 @@
                                 <td>P-2152</td>
                                 <td>Permanent Filling</td>
                                 <td>2300</td>
+                                <td>40%</td>
                                 <td>2018/5/1</td>
                                 <td> <span class="label label-info">Complete</span></td>
                             </tr>
@@ -186,6 +192,7 @@
                                 <td>P-2152</td>
                                 <td>Extraction</td>
                                 <td>2000</td>
+                                <td>40%</td>
                                 <td>2018/5/12</td>
                                 <td> <span class="label label-info">Complete</span></td>
                             </tr>
@@ -194,6 +201,7 @@
                                 <td>P-2163</td>
                                 <td>Extraction</td>
                                 <td>700</td>
+                                <td>40%</td>
                                 <td>2018/5/12</td>
                                 <td> <span class="label label-warning">Not Visited</span></td>
                             </tr>
@@ -202,6 +210,7 @@
                                 <td>P-2145</td>
                                 <td>Extraction</td>
                                 <td>1500</td>
+                                <td>40%</td>
                                 <td>2018/5/12</td>
                                 <td> <span class="label label-warning">Not Visited</span></td>
                             </tr>
@@ -210,6 +219,7 @@
                                 <td>P-2184</td>
                                 <td>Extraction</td>
                                 <td>4510</td>
+                                <td>40%</td>
                                 <td>2018/5/12</td>
                                 <td> <span class="label label-warning">Not Visited</span></td>
                             </tr>
@@ -282,7 +292,7 @@
                                             <th>Phone</th>
                                             <th>Departement</th>
                                             <th>Time work</th>
-                                            <th>Salary</th>
+                                            <th>Sal-Percentage</th>
                                             <th>Report</th>
                                         </tr>
                                         </thead>
@@ -293,7 +303,7 @@
                                             <td>0745544432</td>
                                             <td class="center">Orthodontist</td>
                                             <td class="center">11:00AM to 3:00PM</td>
-                                            <td class="center">15000 Afg</td>
+                                            <td class="center">34%</td>
                                             <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
                                         </tr>
                                         <tr class="gradeC">
@@ -302,7 +312,7 @@
                                             <td>07755157632</td>
                                             <td class="center">Periodontist</td>
                                             <td class="center">11:00AM to 3:00PM</td>
-                                            <td class="center">16000 Afg</td>
+                                            <td class="center">42%</td>
                                             <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
                                         </tr>
                                         <tr class="gradeA">
@@ -311,7 +321,7 @@
                                             <td>0785515532</td>
                                             <td class="center">Periodontist</td>
                                             <td class="center">1:00PM to 3:00AM</td>
-                                            <td class="center">18000 Afg</td>
+                                            <td class="center">42%</td>
                                             <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
                                         </tr>
                                         <tr class="gradeA">
@@ -320,7 +330,7 @@
                                             <td>0785666532</td>
                                             <td class="center">Prosthodontist</td>
                                             <td class="center">3:00PM to 3:00AM</td>
-                                            <td class="center">12100 Afg</td>
+                                            <td class="center">12%</td>
                                             <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
                                         </tr>
                                         <tr class="gradeU">
@@ -329,20 +339,12 @@
                                             <td>078555442</td>
                                             <td class="center">Prosthodontist</td>
                                             <td class="center">5:00PM to 4:00AM</td>
-                                            <td class="center">24000 Afg</td>
+                                            <td class="center">11%</td>
                                             <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
                                         </tr>
                                         </tbody>
                                         <tfoot>
-                                        <tr>
-                                            <th>D-IP</th>
-                                            <th>Name</th>
-                                            <th>Phone</th>
-                                            <th>Department</th>
-                                            <th>Time work</th>
-                                            <th>Grade</th>
-                                            <th>Report</th>
-                                        </tr>
+                                       
                                         </tfoot>
                                     </table>
                                 </div>

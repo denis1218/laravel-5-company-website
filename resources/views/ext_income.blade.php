@@ -62,23 +62,6 @@
                                 <!-- form -->
 
                                 <form method="get" class="form-horizontal">
-
-                                    {{-- <div class="hr-line-dashed"></div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">ID:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" placeholder="Enter the ID" style="width:50%" required>
-                                        </div>
-                                    </div> --}}
-
-                                    {{-- <div class="hr-line-dashed"></div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">Name:</label>
-                                        <div class="col-sm-10">
-                                             <input type="text" class="form-control" placeholder="Enter the name of payer" style="width:50%" required>
-                                        </div>
-                                    </div> --}}
-
                                     <div class="hr-line-dashed"></div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Amount:</label>
@@ -94,19 +77,11 @@
                                             <input type="text" class="form-control" name="phone" placeholder="purpose" style="width:50%" required>
                                         </div>
                                     </div>
-                                    {{-- <div class="hr-line-dashed"></div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">Phone#:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" placeholder="Phone# of payer" class="form-control" style="width:50%" required>
-                                        </div>
-                                    </div> --}}
-
                                     <div class="hr-line-dashed"></div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Description:</label>
                                         <div class="col-sm-10">
-                                             <textarea class="form-control" placeholder="Enter more information" style="width:50%" required></textarea>
+                                             <textarea class="form-control" placeholder="Enter more information" style="width:50%; resize: none;" required></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -156,13 +131,6 @@
 
                 <div class="table-responsive">
                     <!-- Expenditure Table -->
-                        {{-- <div class="btn-group">
-                            <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Show reports <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li><a href="/finance_report_daily" class="font-bold">Daily</a></li>
-                                <li><a href="/finance_report_date" class="font-bold">Weekly & monthly</a></li>
-                            </ul>
-                        </div> --}}
 
                     <table class="table table-striped table-bordered table-hover " id="editable">
                         <thead>
