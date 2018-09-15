@@ -26,13 +26,13 @@
          style="margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
         <div class="row">
             <div class="col-md-5" style="margin-top:15px; margin-left:20px;">
-                <h3>Report Patient</h3>
+                <h3>Doctor Report</h3>
             </div>
         </div>
         <div class="col-sm-10">
             <div class="input-group m-b"><span class="input-group-btn">
                     <button type="button" class="btn btn-primary" href="#doctor_info" data-toggle="collapse">Search</button> </span>
-                <input type="text" class="form-control" placeholder="Search P-ID patient">
+                <input type="text" class="form-control" placeholder="Search Doctor ID">
             </div>
         </div>
         <div class="col-sm-2">
