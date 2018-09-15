@@ -19,7 +19,7 @@ Route::get('/patient', function () {
 });
 // Employee Registration
 Route::get('/employee', function () {
-    return view('employee');
+    return view('/employee');
 });
 
 Route::get('/appo', function () {
@@ -166,5 +166,17 @@ Route::get('patient_history_print',function (){
 
 Route::get('next_appointment_list',function (){
    return view('next_appointment_list');
+});
+
+Route::get('dash_reception',function (){
+    return view('/dash_reception');
+});
+
+Route::get('doctor_report_list',function (){
+    return view('/doctor_report_list');
+});
+
+Route::get('dash_doctor',function (){
+    return view('/dash_doctor');
 });
 

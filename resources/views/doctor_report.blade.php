@@ -26,25 +26,25 @@
          style="margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
         <div class="row">
             <div class="col-md-5" style="margin-top:15px; margin-left:20px;">
-                <h3>Report Patient</h3>
+                <h3>Report Doctor</h3>
             </div>
         </div>
         <div class="col-sm-10">
             <div class="input-group m-b"><span class="input-group-btn">
-                    <button type="button" class="btn btn-primary" href="#doctor_info" data-toggle="collapse">Search</button> </span>
+                    <a  class="btn btn-primary" href="#"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</a> </span>
                 <input type="text" class="form-control" placeholder="Search P-ID patient">
             </div>
         </div>
         <div class="col-sm-2">
-            <button type="button" class="btn btn-warning" href="#show_all_doctor" data-toggle="collapse"> Show all Doctors</button> </span>
+            <a type="" class="btn btn-warning" href="/doctor_report_list"> Show all Doctors</a> </span>
         </div>
     </div>
 
-    {{-- patient info --}}
-    <div class="col-lg-12 collapse" id="doctor_info" >
+    {{-- one doctor info report--}}
+    <div class="col-lg-12" >
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Patient History</h5>
+                <h5>Doctor</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -242,119 +242,7 @@
             </div>
         </div>
     </div>
-    {{-- patient info --}}
-
-    {{-- show all doctors --}}
-    <div class="col-lg-12 collapse" id="show_all_doctor" >
-        <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>List of Doctors </h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="ibox-content">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="ibox float-e-margins">
-
-                            <div class="ibox-content">
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-bordered table-hover dataTables-example" >
-                                        <thead>
-                                        <tr>
-                                            <th>D-ID</th>
-                                            <th>Name</th>
-                                            <th>Phone</th>
-                                            <th>Departement</th>
-                                            <th>Time work</th>
-                                            <th>Salary</th>
-                                            <th>Report</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr class="gradeX">
-                                            <td>D-434</td>
-                                            <td>Dr.Ahmadi</td>
-                                            <td>0745544432</td>
-                                            <td class="center">Orthodontist</td>
-                                            <td class="center">11:00AM to 3:00PM</td>
-                                            <td class="center">15000 Afg</td>
-                                            <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>D-422</td>
-                                            <td>Dr.Jalal</td>
-                                            <td>07755157632</td>
-                                            <td class="center">Periodontist</td>
-                                            <td class="center">11:00AM to 3:00PM</td>
-                                            <td class="center">16000 Afg</td>
-                                            <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>D-425</td>
-                                            <td>Dr.Jalal</td>
-                                            <td>0785515532</td>
-                                            <td class="center">Periodontist</td>
-                                            <td class="center">1:00PM to 3:00AM</td>
-                                            <td class="center">18000 Afg</td>
-                                            <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>D-427</td>
-                                            <td>Dr.Tamim</td>
-                                            <td>0785666532</td>
-                                            <td class="center">Prosthodontist</td>
-                                            <td class="center">3:00PM to 3:00AM</td>
-                                            <td class="center">12100 Afg</td>
-                                            <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
-                                        </tr>
-                                        <tr class="gradeU">
-                                            <td>D-432</td>
-                                            <td>Dr.Samim</td>
-                                            <td>078555442</td>
-                                            <td class="center">Prosthodontist</td>
-                                            <td class="center">5:00PM to 4:00AM</td>
-                                            <td class="center">24000 Afg</td>
-                                            <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
-                                        </tr>
-                                        </tbody>
-                                        <tfoot>
-                                        <tr>
-                                            <th>D-IP</th>
-                                            <th>Name</th>
-                                            <th>Phone</th>
-                                            <th>Department</th>
-                                            <th>Time work</th>
-                                            <th>Grade</th>
-                                            <th>Report</th>
-                                        </tr>
-                                        </tfoot>
-                                    </table>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{-- show all doctors --}}
+    {{-- one doctor info report --}}
 
     {{-- Modal window dialog --}}
     <div class="modal inmodal" id="medicine-model" tabindex="-1" role="dialog" aria-hidden="true">
