@@ -172,7 +172,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-3" style="margin-top:30px;">
-                        <button class="btn btn-success xray">Save <i class="fa fa-save"></i></button>&nbsp;&nbsp;
+                        <button class="btn btn-primary xray">Save <i class="fa fa-save"></i></button>&nbsp;&nbsp;
                         <button class="btn btn-white">Cancel</button>
                     </div>
                 </div>

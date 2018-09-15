@@ -46,12 +46,7 @@
                         </ul>
                     </li>
 
-                    <li>
-                        <a href="#"><i class="fa fa-file"></i> <span class="nav-label">Reports</span> <span
-                                    class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="/doctor_report"><i class="fa fa-user-md"></i>Doctors</a></li>
-                        </ul>
+
 
                     <li>
                         <a href="#"><i class="fa fa-calculator"></i> <span class="nav-label">Finance</span><span
@@ -59,6 +54,7 @@
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/expenditure"><i class="fa fa-shopping-cart"></i>Expenditure</a></li>
                             <li><a href="/income"><i class="fa fa-arrow-circle-o-down"></i>Income</a></li>
+                            <li><a href="/doctor_report"><i class="fa fa-user-md"></i>Doctors</a></li>
                             <li><a href="/finance_report">Financial report<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level collapse">
                                     <li><a href="/finance_report_income"><i class="fa fa-tag"></i>&nbsp;&nbsp;Income</a>

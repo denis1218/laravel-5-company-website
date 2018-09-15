@@ -11,70 +11,27 @@
             </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <span class="m-r-sm text-muted welcome-message">Welcome to Hakim Alokozay Mng.</span>
+                    <span class="m-r-sm text-muted welcome-message">Welcome to Hakim Alokozay Dental Clinic.</span>
                 </li>
 
                 <li class="dropdown">
-                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-calendar text-navy">&nbsp;</i><strong>Today : Wednesday, September 12, 2018 &nbsp;&nbsp;|</strong>
                     </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li class="divider"></li>
-                        <li>
-                            <a href="profile.html">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="grid_options.html">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <div class="text-center link-block">
-                                <a href="notifications.html">
-                                    <strong>See All Alerts</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
                 </li>
+
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-language text-navy">&nbsp;</i><strong>Language |</strong>
+                        <i class="fa fa-language text-navy">&nbsp;</i><strong>Language <img src="img/un.png" width="20px"/>&nbsp;&nbsp;|</strong>
                     </a>
                     <ul class="dropdown-menu dropdown-alerts" style="width: 150px;">
-                        <a href="#" class="hvr-glow"><li><img src="img/afg.png" width="20px;"/><strong>&nbsp;&nbsp;دری</strong></li></a>
-                        <a href="#" class="hvr-glow"><li><img src="img/un.png" width="20px"/><strong>&nbsp;&nbsp;English</strong></li></a>
+                        <a href="#" class="hvr-grow" style="width: 100%"><li><img src="img/afg.png" width="20px;"/><strong>&nbsp;&nbsp;دری</strong></li></a>
+                        <a href="#" class="hvr-grow" style="width:100%"><li><img src="img/un.png" width="20px"/><strong>&nbsp;&nbsp;English</strong></li></a>
                     </ul>
                 </li>
 
                 {{-- current exchange --}}
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-exchange text-info">&nbsp;</i><strong>Current Ex |</strong>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <h5><span class="text-info">Today Exchange</span> : One Dollar to AFG</h5>
-                        </li>
-                        <li>
-                            <form>
-                                <input type="number" placeholder="Dollars Today" class="form-control"/><br/>
-                                <input type="submit" class="btn btn-primary"/>
-                            </form>
-                        </li>
-                    </ul>
-                </li>
+
                 <li>
                     <a href="login">
                         <i class="fa fa-sign-out text-warning"></i>Log out
