@@ -79,7 +79,7 @@
                 </div>
                 <br/>
                 <div class="row">
-                    <div class="col-lg-10">
+                    <div class="col-lg-12">
                         <div class="ibox float-e-margins">
                             <table class="table table-hover no-margins">
                                 <thead>
@@ -101,7 +101,7 @@
                                     <td>Second Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
                                     <td class="">Blood pressure</td>
-                                    <td><a href="treatment_operation" class="btn btn-success">Start Operation</a>
+                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -111,7 +111,7 @@
                                     <td>Second Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 9:00 AM</td>
                                     <td class="">Diabetics</td>
-                                    <td><a href="treatment_operation" class="btn btn-success">Start Operation</a>
+                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -121,7 +121,7 @@
                                     <td>Second Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 10:00 AM</td>
                                     <td class="">Hepatitics</td>
-                                    <td><a href="treatment_operation" class="btn btn-success">Start Operation</a>
+                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -131,7 +131,7 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 11:20 AM</td>
                                     <td class="">Asthma</td>
-                                    <td><a href="treatment_operation" class="btn btn-success">Start Operation</a>
+                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -141,7 +141,7 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 1:00 PM</td>
                                     <td class="">Blood pressure</td>
-                                    <td><a href="treatment_operation" class="btn btn-success">Start Operation</a>
+                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -151,7 +151,7 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 2:20 PM</td>
                                     <td class="">Diabetics</td>
-                                    <td><a href="treatment_operation" class="btn btn-success">Start Operation</a>
+                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -161,7 +161,7 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 3:00 PM</td>
                                     <td class="">Blood pressure</td>
-                                    <td><a href="treatment_operation" class="btn btn-success">Start Operation</a>
+                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
                                 </tbody>
