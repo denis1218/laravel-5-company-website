@@ -9,7 +9,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Appointment patient </h5>
+                <h5>Appointment patient</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -38,11 +38,20 @@
                             </button>
                         </a>
                     </div>
+<<<<<<< HEAD
+                    <div class="col-md-3">
+                        <button class="btn btn-primary">
+                            <li class="fa fa-list"></li>&nbsp; Next Appointment List
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+=======
                     <div class="row">
                         <span style="font-weight: bold">Show table group by  &nbsp;&nbsp;</span>
                         <button class="btn btn-primary">
                             <li class="fa fa-list"></li>&nbsp; Next Appointment List
                         </button>
+>>>>>>> f000e44dd5b850608e7d62f2d53355d4ee752e1d
                         <button class="btn btn-primary">
                             <li class="fa fa-list"></li>&nbsp; First Appointment List
                         </button>
@@ -53,9 +62,31 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="input-group">
+<<<<<<< HEAD
+                            <input type="text" placeholder="Search patient name"
+                                   class="input-sm form-control"> <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-primary"> Search!</button> </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <select class="form-control" name="" id="">
+                                <option>Doctor</option>
+                                <option>Patient</option>
+                                <option>Date & Time</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="btn-group">
+                            <button class="btn btn-white" type="button">Previous</button>
+                            <button class="btn btn-primary" type="button">Today</button>
+                            <button class="btn btn-white" type="button">Next</button>
+=======
                             <span class="input-group-btn">
                             <button type="button" class="btn  btn-primary"><i class="fa fa-search"></i>&nbsp;&nbsp; Search</button></span>
                             <input type="text" placeholder="Search patient name" class=" form-control">
+>>>>>>> f000e44dd5b850608e7d62f2d53355d4ee752e1d
                         </div>
                     </div>
 
@@ -199,7 +230,4 @@
         </div>
     </div>
     {{-- end of modal window--}}
-
-
-
 @endsection

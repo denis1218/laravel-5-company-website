@@ -87,7 +87,7 @@
 
         <div class="form-group">
             <label class="col-sm-2 control-label">Description</label>
-            <div class="col-md-4"><textarea class="form-control" id="grade" placeholder="Enter more information"></textarea></div>
+            <div class="col-md-4"><textarea class="form-control" id="grade" placeholder="Enter more information" style="resize:none;"></textarea></div>
         </div>
 
         <div class="form-group">

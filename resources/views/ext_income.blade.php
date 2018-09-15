@@ -106,7 +106,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Description:</label>
                                         <div class="col-sm-10">
-                                             <textarea class="form-control" placeholder="Enter more information" style="width:50%" required></textarea>
+                                             <textarea class="form-control" placeholder="Enter more information" style="width:50%;resize: none;" required></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
