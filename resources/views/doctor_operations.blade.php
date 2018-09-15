@@ -112,6 +112,7 @@
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 9:00 AM</td>
                                     <td class="">Diabetics</td>
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
+
                                     </td>
                                 </tr>
                                 <tr>
@@ -121,6 +122,7 @@
                                     <td>Second Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 10:00 AM</td>
                                     <td class="">Hepatitics</td>
+
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
@@ -142,6 +144,7 @@
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 1:00 PM</td>
                                     <td class="">Blood pressure</td>
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
+
                                     </td>
                                 </tr>
                                 <tr>
@@ -152,6 +155,7 @@
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 2:20 PM</td>
                                     <td class="">Diabetics</td>
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
+
                                     </td>
                                 </tr>
                                 <tr>
@@ -184,7 +188,7 @@
             $('.list-group.checked-list-box .list-group-item').each(function () {
                 // Settings
                 var $widget = $(this),
-                    $checkbox = $('<input type="checkbox" class="hidden" />'),
+                    $checkbox = $('<inpu    t type="checkbox" class="hidden" />'),
                     color = ($widget.data('color') ? $widget.data('color') : "primary"),
                     style = ($widget.data('style') == "button" ? "btn-" : "list-group-item-"),
                     settings = {

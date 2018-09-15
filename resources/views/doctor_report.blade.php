@@ -31,8 +31,13 @@
         </div>
         <div class="col-sm-10">
             <div class="input-group m-b"><span class="input-group-btn">
-                    <a class="btn btn-primary" href="#"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</a> </span>
+
+
+
+                    <a  class="btn btn-primary" href="#"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</a> </span>
+
                 <input type="text" class="form-control" placeholder="Search P-ID patient">
+
             </div>
         </div>
         <div class="col-sm-2">

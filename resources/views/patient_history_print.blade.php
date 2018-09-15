@@ -51,10 +51,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row shadow p-3 mb-5 bg-white rounded"
-                             style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                   style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
                             <h3 style="font-weight: bold">Personal Information Patient</h3>
                         </div>
-                        <div class="row">
+                        <div class="row"  style="margin-left:10px;margin-right: 10px;">
                             <div class="col-md-4">
                                 <table class="table table-striped text-bold" style="margin-top:30px;" border="1">
                                     <tbody>
@@ -78,7 +78,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4" >
                                 <table class="table table-striped text-bold" style="margin-top:30px;">
                                     <tbody>
                                     <tr>
@@ -105,13 +105,13 @@
 
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" >
                     <div class="col-md-12">
                         <div class="row shadow p-3 mb-5 bg-white rounded"
-                             style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                             style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
                             <h3 style="font-weight: bold">Kind of Prosthesis</h3>
                         </div>
-                        <div class="row">
+                        <div class="row" style="margin-left:10px;margin-right: 10px;">
                             <div class="col-md-4">
                                 <table class="table table-striped text-bold" style="margin-top:30px;">
                                     <tbody>
@@ -134,13 +134,13 @@
 
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" >
                     <div class="col-md-12">
                         <div class="row shadow p-3 mb-5 bg-white rounded"
-                             style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                             style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
                             <h3 style="font-weight: bold">Payment Information</h3>
                         </div>
-                        <div class="row">
+                        <div class="row"  style="margin-left:10px;margin-right: 10px;">
                             <div class="col-md-4">
                                 <table class="table table-striped text-bold" style="margin-top:30px;">
                                     <tbody>
@@ -205,4 +205,5 @@
                     return true;
                 }
             </script>
+    </div>
 @endsection

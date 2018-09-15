@@ -9,7 +9,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Appointment patient </h5>
+                <h5>Appointment patient</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -43,6 +43,7 @@
                         <button class="btn btn-primary">
                             <li class="fa fa-list"></li>&nbsp; Next Appointment List
                         </button>
+
                         <button class="btn btn-primary">
                             <li class="fa fa-list"></li>&nbsp; First Appointment List
                         </button>
@@ -199,7 +200,4 @@
         </div>
     </div>
     {{-- end of modal window--}}
-
-
-
 @endsection
