@@ -1,5 +1,6 @@
 <!-- Mainly scripts -->
 <script src="dashboard/js/jquery-2.1.1.js"></script>
+<script src="js/jquery-ui.js"></script>
 <script src="dashboard/js/bootstrap.min.js"></script>
 <script src="dashboard/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 <script src="dashboard/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>

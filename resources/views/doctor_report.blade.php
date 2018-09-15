@@ -31,7 +31,7 @@
         </div>
         <div class="col-sm-10">
             <div class="input-group m-b"><span class="input-group-btn">
-                    <a  class="btn btn-primary" href="#"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</a> </span>
+                    <a class="btn btn-primary" href="#"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</a> </span>
                 <input type="text" class="form-control" placeholder="Search P-ID patient">
             </div>
         </div>
@@ -41,7 +41,7 @@
     </div>
 
     {{-- one doctor info report--}}
-    <div class="col-lg-12" >
+    <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>Doctor</h5>
@@ -70,10 +70,10 @@
                     </div>
                 </div>
 
-                {{-- patient personal information --}}
+                {{-- doctor personal information --}}
                 <div class="row" style="padding-left:30px; font-size: 20px;">
                     <div class="row m-b-lg m-t-lg">
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <div class="profile-image">
                                 <img src="img/doctors.png" class="img-circle circle-border m-b-md" alt="profile">
                             </div>
@@ -85,18 +85,19 @@
                                         </h2>
                                         <h4>ID: D-25</h4>
                                         <small class="font-m">
-                                            Dental Expert for 2 years work in dental clinics and more 100 patient visited
+                                            Dental Expert for 2 years work in dental clinics
                                         </small>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-7">
                             <table class="table small m-b-xs">
                                 <tbody>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Gender:<b>&nbsp;Male</b>&nbsp;<i class="fa fa-male"></i></span>
+                                        <span class="font-m">Gender:<b>&nbsp;Male</b>&nbsp;<i
+                                                    class="fa fa-male"></i></span>
                                     </td>
                                     <td>
                                         <span class="font-m">Age:<b>&nbsp;25</b>&nbsp;<i class=""></i></span>
@@ -104,18 +105,31 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Type Job:<b>&nbsp; monthly</b>&nbsp;<i class="fa fa-user-md"></i></span>
+                                        <span class="font-m">Type Job:<b>&nbsp; monthly</b>&nbsp;<i
+                                                    class="fa fa-user-md"></i></span>
                                     </td>
                                     <td>
-                                        <span class="font-m">Salary :<b>&nbsp; 32000 Afg</b>&nbsp;<i class=""></i></span>
+                                        <span class="font-m">Salary :<b>&nbsp; 32000 Afg</b>&nbsp;<i
+                                                    class=""></i></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Date Reg:<b>&nbsp;2018/5/26</b>&nbsp;<i class="fa fa-calendar"></i></span>
+                                        <span class="font-m">Date Reg:<b>&nbsp;2018/5/26</b>&nbsp;<i
+                                                    class="fa fa-calendar"></i></span>
                                     </td>
                                     <td>
                                         <span class="font-m">Department duty:<b>&nbsp;RCT & PF</b>&nbsp;<i class=""></i></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="font-m">Time Work: <b>&nbsp;8:00AM To 2:00PM</b>&nbsp;<i
+                                                    class="fa fa-clock-o"></i></span>
+                                    </td>
+                                    <td>
+                                        <span class="font-m">Max Patient Can Visit: <b>&nbsp;15 per day</b>&nbsp;<i
+                                                    class="fa fa-calendar"></i></span>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -125,9 +139,17 @@
                 </div>
                 {{-- patient personal information --}}
                 <hr/>
-                {{-- table info patient --}}
+                {{-- table info doctor treatment own patient  --}}
                 <div class="row">
                     <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Group table by Date select: </label>
+                            <div class="col-md-3 input-group">
+                                <input type="date" class="form-control"/><span class="input-group-btn">
+                            <button class="btn btn-md btn-primary">Group it</button></span>
+                            </div>
+                        </div>
+                        <br/>
                         <table class="table table-hover table-bordered">
                             <thead>
                             <tr>
@@ -135,6 +157,7 @@
                                 <th>Patient P-ID</th>
                                 <th>Treatment</th>
                                 <th>Fee AFG</th>
+                                <th>Discount</th>
                                 <th>Date</th>
                                 <th>Status</th>
                             </tr>
@@ -145,8 +168,9 @@
                                 <td>P-5543</td>
                                 <td>Permanent Filling</td>
                                 <td>2000</td>
+                                <td>100</td>
                                 <td>2018/5/6</td>
-                                <td> <span class="label label-info">Complete</span></td>
+                                <td><span class="label label-info">Complete</span></td>
                             </tr>
 
                             <tr>
@@ -154,64 +178,72 @@
                                 <td>P-2665</td>
                                 <td>Extraction</td>
                                 <td>2500</td>
+                                <td>120</td>
                                 <td>2018/5/7</td>
-                                <td> <span class="label label-info">Complete</span></td>
+                                <td><span class="label label-info">Complete</span></td>
                             </tr>
                             <tr>
                                 <td>3</td>
                                 <td>P-3252</td>
                                 <td>Permanent Filling</td>
                                 <td>4500</td>
+                                <td>80</td>
                                 <td>2018/5/6</td>
-                                <td> <span class="label label-info">Complete</span></td>
+                                <td><span class="label label-info">Complete</span></td>
                             </tr>
                             <tr>
                                 <td>4</td>
                                 <td>P-3256</td>
                                 <td>Extraction</td>
                                 <td>2000</td>
+                                <td>70</td>
                                 <td>2018/5/4</td>
-                                <td> <span class="label label-info">Complete</span></td>
+                                <td><span class="label label-info">Complete</span></td>
                             </tr>
                             <tr>
                                 <td>5</td>
                                 <td>P-2152</td>
                                 <td>Permanent Filling</td>
                                 <td>2300</td>
+                                <td>200</td>
                                 <td>2018/5/1</td>
-                                <td> <span class="label label-info">Complete</span></td>
+                                <td><span class="label label-info">Complete</span></td>
                             </tr>
                             <tr>
                                 <td>6</td>
                                 <td>P-2152</td>
                                 <td>Extraction</td>
                                 <td>2000</td>
+                                <td>400</td>
                                 <td>2018/5/12</td>
-                                <td> <span class="label label-info">Complete</span></td>
+                                <td><span class="label label-info">Complete</span></td>
                             </tr>
                             <tr>
                                 <td>7</td>
                                 <td>P-2163</td>
                                 <td>Extraction</td>
                                 <td>700</td>
+                                <td>0</td>
                                 <td>2018/5/12</td>
-                                <td> <span class="label label-warning">Not Visited</span></td>
+                                <td><span class="label label-warning">Pending</span></td>
                             </tr>
                             <tr>
                                 <td>8</td>
                                 <td>P-2145</td>
                                 <td>Extraction</td>
                                 <td>1500</td>
+                                <td>0</td>
                                 <td>2018/5/12</td>
-                                <td> <span class="label label-warning">Not Visited</span></td>
+                                <td><span class="label label-warning">pending</span></td>
                             </tr>
                             <tr>
                                 <td>9</td>
                                 <td>P-2184</td>
                                 <td>Extraction</td>
                                 <td>4510</td>
+                                <td>0</td>
                                 <td>2018/5/12</td>
-                                <td> <span class="label label-warning">Not Visited</span></td>
+                                <td><span class="label label-warning">Pending</span></td>
                             </tr>
 
 
@@ -225,12 +257,16 @@
                                         <td>6</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-bold"><h4> Patient NOT Visited: </h4></td>
+                                        <td class="text-bold"><h4> Patient in Pending: </h4></td>
                                         <td>3</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-bold"><h4>Total fee cash: </h4></td>
+                                        <td class="text-bold"><h4>Total Fee cash: </h4></td>
                                         <td>15300 Afg</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold"><h4>Total Discount: </h4></td>
+                                        <td>1000 Afg</td>
                                     </tr>
                                 </table>
                             </div>

@@ -40,45 +40,15 @@
                             <div class="col-md-4"><input type="text" class="form-control" placeholder="Emp-Name"></div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Type of job</label>
-                            <div class="col-md-4">
-                                <select class="select2_demo_1 form-control" id="job" onchange="disabling()">
-                                    <option value="1">Select The Job</option>
-                                    <option value="1">Doctor</option>
-                                    <option value="2">Nurse</option>
-                                    <option value="3">Guard</option>
-                                    <option value="4">Cleaner</option>
-                                    <option value="5">Cook</option>
-                                </select>
-                            </div>
-                        </div>
 
 
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Grade</label>
-                            <div class="col-md-4"><input type="text" class="form-control" id="grade" placeholder="Emp Degree" disabled></div>
-                        </div>
+
+
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Working Time</label>
                             <div class="col-md-4">
-                                <select class="select2_demo_1 form-control">
-                                    <option value="1">Select The working Time</option>
-                                    <option value="1">Full Time</option>
-                                    <option value="2">Half Day</option>
-                                    <option value="3">1 Hour per day</option>
-                                    <option value="4">2 Hours per day</option>
-                                    <option value="5">3 Hours per day</option>
-                                    <option value="6">1 day per week</option>
-                                    <option value="7">2 days per week</option>
-                                    <option value="8">3 days per week</option>
-                                    <option value="9">4 days per week</option>
-                                    <option value="11">5 days per week</option>
-                                    <option value="1">One week per month</option>
-                                    <option value="2">Two weeks per month</option>
-                                    <option value="3">Three weeks per month</option>
-                                </select>
+                                <input type="time"  />
                             </div>
                         </div>
 
@@ -128,15 +98,13 @@
                             </div>
                         </div>
                     </form>
-
-
                 </div>
-
-
             </div>
         </div>
     </div>
 
+
+    {{-- table of doctors --}}
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -249,6 +217,8 @@
             </div>
         </div>
     </div>
+    {{-- table of doctors --}}
+
 
 @endsection
 
