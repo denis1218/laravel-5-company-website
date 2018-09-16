@@ -43,6 +43,8 @@
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/patient"><i class="fa fa-user-md"></i>Patient Registration</a></li>
                             <li><a href="/appo"><i class="fa fa-flash"></i>List of Patient</a></li>
+                            <li><a href="/patient_report"><i class="fa fa-report"></i>Patient Report</a></li>
+
                         </ul>
                     </li>
 

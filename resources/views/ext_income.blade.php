@@ -32,6 +32,7 @@
     </div>
     <!-- End of navButtons -->
 
+
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
             <div class="col-lg-12">
@@ -56,6 +57,73 @@
                             <a class="close-link">
                                 <i class="fa fa-times"></i>
                             </a>
+
+                <div class="wrapper wrapper-content animated fadeInRight">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5>Other income</h5>
+                                    <div class="ibox-tools">
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                            <i class="fa fa-wrench"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-user">
+                                            <li>
+                                                <a href="#">Config option 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Config option 2</a>
+                                            </li>
+                                        </ul>
+                                        <a class="close-link">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+
+                                <!-- form -->
+
+                                <form method="get" class="form-horizontal">
+                                    <div class="hr-line-dashed"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Amount:</label>
+                                        <div class="col-sm-10">
+                                             <input type="text" class="form-control" placeholder="Enter the amount of money" style="width:50%" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="hr-line-dashed"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Purpose:</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="phone" placeholder="purpose" style="width:50%" required>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Description:</label>
+                                        <div class="col-sm-10">
+                                             <textarea class="form-control" placeholder="Enter more information" style="width:50%; resize: none;" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-1 control-label"></label>
+                                        <div class="col-sm-10">
+                                            <button type="submit" class="btn btn-primary btn-md" style="margin-left:110px;">Save &nbsp;<i class="fa fa-save"></i></button>
+                                            <input type="reset" class="btn btn-white btn-md" value="Reset">
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <div class="ibox-content">
@@ -69,7 +137,74 @@
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" placeholder="Enter the amount of money" style="width:50%" required>
                                 </div>
-                            </div>
+
+                                <div class="ibox-content">
+
+                                    <!-- Table -->
+
+                <div class="table-responsive">
+                    <!-- Expenditure Table -->
+
+                    <table class="table table-striped table-bordered table-hover " id="editable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                {{-- <th>Name</th> --}}
+                                <th>Amount</th>
+                                <th>Purpose</th>
+                                {{-- <th>Phone#</th>
+                                <th>Date</th> --}}
+                                <th>Description</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="gradeX">
+                                <td>001</td>
+                                {{-- <td>Ahmad</td> --}}
+                                <td>132000</td>
+                                <td>Hiering New doctores</td>
+                                {{-- <td>0799256221</td>
+                                <td>05-sep-18</td> --}}
+                                <td>Money was taken to hier new doctors</td>
+                                <td>
+                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
+                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
+                                </td>
+                            </tr>
+
+                            <tr class="gradeX">
+                                <td>002</td>
+                                {{-- <td>Ali</td> --}}
+                                <td>32000</td>
+                                <td>Making new block</td>
+                                {{-- <td>0799256221</td>
+                                <td>03-sep-18</td> --}}
+                                <td>Money was taken to build a new block</td>
+                                <td>
+                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
+                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
+                                </td>
+                            </tr>
+
+                             <tr class="gradeX">
+                                <td>003</td>
+                                {{-- <td>Ehsan</td> --}}
+                                <td>2000</td>
+                                <td>Purchasing an ambulance</td>
+                                {{-- <td>0799256221</td>
+                                <td>06-sep-18</td> --}}
+                                <td>Money was taken to buy an ambulance</td>
+                                <td>
+                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
+                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal" data-target="#eprice">&nbsp;Edit</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- End of the table -->
+                </div>
+
 
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">

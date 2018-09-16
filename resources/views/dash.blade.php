@@ -158,7 +158,7 @@
                                             <option value="7">Miscellaneous</option>                          
                                         </select><br>
 
-                                        <textarea name="msg" id="" placeholder="Enter your message"  class="form-control"></textarea><br>
+                                        <textarea name="msg" id="" placeholder="Payment Description"  class="form-control"></textarea><br>
                                         <button type="submit"  value="Pay" class="btn btn-primary">Save &nbsp;<i class="fa fa-save"></i></button>
                                         <button  value="Pay" class="btn btn-warning" data-toggle="modal" data-target="#remaining">Remainder &nbsp;<i class="fa fa-arrow-circle-down"></i></button>
                                         </div>
