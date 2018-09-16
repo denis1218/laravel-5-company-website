@@ -180,3 +180,5 @@ Route::get('dash_doctor',function (){
     return view('/dash_doctor');
 });
 
+Route::get('/pdf','PdfGenerator@PDF');
+

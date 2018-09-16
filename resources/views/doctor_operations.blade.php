@@ -101,11 +101,7 @@
                                     <td>Second Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
                                     <td class="">Blood pressure</td>
-<<<<<<< HEAD
-                                    <td><a href="treatment_operation" class="btn btn-primary">Start Operation</a>
-=======
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
->>>>>>> f000e44dd5b850608e7d62f2d53355d4ee752e1d
                                     </td>
                                 </tr>
                                 <tr>
@@ -115,11 +111,8 @@
                                     <td>Second Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 9:00 AM</td>
                                     <td class="">Diabetics</td>
-<<<<<<< HEAD
-                                    <td><a href="treatment_operation" class="btn btn-primary">Start Operation</a>
-=======
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
->>>>>>> f000e44dd5b850608e7d62f2d53355d4ee752e1d
+
                                     </td>
                                 </tr>
                                 <tr>
@@ -129,11 +122,8 @@
                                     <td>Second Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 10:00 AM</td>
                                     <td class="">Hepatitics</td>
-<<<<<<< HEAD
-                                    <td><a href="treatment_operation" class="btn btn-primary">Start Operation</a>
-=======
+
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
->>>>>>> f000e44dd5b850608e7d62f2d53355d4ee752e1d
                                     </td>
                                 </tr>
                                 <tr>
@@ -143,11 +133,7 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 11:20 AM</td>
                                     <td class="">Asthma</td>
-<<<<<<< HEAD
-                                    <td><a href="treatment_operation" class="btn btn-primary">Start Operation</a>
-=======
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
->>>>>>> f000e44dd5b850608e7d62f2d53355d4ee752e1d
                                     </td>
                                 </tr>
                                 <tr>
@@ -157,11 +143,8 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 1:00 PM</td>
                                     <td class="">Blood pressure</td>
-<<<<<<< HEAD
-                                    <td><a href="treatment_operation" class="btn btn-primary">Start Operation</a>
-=======
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
->>>>>>> f000e44dd5b850608e7d62f2d53355d4ee752e1d
+
                                     </td>
                                 </tr>
                                 <tr>
@@ -171,11 +154,8 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 2:20 PM</td>
                                     <td class="">Diabetics</td>
-<<<<<<< HEAD
-                                    <td><a href="treatment_operation" class="btn btn-primary">Start Operation</a>
-=======
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
->>>>>>> f000e44dd5b850608e7d62f2d53355d4ee752e1d
+
                                     </td>
                                 </tr>
                                 <tr>
@@ -185,11 +165,7 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 3:00 PM</td>
                                     <td class="">Blood pressure</td>
-<<<<<<< HEAD
-                                    <td><a href="treatment_operation" class="btn btn-primary">Start Operation</a>
-=======
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
->>>>>>> f000e44dd5b850608e7d62f2d53355d4ee752e1d
                                     </td>
                                 </tr>
                                 </tbody>
