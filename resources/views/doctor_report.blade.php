@@ -162,7 +162,7 @@
                                 <th>Patient P-ID</th>
                                 <th>Treatment</th>
                                 <th>Fee AFG</th>
-                                <th>Discount</th>
+                                <th>Percentage of Salary</th>
                                 <th>Date</th>
                                 <th>Status</th>
                             </tr>
@@ -173,7 +173,7 @@
                                 <td>P-5543</td>
                                 <td>Permanent Filling</td>
                                 <td>2000</td>
-                                <td>100</td>
+                                <td>40%</td>
                                 <td>2018/5/6</td>
                                 <td><span class="label label-info">Complete</span></td>
                             </tr>
@@ -183,7 +183,7 @@
                                 <td>P-2665</td>
                                 <td>Extraction</td>
                                 <td>2500</td>
-                                <td>120</td>
+                                <td>40%</td>
                                 <td>2018/5/7</td>
                                 <td><span class="label label-info">Complete</span></td>
                             </tr>
@@ -192,7 +192,7 @@
                                 <td>P-3252</td>
                                 <td>Permanent Filling</td>
                                 <td>4500</td>
-                                <td>80</td>
+                                <td>40%</td>
                                 <td>2018/5/6</td>
                                 <td><span class="label label-info">Complete</span></td>
                             </tr>
@@ -201,7 +201,7 @@
                                 <td>P-3256</td>
                                 <td>Extraction</td>
                                 <td>2000</td>
-                                <td>70</td>
+                                <td>40%</td>
                                 <td>2018/5/4</td>
                                 <td><span class="label label-info">Complete</span></td>
                             </tr>
@@ -210,7 +210,7 @@
                                 <td>P-2152</td>
                                 <td>Permanent Filling</td>
                                 <td>2300</td>
-                                <td>200</td>
+                                <td>40%</td>
                                 <td>2018/5/1</td>
                                 <td><span class="label label-info">Complete</span></td>
                             </tr>
@@ -219,7 +219,7 @@
                                 <td>P-2152</td>
                                 <td>Extraction</td>
                                 <td>2000</td>
-                                <td>400</td>
+                                <td>40%</td>
                                 <td>2018/5/12</td>
                                 <td><span class="label label-info">Complete</span></td>
                             </tr>
@@ -228,7 +228,7 @@
                                 <td>P-2163</td>
                                 <td>Extraction</td>
                                 <td>700</td>
-                                <td>0</td>
+                                <td>40%</td>
                                 <td>2018/5/12</td>
                                 <td><span class="label label-warning">Pending</span></td>
                             </tr>
@@ -237,7 +237,7 @@
                                 <td>P-2145</td>
                                 <td>Extraction</td>
                                 <td>1500</td>
-                                <td>0</td>
+                                <td>40%</td>
                                 <td>2018/5/12</td>
                                 <td><span class="label label-warning">pending</span></td>
                             </tr>
@@ -283,7 +283,112 @@
             </div>
         </div>
     </div>
-    {{-- one doctor info report --}}
+    {{-- patient info --}}
+
+    {{-- show all doctors --}}
+    <div class="col-lg-12 collapse" id="show_all_doctor" >
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>List of Doctors </h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#">Config option 1</a>
+                        </li>
+                        <li><a href="#">Config option 2</a>
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+
+                            <div class="ibox-content">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover dataTables-example" >
+                                        <thead>
+                                        <tr>
+                                            <th>D-ID</th>
+                                            <th>Name</th>
+                                            <th>Phone</th>
+                                            <th>Departement</th>
+                                            <th>Time work</th>
+                                            <th>Sal-Percentage</th>
+                                            <th>Report</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="gradeX">
+                                            <td>D-434</td>
+                                            <td>Dr.Ahmadi</td>
+                                            <td>0745544432</td>
+                                            <td class="center">Orthodontist</td>
+                                            <td class="center">11:00AM to 3:00PM</td>
+                                            <td class="center">34%</td>
+                                            <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
+                                        </tr>
+                                        <tr class="gradeC">
+                                            <td>D-422</td>
+                                            <td>Dr.Jalal</td>
+                                            <td>07755157632</td>
+                                            <td class="center">Periodontist</td>
+                                            <td class="center">11:00AM to 3:00PM</td>
+                                            <td class="center">42%</td>
+                                            <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>D-425</td>
+                                            <td>Dr.Jalal</td>
+                                            <td>0785515532</td>
+                                            <td class="center">Periodontist</td>
+                                            <td class="center">1:00PM to 3:00AM</td>
+                                            <td class="center">42%</td>
+                                            <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>D-427</td>
+                                            <td>Dr.Tamim</td>
+                                            <td>0785666532</td>
+                                            <td class="center">Prosthodontist</td>
+                                            <td class="center">3:00PM to 3:00AM</td>
+                                            <td class="center">12%</td>
+                                            <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
+                                        </tr>
+                                        <tr class="gradeU">
+                                            <td>D-432</td>
+                                            <td>Dr.Samim</td>
+                                            <td>078555442</td>
+                                            <td class="center">Prosthodontist</td>
+                                            <td class="center">5:00PM to 4:00AM</td>
+                                            <td class="center">11%</td>
+                                            <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
+                                        </tr>
+                                        </tbody>
+                                        <tfoot>
+
+                                        </tfoot>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- show all doctors --}}
+
 
     {{-- Modal window dialog --}}
     <div class="modal inmodal" id="medicine-model" tabindex="-1" role="dialog" aria-hidden="true">
