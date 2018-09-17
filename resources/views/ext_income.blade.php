@@ -136,11 +136,8 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                {{-- <th>Name</th> --}}
                                 <th>Amount</th>
                                 <th>Purpose</th>
-                                {{-- <th>Phone#</th>
-                                <th>Date</th> --}}
                                 <th>Description</th>
                                 <th>Edit</th>
                             </tr>
@@ -148,11 +145,8 @@
                         <tbody>
                             <tr class="gradeX">
                                 <td>001</td>
-                                {{-- <td>Ahmad</td> --}}
                                 <td>132000</td>
                                 <td>Hiering New doctores</td>
-                                {{-- <td>0799256221</td>
-                                <td>05-sep-18</td> --}}
                                 <td>Money was taken to hier new doctors</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -162,11 +156,8 @@
 
                             <tr class="gradeX">
                                 <td>002</td>
-                                {{-- <td>Ali</td> --}}
                                 <td>32000</td>
                                 <td>Making new block</td>
-                                {{-- <td>0799256221</td>
-                                <td>03-sep-18</td> --}}
                                 <td>Money was taken to build a new block</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -175,12 +166,9 @@
                             </tr>
 
                              <tr class="gradeX">
-                                <td>003</td>
-                                {{-- <td>Ehsan</td> --}}
+                                <td>003</td>                              
                                 <td>2000</td>
                                 <td>Purchasing an ambulance</td>
-                                {{-- <td>0799256221</td>
-                                <td>06-sep-18</td> --}}
                                 <td>Money was taken to buy an ambulance</td>
                                 <td>
                                     <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
@@ -209,11 +197,8 @@
                             </div>
                             <div class="modal-body">
                                 <div class="form-group"><label>ID</label> <input type="number" placeholder="ID"  value="" class="form-control"></div>
-                                {{-- <div class="form-group"><label>Name</label> <input type="text" placeholder="Name of payer" value="" class="form-control"></div> --}}
                                 <div class="form-group"><label>Amount</label> <input type="text" placeholder="Paid amount" value="" class="form-control"></div>
                                 <div class="form-group"><label>Purpose</label> <input type="text" placeholder="purpose" value="" class="form-control"></div>
-                                {{-- <div class="form-group"><label>Phone#</label> <input type="text" placeholder="Phone#" value="" class="form-control"></div> --}}
-                                {{-- <div class="form-group"><label>Date of payment</label> <input type="text" placeholder="Date of payment" value="" class="form-control"></div> --}}
                                 <div class="form-group"><label>Discription</label> <input type="text" placeholder="Discription" value="" class="form-control"></div>
                             </div>
                             <div class="modal-footer">
