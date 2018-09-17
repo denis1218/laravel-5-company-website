@@ -40,10 +40,10 @@
                                 {{--navigation list--}}
                                 <ul class="nav nav-tabs">
                                     <li class="active"><a data-toggle="tab" href="#home"style="color:black;">Doctors list</a></li>
-                                    <li class="ref"><a data-toggle="tab" href="#fst" style="color:black;">Dr.Samim</a></li>
-                                    <li class="ref"><a data-toggle="tab" href="#snd" style="color:black;">Dr.Ahmadi</a></li>
-                                    <li class="ref"><a data-toggle="tab" href="#trd" style="color:black;">Dr.Jalal</a></li>
-                                    <li class="ref"><a data-toggle="tab" href="#frt" style="color:black;">Dr.Tamim </a></li>
+                                    <li class=""><a data-toggle="tab" href="#fst" style="color:black;">Dr.Samim</a></li>
+                                    <li class=""><a data-toggle="tab" href="#snd" style="color:black;">Dr.Ahmadi</a></li>
+                                    <li class=""><a data-toggle="tab" href="#trd" style="color:black;">Dr.Jalal</a></li>
+                                    <li class=""><a data-toggle="tab" href="#frt" style="color:black;">Dr.Tamim </a></li>
                                 </ul>
                                 {{--end of navigation list--}}
 
@@ -72,7 +72,7 @@
                                             </div>
                                             
                                             <div class="row" style="margin-top:-120px;">
-                                                <div class="col-sm-5">
+                                                <div class="col-sm-7">
                                                     <div class="input-group">
                                                         <span class="input-group-btn">
                                                         <button type="button" class="btn btn-sm btn-primary"> Search</button> </span>
@@ -81,7 +81,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-sm-5">
+                                                <div class="col-sm-4">
                                                     <div class="btn-group">
                                                         <button class="btn btn-white" type="button" >Previous</button>
                                                         <button class="btn btn-primary" type="button">Today</button>
@@ -253,7 +253,7 @@
                                             </div>
                                             
                                             <div class="row" style="margin-top:-120px;">
-                                                <div class="col-sm-5">
+                                                <div class="col-sm-7">
                                                     <div class="input-group">
                                                         <span class="input-group-btn">
                                                         <button type="button" class="btn btn-sm btn-primary"> Search</button> </span>
@@ -262,7 +262,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-sm-5">
+                                                <div class="col-sm-4">
                                                     <div class="btn-group">
                                                         <button class="btn btn-white" type="button" >Previous</button>
                                                         <button class="btn btn-primary" type="button">Today</button>
@@ -380,16 +380,16 @@
                                                 </div>
                                             </div>
                                             <div class="row" style="margin-top:-120px;">
-                                                <div class="col-sm-5">
+                                                <div class="col-sm-7">
                                                     <div class="input-group">
                                                         <span class="input-group-btn">
-                                                        <button type="button" class="btn btn-sm btn-primary">Search</button> </span>
+                                                        <button type="button" class="btn btn-sm btn-primary"> Search</button> </span>
                                                         <input type="text" placeholder="Search patient name"
                                                                class="input-sm form-control"> 
                                                     </div>
                                                 </div>
 
-                                                <div class="col-sm-5">
+                                                <div class="col-sm-4">
                                                     <div class="btn-group">
                                                         <button class="btn btn-white" type="button" >Previous</button>
                                                         <button class="btn btn-primary" type="button">Today</button>
@@ -508,16 +508,16 @@
                                                 </div>
                                             </div>
                                            <div class="row" style="margin-top:-120px;">
-                                                <div class="col-sm-5">
+                                                <div class="col-sm-7">
                                                     <div class="input-group">
                                                         <span class="input-group-btn">
-                                                        <button type="button" class="btn btn-sm btn-primary">Search</button> </span>
+                                                        <button type="button" class="btn btn-sm btn-primary"> Search</button> </span>
                                                         <input type="text" placeholder="Search patient name"
                                                                class="input-sm form-control"> 
                                                     </div>
                                                 </div>
 
-                                                <div class="col-sm-5">
+                                                <div class="col-sm-4">
                                                     <div class="btn-group">
                                                         <button class="btn btn-white" type="button" >Previous</button>
                                                         <button class="btn btn-primary" type="button">Today</button>
@@ -637,16 +637,16 @@
                                                 </div>
                                             </div>
                                             <div class="row" style="margin-top:-120px;">
-                                                <div class="col-sm-5">
+                                                <div class="col-sm-7">
                                                     <div class="input-group">
                                                         <span class="input-group-btn">
-                                                        <button type="button" class="btn btn-sm btn-primary">Search</button> </span>
+                                                        <button type="button" class="btn btn-sm btn-primary"> Search</button> </span>
                                                         <input type="text" placeholder="Search patient name"
                                                                class="input-sm form-control"> 
                                                     </div>
                                                 </div>
 
-                                                <div class="col-sm-5">
+                                                <div class="col-sm-4">
                                                     <div class="btn-group">
                                                         <button class="btn btn-white" type="button" >Previous</button>
                                                         <button class="btn btn-primary" type="button">Today</button>
