@@ -1,3 +1,4 @@
+
 @extends('master')
 
 @section('style')
@@ -9,7 +10,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Appointment patient </h5>
+                <h5>Appointment patient</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -32,6 +33,7 @@
 
                 {{--doctor's specific patients--}}
                 <div class="row">
+
                     <div class="col-12">
                         <div class="tabs-container" >
                             <div class="tabs-left">
@@ -741,6 +743,7 @@
                                     </div>
 
                                     {{--end of doctors tabs--}}
+
                                 </div>
                             </div>
                         </div>
@@ -801,7 +804,6 @@
         </div>
     </div>
     {{-- end of modal window--}}
-
-
-
+    </div>
 @endsection
+

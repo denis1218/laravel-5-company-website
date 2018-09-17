@@ -27,6 +27,8 @@
                     </a>
                     <button class="btn btn-primary btn-lg" onclick="PrintElem();">Print &nbsp;<span
                                 class="fa fa-print"></span></button>
+                    <button class="btn btn-primary btn-lg" onclick="PrintPDF();">Print PDF &nbsp;<span
+                                class="fa fa-print"></span></button>
                 </div>
             </div>
             <div class="ibox-content" id="divone">
@@ -37,12 +39,10 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-
                         <h2> Hakim Alikozay Dental Clinic</h2>
                         <h4>Patient History File</h4>
                         <h4>Doctor Name : Dr.Rahmati</h4>
                         <h4>Date : 2018/5/4</h4>
-
                     </div>
 
                 </div>
@@ -51,12 +51,12 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row shadow p-3 mb-5 bg-white rounded"
-                             style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                   style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
                             <h3 style="font-weight: bold">Personal Information Patient</h3>
                         </div>
-                        <div class="row">
+                        <div class="row"  style="margin-left:10px;margin-right: 10px;">
                             <div class="col-md-4">
-                                <table class="table table-striped text-bold" style="margin-top:30px;">
+                                <table class="table table-striped text-bold" style="margin-top:30px;" border="1">
                                     <tbody>
                                     <tr>
                                         <td>P-ID :</td>
@@ -78,7 +78,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4" >
                                 <table class="table table-striped text-bold" style="margin-top:30px;">
                                     <tbody>
                                     <tr>
@@ -105,13 +105,13 @@
 
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" >
                     <div class="col-md-12">
                         <div class="row shadow p-3 mb-5 bg-white rounded"
-                             style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                             style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
                             <h3 style="font-weight: bold">Kind of Prosthesis</h3>
                         </div>
-                        <div class="row">
+                        <div class="row" style="margin-left:10px;margin-right: 10px;">
                             <div class="col-md-4">
                                 <table class="table table-striped text-bold" style="margin-top:30px;">
                                     <tbody>
@@ -134,13 +134,13 @@
 
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" >
                     <div class="col-md-12">
                         <div class="row shadow p-3 mb-5 bg-white rounded"
-                             style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                             style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
                             <h3 style="font-weight: bold">Payment Information</h3>
                         </div>
-                        <div class="row">
+                        <div class="row"  style="margin-left:10px;margin-right: 10px;">
                             <div class="col-md-4">
                                 <table class="table table-striped text-bold" style="margin-top:30px;">
                                     <tbody>
@@ -180,8 +180,18 @@
         @endsection
 
         @section('script')
+            <script src="js/jspdf.debug.js"></script>
+            <script src="js/jspdf.min.js"></script>
             <script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
             <script type="text/javascript">
+                function PrintPDF(){
+                    if(type == 'datauri') {
+                        var doc = new jsPDF()
+
+                        doc.save('a4.pdf')
+                    }
+                }
+
                 function PrintElem() {
                     var mywindow = window.open('', 'PRINT', 'height=1024,width=1468');
                     mywindow.document.write('<html><head><title>' + 'Patient information' + '</title>');
@@ -195,4 +205,5 @@
                     return true;
                 }
             </script>
+    </div>
 @endsection

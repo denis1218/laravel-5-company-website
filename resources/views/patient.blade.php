@@ -79,7 +79,7 @@
                                         <td>15</td>
                                         <td>5</td>
                                         <td>
-                                            <div class="i-checks"><input type="radio"  value="option2" name="a"></div>
+                                            <div class="i-checks"><input type="radio"  value="option2" name="a" required></div>
                                         </td>
 
                                     </tr>
