@@ -117,7 +117,7 @@
                                 <tbody>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Gender:<b>&nbsp;Male</b>&nbsp;<i class="fa fa-male"></span>
+                                        <span class="font-m">Gender:<b>&nbsp;Male</b>&nbsp;<i class="fa fa-male"></i></span>
                                     </td>
                                     <td>
                                         <span class="font-m">Age:<b>&nbsp;25</b>&nbsp;<i class=""></i></span>

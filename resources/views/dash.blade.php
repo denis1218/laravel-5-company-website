@@ -14,7 +14,7 @@
                         <h5>User</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">Welcome Qasim</h1>
+                        <h2 class="no-margins">Welcome Qasim</h2>
                         <div class="stat-percent font-bold text-danger"></div>
                         <small>Finance</small>
                     </div>
@@ -69,7 +69,7 @@
             <div class="wrapper wrapper-content">
                 <div class="row">
                     {{-- Graph Area --}}
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                         <div class="row">
                             <div class="col-md-2" >
                                 <button class="btn btn-primary dim dim-large-dim" ><a href="/income"><img src="img/income_icon_dash.png"  width="150px;" style="border-radius: 8px;"/></a></button>
@@ -78,10 +78,10 @@
                                 <button class="btn btn-primary dim dim-large-dim" ><a href="/expenditure"><img src="img/expense_icon_dash.png" width="150px;" style="border-radius: 8px;"/></a></button>
                             </div>
                             <div class="col-md-2" style="margin-left:75px;">
-                                <button class="btn btn-primary dim dim-large-dim" ><a href="/doctor_report"><img src="img/doctor_icon_dash.png" width="150px;" style="border-radius: 8px;"/></a></button>
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/doctor_report"><img src="img/doctor_icon_dash.png" width="150px;" style="border-radius: 8px;height: 60px;"/></a></button>
                             </div>
                             <div class="col-md-2" style="margin-left:75px;">
-                                <button class="btn btn-primary dim dim-large-dim" ><a href="/finance_report_income"><img src="img/report_icon_dash.png" width="150px;" style="border-radius: 8px;"/></a></button>
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/finance_report_income"><img src="img/report_icon_dash.png" width="150px;" style="border-radius: 8px;height: 60px"/></a></button>
                             </div>
                         </div>
                         <div class="ibox float-e-margins">
@@ -158,7 +158,7 @@
                                             <option value="7">Miscellaneous</option>                          
                                         </select><br>
 
-                                        <textarea name="msg" id="" placeholder="Enter your message"  class="form-control"></textarea><br>
+                                        <textarea name="msg" id="" placeholder="Enter your message"  class="form-control" style="resize: none;"></textarea><br>
                                         <button type="submit"  value="Pay" class="btn btn-primary">Save &nbsp;<i class="fa fa-save"></i></button>
                                         <button  value="Pay" class="btn btn-warning" data-toggle="modal" data-target="#remaining">Remainder &nbsp;<i class="fa fa-arrow-circle-down"></i></button>
                                         </div>

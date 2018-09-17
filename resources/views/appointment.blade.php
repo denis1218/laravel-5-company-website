@@ -38,20 +38,12 @@
                             </button>
                         </a>
                     </div>
-<<<<<<< HEAD
                     <div class="col-md-3">
                         <button class="btn btn-primary">
                             <li class="fa fa-list"></li>&nbsp; Next Appointment List
                         </button>
                     </div>
                     <div class="col-md-3">
-=======
-                    <div class="row">
-                        <span style="font-weight: bold">Show table group by  &nbsp;&nbsp;</span>
-                        <button class="btn btn-primary">
-                            <li class="fa fa-list"></li>&nbsp; Next Appointment List
-                        </button>
->>>>>>> f000e44dd5b850608e7d62f2d53355d4ee752e1d
                         <button class="btn btn-primary">
                             <li class="fa fa-list"></li>&nbsp; First Appointment List
                         </button>
@@ -62,7 +54,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="input-group">
-<<<<<<< HEAD
+
                             <input type="text" placeholder="Search patient name"
                                    class="input-sm form-control"> <span class="input-group-btn">
                                         <button type="button" class="btn btn-sm btn-primary"> Search!</button> </span>
@@ -82,11 +74,6 @@
                             <button class="btn btn-white" type="button">Previous</button>
                             <button class="btn btn-primary" type="button">Today</button>
                             <button class="btn btn-white" type="button">Next</button>
-=======
-                            <span class="input-group-btn">
-                            <button type="button" class="btn  btn-primary"><i class="fa fa-search"></i>&nbsp;&nbsp; Search</button></span>
-                            <input type="text" placeholder="Search patient name" class=" form-control">
->>>>>>> f000e44dd5b850608e7d62f2d53355d4ee752e1d
                         </div>
                     </div>
 
@@ -230,4 +217,5 @@
         </div>
     </div>
     {{-- end of modal window--}}
+    </div>
 @endsection
