@@ -27,6 +27,8 @@
                     </a>
                     <button class="btn btn-primary btn-lg" onclick="PrintElem();">Print &nbsp;<span
                                 class="fa fa-print"></span></button>
+                    <button class="btn btn-primary btn-lg" onclick="PrintPDF();">Print PDF &nbsp;<span
+                                class="fa fa-print"></span></button>
                 </div>
             </div>
             <div class="ibox-content" id="divone">
@@ -37,12 +39,10 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-
                         <h2> Hakim Alikozay Dental Clinic</h2>
                         <h4>Patient History File</h4>
                         <h4>Doctor Name : Dr.Rahmati</h4>
                         <h4>Date : 2018/5/4</h4>
-
                     </div>
 
                 </div>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="row"  style="margin-left:10px;margin-right: 10px;">
                             <div class="col-md-4">
-                                <table class="table table-striped text-bold" style="margin-top:30px;">
+                                <table class="table table-striped text-bold" style="margin-top:30px;" border="1">
                                     <tbody>
                                     <tr>
                                         <td>P-ID :</td>
@@ -180,8 +180,18 @@
         @endsection
 
         @section('script')
+            <script src="js/jspdf.debug.js"></script>
+            <script src="js/jspdf.min.js"></script>
             <script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
             <script type="text/javascript">
+                function PrintPDF(){
+                    if(type == 'datauri') {
+                        var doc = new jsPDF()
+
+                        doc.save('a4.pdf')
+                    }
+                }
+
                 function PrintElem() {
                     var mywindow = window.open('', 'PRINT', 'height=1024,width=1468');
                     mywindow.document.write('<html><head><title>' + 'Patient information' + '</title>');

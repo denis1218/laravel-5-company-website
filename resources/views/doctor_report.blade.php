@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('master')
 
 @section('style')
@@ -369,3 +370,5 @@
 
 
 @endsection
+=======
+>>>>>>> b0f8e107cb75d211f375668ad445acacf4c55984

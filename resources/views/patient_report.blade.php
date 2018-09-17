@@ -248,8 +248,7 @@
     <!-- script -->
 
     <script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
-    <script>
-        $(document).ready(function () {
+    <script> $(document).ready(function () {
 
             $('.demo1').click(function () {
                 swal({
