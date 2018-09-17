@@ -150,7 +150,11 @@ return [
         /*
          * Package Service Providers...
          */
+<<<<<<< HEAD
 //        Barryvdh\DomPDF\ServiceProvider::class,
+=======
+        // Barryvdh\DomPDF\ServiceProvider::class,
+>>>>>>> f02d5901facaacceec494c378694184a119197f3
         /*
          * Application Service Providers...
          */

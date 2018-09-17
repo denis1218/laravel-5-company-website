@@ -146,14 +146,15 @@
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="form-group">
-                                    <label>PID</label>
-                                    <input type="text" class="form-control" placeholder="P-ID" value="P-333">
-
-                                </div>
-                                <div class="form-group">
                                     <label>Full Name *</label>
                                     <input id="name" name="name" type="text" class="form-control required">
                                 </div>
+
+                                <div class="form-group">
+                                    <label>Last Name *</label>
+                                    <input id="name" name="name" type="text" class="form-control required">
+                                </div>
+
                                 <div class="form-group">
                                     <label>Gender &nbsp;&nbsp;&nbsp;</label>
                                     <label>  <div class="i-checks"><input type="radio"  value="option2" name="a"></div></i> Male </label>&nbsp;&nbsp;
@@ -169,10 +170,7 @@
                                     <label>Phone *</label>
                                     <input id="phone" name="phone" type="phone" class="form-control required">
                                 </div>
-                                <div class="form-group">
-                                    <label>Reg Date & Time</label>
-                                    <input type="datetime-local" class="form-control required">
-                                </div>
+                                
                             </div>
                             <div class="col-lg-4">
                                 <div class="text-center">
@@ -186,12 +184,39 @@
                     </fieldset>
                     <h1>Healths Problems</h1>
                     <fieldset>
-                        <h2>Choose Problem</h2>
+
+                        <h2>Any treatment prior to this treatment?</h2>
                         <div class="row">
                             <div class="col-lg-7">
                                 <div class="form-group">
 
                                     <div class="col-sm-10">
+                                        <div class="i-checks"><label> <input type="checkbox" value="option1" name="a"> <i></i>Prior Problem</label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        <h2>Allergy to Anesthitic drug </h2>
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="form-group">
+
+                                    <div class="col-sm-10">
+                                        <div class="i-checks"><label> <input type="checkbox" value="option1" name="a"> <i></i>Anesthitic Problem</label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        <h2>Other Health Problem</h2>
+                        <div class="row" >
+                            <div class="col-lg-7">
+                                <div class="row">
+                                <div class="form-group">
+                                    <div class="col-sm-6">
                                         <div class="i-checks"><label> <input type="checkbox" value="option1" name="a"> <i></i> No Problem</label></div>
                                         <div class="i-checks"><label> <input type="checkbox" value="option1" name="a"> <i></i> Blood Pressure</label></div>
                                         <div class="i-checks"><label> <input type="checkbox" value="option2" name="a"> <i></i>Diabetics</label></div>
@@ -199,7 +224,10 @@
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Bleeding Problems</label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Jaundice</label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Asthma</label></div>
-                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>AIDS</label></div>
+                                        
+                                    </div>
+                                    <div class="col-sm-6">
+                                       <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>AIDS</label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Tuberculosis </label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Allergy to Penicillin</label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Allergy to Sulpers</label></div>
@@ -207,9 +235,10 @@
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Pregnency</label></div>
                                     </div>
                                 </div>
+                               </div>
                             </div>
-
                         </div>
+                        <br>
                     </fieldset>
                 </form>
             </div>
