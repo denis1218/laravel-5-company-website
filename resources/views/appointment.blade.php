@@ -229,6 +229,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     {{--first doctor--}}
                                     <div id="fst" class="tab-pane">
                                         <div class="panel-body">
@@ -251,7 +252,7 @@
                                                     </button>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="row" style="margin-top:-120px;">
                                                 <div class="col-sm-7">
                                                     <div class="input-group">
@@ -357,6 +358,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     {{--second doctor--}}
                                     <div id="snd" class="tab-pane">
                                         <div class="panel-body">
@@ -507,6 +509,7 @@
                                                     </button>
                                                 </div>
                                             </div>
+
                                            <div class="row" style="margin-top:-120px;">
                                                 <div class="col-sm-7">
                                                     <div class="input-group">
@@ -749,8 +752,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>

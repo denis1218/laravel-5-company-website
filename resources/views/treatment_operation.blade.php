@@ -50,6 +50,9 @@
 
     @include('part.nav_doctor')
 
+    <br/>
+
+    {{--personal information patient--}}
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -147,9 +150,7 @@
         </div>
     </div>
 
-
-
-
+    {{-- tabs of patient treatment --}}
     <div class="row" style="margin-right: 0px;margin-left:0PX;">
         <div class="col-lg-12">
             <div class="tabs-container">
@@ -158,12 +159,14 @@
                     <li class=""><a data-toggle="tab" href="#tab-2">Past History</a></li>
                     <li class=""><a data-toggle="tab" href="#tab-3">New History</a></li>
                 </ul>
+
                 <div class="tab-content">
+                    {{-- panel tab 1 full history --}}
                     <div id="tab-1" class="tab-pane active">
                         <div class="panel-body">
                             <br>
-                            <div class="row shadow p-3 mb-5 bg-white rounded"
-                                 style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
+                            <div class="row shadow p-3 mb-5 rounded bg-info"
+                                 style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
                                 <h3 style="font-weight: bold">First Treatment</h3>
                             </div>
                             <br>
@@ -203,8 +206,8 @@
                                 </div>
                             </div>
                             <br>
-                            <div class="row shadow p-3 mb-5 bg-white rounded"
-                                 style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
+                            <div class="row p-3 mb-5 bg-info"
+                                 style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
                                 <h3 style="font-weight: bold">Second Treatment</h3>
                             </div>
                             <br/>
@@ -244,11 +247,12 @@
                             </div>
                         </div>
                     </div>
+                    {{-- panel tab 2 past history --}}
                     <div id="tab-2" class="tab-pane">
                         <div class="panel-body">
                             <br>
-                            <div class="row shadow p-3 mb-5 bg-white rounded"
-                                 style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
+                            <div class="row  bg-info"
+                                 style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
                                 <h3 style="font-weight: bold">Last History</h3>
                             </div>
                             <br>
@@ -290,13 +294,17 @@
 
                         </div>
                     </div>
+                    {{-- panel tab 3 new history --}}
                     <div id="tab-3" class="tab-pane">
                         <div class="panel-body">
                             <br>
-                            <div class="row shadow p-3 mb-5 bg-white rounded"
-                                 style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
+
+                            {{-- Header of title --}}
+                            <div class="row  bg-info"
+                                 style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
                                 <h3 style="font-weight: bold">Present History</h3>
                             </div>
+
                             <br>
                             <div class="row">
                                 <div class="col-lg-12" id="toot">
@@ -386,30 +394,31 @@
                                 <div class="form-group">
                                     <label for="nex">Next Appointment ?</label>
                                     <input type="date" class="form-control" name="nex">
-                                </div>
+                                   </div>
 
-                            </div>
+                                          </div>
 
-                        </div>
+                                      </div>
 
-                        <div class="row">
-                            <div class="col-md-5">
-                                <button class="btn btn-primary"> Send To Finance&nbsp;<i class="fa fa-save"></i>
-                                </button>
-                                <button class="btn btn-primary"> Send To X-Ray&nbsp;<i class="fa fa-send"></i>
-                                </button>
-                            </div>
-                        </div>
+                                      <div class="row">
+                                          <div class="col-md-5">
+                                              <button class="btn btn-primary"> Send To Finance&nbsp;<i class="fa fa-save"></i>
+                                              </button>
+                                              <button class="btn btn-primary"> Send To X-Ray&nbsp;<i class="fa fa-send"></i>
+                                              </button>
+                                          </div>
+                                      </div>
 
-                    </div>
-                </div>
-            </div>
+                                  </div>
+                              </div>
+                          </div>
 
 
-        </div>
-    </div>
-    </div>
-    </div>
+                      </div>
+                  </div>
+                  </div>
+                  </div>
+
 @endsection
 
 @section('script')
