@@ -298,56 +298,15 @@
                                 <h3 style="font-weight: bold">Present History</h3>
                             </div>
                             <br>
-                            <div class="row" style="margin-top:30px;">
-                                <div class="col-lorm-group">
-                                        <label>Select Dental Defect *</label>
-                                        <select class="form-controlg-3">
-                                            <div class="f">
-                                            <option value="1">Select Dental Defect</option>
-                                            <option value="1">Crown Fracture</option>
-                                            <option value="1">BDR</option>
-                                            <option value="2">G-Caries</option>
-                                            <option value="3">Attrision</option>
-                                            <option value="4">Calculus</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Treatment *</label>
-                                        <select class="form-control">
-                                            <option value="1">Select Treatment</option>
-                                            <option value="1">PF (Permanent Filling)</option>
-                                            <option value="2">RCT (Root Canal)</option>
-                                            <option value="3">Extraction</option>
-                                            <option value="4">Pulpotomy</option>
-                                            <option value="5">Apexification</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nex">Treatment Cost:</label>
-                                        <input type="number" class="form-control" name="nex" value="2000">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nex">Do you Give Discount ?:</label>
-                                        <input type="number" class="form-control"  name="nex">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nex">Next Appointment ?</label>
-                                        <input type="datetime-local" class="form-control" name="nex">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="description">Description</label>
-                                        <textarea class="form-control" name="description" cols="30" rows="5"
-                                                  placeholder="Description" style="resize: none"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9" id="toot">
+                            <div class="row">
+                                <div class="col-lg-12" id="toot">
                                     <label for="toot">Choose Tooth</label>
                                     <div class="" style="">
                                         <ul class="list-group checked-list-box">
-                                            <li class="list-group-item" ><img src="img/teeths/1.png" width="16px"/></li>
-                                            <li class="list-group-item" ><img src="img/teeths/2.png" width="16px"/></li>
-                                            <li class="list-group-item" ><img src="img/teeths/3.png" width="16px"/></li>
-                                            <li class="list-group-item" ><img src="img/teeths/4.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/1.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/2.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/3.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/4.png" width="16px"/></li>
                                             <li class="list-group-item"><img src="img/teeths/5.png" width="16px"/></li>
                                             <li class="list-group-item"><img src="img/teeths/6.png" width="16px"/></li>
                                             <li class="list-group-item"><img src="img/teeths/7.png" width="16px"/></li>
@@ -364,29 +323,73 @@
                                     </div>
 
 
+                                    <div class="" style="">
+                                        <ul class="list-group checked-list-box">
+                                            <li class="list-group-item"><img src="img/teeths/17.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/18.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/19.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/20.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/21.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/22.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/23.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/24.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/25.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/26.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/27.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/28.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/29.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/30.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/31.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/32.png" width="16px"/></li>
+                                        </ul>
+                                    </div>
 
-                                <div class="" style="">
-                                    <ul class="list-group checked-list-box">
-                                    <li class="list-group-item"><img src="img/teeths/17.png" width="16px"/></li>
-                                    <li class="list-group-item"><img src="img/teeths/18.png" width="16px"/></li>
-                                    <li class="list-group-item"><img src="img/teeths/19.png" width="16px"/></li>
-                                    <li class="list-group-item"><img src="img/teeths/20.png" width="16px"/></li>
-                                    <li class="list-group-item"><img src="img/teeths/21.png" width="16px"/></li>
-                                    <li class="list-group-item"><img src="img/teeths/22.png" width="16px"/></li>
-                                    <li class="list-group-item"><img src="img/teeths/23.png" width="16px"/></li>
-                                    <li class="list-group-item"><img src="img/teeths/24.png" width="16px"/></li>
-                                    <li class="list-group-item"><img src="img/teeths/25.png" width="16px"/></li>
-                                    <li class="list-group-item"><img src="img/teeths/26.png" width="16px"/></li>
-                                    <li class="list-group-item"><img src="img/teeths/27.png" width="16px"/></li>
-                                    <li class="list-group-item"><img src="img/teeths/28.png" width="16px"/></li>
-                                    <li class="list-group-item"><img src="img/teeths/29.png" width="16px"/></li>
-                                    <li class="list-group-item"><img src="img/teeths/30.png" width="16px"/></li>
-                                    <li class="list-group-item"><img src="img/teeths/31.png" width="16px"/></li>
-                                    <li class="list-group-item"><img src="img/teeths/32.png" width="16px"/></li>
-                                    </ul>
+                                </div>
+                                <div class="col-lg-4">
+
+                                    <div class="i-checks">   <label for="">Do You Need X-Rey ?</label>&nbsp;&nbsp;<input type="checkbox"  value="option2" name="a"></div>
+
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:30px;">
+                                <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Select Dental Defect *</label>
+                                    <select class="form-control">
+                                        <option value="1">Select Dental Defect</option>
+                                        <option value="1">Crown Fracture</option>
+                                        <option value="1">BDR</option>
+                                        <option value="2">G-Caries</option>
+                                        <option value="3">Attrision</option>
+                                        <option value="4">Calculus</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Treatment *</label>
+                                    <select class="form-control">
+                                        <option value="1">Select Treatment</option>
+                                        <option value="1">PF (Permanent Filling)</option>
+                                        <option value="2">RCT (Root Canal)</option>
+                                        <option value="3">Extraction</option>
+                                        <option value="4">Pulpotomy</option>
+                                        <option value="5">Apexification</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nex">Treatment Cost:</label>
+                                    <input type="number" class="form-control" name="nex" value="2000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nex">Do you Give Discount ?:</label>
+                                    <input type="number" class="form-control" name="nex">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nex">Next Appointment ?</label>
+                                    <input type="date" class="form-control" name="nex">
                                 </div>
 
                             </div>
+
                         </div>
 
                         <div class="row">
