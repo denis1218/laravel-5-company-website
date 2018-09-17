@@ -26,8 +26,10 @@
 </head>
 
 <body class="background-image">
-
-<div class="middle-box text-center loginscreen animated fadeInDown" style="margin-top: 100px;">
+<div class="row">
+    <div class="col-lg-6"></div>
+    <div class="col-lg-6">
+<div class="middle-box text-center loginscreen animated fadeInDown" style="margin-top: 100px; ">
     <div>
         <div>
             <img src="/img/Dentaa3.png" width="650px" class="img-responsive" alt="">
@@ -58,7 +60,9 @@
         </form>
     </div>
 </div>
+    </div>
 
+</div>
 <!-- Mainly scripts -->
 <script src="js/jquery-2.1.1.js"></script>
 <script src="js/bootstrap.min.js"></script>

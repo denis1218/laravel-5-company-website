@@ -114,8 +114,6 @@
                                     <td>Second Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 9:00 AM</td>
                                     <td class="">Diabetics</td>
-                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-
                                     </td>
                                 </tr>
                                 <tr>
@@ -125,7 +123,6 @@
                                     <td>Second Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 10:00 AM</td>
                                     <td class="">Hepatitics</td>
-
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
@@ -147,7 +144,6 @@
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 1:00 PM</td>
                                     <td class="">Blood pressure</td>
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-
                                     </td>
                                 </tr>
                                 <tr>
@@ -158,7 +154,6 @@
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 2:20 PM</td>
                                     <td class="">Diabetics</td>
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-
                                     </td>
                                 </tr>
                                 <tr>
@@ -180,9 +175,6 @@
             </div>
         </div>
     </div>
-
-
-
 @endsection
 @section('script')
 

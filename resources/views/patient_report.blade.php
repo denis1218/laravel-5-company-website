@@ -64,7 +64,7 @@
                                 <div class="col-sm-5">
                                     <div class="input-group">
                                         <span class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-success"> Search</button> </span>
+                                        <button type="button" class="btn btn-sm btn-primary"> Search</button> </span>
                                         <input type="text" placeholder="Search patient name"
                                                 class="input-sm form-control"> 
                                     </div>
