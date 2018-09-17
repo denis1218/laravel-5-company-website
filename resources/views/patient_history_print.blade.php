@@ -4,6 +4,7 @@
 
     @include('part.nav_doctor')
 
+    <br/>
 
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
@@ -30,7 +31,7 @@
                     <a class="close-link" style="margin-right:20px;">
                         <i class="fa fa-times"></i>
                     </a>
-
+                    <button class="btn btn-primary btn-lg" onclick="PrintElem();">Print &nbsp;<span class="fa fa-print"></span></button>
                 </div>
             </div>
             <div class="ibox-content" id="divone">

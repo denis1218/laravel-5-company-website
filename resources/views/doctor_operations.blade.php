@@ -44,6 +44,9 @@
 
 @section('content')
     @include('part.nav_doctor')
+
+    <br/>
+
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -84,7 +87,7 @@
                             <table class="table table-hover no-margins">
                                 <thead>
                                 <tr>
-                                    <td>P-ID</td>
+                                    <th>P-ID</th>
                                     <th>Patient Name</th>
                                     <th>Last Name</th>
                                     <th>Status</th>
@@ -101,7 +104,6 @@
                                     <td>Second Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                     <td class="">Blood pressure</td>
-
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
@@ -112,11 +114,7 @@
                                     <td>Second Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                     <td class="">Diabetics</td>
-
-
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-
-
                                     </td>
                                 </tr>
                                 <tr>
@@ -126,7 +124,6 @@
                                     <td>Second Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                     <td class="">Hepatitics</td>
-
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
@@ -137,11 +134,8 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                     <td class="">Asthma</td>
-
-
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-
-
+                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -151,9 +145,7 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                     <td class="">Blood pressure</td>
-
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-
                                     </td>
                                 </tr>
                                 <tr>
@@ -163,9 +155,7 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                     <td class="">Diabetics</td>
-
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-
                                     </td>
                                 </tr>
                                 <tr>
@@ -175,10 +165,8 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                     <td class="">Blood pressure</td>
-
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-
-
+                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -190,9 +178,6 @@
             </div>
         </div>
     </div>
-
-
-
 @endsection
 @section('script')
 
