@@ -167,6 +167,10 @@ Route::get('patient_history_print',function (){
 Route::get('next_appointment_list',function (){
    return view('next_appointment_list');
 });
+// patient report
+Route::get('print_preport', function(){
+    return view('print_preport');
+});
 
 Route::get('dash_reception',function (){
     return view('/dash_reception');
@@ -179,4 +183,6 @@ Route::get('doctor_report_list',function (){
 Route::get('dash_doctor',function (){
     return view('/dash_doctor');
 });
+
+Route::get('/pdf','PdfGenerator@PDF');
 

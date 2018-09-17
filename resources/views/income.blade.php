@@ -56,12 +56,6 @@
                     </div>
                 </div>
 
-                {{-- <div class="row" style="margin-top:40px; margin-left:2px;">
-                    <div class="col-lg-12">
-                        <label for="name"> <h4>Patient Name:</h4></label><label for=""><h4>Ahmad</h4></label><br>
-                        <label for="name"> <h4>Visited:</h4></label><label for=""><h4>1</h4></label>
-                    </div>
-                </div> --}}
                     <div class="">
                     </div>
                     <table class="table table-striped table-bordered table-hover" id="editable" style="margin-top:80px;margin-left:30px;width:95%;">
@@ -70,6 +64,7 @@
                                 <th>ID</th>
                                 <th>P-ID</th>
                                 <th>P-Name</th>
+                                <th>Doctor-Name</th>
                                 <th>Estimated Fee</th>
                                 <th>Paid Amount</th>
                                 <th>Discount</th>
@@ -83,6 +78,7 @@
                                 <td>1</td>
                                 <td>p011</td>
                                 <td>Abdullah</td>
+                                <td>Dr.Samim</td>
                                 <td>1900</td>
                                 <td>1200</td>
                                 <td>100</td>
@@ -95,6 +91,7 @@
                                 <td>2</td>
                                 <td>p012</td>
                                 <td>Mansoor</td>
+                                <td>Dr.Samim</td>
                                 <td>1500</td>
                                 <td>900</td>
                                 <td>100</td>
@@ -107,6 +104,7 @@
                                 <td>3</td>
                                 <td>p013</td>
                                 <td>Arash</td>
+                                <td>Dr.Jalal</td>
                                 <td>3500</td>
                                 <td>2000</td>
                                 <td>300</td>
@@ -119,6 +117,7 @@
                                 <td>4</td>
                                 <td>p014</td>
                                 <td>Manizhah</td>
+                                <td>Dr.Tamim</td>
                                 <td>700</td>
                                 <td>650</td>
                                 <td>50</td>
@@ -131,6 +130,7 @@
                                 <td>5</td>
                                 <td>p015</td>
                                 <td>Erfanullah</td>
+                                <td>Dr.Ahmadi</td>
                                 <td>1100</td>
                                 <td>1100</td>
                                 <td>00</td>

@@ -22,29 +22,19 @@
 @endsection
 
 @section('content')
-    <div class="row page-wrapper border-bottom white-bg "
-         style="margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
-        <div class="row">
-            <div class="col-md-5" style="margin-top:15px; margin-left:20px;">
-                <h3>Report Patient</h3>
-            </div>
-        </div>
-        <div class="col-sm-10">
-            <div class="input-group m-b"><span class="input-group-btn">
-                    <button type="button" class="btn btn-primary" href="#patient" data-toggle="collapse">Search</button> </span>
-                <input type="text" class="form-control" placeholder="Search P-ID patient">
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <a type="button" href="/appo" class="btn btn-warning">Show all patient</a>
-        </div>
-    </div>
 
-    {{-- patient info --}}
-    <div class="col-lg-12 collapse" id="patient" >
+
+
+
+
+
+
+
+
+<div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Patient History</h5>
+                <h5>Patient Information <i class="fa fa-info"></i></h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -58,186 +48,144 @@
                         <li><a href="#">Config option 2</a>
                         </li>
                     </ul>
-                    <a class="close-link">
+                    <a class="close-link" style="margin-right:20px;">
                         <i class="fa fa-times"></i>
                     </a>
                 </div>
             </div>
-            <div class="ibox-content">
+            <div class="ibox-content" id="divone">
+                
+                <div class="container">
                 <div class="row">
-                    <div class="col-md-12 text-right">
-                        <button class="btn btn-primary btn-lg">Print &nbsp;<i class="fa fa-print"></i></button>
-                    </div>
-                </div>
-
-                {{-- patient personal information --}}
-                <div class="row" style="padding-left:30px; font-size: 20px;">
-                    <div class="row m-b-lg m-t-lg">
-                        <div class="col-md-6">
-
-                            <div class="profile-info">
-                                <div class="">
-                                    <div>
-                                        <h2 class="no-margins font-b">
-                                            Omid Rahmati
-                                        </h2>
-                                        <h4>ID: P-0780504075</h4>
-                                        <small style="font-size: 15px;">
-                                            <span style="font-size: 15px; font-weight: bold;">Problem teeth : </span>Orthodontist,
-                                            Periodontist <br/>
-                                            <span style="font-size: 15px; font-weight: bold;">Problem Health : </span>Blood
-                                            Pressure , Allergy to Penicillin , Allergy to Anaesthetic
-                                        </small>
+                    
+                    {{--first doctor--}}
+                            
+                            <div class="row" style="">
+                                <div class="col-sm-5">
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-primary"> Search</button> </span>
+                                        <input type="text" placeholder="Search patient name"
+                                                class="input-sm form-control"> 
                                     </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row" style="margin-top:30px;">
+                                <div class="col-sm-11">
+                                        <table class="table table-hover  no-margins" >
+                                            <thead>
+                                            <tr class="bg-light">
+                                                <td>P-ID</td>
+                                                <th>Patient Name</th>
+                                                <th>Last Name</th>
+                                                <th>Doctor Name</th>
+                                                <th>Status</th>
+                                                <th>Date & Time Appointment</th>
+                                                <th>Healths Problem</th>
+                                                <th>Full Details</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>P-078554422</td>
+                                                <td>Ahmad</td>
+                                                <td>Sultani</td>
+                                                <td></i>Dr.Samim</td>
+                                                <td>First Time</td>
+                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:00 AM</td>
+                                                <td class="">Blood pressure</td>
+                                                <td><a class="btn btn-xs btn-primary" href="/print_preport" ><i class="fa fa-info"></i>
+                                                        Details</a></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>P-0786906677</td>
+                                                <td>Naweed</td>
+                                                <td>Rezayee</td>
+                                                <td></i>Dr.Samim</td>
+                                                <td>Second Time</td>
+                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
+                                                <td class="">Diabetics</td>
+                                                <td><a class="btn btn-xs btn-primary" href="/print_preport" ><i class="fa fa-info"></i>
+                                                        Details</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>P-0785445580</td>
+                                                <td>Qasim</td>
+                                                <td>Mukhtary</td>
+                                                <td></i>Dr.Samim</td>
+                                                <td>First Time</td>
+                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                <td class="">Hepatitics</td>
+                                                <td><a class="btn btn-xs btn-primary" href="/print_preport" ><i class="fa fa-info"></i>
+                                                        Details</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>P-0785564749</td>
+                                                <td>Mahmood</td>
+                                                <td>Hashimi</td>
+                                                <td></i>Dr.Samim</td>
+                                                <td>Second Time</td>
+                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                <td class="">Asthma</td>
+                                                <td><a class="btn btn-xs btn-primary" href="/print_preport" ><i class="fa fa-info"></i>
+                                                        Details</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>P-0785786788</td>
+                                                <td>Ali</td>
+                                                <td>Ahmadyar</td>
+                                                <td></i>Dr.Samim</td>
+                                                <td>First Time</td>
+                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00</td>
+                                                <td class="">Blood pressure</td>
+                                                <td><a class="btn btn-xs btn-primary" href="/print_preport" ><i class="fa fa-info"></i>
+                                                        Details</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>P-0785786866</td>
+                                                <td>Mahdi</td>
+                                                <td>Safari</td>
+                                                <td></i>Dr.Samim</td>
+                                                <td>Second Time</td>
+                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 10:00 AM</td>
+                                                <td class="">Diabetics</td>
+                                                <td><a class="btn btn-xs btn-primary" href="/print_preport" ><i class="fa fa-info"></i>
+                                                        Details</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>P-078558099</td>
+                                                <td>Ahmad</td>
+                                                <td>Rasuli</td>
+                                                <td></i>Dr.Samim</td>
+                                                <td>First Time</td>
+                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 11:00 AM</td>
+                                                <td class="">Blood pressure</td>
+                                                <td><a class="btn btn-xs btn-primary" href="/print_preport" ><i class="fa fa-info"></i>
+                                                        Details</a></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-5">
-                            <table class="table small m-b-xs">
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <span class="font-m">Gender:<b>&nbsp;Male</b>&nbsp;<i class="fa fa-male"></i></span>
-                                    </td>
-                                    <td>
-                                        <span class="font-m">Age:<b>&nbsp;25</b>&nbsp;<i class=""></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-m">Doctor:<b>&nbsp;Dr.Ahmadi</b>&nbsp;<i class="fa fa-user-md"></i></span>
-                                    </td>
-                                    <td>
-                                        <span class="font-m">Visited:<b>&nbsp;First Time</b>&nbsp;<i class=""></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-m">Date Reg:<b>&nbsp;2018/5/26</b>&nbsp;<i class="fa fa-calendar"></i></span>
-                                    </td>
-                                    <td>
-                                        <span class="font-m text-success">Cash:<b>&nbsp;paid</b>&nbsp;<i class="fa fa-money"></i></span>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                 </div>
-                {{-- patient personal information --}}
-                <hr/>
-                {{-- table info patient --}}
-                <div class="row">
-                    <div class="col-md-12">
-                        <table class="table table-hover table-bordered">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Tooth NO</th>
-                                <th>Dental Defect</th>
-                                <th>Treatment</th>
-                                <th>Estimated Fee</th>
-                                <th>Doctor defect</th>
-                                <th>Medicine</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>25</td>
-                                <td>BDR</td>
-                                <td>RCT</td>
-                                <td>2690 AFG</td>
-                                <td>Dr. Rahmati</td>
-                                <td>
-                                    <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#medicine-model">
-                                        Details</button></td>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>15</td>
-                                <td>Attrision</td>
-                                <td>Extraction</td>
-                                <td>2000 AFG</td>
-                                <td>Dr. Rahmati</td>
-                                <td>
-                                    <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#medicine-model">
-                                        Details</button></td>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <table class="table table-hover table-bordered">
-                                    <tr>
-                                        <td class="text-bold"><h4> Tooth Defects: </h4></td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-bold"><h4>Total Fee: </h4></td>
-                                        <td>3500 AFG</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-bold"><h4>Total paid: </h4></td>
-                                        <td>3500 AFG</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-                {{-- table info patient --}}
+               
+               
+                
+                
             </div>
         </div>
     </div>
-    {{-- patient info --}}
 
-    {{-- Modal window dialog --}}
-    <div class="modal inmodal" id="medicine-model" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content animated fadeIn">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span
-                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <i class=" modal-icon"><img src="img/medicine_drug.png" width="80px"/></i>
-                    <h4 class="modal-title">Medicine patient</h4>
-                    <small>information patient medicine</small>
-                </div>
-                <div class="modal-body">
-                    <table class="table table-hover no-margins table-striped">
-                        <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>Name Drug</th>
-                            <th>Each day</th>
-                            <th>Total Days</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Ampicilne</td>
-                            <td>1+1+1</td>
-                            <td>2 days</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Brophine</td>
-                            <td>1+1+1</td>
-                            <td>1 day</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
+
+
+
+
 
 
 
@@ -248,8 +196,7 @@
     <!-- script -->
 
     <script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
-    <script>
-        $(document).ready(function () {
+    <script> $(document).ready(function () {
 
             $('.demo1').click(function () {
                 swal({

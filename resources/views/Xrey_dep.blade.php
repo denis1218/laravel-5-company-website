@@ -102,12 +102,12 @@
                                             Ahmad Farid
                                         </h2>
                                         <h4>ID: P-504075</h4>
-                                        <small style="font-size: 10px;">
+                                        {{-- <small style="font-size: 10px;">
                                             <span style="font-size: 10px; font-weight: bold;">Problem teeth : </span>Orthodontist,
                                             Periodontist <br/>
                                             <span style="font-size: 10px; font-weight: bold;">Problem Health : </span>Blood
                                             Pressure , Allergy to Penicillin , Allergy to Anaesthetic
-                                        </small>
+                                        </small> --}}
                                     </div>
                                 </div>
                             </div>

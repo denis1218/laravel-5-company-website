@@ -154,6 +154,12 @@
                                     <label>Full Name *</label>
                                     <input id="name" name="name" type="text" class="form-control required">
                                 </div>
+
+                                <div class="form-group">
+                                    <label>Last Name *</label>
+                                    <input id="name" name="name" type="text" class="form-control required">
+                                </div>
+
                                 <div class="form-group">
                                     <label>Gender &nbsp;&nbsp;&nbsp;</label>
                                     <label>  <div class="i-checks"><input type="radio"  value="option2" name="a"></div></i> Male </label>&nbsp;&nbsp;
@@ -186,8 +192,35 @@
                     </fieldset>
                     <h1>Healths Problems</h1>
                     <fieldset>
-                        <h2>Choose Problem</h2>
+
+                        <h2>Any treatment prior to this treatment?</h2>
                         <div class="row">
+                            <div class="col-lg-7">
+                                <div class="form-group">
+
+                                    <div class="col-sm-10">
+                                        <div class="i-checks"><label> <input type="checkbox" value="option1" name="a"> <i></i>Prior Problem</label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        <h2>Allergy to Anesthitic drug </h2>
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="form-group">
+
+                                    <div class="col-sm-10">
+                                        <div class="i-checks"><label> <input type="checkbox" value="option1" name="a"> <i></i>Anesthitic Problem</label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        <h2>Other Health Problem</h2>
+                        <div class="row" >
                             <div class="col-lg-7">
                                 <div class="form-group">
 
@@ -208,8 +241,8 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
+                        <br>
                     </fieldset>
                 </form>
             </div>

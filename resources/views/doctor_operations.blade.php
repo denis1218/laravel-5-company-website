@@ -101,7 +101,10 @@
                                     <td>Second Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
                                     <td class="">Blood pressure</td>
+<<<<<<< HEAD
 
+=======
+>>>>>>> b0f8e107cb75d211f375668ad445acacf4c55984
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
@@ -112,8 +115,13 @@
                                     <td>Second Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 9:00 AM</td>
                                     <td class="">Diabetics</td>
+<<<<<<< HEAD
 
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
+=======
+                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
+
+>>>>>>> b0f8e107cb75d211f375668ad445acacf4c55984
                                     </td>
                                 </tr>
                                 <tr>
@@ -134,9 +142,13 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 11:20 AM</td>
                                     <td class="">Asthma</td>
+<<<<<<< HEAD
 
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
 
+=======
+                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
+>>>>>>> b0f8e107cb75d211f375668ad445acacf4c55984
                                     </td>
                                 </tr>
                                 <tr>
@@ -146,7 +158,10 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 1:00 PM</td>
                                     <td class="">Blood pressure</td>
+<<<<<<< HEAD
 
+=======
+>>>>>>> b0f8e107cb75d211f375668ad445acacf4c55984
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
 
                                     </td>
@@ -158,7 +173,10 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 2:20 PM</td>
                                     <td class="">Diabetics</td>
+<<<<<<< HEAD
 
+=======
+>>>>>>> b0f8e107cb75d211f375668ad445acacf4c55984
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
 
                                     </td>
@@ -170,9 +188,13 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 3:00 PM</td>
                                     <td class="">Blood pressure</td>
+<<<<<<< HEAD
 
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
 
+=======
+                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
+>>>>>>> b0f8e107cb75d211f375668ad445acacf4c55984
                                     </td>
                                 </tr>
                                 </tbody>
