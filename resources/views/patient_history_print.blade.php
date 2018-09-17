@@ -4,6 +4,7 @@
 
     @include('part.nav_doctor')
 
+    <br/>
 
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
@@ -26,8 +27,6 @@
                         <i class="fa fa-times"></i>
                     </a>
                     <button class="btn btn-primary btn-lg" onclick="PrintElem();">Print &nbsp;<span
-                                class="fa fa-print"></span></button>
-                    <button class="btn btn-primary btn-lg" onclick="PrintPDF();">Print PDF &nbsp;<span
                                 class="fa fa-print"></span></button>
                 </div>
             </div>

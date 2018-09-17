@@ -44,6 +44,9 @@
 
 @section('content')
     @include('part.nav_doctor')
+
+    <br/>
+
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -84,7 +87,7 @@
                             <table class="table table-hover no-margins">
                                 <thead>
                                 <tr>
-                                    <td>P-ID</td>
+                                    <th>P-ID</th>
                                     <th>Patient Name</th>
                                     <th>Doctor Name</th>
                                     <th>Status</th>
