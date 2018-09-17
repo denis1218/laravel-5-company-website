@@ -60,7 +60,6 @@
                                 <table class="table table-hover table-borderd table-striped">
                                     <thead>
                                     <tr>
-                                        <th>#</th>
                                         <th>ID</th>
                                         <th>Doctor Name</th>
                                         <th>Availability Time</th>
@@ -72,7 +71,7 @@
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td>1</td>
+
                                         <td>1</td>
                                         <td>tamim</td>
                                         <td>8:00 AM-4:00 PM</td>
@@ -84,7 +83,6 @@
 
                                     </tr>
                                     <tr>
-                                        <td>1</td>
                                         <td>2</td>
                                         <td>Ahmad</td>
                                         <td>8:00 AM-12:00 PM</td>
@@ -96,7 +94,6 @@
 
                                     </tr>
                                     <tr>
-                                        <td>1</td>
                                         <td>3</td>
                                         <td>Samim</td>
                                         <td>8:00 AM-11:00 AM</td>
@@ -108,7 +105,7 @@
 
                                     </tr>
                                     <tr>
-                                        <td>1</td>
+
                                         <td>4</td>
                                         <td>Naweed</td>
                                         <td>1:00 PM-4:00 AM</td>
@@ -120,7 +117,7 @@
 
                                     </tr>
                                     <tr>
-                                        <td>1</td>
+
                                         <td>5</td>
                                         <td>Qasim</td>
                                         <td>2:00 PM-7:00 PM</td>
@@ -146,11 +143,6 @@
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="form-group">
-                                    <label>PID</label>
-                                    <input type="text" class="form-control" placeholder="P-ID" value="P-333">
-
-                                </div>
-                                <div class="form-group">
                                     <label>Full Name *</label>
                                     <input id="name" name="name" type="text" class="form-control required">
                                 </div>
@@ -175,10 +167,7 @@
                                     <label>Phone *</label>
                                     <input id="phone" name="phone" type="phone" class="form-control required">
                                 </div>
-                                <div class="form-group">
-                                    <label>Reg Date & Time</label>
-                                    <input type="datetime-local" class="form-control required">
-                                </div>
+                                
                             </div>
                             <div class="col-lg-4">
                                 <div class="text-center">
@@ -222,9 +211,9 @@
                         <h2>Other Health Problem</h2>
                         <div class="row" >
                             <div class="col-lg-7">
+                                <div class="row">
                                 <div class="form-group">
-
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-6">
                                         <div class="i-checks"><label> <input type="checkbox" value="option1" name="a"> <i></i> No Problem</label></div>
                                         <div class="i-checks"><label> <input type="checkbox" value="option1" name="a"> <i></i> Blood Pressure</label></div>
                                         <div class="i-checks"><label> <input type="checkbox" value="option2" name="a"> <i></i>Diabetics</label></div>
@@ -232,7 +221,10 @@
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Bleeding Problems</label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Jaundice</label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Asthma</label></div>
-                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>AIDS</label></div>
+                                        
+                                    </div>
+                                    <div class="col-sm-6">
+                                       <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>AIDS</label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Tuberculosis </label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Allergy to Penicillin</label></div>
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Allergy to Sulpers</label></div>
@@ -240,6 +232,7 @@
                                         <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Pregnency</label></div>
                                     </div>
                                 </div>
+                               </div>
                             </div>
                         </div>
                         <br>

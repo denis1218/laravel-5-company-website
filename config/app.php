@@ -150,7 +150,13 @@ return [
         /*
          * Package Service Providers...
          */
+<<<<<<< HEAD
 //        Barryvdh\DomPDF\ServiceProvider::class,
+=======
+
+        // Barryvdh\DomPDF\ServiceProvider::class,
+
+>>>>>>> c5d32cddd578f4bb3d38c6278dd44f9f1c3f11fc
         /*
          * Application Service Providers...
          */
@@ -208,7 +214,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+<<<<<<< HEAD
 //
+=======
+//        'PDF' => Barryvdh\DomPDF\Facade::class,
+>>>>>>> c5d32cddd578f4bb3d38c6278dd44f9f1c3f11fc
     ],
 
 ];
