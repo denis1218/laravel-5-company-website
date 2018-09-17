@@ -10,6 +10,11 @@
             <div class="ibox-title">
                 <h5>Patient Information <i class="fa fa-info"></i></h5>
                 <div class="ibox-tools">
+                    <button class="btn btn-primary btn-lg" onclick="PrintElem();">Print &nbsp;<span
+                                class="fa fa-print"></span></button>
+                    <button class="btn btn-primary btn-lg" onclick="PrintPDF();">Print PDF &nbsp;<span
+                                class="fa fa-print"></span></button>
+
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
                     </a>
@@ -25,10 +30,7 @@
                     <a class="close-link" style="margin-right:20px;">
                         <i class="fa fa-times"></i>
                     </a>
-                    <button class="btn btn-primary btn-lg" onclick="PrintElem();">Print &nbsp;<span
-                                class="fa fa-print"></span></button>
-                    <button class="btn btn-primary btn-lg" onclick="PrintPDF();">Print PDF &nbsp;<span
-                                class="fa fa-print"></span></button>
+
                 </div>
             </div>
             <div class="ibox-content" id="divone">
@@ -170,7 +172,7 @@
                     </div>
                     <br/>
                     <br/>
-                    <h3>Sign Doctor: </h3>
+                    <h5 class="text-right" style="margin-right: 60px;color:grey;margin-bottom: 70px;" >Doctor Signature </h5>
                 </div>
             </div>
         </div>
