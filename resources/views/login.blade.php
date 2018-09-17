@@ -15,43 +15,53 @@
     <link href="dashboard/css/animate.css" rel="stylesheet">
     <link href="dashboard/css/style.css" rel="stylesheet">
 
+    <style>
+        .background-image {
+            background: url("img/back.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+
 </head>
 
-<body class="gray-bg">
+<body class="background-image">
 
-    <div class="middle-box text-center loginscreen animated fadeInDown" style="margin-top: 100px;">
+<div class="middle-box text-center loginscreen animated fadeInDown" style="margin-top: 100px;">
+    <div>
         <div>
-            <div>
-              <img src="/img/Dentaa3.png" width="650px"  class="img-responsive" alt="">
-            </div>
-            <h3>Welcome to HK|Clinic</h3>
-            <form class="m-t" role="form" action="/dash">
-                <div class="form-group">
-                    <select class="form-control" required>
-                        <option value="">Select Your Position</option>
-                        <option value="1">Doctor</option>
-                        <option value="2">Receptionist</option>
-                        <option value="3">Finance</option>
-                        <option value="4">Admin</option>
-                        <option value="5">other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Username" required="">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" required="">
-                </div>
-                <button type="submit" class="btn btn-success block full-width m-b">Login</button>
-
-                <a href="#"><small>Forgot password?</small></a>
-            </form>
+            <img src="/img/Dentaa3.png" width="650px" class="img-responsive" alt="">
         </div>
-    </div>
+        <h3>Welcome to HK|Clinic</h3>
+        <form class="m-t" role="form" action="/dash">
+            <div class="form-group">
+                <select class="form-control" required>
+                    <option value="">Select Your Position</option>
+                    <option value="1">Doctor</option>
+                    <option value="2">Receptionist</option>
+                    <option value="3">Finance</option>
+                    <option value="4">Admin</option>
+                    <option value="5">other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Username" required="">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" required="">
+            </div>
+            <button type="submit" class="btn btn-success block full-width m-b">Login</button>
 
-    <!-- Mainly scripts -->
-    <script src="js/jquery-2.1.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+            <a href="#">
+                <small>Forgot password?</small>
+            </a>
+        </form>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 </body>
 

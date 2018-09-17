@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "aos": "^2.3.3",
-        "fullcalendar": "^3.9.0"
+        "fullcalendar": "^3.9.0",
+        "jspdf": "^1.4.1"
     }
 }

@@ -1,5 +1,10 @@
 @extends('master')
 @section('style')
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <style rel="stylesheet">
         .font-m {
             font-size: 1.5em;
@@ -48,7 +53,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Patient Info</h5>
+                <h5>Patient Information</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -68,9 +73,19 @@
                 </div>
             </div>
             <div class="ibox-content">
+                <div class="row">
+                    <div class="alert alert-danger alert-dismissable col-md-12">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        Patient have AIDS problem health <a class="alert-link" href="#"></a>.
+                    </div>
+                </div>
                 <div class="row" style="margin-left:-100px;">
+
                     <div class="row m-b-lg m-t-lg">
+
+
                         <div class="col-md-5">
+
                             <div class="profile-info">
                                 <div class="">
                                     <div>
@@ -128,157 +143,270 @@
 
                     </div>
                 </div>
-                <div class="hr-line-solid"></div>
-                <div class="row shadow p-3 mb-5 bg-white rounded"
-                     style="background: #c4ff6b; padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                    <h3 style="font-weight: bold">First Treatment</h3>
-                </div>
-                <div class="row " style="margin-top:15px;">
-                    <div class="col-md-8">
-                        <table class="table table-striped " style="font-weight: bold; ">
-                            <tr>
-                                <td>Dental Defect :</td>
-                                <td>BDR</td>
-                                <td>Fee paid:</td>
-                                <td>2500 Afg</td>
-                            </tr>
-                            <tr>
-                                <td>Treatment :</td>
-                                <td>RCT</td>
-                                <td>Remaining Fee :</td>
-                                <td>2000 Afg</td>
-                            </tr>
-
-                            <tr>
-                                <td>Tooth Number :</td>
-                                <td>25</td>
-                                <td>Date First Visite :</td>
-                                <td>2018/5/3</td>
-                            </tr>
-                        </table>
-                        <div>
-                            <div><p><strong>Description:</strong> I love to use the famous saying of “Fake it till you
-                                    make it.” That’s why I used to say ” I can do it, because I love to do it.” ” I
-                                    deserve a better life and I am going to create it.” I am open minded person</p>
-                            </div>
-                        </div>
-                        <div class="hr-line-solid"></div>
-                    </div>
-
-                </div>
-
-
-                    <div class="row"
-                         style="background: #c4ff6b; padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                        <h3 style="font-weight: bold">Treatment Operation</h3>
-                    </div>
-                <div class="row" style="margin-top:30px;">
-                    <div class="col-md-6" >
-                        <div class="form-group">
-                            <label>Select Dental Defect *</label>
-                            <select class="form-control">
-                                <option value="1">Select Dental Defect</option>
-                                <option value="1">Crown Fracture</option>
-                                <option value="1">BDR</option>
-                                <option value="2">G-Caries</option>
-                                <option value="3">Attrision</option>
-                                <option value="4">Calculus</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Treatment *</label>
-                            <select class="form-control">
-                                <option value="1">Select Treatment</option>
-                                <option value="1">PF (Permanent Filling)</option>
-                                <option value="2">RCT (Root Canal)</option>
-                                <option value="3">Extraction</option>
-                                <option value="4">Pulpotomy</option>
-                                <option value="5">Apexification</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="nex">Treatment Cost:</label>
-                            <input type="number" class="form-control" name="nex" value="2000">
-                        </div>
-                        <div class="form-group">
-                            <label for="nex">Next Appointment ?</label>
-                            <input type="date" class="form-control" name="nex">
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Description</label>
-                            <textarea class="form-control" name="description" cols="30" rows="5"
-                                      placeholder="Description" style="resize: none"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6" id="toot">
-                        <label for="toot">Choose Tooth</label>
-                        <div class="" style="">
-                            <ul class="list-group checked-list-box">
-                                <li class="list-group-item"><img src="img/teeths/1.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/2.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/3.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/4.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/5.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/6.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/7.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/8.png" width="25px"/></li>
-                            </ul>
-                        </div>
-                        <div class="" style="">
-                            <ul class="list-group checked-list-box">
-                                <li class="list-group-item"><img src="img/teeths/9.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/10.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/11.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/12.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/13.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/14.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/15.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/16.png" width="25px"/></li>
-                            </ul>
-                        </div>
-                        <div class="" style="">
-                            <ul class="list-group checked-list-box">
-                                <li class="list-group-item"><img src="img/teeths/17.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/18.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/19.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/20.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/21.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/22.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/23.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/24.png" width="25px"/></li>
-                            </ul>
-                        </div>
-                        <div class="" style="">
-                            <ul class="list-group checked-list-box">
-                                <li class="list-group-item"><img src="img/teeths/25.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/26.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/27.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/28.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/29.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/30.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/31.png" width="25px"/></li>
-                                <li class="list-group-item"><img src="img/teeths/32.png" width="25px"/></li>
-                            </ul>
-                        </div>
-
-
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-5">
-                        <button class="btn btn-primary"> Send To Finance&nbsp;<i class="fa fa-save"></i>
-                        </button>
-                        <button class="btn btn-primary"> Send To X-Ray&nbsp;<i class="fa fa-send"></i>
-                        </button>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
 
+
+
+
+    <div class="row" style="margin-right: 0px;margin-left:0PX;">
+        <div class="col-lg-12">
+            <div class="tabs-container">
+                <ul class="nav nav-tabs" id="demoTabs">
+                    <li class="active"><a data-toggle="tab" href="#tab-1">Full History</a></li>
+                    <li class=""><a data-toggle="tab" href="#tab-2">Past History</a></li>
+                    <li class=""><a data-toggle="tab" href="#tab-3">New History</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane active">
+                        <div class="panel-body">
+                            <br>
+                            <div class="row shadow p-3 mb-5 bg-white rounded"
+                                 style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
+                                <h3 style="font-weight: bold">First Treatment</h3>
+                            </div>
+                            <br>
+                            <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
+                                <div class="col-md-8">
+
+                                    <table class="table table-striped " style="font-weight: bold; ">
+                                        <tr>
+                                            <td>Dental Defect :</td>
+                                            <td>Fracture of the tooth</td>
+                                            <td>Fee paid:</td>
+                                            <td>2500 Afg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Treatment :</td>
+                                            <td>RCT</td>
+                                            <td>Remaining Fee :</td>
+                                            <td>2000 Afg</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Tooth Number :</td>
+                                            <td>25</td>
+                                            <td>Date First Visite :</td>
+                                            <td>2018/5/3</td>
+                                        </tr>
+                                    </table>
+                                    <div>
+                                        <div><p><strong>Description:</strong> I love to use the famous saying of “Fake
+                                                it till you
+                                                make it.” That’s why I used to say ” I can do it, because I love to do
+                                                it.” ” I
+                                                deserve a better life and I am going to create it.” I am open minded
+                                                person</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row shadow p-3 mb-5 bg-white rounded"
+                                 style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
+                                <h3 style="font-weight: bold">Second Treatment</h3>
+                            </div>
+                            <br/>
+                            <div class="row " style="margin-top:15px;margin-left:10px;margin-right:10px;">
+                                <div class="col-md-8">
+                                    <table class="table table-striped " style="font-weight: bold; ">
+                                        <tr>
+                                            <td>Dental Defect :</td>
+                                            <td>Fracture of the tooth</td>
+                                            <td>Fee paid:</td>
+                                            <td>2500 Afg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Treatment :</td>
+                                            <td>Toothpaste</td>
+                                            <td>Remaining Fee :</td>
+                                            <td>2000 Afg</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Tooth Number :</td>
+                                            <td>25</td>
+                                            <td>Date First Visite :</td>
+                                            <td>2018/5/3</td>
+                                        </tr>
+                                    </table>
+                                    <div>
+                                        <div><p><strong>Description:</strong> I love to use the famous saying of “Fake
+                                                it till you
+                                                make it.” That’s why I used to say ” I can do it, because I love to do
+                                                it.” ” I
+                                                deserve a better life and I am going to create it.” I am open minded
+                                                person</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-2" class="tab-pane">
+                        <div class="panel-body">
+                            <br>
+                            <div class="row shadow p-3 mb-5 bg-white rounded"
+                                 style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
+                                <h3 style="font-weight: bold">Last History</h3>
+                            </div>
+                            <br>
+                            <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
+                                <div class="col-md-8">
+                                    <table class="table table-striped " style="font-weight: bold; ">
+                                        <tr>
+                                            <td>Dental Defect :</td>
+                                            <td>BDR</td>
+                                            <td>Fee paid:</td>
+                                            <td>2500 Afg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Treatment :</td>
+                                            <td>RCT</td>
+                                            <td>Remaining Fee :</td>
+                                            <td>2000 Afg</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Tooth Number :</td>
+                                            <td>25</td>
+                                            <td>Date First Visite :</td>
+                                            <td>2018/5/3</td>
+                                        </tr>
+                                    </table>
+                                    <div>
+                                        <div><p><strong>Description:</strong> I love to use the famous saying of “Fake
+                                                it till you
+                                                make it.” That’s why I used to say ” I can do it, because I love to do
+                                                it.” ” I
+                                                deserve a better life and I am going to create it.” I am open minded
+                                                person</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="tab-3" class="tab-pane">
+                        <div class="panel-body">
+                            <br>
+                            <div class="row shadow p-3 mb-5 bg-white rounded"
+                                 style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
+                                <h3 style="font-weight: bold">Present History</h3>
+                            </div>
+                            <br>
+                            <div class="row" style="margin-top:30px;">
+                                <div class="col-lorm-group">
+                                        <label>Select Dental Defect *</label>
+                                        <select class="form-controlg-3">
+                                            <div class="f">
+                                            <option value="1">Select Dental Defect</option>
+                                            <option value="1">Crown Fracture</option>
+                                            <option value="1">BDR</option>
+                                            <option value="2">G-Caries</option>
+                                            <option value="3">Attrision</option>
+                                            <option value="4">Calculus</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Treatment *</label>
+                                        <select class="form-control">
+                                            <option value="1">Select Treatment</option>
+                                            <option value="1">PF (Permanent Filling)</option>
+                                            <option value="2">RCT (Root Canal)</option>
+                                            <option value="3">Extraction</option>
+                                            <option value="4">Pulpotomy</option>
+                                            <option value="5">Apexification</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nex">Treatment Cost:</label>
+                                        <input type="number" class="form-control" name="nex" value="2000">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nex">Do you Give Discount ?:</label>
+                                        <input type="number" class="form-control"  name="nex">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nex">Next Appointment ?</label>
+                                        <input type="datetime-local" class="form-control" name="nex">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">Description</label>
+                                        <textarea class="form-control" name="description" cols="30" rows="5"
+                                                  placeholder="Description" style="resize: none"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9" id="toot">
+                                    <label for="toot">Choose Tooth</label>
+                                    <div class="" style="">
+                                        <ul class="list-group checked-list-box">
+                                            <li class="list-group-item" ><img src="img/teeths/1.png" width="16px"/></li>
+                                            <li class="list-group-item" ><img src="img/teeths/2.png" width="16px"/></li>
+                                            <li class="list-group-item" ><img src="img/teeths/3.png" width="16px"/></li>
+                                            <li class="list-group-item" ><img src="img/teeths/4.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/5.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/6.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/7.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/8.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/9.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/10.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/11.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/12.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/13.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/14.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/15.png" width="16px"/></li>
+                                            <li class="list-group-item"><img src="img/teeths/16.png" width="16px"/></li>
+                                        </ul>
+                                    </div>
+
+
+
+                                <div class="" style="">
+                                    <ul class="list-group checked-list-box">
+                                    <li class="list-group-item"><img src="img/teeths/17.png" width="16px"/></li>
+                                    <li class="list-group-item"><img src="img/teeths/18.png" width="16px"/></li>
+                                    <li class="list-group-item"><img src="img/teeths/19.png" width="16px"/></li>
+                                    <li class="list-group-item"><img src="img/teeths/20.png" width="16px"/></li>
+                                    <li class="list-group-item"><img src="img/teeths/21.png" width="16px"/></li>
+                                    <li class="list-group-item"><img src="img/teeths/22.png" width="16px"/></li>
+                                    <li class="list-group-item"><img src="img/teeths/23.png" width="16px"/></li>
+                                    <li class="list-group-item"><img src="img/teeths/24.png" width="16px"/></li>
+                                    <li class="list-group-item"><img src="img/teeths/25.png" width="16px"/></li>
+                                    <li class="list-group-item"><img src="img/teeths/26.png" width="16px"/></li>
+                                    <li class="list-group-item"><img src="img/teeths/27.png" width="16px"/></li>
+                                    <li class="list-group-item"><img src="img/teeths/28.png" width="16px"/></li>
+                                    <li class="list-group-item"><img src="img/teeths/29.png" width="16px"/></li>
+                                    <li class="list-group-item"><img src="img/teeths/30.png" width="16px"/></li>
+                                    <li class="list-group-item"><img src="img/teeths/31.png" width="16px"/></li>
+                                    <li class="list-group-item"><img src="img/teeths/32.png" width="16px"/></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <button class="btn btn-primary"> Send To Finance&nbsp;<i class="fa fa-save"></i>
+                                </button>
+                                <button class="btn btn-primary"> Send To X-Ray&nbsp;<i class="fa fa-send"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    </div>
 @endsection
 
 @section('script')
@@ -352,4 +480,4 @@
             });
         });
     </script>
-    @endsection
+@endsection

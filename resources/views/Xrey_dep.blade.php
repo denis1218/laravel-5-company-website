@@ -117,7 +117,7 @@
                                 <tbody>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Gender:<b>&nbsp;Male</b>&nbsp;<i class="fa fa-male"></span>
+                                        <span class="font-m">Gender:<b>&nbsp;Male</b>&nbsp;<i class="fa fa-male"></i></span>
                                     </td>
                                     <td>
                                         <span class="font-m">Age:<b>&nbsp;25</b>&nbsp;<i class=""></i></span>
@@ -172,7 +172,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-3" style="margin-top:30px;">
-                        <button class="btn btn-success xray">Save <i class="fa fa-save"></i></button>&nbsp;&nbsp;
+                        <button class="btn btn-primary xray">Save <i class="fa fa-save"></i></button>&nbsp;&nbsp;
                         <button class="btn btn-white">Cancel</button>
                     </div>
                 </div>
