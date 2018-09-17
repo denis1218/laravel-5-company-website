@@ -67,56 +67,26 @@
 
             {{-- Dash graph area --}}
             <div class="wrapper wrapper-content">
+                <div class="container">
                 <div class="row">
                     {{-- Graph Area --}}
-                    <div class="col-lg-12">
-                        <div class="row">
                             <div class="col-md-2" >
                                 <button class="btn btn-primary dim dim-large-dim" ><a href="/income"><img src="img/income_icon_dash.png"  width="150px;" style="border-radius: 8px;"/></a></button>
                             </div>
-                            <div class="col-md-2" style="margin-left:75px;">
+                            <div class="col-md-2" style="margin-left:30px;">
                                 <button class="btn btn-primary dim dim-large-dim" ><a href="/expenditure"><img src="img/expense_icon_dash.png" width="150px;" style="border-radius: 8px;"/></a></button>
                             </div>
-                            <div class="col-md-2" style="margin-left:75px;">
+                            <div class="col-md-2"  style="margin-left:30px;">
                                 <button class="btn btn-primary dim dim-large-dim" ><a href="/doctor_report"><img src="img/doctor_icon_dash.png" width="150px;" style="border-radius: 8px;height: 60px;"/></a></button>
                             </div>
-                            <div class="col-md-2" style="margin-left:75px;">
+                            <div class="col-md-2"  style="margin-left:30px;">
                                 <button class="btn btn-primary dim dim-large-dim" ><a href="/finance_report_income"><img src="img/report_icon_dash.png" width="150px;" style="border-radius: 8px;height: 60px"/></a></button>
                             </div>
-                        </div>
-                        <div class="ibox float-e-margins">
-                            <div class="ibox-content">
-                                <div>
-                                        <span class="pull-right text-right">
-                                        <small>Average value of Income & Expenditure in the past month in: <strong>HK Clinic</strong></small>
-                                            <br/>
-                                            All Patients: 12,251
-                                        </span>
-                                    <h1 class="m-b-xs"></h1>
-                                    <h3 class="font-bold no-margins">
-                                        Half-year revenue margin
-                                    </h3>
-                                    <small><strong>Income &nbsp;<i class="fa fa-line-chart" style="color:rgb(81,154,156);"></i>&nbsp;  & Expenditure &nbsp;<i class="fa fa-line-chart" style="color:rgb(151,144,142);"></i></strong></small>
-                                </div>
-
-                                <div>
-                                    <canvas id="lineChart" height="70"></canvas>
-                                </div>
-
-                                <div class="m-t-md">
-                                    <small class="pull-right">
-                                        <i class="fa fa-clock-o"> </i>
-                                        Update on 16.07.2018
-                                    </small>
-                                    <small>
-                                        <strong>Analysis of Patient and Expenditure:</strong> The value has been changed over time..
-                                    </small>
-                                </div>
-
+                            <div class="col-md-2"  style="margin-left:30px;">
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/patient"><img src="img/patient_icon_dash.png" width="70px;"  style="border-radius: 8px;height: 60px;"/>&nbsp;&nbsp;<span style="color: white;">Patient</span></a></button>
                             </div>
-                        </div>
-                    </div>
-                    
+
+
                     {{-- End Graph--}}
                     <div class="col-lg-4">
                         <div class="ibox float-e-margins">
@@ -168,6 +138,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
             {{-- Graph area --}}
