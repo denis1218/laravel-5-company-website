@@ -23,26 +23,6 @@
 @endsection
 
 @section('content')
-    <div class="row page-wrapper border-bottom white-bg "
-         style="margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
-        <div class="row">
-            <div class="col-md-5" style="margin-top:15px; margin-left:20px;">
-
-                <h3>Doctor Report</h3>
-
-
-            </div>
-        </div>
-        <div class="col-sm-10">
-            <div class="input-group m-b"><span class="input-group-btn"><button type="button" class="btn btn-primary" href="#doctor_info" data-toggle="collapse">Search</button> </span>
-                <input type="text" class="form-control" placeholder="Search Doctor ID">
-
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <a type="" class="btn btn-warning" href="/doctor_report_list"> Show all Doctors</a> </span>
-        </div>
-    </div>
 
     {{-- one doctor info report--}}
     <div class="col-lg-12" >

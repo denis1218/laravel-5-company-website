@@ -1,10 +1,7 @@
 @extends('master')
 @section('style')
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+
+
     <style rel="stylesheet">
         ul.list-group:after {
             clear: both;
@@ -262,6 +259,8 @@
 
     <!-- Select2 -->
     <script src="dashboard/js/plugins/select2/select2.full.min.js"></script>
+    <!-- Toastr script -->
+    <script src="dashboard/js/plugins/toastr/toastr.min.js"></script>
     <script>
         $(document).ready(function(){
             $("#wizard").steps();
@@ -332,6 +331,14 @@
                 }
             });
         });
+
     </script>
+    <script type="text/javascript">
+        $(function () {
+            $('#form').submit(function (){
+                // Display a success toast, with a title
+                toastr.success('Without any options','Simple notification!')
+            });
+        })
 
 @endsection
