@@ -135,7 +135,6 @@
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                     <td class="">Asthma</td>
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -165,7 +164,6 @@
                                     <td>First Time</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                     <td class="">Blood pressure</td>
-                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
