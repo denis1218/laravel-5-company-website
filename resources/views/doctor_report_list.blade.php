@@ -22,23 +22,7 @@
 @endsection
 
 @section('content')
-    <div class="row page-wrapper border-bottom white-bg "
-         style="margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
-        <div class="row">
-            <div class="col-md-5" style="margin-top:15px; margin-left:20px;">
-                <h3>Report Doctor</h3>
-            </div>
-        </div>
-        <div class="col-sm-10">
-            <div class="input-group m-b"><span class="input-group-btn">
-                    <a type="" class="btn btn-primary" href="#"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</a> </span>
-                <input type="text" class="form-control" placeholder="Search P-ID patient">
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <a type="" class="btn btn-warning" href="/doctor_report_list"> Show all Doctors</a> </span>
-        </div>
-    </div>
+
 
 
 

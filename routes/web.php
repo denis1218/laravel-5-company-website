@@ -185,4 +185,7 @@ Route::get('dash_doctor',function (){
 });
 
 Route::get('/pdf','PdfGenerator@PDF');
+Route::get('xrey_income',function (){
+   return view('xrey_income');
+});
 
