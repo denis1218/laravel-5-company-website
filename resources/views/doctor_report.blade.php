@@ -108,10 +108,10 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Type Job:<b>&nbsp; monthly</b>&nbsp;<i class="fa fa-user-md"></i></span>
+                                        <span class="font-m">Type Job:<b>&nbsp; Percentage</b>&nbsp;<i class="fa fa-user-md"></i></span>
                                     </td>
                                     <td>
-                                        <span class="font-m">Salary :<b>&nbsp; 32000 Afg</b>&nbsp;<i class=""></i></span>
+                                        <span class="font-m">Salary :<b>&nbsp; 40%</b>&nbsp;<i class=""></i></span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -132,6 +132,18 @@
                 {{-- table info patient --}}
                 <div class="row">
                     <div class="col-md-12">
+
+                        <div class="col-md-8">
+                            <div class="form-group" style="margin-left:35px;">
+                                <label class="font-noraml">Select Range</label>
+                                <div class="input-daterange input-group" id="" >
+                                    <input type="date" class="input-sm form-control" name="start"/>
+                                    <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
+                                    <input type="date" class="input-sm form-control" name="end" />
+                                </div>
+                            </div>
+                        </div>
+
                         <table class="table table-hover table-bordered">
                             <thead>
                             <tr>
@@ -139,7 +151,7 @@
                                 <th>Patient P-ID</th>
                                 <th>Treatment</th>
                                 <th>Fee AFG</th>
-                                <th>Percentage of Salary</th>
+
                                 <th>Date</th>
                                 <th>Status</th>
                             </tr>
@@ -150,7 +162,7 @@
                                 <td>P-5543</td>
                                 <td>Permanent Filling</td>
                                 <td>2000</td>
-                                <td>40%</td>
+
                                 <td>2018/5/6</td>
                                 <td> <span class="label label-info">Complete</span></td>
                             </tr>
@@ -160,7 +172,7 @@
                                 <td>P-2665</td>
                                 <td>Extraction</td>
                                 <td>2500</td>
-                                <td>40%</td>
+
                                 <td>2018/5/7</td>
                                 <td> <span class="label label-info">Complete</span></td>
                             </tr>
@@ -169,7 +181,7 @@
                                 <td>P-3252</td>
                                 <td>Permanent Filling</td>
                                 <td>4500</td>
-                                <td>40%</td>
+
                                 <td>2018/5/6</td>
                                 <td> <span class="label label-info">Complete</span></td>
                             </tr>
@@ -178,7 +190,7 @@
                                 <td>P-3256</td>
                                 <td>Extraction</td>
                                 <td>2000</td>
-                                <td>40%</td>
+
                                 <td>2018/5/4</td>
                                 <td> <span class="label label-info">Complete</span></td>
                             </tr>
@@ -187,7 +199,7 @@
                                 <td>P-2152</td>
                                 <td>Permanent Filling</td>
                                 <td>2300</td>
-                                <td>40%</td>
+
                                 <td>2018/5/1</td>
                                 <td> <span class="label label-info">Complete</span></td>
                             </tr>
@@ -196,7 +208,7 @@
                                 <td>P-2152</td>
                                 <td>Extraction</td>
                                 <td>2000</td>
-                                <td>40%</td>
+
                                 <td>2018/5/12</td>
                                 <td> <span class="label label-info">Complete</span></td>
                             </tr>
@@ -205,7 +217,7 @@
                                 <td>P-2163</td>
                                 <td>Extraction</td>
                                 <td>700</td>
-                                <td>40%</td>
+
                                 <td>2018/5/12</td>
                                 <td> <span class="label label-warning">Not Visited</span></td>
                             </tr>
@@ -214,7 +226,7 @@
                                 <td>P-2145</td>
                                 <td>Extraction</td>
                                 <td>1500</td>
-                                <td>40%</td>
+
                                 <td>2018/5/12</td>
                                 <td> <span class="label label-warning">Not Visited</span></td>
                             </tr>
@@ -223,7 +235,7 @@
                                 <td>P-2184</td>
                                 <td>Extraction</td>
                                 <td>4510</td>
-                                <td>40%</td>
+
                                 <td>2018/5/12</td>
                                 <td> <span class="label label-warning">Not Visited</span></td>
                             </tr>
@@ -245,6 +257,15 @@
                                     <tr>
                                         <td class="text-bold"><h4>Total fee cash: </h4></td>
                                         <td>15300 Afg</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold"><h4>Doctor Fee: </h4></td>
+                                        <td>1700 Afg</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td> <button class="btn btn-primary">Paid Salary</button></td>
+                                        <td></td>
                                     </tr>
                                 </table>
                             </div>
