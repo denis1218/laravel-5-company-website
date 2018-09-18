@@ -50,7 +50,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Appointment patient </h5>
+                <h5>Patient Appointment List </h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -89,7 +89,7 @@
                                 <tr>
                                     <th>P-ID</th>
                                     <th>Patient Name</th>
-                                    <th>Doctor Name</th>
+                                    <th>Last Name</th>
                                     <th>Status</th>
                                     <th>Date & Time Appointment</th>
                                     <th>Problem Health</th>
@@ -100,9 +100,9 @@
                                 <tr>
                                     <td>P-0785544229</td>
                                     <td>Ahmad</td>
-                                    <td>Dr.Samim</td>
+                                    <td>Ahmadi</td>
                                     <td>Second Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
+                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                     <td class="">Blood pressure</td>
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
@@ -110,18 +110,19 @@
                                 <tr>
                                     <td>P-0780669022</td>
                                     <td>Naweed</td>
-                                    <td>Dr.Samim</td>
+                                    <td>Hashimi</td>
                                     <td>Second Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 9:00 AM</td>
+                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                     <td class="">Diabetics</td>
+                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>P-0790446690</td>
                                     <td>Qasim</td>
-                                    <td>Dr.Samim</td>
+                                    <td>karimi</td>
                                     <td>Second Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 10:00 AM</td>
+                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                     <td class="">Hepatitics</td>
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
@@ -129,19 +130,20 @@
                                 <tr>
                                     <td>P-0787206644</td>
                                     <td>Mahmood</td>
-                                    <td>Dr.Samim</td>
+                                    <td>alimi</td>
                                     <td>First Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 11:20 AM</td>
+                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                     <td class="">Asthma</td>
+                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>P-0702036768</td>
                                     <td>Ali</td>
-                                    <td>Dr.Samim</td>
+                                    <td>Ahmad</td>
                                     <td>First Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 1:00 PM</td>
+                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                     <td class="">Blood pressure</td>
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
@@ -149,9 +151,9 @@
                                 <tr>
                                     <td>P-0785454643</td>
                                     <td>Mahdi</td>
-                                    <td>Dr.Samim</td>
+                                    <td>Samimi</td>
                                     <td>First Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 2:20 PM</td>
+                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                     <td class="">Diabetics</td>
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
@@ -159,10 +161,11 @@
                                 <tr>
                                     <td>P-0777506070</td>
                                     <td>Ahmad</td>
-                                    <td>Dr.Samim</td>
+                                    <td>Khan</td>
                                     <td>First Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 3:00 PM</td>
+                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                     <td class="">Blood pressure</td>
+                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>

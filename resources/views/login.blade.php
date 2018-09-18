@@ -29,12 +29,12 @@
 <div class="row">
     <div class="col-lg-6"></div>
     <div class="col-lg-6">
-<div class="middle-box text-center loginscreen animated fadeInDown" style="margin-top: 100px; ">
-    <div>
+<div class="middle-box text-center loginscreen animated fadeInDown" style="margin-top: 100px;">
+    <div style="box-shadow:3px 3px 3px 3px  lightskyblue">
         <div>
             <img src="/img/Dentaa3.png" width="650px" class="img-responsive" alt="">
         </div>
-        <h3>Welcome to HK|Clinic</h3>
+        <h3 style="color: white;">Welcome to HK|Clinic</h3>
         <form class="m-t" role="form" action="/dash">
             <div class="form-group">
                 <select class="form-control" required>
@@ -47,7 +47,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="Username" required="">
+                <input type="email" class="form-control" placeholder="Email Address" required="">
             </div>
             <div class="form-group">
                 <input type="password" class="form-control" placeholder="Password" required="">
@@ -55,7 +55,7 @@
             <button type="submit" class="btn btn-success block full-width m-b">Login</button>
 
             <a href="#">
-                <small>Forgot password?</small>
+                <small style="color:white;">Forgot password?</small>
             </a>
         </form>
     </div>
