@@ -96,13 +96,7 @@
                                             Mostafa Ahmadi
                                         </h2>
                                         <h4>ID: P-0780504075</h4>
-                                        <small style="font-size: 15px;">
-                                            <span style="font-size: 15px; font-weight: bold;">Dental Defect : </span>Orthodontist,
-                                            Periodontist <br/>
-                                            <span class="text-warning" style="font-size: 15px; font-weight: bold;">Problem Health : </span>Blood
-                                            Pressure , Allergy to Penicillin , Allergy to Anaesthetic
-                                            <br/><span style="font-size: 15px; font-weight: bold;">Treatment : </span>Extraction
-                                        </small>
+
                                     </div>
                                 </div>
                             </div>
@@ -115,29 +109,26 @@
                                             <span class="" style="font-size: 17px;">Gender:<b>&nbsp;Male</b>&nbsp;<i
                                                         class="fa fa-male"></i></span>
                                     </td>
-                                    <td>
-                                            <span style="font-size: 17px;">Age:<b>&nbsp;25</b>&nbsp;<i
-                                                        class=""></i></span>
-                                    </td>
+
                                 </tr>
                                 <tr>
                                     <td>
                                         <span style="font-size: 17px;">Doctor:<b>&nbsp;Dr.Ahmadi</b>&nbsp;<i
                                                     class="fa fa-user-md"></i></span>
                                     </td>
-                                    <td>
-                                        <span style="font-size: 17px;">Visited:<b>&nbsp;First Time</b>&nbsp;<i
-                                                    class=""></i></span>
-                                    </td>
+
                                 </tr>
                                 <tr>
                                     <td>
                                         <span style="font-size: 17px;">Date Reg:<b>&nbsp;2018/5/26</b>&nbsp;<i
                                                     class="fa fa-calendar"></i></span>
                                     </td>
+
+                                </tr>
+                                <tr>
                                     <td>
-                                              <span style="font-size: 17px;">First Visited Date :<b>&nbsp;2018/5/26</b>&nbsp;<i
-                                                          class="fa fa-calendar"></i></span>
+                                            <span style="font-size: 17px;">Age:<b>&nbsp;25</b>&nbsp;<i
+                                                        class=""></i></span>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -156,7 +147,6 @@
             <div class="tabs-container">
                 <ul class="nav nav-tabs" id="demoTabs">
                     <li class="active"><a data-toggle="tab" href="#tab-1">Full History</a></li>
-                    <li class=""><a data-toggle="tab" href="#tab-2">Past History</a></li>
                     <li class=""><a data-toggle="tab" href="#tab-3">New History</a></li>
                 </ul>
 
@@ -248,52 +238,7 @@
                         </div>
                     </div>
                     {{-- panel tab 2 past history --}}
-                    <div id="tab-2" class="tab-pane">
-                        <div class="panel-body">
-                            <br>
-                            <div class="row  bg-info"
-                                 style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
-                                <h3 style="font-weight: bold">Last History</h3>
-                            </div>
-                            <br>
-                            <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
-                                <div class="col-md-8">
-                                    <table class="table table-striped " style="font-weight: bold; ">
-                                        <tr>
-                                            <td>Dental Defect :</td>
-                                            <td>BDR</td>
-                                            <td>Fee paid:</td>
-                                            <td>2500 Afg</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Treatment :</td>
-                                            <td>RCT</td>
-                                            <td>Remaining Fee :</td>
-                                            <td>2000 Afg</td>
-                                        </tr>
 
-                                        <tr>
-                                            <td>Tooth Number :</td>
-                                            <td>25</td>
-                                            <td>Date First Visite :</td>
-                                            <td>2018/5/3</td>
-                                        </tr>
-                                    </table>
-                                    <div>
-                                        <div><p><strong>Description:</strong> I love to use the famous saying of “Fake
-                                                it till you
-                                                make it.” That’s why I used to say ” I can do it, because I love to do
-                                                it.” ” I
-                                                deserve a better life and I am going to create it.” I am open minded
-                                                person</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
                     {{-- panel tab 3 new history --}}
                     <div id="tab-3" class="tab-pane">
                         <div class="panel-body">

@@ -30,7 +30,7 @@
     <div class="col-lg-6"></div>
     <div class="col-lg-6">
 <div class="middle-box text-center loginscreen animated fadeInDown" style="margin-top: 100px;">
-    <div style="box-shadow:3px 3px 3px 3px  lightskyblue">
+    <div style="box-shadow:3px 3px 3px 3px  lightblue">
         <div>
             <img src="/img/Dentaa3.png" width="650px" class="img-responsive" alt="">
         </div>
