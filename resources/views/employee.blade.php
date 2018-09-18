@@ -98,7 +98,7 @@
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2">
                                 <button class="btn btn-white" type="submit">Cancel</button>
-                                <button class="btn btn-primary" type="submit">Save</button>
+                                <a class="btn btn-primary" type="submit" href="doctor_report_list">Save</a>
                             </div>
                         </div>
                     </form>
@@ -106,111 +106,6 @@
             </div>
         </div>
     </div>
-
-
-    {{-- table of doctors --}}
-    <div class="col-lg-12">
-        <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>List of Employees </h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="ibox-content">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="ibox float-e-margins">
-
-                            <div class="ibox-content">
-
-                                <div class="row">
-                                    <div class="col-md-7">
-                                        <div class="input-group"> <span class="input-group-btn"><button type="button" class="btn btn-sm btn-primary"> Go!</button> </span>
-                                            <input type="text" placeholder="Search Doctor name" class="input-sm form-control">
-                                        </div>
-                                    </div>
-                                </div><br/>
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-bordered table-hover dataTables-example" >
-                                        <thead>
-                                        <tr>
-                                            <th>Doctor-ID</th>
-                                            <th>Name</th>
-                                            <th>Working time</th>
-                                            <th>Phone</th>
-                                            <th>Departement</th>
-                                            <th>Gender</th>
-                                            <th>Salary type</th>
-                                            <th>Salary amount</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr class="gradeX">
-                                            <td>D-434</td>
-                                            <td>Dr.Ahmadi</td>
-                                            <td>08am-04pm</td>
-                                            <td>0745544432</td>
-                                            <td class="center">Orthodontist</td>
-                                            <td class="center">Male</td>
-                                            <td>Fix</td>
-                                            <td class="center">15000 Afg</td>
-                                        </tr>
-                                        <tr class="gradeX">
-                                            <td>D-435</td>
-                                            <td>Dr.Sadiq</td>
-                                            <td>08am-04pm</td>
-                                            <td>0745544432</td>
-                                            <td class="center">Orthodontist</td>
-                                            <td class="center">Male</td>
-                                            <td>Fix</td>
-                                            <td class="center">15000 Afg</td>
-                                        </tr>
-                                        <tr class="gradeX">
-                                            <td>D-436</td>
-                                            <td>Dr.Samim</td>
-                                            <td>08am-12pm</td>
-                                            <td>0745544432</td>
-                                            <td class="center">Orthodontist</td>
-                                            <td class="center">Male</td>
-                                            <td>percentage</td>
-                                            <td class="center">45%</td>
-                                        </tr>
-                                        <tr class="gradeX">
-                                            <td>D-437</td>
-                                            <td>Dr.Jalal</td>
-                                            <td>12pm-03pm</td>
-                                            <td>0745544432</td>
-                                            <td class="center">Orthodontist</td>
-                                            <td class="center">Male</td>
-                                            <td>percentage</td>
-                                            <td class="center">32%</td>
-                                        </tr>
-                                    </table>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{-- table of doctors --}}
 
 
 @endsection
