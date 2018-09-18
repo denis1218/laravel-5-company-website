@@ -39,7 +39,7 @@
                             <div class="tabs-left">
                                 {{--navigation list--}}
                                 <ul class="nav nav-tabs">
-                                    <li class="active"><a data-toggle="tab" href="#home"style="color:black;">Doctors list</a></li>
+                                    <li class="active"><a data-toggle="tab" href="#home"style="color:black;">All Patients</a></li>
                                     <li class=""><a data-toggle="tab" href="#fst" style="color:black;">Dr.Samim</a></li>
                                     <li class=""><a data-toggle="tab" href="#snd" style="color:black;">Dr.Ahmadi</a></li>
                                     <li class=""><a data-toggle="tab" href="#trd" style="color:black;">Dr.Jalal</a></li>

@@ -44,7 +44,7 @@
                             <li><a href="/patient"><i class="fa fa-user-md"></i>Patient Registration</a></li>
                             <li><a href="/appo"><i class="fa fa-flash"></i>List of Patient</a></li>
                             <li><a href="/patient_report"><i class="fa fa-file-o"></i>Patient Report</a></li>
-                            <li><a href="/employee"><i class="fa fa-save"></i>Doctor Registration</a></li>
+
 
                         </ul>
                     </li>
@@ -74,6 +74,7 @@
                         <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span><span
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
+                            <li><a href="/employee"><i class="fa fa-save"></i>Doctor Registration</a></li>
                             <li><a href="account"><i class="fa fa-user-plus"></i>&nbsp;Accounts</a></li>
                             <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
                         </ul>
