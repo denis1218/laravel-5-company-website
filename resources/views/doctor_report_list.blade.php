@@ -55,6 +55,12 @@
                         <div class="ibox float-e-margins">
 
                             <div class="ibox-content">
+                                <div class="row">
+                                    <div class="col">
+                                        <a type="button" class="btn btn-primary" href="doctor_salary" style="margin-left: 16px;">Go To Doctor Salary <i class="fa fa-arrow-right"></i> </a>
+                                        <hr>
+                                    </div>
+                                </div>
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered table-hover dataTables-example" >
                                         <thead>
@@ -80,7 +86,7 @@
                                             <td>male</td>
                                             <td>fix</td>
                                             <td class="center">15000 Afg</td>
-                                            <td class="center"><a class="btn btn-xs btn-info" href="/doctor_report">Report</a></td>
+                                            <td class="center"><a class="btn btn-xs btn-info" href="/doctor_report">Details &nbsp;<i class="fa fa-file-o"></i></a></td>
                                         </tr>
                                         <tr class="gradeC">
                                             <td>D-422</td>
@@ -91,7 +97,7 @@
                                             <td>male</td>
                                             <td>percentage</td>
                                             <td class="center">42%</td>
-                                            <td class="center"><a class="btn btn-xs btn-info"  href="/doctor_report">Report</a></td>
+                                            <td class="center"><a class="btn btn-xs btn-info"  href="/doctor_report">Details &nbsp;<i class="fa fa-file-o"></i></a></td>
                                         </tr>
                                         <tr class="gradeA">
                                             <td>D-425</td>
@@ -102,7 +108,7 @@
                                             <td>male</td>
                                             <td>percentage</td>
                                             <td class="center">31%</td>
-                                            <td class="center"><a class="btn btn-xs btn-info"  href="/doctor_report">Report</a></td>
+                                            <td class="center"><a class="btn btn-xs btn-info"  href="/doctor_report">Details &nbsp;<i class="fa fa-file-o"></i></a></td>
                                         <tr class="gradeA">
                                             <td>D-427</td>
                                             <td>Dr.Tamim</td>
@@ -112,7 +118,7 @@
                                             <td>male</td>
                                             <td>fix</td>
                                             <td class="center">24000 Afg</td>
-                                            <td class="center"><a class="btn btn-xs btn-info"  href="/doctor_report">Report</a></td>
+                                            <td class="center"><a class="btn btn-xs btn-info"  href="/doctor_report">Details &nbsp;<i class="fa fa-file-o"></i></a></td>
                                         </tr>
                                         </tbody>
                                     </table>
