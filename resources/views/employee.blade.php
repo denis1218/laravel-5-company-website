@@ -32,16 +32,16 @@
             <div class="ibox-content">
                 <div class="row">
 
-                    <form method="get" class="form-horizontal">
+                    <form method="get" class="form-horizontal" action="/doctor_report_list">
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Doctor-ID</label>
-                            <div class="col-md-4"><input type="text" class="form-control" placeholder="Enter DoctorID"></div>
+                            <div class="col-md-4"><input type="text" class="form-control" placeholder="Enter DoctorID" required></div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Full name</label>
-                            <div class="col-md-4"><input type="text" class="form-control" placeholder="Enter Name of Doctor"></div>
+                            <div class="col-md-4"><input type="text" class="form-control" placeholder="Enter Name of Doctor" required></div>
                         </div>
 
 
@@ -52,19 +52,19 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Working Time</label>
                             <div class="col-md-4">
-                                <label for=""> From </label><input type="time" class="form-control" style="width: 40%"> <label for=""> To </label> <input type="time" class="form-control" style="width: 40%">
+                                <label for=""> From </label><input type="time" class="form-control" style="width: 40%" required> <label for=""> To </label> <input type="time" class="form-control" style="width: 40%">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Phone</label>
-                            <div class="col-md-4"><input type="text" class="form-control" placeholder="Phone number"></div>
+                            <div class="col-md-4"><input type="text" class="form-control" placeholder="Phone number" required></div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Departement</label>
                             <div class="col-md-4">
-                                <select class="select2_demo_1 form-control" id="dept">
+                                <select class="select2_demo_1 form-control" id="dept" required>
                                     <option value="1">Select Department</option>
                                     <option value="1">regular basis</option>
                                     <option value="2">Orthodontist</option>
@@ -79,13 +79,13 @@
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Gender</label>
-                            <div class="col-sm-2"><div class="i-checks"><label> <input type="radio" value="option1" name="a"> <i></i> Male </label></div></div>
-                            <div class="col-sm-2"><div class="i-checks"><label> <input type="radio" value="option1" name="a"> <i></i> Female </label></div></div>
+                            <div class="col-sm-2"><div class="i-checks"><label> <input type="radio" value="option1" name="a" required> <i></i> Male </label></div></div>
+                            <div class="col-sm-2"><div class="i-checks"><label> <input type="radio" value="option1" name="a" required> <i></i> Female </label></div></div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Salary Type</label>
-                            <div class="col-sm-2"> <div class="input-group" style="display: inline"><div class="i-checks"><label> <input type="radio" value="option2" name="a2" id="per"> <i></i> Per% </label></div></div></div>
+                            <div class="col-sm-2"> <div class="input-group" style="display: inline"><div class="i-checks"><label> <input type="radio" value="option2" name="a2" id="per" required> <i></i> Per% </label></div></div></div>
                             <div class="col-sm-2"><div class="i-checks"><label> <input type="radio" value="option2" name="a2"> <i></i>  Fix </label></div></div>
                             {{--<div class="col-sm-2"><div class="i-checks"><label> <input type="checkbox" value="option2" name="a2"> <i></i>  Monthly</label></div></div>--}}
                             {{--<div class="col-sm-2"><div class="i-checks"><label> <input type="checkbox" value="option2" name="a2"> <i></i>  Daily </label></div></div>--}}
@@ -98,7 +98,7 @@
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2">
                                 <button class="btn btn-white" type="submit">Cancel</button>
-                                <a class="btn btn-primary" type="submit" href="doctor_report_list">Save</a>
+                                <button class="btn btn-primary" type="submit" href="doctor_report_list">Save</button>
                             </div>
                         </div>
                     </form>
