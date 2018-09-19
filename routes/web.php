@@ -188,4 +188,8 @@ Route::get('/pdf','PdfGenerator@PDF');
 Route::get('xrey_income',function (){
    return view('xrey_income');
 });
+//doctor salary
+Route::get('doctor_salary',function (){
+   return view('doctor_salary');
+});
 

@@ -59,12 +59,14 @@
                                     <table class="table table-striped table-bordered table-hover dataTables-example" >
                                         <thead>
                                         <tr>
-                                            <th>D-ID</th>
+                                            <th>Doctor-ID</th>
                                             <th>Name</th>
                                             <th>Phone</th>
                                             <th>Departement</th>
-                                            <th>Time work</th>
-                                            <th>Salary</th>
+                                            <th>Working time</th>
+                                            <th>Gender</th>
+                                            <th>Salary type</th>
+                                            <th>Salary amount</th>
                                             <th>Report</th>
                                         </tr>
                                         </thead>
@@ -75,6 +77,8 @@
                                             <td>0745544432</td>
                                             <td class="center">Orthodontist</td>
                                             <td class="center">11:00AM to 3:00PM</td>
+                                            <td>male</td>
+                                            <td>fix</td>
                                             <td class="center">15000 Afg</td>
                                             <td class="center"><a class="btn btn-xs btn-info" href="/doctor_report">Report</a></td>
                                         </tr>
@@ -84,16 +88,20 @@
                                             <td>07755157632</td>
                                             <td class="center">Periodontist</td>
                                             <td class="center">11:00AM to 3:00PM</td>
-                                            <td class="center">16000 Afg</td>
+                                            <td>male</td>
+                                            <td>percentage</td>
+                                            <td class="center">42%</td>
                                             <td class="center"><a class="btn btn-xs btn-info"  href="/doctor_report">Report</a></td>
                                         </tr>
                                         <tr class="gradeA">
                                             <td>D-425</td>
-                                            <td>Dr.Jalal</td>
+                                            <td>Dr.Samim</td>
                                             <td>0785515532</td>
                                             <td class="center">Periodontist</td>
                                             <td class="center">1:00PM to 3:00AM</td>
-                                            <td class="center">18000 Afg</td>
+                                            <td>male</td>
+                                            <td>percentage</td>
+                                            <td class="center">31%</td>
                                             <td class="center"><a class="btn btn-xs btn-info"  href="/doctor_report">Report</a></td>
                                         <tr class="gradeA">
                                             <td>D-427</td>
@@ -101,30 +109,12 @@
                                             <td>0785666532</td>
                                             <td class="center">Prosthodontist</td>
                                             <td class="center">3:00PM to 3:00AM</td>
-                                            <td class="center">12100 Afg</td>
-                                            <td class="center"><a class="btn btn-xs btn-info"  href="/doctor_report">Report</a></td>
-                                        </tr>
-                                        <tr class="gradeU">
-                                            <td>D-432</td>
-                                            <td>Dr.Samim</td>
-                                            <td>078555442</td>
-                                            <td class="center">Prosthodontist</td>
-                                            <td class="center">5:00PM to 4:00AM</td>
+                                            <td>male</td>
+                                            <td>fix</td>
                                             <td class="center">24000 Afg</td>
                                             <td class="center"><a class="btn btn-xs btn-info"  href="/doctor_report">Report</a></td>
                                         </tr>
                                         </tbody>
-                                        <tfoot>
-                                        <tr>
-                                            <th>D-IP</th>
-                                            <th>Name</th>
-                                            <th>Phone</th>
-                                            <th>Department</th>
-                                            <th>Time work</th>
-                                            <th>Grade</th>
-                                            <th>Report</th>
-                                        </tr>
-                                        </tfoot>
                                     </table>
                                 </div>
 

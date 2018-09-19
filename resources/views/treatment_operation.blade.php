@@ -96,7 +96,12 @@
                                             Mostafa Ahmadi
                                         </h2>
                                         <h4>ID: P-0780504075</h4>
+                                        <small style="font-size: 15px;">
 
+                                            <span class="text-warning" style="font-size: 15px; font-weight: bold;">Problem Health : </span>Blood
+                                            Pressure , Allergy to Penicillin , Allergy to Anaesthetic
+
+                                        </small>
                                     </div>
                                 </div>
                             </div>
@@ -109,26 +114,29 @@
                                             <span class="" style="font-size: 17px;">Gender:<b>&nbsp;Male</b>&nbsp;<i
                                                         class="fa fa-male"></i></span>
                                     </td>
-
+                                    <td>
+                                            <span style="font-size: 17px;">Age:<b>&nbsp;25</b>&nbsp;<i
+                                                        class=""></i></span>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <span style="font-size: 17px;">Doctor:<b>&nbsp;Dr.Ahmadi</b>&nbsp;<i
                                                     class="fa fa-user-md"></i></span>
                                     </td>
-
+                                    <td>
+                                        <span style="font-size: 17px;">Visited:<b>&nbsp;First Time</b>&nbsp;<i
+                                                    class=""></i></span>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <span style="font-size: 17px;">Date Reg:<b>&nbsp;2018/5/26</b>&nbsp;<i
                                                     class="fa fa-calendar"></i></span>
                                     </td>
-
-                                </tr>
-                                <tr>
                                     <td>
-                                            <span style="font-size: 17px;">Age:<b>&nbsp;25</b>&nbsp;<i
-                                                        class=""></i></span>
+                                              <span style="font-size: 17px;">First Visited Date :<b>&nbsp;2018/5/26</b>&nbsp;<i
+                                                          class="fa fa-calendar"></i></span>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -146,8 +154,8 @@
         <div class="col-lg-12">
             <div class="tabs-container">
                 <ul class="nav nav-tabs" id="demoTabs">
-                    <li class="active"><a data-toggle="tab" href="#tab-1">Full History</a></li>
-                    <li class=""><a data-toggle="tab" href="#tab-3">New History</a></li>
+                    <li class="active"><a data-toggle="tab" href="#tab-1">Past History</a></li>
+                    <li class=""><a data-toggle="tab" href="#tab-3">Present History</a></li>
                 </ul>
 
                 <div class="tab-content">

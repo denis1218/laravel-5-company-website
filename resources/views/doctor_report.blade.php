@@ -244,8 +244,17 @@
 
                                     </tr>
                                     <tr>
-                                        <td> <button class="btn btn-primary">Paid Salary</button></td>
-                                        <td></td>
+                                        <td class="text-bold"><h4>Remaining: </h4></td>
+                                        <td> 00 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold"><h4>Paid amount: </h4></td>
+                                        <td><input type="text" class="form-control"placeholder="Enter amount" required></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="text-right"> <a class="btn btn-primary" href="doctor_salary">Pay Salary</a></td>
                                     </tr>
                                 </table>
                             </div>
