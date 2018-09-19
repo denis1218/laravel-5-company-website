@@ -50,6 +50,8 @@
             <div class="ibox-content">
                 <div class="row">
                     <div class="col-md-12 text-right">
+                        <a class="btn btn-primary btn-lg" style="float: left;" href="doctor_report_list">
+                            <i class="fa fa-arrow-left"></i> &nbsp; Back to Doctors</a>
                         <button class="btn btn-primary btn-lg">Print &nbsp;<i class="fa fa-print"></i></button>
                     </div>
                 </div>
@@ -111,19 +113,25 @@
                 <hr/>
                 {{-- table info patient --}}
                 <div class="row">
-                    <div class="col-md-12">
 
-                        <div class="col-md-8">
-                            <div class="form-group" style="margin-left:35px;">
+                    <div class="col-md-12">
+                        <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label class="font-noraml">Select Range</label>
                                 <div class="input-daterange input-group" id="" >
+                                    <span class="input-group-addon">From &nbsp;<i class="fa fa-arrow-right"></i></span>
                                     <input type="date" class="input-sm form-control" name="start"/>
                                     <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
                                     <input type="date" class="input-sm form-control" name="end" />
+
                                 </div>
                             </div>
                         </div>
-
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary" style="margin-top: 23px;height: 30px;width: 90px;">Total</button>
+                            </div>
+                        </div>
                         <table class="table table-hover table-bordered">
                             <thead>
                             <tr>
@@ -226,14 +234,7 @@
                         <div class="row">
                             <div class="col-md-5">
                                 <table class="table table-hover table-bordered">
-                                    <tr>
-                                        <td class="text-bold"><h4> Patient Visited: </h4></td>
-                                        <td>6</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-bold"><h4> Patient NOT Visited: </h4></td>
-                                        <td>3</td>
-                                    </tr>
+
                                     <tr>
                                         <td class="text-bold"><h4>Total fee cash: </h4></td>
                                         <td>15300 Afg</td>
@@ -244,12 +245,13 @@
 
                                     </tr>
                                     <tr>
-                                        <td class="text-bold"><h4>Remaining: </h4></td>
+                                        <td class="text-bold"><h4>Past Remaining: </h4></td>
                                         <td> 00 </td>
 
                                     </tr>
                                     <form action="doctor_salary">
                                     <tr>
+<<<<<<< HEAD
                                         <td class="text-bold"><h4>Paid amount: </h4></td>
                                         <td>
                                             <input type="text" class="form-control" placeholder="Enter amount" required></td>
@@ -259,7 +261,16 @@
                                         <td colspan="2" class="text-right"> <button class="btn btn-primary" type="submit">Pay Salary</button></td>
                                     </tr>
                                     </form>
+=======
+                                        <td class="text-bold"><h4>Payment amount: </h4></td>
+                                        <td><input type="text" class="form-control"placeholder="Enter amount" required></td>
+
+                                    </tr>
+>>>>>>> 27077463546c30e37ddc33cc573a25a9c41a87ef
                                 </table>
+                            </div>
+                            <div class="col-sm-5 text-left">
+                                <a class="btn btn-primary" href="doctor_salary" style=" margin-top: 37%;">Pay Salary</a>
                             </div>
                         </div>
                     </div>

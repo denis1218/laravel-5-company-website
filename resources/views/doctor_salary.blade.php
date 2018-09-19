@@ -1,5 +1,13 @@
 @extends('master')
+@section('style')
+    <style>
 
+        th{
+            text-align: center;
+        }
+
+    </style>
+@stop
 @section('content')
 
     <div class="col-lg-12" >
@@ -25,11 +33,17 @@
                 </div>
             </div>
             <div class="ibox-content">
+
+                <div class="row">
+                    <div class="col">
+                        <a type="button" class="btn btn-primary" href="doctor_report_list" style="margin-left: 16px;">Go To Doctor List <i class="fa fa-arrow-right"></i> </a>
+                        <hr>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="ibox float-e-margins">
-
-                            <div class="ibox-content">
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered table-hover dataTables-example" >
                                         <thead>
@@ -38,6 +52,7 @@
                                             <th>Name</th>
                                             <th>Departement</th>
                                             <th>Working time</th>
+                                            <th colspan="2">Time Period </th>
                                             <th>Salary type</th>
                                             <th>Salary amount</th>
                                             <th>Paid amount</th>
@@ -50,6 +65,8 @@
                                             <td>Dr.Ahmadi</td>
                                             <td class="center">Orthodontist</td>
                                             <td class="center">11:00AM to 3:00PM</td>
+                                            <td>01-sep-18</td>
+                                            <td>01-oct-18</td>
                                             <td>fix</td>
                                             <td class="center">15000 Afg</td>
                                             <td>15000 Afg</td>
@@ -60,6 +77,8 @@
                                             <td>Dr.Jalal</td>
                                             <td class="center">Orthodontist</td>
                                             <td class="center">11:00AM to 3:00PM</td>
+                                            <td>01-sep-18</td>
+                                            <td>01-oct-18</td>
                                             <td>percentage</td>
                                             <td class="center">14000</td>
                                             <td>12000 Afg</td>
@@ -70,6 +89,8 @@
                                             <td>Dr.Samim</td>
                                             <td class="center">Orthodontist</td>
                                             <td class="center">11:00AM to 3:00PM</td>
+                                            <td>01-sep-18</td>
+                                            <td>01-oct-18</td>
                                             <td>percentage</td>
                                             <td class="center">11000</td>
                                             <td>11000 Afg</td>
@@ -80,6 +101,8 @@
                                             <td>Dr.Tamim</td>
                                             <td class="center">Orthodontist</td>
                                             <td class="center">11:00AM to 3:00PM</td>
+                                            <td>01-sep-18</td>
+                                            <td>01-oct-18</td>
                                             <td>fix</td>
                                             <td class="center">18000</td>
                                             <td>12000 Afg</td>

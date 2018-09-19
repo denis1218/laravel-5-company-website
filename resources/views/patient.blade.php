@@ -61,7 +61,7 @@
                                         <th>Doctor Name</th>
                                         <th>Availability Time</th>
                                         <th>Max Patient Accept</th>
-                                        <th>Already Have Patient</th>
+                                        <th>Registered Patients</th>
                                         <th>Select Doctor</th>
 
                                     </tr>
@@ -163,6 +163,14 @@
                                 <div class="form-group">
                                     <label>Phone *</label>
                                     <input id="phone" name="phone" type="phone" class="form-control required">
+                                </div>
+                                <div class="form-group">
+                                    <label>Alternative Number *</label>
+                                    <input id="phone" name="phone" type="phone" class="form-control required">
+                                </div>
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <textarea name="" id="" style="resize: none;" class="form-control" placeholder="Patient address"></textarea>
                                 </div>
                                 
                             </div>
