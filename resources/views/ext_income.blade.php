@@ -29,7 +29,7 @@
         </div>
         <div class="col-md-2 ">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
-                   href="/xrey_income"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>X-Rey
+                   href="/xrey_income"><i class="fa fa-xing" style="color:#ffc000; font-size: 30px;"></i> <br/>X-Rey
                     Income</a></h2>
         </div>
         <div class="col-md-2 ">
@@ -426,7 +426,9 @@
 
         });
 
-
     </script>
+                        </div>
+                    </div>
+                </div>
 
     @endsection

@@ -145,18 +145,18 @@
                                 <table class="table table-striped text-bold" style="margin-top:30px;">
                                     <tbody>
                                     <tr>
-                                        <td>Unit Price :</td>
+                                        <td>Estimated Fee :</td>
                                         <td>500</td>
 
 
                                     </tr>
                                     <tr>
-                                        <td>Total :</td>
+                                        <td>Paid Amount :</td>
                                         <td>2000</td>
 
                                     </tr>
                                     <tr>
-                                        <td>Paid :</td>
+                                        <td>Discount :</td>
                                         <td>1000</td>
                                     </tr>
                                     <tr>

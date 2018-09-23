@@ -87,8 +87,6 @@
                             <label class="col-sm-2 control-label">Salary Type</label>
                             <div class="col-sm-2"> <div class="input-group" style="display: inline"><div class="i-checks"><label> <input type="radio" value="option2" name="a2" id="per" required> <i></i> Per% </label></div></div></div>
                             <div class="col-sm-2"><div class="i-checks"><label> <input type="radio" value="option2" name="a2"> <i></i>  Fix </label></div></div>
-                            {{--<div class="col-sm-2"><div class="i-checks"><label> <input type="checkbox" value="option2" name="a2"> <i></i>  Monthly</label></div></div>--}}
-                            {{--<div class="col-sm-2"><div class="i-checks"><label> <input type="checkbox" value="option2" name="a2"> <i></i>  Daily </label></div></div>--}}
                         </div>
 
                         <div class="form-group"><label class="col-sm-2 control-label">Salary amount</label>

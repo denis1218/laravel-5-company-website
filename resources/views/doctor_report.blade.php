@@ -251,7 +251,7 @@
                                     </tr>
                                     <form action="doctor_salary">
                                     <tr>
-<<<<<<< HEAD
+
                                         <td class="text-bold"><h4>Paid amount: </h4></td>
                                         <td>
                                             <input type="text" class="form-control" placeholder="Enter amount" required></td>
@@ -261,17 +261,10 @@
                                         <td colspan="2" class="text-right"> <button class="btn btn-primary" type="submit">Pay Salary</button></td>
                                     </tr>
                                     </form>
-=======
-                                        <td class="text-bold"><h4>Payment amount: </h4></td>
-                                        <td><input type="text" class="form-control"placeholder="Enter amount" required></td>
 
-                                    </tr>
->>>>>>> 27077463546c30e37ddc33cc573a25a9c41a87ef
                                 </table>
                             </div>
-                            <div class="col-sm-5 text-left">
-                                <a class="btn btn-primary" href="doctor_salary" style=" margin-top: 37%;">Pay Salary</a>
-                            </div>
+
                         </div>
                     </div>
 

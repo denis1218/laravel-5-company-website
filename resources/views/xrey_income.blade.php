@@ -11,13 +11,25 @@
         </div>
         <div class="col-md-2 ">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
-                   href="/xrey_income"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>X-Rey
+                   href="/xrey_income"><i class="fa fa-xing" style="color:#ffc000; font-size: 30px;"></i> <br/>X-Ray
                     Income</a></h2>
         </div>
         <div class="col-md-2 ">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
                    href="/ext_income"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> From
                     Other</a></h2>
+        </div>
+        <div class="col-lg-4" style="float:right;">
+            <div class="ibox float-e-margins" style=" background-color: lightyellow;">
+                <div class="ibox-title" style=" background-color: lightyellow;">
+                    <h5>Capital</h5>
+                </div>
+                <div class="ibox-content" style=" background-color: lightyellow;">
+                    <h1 class="no-margins">40 886,200</h1>
+                    <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
+
+                </div>
+            </div>
         </div>
     </div>
     <div class="col-lg-12">
@@ -70,6 +82,7 @@
                             <th>Paid Amount</th>
                             <th>Discount</th>
                             <th>Paid</th>
+                            <th>Edit</th>
                             <th>P-Details</th>
                         </tr>
                         </thead>
@@ -83,8 +96,13 @@
                             <td>100</td>
                             <td>600</td>
                             <td>
-                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
+                                <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
                                         data-target="#eprice">&nbsp;Paid
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
+                                        data-target="#edit">&nbsp;Edit
                                 </button>
                             </td>
                             <td>
@@ -103,8 +121,13 @@
                             <td>100</td>
                             <td>500</td>
                             <td>
-                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
+                                <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
                                         data-target="#eprice">&nbsp;Paid
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
+                                        data-target="#edit">&nbsp;Edit
                                 </button>
                             </td>
                             <td>
@@ -123,8 +146,13 @@
                             <td>300</td>
                             <td>1200</td>
                             <td>
-                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
+                                <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
                                         data-target="#eprice">&nbsp;Paid
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
+                                        data-target="#edit">&nbsp;Edit
                                 </button>
                             </td>
                             <td>
@@ -143,8 +171,13 @@
                             <td>50</td>
                             <td>00</td>
                             <td>
-                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
+                                <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
                                         data-target="#eprice">&nbsp;Paid
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
+                                        data-target="#edit">&nbsp;Edit
                                 </button>
                             </td>
                             <td>
@@ -163,8 +196,13 @@
                             <td>00</td>
                             <td>00</td>
                             <td>
-                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
+                                <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
                                         data-target="#eprice">&nbsp;Paid
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
+                                        data-target="#edit">&nbsp;Edit
                                 </button>
                             </td>
                             <td>
@@ -185,7 +223,7 @@
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
                                                 class="sr-only">Close</span></button>
                                     <i class="fa fa-edit modal-icon text-primary"></i>
-                                    <h4 class="modal-title">Edit Content</h4>
+                                    <h4 class="modal-title">Pay Amount</h4>
                                     <small>Fill the Paid amount</small>
                                 </div>
                                 <div class="modal-body">
@@ -222,6 +260,56 @@
                         </div>
                     </div>
                     <!-- end of model -->
+                    {{--Edit modal--}}
+                    <div class="modal inmodal" id="edit" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content animated fadeIn">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                                                class="sr-only">Close</span></button>
+                                    <i class="fa fa-edit modal-icon text-primary"></i>
+                                    <h4 class="modal-title">Edit Content</h4>
+                                    <small>Edit information</small>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label for="pid">PID</label>
+                                        <input type="text" name="pid" class="form-control" value="p-078678976" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="p-name">Patient Name</label>
+                                            <input type="text" name="p-name" class="form-control" placeholder="Patient Name" value="Ahmad">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="doctor-name">Doctor Name</label>
+                                            <input type="text" name="doctor-name" class="form-control" placeholder="Doctor Name" value="Dr.Samim">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="estimated-fee">Estimated Fee</label>
+                                            <input type="text" name="estimated-fee" class="form-control" placeholder="Estimated Fee" value="2000">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="p-amount">Paid Amount</label>
+                                            <input type="text" name="p-amount" class="form-control" placeholder="Paid Amount" value="1500">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="discount">Discount</label>
+                                            <input type="text" name="discount" class="form-control" placeholder="Discount" value="200">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {{--end of edit modal--}}
                     <!-- edit model -->
                     <div class="modal inmodal" id="pinfo" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog">
