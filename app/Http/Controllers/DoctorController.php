@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Doctor;
-use Request;
+use Illuminate\Http\Request;
 
 class DoctorController extends Controller
 {
@@ -36,7 +36,20 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $doctor=new Doctor;
+        $doctor->first_name=$request->input('first_name');
+        $doctor->last_name=$request->input('last_name');
+        $doctor->father_name=$request->input('father_name');
+        $doctor->start_work_time=$request->input('start_work_time');
+        $doctor->end_work_time=$request->input('end_work_time');
+        $doctor->phone=$request->input('phone');
+        $doctor->dept_id=$request->input('dept_id');
+        $doctor->gender=$request->input('gender');
+        $doctor->salary_type=$request->input('salary_type');
+        $doctor->salary_amount=$request->input('salary_amount');
+        $doctor->save();
+
+        return redirect('/doctors')->with('success','Doctor registered successfully');
     }
 
     /**

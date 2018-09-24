@@ -71,7 +71,7 @@
                                             <th>Father Name</th>
                                             <th colspan="2" class="text-center" >Working time</th>
                                             <th>Phone</th>
-                                            <th>Departement ID</th>
+                                            <th>Departement</th>
                                             <th>Gender</th>
                                             <th>Salary type</th>
                                             <th>Salary amount</th>
@@ -98,7 +98,7 @@
                                         </tbody>
                                          @endforeach
                                         @else
-                                        <h1 class="text-center">No doctor registred yet</h1>
+                                        <h1 class="text-center" style="color:red;">No doctor registred yet</h1>
                                         @endif
                                     </table>
                                 </div>

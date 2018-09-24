@@ -36,7 +36,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <a type="button" class="btn btn-primary" href="doctor_report_list" style="margin-left: 16px;">Go
+                        <a type="button" class="btn btn-primary" href="/doctors" style="margin-left: 16px;">Go
                             To Doctor List <i class="fa fa-arrow-right"></i> </a>
                         <hr>
                     </div>
