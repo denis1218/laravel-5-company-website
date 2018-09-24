@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDepartmentTable extends Migration
+class CreatePasswordResetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,10 @@ class CreateDepartmentTable extends Migration
      */
     public function up()
     {
-        Schema::create('department', function (Blueprint $table) {
-            $table->increments('id');
-
-            $table->string('name');
+        Schema::create('password_resets', function (Blueprint $table) {
             $table->longText('email');
-            $table->string('password');
-            $table->rememberToken();
-
-            $table->string('department_name');
-
-            $table->timestamps();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
         });
     }
 
@@ -34,6 +27,6 @@ class CreateDepartmentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('department');
+        Schema::dropIfExists('password_resets');
     }
 }

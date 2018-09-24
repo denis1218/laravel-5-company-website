@@ -164,7 +164,7 @@
                         <div class="panel-body">
                             <br>
                             <div class="row shadow p-3 mb-5 rounded bg-info"
-                                 style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
+                                 table-exchange  style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
                                 <h3 style="font-weight: bold">First Treatment</h3>
                             </div>
                             <br>
