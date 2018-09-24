@@ -61,69 +61,47 @@
                                         <hr>
                                     </div>
                                 </div>
-                                <div class="table-responsive">
+                                    <div class="table-responsive">
                                     <table class="table table-striped table-bordered table-hover dataTables-example" >
                                         <thead>
                                         <tr>
                                             <th>Doctor-ID</th>
-                                            <th>Name</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Father Name</th>
+                                            <th colspan="2" class="text-center" >Working time</th>
                                             <th>Phone</th>
-                                            <th>Departement</th>
-                                            <th>Working time</th>
+                                            <th>Departement ID</th>
                                             <th>Gender</th>
                                             <th>Salary type</th>
                                             <th>Salary amount</th>
                                             <th>Report</th>
                                         </tr>
                                         </thead>
+                                        @if(count($doctors)>0)
+                                        @foreach ($doctors as $doctor)
                                         <tbody>
                                         <tr class="gradeX">
-                                            <td>D-434</td>
-                                            <td>Dr.Ahmadi</td>
-                                            <td>0745544432</td>
-                                            <td class="center">Orthodontist</td>
-                                            <td class="center">11:00AM to 3:00PM</td>
-                                            <td>male</td>
-                                            <td>fix</td>
-                                            <td class="center">15000 Afg</td>
-                                            <td class="center"><a class="btn btn-xs btn-info" href="/doctor_report">Details &nbsp;<i class="fa fa-file-o"></i></a></td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>D-422</td>
-                                            <td>Dr.Jalal</td>
-                                            <td>07755157632</td>
-                                            <td class="center">Periodontist</td>
-                                            <td class="center">11:00AM to 3:00PM</td>
-                                            <td>male</td>
-                                            <td>percentage</td>
-                                            <td class="center">42%</td>
-                                            <td class="center"><a class="btn btn-xs btn-info"  href="/doctor_report">Details &nbsp;<i class="fa fa-file-o"></i></a></td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>D-425</td>
-                                            <td>Dr.Samim</td>
-                                            <td>0785515532</td>
-                                            <td class="center">Periodontist</td>
-                                            <td class="center">1:00PM to 3:00AM</td>
-                                            <td>male</td>
-                                            <td>percentage</td>
-                                            <td class="center">31%</td>
-                                            <td class="center"><a class="btn btn-xs btn-info"  href="/doctor_report">Details &nbsp;<i class="fa fa-file-o"></i></a></td>
-                                        <tr class="gradeA">
-                                            <td>D-427</td>
-                                            <td>Dr.Tamim</td>
-                                            <td>0785666532</td>
-                                            <td class="center">Prosthodontist</td>
-                                            <td class="center">3:00PM to 3:00AM</td>
-                                            <td>male</td>
-                                            <td>fix</td>
-                                            <td class="center">24000 Afg</td>
-                                            <td class="center"><a class="btn btn-xs btn-info"  href="/doctor_report">Details &nbsp;<i class="fa fa-file-o"></i></a></td>
+                                        <td>{{$doctor->id}}</td>
+                                        <td>{{$doctor->first_name}}</td>
+                                        <td>{{$doctor->last_name}}</td>
+                                        <td>{{$doctor->father_name}}</td>
+                                        <td class="center">{{$doctor->start_work_time}}</td>
+                                        <td class="center">{{$doctor->end_work_time}}</td>
+                                        <td>{{$doctor->phone}}</td>
+                                        <td class="center">{{$doctor->dept_id}}</td>
+                                        <td>{{$doctor->gender}}</td>
+                                        <td>{{$doctor->salary_type}}</td>
+                                        <td class="center">{{$doctor->salary_amount}}</td>
+                                        <td class="center"><a class="btn btn-xs btn-info" href="/doctor_report">Details &nbsp;<i class="fa fa-file-o"></i></a></td>
                                         </tr>
                                         </tbody>
+                                         @endforeach
+                                        @else
+                                        <h1 class="text-center">No doctor registred yet</h1>
+                                        @endif
                                     </table>
                                 </div>
-
                             </div>
                         </div>
                     </div>

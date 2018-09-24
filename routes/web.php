@@ -193,3 +193,5 @@ Route::get('doctor_salary',function (){
    return view('doctor_salary');
 });
 
+// Doctor Registration
+Route::resource('doctors','DoctorController');
