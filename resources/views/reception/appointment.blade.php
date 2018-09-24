@@ -64,11 +64,6 @@
                                                         <li class="fa fa-list"></li>&nbsp; Next Appointment List
                                                     </button>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <button class="btn btn-primary">
-                                                        <li class="fa fa-list"></li>&nbsp; First Appointment List
-                                                    </button>
-                                                </div>
                                             </div>
                                             
                                             <div class="row" style="margin-top:-120px;">
@@ -80,14 +75,6 @@
                                                                class="input-sm form-control"> 
                                                     </div>
                                                 </div>
-
-                                                <div class="col-sm-4">
-                                                    <div class="btn-group">
-                                                        <button class="btn btn-white" type="button" >Previous</button>
-                                                        <button class="btn btn-primary" type="button">Today</button>
-                                                        <button class="btn btn-white" type="button">Next</button>
-                                                    </div>
-                                                </div>
                                             </div>
                                             {{-- tab all patient in queue with defirrent doctor--}}
                                             <div class="row" style="margin-top:-50px;">
@@ -96,13 +83,15 @@
                                                          <table class="table table-hover  no-margins">
                                                             <thead>
                                                             <tr>
-                                                                <td>P-ID</td>
+                                                                <th>#</th>
+                                                                <th>P-ID</th>
                                                                 <th>Patient Name</th>
                                                                 <th>Last Name</th>
                                                                 <th>Doctor Name</th>
                                                                 <th>Status</th>
-                                                                <th>Date & Time Appointment</th>
+                                                                <th>Appointment date</th>
                                                                 <th>Healths Problem</th>
+                                                                <th>Add to visited</th>
                                                             </tr>
                                                             </thead>
                                                             <tbody>
@@ -141,11 +130,6 @@
                                                         <li class="fa fa-list"></li>&nbsp; Next Appointment List
                                                     </button>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <button class="btn btn-primary">
-                                                        <li class="fa fa-list"></li>&nbsp; First Appointment List
-                                                    </button>
-                                                </div>
                                             </div>
 
                                             <div class="row" style="margin-top:-120px;">
@@ -178,8 +162,9 @@
                                                                 <th>Last Name</th>
                                                                 <th>Doctor Name</th>
                                                                 <th>Status</th>
-                                                                <th>Date & Time Appointment</th>
+                                                                <th>Appointment Date</th>
                                                                 <th>Healths Problem</th>
+                                                                <th>Add to General List</th>
                                                             </tr>
                                                             </thead>
                                                             <tbody>
@@ -189,8 +174,12 @@
                                                                 <td>Sultani</td>
                                                                 <td></i>Dr.Samim</td>
                                                                 <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                                                 <td class="">Blood pressure</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0786906677</td>
@@ -198,8 +187,12 @@
                                                                 <td>Rezayee</td>
                                                                 <td></i>Dr.Samim</td>
                                                                 <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/1/3</td>
                                                                 <td class="">Diabetics</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0785445580</td>
@@ -207,8 +200,12 @@
                                                                 <td>Mukhtary</td>
                                                                 <td></i>Dr.Samim</td>
                                                                 <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
                                                                 <td class="">Hepatitics</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0785564749</td>
@@ -216,8 +213,12 @@
                                                                 <td>Hashimi</td>
                                                                 <td></i>Dr.Samim</td>
                                                                 <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 </td>
                                                                 <td class="">Asthma</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0785786788</td>
@@ -225,8 +226,12 @@
                                                                 <td>Ahmadyar</td>
                                                                 <td></i>Dr.Samim</td>
                                                                 <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
                                                                 <td class="">Blood pressure</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0785786866</td>
@@ -234,8 +239,12 @@
                                                                 <td>Safari</td>
                                                                 <td></i>Dr.Samim</td>
                                                                 <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 10:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 </td>
                                                                 <td class="">Diabetics</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-078558099</td>
@@ -243,8 +252,12 @@
                                                                 <td>Rasuli</td>
                                                                 <td></i>Dr.Samim</td>
                                                                 <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 11:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 </td>
                                                                 <td class="">Blood pressure</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             </tbody>
                                                         </table>
@@ -268,11 +281,6 @@
                                                 <div class="col-md-3">
                                                     <button class="btn btn-primary">
                                                         <li class="fa fa-list"></li>&nbsp; Next Appointment List
-                                                    </button>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <button class="btn btn-primary">
-                                                        <li class="fa fa-list"></li>&nbsp; First Appointment List
                                                     </button>
                                                 </div>
                                             </div>
@@ -306,8 +314,9 @@
                                                                 <th>Last Name</th>
                                                                 <th>Doctor Name</th>
                                                                 <th>Status</th>
-                                                                <th>Date & Time Appointment</th>
+                                                                <th>Appointment Date</th>
                                                                 <th>Healths Problem</th>
+                                                                <th>Add to General List</th>
                                                             </tr>
                                                             </thead>
                                                             <tbody>
@@ -317,8 +326,12 @@
                                                                 <td>Baqiri</td>
                                                                 <td></i>Dr.Ahmadi</td>
                                                                 <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                                                 <td class="">Blood pressure</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0786906677</td>
@@ -326,8 +339,12 @@
                                                                 <td>Azizi</td>
                                                                 <td></i>Dr.Ahmadi</td>
                                                                 <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                                                 <td class="">Diabetics</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0785445580</td>
@@ -335,8 +352,12 @@
                                                                 <td>Saadat</td>
                                                                 <td></i>Dr.Ahmadi</td>
                                                                 <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 </td>
                                                                 <td class="">Hepatitics</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0785564749</td>
@@ -344,8 +365,12 @@
                                                                 <td>Faqiri</td>
                                                                 <td></i>Dr.Ahmadi</td>
                                                                 <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 </td>
                                                                 <td class="">Asthma</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0785786788</td>
@@ -353,8 +378,12 @@
                                                                 <td>Shafaq</td>
                                                                 <td></i>Dr.Ahmadi</td>
                                                                 <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
                                                                 <td class="">Blood pressure</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0785786866</td>
@@ -362,8 +391,12 @@
                                                                 <td>Afzaly</td>
                                                                 <td></i>Dr.Ahmadi</td>
                                                                 <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 10:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
                                                                 <td class="">Diabetics</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-078558099</td>
@@ -371,8 +404,12 @@
                                                                 <td>Ahmadian</td>
                                                                 <td></i>Dr.Ahmadi</td>
                                                                 <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 11:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
                                                                 <td class="">Blood pressure</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             </tbody>
                                                         </table>
@@ -396,11 +433,6 @@
                                                 <div class="col-md-3">
                                                     <button class="btn btn-primary">
                                                         <li class="fa fa-list"></li>&nbsp; Next Appointment List
-                                                    </button>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <button class="btn btn-primary">
-                                                        <li class="fa fa-list"></li>&nbsp; First Appointment List
                                                     </button>
                                                 </div>
                                             </div>
@@ -435,8 +467,9 @@
                                                                 <th>Last name</th>
                                                                 <th>Doctor Name</th>
                                                                 <th>Status</th>
-                                                                <th>Date & Time Appointment</th>
+                                                                <th>Appointment Date</th>
                                                                 <th>Healths Problem</th>
+                                                                <th>Add to General List</th>
                                                             </tr>
                                                             </thead>
                                                             <tbody>
@@ -446,8 +479,12 @@
                                                                 <td>Akhlaqi</td>
                                                                 <td>Dr.Jalal</td>
                                                                 <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                                                 <td class="">Blood pressure</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0786906677</td>
@@ -455,8 +492,12 @@
                                                                 <td>Paktiawal</td>
                                                                 <td>Dr.Jalal</td>
                                                                 <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                                                 <td class="">Diabetics</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0785445580</td>
@@ -464,8 +505,12 @@
                                                                 <td>Pazhwak</td>
                                                                 <td>Dr.Jalal</td>
                                                                 <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
                                                                 <td class="">Hepatitics</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0785564749</td>
@@ -473,8 +518,12 @@
                                                                 <td>Kohsari</td>
                                                                 <td>Dr.Jalal</td>
                                                                 <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
                                                                 <td class="">Asthma</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0785786788</td>
@@ -482,8 +531,12 @@
                                                                 <td>Twassuli</td>
                                                                 <td>Dr.Jalal</td>
                                                                 <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 </td>
                                                                 <td class="">Blood pressure</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0785786866</td>
@@ -491,8 +544,12 @@
                                                                 <td>Enayati</td>
                                                                 <td>Dr.Jalal</td>
                                                                 <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 10:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
                                                                 <td class="">Diabetics</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-078558099</td>
@@ -500,8 +557,12 @@
                                                                 <td>Qurbani</td>
                                                                 <td>Dr.Jalal</td>
                                                                 <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 11:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
                                                                 <td class="">Blood pressure</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             </tbody>
                                                         </table>
@@ -526,11 +587,6 @@
                                                 <div class="col-md-3">
                                                     <button class="btn btn-primary">
                                                         <li class="fa fa-list"></li>&nbsp; Next Appointment List
-                                                    </button>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <button class="btn btn-primary">
-                                                        <li class="fa fa-list"></li>&nbsp; First Appointment List
                                                     </button>
                                                 </div>
                                             </div>
@@ -559,13 +615,14 @@
                                                         <table class="table table-hover no-margins" >
                                                             <thead>
                                                             <tr>
-                                                                <td>P-ID</td>
+                                                                <th>P-ID</th>
                                                                 <th>Patient Name</th>
                                                                 <th>Last Name</th>
                                                                 <th>Doctor Name</th>
                                                                 <th>Status</th>
-                                                                <th>Date & Time Appointment</th>
+                                                                <th>Appointment Date</th>
                                                                 <th>Healths Problem</th>
+                                                                <th>Add to General List</th>
                                                             </tr>
                                                             </thead>
                                                             <tbody>
@@ -575,8 +632,12 @@
                                                                 <td>Moulayee</td>
                                                                 <td></i>Dr.Tamim</td>
                                                                 <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                                                 <td class="">Blood pressure</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0786906677</td>
@@ -584,8 +645,12 @@
                                                                 <td>Sarwary</td>
                                                                 <td></i>Dr.Tamim</td>
                                                                 <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
                                                                 <td class="">Diabetics</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0785445580</td>
@@ -593,8 +658,12 @@
                                                                 <td>Rashidi</td>
                                                                 <td></i>Dr.Tamim</td>
                                                                 <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
                                                                 <td class="">Hepatitics</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0785564749</td>
@@ -602,8 +671,12 @@
                                                                 <td>Mortazawi</td>
                                                                 <td></i>Dr.Tamim</td>
                                                                 <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
                                                                 <td class="">Asthma</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0785786788</td>
@@ -611,8 +684,12 @@
                                                                 <td>Barokzay</td>
                                                                 <td></i>Dr.Tamim</td>
                                                                 <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
                                                                 <td class="">Blood pressure</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-0785786866</td>
@@ -620,8 +697,12 @@
                                                                 <td>Anwary</td>
                                                                 <td></i>Dr.Tamim</td>
                                                                 <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 10:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
                                                                 <td class="">Diabetics</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>P-078558099</td>
@@ -629,8 +710,12 @@
                                                                 <td>Khaliqi</td>
                                                                 <td></i>Dr.Tamim</td>
                                                                 <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 11:00 AM</td>
+                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
                                                                 <td class="">Blood pressure</td>
+                                                                <td><button class="btn btn-primary">
+                                                                        Add to List
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                             </tbody>
                                                         </table>

@@ -1,6 +1,12 @@
 @extends('master')
 @section('style')
+    <link href="dashboard/css/bootstrap.min.css" rel="stylesheet">
+    <link href="dashboard/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="dashboard/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="dashboard/css/animate.css" rel="stylesheet">
+    <link href="dashboard/css/style.css" rel="stylesheet">
 
+    <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
 
     <style rel="stylesheet">
         ul.list-group:after {
@@ -61,7 +67,7 @@
                                         <th>Doctor Name</th>
                                         <th>Availability Time</th>
                                         <th>Max Patient Accept</th>
-                                        <th>Already Have Patient</th>
+                                        <th>Registered Patients</th>
                                         <th>Select Doctor</th>
                                     </tr>
                                     </thead>
@@ -121,7 +127,6 @@
                                     <label>Address *</label>
                                     <textarea rows="5" id="address" name="address" type="text" class="form-control required"></textarea>
                                 </div>
-
                             </div>
                             <div class="col-lg-4">
                                 <div class="text-center">

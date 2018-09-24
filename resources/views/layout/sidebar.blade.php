@@ -40,6 +40,7 @@
                         <a href="/reception"><i class="fa fa-book"></i> <span class="nav-label">Reception</span><span
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
+                            <li><a href="/employee"><i class="fa fa-save"></i>Doctor Registration</a></li>
                             <li><a href="/patient"><i class="fa fa-user-md"></i>Patient Registration</a></li>
                             <li><a href="/appo"><i class="fa fa-flash"></i>List of Patient</a></li>
                             <li><a href="/patient_report"><i class="fa fa-file-o"></i>Patient Report</a></li>
@@ -52,7 +53,7 @@
                             <li><a href="/expenditure"><i class="fa fa-shopping-cart"></i>Expenditure</a></li>
                             <li><a href="/income"><i class="fa fa-arrow-circle-o-down"></i>Income</a></li>
                             <li><a href="/doctor_report_list"><i class="fa fa-user-md"></i>Doctors</a></li>
-                            <li><a href="/finance_report">Financial report<span class="fa arrow"></span></a>
+                            <li><a href="/finance_report"><i class="fa fa-file-o"></i> Financial report<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level collapse">
                                     <li><a href="/finance_report_income"><i class="fa fa-tag"></i>&nbsp;&nbsp;Income</a>
                                     </li>
@@ -68,7 +69,6 @@
                         <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span><span
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/employee"><i class="fa fa-save"></i>Doctor Registration</a></li>
                             <li><a href="account"><i class="fa fa-user-plus"></i>&nbsp;Accounts</a></li>
                             <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
                         </ul>

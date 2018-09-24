@@ -18,13 +18,26 @@
         </div>
         <div class="col-md-2 ">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
-                   href="/xrey_income"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>X-Rey
+                   href="/xrey_income"><i class="fa fa-xing" style="color:#ffc000; font-size: 30px;"></i> <br/>X-Rey
                     Income</a></h2>
         </div>
         <div class="col-md-2 ">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
                    href="/ext_income"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> From
                     Other</a></h2>
+        </div>
+
+        <div class="col-lg-4" style="float:right;">
+            <div class="ibox float-e-margins" style=" background-color: lightyellow;">
+                <div class="ibox-title" style=" background-color: lightyellow;">
+                    <h5>Capital</h5>
+                </div>
+                <div class="ibox-content" style=" background-color: lightyellow;">
+                    <h1 class="no-margins">40 886,200</h1>
+                    <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
+
+                </div>
+            </div>
         </div>
     </div>
     <!-- End of navButtons -->
@@ -84,6 +97,7 @@
                             <th>Remaining Fee</th>
                             <th>Paid</th>
                             <th>P-Details</th>
+                            <th>Print Bill</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -106,6 +120,10 @@
                                         data-target="#pinfo">&nbsp;P-Details
                                 </button>
                             </td>
+                            <td>
+                                <a href="print_preport" class="btn btn-xs btn btn-primary"><i class="fa fa-print"></i>&nbsp;&nbsp;Print
+                                    Bill</a>
+                            </td>
                         </tr>
 
                         <tr class="gradeX">
@@ -126,6 +144,10 @@
                                 <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
                                         data-target="#pinfo">&nbsp;P-Details
                                 </button>
+                            </td>
+                            <td>
+                                <a href="print_preport" class="btn btn-xs btn btn-primary"><i class="fa fa-print"></i>&nbsp;&nbsp;Print
+                                    Bill</a>
                             </td>
                         </tr>
 
@@ -148,6 +170,10 @@
                                         data-target="#pinfo">&nbsp;P-Details
                                 </button>
                             </td>
+                            <td>
+                                <a href="print_preport" class="btn btn-xs btn btn-primary"><i class="fa fa-print"></i>&nbsp;&nbsp;Print
+                                    Bill</a>
+                            </td>
                         </tr>
 
                         <tr class="gradeX">
@@ -169,6 +195,10 @@
                                         data-target="#pinfo">&nbsp;P-Details
                                 </button>
                             </td>
+                            <td>
+                                <a href="print_preport" class="btn btn-xs btn btn-primary"><i class="fa fa-print"></i>&nbsp;&nbsp;Print
+                                    Bill</a>
+                            </td>
                         </tr>
 
                         <tr class="gradeX">
@@ -189,6 +219,10 @@
                                 <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
                                         data-target="#pinfo">&nbsp;P-Details
                                 </button>
+                            </td>
+                            <td>
+                                <a href="print_preport" class="btn btn-xs btn btn-primary"><i class="fa fa-print"></i>&nbsp;&nbsp;Print
+                                    Bill</a>
                             </td>
                         </tr>
 
@@ -309,39 +343,11 @@
                     </div>
                     <!-- end of model -->
 
-                    {{-- <div class="row">
-                        <div class="col-md-4">
-                            <table class="table table-striped table-bordered table-hover" style="margin-left:30px;">
-                                <tr>
-                                    <td style="text-align:right"><label style="margin-top:8px;"><strong>Total Discount</strong></label></td>
-                                    <td><input type=" text" class="form-control" value="270" readonly></td>
-                                </tr>
 
-                                <tr>
-                                    <td style="text-align:right"><label style="margin-top:8px;"><strong>Total</strong></label></td>
-                                    <td><input type=" text" class="form-control" value="1500" readonly></td>
-                                </tr>
-
-                                <tr>
-                                    <td style="text-align:right"><label style="margin-top:8px;"><strong>Remaining</strong></label></td>
-                                    <td><input type=" text" class="form-control" value="4230" readonly></td>
-                                </tr>
-
-                                <tr>
-                                    <td style="text-align:right;"><label style="margin-top:8px;"><strong>Payment</strong></label></td>
-                                    <td><input type=" number" class="form-control" placeholder="Enter the amount"></td>
-                                </tr>
-
-
-                            </table>
-                    </div>
-                    <div class="col-4-lg">
-                         <button class="btn btn-primary" style="position:relative;margin-top:170px; margin-left:30px;"> Save paid &nbsp<i class="fa fa-save"></i></button>
-                    </div>
-                </div> --}}
                 </div>
             </div>
         </div>
+    </div>
     </div>
 @endsection
 

@@ -50,6 +50,8 @@
             <div class="ibox-content">
                 <div class="row">
                     <div class="col-md-12 text-right">
+                        <a class="btn btn-primary btn-lg" style="float: left;" href="doctor_report_list">
+                            <i class="fa fa-arrow-left"></i> &nbsp; Back to Doctors</a>
                         <button class="btn btn-primary btn-lg">Print &nbsp;<i class="fa fa-print"></i></button>
                     </div>
                 </div>
@@ -111,19 +113,25 @@
                 <hr/>
                 {{-- table info patient --}}
                 <div class="row">
-                    <div class="col-md-12">
 
-                        <div class="col-md-8">
-                            <div class="form-group" style="margin-left:35px;">
+                    <div class="col-md-12">
+                        <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label class="font-noraml">Select Range</label>
                                 <div class="input-daterange input-group" id="" >
+                                    <span class="input-group-addon">From &nbsp;<i class="fa fa-arrow-right"></i></span>
                                     <input type="date" class="input-sm form-control" name="start"/>
                                     <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
                                     <input type="date" class="input-sm form-control" name="end" />
+
                                 </div>
                             </div>
                         </div>
-
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary" style="margin-top: 23px;height: 30px;width: 90px;">Total</button>
+                            </div>
+                        </div>
                         <table class="table table-hover table-bordered">
                             <thead>
                             <tr>
@@ -226,14 +234,7 @@
                         <div class="row">
                             <div class="col-md-5">
                                 <table class="table table-hover table-bordered">
-                                    <tr>
-                                        <td class="text-bold"><h4> Patient Visited: </h4></td>
-                                        <td>6</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-bold"><h4> Patient NOT Visited: </h4></td>
-                                        <td>3</td>
-                                    </tr>
+
                                     <tr>
                                         <td class="text-bold"><h4>Total fee cash: </h4></td>
                                         <td>15300 Afg</td>
@@ -244,20 +245,26 @@
 
                                     </tr>
                                     <tr>
-                                        <td class="text-bold"><h4>Remaining: </h4></td>
+                                        <td class="text-bold"><h4>Past Remaining: </h4></td>
                                         <td> 00 </td>
 
                                     </tr>
+                                    <form action="doctor_salary">
                                     <tr>
+
                                         <td class="text-bold"><h4>Paid amount: </h4></td>
-                                        <td><input type="text" class="form-control"placeholder="Enter amount" required></td>
+                                        <td>
+                                            <input type="text" class="form-control" placeholder="Enter amount" required></td>
 
                                     </tr>
                                     <tr>
-                                        <td colspan="2" class="text-right"> <a class="btn btn-primary" href="doctor_salary">Pay Salary</a></td>
+                                        <td colspan="2" class="text-right"> <button class="btn btn-primary" type="submit">Pay Salary</button></td>
                                     </tr>
+                                    </form>
+
                                 </table>
                             </div>
+
                         </div>
                     </div>
 
@@ -268,156 +275,6 @@
     </div>
 
   
-
-    {{-- patient info --}}
-
-    {{-- show all doctors --}}
-    <div class="col-lg-12 collapse" id="show_all_doctor" >
-        <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>List of Doctors </h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="ibox-content">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="ibox float-e-margins">
-
-                            <div class="ibox-content">
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-bordered table-hover dataTables-example" >
-                                        <thead>
-                                        <tr>
-                                            <th>D-ID</th>
-                                            <th>Name</th>
-                                            <th>Phone</th>
-                                            <th>Departement</th>
-                                            <th>Time work</th>
-                                            <th>Sal-Percentage</th>
-                                            <th>Report</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr class="gradeX">
-                                            <td>D-434</td>
-                                            <td>Dr.Ahmadi</td>
-                                            <td>0745544432</td>
-                                            <td class="center">Orthodontist</td>
-                                            <td class="center">11:00AM to 3:00PM</td>
-                                            <td class="center">34%</td>
-                                            <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>D-422</td>
-                                            <td>Dr.Jalal</td>
-                                            <td>07755157632</td>
-                                            <td class="center">Periodontist</td>
-                                            <td class="center">11:00AM to 3:00PM</td>
-                                            <td class="center">42%</td>
-                                            <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>D-425</td>
-                                            <td>Dr.Jalal</td>
-                                            <td>0785515532</td>
-                                            <td class="center">Periodontist</td>
-                                            <td class="center">1:00PM to 3:00AM</td>
-                                            <td class="center">42%</td>
-                                            <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>D-427</td>
-                                            <td>Dr.Tamim</td>
-                                            <td>0785666532</td>
-                                            <td class="center">Prosthodontist</td>
-                                            <td class="center">3:00PM to 3:00AM</td>
-                                            <td class="center">12%</td>
-                                            <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
-                                        </tr>
-                                        <tr class="gradeU">
-                                            <td>D-432</td>
-                                            <td>Dr.Samim</td>
-                                            <td>078555442</td>
-                                            <td class="center">Prosthodontist</td>
-                                            <td class="center">5:00PM to 4:00AM</td>
-                                            <td class="center">11%</td>
-                                            <td class="center"><button class="btn btn-xs btn-info" data-toggle="collapse" href="#show_all_doctor">Report</button></td>
-                                        </tr>
-                                        </tbody>
-                                        <tfoot>
-                                        </tfoot>
-                                    </table>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{-- show all doctors --}}
-
-
-    {{-- Modal window dialog --}}
-    <div class="modal inmodal" id="medicine-model" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content animated fadeIn">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span
-                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <i class=" modal-icon"><img src="img/medicine_drug.png" width="80px"/></i>
-                    <h4 class="modal-title">Medicine patient</h4>
-                    <small>information patient medicine</small>
-                </div>
-                <div class="modal-body">
-                    <table class="table table-hover no-margins table-striped">
-                        <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>Name Drug</th>
-                            <th>Each day</th>
-                            <th>Total Days</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Ampicilne</td>
-                            <td>1+1+1</td>
-                            <td>2 days</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Brophine</td>
-                            <td>1+1+1</td>
-                            <td>1 day</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 
