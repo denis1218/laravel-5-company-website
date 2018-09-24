@@ -10,9 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('login');
-});
+
 
 Route::get('/patient', function () {
     return view('patient');
@@ -88,10 +86,13 @@ Route::get('/iframe',function (){
 });
 
 // login of users
+Route::get('/',function (){
+    return view('login');
+});
 Route::get('login',function (){
     return view('login');
 });
-
+Route::post('auth','UserController@authenticat');
 // dashboard of clinic
 Route::get('/dash',function (){
     return view('dash');
@@ -192,4 +193,5 @@ Route::get('xrey_income',function (){
 Route::get('doctor_salary',function (){
    return view('doctor_salary');
 });
+
 
