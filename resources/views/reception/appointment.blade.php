@@ -54,9 +54,9 @@
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <a href="/patient">
-                                                        <button class="btn btn-primary" style="width:100%;">
+                                                        <a class="btn btn-primary" href="/patient/create" style="width:100%;">
                                                             <li class="fa fa-plus"></li>&nbsp; Add new Patient
-                                                        </button>
+                                                        </a>
                                                     </a>
                                                 </div>
                                                 <div class="col-md-3">
