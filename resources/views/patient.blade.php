@@ -18,7 +18,6 @@
 @section('content')
 
 
-
     <div class="col-lg-12">
         <div class="ibox">
             <div class="ibox-title">
@@ -63,7 +62,6 @@
                                         <th>Max Patient Accept</th>
                                         <th>Already Have Patient</th>
                                         <th>Select Doctor</th>
-
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -204,7 +202,6 @@
                             </div>
                         </div>
                         <br>
-
                         <h2>Other Health Problem</h2>
                         <div class="row" >
                             <div class="col-lg-7">
@@ -253,9 +250,6 @@
     <!-- Custom and plugin javascript -->
     <script src="dashboard/js/inspinia.js"></script>
     <script src="dashboard/js/plugins/pace/pace.min.js"></script>
-
-    <!-- Date range picker -->
-    <script src="dashboard/js/plugins/daterangepicker/daterangepicker.js"></script>
 
     <!-- Select2 -->
     <script src="dashboard/js/plugins/select2/select2.full.min.js"></script>
