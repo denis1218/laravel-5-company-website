@@ -89,7 +89,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-
+                                            {{-- tab all patient in queue with defirrent doctor--}}
                                             <div class="row" style="margin-top:-50px;">
                                                 <div class="col-sm-11">
                                                     <div class="table-responsive">
@@ -106,122 +106,17 @@
                                                             </tr>
                                                             </thead>
                                                             <tbody>
-                                                            
-                                                            <tr>
-                                                                <td>P-0785786788</td>
-                                                                <td>Ali</td>
-                                                                <td>Ahmadyar</td>
-                                                                <td></i>Dr.Tamim</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00</td>
-                                                                <td class="">Blood pressure</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785786866</td>
-                                                                <td>Mahdi</td>
-                                                                <td>Safari</td>
-                                                                <td></i>Dr.Tamim</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 10:00 AM</td>
-                                                                <td class="">Diabetics</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-078558099</td>
-                                                                <td>Ahmad</td>
-                                                                <td>Rasuli</td>
-                                                                <td></i>Dr.Tamim</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 11:00 AM</td>
-                                                                <td class="">Blood pressure</td>
-                                                            </tr>
-                                                           
-                                                            <tr>
-                                                                <td>P-0785786788</td>
-                                                                <td>Omid</td>
-                                                                <td>Shafaq</td>
-                                                                <td></i>Dr.Ahmadi</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00</td>
-                                                                <td class="">Blood pressure</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785786866</td>
-                                                                <td>Mahdi</td>
-                                                                <td>Afzaly</td>
-                                                                <td></i>Dr.Ahmadi</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 10:00 AM</td>
-                                                                <td class="">Diabetics</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-078558099</td>
-                                                                <td>Reza</td>
-                                                                <td>Ahmadian</td>
-                                                                <td></i>Dr.Ahmadi</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 11:00 AM</td>
-                                                                <td class="">Blood pressure</td>
-                                                            </tr>
-
-                                                           
-                                                            <tr>
-                                                                <td>P-0785786788</td>
-                                                                <td>Mohsen</td>
-                                                                <td>Twassuli</td>
-                                                                <td>Dr.Jalal</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00</td>
-                                                                <td class="">Blood pressure</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785786866</td>
-                                                                <td>Shafiqah</td>
-                                                                <td>Enayati</td>
-                                                                <td>Dr.Jalal</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 10:00 AM</td>
-                                                                <td class="">Diabetics</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-078558099</td>
-                                                                <td>Fayaz</td>
-                                                                <td>Qurbani</td>
-                                                                <td>Dr.Jalal</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 11:00 AM</td>
-                                                                <td class="">Blood pressure</td>
-                                                            </tr>
-
-                                                           
-                                                            <tr>
-                                                                <td>P-0785786788</td>
-                                                                <td>Amrullah</td>
-                                                                <td>Barokzay</td>
-                                                                <td></i>Dr.Samim</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00</td>
-                                                                <td class="">Blood pressure</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785786866</td>
-                                                                <td>Marwa</td>
-                                                                <td>Anwary</td>
-                                                                <td></i>Dr.Samim</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 10:00 AM</td>
-                                                                <td class="">Diabetics</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-078558099</td>
-                                                                <td>Shakib</td>
-                                                                <td>Khaliqi</td>
-                                                                <td></i>Dr.Samim</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 11:00 AM</td>
-                                                                <td class="">Blood pressure</td>
-                                                            </tr>
-                                                           
-                                                        
+                                                            @foreach($patient as $patients)
+                                                                <tr>
+                                                                    <td>{{ $patients->id_patient }}</td>
+                                                                    <td>{{ $patients->name }}</td>
+                                                                    <td>{{ $patients->lastname }}</td>
+                                                                    <td>null</td>
+                                                                    <td>{{ $patients->status }}</td>
+                                                                    <td><i class="fa fa-calendar"></i>&nbsp;{{ $patients->created_at }}</td>
+                                                                    <td class="">{{ $patients->problem_health }}</td>
+                                                                </tr>
+                                                            @endforeach
                                                             </tbody>
                                                         </table>
                                                     </div>

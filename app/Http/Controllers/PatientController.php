@@ -15,7 +15,8 @@ class PatientController extends Controller
      */
     public function index()
     {
-        return view('appointment');
+        $patient = Patient::all();
+        return view('reception.appointment',compact('patient'));
     }
 
     /**
@@ -25,8 +26,8 @@ class PatientController extends Controller
      */
     public function create()
     {
-//        $doctor_list = DoctorDemo::all();
-        return view ('patient');
+        $doctor_list = DoctorDemo::all();
+        return view ('patient.patient',compact('doctor_list'));
     }
 
     /**
@@ -37,7 +38,27 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $patient = new Patient();
+        $patient->name = $request->name;
+        $patient->lastname = $request->lastname;
+        $patient->gender = $request->gender;
+        $patient->age = $request->age;
+        $patient->phone = $request->phone;
+        $patient->address = $request->address;
+
+            $checkbox = $request->input('problem_health');
+            $string='';
+            foreach ($checkbox as $value){
+                $string .=  $value.',';
+            }
+            $phonenumber = $request->phone;
+            $idpatient = $request->id;
+
+        $patient->status = 'new patient';
+        $patient->problem_health = $string;
+        $patient->id_patient = 'P-'.$phonenumber;
+        $patient->save();
+        return redirect('/patient');
     }
 
     /**
