@@ -54,9 +54,9 @@
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <a href="/patient">
-                                                        <button class="btn btn-primary" style="width:100%;">
+                                                        <a class="btn btn-primary" href="/patient/create" style="width:100%;">
                                                             <li class="fa fa-plus"></li>&nbsp; Add new Patient
-                                                        </button>
+                                                        </a>
                                                     </a>
                                                 </div>
                                                 <div class="col-md-3">
@@ -76,7 +76,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-
+                                            {{-- tab all patient in queue with defirrent doctor--}}
                                             <div class="row" style="margin-top:-50px;">
                                                 <div class="col-sm-11">
                                                     <div class="table-responsive">
@@ -95,122 +95,17 @@
                                                             </tr>
                                                             </thead>
                                                             <tbody>
-                                                            
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>P-0785786788</td>
-                                                                <td>Ali</td>
-                                                                <td>Ahmadyar</td>
-                                                                <td></i>Dr.Tamim</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <th><button class="btn btn-primary">add to visited <i class="fa fa-plus"></i> </button></th>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>2</td>
-                                                                <td>P-0785786866</td>
-                                                                <td>Mahdi</td>
-                                                                <td>Safari</td>
-                                                                <td></i>Dr.Tamim</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
-                                                                <td class="">Diabetics</td>
-                                                                <th><button class="btn btn-primary">add to visited <i class="fa fa-plus"></i> </button></th>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>3</td>
-                                                                <td>P-078558099</td>
-                                                                <td>Ahmad</td>
-                                                                <td>Rasuli</td>
-                                                                <td></i>Dr.Tamim</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <th><button class="btn btn-primary">add to visited <i class="fa fa-plus"></i> </button></th>
-                                                            </tr>
-                                                           
-                                                            <tr>
-                                                                <td>4</td>
-                                                                <td>P-0785786788</td>
-                                                                <td>Omid</td>
-                                                                <td>Shafaq</td>
-                                                                <td></i>Dr.Ahmadi</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <th><button class="btn btn-primary">add to visited <i class="fa fa-plus"></i> </button></th>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>5</td>
-                                                                <td>P-0785786866</td>
-                                                                <td>Mahdi</td>
-                                                                <td>Afzaly</td>
-                                                                <td></i>Dr.Ahmadi</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
-                                                                <td class="">Diabetics</td>
-                                                                <th><button class="btn btn-primary">add to visited <i class="fa fa-plus"></i> </button></th>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>6</td>
-                                                                <td>P-078558099</td>
-                                                                <td>Reza</td>
-                                                                <td>Ahmadian</td>
-                                                                <td></i>Dr.Ahmadi</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <th><button class="btn btn-primary">add to visited <i class="fa fa-plus"></i> </button></th>
-                                                            </tr>
-
-                                                           
-                                                            <tr>
-                                                                <td>7</td>
-                                                                <td>P-0785786788</td>
-                                                                <td>Mohsen</td>
-                                                                <td>Twassuli</td>
-                                                                <td>Dr.Jalal</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <th><button class="btn btn-primary">add to visited <i class="fa fa-plus"></i> </button></th>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>8</td>
-                                                                <td>P-0785786866</td>
-                                                                <td>Shafiqah</td>
-                                                                <td>Enayati</td>
-                                                                <td>Dr.Jalal</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
-                                                                <td class="">Diabetics</td>
-                                                                <th><button class="btn btn-primary">add to visited <i class="fa fa-plus"></i> </button></th>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>9</td>
-                                                                <td>P-078558099</td>
-                                                                <td>Fayaz</td>
-                                                                <td>Qurbani</td>
-                                                                <td>Dr.Jalal</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <th><button class="btn btn-primary">add to visited <i class="fa fa-plus"></i> </button></th>
-                                                            </tr>
-
-                                                           
-                                                            <tr>
-                                                                <td>10</td>
-                                                                <td>P-0785786788</td>
-                                                                <td>Amrullah</td>
-                                                                <td>Barokzay</td>
-                                                                <td></i>Dr.Samim</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <th><button class="btn btn-primary">add to visited <i class="fa fa-plus"></i> </button></th>
-                                                            </tr>
+                                                            @foreach($patient as $patients)
+                                                                <tr>
+                                                                    <td>{{ $patients->id_patient }}</td>
+                                                                    <td>{{ $patients->name }}</td>
+                                                                    <td>{{ $patients->lastname }}</td>
+                                                                    <td>null</td>
+                                                                    <td>{{ $patients->status }}</td>
+                                                                    <td><i class="fa fa-calendar"></i>&nbsp;{{ $patients->created_at }}</td>
+                                                                    <td class="">{{ $patients->problem_health }}</td>
+                                                                </tr>
+                                                            @endforeach
                                                             </tbody>
                                                         </table>
                                                     </div>
