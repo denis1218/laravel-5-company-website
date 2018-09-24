@@ -97,6 +97,7 @@
                                                             <tbody>
                                                             @foreach($patient as $patients)
                                                                 <tr>
+                                                                    <td>{{ $patients->id }}</td>
                                                                     <td>{{ $patients->id_patient }}</td>
                                                                     <td>{{ $patients->name }}</td>
                                                                     <td>{{ $patients->lastname }}</td>
@@ -104,6 +105,7 @@
                                                                     <td>{{ $patients->status }}</td>
                                                                     <td><i class="fa fa-calendar"></i>&nbsp;{{ $patients->created_at }}</td>
                                                                     <td class="">{{ $patients->problem_health }}</td>
+                                                                    <td><a class="btn btn-xs btn-warning">remove</a></td>
                                                                 </tr>
                                                             @endforeach
                                                             </tbody>
