@@ -2,7 +2,7 @@
 
 
 Route::get('/', function () {
-    return view('login');
+    return view('/login');
 });
 
 /*
@@ -83,18 +83,6 @@ Route::get('iframe', function () {
 Route::get('/iframe', function () {
     return view('/iframe');
 });
-
-// login of users
-
-Route::get('/login', function () {
-
-    Route::get('/', function () {
-        return view('login');
-    });
-    Route::get('login', function () {
-
-        return view('login');
-    });
     Route::post('auth', 'UserController@authenticat');
 // dashboard of clinic
     Route::get('/dash', function () {
@@ -181,6 +169,7 @@ Route::get('/login', function () {
     });
 
     Route::get('/doctor_report_list', function () {
+
         return view('/doctor_report_list');
     });
 
@@ -198,6 +187,5 @@ Route::get('/login', function () {
     });
 
 
-
-Route::get('patient/{id}/delete','PatientController@destroy');
+    Route::get('patient/{id}/delete', 'PatientController@destroy');
 
