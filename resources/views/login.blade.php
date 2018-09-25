@@ -35,7 +35,9 @@
             <img src="/img/Dentaa3.png" width="650px" class="img-responsive" alt="">
         </div>
         <h3 style="color: white;">Welcome to HK|Clinic</h3>
-        <form class="m-t" role="form" action="/dash">
+        <form class="m-t" role="form" action="/auth" method="post">
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
+
             <div class="form-group">
                 <select class="form-control" required>
                     <option value="">Select Your Position</option>
@@ -47,10 +49,10 @@
                 </select>
             </div>
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email Address" required="">
+                <input type="email" class="form-control" name="email" placeholder="Email Address" required="">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password" required="">
+                <input type="password" class="form-control" name="pass" placeholder="Password" required="">
             </div>
             <button type="submit" class="btn btn-success block full-width m-b">Login</button>
 
