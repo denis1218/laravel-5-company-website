@@ -6,12 +6,12 @@
         </h2>
     </div>
 
-    <div class="col-sm-3">
-        <h2><a class="btn btn-primary hvr-grow-shadow" style="font-size: 13px; width: 200px;"
-               href="/treatment_operation"><i class="fa fa-stethoscope pull-left"
-                                              style="color:#ffc000; font-size:25px;"></i>&nbsp;&nbsp;Treatment
-                operation</a></h2>
-    </div>
+    {{--<div class="col-sm-3">--}}
+        {{--<h2><a class="btn btn-primary hvr-grow-shadow" style="font-size: 13px; width: 200px;"--}}
+               {{--href="/treatment_operation"><i class="fa fa-stethoscope pull-left"--}}
+                                              {{--style="color:#ffc000; font-size:25px;"></i>&nbsp;&nbsp;Treatment--}}
+                {{--operation</a></h2>--}}
+    {{--</div>--}}
 
     <div class="col-sm-3">
         <h2><a class="btn btn-primary hvr-grow-shadow" style="font-size: 13px; width: 200px;"

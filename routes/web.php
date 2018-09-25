@@ -185,3 +185,5 @@ Route::get('/doctor_salary',function (){
 
 // Doctor Registration
 Route::resource('doctors','DoctorController');
+
+Route::resource('doc_opp','DoctorOperation');

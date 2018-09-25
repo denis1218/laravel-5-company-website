@@ -92,10 +92,11 @@
                                     <th>Last Name</th>
                                     <th>Status</th>
                                     <th>Date & Time Appointment</th>
-                                    <th>Problem Health</th>
+                                    <th>Health Problem</th>
                                     <th>Operation</th>
                                 </tr>
                                 </thead>
+                                @foreach()
                                 <tbody>
                                 <tr>
                                     <td>P-0785544229</td>
