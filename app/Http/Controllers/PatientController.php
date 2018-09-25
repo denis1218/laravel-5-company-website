@@ -98,11 +98,14 @@ class PatientController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Patient  $patient
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param Patient $patient
      */
-    public function destroy(Patient $patient)
+    public function destroy($id)
     {
-        //
+        $patient = Patient::find($id);
+        $patient->delete();
+        return redirect()->back();
     }
 }

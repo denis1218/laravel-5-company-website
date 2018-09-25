@@ -183,3 +183,5 @@ Route::get('/doctor_salary',function (){
    return view('doctor_salary');
 });
 
+Route::get('patient/{id}/delete','PatientController@destroy');
+
