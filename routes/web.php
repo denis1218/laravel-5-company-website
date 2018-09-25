@@ -189,3 +189,5 @@ Route::get('/iframe', function () {
 
     Route::get('patient/{id}/delete', 'PatientController@destroy');
 
+// Doctor Registration
+Route::resource('doctors','DoctorController');
