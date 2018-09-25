@@ -75,12 +75,12 @@
                                     @foreach($doctor_list as $doctors)
                                     <tr>
                                         <td>{{ $doctors->id }}</td>
-                                        <td>{{ $doctors->doctor_name }}</td>
-                                        <td>{{ $doctors->doctor_avail }}</td>
+                                        <td>{{ $doctors->first_name }}</td>
+                                        <td>{{ $doctors->start_work_time }}&nbsp;- &nbsp;{{ $doctors->end_work_time}}</td>
                                         <td>{{ $doctors->max_patient }}</td>
                                         <td>{{ $doctors->have_patient }}</td>
                                         <td>
-                                            <div class="i-checks"><input type="radio"  value="{{ $doctors->id }}" name="FK_id_Doctor" required></div>
+                                            <div class="i-checks"><input type="radio"  value="{{ $doctors->id }}" name="FK_id_Doctor" id="FK_id_Doctor" required></div>
                                         </td>
                                     </tr>
                                         @endforeach

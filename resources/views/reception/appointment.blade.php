@@ -40,12 +40,9 @@
                                 <ul class="nav nav-tabs">
                                     <li class="active"><a data-toggle="tab" href="#home" style="color:black;">All
                                             Patients</a></li>
-                                    <li class=""><a data-toggle="tab" href="#fst" style="color:black;">Dr.Samim</a></li>
-                                    <li class=""><a data-toggle="tab" href="#snd" style="color:black;">Dr.Ahmadi</a>
-                                    </li>
-                                    <li class=""><a data-toggle="tab" href="#trd" style="color:black;">Dr.Jalal</a></li>
-                                    <li class=""><a data-toggle="tab" href="#frt" style="color:black;">Dr.Tamim </a>
-                                    </li>
+                                    @foreach($doctor_list as $doctors)
+                                    <li class=""><a data-toggle="tab" href="#{{ $doctors->id }}" style="color:black;">Dr. &nbsp;{{ $doctors->first_name }} {{ $doctors->last_name }}</a></li>
+                                    @endforeach
                                 </ul>
                                 {{--end of navigation list--}}
 
@@ -68,7 +65,7 @@
                                                     </button>
                                                 </div>
                                             </div>
-
+                                        <br/>
                                             <div class="row" style="margin-top:-120px;">
                                                 <div class="col-sm-7">
                                                     <div class="input-group">
@@ -94,7 +91,6 @@
                                                                 <th>Doctor Name</th>
                                                                 <th>Status</th>
                                                                 <th>Appointment date</th>
-                                                                <th>Healths Problem</th>
                                                                 <th>Add to visited</th>
                                                             </tr>
                                                             </thead>
@@ -107,10 +103,7 @@
                                                                     <td>{{ $patients->lastname }}</td>
                                                                     <td>null</td>
                                                                     <td>{{ $patients->status }}</td>
-                                                                    <td>
-                                                                        <i class="fa fa-calendar"></i>&nbsp;{{ $patients->created_at }}
-                                                                    </td>
-                                                                    <td class="">{{ $patients->problem_health }}</td>
+                                                                    <td>{{ $patients->created_at }}</td>
                                                                     <td><a class="btn btn-xs btn-warning" href=""
                                                                            onclick="deletePatient({{ $patients->id }})">remove</a>
                                                                     </td>
@@ -123,9 +116,9 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     {{--first doctor--}}
-                                    <div id="fst" class="tab-pane">
+                                    @foreach($doctor_list as $doctors)
+                                    <div id="{{ $doctors->id }}" class="tab-pane">
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-md-3">
@@ -141,7 +134,6 @@
                                                     </button>
                                                 </div>
                                             </div>
-
                                             <div class="row" style="margin-top:-120px;">
                                                 <div class="col-sm-7">
                                                     <div class="input-group">
@@ -161,7 +153,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="row" style="margin-top:-50px;">
                                                 <div class="col-sm-11">
                                                     <div class="table-responsive">
@@ -171,112 +162,26 @@
                                                                 <td>P-ID</td>
                                                                 <th>Patient Name</th>
                                                                 <th>Last Name</th>
-                                                                <th>Doctor Name</th>
                                                                 <th>Status</th>
                                                                 <th>Appointment Date</th>
-                                                                <th>Healths Problem</th>
-                                                                <th>Add to General List</th>
+                                                                <th>Add to Queue</th>
                                                             </tr>
                                                             </thead>
                                                             <tbody>
+
                                                             <tr>
-                                                                <td>P-078554422</td>
-                                                                <td>Ahmad</td>
-                                                                <td>Sultani</td>
-                                                                <td></i>Dr.Samim</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
-                                                                <td class="">Blood pressure</td>
+                                                                {{--<td>{{ $patient->id_patient }}</td>--}}
+                                                                {{--<td>{{ $patient->name }}</td>--}}
+                                                                {{--<td>{{ $patient->lastname }}</td>--}}
+                                                                {{--<td>{{ $patient->status }}</td>--}}
+                                                                {{--<td>{{ $doctor->created_at }}</td>--}}
                                                                 <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
+                                                                    <button class="btn btn-xs btn-primary">
+                                                                        In Queue
                                                                     </button>
                                                                 </td>
                                                             </tr>
-                                                            <tr>
-                                                                <td>P-0786906677</td>
-                                                                <td>Naweed</td>
-                                                                <td>Rezayee</td>
-                                                                <td></i>Dr.Samim</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/1/3</td>
-                                                                <td class="">Diabetics</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785445580</td>
-                                                                <td>Qasim</td>
-                                                                <td>Mukhtary</td>
-                                                                <td></i>Dr.Samim</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
-                                                                <td class="">Hepatitics</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785564749</td>
-                                                                <td>Mahmood</td>
-                                                                <td>Hashimi</td>
-                                                                <td></i>Dr.Samim</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
-                                                                <td class="">Asthma</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785786788</td>
-                                                                <td>Ali</td>
-                                                                <td>Ahmadyar</td>
-                                                                <td></i>Dr.Samim</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785786866</td>
-                                                                <td>Mahdi</td>
-                                                                <td>Safari</td>
-                                                                <td></i>Dr.Samim</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
-                                                                <td class="">Diabetics</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-078558099</td>
-                                                                <td>Ahmad</td>
-                                                                <td>Rasuli</td>
-                                                                <td></i>Dr.Samim</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
+
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -284,491 +189,7 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    {{--second doctor--}}
-                                    <div id="snd" class="tab-pane">
-                                        <div class="panel-body">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <a href="/patient">
-                                                        <button class="btn btn-primary" style="width:100%;">
-                                                            <li class="fa fa-plus"></li>&nbsp; Add new Patient
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <button class="btn btn-primary">
-                                                        <li class="fa fa-list"></li>&nbsp; Next Appointment List
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="row" style="margin-top:-120px;">
-                                                <div class="col-sm-7">
-                                                    <div class="input-group">
-                                                        <span class="input-group-btn">
-                                                        <button type="button"
-                                                                class="btn btn-sm btn-primary"> Search</button> </span>
-                                                        <input type="text" placeholder="Search patient name"
-                                                               class="input-sm form-control">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-sm-4">
-                                                    <div class="btn-group">
-                                                        <button class="btn btn-white" type="button">Previous</button>
-                                                        <button class="btn btn-primary" type="button">Today</button>
-                                                        <button class="btn btn-white" type="button">Next</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row" style="margin-top:-50px;">
-                                                <div class="col-sm-11">
-                                                    <div class="table-responsive">
-                                                        <table class="table table-hover no-margins">
-                                                            <thead>
-                                                            <tr>
-                                                                <td>P-ID</td>
-                                                                <th>Patient Name</th>
-                                                                <th>Last Name</th>
-                                                                <th>Doctor Name</th>
-                                                                <th>Status</th>
-                                                                <th>Appointment Date</th>
-                                                                <th>Healths Problem</th>
-                                                                <th>Add to General List</th>
-                                                            </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <td>P-078554422</td>
-                                                                <td>Rostam</td>
-                                                                <td>Baqiri</td>
-                                                                <td></i>Dr.Ahmadi</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0786906677</td>
-                                                                <td>Naweed</td>
-                                                                <td>Azizi</td>
-                                                                <td></i>Dr.Ahmadi</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
-                                                                <td class="">Diabetics</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785445580</td>
-                                                                <td>Qasim</td>
-                                                                <td>Saadat</td>
-                                                                <td></i>Dr.Ahmadi</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
-                                                                <td class="">Hepatitics</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785564749</td>
-                                                                <td>Mahbub</td>
-                                                                <td>Faqiri</td>
-                                                                <td></i>Dr.Ahmadi</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
-                                                                <td class="">Asthma</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785786788</td>
-                                                                <td>Omid</td>
-                                                                <td>Shafaq</td>
-                                                                <td></i>Dr.Ahmadi</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785786866</td>
-                                                                <td>Mahdi</td>
-                                                                <td>Afzaly</td>
-                                                                <td></i>Dr.Ahmadi</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
-                                                                <td class="">Diabetics</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-078558099</td>
-                                                                <td>Reza</td>
-                                                                <td>Ahmadian</td>
-                                                                <td></i>Dr.Ahmadi</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {{--third doctor--}}
-                                    <div id="trd" class="tab-pane">
-                                        <div class="panel-body">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <a href="/patient">
-                                                        <button class="btn btn-primary" style="width:100%;">
-                                                            <li class="fa fa-plus"></li>&nbsp; Add new Patient
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <button class="btn btn-primary">
-                                                        <li class="fa fa-list"></li>&nbsp; Next Appointment List
-                                                    </button>
-                                                </div>
-                                            </div>
-
-                                            <div class="row" style="margin-top:-120px;">
-                                                <div class="col-sm-7">
-                                                    <div class="input-group">
-                                                        <span class="input-group-btn">
-                                                        <button type="button"
-                                                                class="btn btn-sm btn-primary"> Search</button> </span>
-                                                        <input type="text" placeholder="Search patient name"
-                                                               class="input-sm form-control">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-sm-4">
-                                                    <div class="btn-group">
-                                                        <button class="btn btn-white" type="button">Previous</button>
-                                                        <button class="btn btn-primary" type="button">Today</button>
-                                                        <button class="btn btn-white" type="button">Next</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row" style="margin-top:-50px;">
-                                                <div class="col-sm-11">
-                                                    <div class="table-resposive">
-                                                        <table class="table table-hover no-margins">
-                                                            <thead>
-                                                            <tr>
-                                                                <td>P-ID</td>
-                                                                <th>Patient Name</th>
-                                                                <th>Last name</th>
-                                                                <th>Doctor Name</th>
-                                                                <th>Status</th>
-                                                                <th>Appointment Date</th>
-                                                                <th>Healths Problem</th>
-                                                                <th>Add to General List</th>
-                                                            </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <td>P-078554422</td>
-                                                                <td>Murtaza</td>
-                                                                <td>Akhlaqi</td>
-                                                                <td>Dr.Jalal</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0786906677</td>
-                                                                <td>Hadi</td>
-                                                                <td>Paktiawal</td>
-                                                                <td>Dr.Jalal</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
-                                                                <td class="">Diabetics</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785445580</td>
-                                                                <td>Soltan</td>
-                                                                <td>Pazhwak</td>
-                                                                <td>Dr.Jalal</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
-                                                                <td class="">Hepatitics</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785564749</td>
-                                                                <td>Fahim</td>
-                                                                <td>Kohsari</td>
-                                                                <td>Dr.Jalal</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
-                                                                <td class="">Asthma</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785786788</td>
-                                                                <td>Mohsen</td>
-                                                                <td>Twassuli</td>
-                                                                <td>Dr.Jalal</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785786866</td>
-                                                                <td>Shafiqah</td>
-                                                                <td>Enayati</td>
-                                                                <td>Dr.Jalal</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
-                                                                <td class="">Diabetics</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-078558099</td>
-                                                                <td>Fayaz</td>
-                                                                <td>Qurbani</td>
-                                                                <td>Dr.Jalal</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    {{--forth doctor--}}
-                                    <div id="frt" class="tab-pane">
-                                        <div class="panel-body">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <a href="/patient">
-                                                        <button class="btn btn-primary" style="width:100%;">
-                                                            <li class="fa fa-plus"></li>&nbsp; Add new Patient
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <button class="btn btn-primary">
-                                                        <li class="fa fa-list"></li>&nbsp; Next Appointment List
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="row" style="margin-top:-120px;">
-                                                <div class="col-sm-7">
-                                                    <div class="input-group">
-                                                        <span class="input-group-btn">
-                                                        <button type="button"
-                                                                class="btn btn-sm btn-primary"> Search</button> </span>
-                                                        <input type="text" placeholder="Search patient name"
-                                                               class="input-sm form-control">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-sm-4">
-                                                    <div class="btn-group">
-                                                        <button class="btn btn-white" type="button">Previous</button>
-                                                        <button class="btn btn-primary" type="button">Today</button>
-                                                        <button class="btn btn-white" type="button">Next</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row" style="margin-top:-50px;">
-                                                <div class="col-sm-11">
-                                                    <div class="table-responsive">
-                                                        <table class="table table-hover no-margins">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>P-ID</th>
-                                                                <th>Patient Name</th>
-                                                                <th>Last Name</th>
-                                                                <th>Doctor Name</th>
-                                                                <th>Status</th>
-                                                                <th>Appointment Date</th>
-                                                                <th>Healths Problem</th>
-                                                                <th>Add to General List</th>
-                                                            </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <td>P-078554422</td>
-                                                                <td>Mustafa</td>
-                                                                <td>Moulayee</td>
-                                                                <td></i>Dr.Tamim</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0786906677</td>
-                                                                <td>Ehsan</td>
-                                                                <td>Sarwary</td>
-                                                                <td></i>Dr.Tamim</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
-                                                                <td class="">Diabetics</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785445580</td>
-                                                                <td>Abuzar</td>
-                                                                <td>Rashidi</td>
-                                                                <td></i>Dr.Tamim</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
-                                                                <td class="">Hepatitics</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785564749</td>
-                                                                <td>Rashid</td>
-                                                                <td>Mortazawi</td>
-                                                                <td></i>Dr.Tamim</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
-                                                                <td class="">Asthma</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785786788</td>
-                                                                <td>Amrullah</td>
-                                                                <td>Barokzay</td>
-                                                                <td></i>Dr.Tamim</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-0785786866</td>
-                                                                <td>Marwa</td>
-                                                                <td>Anwary</td>
-                                                                <td></i>Dr.Tamim</td>
-                                                                <td>Second Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
-                                                                <td class="">Diabetics</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>P-078558099</td>
-                                                                <td>Shakib</td>
-                                                                <td>Khaliqi</td>
-                                                                <td></i>Dr.Tamim</td>
-                                                                <td>First Time</td>
-                                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3</td>
-                                                                <td class="">Blood pressure</td>
-                                                                <td>
-                                                                    <button class="btn btn-primary">
-                                                                        Add to List
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {{--end of doctors tabs--}}
-
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

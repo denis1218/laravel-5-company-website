@@ -73,6 +73,7 @@
                                             <th>Phone</th>
                                             <th>Departement</th>
                                             <th>Gender</th>
+                                            <th>Max patient</th>
                                             <th>Salary type</th>
                                             <th>Salary amount</th>
                                             <th>Report</th>
@@ -91,6 +92,7 @@
                                         <td>{{$doctor->phone}}</td>
                                         <td class="center">{{$doctor->dept_id}}</td>
                                         <td>{{$doctor->gender}}</td>
+                                        <td>{{$doctor->max_patient}}</td>
                                         <td>{{$doctor->salary_type}}</td>
                                         <td class="center">{{$doctor->salary_amount}}</td>
                                         <td class="center"><a class="btn btn-xs btn-info" href="/doctors/{{$doctor->id}}">Details &nbsp;<i class="fa fa-file-o"></i></a></td>

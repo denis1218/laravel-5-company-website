@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Doctor;
 use App\DoctorDemo;
 use App\Patient;
 use Illuminate\Http\Request;
@@ -16,7 +17,10 @@ class PatientController extends Controller
     public function index()
     {
         $patient = Patient::all();
-        return view('reception.appointment',compact('patient'));
+        $doctor = Doctor::find(1);
+        $doctor_list = Doctor::all();
+        return view('reception.appointment',compact('patient','doctor','doctor_list'));
+
     }
 
     /**
@@ -26,7 +30,7 @@ class PatientController extends Controller
      */
     public function create()
     {
-        $doctor_list = DoctorDemo::all();
+        $doctor_list = Doctor::all();
         return view ('patient.patient',compact('doctor_list'));
     }
 
@@ -52,8 +56,8 @@ class PatientController extends Controller
                 $string .=  $value.',';
             }
             $phonenumber = $request->phone;
-            $idpatient = $request->id;
 
+        $patient->FK_id_Doctor = $request->input('FK_id_Doctor');
         $patient->status = 'new patient';
         $patient->problem_health = $string;
         $patient->id_patient = 'P-'.$phonenumber;

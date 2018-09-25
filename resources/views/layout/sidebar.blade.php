@@ -37,7 +37,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="/reception"><i class="fa fa-book"></i> <span class="nav-label">Reception</span><span
+                        <a ><i class="fa fa-book"></i> <span class="nav-label">Reception</span><span
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/employee"><i class="fa fa-save"></i>Doctor Registration</a></li>
