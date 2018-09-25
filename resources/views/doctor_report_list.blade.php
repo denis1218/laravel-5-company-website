@@ -101,6 +101,7 @@
                                         <h1 class="text-center" style="color:red;">No doctor registred yet</h1>
                                         @endif
                                     </table>
+                                        {{$doctors->links()}}
                                 </div>
                             </div>
                         </div>
