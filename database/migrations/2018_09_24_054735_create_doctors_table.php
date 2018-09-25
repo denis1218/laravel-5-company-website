@@ -21,7 +21,7 @@ class CreateDoctorsTable extends Migration
             $table->time('start_work_time');
             $table->time('end_work_time');
             $table->string('phone');
-            $table->integer('dept_id');
+            $table->string('dept_id');
             $table->string('gender');
             $table->string('salary_type');
             $table->integer('salary_amount');
