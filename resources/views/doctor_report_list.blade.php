@@ -93,7 +93,7 @@
                                         <td>{{$doctor->gender}}</td>
                                         <td>{{$doctor->salary_type}}</td>
                                         <td class="center">{{$doctor->salary_amount}}</td>
-                                        <td class="center"><a class="btn btn-xs btn-info" href="/doctor_report">Details &nbsp;<i class="fa fa-file-o"></i></a></td>
+                                        <td class="center"><a class="btn btn-xs btn-info" href="/doctors/{{$doctor->id}}">Details &nbsp;<i class="fa fa-file-o"></i></a></td>
                                         </tr>
                                         </tbody>
                                          @endforeach

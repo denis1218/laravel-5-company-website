@@ -50,7 +50,7 @@
             <div class="ibox-content">
                 <div class="row">
                     <div class="col-md-12 text-right">
-                        <a class="btn btn-primary btn-lg" style="float: left;" href="doctor_report_list">
+                        <a class="btn btn-primary btn-lg" style="float: left;" href="/doctors">
                             <i class="fa fa-arrow-left"></i> &nbsp; Back to Doctors</a>
                         <button class="btn btn-primary btn-lg">Print &nbsp;<i class="fa fa-print"></i></button>
                     </div>
