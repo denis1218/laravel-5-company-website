@@ -14,7 +14,7 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        $doctors=Doctor::all();
+        $doctors=Doctor::orderBy('id','asc')->paginate(10);
         return view('doctor_report_list')->with('doctors',$doctors);
     }
 
