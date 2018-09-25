@@ -60,7 +60,8 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        //
+        $doctor=Doctor::find($id);
+
     }
 
     /**
