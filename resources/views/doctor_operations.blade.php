@@ -96,79 +96,25 @@
                                     <th>Operation</th>
                                 </tr>
                                 </thead>
-                                @foreach()
+                                @if(count($operation)>0)
+                                @foreach($operation as $opr)
                                 <tbody>
                                 <tr>
-                                    <td>P-0785544229</td>
-                                    <td>Ahmad</td>
-                                    <td>Ahmadi</td>
-                                    <td>Second Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
-                                    <td class="">Blood pressure</td>
-                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>P-0780669022</td>
-                                    <td>Naweed</td>
-                                    <td>Hashimi</td>
-                                    <td>Second Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
-                                    <td class="">Diabetics</td>
-                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>P-0790446690</td>
-                                    <td>Qasim</td>
-                                    <td>karimi</td>
-                                    <td>Second Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
-                                    <td class="">Hepatitics</td>
-                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>P-0787206644</td>
-                                    <td>Mahmood</td>
-                                    <td>alimi</td>
-                                    <td>First Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
-                                    <td class="">Asthma</td>
-                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>P-0702036768</td>
-                                    <td>Ali</td>
-                                    <td>Ahmad</td>
-                                    <td>First Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
-                                    <td class="">Blood pressure</td>
-                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>P-0785454643</td>
-                                    <td>Mahdi</td>
-                                    <td>Samimi</td>
-                                    <td>First Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
-                                    <td class="">Diabetics</td>
-                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>P-0777506070</td>
-                                    <td>Ahmad</td>
-                                    <td>Khan</td>
-                                    <td>First Time</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1</td>
-                                    <td class="">Blood pressure</td>
-                                    <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
+                                    <td>{{$opr->id_patient}}</td>
+                                    <td>{{$opr->name}}</td>
+                                    <td>{{$opr->lastname}}</td>
+                                    <td>{{$opr->status}}</td>
+                                    <td><i class="fa fa-calendar"></i>&nbsp; {{$opr->created_at}}</td>
+                                    <td class="">{{$opr->problem_health}}</td>
+                                    <td><a href="/operation/{{$opr->id_patient}}" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
                                 </tbody>
+                                    @endforeach
+                                    {{$operation->links()}}
+                                @else
+                                    <h3 style="color:red;text-align: center;">NO PATIENT HAS BEEN REGISTERED YET</h3>
+                                @endif
                             </table>
                         </div>
                     </div>
