@@ -191,3 +191,5 @@ Route::get('/iframe', function () {
 
 // Doctor Registration
 Route::resource('doctors','DoctorController');
+
+Route::resource('operation','TreatmentController');

@@ -50,6 +50,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="col-sm-2 control-label">Age</label>
+                            <div class="col-md-4"><input type="number" class="form-control" name="age" placeholder="Doctor's age" ></div>
+                        </div>
+
+                        <div class="form-group">
                             <label class="col-sm-2 control-label">Working Time</label>
                             <div class="col-md-4">
                                 <label for=""> From </label><input type="time" class="form-control" name="start_work_time" style="width: 40%" required>
