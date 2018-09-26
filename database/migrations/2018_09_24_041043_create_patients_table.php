@@ -24,11 +24,16 @@ class CreatePatientsTable extends Migration
             $table->longText('address');
             $table->longText('problem_health');
             $table->string('status');
-            $table->integer('FK_id_Doctor')->nullable();
+            $table->unsignedInteger('FK_id_Doctor')->nullable();
             $table->integer('FK_id_X-Ray')->nullable();
             $table->integer('FK_id_X-Payment')->nullable();
             $table->integer('FK_id_X-Treatment')->nullable();
             $table->timestamps();
+
+            $table->foreign('FK_id_Doctor')
+                ->references('id')->on('doctors')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
