@@ -14,7 +14,7 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        $doctors=Doctor::orderBy('id','asc')->paginate(10);
+        $doctors = Doctor::orderBy('id','asc')->paginate(10);
         return view('doctor_report_list')->with('doctors',$doctors);
     }
 
@@ -48,6 +48,7 @@ class DoctorController extends Controller
         $doctor->gender=$request->input('gender');
         $doctor->salary_type=$request->input('salary_type');
         $doctor->salary_amount=$request->input('salary_amount');
+        $doctor->max_patient=$request->input('max_patient');
         $doctor->save();
 
         return redirect('/doctors')->with('success','Doctor registered successfully');
