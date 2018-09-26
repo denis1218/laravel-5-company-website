@@ -186,7 +186,6 @@ Route::get('/iframe', function () {
         return view('doctor_salary');
     });
 
-
     Route::get('patient/{id}/delete', 'PatientController@destroy');
 
 // Doctor Registration
