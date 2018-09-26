@@ -106,7 +106,7 @@
                                     <td>{{$opr->status}}</td>
                                     <td><i class="fa fa-calendar"></i>&nbsp; {{$opr->created_at}}</td>
                                     <td class="">{{$opr->problem_health}}</td>
-                                    <td><a href="/operation/{{$opr->id_patient}}" class="btn btn-sm btn-primary">Start Treatment</a>
+                                    <td><a href="/operation/{{$opr->id}}" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
                                 </tbody>

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Patient;
-class OperationController extends Controller
+
+class TreatmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,8 @@ class OperationController extends Controller
      */
     public function index()
     {
-        $operation=Patient::orderBy('id_patient','asc')->paginate(10);
-        return view('doctor_operations')->with('operation',$operation);
+        $operation = Patient::orderBy('id_patient', 'asc')->paginate(10);
+        return view('doctor_operations')->with('operation', $operation);
     }
 
     /**
@@ -46,8 +47,8 @@ class OperationController extends Controller
      */
     public function show($id)
     {
-//        $opp=Patient::find($id);
-//        return view('treatment_operation')->with('opp',$opp);
+        $operation = Patient::find($id);
+        return $operation;
     }
 
     /**
