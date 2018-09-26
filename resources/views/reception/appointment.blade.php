@@ -32,8 +32,16 @@
 
                 {{--doctor's specific patients--}}
                 <div class="row">
-
                     <div class="col-12">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="/patient/create">
+                                    <button class="btn btn-primary" style="width:100%;">
+                                        <li class="fa fa-plus"></li>&nbsp; Add new Patient
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                         <div class="tabs-container">
                             <div class="tabs-left">
                                 {{--navigation list--}}
@@ -41,7 +49,9 @@
                                     <li class="active"><a data-toggle="tab" href="#home" style="color:black;">All
                                             Patients</a></li>
                                     @foreach($doctor_list as $doctors)
-                                    <li class=""><a data-toggle="tab" href="#{{ $doctors->id }}" style="color:black;">Dr. &nbsp;{{ $doctors->first_name }} {{ $doctors->last_name }}</a></li>
+                                        <li class=""><a data-toggle="tab" href="#{{ $doctors->id }}"
+                                                        style="color:black;">Dr.
+                                                &nbsp;{{ $doctors->first_name }} {{ $doctors->last_name }}</a></li>
                                     @endforeach
                                 </ul>
                                 {{--end of navigation list--}}
@@ -52,20 +62,12 @@
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-md-3">
-                                                    <a href="/patient">
-                                                        <a class="btn btn-primary" href="/patient/create"
-                                                           style="width:100%;">
-                                                            <li class="fa fa-plus"></li>&nbsp; Add new Patient
-                                                        </a>
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-3">
                                                     <button class="btn btn-primary">
                                                         <li class="fa fa-list"></li>&nbsp; Next Appointment List
                                                     </button>
                                                 </div>
                                             </div>
-                                        <br/>
+                                            <br/>
                                             <div class="row" style="margin-top:-120px;">
                                                 <div class="col-sm-7">
                                                     <div class="input-group">
@@ -95,13 +97,13 @@
                                                             </tr>
                                                             </thead>
                                                             <tbody>
-                                                            @foreach($patient as $patients)
+                                                            @foreach($patient_all as $patients)
                                                                 <tr>
                                                                     <td>{{ $patients->id }}</td>
                                                                     <td>{{ $patients->id_patient }}</td>
                                                                     <td>{{ $patients->name }}</td>
                                                                     <td>{{ $patients->lastname }}</td>
-                                                                    <td>null</td>
+                                                                    <td>{{ $patients->doctor->first_name }}</td>
                                                                     <td>{{ $patients->status }}</td>
                                                                     <td>{{ $patients->created_at }}</td>
                                                                     <td><a class="btn btn-xs btn-warning" href=""
@@ -117,78 +119,77 @@
                                         </div>
                                     </div>
                                     {{--first doctor--}}
-                                    @foreach($doctor_list as $doctors)
-                                    <div id="{{ $doctors->id }}" class="tab-pane">
-                                        <div class="panel-body">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <a href="/patient">
-                                                        <button class="btn btn-primary" style="width:100%;">
-                                                            <li class="fa fa-plus"></li>&nbsp; Add new Patient
+                                    @foreach($doctor_list as $list)
+
+                                        <div id="{{ $list->id }}" class="tab-pane">
+                                            <div class="panel-body">
+                                                <div class="row">
+
+                                                    <div class="col-md-3">
+                                                        <button class="btn btn-primary">
+                                                            <li class="fa fa-list"></li>&nbsp; Next Appointment List
                                                         </button>
-                                                    </a>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <button class="btn btn-primary">
-                                                        <li class="fa fa-list"></li>&nbsp; Next Appointment List
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="row" style="margin-top:-120px;">
-                                                <div class="col-sm-7">
-                                                    <div class="input-group">
+                                                <div class="row" style="margin-top:-120px;">
+                                                    <div class="col-sm-7">
+                                                        <div class="input-group">
                                                         <span class="input-group-btn">
                                                         <button type="button"
                                                                 class="btn btn-sm btn-primary"> Search</button> </span>
-                                                        <input type="text" placeholder="Search patient name"
-                                                               class="input-sm form-control">
+                                                            <input type="text" placeholder="Search patient name"
+                                                                   class="input-sm form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-4">
+                                                        <div class="btn-group">
+                                                            <button class="btn btn-white" type="button">Previous
+                                                            </button>
+                                                            <button class="btn btn-primary" type="button">Today
+                                                            </button>
+                                                            <button class="btn btn-white" type="button">Next
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
-
-                                                <div class="col-sm-4">
-                                                    <div class="btn-group">
-                                                        <button class="btn btn-white" type="button">Previous</button>
-                                                        <button class="btn btn-primary" type="button">Today</button>
-                                                        <button class="btn btn-white" type="button">Next</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row" style="margin-top:-50px;">
-                                                <div class="col-sm-11">
-                                                    <div class="table-responsive">
-                                                        <table class="table table-hover  no-margins">
-                                                            <thead>
-                                                            <tr>
-                                                                <td>P-ID</td>
-                                                                <th>Patient Name</th>
-                                                                <th>Last Name</th>
-                                                                <th>Status</th>
-                                                                <th>Appointment Date</th>
-                                                                <th>Add to Queue</th>
-                                                            </tr>
-                                                            </thead>
-                                                            <tbody>
-
-                                                            <tr>
-                                                                {{--<td>{{ $patient->id_patient }}</td>--}}
-                                                                {{--<td>{{ $patient->name }}</td>--}}
-                                                                {{--<td>{{ $patient->lastname }}</td>--}}
-                                                                {{--<td>{{ $patient->status }}</td>--}}
-                                                                {{--<td>{{ $doctor->created_at }}</td>--}}
-                                                                <td>
-                                                                    <button class="btn btn-xs btn-primary">
-                                                                        In Queue
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-
-                                                            </tbody>
-                                                        </table>
+                                                <div class="row" style="margin-top:-50px;">
+                                                    <div class="col-sm-11">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover  no-margins">
+                                                                <thead>
+                                                                <tr>
+                                                                    <td>P-ID</td>
+                                                                    <th>Patient Name</th>
+                                                                    <th>Last Name</th>
+                                                                    <th>Status</th>
+                                                                    <th>Appointment Date</th>
+                                                                    <th>Add to Queue</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                @foreach($list->patients as $pati)
+                                                                    <tr>
+                                                                        <td>{{ $pati->id_patient }}</td>
+                                                                        <td>{{ $pati->name }}</td>
+                                                                        <td>{{ $pati->lastname }}</td>
+                                                                        <td>{{ $pati->status }}</td>
+                                                                        <td>{{ $pati->created_at }}</td>
+                                                                        <td>
+                                                                            <button class="btn btn-xs btn-primary">In
+                                                                                Queue
+                                                                            </button>
+                                                                        </td>
+                                                                    </tr>
+                                                                @endforeach
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+
                                     @endforeach
                                 </div>
                             </div>
