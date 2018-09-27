@@ -1,10 +1,7 @@
 @extends('master')
 @section('style')
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+
     <style rel="stylesheet">
         .font-m {
             font-size: 1.5em;
@@ -86,21 +83,17 @@
 
                     <div class="row m-b-lg m-t-lg">
 
-
                         <div class="col-md-5">
-
                             <div class="profile-info">
                                 <div class="">
                                     <div>
                                         <h2 class="no-margins font-b">
-                                            Mostafa Ahmadi
+                                            {{ $patient_in_treatment->name }}
                                         </h2>
-                                        <h4>ID: P-0780504075</h4>
+                                        <h4>ID: {{ $patient_in_treatment->id_patient }}</h4>
                                         <small style="font-size: 15px;">
-
                                             <span class="text-warning" style="font-size: 15px; font-weight: bold;">Problem Health : </span>Blood
-                                            Pressure , Allergy to Penicillin , Allergy to Anaesthetic
-
+                                            {{ $patient_in_treatment->problem_health }}
                                         </small>
                                     </div>
                                 </div>
@@ -111,31 +104,32 @@
                                 <tbody>
                                 <tr>
                                     <td>
-                                            <span class="" style="font-size: 17px;">Gender:<b>&nbsp;Male</b>&nbsp;<i
+                                            <span class=""
+                                                  style="font-size: 17px;">Gender:<b>&nbsp;{{ $patient_in_treatment->gender }}</b>&nbsp;<i
                                                         class="fa fa-male"></i></span>
                                     </td>
                                     <td>
-                                            <span style="font-size: 17px;">Age:<b>&nbsp;25</b>&nbsp;<i
+                                            <span style="font-size: 17px;">Age:<b>&nbsp;{{ $patient_in_treatment->age }}</b>&nbsp;<i
                                                         class=""></i></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span style="font-size: 17px;">Doctor:<b>&nbsp;Dr.Ahmadi</b>&nbsp;<i
+                                        <span style="font-size: 17px;">Doctor:<b>&nbsp;{{ $patient_in_treatment->doctor->first_name }}</b>&nbsp;<i
                                                     class="fa fa-user-md"></i></span>
                                     </td>
                                     <td>
-                                        <span style="font-size: 17px;">Visited:<b>&nbsp;First Time</b>&nbsp;<i
+                                        <span style="font-size: 17px;">Visited:<b>&nbsp;{{ $patient_in_treatment->status }}</b>&nbsp;<i
                                                     class=""></i></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span style="font-size: 17px;">Date Reg:<b>&nbsp;2018/5/26</b>&nbsp;<i
+                                        <span style="font-size: 17px;">Date Reg:<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
                                                     class="fa fa-calendar"></i></span>
                                     </td>
                                     <td>
-                                              <span style="font-size: 17px;">First Visited Date :<b>&nbsp;2018/5/26</b>&nbsp;<i
+                                              <span style="font-size: 17px;">First Visited Date :<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
                                                           class="fa fa-calendar"></i></span>
                                     </td>
                                 </tr>
@@ -164,7 +158,8 @@
                         <div class="panel-body">
                             <br>
                             <div class="row shadow p-3 mb-5 rounded bg-info"
-                                 table-exchange  style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
+                                 table-exchange
+                                 style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
                                 <h3 style="font-weight: bold">First Treatment</h3>
                             </div>
                             <br>
@@ -259,190 +254,86 @@
                             </div>
 
                             <br>
-                            <div class="row">
-                                <div class="col-lg-12" id="toot">
-                                    <label for="toot">Choose Tooth</label>
-                                    <div class="" style="">
-                                        <ul class="list-group checked-list-box">
-                                            <li class="list-group-item"><img src="img/teeths/1.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/2.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/3.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/4.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/5.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/6.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/7.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/8.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/9.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/10.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/11.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/12.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/13.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/14.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/15.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/16.png" width="16px"/></li>
-                                        </ul>
+                            <form action="/operation" method="POST">
+
+                                <input hidden type="hidden"/>
+                                <input hidden type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
+                                <input hidden type="hidden" name="visits" value="{{ $checkValue  }}"/>
+
+                                <div class="row" style="margin-top:30px;">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Tooth Number :</label>
+                                            <input type="number" class="form-control" required name="teeth_number"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Select Dental Defect :</label>
+                                            <select class="form-control" name="dental_defect">
+                                                <option value="0">Select Dental Defect</option>
+                                                <option value="1">Crown Fracture</option>
+                                                <option value="2">BDR</option>
+                                                <option value="3">G-Caries</option>
+                                                <option value="4">Attrision</option>
+                                                <option value="5">Calculus</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Treatment :</label>
+                                            <select class="form-control" name="treatment">
+                                                <option value="0">Select Treatment</option>
+                                                <option value="1">PF (Permanent Filling)</option>
+                                                <option value="2">RCT (Root Canal)</option>
+                                                <option value="3">Extraction</option>
+                                                <option value="4">Pulpotomy</option>
+                                                <option value="5">Apexification</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nex">Treatment Cost :</label>
+                                            <input type="number" class="form-control" name="estimated_fee">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nex">Discount :</label>
+                                            <input type="number" class="form-control" name="discount">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nex">Next Appointment :</label>
+                                            <input type="date" class="form-control" name="next_appointment">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nex">Description :</label>
+                                            <textarea rows="5" type="text" class="form-control" name="description"
+                                                      id="description"></textarea>
+                                        </div>
                                     </div>
-
-
-                                    <div class="" style="">
-                                        <ul class="list-group checked-list-box">
-                                            <li class="list-group-item"><img src="img/teeths/17.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/18.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/19.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/20.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/21.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/22.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/23.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/24.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/25.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/26.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/27.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/28.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/29.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/30.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/31.png" width="16px"/></li>
-                                            <li class="list-group-item"><img src="img/teeths/32.png" width="16px"/></li>
-                                        </ul>
+                                    <div class="col-md-6">
+                                        <img src="{{ asset('img/tooths.jpg') }}" width="100%"/>
                                     </div>
-
                                 </div>
-                                <div class="col-lg-4">
 
-                                    <div class="i-checks">   <label for="">Do You Need X-Rey ?</label>&nbsp;&nbsp;<input type="checkbox"  value="option2" name="a"></div>
-
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <button type="submit" class="btn btn-primary"> Send To Finance&nbsp;<i
+                                                    class="fa fa-save"></i>
+                                        </button>
+                                        <button class="btn btn-primary"> Send To X-Ray&nbsp;<i class="fa fa-send"></i>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row" style="margin-top:30px;">
-                                <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Select Dental Defect *</label>
-                                    <select class="form-control">
-                                        <option value="1">Select Dental Defect</option>
-                                        <option value="1">Crown Fracture</option>
-                                        <option value="1">BDR</option>
-                                        <option value="2">G-Caries</option>
-                                        <option value="3">Attrision</option>
-                                        <option value="4">Calculus</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Treatment *</label>
-                                    <select class="form-control">
-                                        <option value="1">Select Treatment</option>
-                                        <option value="1">PF (Permanent Filling)</option>
-                                        <option value="2">RCT (Root Canal)</option>
-                                        <option value="3">Extraction</option>
-                                        <option value="4">Pulpotomy</option>
-                                        <option value="5">Apexification</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="nex">Treatment Cost:</label>
-                                    <input type="number" class="form-control" name="nex" value="2000">
-                                </div>
-                                <div class="form-group">
-                                    <label for="nex">Do you Give Discount ?:</label>
-                                    <input type="number" class="form-control" name="nex">
-                                </div>
-                                <div class="form-group">
-                                    <label for="nex">Next Appointment ?</label>
-                                    <input type="date" class="form-control" name="nex">
-                                   </div>
+                            </form>
 
-                                          </div>
-
-                                      </div>
-
-                                      <div class="row">
-                                          <div class="col-md-5">
-                                              <button class="btn btn-primary"> Send To Finance&nbsp;<i class="fa fa-save"></i>
-                                              </button>
-                                              <button class="btn btn-primary"> Send To X-Ray&nbsp;<i class="fa fa-send"></i>
-                                              </button>
-                                          </div>
-                                      </div>
-
-                                  </div>
-                              </div>
-                          </div>
+                        </div>
+                    </div>
+                </div>
 
 
-                      </div>
-                  </div>
-                  </div>
-                  </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
 @endsection
 
 @section('script')
-    <script>
-        $(function () {
-            $('.list-group.checked-list-box .list-group-item').each(function () {
-                // Settings
-                var $widget = $(this),
-                    $checkbox = $('<input type="checkbox" class="hidden" />'),
-                    color = ($widget.data('color') ? $widget.data('color') : "primary"),
-                    style = ($widget.data('style') == "button" ? "btn-" : "list-group-item-"),
-                    settings = {
-                        on: {
-                            icon: ''
-                        },
-                        off: {
-                            icon: ''
-                        }
-                    };
-                $widget.css('cursor', 'pointer')
-                $widget.append($checkbox);
-                // Event Handlers
-                $widget.on('click', function () {
-                    $checkbox.prop('checked', !$checkbox.is(':checked'));
-                    $checkbox.triggerHandler('change');
-                    updateDisplay();
-                });
-                $checkbox.on('change', function () {
-                    updateDisplay();
-                });
-
-                // Actions
-                function updateDisplay() {
-                    var isChecked = $checkbox.is(':checked');
-                    // Set the button's state
-                    $widget.data('state', (isChecked) ? "on" : "off");
-                    // Set the button's icon
-                    $widget.find('.state-icon')
-                        .removeClass()
-                        .addClass('state-icon ' + settings[$widget.data('state')].icon);
-                    // Update the button's color
-                    if (isChecked) {
-                        $widget.addClass(style + color + ' active');
-                    } else {
-                        $widget.removeClass(style + color + ' active');
-                    }
-                }
-
-                // Initialization
-                function init() {
-                    if ($widget.data('checked') == true) {
-                        $checkbox.prop('checked', !$checkbox.is(':checked'));
-                    }
-                    updateDisplay();
-                    // Inject the icon if applicable
-                    if ($widget.find('.state-icon').length == 0) {
-                        $widget.prepend('<span class="state-icon ' + settings[$widget.data('state')].icon + '"></span>');
-                    }
-                }
-
-                init();
-            });
-            $('#get-checked-data').on('click', function (event) {
-                event.preventDefault();
-                var checkedItems = {}, counter = 0;
-                $("#check-list-box li.active").each(function (idx, li) {
-                    checkedItems[counter] = $(li).text();
-                    counter++;
-                });
-                $('#display-json').html(JSON.stringify(checkedItems, null, '\t'));
-            });
-        });
-    </script>
+    <script src="{{ asset('js/tooths.js') }}" type="javascript"></script>
 @endsection

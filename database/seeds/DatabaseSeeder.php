@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         if(\App\Doctor::count() == 0)$this->call(DoctorTableSeeder::class );
+        if(\App\Patient::count() == 0)$this->call(PatientTableSeeder::class );
     }
 }
 
@@ -21,6 +22,14 @@ class DoctorTableSeeder extends Seeder
 {
     public function run()
     {
-        factory(Doctor::class, 5)->create();
+        factory(Doctor::class, 3)->create();
+    }
+}
+
+class PatientTableSeeder extends Seeder
+{
+    public function run()
+    {
+        factory(\App\Patient::class, 10)->create();
     }
 }

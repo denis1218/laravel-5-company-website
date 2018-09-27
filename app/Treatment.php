@@ -6,10 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Treatment extends Model
 {
-    protected $table = 'treatments';
 
-    public function patient(){
-        return $this->belongsTo(Patient::class,'FK_id_patient', 'id');
+    public function patient()
+    {
+        return $this->belongsTo(Patient::class, 'FK_id_patient', 'id');
+    }
+
+    public function optionTreatmentLists()
+    {
+        return $this->hasMany(OptionTreatmentList::class, 'FK_id_treatment', 'id');
+    }
+
+    public function optionDentalDefectLists()
+    {
+        return $this->hasMany(OptionDentalDefectList::class,'FK_id_dentalDefect','id');
     }
 
 }

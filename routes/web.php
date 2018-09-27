@@ -56,7 +56,6 @@ Route::get('/medicine', function () {
 });
 Route::resource('/patient', 'PatientController');
 
-Route::resource('/doctor_store', 'DoctorDemoController');
 
 // next appointment page
 Route::get('/next_appointment', function () {
@@ -190,6 +189,8 @@ Route::get('/iframe', function () {
     Route::get('patient/{id}/delete', 'PatientController@destroy');
 
 // Doctor Registration
-Route::resource('doctors','DoctorController');
+Route::resource('/doctors','DoctorController');
 
-Route::resource('operation','TreatmentController');
+Route::resource('/operation','TreatmentController');
+
+Route::get('/operation/create/{id}','TreatmentController@create');

@@ -26,6 +26,7 @@ class CreateXRaysTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
+
             $table->foreign('FK_id_patient')
                 ->references('id')->on('patients')
                 ->onDelete('cascade')

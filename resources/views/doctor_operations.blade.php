@@ -104,9 +104,9 @@
                                     <td>{{$opr->name}}</td>
                                     <td>{{$opr->lastname}}</td>
                                     <td>{{$opr->status}}</td>
-                                    <td><i class="fa fa-calendar"></i>&nbsp; {{$opr->created_at}}</td>
-                                    <td class="">{{$opr->problem_health}}</td>
-                                    <td><a href="/operation/{{$opr->id}}" class="btn btn-sm btn-primary">Start Treatment</a>
+                                    <td>{{$opr->created_at}}</td>
+                                    <td>{{$opr->problem_health}}</td>
+                                    <td><a href="/operation/create/{{$opr->id}}" class="btn btn-sm btn-primary">Start Treatment</a>
                                     </td>
                                 </tr>
                                 </tbody>
