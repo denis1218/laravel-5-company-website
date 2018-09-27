@@ -34,15 +34,15 @@ class CreateTreatmentsTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-//            $table->foreign('FK_id_treatment')
-//                ->references('id')->on('treatment_lists')
-//                ->onDelete('cascade')
-//                ->onUpdate('cascade');
-//
-//            $table->foreign('FK_id_dentalDefect')
-//                ->references('id')->on('dental_defect_lists')
-//                ->onDelete('cascade')
-//                ->onUpdate('cascade');
+            $table->foreign('FK_id_treatment')
+                ->references('id')->on('treatment_lists')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('FK_id_dentalDefect')
+                ->references('id')->on('dental_defect_lists')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

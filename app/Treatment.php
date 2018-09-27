@@ -12,14 +12,14 @@ class Treatment extends Model
         return $this->belongsTo(Patient::class, 'FK_id_patient', 'id');
     }
 
-    public function optionTreatmentLists()
+    public function TreatmentLists()
     {
-        return $this->hasMany(OptionTreatmentList::class, 'FK_id_treatment', 'id');
+        return $this->hasMany(TreatmentList::class, 'FK_id_treatment', 'id');
     }
 
-    public function optionDentalDefectLists()
+    public function DentalDefectLists()
     {
-        return $this->hasMany(OptionDentalDefectList::class,'FK_id_dentalDefect','id');
+        return $this->hasMany(DentalDefectList::class,'FK_id_dentalDefect','id');
     }
 
 }
