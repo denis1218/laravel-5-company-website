@@ -112,7 +112,7 @@ Route::get('/iframe', function () {
 
 // report patient
     Route::get('/patient_report', function () {
-        return view('patient_report');
+        return view('patient.patient_report');
     });
 
 
@@ -160,7 +160,7 @@ Route::get('/iframe', function () {
     });
 // patient report
     Route::get('print_preport', function () {
-        return view('print_preport');
+        return view('patient.print_preport');
     });
 
     Route::get('/dash_reception', function () {

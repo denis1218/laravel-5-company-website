@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\DentalDefectList;
 use App\Patient;
 use App\Treatment;
+use App\TreatmentList;
 use Illuminate\Http\Request;
 
 class TreatmentController extends Controller
@@ -27,14 +29,23 @@ class TreatmentController extends Controller
     public function create($id)
     {
         $patient_in_treatment = Patient::find($id);
+
+        $appointment_list = Treatment::all();
+
+        $treatementList = TreatmentList::all();
+
+        $dentalDefectList = DentalDefectList::all();
+
         $checkValue = 0;
-        foreach($patient_in_treatment->treatments as $vis)
-        {
+        foreach ($patient_in_treatment->treatments as $vis) {
             $checkValue = $vis->visits;
         }
         $checkValue += 1;
+
         $patient_id = $patient_in_treatment->id;
-        return view('treatment_operation', compact('patient_in_treatment', 'patient_id','checkValue'));
+
+        return view('treatment_operation', compact('patient_in_treatment',
+            'patient_id', 'checkValue', 'treatementList', 'dentalDefectList' , 'appointment_list'));
     }
 
     /**
@@ -46,22 +57,20 @@ class TreatmentController extends Controller
     public function store(Request $request)
     {
 //            dd($request->description);
-
-
+//        dd($request);
 
         $treatment = new Treatment();
-
-
-        $treatment->teeth_number =    $request->teeth_number;
-        $treatment->dental_defect =   $request->dental_defect;
-        $treatment->treatment =       $request->treatment;
+        $treatment->teeth_number = $request->teeth_number;
         $treatment->next_appointment = $request->next_appointment;
-        $treatment->description =     $request->description;
-        $treatment->estimated_fee =   $request->estimated_fee;
-        $treatment->discount =        $request->discount;
-        $treatment->FK_id_patient =   $request->input('FK_id_patient');
+        $treatment->description = $request->description;
+        $treatment->discount = $request->discount;
         $treatment->visits = $request->input('visits');
+        $treatment->next_appointment = $request->input('next_appointment');
+        $treatment->meridiem = $request->input('meridiem');// it is morning and afternoon of next appointment
         $treatment->status_visits = 'complate';
+        $treatment->FK_id_patient = $request->input('FK_id_patient');
+        $treatment->FK_id_treatment = $request->input('id_treatment');
+        $treatment->FK_id_dentalDefect = $request->input('FK_id_dentalDefect');
         $treatment->status_pay = true;
         $treatment->have_xray = false;
 
@@ -71,19 +80,21 @@ class TreatmentController extends Controller
     }
 
 
-    public function checkVisits(){
+    public function checkVisits()
+    {
         $treatment = new Treatment();
         $count_visits = 0;
 
-        if($treatment->visits > 1){
-            $treatment->visits = $count_visits+2;
-        } else if($treatment->visits > 2){
+        if ($treatment->visits > 1) {
+            $treatment->visits = $count_visits + 2;
+        } else if ($treatment->visits > 2) {
             $count_visits .= $count_visits++;
-        }else{
+        } else {
             $count_visits = 0;
         }
         return $count_visits;
     }
+
     /**
      * Display the specified resource.
      *

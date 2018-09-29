@@ -149,27 +149,29 @@
             <div class="tabs-container">
                 <ul class="nav nav-tabs" id="demoTabs">
                     <li class="active"><a data-toggle="tab" href="#tab-1">Past History</a></li>
-                    <li class=""><a data-toggle="tab" href="#tab-3">Present History</a></li>
+                    <li class=""><a data-toggle="tab" href="#tab-2">Present History</a></li>
                 </ul>
 
                 <div class="tab-content">
-                    {{-- panel tab 1 full history --}}
+                    {{-- panel tab 1 past history --}}
                     <div id="tab-1" class="tab-pane active">
                         <div class="panel-body">
                             <br>
+                            {{--                            @foreach($patient_in_treatment as $patient_treatments)--}}
+                            {{-- start for each here --}}
                             <div class="row shadow p-3 mb-5 rounded bg-info"
                                  table-exchange
                                  style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
-                                <h3 style="font-weight: bold">First Treatment</h3>
+                                <h3 style="font-weight: bold">dfdfd</h3>
                             </div>
                             <br>
                             <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
                                 <div class="col-md-8">
-
+                                    {{--                                        @if($patient_treatments->treatments->visits == 0)--}}
                                     <table class="table table-striped " style="font-weight: bold; ">
                                         <tr>
                                             <td>Dental Defect :</td>
-                                            <td>Fracture of the tooth</td>
+                                            <td>fsdfsd</td>
                                             <td>Fee paid:</td>
                                             <td>2500 Afg</td>
                                         </tr>
@@ -179,7 +181,6 @@
                                             <td>Remaining Fee :</td>
                                             <td>2000 Afg</td>
                                         </tr>
-
                                         <tr>
                                             <td>Tooth Number :</td>
                                             <td>25</td>
@@ -196,12 +197,13 @@
                                                 person</p>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                             <br>
                             <div class="row p-3 mb-5 bg-info"
                                  style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
-                                <h3 style="font-weight: bold">Second Treatment</h3>
+                                <h3 style="font-weight: bold">asdfasdf</h3>
                             </div>
                             <br/>
                             <div class="row " style="margin-top:15px;margin-left:10px;margin-right:10px;">
@@ -240,13 +242,12 @@
                             </div>
                         </div>
                     </div>
-                    {{-- panel tab 2 past history --}}
+                    {{-- panel tab 1 past history --}}
 
                     {{-- panel tab 3 new history --}}
-                    <div id="tab-3" class="tab-pane">
+                    <div id="tab-2" class="tab-pane">
                         <div class="panel-body">
                             <br>
-
                             {{-- Header of title --}}
                             <div class="row  bg-info"
                                  style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
@@ -268,29 +269,27 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Select Dental Defect :</label>
-                                            <select class="form-control" name="dental_defect">
-                                                <option value="0">Select Dental Defect</option>
-                                                <option value="1">Crown Fracture</option>
-                                                <option value="2">BDR</option>
-                                                <option value="3">G-Caries</option>
-                                                <option value="4">Attrision</option>
-                                                <option value="5">Calculus</option>
+                                            <select class="form-control" name="FK_id_dentalDefect">
+                                                <option disabled selected>Select Dental Defect</option>
+                                                @foreach($dentalDefectList as $list)
+                                                    <option value="{{ $list->id }}">{{ $list->dental_defect }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Treatment :</label>
-                                            <select class="form-control" name="treatment">
-                                                <option value="0">Select Treatment</option>
-                                                <option value="1">PF (Permanent Filling)</option>
-                                                <option value="2">RCT (Root Canal)</option>
-                                                <option value="3">Extraction</option>
-                                                <option value="4">Pulpotomy</option>
-                                                <option value="5">Apexification</option>
+                                            <select class="form-control" onchange="getFeeTreatment(this)">
+                                                <option disabled selected>Select Treatment</option>
+                                                @foreach($treatementList as $listTreatement)
+                                                    <option value="{{ $listTreatement->estimated_fee }}"
+                                                            id="{{ $listTreatement->id }}"> {{ $listTreatement->treatment }} </option>
+                                                @endforeach
                                             </select>
                                         </div>
+                                        <input type="hidden" class="form-control" name="id_treatment" id="id_treatment">
                                         <div class="form-group">
                                             <label for="nex">Treatment Cost :</label>
-                                            <input type="number" class="form-control" name="estimated_fee">
+                                            <input type="number" class="form-control" id="cost_treatment">
                                         </div>
                                         <div class="form-group">
                                             <label for="nex">Discount :</label>
@@ -299,6 +298,13 @@
                                         <div class="form-group">
                                             <label for="nex">Next Appointment :</label>
                                             <input type="date" class="form-control" name="next_appointment">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="i-checks" for="nex">Set Meridiem :<label>&nbsp;&nbsp;
+                                                    <input type="radio" value="morning" name="meridiem"> <i></i> Morning </label>
+                                                &nbsp;&nbsp;&nbsp; <input type="radio" value="afternoon" name="meridiem">
+                                                <i></i> Afternoon
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="nex">Description :</label>
@@ -324,6 +330,8 @@
 
                         </div>
                     </div>
+
+
                 </div>
 
 
@@ -336,4 +344,12 @@
 
 @section('script')
     <script src="{{ asset('js/tooths.js') }}" type="javascript"></script>
+    <script>
+        function getFeeTreatment(e) {
+//           alert(e[e.selectedIndex].id);
+            document.getElementById('cost_treatment').value = e[e.selectedIndex].value
+            document.getElementById('id_treatment').value = e[e.selectedIndex].id
+//            alert('const = '+e.target.id);
+        }
+    </script>
 @endsection

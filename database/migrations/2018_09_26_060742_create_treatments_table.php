@@ -18,10 +18,11 @@ class CreateTreatmentsTable extends Migration
             $table->increments('id');
             $table->integer('teeth_number');
             $table->integer('visits');
-            $table->date('next_appointment');
+            $table->date('next_appointment')->nullable();
+            $table->string('meridiem')->nullable();
             $table->string('status_visits');
             $table->boolean('status_pay');
-            $table->longText('description');
+            $table->longText('description')->nullable();
             $table->boolean('have_xray');
             $table->integer('discount');
             $table->unsignedInteger('FK_id_patient')->nullable();
