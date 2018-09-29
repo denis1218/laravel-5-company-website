@@ -4,7 +4,9 @@
 Route::get('/', function () {
     return view('/login');
 });
-
+Route::get('login',function (){
+   return view('/login');
+});
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,9 +65,6 @@ Route::get('/next_appointment', function () {
     return view('next_appointment');
 });
 
-Route::get('/expenditure', function () {
-    return view('expenditure');
-});
 
 Route::get('/income', function () {
     return view('income');
@@ -83,7 +82,7 @@ Route::get('iframe', function () {
 Route::get('/iframe', function () {
     return view('/iframe');
 });
-    Route::post('auth', 'UserController@authenticat');
+    Route::post('dash2', 'UserController@authenticat');
 // dashboard of clinic
     Route::get('/dash', function () {
         return view('dash');
@@ -189,5 +188,11 @@ Route::get('/iframe', function () {
 
     Route::get('patient/{id}/delete', 'PatientController@destroy');
 
-// Doctor Registration
+// Doctor Registrationexp
 Route::resource('doctors','DoctorController');
+Route::get('expense_form',function (){
+   return view('expense_form');
+});
+Route::resource('/expenditure','ExpenseController');
+Route::get('expenditure2/{id}','ExpenseController@destroy');
+//Route::patch('expenditure3/{id}','ExpenseController@update');
