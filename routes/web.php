@@ -1,5 +1,10 @@
 <?php
 
+
+Route::get('/', function () {
+    return view('/login');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,27 +46,21 @@ Route::get('/doctor_operations', function () {
 Route::get('/xray', function () {
     return view('Xrey_dep');
 });
-Route::get('treatment_operation',function(){
-   return view('treatment_operation');
+Route::get('treatment_operation', function () {
+    return view('treatment_operation');
 });
 
 // medicine page in treatement -> medicine route
 Route::get('/medicine', function () {
     return view('medicine');
 });
+Route::resource('/patient', 'PatientController');
 
 
 // next appointment page
-
 Route::get('/next_appointment', function () {
     return view('next_appointment');
 });
-
-
-Route::get('fullcalender',function (){
-   return view('fullcalender');
-});
-
 
 Route::get('/expenditure', function () {
     return view('expenditure');
@@ -75,123 +74,123 @@ Route::get('/ext_income', function () {
     return view('ext_income');
 });
 
-Route::get('test',"CalenderController@index");
 
-Route::get('iframe',function (){
-   return view('iframe') ;
-});
-
-Route::get('/iframe',function (){
-   return view('/iframe') ;
+Route::get('iframe', function () {
+    return view('iframe');
 });
 
-// login of users
-Route::get('/',function (){
-    return view('login');
+Route::get('/iframe', function () {
+    return view('/iframe');
 });
-Route::get('login',function (){
-    return view('login');
-});
-Route::post('auth','UserController@authenticat');
+    Route::post('auth', 'UserController@authenticat');
 // dashboard of clinic
-Route::get('/dash',function (){
-    return view('dash');
-});
+    Route::get('/dash', function () {
+        return view('dash');
+    });
 
 // show all account users
-Route::get('account',function (){
-   return view('account');
-});
+    Route::get('/account', function () {
+        return view('account');
+    });
 
 // create new users
-Route::get('create_account',function(){
-   return view('create_account');
-});
+    Route::get('/create_account', function () {
+        return view('create_account');
+    });
 
-Route::get('restore',function(){
-   return view('restore');
-});
+    Route::get('/restore', function () {
+        return view('restore');
+    });
 
-Route::get('explore_backups',function (){
-   return view('explore_backups');
-});
+    Route::get('/explore_backups', function () {
+        return view('explore_backups');
+    });
 
-Route::get('create_backups',function (){
-   return view('create_backups');
-});
+    Route::get('create_backups', function () {
+        return view('create_backups');
+    });
 
 // report patient
-Route::get('patient_report',function() {
-    return view('patient_report');
-});
+    Route::get('/patient_report', function () {
+        return view('patient.patient_report');
+    });
 
 
 // report doctors
-Route::get('doctor_report', function () {
-    return view('doctor_report');
-});
+    Route::get('/doctor_report', function () {
+        return view('doctor_report');
+    });
 
 // Financial report
-    Route::get('finance_report', function () {
+    Route::get('/finance_report', function () {
         return view('finance_report');
     });
 
 
     // report doctors
-    Route::get('report_doctors', function () {
+    Route::get('/report_doctors', function () {
         return view('report_doctors');
     });
 
 // Financial report daily
-Route::get('finance_report_income', function () {
-    return view('finance_report.finance_report_income');
-});
+    Route::get('/finance_report_income', function () {
+        return view('finance_report.finance_report_income');
+    });
 
 // Financial report date
-Route::get('finance_report_expenses', function () {
-    return view('finance_report.finance_report_expenses');
-});
+    Route::get('/finance_report_expenses', function () {
+        return view('finance_report.finance_report_expenses');
+    });
 
 // Financial report date
-Route::get('finance_report_profit', function () {
-    return view('finance_report.finance_report_profit');
-});
+    Route::get('/finance_report_profit', function () {
+        return view('finance_report.finance_report_profit');
+    });
 
-Route::get('date_report_patient', function () {
-    return view('date_report_patient');
-});
+    Route::get('/date_report_patient', function () {
+        return view('date_report_patient');
+    });
 
-Route::get('patient_history_print',function (){
-   return view('patient_history_print');
-});
+    Route::get('/patient_history_print', function () {
+        return view('patient_history_print');
+    });
 
-Route::get('next_appointment_list',function (){
-   return view('next_appointment_list');
-});
+    Route::get('/next_appointment_list', function () {
+        return view('next_appointment_list');
+    });
 // patient report
-Route::get('print_preport', function(){
-    return view('print_preport');
-});
+    Route::get('print_preport', function () {
+        return view('patient.print_preport');
+    });
 
-Route::get('dash_reception',function (){
-    return view('/dash_reception');
-});
+    Route::get('/dash_reception', function () {
+        return view('/dash_reception');
+    });
 
-Route::get('doctor_report_list',function (){
-    return view('/doctor_report_list');
-});
+    Route::get('/doctor_report_list', function () {
 
-Route::get('dash_doctor',function (){
-    return view('/dash_doctor');
-});
+        return view('/doctor_report_list');
+    });
 
-Route::get('/pdf','PdfGenerator@PDF');
-Route::get('xrey_income',function (){
-   return view('xrey_income');
-});
+    Route::get('/dash_doctor', function () {
+        return view('/dash_doctor');
+    });
+
+    Route::get('/pdf', 'PdfGenerator@PDF');
+    Route::get('xrey_income', function () {
+        return view('xrey_income');
+    });
 //doctor salary
-Route::get('doctor_salary',function (){
-   return view('doctor_salary');
-});
+    Route::get('/doctor_salary', function () {
+        return view('doctor_salary');
+    });
 
 
+    Route::get('patient/{id}/delete', 'PatientController@destroy');
+
+// Doctor Registration
+Route::resource('/doctors','DoctorController');
+
+Route::resource('/operation','TreatmentController');
+
+Route::get('/operation/create/{id}','TreatmentController@create');

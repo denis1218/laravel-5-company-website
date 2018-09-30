@@ -52,7 +52,7 @@
                     Patient Ragistration Form
                 </h2>
 
-                <form id="form" action="appo" class="wizard-big">
+                <form id="form" method="post" action="{{ url('/patient') }}" class="wizard-big">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <h1 >Doctor Available</h1>
                     <fieldset>
@@ -69,68 +69,21 @@
                                         <th>Max Patient Accept</th>
                                         <th>Registered Patients</th>
                                         <th>Select Doctor</th>
-
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($doctor_list as $doctors)
                                     <tr>
-
-                                        <td>1</td>
-                                        <td>tamim</td>
-                                        <td>8:00 AM-4:00 PM</td>
-                                        <td>15</td>
-                                        <td>5</td>
+                                        <td>{{ $doctors->id }}</td>
+                                        <td>{{ $doctors->first_name }}</td>
+                                        <td>{{ $doctors->start_work_time }}&nbsp;- &nbsp;{{ $doctors->end_work_time}}</td>
+                                        <td>{{ $doctors->max_patient }}</td>
+                                        <td>{{ $doctors->have_patient }}</td>
                                         <td>
-                                            <div class="i-checks"><input type="radio"  value="option2" name="a" required></div>
+                                            <div class="i-checks"><input type="radio"  value="{{ $doctors->id }}" name="FK_id_Doctor" id="FK_id_Doctor" required></div>
                                         </td>
-
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Ahmad</td>
-                                        <td>8:00 AM-12:00 PM</td>
-                                        <td>10</td>
-                                        <td>6</td>
-                                        <td>
-                                            <div class="i-checks"><input type="radio"  value="option2" name="a"></div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Samim</td>
-                                        <td>8:00 AM-11:00 AM</td>
-                                        <td>8</td>
-                                        <td>5</td>
-                                        <td>
-                                            <div class="i-checks"><input type="radio"  value="option2" name="a"></div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td>4</td>
-                                        <td>Naweed</td>
-                                        <td>1:00 PM-4:00 AM</td>
-                                        <td>5</td>
-                                        <td>3</td>
-                                        <td>
-                                            <div class="i-checks"><input type="radio"  value="option2" name="a"></div>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td>5</td>
-                                        <td>Qasim</td>
-                                        <td>2:00 PM-7:00 PM</td>
-                                        <td>10</td>
-                                        <td>7</td>
-                                        <td>
-                                            <div class="i-checks"><input type="radio"  value="option2" name="a"></div>
-                                        </td>
-
-                                    </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -152,13 +105,13 @@
 
                                 <div class="form-group">
                                     <label>Last Name *</label>
-                                    <input id="name" name="name" type="text" class="form-control required">
+                                    <input id="lastname" name="lastname" type="text" class="form-control required">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Gender &nbsp;&nbsp;&nbsp;</label>
-                                    <label>  <div class="i-checks"><input type="radio"  value="option2" name="a"></div></i> Male </label>&nbsp;&nbsp;
-                                    <label>  <div class="i-checks"><input type="radio"  value="option2" name="a"></div></i> Female </label>
+                                    <label>  <div class="i-checks"><input type="radio"  value="male" name="gender"></div></i> Male </label>&nbsp;&nbsp;
+                                    <label>  <div class="i-checks"><input type="radio"  value="female" name="gender"></div></i> Female </label>
 
 
                                 </div>
@@ -171,14 +124,9 @@
                                     <input id="phone" name="phone" type="phone" class="form-control required">
                                 </div>
                                 <div class="form-group">
-                                    <label>Alternative Number *</label>
-                                    <input id="phone" name="phone" type="phone" class="form-control required">
+                                    <label>Address *</label>
+                                    <textarea rows="5" id="address" name="address" type="text" class="form-control required"></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <label>Address</label>
-                                    <textarea name="" id="" style="resize: none;" class="form-control" placeholder="Patient address"></textarea>
-                                </div>
-                                
                             </div>
                             <div class="col-lg-4">
                                 <div class="text-center">
@@ -197,9 +145,8 @@
                         <div class="row">
                             <div class="col-lg-7">
                                 <div class="form-group">
-
                                     <div class="col-sm-10">
-                                        <div class="i-checks"><label> <input type="checkbox" value="option1" name="a"> <i></i>Prior Problem</label></div>
+                                        <div class="i-checks"><label> <input type="checkbox" value="prior" name="problem_health[]"> <i></i>Prior Problem</label></div>
                                     </div>
                                 </div>
                             </div>
@@ -210,9 +157,8 @@
                         <div class="row">
                             <div class="col-lg-7">
                                 <div class="form-group">
-
                                     <div class="col-sm-10">
-                                        <div class="i-checks"><label> <input type="checkbox" value="option1" name="a"> <i></i>Anesthitic Problem</label></div>
+                                        <div class="i-checks"><label> <input type="checkbox" value="Anesthitic" name="problem_health[]"> <i></i>Anesthitic Problem</label></div>
                                     </div>
                                 </div>
                             </div>
@@ -223,27 +169,27 @@
                         <div class="row" >
                             <div class="col-lg-7">
                                 <div class="row">
-                                <div class="form-group">
-                                    <div class="col-sm-6">
-                                        <div class="i-checks"><label> <input type="checkbox" value="option1" name="a"> <i></i> No Problem</label></div>
-                                        <div class="i-checks"><label> <input type="checkbox" value="option1" name="a"> <i></i> Blood Pressure</label></div>
-                                        <div class="i-checks"><label> <input type="checkbox" value="option2" name="a"> <i></i>Diabetics</label></div>
-                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Hepatitics</label></div>
-                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Bleeding Problems</label></div>
-                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Jaundice</label></div>
-                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Asthma</label></div>
-                                        
-                                    </div>
-                                    <div class="col-sm-6">
-                                       <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>AIDS</label></div>
-                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Tuberculosis </label></div>
-                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Allergy to Penicillin</label></div>
-                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Allergy to Sulpers</label></div>
-                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Allergy to Anaesthetic</label></div>
-                                        <div class="i-checks"><label> <input type="checkbox"  value="option2" name="a"> <i></i>Pregnency</label></div>
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <div class="i-checks"><label> <input type="checkbox" value="no" name="problem_health[]"> <i></i> No Problem</label></div>
+                                            <div class="i-checks"><label> <input type="checkbox" value="Blood_Pressure" name="problem_health[]"> <i></i> Blood Pressure</label></div>
+                                            <div class="i-checks"><label> <input type="checkbox" value="Diabetics" name="problem_health[]"> <i></i>Diabetics</label></div>
+                                            <div class="i-checks"><label> <input type="checkbox"  value="Hepatitics" name="problem_health[]"> <i></i>Hepatitics</label></div>
+                                            <div class="i-checks"><label> <input type="checkbox"  value="Bleeding_Problems" name="problem_health[]"> <i></i>Bleeding Problems</label></div>
+                                            <div class="i-checks"><label> <input type="checkbox"  value="Jaundice" name="problem_health[]"> <i></i>Jaundice</label></div>
+                                            <div class="i-checks"><label> <input type="checkbox"  value="Asthma" name="problem_health[]"> <i></i>Asthma</label></div>
+
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="i-checks"><label> <input type="checkbox"  value="AIDS" name="problem_health[]"> <i></i>AIDS</label></div>
+                                            <div class="i-checks"><label> <input type="checkbox"  value="Tuberculosis" name="problem_health[]"> <i></i>Tuberculosis </label></div>
+                                            <div class="i-checks"><label> <input type="checkbox"  value="Allergy_to_Penicillin" name="problem_health[]"> <i></i>Allergy to Penicillin</label></div>
+                                            <div class="i-checks"><label> <input type="checkbox"  value="Allergy_to_Sulpers" name="problem_health[]"> <i></i>Allergy to Sulpers</label></div>
+                                            <div class="i-checks"><label> <input type="checkbox"  value="Allergy_to_Anaesthetic" name="problem_health[]"> <i></i>Allergy to Anaesthetic</label></div>
+                                            <div class="i-checks"><label> <input type="checkbox"  value="Pregnency" name="problem_health[]"> <i></i>Pregnency</label></div>
+                                        </div>
                                     </div>
                                 </div>
-                               </div>
                             </div>
                         </div>
                         <br>
@@ -259,22 +205,22 @@
 @section('script')
 
     <!-- Steps -->
-    <script src="dashboard/js/plugins/staps/jquery.steps.min.js"></script>
+    <script src="{{ asset('dashboard/js/plugins/staps/jquery.steps.min.js') }}"></script>
 
     <!-- Jquery Validate -->
-    <script src="dashboard/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="{{ asset('dashboard/js/plugins/validate/jquery.validate.min.js') }}"></script>
 
     <!-- Custom and plugin javascript -->
-    <script src="dashboard/js/inspinia.js"></script>
-    <script src="dashboard/js/plugins/pace/pace.min.js"></script>
+    <script src="{{ asset('dashboard/js/inspinia.js') }}"></script>
+    <script src="{{ asset('dashboard/js/plugins/pace/pace.min.js') }}"></script>
 
     <!-- Date range picker -->
-    <script src="dashboard/js/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="{{ asset('dashboard/js/plugins/daterangepicker/daterangepicker.js') }}"></script>
 
     <!-- Select2 -->
-    <script src="dashboard/js/plugins/select2/select2.full.min.js"></script>
+    <script src="{{ asset('dashboard/js/plugins/select2/select2.full.min.js') }}"></script>
     <!-- Toastr script -->
-    <script src="dashboard/js/plugins/toastr/toastr.min.js"></script>
+    <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
     <script>
         $(document).ready(function(){
             $("#wizard").steps();
@@ -345,7 +291,12 @@
                 }
             });
         });
-
     </script>
-
+    <script type="text/javascript">
+        $(function () {
+            $('#form').submit(function (){
+                // Display a success toast, with a title
+                toastr.success('Without any options','Simple notification!')
+            });
+        })
 @endsection

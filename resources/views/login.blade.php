@@ -35,7 +35,7 @@
             <img src="/img/Dentaa3.png" width="650px" class="img-responsive" alt="">
         </div>
         <h3 style="color: white;">Welcome to HK|Clinic</h3>
-        <form class="m-t" role="form" action="/auth" method="post">
+        <form class="m-t" role="form" >
             <input type="hidden" name="_token" value="{{csrf_token()}}">
 
             <div class="form-group">
@@ -54,7 +54,7 @@
             <div class="form-group">
                 <input type="password" class="form-control" name="pass" placeholder="Password" required="">
             </div>
-            <button type="submit" class="btn btn-success block full-width m-b">Login</button>
+            <a href="/dash" class="btn btn-success block full-width m-b">Login</a>
 
             <a href="#">
                 <small style="color:white;">Forgot password?</small>

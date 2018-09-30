@@ -50,26 +50,27 @@
             <div class="ibox-content">
                 <div class="row">
                     <div class="col-md-12 text-right">
-                        <a class="btn btn-primary btn-lg" style="float: left;" href="doctor_report_list">
+                        <a class="btn btn-primary btn-lg" style="float: left;" href="/doctors">
                             <i class="fa fa-arrow-left"></i> &nbsp; Back to Doctors</a>
                         <button class="btn btn-primary btn-lg">Print &nbsp;<i class="fa fa-print"></i></button>
                     </div>
                 </div>
 
                 {{-- patient personal information --}}
+                @foreach($doctor as $doc)
                 <div class="row" style="padding-left:30px; font-size: 20px;">
                     <div class="row m-b-lg m-t-lg">
-                        <div class="col-md-6">
-                            <div class="profile-image">
-                                <img src="img/doctors.png" class="img-circle circle-border m-b-md" alt="profile">
-                            </div>
+                        <div class="col-md-5">
+                            {{--<div class="profile-image">--}}
+                                {{--<img src="img/doctors.png" class="img-circle circle-border m-b-md" alt="profile">--}}
+                            {{--</div>--}}
                             <div class="profile-info">
                                 <div class="">
                                     <div>
                                         <h2 class="no-margins font-b">
-                                            Dr. Wahid Ghollami
+                                            {{$doc->first_name}}
                                         </h2>
-                                        <h4>ID: D-25</h4>
+                                        <h4> ID:&nbsp{{$doc->id}}</h4>
                                         <small class="font-m">
                                             Dental Expert for 2 years work in dental clinics and more 100 patient visited
                                         </small>
@@ -77,31 +78,31 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-7">
                             <table class="table small m-b-xs">
                                 <tbody>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Gender:<b>&nbsp;Male</b>&nbsp;<i class="fa fa-male"></i></span>
+                                        <span class="font-m">Gender:<b>&nbsp;{{$doc->gender}}</b>&nbsp;<i class="fa fa-male"></i></span>
                                     </td>
                                     <td>
-                                        <span class="font-m">Age:<b>&nbsp;25</b>&nbsp;<i class=""></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-m">Type Job:<b>&nbsp; Percentage</b>&nbsp;<i class="fa fa-user-md"></i></span>
-                                    </td>
-                                    <td>
-                                        <span class="font-m">Salary :<b>&nbsp; 40%</b>&nbsp;<i class=""></i></span>
+                                        <span class="font-m">Age:<b>&nbsp;{{$doc->age}}</b>&nbsp;<i class=""></i></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Date Reg:<b>&nbsp;2018/5/26</b>&nbsp;<i class="fa fa-calendar"></i></span>
+                                        <span class="font-m">Salary Type:<b>&nbsp; {{$doc->salary_type}}</b>&nbsp;<i class="fa fa-user-md"></i></span>
                                     </td>
                                     <td>
-                                        <span class="font-m">Department duty:<b>&nbsp;RCT & PF</b>&nbsp;<i class=""></i></span>
+                                        <span class="font-m">Salary :<b>&nbsp;{{$doc->salary_amount}}</b>&nbsp;<i class=""></i></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="font-m">Date Reg:<b>&nbsp;{{$doc->created_at}}</b>&nbsp;<i class="fa fa-calendar"></i></span>
+                                    </td>
+                                    <td>
+                                        <span class="font-m">Department:<b>&nbsp {{$doc->dept_id}}</b>&nbsp;<i class=""></i></span>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -109,6 +110,7 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
                 {{-- patient personal information --}}
                 <hr/>
                 {{-- table info patient --}}
