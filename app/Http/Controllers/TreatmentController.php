@@ -30,7 +30,7 @@ class TreatmentController extends Controller
     {
         $patient_in_treatment = Patient::find($id);
 
-        $appointment_list = Treatment::all();
+        $treatments = Treatment::find($id);
 
         $treatementList = TreatmentList::all();
 
@@ -40,12 +40,13 @@ class TreatmentController extends Controller
         foreach ($patient_in_treatment->treatments as $vis) {
             $checkValue = $vis->visits;
         }
+
         $checkValue += 1;
 
         $patient_id = $patient_in_treatment->id;
 
         return view('treatment_operation', compact('patient_in_treatment',
-            'patient_id', 'checkValue', 'treatementList', 'dentalDefectList' , 'appointment_list'));
+            'patient_id', 'checkValue', 'treatementList', 'dentalDefectList','treatments'));
     }
 
     /**

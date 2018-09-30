@@ -157,89 +157,45 @@
                     <div id="tab-1" class="tab-pane active">
                         <div class="panel-body">
                             <br>
-                            {{--                            @foreach($patient_in_treatment as $patient_treatments)--}}
-                            {{-- start for each here --}}
-                            <div class="row shadow p-3 mb-5 rounded bg-info"
-                                 table-exchange
-                                 style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
-                                <h3 style="font-weight: bold">dfdfd</h3>
-                            </div>
-                            <br>
-                            <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
-                                <div class="col-md-8">
-                                    {{--                                        @if($patient_treatments->treatments->visits == 0)--}}
-                                    <table class="table table-striped " style="font-weight: bold; ">
-                                        <tr>
-                                            <td>Dental Defect :</td>
-                                            <td>fsdfsd</td>
-                                            <td>Fee paid:</td>
-                                            <td>2500 Afg</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Treatment :</td>
-                                            <td>RCT</td>
-                                            <td>Remaining Fee :</td>
-                                            <td>2000 Afg</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tooth Number :</td>
-                                            <td>25</td>
-                                            <td>Date First Visite :</td>
-                                            <td>2018/5/3</td>
-                                        </tr>
-                                    </table>
-                                    <div>
-                                        <div><p><strong>Description:</strong> I love to use the famous saying of “Fake
-                                                it till you
-                                                make it.” That’s why I used to say ” I can do it, because I love to do
-                                                it.” ” I
-                                                deserve a better life and I am going to create it.” I am open minded
-                                                person</p>
-                                        </div>
-                                    </div>
-
+                            @foreach($patient_in_treatment->treatments as $treats)
+                                {{-- start for each here --}}
+                                <div class="row shadow p-3 mb-5 rounded bg-info"
+                                     table-exchange
+                                     style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
+                                    <h3 style="font-weight: bold">{{ $treats->visits }}</h3>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="row p-3 mb-5 bg-info"
-                                 style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
-                                <h3 style="font-weight: bold">asdfasdf</h3>
-                            </div>
-                            <br/>
-                            <div class="row " style="margin-top:15px;margin-left:10px;margin-right:10px;">
-                                <div class="col-md-8">
-                                    <table class="table table-striped " style="font-weight: bold; ">
-                                        <tr>
-                                            <td>Dental Defect :</td>
-                                            <td>Fracture of the tooth</td>
-                                            <td>Fee paid:</td>
-                                            <td>2500 Afg</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Treatment :</td>
-                                            <td>Toothpaste</td>
-                                            <td>Remaining Fee :</td>
-                                            <td>2000 Afg</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Tooth Number :</td>
-                                            <td>25</td>
-                                            <td>Date First Visite :</td>
-                                            <td>2018/5/3</td>
-                                        </tr>
-                                    </table>
-                                    <div>
-                                        <div><p><strong>Description:</strong> I love to use the famous saying of “Fake
-                                                it till you
-                                                make it.” That’s why I used to say ” I can do it, because I love to do
-                                                it.” ” I
-                                                deserve a better life and I am going to create it.” I am open minded
-                                                person</p>
+                                <br>
+                                <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
+                                    <div class="col-md-8">
+                                        <table class="table table-striped " style="font-weight: bold; ">
+{{--                                            @foreach($treatments as $listTreatment)--}}
+                                            <tr>
+                                                <td>Dental Defect :</td>
+{{--                                                <td>{{ $treatments->treatment }}</td>--}}
+                                                <td>Fee paid:</td>
+                                                <td>null</td>
+                                            </tr>
+                                            {{--@endforeach--}}
+                                            <tr>
+                                                <td>Treatment :</td>
+{{--                                                <td>{{ $treats->TreatmentLists->treatment }}</td>--}}
+                                                <td>Remaining Fee :</td>
+                                                <td>null</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tooth Number :</td>
+                                                <td>{{ $treats->teeth_number }}</td>
+                                                <td>Date First Visite :</td>
+                                                <td>{{ $treats->created_at }}</td>
+                                            </tr>
+                                        </table>
+                                        <div>
+                                            <div><p><strong>Description:</strong>{{ $treats->description }}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                @endforeach
                         </div>
                     </div>
                     {{-- panel tab 1 past history --}}
@@ -301,8 +257,10 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="i-checks" for="nex">Set Meridiem :<label>&nbsp;&nbsp;
-                                                    <input type="radio" value="morning" name="meridiem"> <i></i> Morning </label>
-                                                &nbsp;&nbsp;&nbsp; <input type="radio" value="afternoon" name="meridiem">
+                                                    <input type="radio" value="morning" name="meridiem"> <i></i> Morning
+                                                </label>
+                                                &nbsp;&nbsp;&nbsp; <input type="radio" value="afternoon"
+                                                                          name="meridiem">
                                                 <i></i> Afternoon
                                             </div>
                                         </div>
@@ -330,7 +288,6 @@
 
                         </div>
                     </div>
-
 
                 </div>
 
