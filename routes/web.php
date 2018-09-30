@@ -110,11 +110,6 @@ Route::get('/iframe', function () {
         return view('create_backups');
     });
 
-// report patient
-    Route::get('/patient_report', function () {
-        return view('patient_report');
-    });
-
 
 // report doctors
     Route::get('/doctor_report', function () {
@@ -159,8 +154,8 @@ Route::get('/iframe', function () {
         return view('next_appointment_list');
     });
 // patient report
-    Route::get('print_preport', function () {
-        return view('print_preport');
+    Route::get('print_report', function () {
+        return view('print_report');
     });
 
     Route::get('/dash_reception', function () {
@@ -196,3 +191,9 @@ Route::get('expense_form',function (){
 Route::resource('/expenditure','ExpenseController');
 Route::get('expenditure2/{id}','ExpenseController@destroy');
 //Route::patch('expenditure3/{id}','ExpenseController@update');
+
+
+
+// report patient
+Route::resource('/patient_report', 'patientReportController');
+
