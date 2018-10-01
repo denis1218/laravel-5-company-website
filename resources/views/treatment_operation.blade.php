@@ -105,31 +105,31 @@
                                 <tr>
                                     <td>
                                             <span class=""
-                                                  style="font-size: 17px;">Gender:<b>&nbsp;{{ $patient_in_treatment->gender }}</b>&nbsp;<i
+                                                  style="font-size: 15px;">Gender:<b>&nbsp;{{ $patient_in_treatment->gender }}</b>&nbsp;<i
                                                         class="fa fa-male"></i></span>
                                     </td>
                                     <td>
-                                            <span style="font-size: 17px;">Age:<b>&nbsp;{{ $patient_in_treatment->age }}</b>&nbsp;<i
+                                            <span style="font-size: 15px;">Age:<b>&nbsp;{{ $patient_in_treatment->age }}</b>&nbsp;<i
                                                         class=""></i></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span style="font-size: 17px;">Doctor:<b>&nbsp;{{ $patient_in_treatment->doctor->first_name }}</b>&nbsp;<i
+                                        <span style="font-size: 15px;">Doctor:<b>&nbsp;{{ $patient_in_treatment->doctor->first_name }}</b>&nbsp;<i
                                                     class="fa fa-user-md"></i></span>
                                     </td>
                                     <td>
-                                        <span style="font-size: 17px;">Visited:<b>&nbsp;{{ $patient_in_treatment->status }}</b>&nbsp;<i
+                                        <span style="font-size: 15px;">Visited:<b>&nbsp;{{ $patient_in_treatment->status }}</b>&nbsp;<i
                                                     class=""></i></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span style="font-size: 17px;">Date Reg:<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
+                                        <span style="font-size: 15px;">Date Reg:<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
                                                     class="fa fa-calendar"></i></span>
                                     </td>
                                     <td>
-                                              <span style="font-size: 17px;">First Visited Date :<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
+                                              <span style="font-size: 15px;">First Visited Date :<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
                                                           class="fa fa-calendar"></i></span>
                                     </td>
                                 </tr>
@@ -169,18 +169,16 @@
                                 <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
                                     <div class="col-md-8">
                                         <table class="table table-striped " style="font-weight: bold; ">
-{{--                                            @foreach($treatments as $listTreatment)--}}
                                             <tr>
                                                 <td>Dental Defect :</td>
-{{--                                                <td>{{ $treatments->treatment }}</td>--}}
-                                                <td>Fee paid:</td>
-                                                <td>null</td>
+                                                <td>{{ $treats->dentaldefect }}</td>
+                                                <td>Estimated Fee:</td>
+                                                <td>{{ $treats->estimated_fee }}</td>
                                             </tr>
-                                            {{--@endforeach--}}
                                             <tr>
                                                 <td>Treatment :</td>
-{{--                                                <td>{{ $treats->TreatmentLists->treatment }}</td>--}}
-                                                <td>Remaining Fee :</td>
+                                                <td>{{ $treats->treatment }}</td>
+                                                <td>Fee Paid :</td>
                                                 <td>null</td>
                                             </tr>
                                             <tr>
@@ -189,11 +187,20 @@
                                                 <td>Date First Visite :</td>
                                                 <td>{{ $treats->created_at }}</td>
                                             </tr>
+                                            <tr>
+                                                <td>Have Xray :</td>
+                                                <td>{{ $treats->have_xray }}</td>
+                                                <td>Date First Visite :</td>
+                                                <td>{{ $treats->created_at }}</td>
+                                            </tr>
                                         </table>
                                         <div>
                                             <div><p><strong>Description:</strong>{{ $treats->description }}</p>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a href="" class="btn btn-md btn-primary">Continue Treatment</a>
                                     </div>
                                 </div>
                                 @endforeach
