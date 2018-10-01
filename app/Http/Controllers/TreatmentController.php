@@ -6,6 +6,7 @@ use App\DentalDefectList;
 use App\Patient;
 use App\Treatment;
 use App\TreatmentList;
+use App\XRay;
 use Illuminate\Http\Request;
 
 class TreatmentController extends Controller
@@ -30,6 +31,10 @@ class TreatmentController extends Controller
     {
         $patient_in_treatment = Patient::find($id);
 
+//        foreach($patient_in_treatment->treatments as $p)
+//        {
+//            dd($p->id);
+//        }
         $treatments = Treatment::find($id);
 
         $treatementList = TreatmentList::all();
@@ -37,17 +42,35 @@ class TreatmentController extends Controller
         $dentalDefectList = DentalDefectList::all();
 
         $checkValue = 0;
-        foreach ($patient_in_treatment->treatments as $vis) {
-            $checkValue = $vis->visits;
-        }
+
+
+//        dd($patient_in_treatment);
+//        foreach ($patient_in_treatment->treatments as $vis) {
+//            dd($vis->treatment_id);
+//        }
 
         $checkValue += 1;
 
         $patient_id = $patient_in_treatment->id;
 
         return view('treatment_operation', compact('patient_in_treatment',
-            'patient_id', 'checkValue', 'treatementList', 'dentalDefectList','treatments'));
+            'patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments'));
     }
+
+    /**
+     * save the xray detials in table xray table
+     * @param Request $request
+     */
+    public function store_xray(Request $request)
+    {
+        $xray = new XRay();
+        $xray->tooth_number = $request->teeth_number_xray;
+        $xray->description = $request->description;
+        $xray->status_xray = false;// set to false by default false it means not done with xray yet
+        $xray->treatment_id  = $request->treatment_id;
+
+    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -69,9 +92,9 @@ class TreatmentController extends Controller
         $treatment->next_appointment = $request->input('next_appointment');
         $treatment->meridiem = $request->input('meridiem');// it is morning and afternoon of next appointment
         $treatment->status_visits = 'complate';
-        $treatment->FK_id_patient = $request->input('FK_id_patient');
-        $treatment->FK_id_treatment = $request->input('id_treatment');
-        $treatment->FK_id_dentalDefect = $request->input('FK_id_dentalDefect');
+        $treatment->patient_id = $request->input('FK_id_patient');
+        $treatment->treatment_id = $request->input('id_treatment');
+        $treatment->dentalDefect_id = $request->input('FK_id_dentalDefect');
         $treatment->status_pay = true;
         $treatment->have_xray = false;
 

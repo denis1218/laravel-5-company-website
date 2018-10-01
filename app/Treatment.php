@@ -10,17 +10,17 @@ class Treatment extends Model
     protected $guarded = [];
     public function patient()
     {
-        return $this->belongsTo(Patient::class, 'FK_id_patient', 'id');
+        return $this->belongsTo(Patient::class, 'patient_id', 'id');
     }
 
-    public function TreatmentLists()
+    public function treatment_list()
     {
-        return $this->hasMany(TreatmentList::class, 'FK_id_treatment', 'id');
+        return $this->hasMany(TreatmentList::class, 'treatment_id', 'id');
     }
 
     public function DentalDefectLists()
     {
-        return $this->hasMany(DentalDefectList::class,'FK_id_dentalDefect','id');
+        return $this->hasMany(DentalDefectList::class,'dentalDefect_id','id');
     }
 
 }

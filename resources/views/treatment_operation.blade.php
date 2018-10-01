@@ -153,6 +153,7 @@
                 </ul>
 
                 <div class="tab-content">
+
                     {{-- panel tab 1 past history --}}
                     <div id="tab-1" class="tab-pane active">
                         <div class="panel-body">
@@ -198,9 +199,8 @@
                                 @endforeach
                         </div>
                     </div>
-                    {{-- panel tab 1 past history --}}
 
-                    {{-- panel tab 3 new history --}}
+                    {{-- panel tab 2 new history --}}
                     <div id="tab-2" class="tab-pane">
                         <div class="panel-body">
                             <br>
@@ -271,7 +271,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <img src="{{ asset('img/tooths.jpg') }}" width="100%"/>
+                                        <img src="{{ asset('img/all_tooth.jpg') }}" width="100%"/>
                                     </div>
                                 </div>
 
@@ -279,8 +279,6 @@
                                     <div class="col-md-5">
                                         <button type="submit" class="btn btn-primary"> Send To Finance&nbsp;<i
                                                     class="fa fa-save"></i>
-                                        </button>
-                                        <button class="btn btn-primary"> Send To X-Ray&nbsp;<i class="fa fa-send"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -290,8 +288,6 @@
                     </div>
 
                 </div>
-
-
             </div>
         </div>
     </div>

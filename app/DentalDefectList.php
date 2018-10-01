@@ -8,6 +8,6 @@ class DentalDefectList extends Model
 {
     protected $guarded = [];
     public function treatment(){
-        return $this->belongsTo(Treatment::class,'FK_id_dentalDefect','id');
+        return $this->belongsTo(Treatment::class,'dentalDefect_id','id');
     }
 }

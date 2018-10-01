@@ -25,22 +25,24 @@ class CreateTreatmentsTable extends Migration
             $table->longText('description')->nullable();
             $table->boolean('have_xray');
             $table->integer('discount');
-            $table->unsignedInteger('FK_id_patient')->nullable();
-            $table->unsignedInteger('FK_id_treatment')->nullable();
-            $table->unsignedInteger('FK_id_dentalDefect')->nullable();
+            $table->unsignedInteger('patient_id')->nullable();
+            $table->unsignedInteger('dentalDefect_id')->nullable();
+            $table->unsignedInteger('treatment_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('FK_id_patient')
-                ->references('id')->on('patients')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
 
-            $table->foreign('FK_id_treatment')
+            $table->foreign('treatment_id')
                 ->references('id')->on('treatment_lists')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->foreign('FK_id_dentalDefect')
+
+            $table->foreign('patient_id')
+                ->references('id')->on('patients')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('dentalDefect_id')
                 ->references('id')->on('dental_defect_lists')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
