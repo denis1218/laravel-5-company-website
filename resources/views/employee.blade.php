@@ -57,7 +57,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Working Time</label>
                             <div class="col-md-4">
-                                <label for=""> From </label><input type="time" class="form-control" name="start_work_time" style="width: 40%" required> 
+                                <label for=""> From </label><input type="time" class="form-control" name="start_work_time" style="width: 40%" required>
                                 <label for=""> To </label> <input type="time" class="form-control" name="end_work_time" style="width: 40%">
                             </div>
                         </div>
@@ -81,6 +81,10 @@
                                     <option value="General">General</option>
                                 </select>
                             </div>
+                        </div>
+
+                        <div class="form-group"><label class="col-sm-2 control-label">Max Patient can visits</label>
+                            <div class="col-md-4"><input type="number" class="form-control" name="max_patient"  placeholder="Enter Maximum patient can visits"></div>
                         </div>
 
                         <div class="form-group">

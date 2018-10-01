@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\DoctorDemo;
+use App\DentalDefectList;
 use Illuminate\Http\Request;
 
-class DoctorDemoController extends Controller
+class DentalDefectListController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class DoctorDemoController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -24,7 +24,7 @@ class DoctorDemoController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -35,28 +35,16 @@ class DoctorDemoController extends Controller
      */
     public function store(Request $request)
     {
-        /**
-         * $table->string('doctor_name');
-        $table->string('doctor_avail');
-        $table->integer('max_patient');
-        $table->integer('have_patient');
-         */
-        $doctor = new DoctorDemo();
-        $doctor->doctor_name = $request->doctor_name;
-        $doctor->doctor_avail=$request->doctor_avail;
-        $doctor->max_patient = $request->max_patient;
-        $doctor->have_patient = $request->have_patient;
-        $doctor->save();
-        return $doctor;
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\DoctorDemo  $doctorDemo
+     * @param  \App\DentalDefectList  $dentalDefectList
      * @return \Illuminate\Http\Response
      */
-    public function show(DoctorDemo $doctorDemo)
+    public function show(DentalDefectList $dentalDefectList)
     {
         //
     }
@@ -64,10 +52,10 @@ class DoctorDemoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\DoctorDemo  $doctorDemo
+     * @param  \App\DentalDefectList  $dentalDefectList
      * @return \Illuminate\Http\Response
      */
-    public function edit(DoctorDemo $doctorDemo)
+    public function edit(DentalDefectList $dentalDefectList)
     {
         //
     }
@@ -76,10 +64,10 @@ class DoctorDemoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\DoctorDemo  $doctorDemo
+     * @param  \App\DentalDefectList  $dentalDefectList
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DoctorDemo $doctorDemo)
+    public function update(Request $request, DentalDefectList $dentalDefectList)
     {
         //
     }
@@ -87,10 +75,10 @@ class DoctorDemoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\DoctorDemo  $doctorDemo
+     * @param  \App\DentalDefectList  $dentalDefectList
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DoctorDemo $doctorDemo)
+    public function destroy(DentalDefectList $dentalDefectList)
     {
         //
     }

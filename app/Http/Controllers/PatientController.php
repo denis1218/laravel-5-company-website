@@ -16,9 +16,20 @@ class PatientController extends Controller
      */
     public function index()
     {
-        $patient = Patient::all();
-        return view('reception.appointment',compact('patient'));
+        $patient_all = Patient::all();
+        $doctor = Doctor::find(1);
+        $doctor_list = Doctor::all();
+//        foreach($doctor_list as $doct){
+//            foreach($doct->patients as $pat ){
+////               dd($pat->name.$pat->lastname);
+//                    dd($doct->id);
+//            }
+//        }
+
+        return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -27,7 +38,7 @@ class PatientController extends Controller
      */
     public function create()
     {
-        $doctor_list = DoctorDemo::all();
+        $doctor_list = Doctor::all();
         return view ('patient.patient',compact('doctor_list'));
     }
 
@@ -53,8 +64,8 @@ class PatientController extends Controller
                 $string .=  $value.',';
             }
             $phonenumber = $request->phone;
-            $idpatient = $request->id;
 
+        $patient->FK_id_Doctor = $request->input('FK_id_Doctor');
         $patient->status = 'new patient';
         $patient->problem_health = $string;
         $patient->id_patient = 'P-'.$phonenumber;
@@ -99,11 +110,14 @@ class PatientController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Patient  $patient
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param Patient $patient
      */
-    public function destroy(Patient $patient)
+    public function destroy($id)
     {
-        //
+        $patient = Patient::find($id);
+        $patient->delete();
+        return redirect()->back();
     }
 }
