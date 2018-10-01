@@ -153,6 +153,7 @@
                 </ul>
 
                 <div class="tab-content">
+
                     {{-- panel tab 1 past history --}}
                     <div id="tab-1" class="tab-pane active">
                         <div class="panel-body">
@@ -198,9 +199,8 @@
                                 @endforeach
                         </div>
                     </div>
-                    {{-- panel tab 1 past history --}}
 
-                    {{-- panel tab 3 new history --}}
+                    {{-- panel tab 2 new history --}}
                     <div id="tab-2" class="tab-pane">
                         <div class="panel-body">
                             <br>
@@ -225,27 +225,27 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Select Dental Defect :</label>
-                                            <select class="form-control" name="FK_id_dentalDefect">
+                                            <select class="form-control" name="dentaldefect">
                                                 <option disabled selected>Select Dental Defect</option>
                                                 @foreach($dentalDefectList as $list)
-                                                    <option value="{{ $list->id }}">{{ $list->dental_defect }}</option>
+                                                    <option value="{{ $list->dental_defect }}">{{ $list->dental_defect }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Treatment :</label>
-                                            <select class="form-control" onchange="getFeeTreatment(this)">
+                                            <select class="form-control" name="treatment">
                                                 <option disabled selected>Select Treatment</option>
                                                 @foreach($treatementList as $listTreatement)
-                                                    <option value="{{ $listTreatement->estimated_fee }}"
-                                                            id="{{ $listTreatement->id }}"> {{ $listTreatement->treatment }} </option>
+                                                    <option value="{{ $listTreatement->treatment }}"
+                                                            > {{ $listTreatement->treatment }} </option>
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <input type="hidden" class="form-control" name="id_treatment" id="id_treatment">
+                                        {{--<input type="hidden" class="form-control" name="id_treatment" id="id_treatment">--}}
                                         <div class="form-group">
                                             <label for="nex">Treatment Cost :</label>
-                                            <input type="number" class="form-control" id="cost_treatment">
+                                            <input type="number" class="form-control" name="estimated_fee">
                                         </div>
                                         <div class="form-group">
                                             <label for="nex">Discount :</label>
@@ -271,7 +271,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <img src="{{ asset('img/tooths.jpg') }}" width="100%"/>
+                                        <img src="{{ asset('img/all_tooth.jpg') }}" width="100%"/>
                                     </div>
                                 </div>
 
@@ -279,8 +279,6 @@
                                     <div class="col-md-5">
                                         <button type="submit" class="btn btn-primary"> Send To Finance&nbsp;<i
                                                     class="fa fa-save"></i>
-                                        </button>
-                                        <button class="btn btn-primary"> Send To X-Ray&nbsp;<i class="fa fa-send"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -290,8 +288,6 @@
                     </div>
 
                 </div>
-
-
             </div>
         </div>
     </div>

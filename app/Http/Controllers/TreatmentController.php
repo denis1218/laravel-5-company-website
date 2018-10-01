@@ -6,6 +6,7 @@ use App\DentalDefectList;
 use App\Patient;
 use App\Treatment;
 use App\TreatmentList;
+use App\XRay;
 use Illuminate\Http\Request;
 
 class TreatmentController extends Controller
@@ -30,6 +31,10 @@ class TreatmentController extends Controller
     {
         $patient_in_treatment = Patient::find($id);
 
+//        foreach($patient_in_treatment->treatments as $p)
+//        {
+//            dd($p->id);
+//        }
         $treatments = Treatment::find($id);
 
         $treatementList = TreatmentList::all();
@@ -37,17 +42,22 @@ class TreatmentController extends Controller
         $dentalDefectList = DentalDefectList::all();
 
         $checkValue = 0;
-        foreach ($patient_in_treatment->treatments as $vis) {
-            $checkValue = $vis->visits;
-        }
+
+
+//        dd($patient_in_treatment);
+//        foreach ($patient_in_treatment->treatments as $vis) {
+//            dd($vis->treatment_id);
+//        }
 
         $checkValue += 1;
 
         $patient_id = $patient_in_treatment->id;
 
         return view('treatment_operation', compact('patient_in_treatment',
-            'patient_id', 'checkValue', 'treatementList', 'dentalDefectList','treatments'));
+            'patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments'));
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -64,14 +74,15 @@ class TreatmentController extends Controller
         $treatment->teeth_number = $request->teeth_number;
         $treatment->next_appointment = $request->next_appointment;
         $treatment->description = $request->description;
+        $treatment->estimated_fee = $request->estimated_fee;
         $treatment->discount = $request->discount;
         $treatment->visits = $request->input('visits');
         $treatment->next_appointment = $request->input('next_appointment');
         $treatment->meridiem = $request->input('meridiem');// it is morning and afternoon of next appointment
         $treatment->status_visits = 'complate';
-        $treatment->FK_id_patient = $request->input('FK_id_patient');
-        $treatment->FK_id_treatment = $request->input('id_treatment');
-        $treatment->FK_id_dentalDefect = $request->input('FK_id_dentalDefect');
+        $treatment->patient_id = $request->input('FK_id_patient');
+        $treatment->treatment = $request->input('treatment');
+        $treatment->dentaldefect = $request->input('dentaldefect');
         $treatment->status_pay = true;
         $treatment->have_xray = false;
 
