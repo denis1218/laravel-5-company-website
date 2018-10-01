@@ -225,27 +225,27 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Select Dental Defect :</label>
-                                            <select class="form-control" name="FK_id_dentalDefect">
+                                            <select class="form-control" name="dentaldefect">
                                                 <option disabled selected>Select Dental Defect</option>
                                                 @foreach($dentalDefectList as $list)
-                                                    <option value="{{ $list->id }}">{{ $list->dental_defect }}</option>
+                                                    <option value="{{ $list->dental_defect }}">{{ $list->dental_defect }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Treatment :</label>
-                                            <select class="form-control" onchange="getFeeTreatment(this)">
+                                            <select class="form-control" name="treatment">
                                                 <option disabled selected>Select Treatment</option>
                                                 @foreach($treatementList as $listTreatement)
-                                                    <option value="{{ $listTreatement->estimated_fee }}"
-                                                            id="{{ $listTreatement->id }}"> {{ $listTreatement->treatment }} </option>
+                                                    <option value="{{ $listTreatement->treatment }}"
+                                                            > {{ $listTreatement->treatment }} </option>
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <input type="hidden" class="form-control" name="id_treatment" id="id_treatment">
+                                        {{--<input type="hidden" class="form-control" name="id_treatment" id="id_treatment">--}}
                                         <div class="form-group">
                                             <label for="nex">Treatment Cost :</label>
-                                            <input type="number" class="form-control" id="cost_treatment">
+                                            <input type="number" class="form-control" name="estimated_fee">
                                         </div>
                                         <div class="form-group">
                                             <label for="nex">Discount :</label>

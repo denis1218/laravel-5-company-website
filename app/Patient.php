@@ -19,11 +19,5 @@ class Patient extends Model
         return $this->hasMany(Treatment::class,'patient_id','id');
     }
 
-    public function allTreatmentList(){
-        return $this->treatments()->TreatmentLists();
-    }
 
-    public function treatment_list(){
-        return $this->hasManyThrough(TreatmentList::class,Treatment::class);
-    }
 }

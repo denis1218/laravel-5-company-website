@@ -57,19 +57,6 @@ class TreatmentController extends Controller
             'patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments'));
     }
 
-    /**
-     * save the xray detials in table xray table
-     * @param Request $request
-     */
-    public function store_xray(Request $request)
-    {
-        $xray = new XRay();
-        $xray->tooth_number = $request->teeth_number_xray;
-        $xray->description = $request->description;
-        $xray->status_xray = false;// set to false by default false it means not done with xray yet
-        $xray->treatment_id  = $request->treatment_id;
-
-    }
 
 
     /**
@@ -87,14 +74,15 @@ class TreatmentController extends Controller
         $treatment->teeth_number = $request->teeth_number;
         $treatment->next_appointment = $request->next_appointment;
         $treatment->description = $request->description;
+        $treatment->estimated_fee = $request->estimated_fee;
         $treatment->discount = $request->discount;
         $treatment->visits = $request->input('visits');
         $treatment->next_appointment = $request->input('next_appointment');
         $treatment->meridiem = $request->input('meridiem');// it is morning and afternoon of next appointment
         $treatment->status_visits = 'complate';
         $treatment->patient_id = $request->input('FK_id_patient');
-        $treatment->treatment_id = $request->input('id_treatment');
-        $treatment->dentalDefect_id = $request->input('FK_id_dentalDefect');
+        $treatment->treatment = $request->input('treatment');
+        $treatment->dentaldefect = $request->input('dentaldefect');
         $treatment->status_pay = true;
         $treatment->have_xray = false;
 
