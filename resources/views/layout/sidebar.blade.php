@@ -6,7 +6,7 @@
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="" src="img/Dentaa3.png" width="100px">
+                            <img alt="image" class="" src="{{asset('img/dentaa3.png')}}" width="100px">
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong
@@ -32,7 +32,7 @@
                         <a href="/doctor_operations"><i class="fa fa-sitemap"></i> <span
                                     class="nav-label">Department</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/doctor_operations"><i class="fa fa-user-md"></i>Doctor</a></li>
+                            <li><a href="/operation"><i class="fa fa-user-md"></i>Doctor</a></li>
                             <li><a href="/xray"><i class="fa fa-flash"></i>X-Ray</a></li>
                         </ul>
                     </li>

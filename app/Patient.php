@@ -15,7 +15,12 @@ class Patient extends Model
         return $this->belongsTo(Doctor::class,'FK_id_Doctor','id');
     }
 
-    public function treatments(){
+    public function treatment(){
         return $this->hasMany(Treatment::class,'FK_id_patient','id');
+    }
+
+    public function allTreatmentList(){
+//        return $this->treatment()->allTreatmentList();
+        return $this->hasMany(TreatmentList::class,'FK_id_patient','id');
     }
 }

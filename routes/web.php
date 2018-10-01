@@ -58,7 +58,6 @@ Route::get('/medicine', function () {
 });
 Route::resource('/patient', 'PatientController');
 
-Route::resource('/doctor_store', 'DoctorDemoController');
 
 // next appointment page
 Route::get('/next_appointment', function () {
@@ -111,6 +110,7 @@ Route::get('/iframe', function () {
     });
 
 
+
 // report doctors
     Route::get('/doctor_report', function () {
         return view('doctor_report');
@@ -153,10 +153,7 @@ Route::get('/iframe', function () {
     Route::get('/next_appointment_list', function () {
         return view('next_appointment_list');
     });
-// patient report
-    Route::get('print_report', function () {
-        return view('print_report');
-    });
+
 
     Route::get('/dash_reception', function () {
         return view('/dash_reception');
@@ -183,6 +180,7 @@ Route::get('/iframe', function () {
 
     Route::get('patient/{id}/delete', 'PatientController@destroy');
 
+
 // Doctor Registrationexp
 Route::resource('doctors','DoctorController');
 Route::get('expense_form',function (){
@@ -196,4 +194,13 @@ Route::get('expenditure2/{id}','ExpenseController@destroy');
 
 // report patient
 Route::resource('/patient_report', 'patientReportController');
+// patient report
+//Route::get('/patient_report2/{id}','patientReportController@show');
+
+// Doctor Registration
+Route::resource('/doctors','DoctorController');
+
+Route::resource('/operation','TreatmentController');
+
+Route::get('/operation/create/{id}','TreatmentController@create');
 

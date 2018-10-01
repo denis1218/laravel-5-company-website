@@ -69,6 +69,7 @@
                                             <th>First Name</th>
                                             <th>Last Name</th>
                                             <th>Father Name</th>
+                                            <th>Age</th>
                                             <th colspan="2" class="text-center" >Working time</th>
                                             <th>Phone</th>
                                             <th>Departement</th>
@@ -87,6 +88,7 @@
                                         <td>{{$doctor->first_name}}</td>
                                         <td>{{$doctor->last_name}}</td>
                                         <td>{{$doctor->father_name}}</td>
+                                        <td>{{$doctor->age}}</td>
                                         <td class="center">{{$doctor->start_work_time}}</td>
                                         <td class="center">{{$doctor->end_work_time}}</td>
                                         <td>{{$doctor->phone}}</td>

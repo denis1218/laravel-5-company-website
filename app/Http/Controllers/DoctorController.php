@@ -40,6 +40,7 @@ class DoctorController extends Controller
         $doctor->first_name=$request->input('first_name');
         $doctor->last_name=$request->input('last_name');
         $doctor->father_name=$request->input('father_name');
+        $doctor->age=$request->input('age');
         $doctor->start_work_time=$request->input('start_work_time');
         $doctor->end_work_time=$request->input('end_work_time');
         $doctor->phone=$request->input('phone');
@@ -61,8 +62,8 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        $doctor=Doctor::find($id);
-
+        $doctor=Doctor::find($doctor);
+        return view('doctor_report')->with('doctor',$doctor);
     }
 
     /**

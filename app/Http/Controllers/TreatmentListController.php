@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\TreatmentList;
 use Illuminate\Http\Request;
-use App\Patient;
 
-class patientReportController extends Controller
+class TreatmentListController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +14,7 @@ class patientReportController extends Controller
      */
     public function index()
     {
-//        $all_patient = Patient::find()->doctor;
-        $all_patient = Patient::with('doctor')->get();
-//        return $all_patient;
-
-        return view('patient.patient_report',compact('all_patient'));
+        //
     }
 
     /**
@@ -29,7 +24,7 @@ class patientReportController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -46,30 +41,21 @@ class patientReportController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\TreatmentList  $treatmentList
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(TreatmentList $treatmentList)
     {
-//        $patient = Patient::find($id);
-        $patient = Patient::with('doctor')->find($id)->get();
-
-//        return view('patient.print', compact('patient'));
-        return $patient;
-
-
+        //
     }
 
-    public  function report($id){
-
-    }
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\TreatmentList  $treatmentList
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(TreatmentList $treatmentList)
     {
         //
     }
@@ -78,10 +64,10 @@ class patientReportController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\TreatmentList  $treatmentList
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, TreatmentList $treatmentList)
     {
         //
     }
@@ -89,10 +75,10 @@ class patientReportController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\TreatmentList  $treatmentList
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(TreatmentList $treatmentList)
     {
         //
     }

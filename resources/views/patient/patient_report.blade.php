@@ -93,11 +93,11 @@
                                                 <td>{{$patient->id_patient}}</td>
                                                 <td>{{$patient->name}}</td>
                                                 <td>{{$patient->lastname}}</td>
-                                                <td></i>Dr.Samim</td>
+                                                <td></i>{{$patient->doctor->first_name}}</td>
                                                 <td>{{$patient->status}}</td>
                                                 <td><i class="fa fa-calendar"></i>{{$patient->created_at}}</td>
                                                 <td class="">{{$patient->problem_health}}</td>
-                                                <td><a class="btn btn-xs btn-primary" href="/print_preport/{{$patient->id}}" ><i class="fa fa-info"></i>
+                                                <td><a class="btn btn-xs btn-primary" href="/patient_report/{{$patient->id}}" ><i class="fa fa-info"></i>
                                                         Details</a></td>
 
                                             </tr>
