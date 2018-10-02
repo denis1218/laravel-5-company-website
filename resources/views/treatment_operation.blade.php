@@ -327,8 +327,6 @@
                                         <img src="{{ asset('img/all_tooth.jpg') }}" width="100%"/>
                                     </div>
                                 </div>
-<<<<<<< HEAD
-
                                 <div class="row">
                                     <div class="col-md-5">
                                         <button type="submit" class="btn btn-primary"> Save&nbsp;<i
@@ -337,65 +335,7 @@
                                     </div>
                                 </div>
                             </form>
-=======
-                                <div class="col-sm-10 text-left">
-                                </div>
-                            </div>
-                            <div class="row" style="margin-top:30px;">
-                                <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Select Dental Defect *</label>
-                                    <select class="form-control">
-                                        <option value="1">Select Dental Defect</option>
-                                        <option value="1">Crown Fracture</option>
-                                        <option value="1">BDR</option>
-                                        <option value="2">G-Caries</option>
-                                        <option value="3">Attrision</option>
-                                        <option value="4">Calculus</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Treatment *</label>
-                                    <select class="form-control">
-                                        <option value="1">Select Treatment</option>
-                                        <option value="1">PF (Permanent Filling)</option>
-                                        <option value="2">RCT (Root Canal)</option>
-                                        <option value="3">Extraction</option>
-                                        <option value="4">Pulpotomy</option>
-                                        <option value="5">Apexification</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="nex">Treatment Cost:</label>
-                                    <input type="number" class="form-control" name="nex" value="2000">
-                                </div>
-                                <div class="form-group">
-                                    <label for="nex">Do you Give Discount ?:</label>
-                                    <input type="number" class="form-control" name="nex">
-                                </div>
-                                <div class="form-group">
-                                    <label for="nex">Next Appointment ?</label>
-                                    <input type="date" class="form-control" name="nex">
-                                   </div>
 
-                                          </div>
-
-                                      </div>
-
-                                      <div class="row">
-                                          <div class="col-md-5">
-                                              <button class="btn btn-primary"> Send To Finance&nbsp;<i class="fa fa-save"></i></button>
-
-                                          </div>
-                                      </div>
-                                     </div>
-                                  </div>
-                              </div>
-                          </div>
-                        </form>
-
-
->>>>>>> mahdi2013safari-master
                         </div>
                     </div>
                 </div>

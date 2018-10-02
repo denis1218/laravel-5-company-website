@@ -11,7 +11,6 @@ class Treatment extends Model
     public function patient()
     {
         return $this->belongsTo(Patient::class, 'patient_id', 'id');
-<<<<<<< HEAD
     }
 
     public function income()
@@ -19,10 +18,6 @@ class Treatment extends Model
         return $this->hasMany(Income::class , 'treatment_id', 'id');
     }
 
-=======
->>>>>>> mahdi2013safari-master
-
-    }
     public function xray(){
         return $this->hasOne(Xray::class);
     }
