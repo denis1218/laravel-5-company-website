@@ -13,14 +13,10 @@ class Treatment extends Model
         return $this->belongsTo(Patient::class, 'patient_id', 'id');
     }
 
-    public function getVisitsAttribute()
+    public function income()
     {
-//        return
+        return $this->hasMany(Income::class , 'treatment_id', 'id');
     }
-
-
-
-
 
 
 }

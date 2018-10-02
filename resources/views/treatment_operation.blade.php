@@ -157,12 +157,12 @@
                     <div id="tab-1" class="tab-pane active">
                         <div class="panel-body">
                             <br>
-                            @foreach($patient_in_treatment->treatments->sortByDesc('id') as $treats)
+                            @foreach($patient_in_treatment->treatment->sortByDesc('id') as $treats)
                                 {{-- start for each here --}}
                                 <div class="row shadow p-3 mb-5 rounded bg-info"
                                      table-exchange
                                      style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
-                                    <h3 style="font-weight: bold">Visits : &nbsp;{{ $treats->id }}rd</h3>
+                                    <h3 style="font-weight: bold"></h3>
                                 </div>
                                 <br>
                                 <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
@@ -227,14 +227,13 @@
 
                                 <input hidden type="hidden"/>
                                 <input hidden type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
-                                <input hidden type="hidden" name="visits" value="{{ $treatments->visits  }}"/>
+                                {{--<input hidden type="hidden" name="visits" value="{{ $treatments->visits  }}"/>--}}
 
                                 <div class="row" style="margin-top:30px;">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Tooth Number :</label>
-                                            <input type="number" class="form-control" required name="teeth_number"
-                                                   />
+                                            <input type="number" class="form-control" required name="teeth_number"/>
                                         </div>
                                         <div class="form-group">
                                             <div class="i-checks" for="nex">Have X-Ray :

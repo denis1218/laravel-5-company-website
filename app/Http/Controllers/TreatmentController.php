@@ -55,11 +55,7 @@ class TreatmentController extends Controller
      */
     public function store(Request $request)
     {
-//            dd($request->description);
-//        dd($request);
-
         $treatment = new Treatment();
-
         $treatment->teeth_number = $request->teeth_number;
         $treatment->next_appointment = $request->next_appointment;
         $treatment->description = $request->description;
@@ -145,23 +141,7 @@ class TreatmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-//        $treatment = Treatment::find($id);
-//        $treatment->teeth_number = $request->teeth_number;
-//        $treatment->next_appointment = $request->next_appointment;
-//        $treatment->description = $request->description;
-//        $treatment->estimated_fee = $request->estimated_fee;
-//        $treatment->discount = $request->discount;
-//        $treatment->visits = $request->input('visits');
-//        $treatment->next_appointment = $request->input('next_appointment');
-//        $treatment->meridiem = $request->input('meridiem');// it is morning and afternoon of next appointment
-//        $treatment->status_visits = 'complate';
-//        $treatment->patient_id = $request->input('FK_id_patient');
-//        $treatment->treatment = $request->input('treatment');
-//        $treatment->dentaldefect = $request->input('dentaldefect');
-//        $treatment->status_pay = true;
-//        $treatment->have_xray = $request->have_xray;
-//        $treatment->save();
-//        return redirect('/operation');
+
     }
 
     /**
