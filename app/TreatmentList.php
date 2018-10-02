@@ -12,4 +12,8 @@ class TreatmentList extends Model
         return $this->belongsTo(Treatment::class,'treatment_id','id');
     }
 
+    public  function patient(){
+        return $this->hasManyThrough(Patient::class,Treatment::class);
+    }
+
 }

@@ -77,12 +77,9 @@
                             <th>ID</th>
                             <th>P-ID</th>
                             <th>P-Name</th>
-                            <th>Doctor-Name</th>
                             <th>Estimated Fee</th>
                             <th>Paid Amount</th>
-                            <th>Discount</th>
                             <th>Paid</th>
-                            <th>Edit</th>
                             <th>P-Details</th>
                         </tr>
                         </thead>
@@ -91,18 +88,11 @@
                             <td>1</td>
                             <td>p011</td>
                             <td>Abdullah</td>
-                            <td>Dr.Samim</td>
                             <td>1900</td>
                             <td>100</td>
-                            <td>600</td>
                             <td>
                                 <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
                                         data-target="#eprice">&nbsp;Paid
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                        data-target="#edit">&nbsp;Edit
                                 </button>
                             </td>
                             <td>
@@ -116,18 +106,11 @@
                             <td>2</td>
                             <td>p012</td>
                             <td>Mansoor</td>
-                            <td>Dr.Samim</td>
                             <td>1500</td>
                             <td>100</td>
-                            <td>500</td>
                             <td>
                                 <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
                                         data-target="#eprice">&nbsp;Paid
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                        data-target="#edit">&nbsp;Edit
                                 </button>
                             </td>
                             <td>
@@ -141,18 +124,11 @@
                             <td>3</td>
                             <td>p013</td>
                             <td>Arash</td>
-                            <td>Dr.Jalal</td>
                             <td>3500</td>
                             <td>300</td>
-                            <td>1200</td>
                             <td>
                                 <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
                                         data-target="#eprice">&nbsp;Paid
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                        data-target="#edit">&nbsp;Edit
                                 </button>
                             </td>
                             <td>
@@ -166,18 +142,11 @@
                             <td>4</td>
                             <td>p014</td>
                             <td>Manizhah</td>
-                            <td>Dr.Tamim</td>
                             <td>700</td>
                             <td>50</td>
-                            <td>00</td>
                             <td>
                                 <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
                                         data-target="#eprice">&nbsp;Paid
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                        data-target="#edit">&nbsp;Edit
                                 </button>
                             </td>
                             <td>
@@ -191,18 +160,11 @@
                             <td>5</td>
                             <td>p015</td>
                             <td>Erfanullah</td>
-                            <td>Dr.Ahmadi</td>
                             <td>1100</td>
-                            <td>00</td>
                             <td>00</td>
                             <td>
                                 <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
                                         data-target="#eprice">&nbsp;Paid
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                        data-target="#edit">&nbsp;Edit
                                 </button>
                             </td>
                             <td>
@@ -308,8 +270,8 @@
                             </div>
                         </div>
                     </div>
-
                 {{--end of edit modal--}}
+
                     <!-- edit model -->
                     <div class="modal inmodal" id="pinfo" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog">

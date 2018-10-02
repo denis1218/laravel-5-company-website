@@ -2,7 +2,7 @@
 @section('content')
 
 
-    {{-- @include('part.nav_doctor') --}}
+     @include('part.nav_doctor')
 
 
     <div class="col-lg-12">
@@ -33,15 +33,16 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="profile-image">
-                            <img src="img/dentaa3.png" class="" style="width: 200px;">
+                            <img src="{{asset('img/dentaa3.png')}}" class="" style="width: 200px;">
                         </div>
                     </div>
+
                     <div class="col-md-6">
 
                         <h2> Hakim Alikozay Dental Clinic</h2>
                         <h4>Patient History File</h4>
-                        <h4>Doctor Name : Dr.Rahmati</h4>
-                        <h4>Date : 2018/5/4</h4>
+                        <h4>Doctor Name : {{$patient->doctor->first_name}}</h4>
+                        <h4>Date : {{$patient->created_at}}</h4>
 
                     </div>
 
@@ -57,47 +58,57 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <table class="table table-striped text-bold" style="margin-top:30px;">
+
                                     <tbody>
+
                                     <tr>
                                         <td>P-ID :</td>
-                                        <td>P-0786807788</td>
+                                        <td>{{$patient->id}}</td>
                                     </tr>
                                     <tr>
                                         <td>Patient Name :</td>
-                                        <td>Ahmad</td>
+                                        <td>{{$patient->name}}</td>
 
                                     </tr>
                                     <tr>
                                         <td>Age :</td>
-                                        <td>25</td>
+                                        <td>{{$patient->age}}</td>
                                     </tr>
                                     <tr>
                                         <td>Gender :</td>
-                                        <td>Male</td>
+                                        <td>{{$patient->gender}}</td>
                                     </tr>
+                                    <tr>
+                                        <td>Address :</td>
+                                        <td>{{$patient->address}}</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Phone :</td>
+                                        <td>{{$patient->phone}}</td>
+                                    </tr>
+                                    <td>Patient Problem Health :</td>
+                                    <td>{{$patient->problem_health}}</td>
+                                    <tr>
+                                        <td>Date Reg :</td>
+                                        <td>{{$patient->created_at}}</td>
+                                    </tr>
+
                                     </tbody>
+
                                 </table>
                             </div>
                             <div class="col-md-4">
                                 <table class="table table-striped text-bold" style="margin-top:30px;">
                                     <tbody>
                                     <tr>
-                                        <td>Patient Problem Health :</td>
-                                        <td>Blood Pressure, Diabetics</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Address :</td>
-                                        <td>Kabul , Afghanistan</td>
 
                                     </tr>
-                                    <tr>
-                                        <td>Phone :</td>
-                                        <td>078558252</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Date Reg :</td>
-                                        <td>Male</td>
-                                    </tr>
+
+
+
+
+
                                     </tbody>
                                 </table>
                             </div>
@@ -117,15 +128,15 @@
                                     <tbody>
                                     <tr>
                                         <td>Dental Defect :</td>
-                                        <td>BDR</td>
+                                        <td>{{$treatment->dentaldefect}}</td>
                                     </tr>
                                     <tr>
                                         <td>Dental Treatment :</td>
-                                        <td>Extraction</td>
+                                        <td>{{$treatment->treatment}}</td>
                                     </tr>
                                     <tr>
                                         <td>Teeth Number:</td>
-                                        <td>26</td>
+                                        <td>{{$treatment->teeth_number}}</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -152,7 +163,7 @@
                                     </tr>
                                     <tr>
                                         <td>Paid Amount :</td>
-                                        <td>2000</td>
+                                        <td>50</td>
 
                                     </tr>
                                     <tr>
@@ -163,6 +174,7 @@
                                         <td>Remaining :</td>
                                         <td>1000</td>
                                     </tr>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -176,7 +188,7 @@
         </div>
     </div>
 
-        {{--end of header--}}
+
 
 
         @endsection

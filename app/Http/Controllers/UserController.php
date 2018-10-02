@@ -17,7 +17,7 @@ class UserController extends Controller
             $user = User::all();
             foreach ($user as $usr) {
                 if ($request->email == $usr->email && $request->pass == $usr->password) {
-                    return redirect('dash');
+                    return view('dash');
                 } else {
 
                     return back();

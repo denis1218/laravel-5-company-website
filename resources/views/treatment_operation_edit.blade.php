@@ -148,21 +148,22 @@
         <div class="col-lg-12">
             <div class="tabs-container">
                 <ul class="nav nav-tabs" id="demoTabs">
-                    <li class="active"><a data-toggle="tab" href="#tab-1">Past History</a></li>
-                    <li class=""><a data-toggle="tab" href="#tab-2">Present History</a></li>
+                    <li class=""><a data-toggle="tab" href="#tab-1">Past History</a></li>
+                    <li class="active"><a data-toggle="tab" href="#tab-2">Present History</a></li>
                 </ul>
 
                 <div class="tab-content">
+
                     {{-- panel tab 1 past history --}}
-                    <div id="tab-1" class="tab-pane active">
+                    <div id="tab-1" class="tab-pane">
                         <div class="panel-body">
                             <br>
-                            @foreach($patient_in_treatment->treatment->sortByDesc('id') as $treats)
+                            @foreach($patient_in_treatment->treatments as $treats)
                                 {{-- start for each here --}}
                                 <div class="row shadow p-3 mb-5 rounded bg-info"
                                      table-exchange
                                      style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
-                                    <h3 style="font-weight: bold"></h3>
+                                    <h3 style="font-weight: bold">{{ $treats->visits }}</h3>
                                 </div>
                                 <br>
                                 <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
@@ -183,20 +184,14 @@
                                             <tr>
                                                 <td>Tooth Number :</td>
                                                 <td>{{ $treats->teeth_number }}</td>
-                                                <td>Remaining Fee :</td>
-                                                <td>null</td>
+                                                <td>Date First Visite :</td>
+                                                <td>{{ $treats->created_at }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Have Xray :</td>
                                                 <td>{{ $treats->have_xray }}</td>
-                                                <td>Date  Visited :</td>
+                                                <td>Date First Visite :</td>
                                                 <td>{{ $treats->created_at }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td> Required : </td>
-                                                <td>Cover for teeth</td>
-                                                <td>Next Appointment :</td>
-                                                <td>{{ $treats->next_appointment }}&nbsp; in &nbsp;{{ $treats->meridiem }}</td>
                                             </tr>
                                         </table>
                                         <div>
@@ -205,7 +200,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <a href="/operation/{{ $treats->id }}/edit/{{ $patient_id }}" class="btn btn-md btn-primary">Continue this treatment</a>
+                                        <a href="/operation/{{ $treats->id }}/edit/{{ $patient_id }}" class="btn btn-md btn-primary">Continue
+                                            Treatment</a>
                                     </div>
                                 </div>
                             @endforeach
@@ -213,7 +209,7 @@
                     </div>
 
                     {{-- panel tab 2 new history --}}
-                    <div id="tab-2" class="tab-pane ">
+                    <div id="tab-2" class="tab-pane active">
                         <div class="panel-body">
                             <br>
                             {{-- Header of title --}}
@@ -227,13 +223,14 @@
 
                                 <input hidden type="hidden"/>
                                 <input hidden type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
-                                {{--<input hidden type="hidden" name="visits" value="{{ $treatments->visits  }}"/>--}}
+                                <input hidden type="hidden" name="visits" value="{{ $checkValue  }}"/>
 
                                 <div class="row" style="margin-top:30px;">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Tooth Number :</label>
-                                            <input type="number" class="form-control" required name="teeth_number"/>
+                                            <input type="number" class="form-control" required name="teeth_number"
+                                                   value="{{ $treatments->teeth_number }}"/>
                                         </div>
                                         <div class="form-group">
                                             <div class="i-checks" for="nex">Have X-Ray :
@@ -245,18 +242,18 @@
                                         <div class="form-group">
                                             <label>Select Dental Defect :</label>
                                             <select class="form-control" name="dentaldefect">
-                                                <option disabled selected>Select Dental Defect</option>
+                                                <option disabled>Select Dental Defect</option>
                                                 @foreach($dentalDefectList as $list)
-                                                    <option value="{{ $list->dental_defect }}">{{ $list->dental_defect }}</option>
+                                                    <option value="{{ $treatments->dentaldefect }}">{{ $list->dental_defect }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Treatment :</label>
                                             <select class="form-control" name="treatment">
-                                                <option disabled selected>Select Treatment</option>
+                                                <option disabled>Select Treatment</option>
                                                 @foreach($treatementList as $listTreatement)
-                                                    <option value="{{ $listTreatement->treatment }}"
+                                                    <option value="{{ $treatments->treatment }}"
                                                     > {{ $listTreatement->treatment }} </option>
                                                 @endforeach
                                             </select>
@@ -264,21 +261,36 @@
                                         {{--<input type="hidden" class="form-control" name="id_treatment" id="id_treatment">--}}
                                         <div class="form-group">
                                             <label for="nex">Treatment Cost :</label>
-                                            <input type="number" class="form-control" name="estimated_fee">
+                                            <input type="number" class="form-control" name="estimated_fee"
+                                                   value="{{ $treatments->estimated_fee }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="nex">Discount :</label>
-                                            <input type="number" class="form-control" name="discount">
+                                            <input type="number" class="form-control" name="discount"
+                                                   value="{{ $treatments->discount }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="nex">Next Appointment :</label>
-                                            <input type="date" class="form-control" name="next_appointment">
+                                            <input type="date" class="form-control" name="next_appointment"
+                                                   value="{{ $treatments->next_appointment }}">
                                         </div>
                                         <div class="form-group">
                                             <div class="i-checks" for="nex">Set Meridiem :<label>&nbsp;&nbsp;
+                                                    @if($treatments->meridiem == 'morning')
                                                         <input type="radio" value="morning" checked name="meridiem">
-                                                         Morning</label>
-                                                    &nbsp;&nbsp;&nbsp; <input type="radio" checked value="afternoon" name="meridiem">Afternoon
+                                                        <i></i> Morning
+                                                        <input type="radio" value="afternoon"
+                                                               name="meridiem">
+                                                        <i></i> Afternoon
+                                                </label>
+                                                @elseif($treatments->meridiem == 'afternoon')
+                                                    <input type="radio" value="morning" name="meridiem">
+                                                    <i></i> Morning
+                                                    &nbsp;&nbsp;&nbsp; <input type="radio" checked value="afternoon"
+                                                                              name="meridiem">
+                                                    <i></i> Afternoon
+                                                @endif
+
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -295,14 +307,16 @@
 
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <button type="submit" class="btn btn-primary"> Save&nbsp;<i
+                                        <button type="submit" class="btn btn-primary"> New Visit Save&nbsp;<i
                                                     class="fa fa-save"></i>
                                         </button>
                                     </div>
                                 </div>
                             </form>
+
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

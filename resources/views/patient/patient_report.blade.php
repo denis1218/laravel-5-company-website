@@ -77,7 +77,7 @@
                                         <table class="table table-hover  no-margins" >
                                             <thead>
                                             <tr class="bg-light">
-                                                <td>P-ID</td>
+                                                <th>P-ID</th>
                                                 <th>Patient Name</th>
                                                 <th>Last Name</th>
                                                 <th>Doctor Name</th>
@@ -88,84 +88,20 @@
                                             </tr>
                                             </thead>
                                             <tbody>
+                                            @foreach($all_patient as $patient)
                                             <tr>
-                                                <td>P-078554422</td>
-                                                <td>Ahmad</td>
-                                                <td>Sultani</td>
-                                                <td></i>Dr.Samim</td>
-                                                <td>First Time</td>
-                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:00 AM</td>
-                                                <td class="">Blood pressure</td>
-                                                <td><a class="btn btn-xs btn-primary" href="/print_preport" ><i class="fa fa-info"></i>
+                                                <td>{{$patient->id_patient}}</td>
+                                                <td>{{$patient->name}}</td>
+                                                <td>{{$patient->lastname}}</td>
+                                                <td></i>{{$patient->doctor->first_name}}</td>
+                                                <td>{{$patient->status}}</td>
+                                                <td><i class="fa fa-calendar"></i>{{$patient->created_at}}</td>
+                                                <td class="">{{$patient->problem_health}}</td>
+                                                <td><a class="btn btn-xs btn-primary" href="/patient_report/{{$patient->id}}" ><i class="fa fa-info"></i>
                                                         Details</a></td>
 
                                             </tr>
-                                            <tr>
-                                                <td>P-0786906677</td>
-                                                <td>Naweed</td>
-                                                <td>Rezayee</td>
-                                                <td></i>Dr.Samim</td>
-                                                <td>Second Time</td>
-                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
-                                                <td class="">Diabetics</td>
-                                                <td><a class="btn btn-xs btn-primary" href="/print_preport" ><i class="fa fa-info"></i>
-                                                        Details</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>P-0785445580</td>
-                                                <td>Qasim</td>
-                                                <td>Mukhtary</td>
-                                                <td></i>Dr.Samim</td>
-                                                <td>First Time</td>
-                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
-                                                <td class="">Hepatitics</td>
-                                                <td><a class="btn btn-xs btn-primary" href="/print_preport" ><i class="fa fa-info"></i>
-                                                        Details</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>P-0785564749</td>
-                                                <td>Mahmood</td>
-                                                <td>Hashimi</td>
-                                                <td></i>Dr.Samim</td>
-                                                <td>Second Time</td>
-                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
-                                                <td class="">Asthma</td>
-                                                <td><a class="btn btn-xs btn-primary" href="/print_preport" ><i class="fa fa-info"></i>
-                                                        Details</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>P-0785786788</td>
-                                                <td>Ali</td>
-                                                <td>Ahmadyar</td>
-                                                <td></i>Dr.Samim</td>
-                                                <td>First Time</td>
-                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00</td>
-                                                <td class="">Blood pressure</td>
-                                                <td><a class="btn btn-xs btn-primary" href="/print_preport" ><i class="fa fa-info"></i>
-                                                        Details</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>P-0785786866</td>
-                                                <td>Mahdi</td>
-                                                <td>Safari</td>
-                                                <td></i>Dr.Samim</td>
-                                                <td>Second Time</td>
-                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 10:00 AM</td>
-                                                <td class="">Diabetics</td>
-                                                <td><a class="btn btn-xs btn-primary" href="/print_preport" ><i class="fa fa-info"></i>
-                                                        Details</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>P-078558099</td>
-                                                <td>Ahmad</td>
-                                                <td>Rasuli</td>
-                                                <td></i>Dr.Samim</td>
-                                                <td>First Time</td>
-                                                <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 11:00 AM</td>
-                                                <td class="">Blood pressure</td>
-                                                <td><a class="btn btn-xs btn-primary" href="/print_preport" ><i class="fa fa-info"></i>
-                                                        Details</a></td>
-                                            </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                 </div>
