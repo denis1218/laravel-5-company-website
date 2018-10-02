@@ -43,13 +43,7 @@ class TreatmentController extends Controller
 
         $patient_id = $patient_in_treatment->id;
 
-        return view('treatment_operation', compact('patient_in_treatment',
-<<<<<<< HEAD
-            'patient_id', 'treatementList', 'dentalDefectList', 'treatments'));
-=======
-            'patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments'));
-
->>>>>>> mahdi2013safari-master
+        return view('treatment_operation', compact('patient_in_treatment','patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments'));
     }
 
 
