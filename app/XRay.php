@@ -10,6 +10,9 @@ class XRay extends Model
         return $this->belongsTo(Treatment::class , 'FK_id_treatment', 'id');
     }
 
-
+    public function income()
+    {
+        return $this->hasMany(Income::class, 'xray_id', 'id');
+    }
 
 }
