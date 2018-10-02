@@ -19,13 +19,8 @@ class CreateDoctorsTable extends Migration
             $table->string('last_name');
             $table->string('father_name');
             $table->integer('age');
-<<<<<<< HEAD
             $table->time('start_work_time')->nullable();
             $table->time('end_work_time')->nullable();
-=======
-            $table->string('start_work_time');
-            $table->string('end_work_time');
->>>>>>> 04a8d3c39c12e2c5bb6848b695fd79ba1b0b8f66
             $table->string('phone');
             $table->string('department');
             $table->string('gender');
