@@ -122,7 +122,6 @@
         </div>
     </div>
 
-
     <!-- edit model -->
     <div class="modal inmodal" id="eprice" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">

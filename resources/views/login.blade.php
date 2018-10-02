@@ -35,8 +35,13 @@
             <img src="/img/Dentaa3.png" width="650px" class="img-responsive" alt="">
         </div>
         <h3 style="color: white;">Welcome to HK|Clinic</h3>
+<<<<<<< HEAD
+        <form class="m-t" role="form" action="">
+            {{--<input type="hidden" name="_token" value="{{csrf_token()}}">--}}
+=======
         <form class="m-t" role="form" >
             <input type="hidden" name="_token" value="{{csrf_token()}}">
+>>>>>>> 1ce2341a84044e1b11117a4afb0d5c10ac67516e
 
             <div class="form-group">
                 <select class="form-control" required>
@@ -54,7 +59,11 @@
             <div class="form-group">
                 <input type="password" class="form-control" name="pass" placeholder="Password" required="">
             </div>
+<<<<<<< HEAD
+            <a href="/dash"  class="btn btn-success block full-width m-b">Login</a>
+=======
             <a href="/dash" class="btn btn-success block full-width m-b">Login</a>
+>>>>>>> 1ce2341a84044e1b11117a4afb0d5c10ac67516e
 
             <a href="#">
                 <small style="color:white;">Forgot password?</small>
