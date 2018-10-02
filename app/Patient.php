@@ -20,6 +20,10 @@ class Patient extends Model
         return $this->hasMany(Treatment::class,'patient_id','id');
     }
 
+    public function income()
+    {
+        return $this->hasMany(Income::class , 'patient_id','id');
+    }
 
 
 }

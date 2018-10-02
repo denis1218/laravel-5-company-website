@@ -203,6 +203,7 @@ Route::resource('/doctors','DoctorController');
 Route::resource('/operation','TreatmentController');
 
 Route::get('/operation/create/{id}','TreatmentController@create');
+<<<<<<< HEAD
 
 
 
@@ -213,3 +214,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user','UserController@index');
+=======
+Route::get('/operation/{id}/edit/{patient_id}','TreatmentController@edit_treatment');
+>>>>>>> d0c5fbcdf059ac4008ac5cd8d7b689894987bbb6
