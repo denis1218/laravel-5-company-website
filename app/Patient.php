@@ -19,5 +19,4 @@ class Patient extends Model
         return $this->hasMany(Treatment::class,'patient_id','id');
     }
 
-
 }

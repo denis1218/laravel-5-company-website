@@ -194,3 +194,4 @@ Route::resource('/doctors','DoctorController');
 Route::resource('/operation','TreatmentController');
 
 Route::get('/operation/create/{id}','TreatmentController@create');
+Route::get('/operation/{id}/edit/{patient_id}','TreatmentController@edit_treatment');
