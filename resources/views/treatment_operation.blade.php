@@ -149,7 +149,7 @@
             <div class="tabs-container">
                 <ul class="nav nav-tabs" id="demoTabs">
                     <li class="active"><a data-toggle="tab" href="#tab-1">Past History</a></li>
-                    <li class=""><a data-toggle="tab" href="#tab-2">Present History</a></li>
+                    <li class=""><a data-toggle="tab" id="test" href="#tab-2">Present History</a></li>
                 </ul>
 
                 <div class="tab-content">
@@ -217,23 +217,58 @@
                         <div class="panel-body">
                             <br>
                             {{-- Header of title --}}
-                            <div class="row  bg-info"
-                                 style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
-                                <h3 style="font-weight: bold">Present History</h3>
+                            <div class="row  bg-info" style=" padding-left:20px; border-radius: 5px;margin-left:0px;margin-right: 10px;">
+                                <h3 style="font-weight: bold;">Present History</h3>
                             </div>
-
                             <br>
+                            <form action="/xray" method="post">
+                                {{csrf_field()}}
+                                <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="i-checks"><label for=""><h4 style="color:green">Is X-Ray Needed?</h4></label>&nbsp;&nbsp;
+                                        <div class="input-group">
+                                             <div class="i-checks"><input type="radio"  value="not" name="xray_status" id="check">yes</div></div>
+                                             <div class="i-checks"><input type="radio" id="id"  name="xray_status" checked="checked">No</div></div>
+                                        </div>
+                                </div>
+
+                                <br>
+                                <div class="row">
+                                <div class="col-sm-12">
+                                    <table class="table table-striped">
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="row">
+                                                    <div class="col-sm-2 text-right">
+                                                        <h3 style="letter-spacing: 2px; line-height: 30px;">Tooth_Number:</h3>
+                                                    </div>
+                                                    <div class="col-sm-8">
+                                                        <input type="number" class="form-control" id="teeth" required name="tooth_number" onblur="copyvalue()" placeholder="Enter Tooth Number" style="width: 100%;height:36px;">
+                                                    </div>
+                                                    <div class="col-sm-2 text-left">
+                                                        <button class="btn btn-primary" id="but" type="submit" disabled> Send To X-Ray&nbsp;<i class="fa fa-send"></i></button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                </div>
+                                <input type="text" name="doctor_name" value="{{ $patient_in_treatment->doctor->first_name }}" style="visibility: hidden;">
+                                <input type="text" name="patient_name" value="{{ $patient_in_treatment->name }}" style="visibility: hidden;">
+                                <input type="text" name="patient_id" value="{{ $patient_in_treatment->id_patient }}"style="visibility: hidden;">
+                            </form>
                             <form action="/operation" method="POST">
 
                                 <input hidden type="hidden"/>
                                 <input hidden type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
                                 {{--<input hidden type="hidden" name="visits" value="{{ $treatments->visits  }}"/>--}}
 
-                                <div class="row" style="margin-top:30px;">
-                                    <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6" style="margin-top: -85px;">
                                         <div class="form-group">
-                                            <label>Tooth Number :</label>
-                                            <input type="number" class="form-control" required name="teeth_number"/>
+                                            <label></label>
+                                            <input type="number" class="form-control" id="copyteeth" required name="teeth_number"style="visibility: hidden">
                                         </div>
                                         <div class="form-group">
                                             <div class="i-checks" for="nex">Have X-Ray :
@@ -292,6 +327,7 @@
                                         <img src="{{ asset('img/all_tooth.jpg') }}" width="100%"/>
                                     </div>
                                 </div>
+<<<<<<< HEAD
 
                                 <div class="row">
                                     <div class="col-md-5">
@@ -301,6 +337,65 @@
                                     </div>
                                 </div>
                             </form>
+=======
+                                <div class="col-sm-10 text-left">
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:30px;">
+                                <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Select Dental Defect *</label>
+                                    <select class="form-control">
+                                        <option value="1">Select Dental Defect</option>
+                                        <option value="1">Crown Fracture</option>
+                                        <option value="1">BDR</option>
+                                        <option value="2">G-Caries</option>
+                                        <option value="3">Attrision</option>
+                                        <option value="4">Calculus</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Treatment *</label>
+                                    <select class="form-control">
+                                        <option value="1">Select Treatment</option>
+                                        <option value="1">PF (Permanent Filling)</option>
+                                        <option value="2">RCT (Root Canal)</option>
+                                        <option value="3">Extraction</option>
+                                        <option value="4">Pulpotomy</option>
+                                        <option value="5">Apexification</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nex">Treatment Cost:</label>
+                                    <input type="number" class="form-control" name="nex" value="2000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nex">Do you Give Discount ?:</label>
+                                    <input type="number" class="form-control" name="nex">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nex">Next Appointment ?</label>
+                                    <input type="date" class="form-control" name="nex">
+                                   </div>
+
+                                          </div>
+
+                                      </div>
+
+                                      <div class="row">
+                                          <div class="col-md-5">
+                                              <button class="btn btn-primary"> Send To Finance&nbsp;<i class="fa fa-save"></i></button>
+
+                                          </div>
+                                      </div>
+                                     </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </form>
+
+
+>>>>>>> mahdi2013safari-master
                         </div>
                     </div>
                 </div>
@@ -312,6 +407,7 @@
 @endsection
 
 @section('script')
+
     <script src="{{ asset('js/tooths.js') }}" type="javascript"></script>
     <script>
 
@@ -323,4 +419,36 @@
 //            alert('const = '+e.target.id);
         }
     </script>
+    {{-- Copying input from tooth number --}}
+    <script type="text/javascript">
+        function copyvalue() {
+        var teeth=document.getElementById('teeth').value;
+        document.getElementById('copyteeth').value=teeth;
+        }
+        </script>
+
+        {{-- disabling send to xray button --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+       $(document).ready(function () {
+           $('#check').change(function () {
+              var ch=this.checked;
+              if(!ch){
+                  $('#but').prop('disabled',true);
+              }else{
+                  $('#but').prop('disabled',false);
+              }
+           });
+       });
+    </script>
+    <script>
+        $(document).ready(function () {
+           $('#id').click(function () {
+               $('#but').prop('disabled',true);
+           });
+        });
+    </script>
+
+
+
 @endsection

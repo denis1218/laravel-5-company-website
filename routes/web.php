@@ -177,7 +177,12 @@ Route::get('/iframe', function () {
         return view('doctor_salary');
     });
 
+<<<<<<< HEAD
     Route::get('patient/{id}/delete', 'PatientController@destroy');
+=======
+
+Route::get('patient/{id}/delete', 'PatientController@destroy');
+>>>>>>> mahdi2013safari-master
 
 
 // Doctor Registrationexp
@@ -199,7 +204,21 @@ Route::resource('/patient_report', 'patientReportController');
 // Doctor Registration
 Route::resource('/doctors','DoctorController');
 
+
+//Doctor Operation
+Route::resource('operation','OperationController');
+
+//Xray Controller
+Route::resource('xray','XrayController');
+
+//Treatment controller
+Route::resource('/treat','TreatmentController');
+
 Route::resource('/operation','TreatmentController');
 
 Route::get('/operation/create/{id}','TreatmentController@create');
+<<<<<<< HEAD
 Route::get('/operation/{id}/edit/{patient_id}','TreatmentController@edit_treatment');
+=======
+
+>>>>>>> mahdi2013safari-master

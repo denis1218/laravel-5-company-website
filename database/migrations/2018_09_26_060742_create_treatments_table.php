@@ -29,7 +29,6 @@ class CreateTreatmentsTable extends Migration
             $table->integer('estimated_fee');
             $table->integer('discount');
             $table->unsignedInteger('patient_id')->nullable();
-
             $table->timestamps();
 
             $table->foreign('patient_id')

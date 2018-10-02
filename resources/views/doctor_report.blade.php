@@ -57,60 +57,61 @@
                 </div>
 
                 {{-- patient personal information --}}
-                @foreach($doctor as $doc)
+
                 <div class="row" style="padding-left:30px; font-size: 20px;">
                     <div class="row m-b-lg m-t-lg">
                         <div class="col-md-5">
-                            {{--<div class="profile-image">--}}
-                                {{--<img src="img/doctors.png" class="img-circle circle-border m-b-md" alt="profile">--}}
-                            {{--</div>--}}
+                            @foreach($doctor as $d)
                             <div class="profile-info">
                                 <div class="">
                                     <div>
                                         <h2 class="no-margins font-b">
-                                            {{$doc->first_name}}
+                                            {{ $d->first_name }}
                                         </h2>
-                                        <h4> ID:&nbsp{{$doc->id}}</h4>
+                                        <h4> ID:&nbsp{{$d->id}}</h4>
                                         <small class="font-m">
                                             Dental Expert for 2 years work in dental clinics and more 100 patient visited
                                         </small>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
                         <div class="col-md-7">
+                            @foreach($doctor as $do)
                             <table class="table small m-b-xs">
                                 <tbody>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Gender:<b>&nbsp;{{$doc->gender}}</b>&nbsp;<i class="fa fa-male"></i></span>
+                                        <span class="font-m">Gender:<b>&nbsp;{{$do->gender}}</b>&nbsp;<i class="fa fa-male"></i></span>
                                     </td>
                                     <td>
-                                        <span class="font-m">Age:<b>&nbsp;{{$doc->age}}</b>&nbsp;<i class=""></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-m">Salary Type:<b>&nbsp; {{$doc->salary_type}}</b>&nbsp;<i class="fa fa-user-md"></i></span>
-                                    </td>
-                                    <td>
-                                        <span class="font-m">Salary :<b>&nbsp;{{$doc->salary_amount}}</b>&nbsp;<i class=""></i></span>
+                                        <span class="font-m">Age:<b>&nbsp;{{$do->age}}</b>&nbsp;<i class=""></i></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Date Reg:<b>&nbsp;{{$doc->created_at}}</b>&nbsp;<i class="fa fa-calendar"></i></span>
+                                        <span class="font-m">Salary Type:<b>&nbsp; {{$do->salary_type}}</b>&nbsp;<i class="fa fa-user-md"></i></span>
                                     </td>
                                     <td>
-                                        <span class="font-m">Department:<b>&nbsp {{$doc->dept_id}}</b>&nbsp;<i class=""></i></span>
+                                        <span class="font-m">Salary :<b>&nbsp;{{$do->salary_amount}}</b>&nbsp;<i class=""></i></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="font-m">Date Reg:<b>&nbsp;{{$do->created_at}}</b>&nbsp;<i class="fa fa-calendar"></i></span>
+                                    </td>
+                                    <td>
+                                        <span class="font-m">Department:<b>&nbsp {{$do->dept_id}}</b>&nbsp;<i class=""></i></span>
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
+                            @endforeach
                         </div>
                     </div>
                 </div>
-                @endforeach
+
                 {{-- patient personal information --}}
                 <hr/>
                 {{-- table info patient --}}

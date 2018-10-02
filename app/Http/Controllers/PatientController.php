@@ -65,7 +65,7 @@ class PatientController extends Controller
             }
             $phonenumber = $request->phone;
 
-        $patient->FK_id_Doctor = $request->input('FK_id_Doctor');
+        $patient->doctor_id = $request->input('FK_id_Doctor');
         $patient->status = 'new patient';
         $patient->problem_health = $string;
         $patient->id_patient = 'P-'.$phonenumber;

@@ -15,6 +15,7 @@ class Patient extends Model
         return $this->belongsTo(Doctor::class,'doctor_id','id');
     }
 
+<<<<<<< HEAD
 
     public function treatment(){
         return $this->hasMany(Treatment::class,'patient_id','id');
@@ -26,4 +27,13 @@ class Patient extends Model
     }
 
 
+=======
+    public function xray(){
+        return $this->hasMany(Xray::class);
+    }
+
+    public function treatments(){
+        return $this->hasMany(Treatment::class,'patient_id','id');
+    }
+>>>>>>> mahdi2013safari-master
 }

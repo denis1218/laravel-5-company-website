@@ -67,10 +67,13 @@
 
 @section('content')
 
-    <div class="col-lg-9">
+
+
+    {{-- table xray One patient --}}
+    <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>X-Ray Patient </h5>
+                <h5> X-Ray Table of Patient</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -89,198 +92,57 @@
                     </a>
                 </div>
             </div>
-
             <div class="ibox-content">
-
-                <div class="row" style="margin-bottom: -30px;">
-                    <div class="row m-b-lg m-t-lg">
-                        <div class="col-md-6">
-                            <div class="profile-info">
-                                <div class="">
-                                    <div>
-                                        <h2 class="no-margins font-b">
-                                            Ahmad Farid
-                                        </h2>
-                                        <h4>ID: P-504075</h4>
-                                        {{-- <small style="font-size: 10px;">
-                                            <span style="font-size: 10px; font-weight: bold;">Problem teeth : </span>Orthodontist,
-                                            Periodontist <br/>
-                                            <span style="font-size: 10px; font-weight: bold;">Problem Health : </span>Blood
-                                            Pressure , Allergy to Penicillin , Allergy to Anaesthetic
-                                        </small> --}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <table class="table small m-b-xs">
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <span class="font-m">Gender:<b>&nbsp;Male</b>&nbsp;<i class="fa fa-male"></i></span>
-                                    </td>
-                                    <td>
-                                        <span class="font-m">Age:<b>&nbsp;25</b>&nbsp;<i class=""></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-m">Doctor:<b>&nbsp;Dr.Ahmadi</b>&nbsp;<i
-                                                    class="fa fa-user-md"></i></span>
-                                    </td>
-                                    <td>
-                                        <span class="font-m">Visited:<b>&nbsp;First Time</b>&nbsp;<i
-                                                    class=""></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-m">Date Reg:<b>&nbsp;2018/5/26</b>&nbsp;<i
-                                                    class="fa fa-calendar"></i></span>
-                                    </td>
-                                    <td>
-                                        <span class="font-m text-info">Cash X-Ray:<b>&nbsp;Paid</b>&nbsp;<i
-                                                    class="fa fa-money"></i></span>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <hr class="bg-primary"/>
                 <div class="row">
-                    <div class="col-md-5">
-                        <table class="table table-condensed table-bordered text-center">
+                    {{-- table of content of X-Ray of petient --}}
+                    <div class="col-md-12">
+
+                        <div class="row text-right">
+                            <span>Navigate between days :</span>
+                            <div class="btn-group">
+                                <button class="btn btn-white"><i class="fa fa-arrow-left text-success"></i>&nbsp;&nbsp;Last day</button>
+                                <button class="btn btn-success">ToDay</button>
+                                <button class="btn btn-white">Next day &nbsp;<i class="fa fa-arrow-right text-success"></i></button>
+                            </div>
+
+                        </div>
+                        <br/>
+                        <table class="table table-hover">
+                            <thead>
                             <tr>
-                                <td><strong style="margin-top:30px;">Tooth Image :</strong></td>
-                                <td><img src="img/teeths/4.png"/></td>
+                                <th>X-Ray ID</th>
+                                <th>Patient ID</th>
+                                <th>Tooth NO</th>
+                                <th>Date & Time</th>
+                                <th>Type of  Treatment</th>
+                                <th>Cash X-Ray</th>
+                                <th>Edit</th>
                             </tr>
+                            </thead>
+                            <tbody>
                             <tr>
-                                <td><strong>Tooth Number :</strong></td>
-                                <td>4</td>
+                                <td>1</td>
+                                <td>P-078565552</td>
+                                <td>7</td>
+                                <td>2018/5/25</td>
+                                <td>Dr. Tamim</td>
+                                <td>Paid</td>
+                                <td>
+                                    <button class="btn btn-xs btn-primary" data-toggle="modal"
+                                            data-target="#myModal4image">Edit <i class="fa fa-edit"></i></button>
+                                    <button class="btn btn-xs btn-danger demo_delete">Delete <i
+                                                class="fa fa-remove"></i></button>
+                                </td>
                             </tr>
-                            <tr>
-                                <td><strong>Tooth Position :</strong></td>
-                                <td>Upper Right</td>
-                            </tr>
+
+                            </tbody>
                         </table>
-                    </div>
-                    <div class="col-md-7">
-                        <img src="img/all_tooth.jpg" class="img-responsive" id="img_all_tooth"/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3" style="margin-top:30px;">
-                        <button class="btn btn-primary xray">Save <i class="fa fa-save"></i></button>&nbsp;&nbsp;
-                        <button class="btn btn-white">Cancel</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        {{-- table xray One patient --}}
-        <div class="col-lg-12">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h5>Table X-Ray of Mostafa Ahamdi</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-wrench"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#">Config option 1</a>
-                            </li>
-                            <li><a href="#">Config option 2</a>
-                            </li>
-                        </ul>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="ibox-content">
-                    <div class="row">
-                        {{-- table of content of X-Ray of petient --}}
-                        <div class="col-md-12">
-
-                            <div class="row text-center">
-                                <span>Navigate between days :</span>
-                                    <div class="btn-group">
-                                        <button class="btn btn-white"><i class="fa fa-arrow-left text-success"></i>&nbsp;&nbsp;Last day</button>
-                                        <button class="btn btn-success">To Day</button>
-                                        <button class="btn btn-white">Next day &nbsp;<i class="fa fa-arrow-right text-success"></i></button>
-                                    </div>
-
+                        <div class="row">
+                            <div class="col-md-2">
+                                <strong>Result X-Ray</strong>
                             </div>
-                            <br/>
-                            <table class="table table-hover">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Patient PID</th>
-                                    <th>Tooth NO</th>
-                                    <th>Date & Time</th>
-                                    <th>Doctor Treatment</th>
-                                    <th>Cash X-Ray</th>
-                                    <th>Edit</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>P-078565552</td>
-                                    <td>7</td>
-                                    <td>2018/5/25</td>
-                                    <td>Dr. Tamim</td>
-                                    <td>Paid</td>
-                                    <td>
-                                        <button class="btn btn-xs btn-primary" data-toggle="modal"
-                                                data-target="#myModal4image">Edit <i class="fa fa-edit"></i></button>
-                                        <button class="btn btn-xs btn-danger demo_delete">Delete <i
-                                                    class="fa fa-remove"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>P-07778582</td>
-                                    <td>26</td>
-                                    <td>2018/5/26</td>
-                                    <td>Dr. Yasin</td>
-                                    <td>Paid</td>
-                                    <td>
-                                        <button class="btn btn-xs btn-primary" data-toggle="modal"
-                                                data-target="#myModal4image">Edit <i class="fa fa-edit"></i></button>
-                                        <button class="btn btn-xs btn-danger demo_delete">Delete <i
-                                                    class="fa fa-remove"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>P-07752536</td>
-                                    <td>23</td>
-                                    <td>2018/5/25</td>
-                                    <td>Dr. Samim</td>
-                                    <td>Paid</td>
-                                    <td>
-                                        <button class="btn btn-xs btn-primary" data-toggle="modal"
-                                                data-target="#myModal4image">Edit <i class="fa fa-edit"></i></button>
-                                        <button class="btn btn-xs btn-danger demo_delete">Delete <i
-                                                    class="fa fa-remove"></i></button>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <strong>Result X-Ray</strong>
-                                </div>
-                                <div class="col-md-3">
-                                    <strong>Current table X-Ray: 3</strong>
-                                </div>
+                            <div class="col-md-3">
+                                <strong>Current table X-Ray: 3</strong>
                             </div>
                         </div>
                     </div>
@@ -288,73 +150,6 @@
             </div>
         </div>
     </div>
-
-    {{-- list of patient xray --}}
-    <div class="col-lg-3">
-        <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>Your X-Ray Patient List</h5>
-                <div class="ibox-tools">
-                    <span class="label label-warning-light pull-right">7 Patients</span>
-                </div>
-            </div>
-            <div class="ibox-content">
-
-                <div>
-                    <div class="feed-activity-list">
-                        <div class="feed-element">
-                            <div class="media-body " style="margin-top: -20px;">
-                                <small class="pull-right">5m ago</small>
-                                <br/>
-                                <small class="pull-right"><i class="fa fa-spinner text-info"></i>&nbsp;Pending</small>
-                                <a href="#"><strong>P-665522</strong> <br/><strong>Ahamd Farid </strong><br></a>
-                                <small class="text-muted">Today 5:60 pm - 12.06.2018</small>
-                            </div>
-                        </div>
-                        <div class="feed-element">
-                            <div class="media-body " style="margin-top: -20px;">
-                                <small class="pull-right">5m ago</small>
-                                <br/>
-                                <small class="pull-right"><i class="fa fa-spinner text-info"></i>&nbsp;Pending</small>
-                                <a href="#"><strong>P-665522</strong> <br/><strong>Ahamd Farid </strong><br></a>
-                                <small class="text-muted">Today 5:60 pm - 12.06.2018</small>
-                            </div>
-                        </div>
-                        <div class="feed-element">
-                            <div class="media-body " style="margin-top: -20px;">
-                                <small class="pull-right">5m ago</small>
-                                <br/>
-                                <small class="pull-right"><i class="fa fa-spinner text-info"></i>&nbsp;Pending</small>
-                                <a href="#"><strong>P-665522</strong> <br/><strong>Ahamd Farid </strong><br></a>
-                                <small class="text-muted">Today 5:60 pm - 12.06.2018</small>
-                            </div>
-                        </div>
-                        <div class="feed-element">
-                            <div class="media-body " style="margin-top: -20px;">
-                                <small class="pull-right">5m ago</small>
-                                <br/>
-                                <small class="pull-right"><i class="fa fa-spinner text-info"></i>&nbsp;Pending</small>
-                                <a href="#"><strong>P-665522</strong> <br/><strong>Ahamd Farid </strong><br></a>
-                                <small class="text-muted">Today 5:60 pm - 12.06.2018</small>
-                            </div>
-                        </div>
-                        <div class="feed-element">
-                            <div class="media-body " style="margin-top: -20px;">
-                                <small class="pull-right">5m ago</small>
-                                <br/>
-                                <small class="pull-right"><i class="fa fa-spinner text-info"></i>&nbsp;Pending</small>
-                                <a href="#"><strong>P-665522</strong> <br/><strong>Ahamd Farid </strong><br></a>
-                                <small class="text-muted">Today 5:60 pm - 12.06.2018</small>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-
 
     {{-- modal window --}}
     <div class="modal inmodal" id="myModal4" tabindex="-1" role="dialog" aria-hidden="true">
