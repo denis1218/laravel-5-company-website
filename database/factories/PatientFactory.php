@@ -14,6 +14,6 @@ $factory->define(\App\Patient::class, function (Faker $faker) {
         'address' => $faker->streetAddress,
         'problem_health' => $faker->realText(10),
         'status' => $faker->city,
-        'FK_id_Doctor' => $faker->numberBetween(1,3)
+        'doctor_id' => $faker->numberBetween(1,3)
     ];
 });

@@ -195,7 +195,7 @@ Route::get('expenditure2/{id}','ExpenseController@destroy');
 // report patient
 Route::resource('/patient_report', 'patientReportController');
 // patient report
-//Route::get('/patient_report2/{id}','patientReportController@show');
+//Route::get('/report_patient/{id}','testController@index');
 
 // Doctor Registration
 Route::resource('/doctors','DoctorController');
@@ -203,4 +203,3 @@ Route::resource('/doctors','DoctorController');
 Route::resource('/operation','TreatmentController');
 
 Route::get('/operation/create/{id}','TreatmentController@create');
-

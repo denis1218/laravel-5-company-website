@@ -6,21 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Patient extends Model
 {
-    protected $guarded = ['FK_id_doctor','FK_id_X-Ray','FK_id_X-Treatment','FK_id_X-Payment'];
+    protected $guarded = [];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function doctor(){
-        return $this->belongsTo(Doctor::class,'FK_id_Doctor','id');
+        return $this->belongsTo(Doctor::class,'doctor_id','id');
     }
+
 
     public function treatment(){
-        return $this->hasMany(Treatment::class,'FK_id_patient','id');
+        return $this->hasMany(Treatment::class,'patient_id','id');
     }
 
-    public function allTreatmentList(){
-//        return $this->treatment()->allTreatmentList();
-        return $this->hasMany(TreatmentList::class,'FK_id_patient','id');
-    }
+
+
 }

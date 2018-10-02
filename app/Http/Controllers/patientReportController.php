@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Treatment;
 use App\TreatmentList;
 use Illuminate\Http\Request;
 use App\Patient;
@@ -51,11 +52,13 @@ class patientReportController extends Controller
      */
     public function show($id)
     {
-//        $patient = Patient::find($id);
-        $patient = Patient::with('doctor')->find($id)->get();
+        $treatment = Treatment::with('patient')->get()->find($id);
+        $patient = Patient::with('doctor')->get()->find($id);
 
-//        return view('patient.print', compact('patient'));
-        return $patient;
+
+        return view('patient.print', compact('patient','treatment'));
+
+
 
 
     }

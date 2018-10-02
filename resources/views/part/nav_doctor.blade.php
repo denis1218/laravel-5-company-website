@@ -2,7 +2,7 @@
 <div class="row" style="margin-left:2px;margin-right: 20px;">
     <div class="col-sm-3">
         <h2><a class="btn btn-primary hvr-grow-shadow" style="font-size: 13px; width: 200px;"
-               href="/doc_opp"><i class="fa fa-table pull-left" style="color:#ffc000; font-size: 25px;"></i>&nbsp;&nbsp;Patient List</a>
+               href="/operation"><i class="fa fa-table pull-left" style="color:#ffc000; font-size: 25px;"></i>&nbsp;&nbsp;Patient List</a>
         </h2>
     </div>
 

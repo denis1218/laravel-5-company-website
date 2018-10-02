@@ -15,22 +15,19 @@ class CreateXRaysTable extends Migration
     {
         Schema::create('x_rays', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('tooth_number');
             $table->longText('description');
-            $table->boolean('status_pay');
-            $table->unsignedInteger('FK_id_treatment')->nullable();
-            $table->unsignedInteger('FK_id_patient')->nullable();
+            $table->boolean('status_xray');
+            $table->boolean('status_pay')->nullable();
+            $table->unsignedInteger('treatment_id')->nullable();
+
             $table->timestamps();
 
-            $table->foreign('FK_id_treatment')
+            $table->foreign('treatment_id')
                 ->references('id')->on('treatments')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-
-            $table->foreign('FK_id_patient')
-                ->references('id')->on('patients')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
         });
     }
 
