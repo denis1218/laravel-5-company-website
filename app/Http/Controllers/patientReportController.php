@@ -58,12 +58,14 @@ class patientReportController extends Controller
 
         return view('patient.print', compact('patient','treatment'));
 
-
-
-
     }
 
     public  function report($id){
+        $treatment = Treatment::with('patient')->get()->find($id);
+        $patient = Patient::with('doctor')->get()->find($id);
+
+
+        return view('patient.patientPrint', compact('patient','treatment'));
 
     }
     /**

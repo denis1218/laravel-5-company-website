@@ -29,56 +29,49 @@
 <div class="row">
     <div class="col-lg-6"></div>
     <div class="col-lg-6">
-<div class="middle-box text-center loginscreen animated fadeInDown" style="margin-top: 100px;">
-    <div style="box-shadow:3px 3px 3px 3px  lightblue">
-        <div>
-            <img src="/img/Dentaa3.png" width="650px" class="img-responsive" alt="">
+        <div class="middle-box text-center loginscreen animated fadeInDown" style="margin-top: 100px;">
+            <div style="box-shadow:3px 3px 3px 3px  lightblue">
+                <div>
+                    <img src="/img/Dentaa3.png" width="650px" class="img-responsive" alt="">
+                </div>
+                <h3 style="color: white;">Welcome to HK|Clinic</h3>
+
+                <form class="m-t" role="form" action="/dash">
+                    {{csrf_field()}}
+
+                    <div class="form-group">
+                        <select class="form-control" required>
+                            <option value="">Select Your Position</option>
+                            <option value="1">Doctor</option>
+                            <option value="2">Receptionist</option>
+                            <option value="3">Finance</option>
+                            <option value="4">Admin</option>
+                            <option value="5">other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Email Address" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="pass" placeholder="Password" required="">
+                    </div>
+                    <button type="submit"  class="btn btn-success block full-width m-b">Login</button>
+
+
+                    <a href="#">
+                        <small style="color:white;">Forgot password?</small>
+                    </a>
+                </form>
+            </div>
         </div>
-        <h3 style="color: white;">Welcome to HK|Clinic</h3>
-<<<<<<< HEAD
-        <form class="m-t" role="form" action="">
-            {{--<input type="hidden" name="_token" value="{{csrf_token()}}">--}}
-=======
-        <form class="m-t" role="form" >
-            <input type="hidden" name="_token" value="{{csrf_token()}}">
->>>>>>> 1ce2341a84044e1b11117a4afb0d5c10ac67516e
 
-            <div class="form-group">
-                <select class="form-control" required>
-                    <option value="">Select Your Position</option>
-                    <option value="1">Doctor</option>
-                    <option value="2">Receptionist</option>
-                    <option value="3">Finance</option>
-                    <option value="4">Admin</option>
-                    <option value="5">other</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="email" class="form-control" name="email" placeholder="Email Address" required="">
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" name="pass" placeholder="Password" required="">
-            </div>
-<<<<<<< HEAD
-            <a href="/dash"  class="btn btn-success block full-width m-b">Login</a>
-=======
-            <a href="/dash" class="btn btn-success block full-width m-b">Login</a>
->>>>>>> 1ce2341a84044e1b11117a4afb0d5c10ac67516e
-
-            <a href="#">
-                <small style="color:white;">Forgot password?</small>
-            </a>
-        </form>
+        <!-- Mainly scripts -->
+        <script src="js/jquery-2.1.1.js"></script>
+        <script src="js/bootstrap.min.js"></script>
     </div>
 </div>
-    </div>
-
-</div>
-<!-- Mainly scripts -->
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
 </body>
+
 
 
 <!-- Mirrored from webapplayers.com/inspinia_admin-v2.3/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 01 Sep 2015 13:12:22 GMT -->
