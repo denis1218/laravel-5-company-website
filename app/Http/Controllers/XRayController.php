@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\XRay;
+use App\Patient;
+use App\Xray;
 use Illuminate\Http\Request;
 
-class XRayController extends Controller
+class XrayController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,9 @@ class XRayController extends Controller
      */
     public function index()
     {
-        //
+        $patient=Xray::orderBy('id','asc')->paginate(10);
+        return view('xraypatient_list',compact('patient'));
+//        return $patient;
     }
 
     /**
@@ -24,7 +27,7 @@ class XRayController extends Controller
      */
     public function create()
     {
-        //
+        return view('treatment_operation');
     }
 
     /**
@@ -35,16 +38,25 @@ class XRayController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rey=new Xray();
+        $rey->tooth_number=$request->tooth_number;
+        $rey->patient_id=$request->patient_id;
+        $rey->patient_name=$request->patient_name;
+        $rey->doctor_name=$request->doctor_name;
+        $rey->xray_status=$request->input('xray_status');
+        $rey->save();
+        return redirect('/xray');
+    //    return $request;
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\XRay  $xRay
+     * @param  \App\Xray  $xray
      * @return \Illuminate\Http\Response
      */
-    public function show(XRay $xRay)
+    public function show(Xray $xray)
     {
         //
     }
@@ -52,33 +64,43 @@ class XRayController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\XRay  $xRay
+     * @param  \App\Xray  $xray
      * @return \Illuminate\Http\Response
      */
-    public function edit(XRay $xRay)
+    public function edit(Xray $xray)
     {
-        //
+        $patients=Patient::find($xray);
+        $spats=Xray::find($xray);
+        return view('xray_show',compact('spats','patients'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\XRay  $xRay
+     * @param  \App\Xray  $xray
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, XRay $xRay)
+    public function update(Request $request, Xray $xray)
     {
-        //
+        $Edt=Xray::find($xray)->first();
+        $Edt->tooth_number=$request->tooth_number;
+        $Edt->patient_id=$request->patient_id;
+        $Edt->patient_name=$request->patient_name;
+        $Edt->doctor_name=$request->doctor_name;
+        $Edt->xray_status=$request->xray_status;
+        $Edt->save();
+        return redirect('/xray');
+    //    return $request;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\XRay  $xRay
+     * @param  \App\Xray  $xray
      * @return \Illuminate\Http\Response
      */
-    public function destroy(XRay $xRay)
+    public function destroy(Xray $xray)
     {
         //
     }

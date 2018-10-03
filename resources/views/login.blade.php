@@ -29,6 +29,7 @@
 <div class="row">
     <div class="col-lg-6"></div>
     <div class="col-lg-6">
+<<<<<<< HEAD
         <div class="middle-box text-center loginscreen animated fadeInDown" style="margin-top: 100px;">
             <div style="box-shadow:3px 3px 3px 3px  lightblue">
                 <div>
@@ -55,6 +56,35 @@
                         <input type="password" class="form-control" name="pass" placeholder="Password" required="">
                     </div>
                     <a href="/dash" class="btn btn-success block full-width m-b">Login</a>
+=======
+<div class="middle-box text-center loginscreen animated fadeInDown" style="margin-top: 100px;">
+    <div style="box-shadow:3px 3px 3px 3px  lightblue">
+        <div>
+            <img src="/img/Dentaa3.png" width="650px" class="img-responsive" alt="">
+        </div>
+        <h3 style="color: white;">Welcome to HK|Clinic</h3>
+        <form class="m-t" role="form" action="">
+            {{--<input type="hidden" name="_token" value="{{csrf_token()}}">--}}
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
+
+            <div class="form-group">
+                <select class="form-control" required>
+                    <option value="">Select Your Position</option>
+                    <option value="1">Doctor</option>
+                    <option value="2">Receptionist</option>
+                    <option value="3">Finance</option>
+                    <option value="4">Admin</option>
+                    <option value="5">other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Email Address" required="">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="pass" placeholder="Password" required="">
+            </div>
+            <a href="/dash" class="btn btn-success block full-width m-b">Login</a>
+>>>>>>> 0d05870c41e15012bfa2c8b2a326c30a8795dfee
 
                     <a href="#">
                         <small style="color:white;">Forgot password?</small>

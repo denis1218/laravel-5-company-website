@@ -177,8 +177,7 @@ Route::get('/iframe', function () {
         return view('doctor_salary');
     });
 
-
-    Route::get('patient/{id}/delete', 'PatientController@destroy');
+Route::get('/patient/{id}/delete', 'PatientController@destroy');
 
 
 // Doctor Registrationexp
@@ -199,6 +198,16 @@ Route::get('patient_report2/{id}','patientReportController@report');
 
 // Doctor Registration
 Route::resource('/doctors','DoctorController');
+
+
+//Doctor Operation
+Route::resource('operation','OperationController');
+
+//Xray Controller
+Route::resource('xray','XrayController');
+
+//Treatment controller
+Route::resource('/treat','TreatmentController');
 
 Route::resource('/operation','TreatmentController');
 

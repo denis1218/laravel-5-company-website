@@ -106,8 +106,7 @@
                                                                     <td>{{ $patients->doctor->first_name }}</td>
                                                                     <td>{{ $patients->status }}</td>
                                                                     <td>{{ $patients->created_at }}</td>
-                                                                    <td><a class="btn btn-xs btn-warning" href=""
-                                                                           onclick="deletePatient({{ $patients->id }})">remove</a>
+                                                                    <td><a class="btn btn-xs btn-warning" href="" onclick="deletePatient({{ $patients->id }})">remove</a>
                                                                     </td>
                                                                 </tr>
                                                             @endforeach
