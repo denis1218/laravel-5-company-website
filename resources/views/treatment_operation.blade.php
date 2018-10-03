@@ -224,12 +224,13 @@
                             <form action="/xray" method="post">
                                 {{csrf_field()}}
                                 <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="i-checks"><label for=""><h4 style="color:green">Is X-Ray Needed?</h4></label>&nbsp;&nbsp;
+                                   <div class="col-sm-4">
+                                    <h4 style="color:green">Is X-Ray Needed?</h4>
                                         <div class="input-group">
-                                             <div class="i-checks"><input type="radio"  value="not" name="xray_status" id="check">yes</div></div>
-                                             <div class="i-checks"><input type="radio" id="id"  name="xray_status" checked="checked">No</div></div>
+                                             <input type="radio" onchange="activation()"  value="not" name="xray_status" id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>YES</b></strong> &nbsp;&nbsp;&nbsp;
+                                             <input type="radio" onchange="deactivation()" id="id"  name="xray_status" checked="checked" style="height: 20px;width:20px;"> &nbsp;<strong><b>NO</b></strong>
                                         </div>
+                                   </div>
                                 </div>
 
                                 <br>
@@ -270,13 +271,7 @@
                                             <label></label>
                                             <input type="number" class="form-control" id="copyteeth" required name="teeth_number"style="visibility: hidden">
                                         </div>
-                                        <div class="form-group">
-                                            <div class="i-checks" for="nex">Have X-Ray :
-                                                <label>&nbsp;&nbsp;
-                                                    <input type="checkbox" name="have_xray">
-                                                </label>
-                                            </div>
-                                        </div>
+                                            <input type="checkbox" id="next" name="have_xray" style="visibility:hidden;">
                                         <div class="form-group">
                                             <label>Select Dental Defect :</label>
                                             <select class="form-control" name="dentaldefect">
@@ -368,27 +363,31 @@
         </script>
 
         {{-- disabling send to xray button --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-       $(document).ready(function () {
-           $('#check').change(function () {
-              var ch=this.checked;
-              if(!ch){
-                  $('#but').prop('disabled',true);
-              }else{
-                  $('#but').prop('disabled',false);
-              }
-           });
-       });
-    </script>
-    <script>
-        $(document).ready(function () {
-           $('#id').click(function () {
-               $('#but').prop('disabled',true);
-           });
-        });
+
+    <script type="text/javascript">
+        function activation() {
+            var ch=document.getElementById('check').value;
+            if(ch=='not'){
+                document.getElementById('but').disabled=false;
+                document.getElementById('next').checked=true;
+            } else{
+                document.getElementById('but').disabled=true;
+                document.getElementById('next').checked=false;
+            }
+        }
     </script>
 
-
+    <script type="text/javascript">
+        function deactivation() {
+            var deac=document.getElementById('id').value;
+            if(deac=='on'){
+                document.getElementById('but').disabled=true;
+                document.getElementById('next').checked=false;
+            }else {
+                document.getElementById('but').disabled=false;
+                document.getElementById('next').checked=true;
+            }
+        }
+    </script>
 
 @endsection
