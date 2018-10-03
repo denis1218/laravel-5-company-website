@@ -38,7 +38,7 @@ class CreateIncomesTable extends Migration
                 ->onUpdate('cascade');
 
             $table->foreign('xray_id')
-                ->references('id')->on('x_rays')
+                ->references('id')->on('xrays')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 

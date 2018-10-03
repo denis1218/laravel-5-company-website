@@ -73,10 +73,6 @@ class TreatmentController extends Controller
         $treatment->status_pay = true;
         $treatment->have_xray = false;
 
-        $income = new Income();
-        $request->
-
-
         $treatment->save();
         return redirect('/operation');
 
