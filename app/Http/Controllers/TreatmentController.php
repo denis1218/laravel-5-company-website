@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DentalDefectList;
+use App\Income;
 use App\Patient;
 use App\Treatment;
 use App\TreatmentList;
@@ -20,8 +21,10 @@ class TreatmentController extends Controller
      */
     public function index()
     {
+
         $operation = Patient::orderBy('id', 'asc')->paginate(10);
         return view('doctor_operations')->with('operation', $operation);
+
     }
 
     /**
@@ -41,8 +44,7 @@ class TreatmentController extends Controller
 
         $patient_id = $patient_in_treatment->id;
 
-        return view('treatment_operation', compact('patient_in_treatment',
-            'patient_id', 'treatementList', 'dentalDefectList', 'treatments'));
+        return view('treatment_operation', compact('patient_in_treatment','patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments'));
     }
 
 

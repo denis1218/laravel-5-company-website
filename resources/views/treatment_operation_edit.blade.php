@@ -158,7 +158,7 @@
                     <div id="tab-1" class="tab-pane">
                         <div class="panel-body">
                             <br>
-                            @foreach($patient_in_treatment->treatments as $treats)
+                            @foreach($patient_in_treatment->treatment as $treats)
                                 {{-- start for each here --}}
                                 <div class="row shadow p-3 mb-5 rounded bg-info"
                                      table-exchange

@@ -85,6 +85,7 @@
                                                 <th>Date & Time Appointment</th>
                                                 <th>Healths Problem</th>
                                                 <th>Full Details</th>
+                                                <th>Print</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -97,8 +98,10 @@
                                                 <td>{{$patient->status}}</td>
                                                 <td><i class="fa fa-calendar"></i>{{$patient->created_at}}</td>
                                                 <td class="">{{$patient->problem_health}}</td>
-                                                <td><a class="btn btn-xs btn-primary" href="/patient_report/{{$patient->id}}" ><i class="fa fa-info"></i>
+                                                <td><a class="btn btn-xs btn-primary" href="/patient_report2/{{$patient->id}}" ><i class="fa fa-info"></i>
                                                         Details</a></td>
+                                                <td><a class="btn btn-xs btn-primary" href="/patient_report/{{$patient->id}}" ><i class="fa fa-info"></i>
+                                                        Print</a></td>
 
                                             </tr>
                                                 @endforeach
@@ -108,11 +111,6 @@
                             </div>
                         </div>
                 </div>
-
-               
-               
-                
-                
             </div>
         </div>
     </div>
