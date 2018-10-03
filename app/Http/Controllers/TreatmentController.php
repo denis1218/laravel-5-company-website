@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DentalDefectList;
+use App\Income;
 use App\Patient;
 use App\Treatment;
 use App\TreatmentList;
@@ -70,6 +71,10 @@ class TreatmentController extends Controller
         $treatment->dentaldefect = $request->input('dentaldefect');
         $treatment->status_pay = true;
         $treatment->have_xray = false;
+
+        $income = new Income();
+        $request->
+
 
         $treatment->save();
         return redirect('/operation');

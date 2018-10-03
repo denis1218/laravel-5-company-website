@@ -19,17 +19,9 @@ class PatientController extends Controller
         $patient_all = Patient::all();
         $doctor = Doctor::find(1);
         $doctor_list = Doctor::all();
-//        foreach($doctor_list as $doct){
-//            foreach($doct->patients as $pat ){
-////               dd($pat->name.$pat->lastname);
-//                    dd($doct->id);
-//            }
-//        }
 
         return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
     }
-
-
 
     /**
      * Show the form for creating a new resource.
