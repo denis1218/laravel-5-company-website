@@ -19,6 +19,7 @@ class CreateXraysTable extends Migration
             $table->string('patient_id');
             $table->string('patient_name');
             $table->string('doctor_name');
+            $table->integer('paid_amount')->nullable();
             $table->string('xray_status');
             $table->timestamps();
         });

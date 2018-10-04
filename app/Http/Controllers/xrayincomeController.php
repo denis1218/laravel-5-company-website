@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Income;
-use App\Treatment;
 use Illuminate\Http\Request;
+use App\XRay;
 
-class IncomeController extends Controller
+class xrayincomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,8 @@ class IncomeController extends Controller
      */
     public function index()
     {
-        $income = Treatment::where('remaining_fee','>','0')->get();
-            return view('income',compact('income'));
-
+        $xrey = XRay::where('paid_amount',0)->get();
+        return view('xrey_income',compact('xrey'));
     }
 
     /**
@@ -38,64 +36,58 @@ class IncomeController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Income  $income
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Income $income)
+    public function show($id)
     {
-        $income = Treatment::where('remaining_fee',0)->get();
 
-        return view('complete_income',compact('income'));
+    }
+    public function showComplete(){
+        $xrey = XRay::where('paid_amount','>','0')->get();
+        return view('completeXray',compact('xrey'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Income  $income
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Income $income)
+    public function edit($id)
     {
-
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Income  $income
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
-        $incom = Treatment::find($id);
-        $incom->paid_amount = $incom->paid_amount + $request->paid_amount;
-        $incom->remaining_fee = $incom->remaining_fee - $request->paid_amount;
-        $incom->save();
-        return redirect('income');
+        $xry = XRay::find($id);
+        $xry->paid_amount = $request->paid_amount;
+        $xry->save();
+        return redirect('xrey_income');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Income  $income
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Income $income)
+    public function destroy($id)
     {
         //
-    }
-    public  function editPaid(Request $request,$id){
-         $treat = Treatment::find($id);
-         $treat->paid_amount = $request->paid_amount;
-         $treat->save();
-         return redirect('income');
-
     }
 }
