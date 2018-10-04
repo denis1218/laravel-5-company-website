@@ -1,12 +1,7 @@
 <?php
 
 
-Route::get('/', function () {
-    return view('/login');
-});
-Route::get('login',function (){
-   return view('/login');
-});
+//
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +12,10 @@ Route::get('login',function (){
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',function (){
+   return view('login');
+});
+
 
 
 Route::get('/patient', function () {
@@ -81,11 +80,12 @@ Route::get('iframe', function () {
 Route::get('/iframe', function () {
     return view('/iframe');
 });
-    Route::post('dash2', 'UserController@authenticat');
+
 // dashboard of clinic
     Route::get('/dash', function () {
         return view('dash');
     });
+
 
 // show all account users
     Route::get('/account', function () {
@@ -177,8 +177,7 @@ Route::get('/iframe', function () {
         return view('doctor_salary');
     });
 
-
-    Route::get('patient/{id}/delete', 'PatientController@destroy');
+Route::get('/patient/{id}/delete', 'PatientController@destroy');
 
 
 // Doctor Registrationexp
@@ -188,19 +187,30 @@ Route::get('expense_form',function (){
 });
 Route::resource('/expenditure','ExpenseController');
 Route::get('expenditure2/{id}','ExpenseController@destroy');
-//Route::patch('expenditure3/{id}','ExpenseController@update');
+
 
 
 
 // report patient
 Route::resource('/patient_report', 'patientReportController');
-// patient report
-//Route::get('/report_patient/{id}','testController@index');
+Route::get('patient_report2/{id}','patientReportController@report');
+
 
 // Doctor Registration
 Route::resource('/doctors','DoctorController');
+
+
+//Doctor Operation
+Route::resource('operation','OperationController');
+
+//Xray Controller
+Route::resource('xray','XrayController');
+
+//Treatment controller
+Route::resource('/treat','TreatmentController');
 
 Route::resource('/operation','TreatmentController');
 
 Route::get('/operation/create/{id}','TreatmentController@create');
 Route::get('/operation/{id}/edit/{patient_id}','TreatmentController@edit_treatment');
+
