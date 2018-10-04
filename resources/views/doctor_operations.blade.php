@@ -118,7 +118,6 @@
                             @else
                                 <h3 style="color:red;text-align: center;">NO PATIENT HAS BEEN REGISTERED YET</h3>
                             @endif
-                            {{$operation->links()}}
                         </div>
                     </div>
 
