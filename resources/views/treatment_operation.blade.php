@@ -371,7 +371,7 @@
             </div>
         </div>
     </div>
-    </div>
+
 
 @endsection
 
@@ -395,7 +395,7 @@
 
     {{-- disabling send to xray button --}}
 
-<<<<<<< HEAD
+
     <script>
         $(document).ready(function () {
             $('#check').change(function () {
@@ -408,16 +408,7 @@
             });
         });
     </script>
-    <script>
-        $(document).ready(function () {
-            $('#id').click(function () {
-                $('#but').prop('disabled', true);
-            });
-        });
-    </script>
-=======
-        {{-- disabling send to xray button --}}
->>>>>>> b586c647018e93540a5ffcaae308e1f5fe08cf01
+
 
     <script type="text/javascript">
         function activation() {

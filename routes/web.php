@@ -166,9 +166,7 @@ Route::get('/iframe', function () {
     });
 
     Route::get('/pdf', 'PdfGenerator@PDF');
-    Route::get('xrey_income', function () {
-        return view('xrey_income');
-    });
+
 //doctor salary
     Route::get('/doctor_salary', function () {
         return view('doctor_salary');
@@ -214,3 +212,10 @@ Route::get('/operation/{id}/edit/{patient_id}','TreatmentController@edit_treatme
 //route for income
 
 Route::resource('income','IncomeController');
+Route::get('income2',"incomeController@show");
+Route::patch('income3/{id}','incomeController@editPaid');
+
+//route for xray income
+
+Route::resource('xrey_income','xrayincomeController');
+Route::get('xrey_income2','xrayincomeController@showComplete');
