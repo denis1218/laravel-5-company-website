@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Income;
+use App\Treatment;
 use Illuminate\Http\Request;
 
 class IncomeController extends Controller
@@ -14,7 +15,7 @@ class IncomeController extends Controller
      */
     public function index()
     {
-        $income = Income::all();
+        $income = Treatment::all();
             return view('income',compact('income'));
 
     }

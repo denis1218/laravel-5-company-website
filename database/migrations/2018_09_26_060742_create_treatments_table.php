@@ -27,6 +27,7 @@ class CreateTreatmentsTable extends Migration
             $table->longText('description')->nullable();
             $table->boolean('have_xray');
             $table->integer('estimated_fee');
+            $table->integer('paid_amount')->nullable();
             $table->integer('discount')->nullable();
             $table->unsignedInteger('patient_id')->nullable();
             $table->timestamps();

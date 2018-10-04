@@ -69,6 +69,7 @@ class TreatmentController extends Controller
         $treatment->next_appointment = $request->next_appointment;
         $treatment->description = $request->description;
         $treatment->estimated_fee = $request->estimated_fee;
+        $treatment->paid_amount = $request->paid_amount;
         $treatment->discount = $request->discount;
         $treatment->visits = $request->input('visits');
         $treatment->next_appointment = $request->input('next_appointment');

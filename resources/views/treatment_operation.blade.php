@@ -316,6 +316,7 @@
                                             <input type="number" class="form-control" id="cost_treatment"
                                                    name="estimated_fee" value="">
                                         </div>
+                                        <input type="text" name="paid_amount" hidden>
                                         <div class="form-group">
                                             <label for="nex">Discount :</label>
                                             <input type="number" class="form-control" name="discount">
