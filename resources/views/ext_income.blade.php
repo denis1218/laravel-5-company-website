@@ -197,6 +197,7 @@
                             @endif
                             </tbody>
                         </table>
+                        {{$others->links()}}
 
                         {{--Edit modal--}}
                         @foreach($others as $other)
