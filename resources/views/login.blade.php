@@ -29,15 +29,15 @@
 <div class="row">
     <div class="col-lg-6"></div>
     <div class="col-lg-6">
+<<<<<<< HEAD
         <div class="middle-box text-center loginscreen animated fadeInDown" style="margin-top: 100px;">
             <div style="box-shadow:3px 3px 3px 3px  lightblue">
                 <div>
                     <img src="/img/Dentaa3.png" width="650px" class="img-responsive" alt="">
                 </div>
                 <h3 style="color: white;">Welcome to HK|Clinic</h3>
-
-                <form class="m-t" role="form" action="/dash">
-                    {{csrf_field()}}
+                <form class="m-t" role="form" action="">
+                    {{--<input type="hidden" name="_token" value="{{csrf_token()}}">--}}
 
                     <div class="form-group">
                         <select class="form-control" required>
@@ -55,15 +55,16 @@
                     <div class="form-group">
                         <input type="password" class="form-control" name="pass" placeholder="Password" required="">
                     </div>
-                    <button type="submit"  class="btn btn-success block full-width m-b">Login</button>
-
-
+                    <a href="/dash" class="btn btn-success block full-width m-b">Login</a>
                     <a href="#">
                         <small style="color:white;">Forgot password?</small>
                     </a>
                 </form>
             </div>
         </div>
+    </div>
+<div style="box-shadow:3px 3px 3px 3px  lightblue">
+    <div>
 
         <!-- Mainly scripts -->
         <script src="js/jquery-2.1.1.js"></script>
@@ -71,7 +72,6 @@
     </div>
 </div>
 </body>
-
 
 
 <!-- Mirrored from webapplayers.com/inspinia_admin-v2.3/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 01 Sep 2015 13:12:22 GMT -->
