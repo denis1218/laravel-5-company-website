@@ -64,9 +64,6 @@ Route::get('/next_appointment', function () {
 });
 
 
-Route::get('/income', function () {
-    return view('income');
-});
 
 Route::get('/ext_income', function () {
     return view('ext_income');
@@ -205,3 +202,6 @@ Route::resource('/operation','TreatmentController');
 Route::get('/operation/create/{id}','TreatmentController@create');
 Route::get('/operation/{id}/edit/{patient_id}','TreatmentController@edit_treatment');
 
+//route for income
+
+Route::resource('income','IncomeController');

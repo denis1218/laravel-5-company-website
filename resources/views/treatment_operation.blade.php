@@ -92,7 +92,7 @@
                                         </h2>
                                         <h4>ID: {{ $patient_in_treatment->id_patient }}</h4>
                                         <small style="font-size: 15px;">
-                                            <span class="text-warning" style="font-size: 15px; font-weight: bold;">Problem Health : </span>Blood
+                                            <span class="text-warning" style="font-size: 15px; font-weight: bold;">Problem Health : </span>
                                             {{ $patient_in_treatment->problem_health }}
                                         </small>
                                     </div>

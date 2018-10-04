@@ -14,7 +14,9 @@ class IncomeController extends Controller
      */
     public function index()
     {
-        //
+        $income = Income::all();
+            return view('income',compact('income'));
+
     }
 
     /**

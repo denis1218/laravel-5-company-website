@@ -100,14 +100,15 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($income as $incom)
                         <tr class="gradeX">
-                            <td>1</td>
-                            <td>p011</td>
-                            <td>Abdullah</td>
-                            <td>1900</td>
-                            <td>1200</td>
-                            <td>100</td>
-                            <td>600</td>
+                            <td>{{$incom->id}}</td>
+                            <td>{{$incom->patient->id_patient}}</td>
+                            <td>{{$incom->patient->name}}</td>
+                            <td>{{$incom->estimated_fee}}</td>
+                            <td>{{$incom->amount}}</td>
+                            <td>{{$incom->discount}}</td>
+                            <td>{{$incom->remaining}}</td>
                             <td>
                                 <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
                                         data-target="#eprice">&nbsp;Paid
@@ -123,102 +124,8 @@
                                     Bill</a>
                             </td>
                         </tr>
+                        @endforeach
 
-                        <tr class="gradeX">
-                            <td>2</td>
-                            <td>p012</td>
-                            <td>Mansoor</td>
-                            <td>1500</td>
-                            <td>900</td>
-                            <td>100</td>
-                            <td>500</td>
-                            <td>
-                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                        data-target="#eprice">&nbsp;Paid
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
-                                        data-target="#pinfo">&nbsp;P-Details
-                                </button>
-                            </td>
-                            <td>
-                                <a href="print_preport" class="btn btn-xs btn btn-primary"><i class="fa fa-print"></i>&nbsp;&nbsp;Print
-                                    Bill</a>
-                            </td>
-                        </tr>
-
-                        <tr class="gradeX">
-                            <td>3</td>
-                            <td>p013</td>
-                            <td>Arash</td>
-                            <td>3500</td>
-                            <td>2000</td>
-                            <td>300</td>
-                            <td>1200</td>
-                            <td>
-                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                        data-target="#eprice">&nbsp;Paid
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
-                                        data-target="#pinfo">&nbsp;P-Details
-                                </button>
-                            </td>
-                            <td>
-                                <a href="print_preport" class="btn btn-xs btn btn-primary"><i class="fa fa-print"></i>&nbsp;&nbsp;Print
-                                    Bill</a>
-                            </td>
-                        </tr>
-
-                        <tr class="gradeX">
-                            <td>4</td>
-                            <td>p014</td>
-                            <td>Manizhah</td>
-                            <td>700</td>
-                            <td>650</td>
-                            <td>50</td>
-                            <td>00</td>
-                            <td>
-                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                        data-target="#eprice">&nbsp;Paid
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
-                                        data-target="#pinfo">&nbsp;P-Details
-                                </button>
-                            </td>
-                            <td>
-                                <a href="print_preport" class="btn btn-xs btn btn-primary"><i class="fa fa-print"></i>&nbsp;&nbsp;Print
-                                    Bill</a>
-                            </td>
-                        </tr>
-
-                        <tr class="gradeX">
-                            <td>5</td>
-                            <td>p015</td>
-                            <td>Erfanullah</td>
-                            <td>1100</td>
-                            <td>1100</td>
-                            <td>00</td>
-                            <td>00</td>
-                            <td>
-                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                        data-target="#eprice">&nbsp;Paid
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
-                                        data-target="#pinfo">&nbsp;P-Details
-                                </button>
-                            </td>
-                            <td>
-                                <a href="print_preport" class="btn btn-xs btn btn-primary"><i class="fa fa-print"></i>&nbsp;&nbsp;Print
-                                    Bill</a>
-                            </td>
-                        </tr>
 
                         </tbody>
                     </table>
