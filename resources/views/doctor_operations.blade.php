@@ -96,26 +96,28 @@
                                     <th>Operation</th>
                                 </tr>
                                 </thead>
-                                @if(count($operation)>0)
-                                @foreach($operation as $opr)
                                 <tbody>
-                                <tr>
-                                    <td>{{$opr->id_patient}}</td>
-                                    <td>{{$opr->name}}</td>
-                                    <td>{{$opr->lastname}}</td>
-                                    <td>{{$opr->status}}</td>
-                                    <td>{{$opr->created_at}}</td>
-                                    <td>{{$opr->problem_health}}</td>
-                                    <td><a href="/operation/create/{{$opr->id}}" class="btn btn-sm btn-primary">Start Treatment</a>
-                                    </td>
-                                </tr>
-                                </tbody>
+                                @if(count($operation)>0)
+                                    @foreach($operation as $opr)
+                                        <tr>
+                                            <td>{{$opr->id_patient}}</td>
+                                            <td>{{$opr->name}}</td>
+                                            <td>{{$opr->lastname}}</td>
+                                            <td>{{$opr->status}}</td>
+                                            <td>{{$opr->created_at}}</td>
+                                            <td>{{$opr->problem_health}}</td>
+                                            <td><a href="/operation/create/{{$opr->id}}" class="btn btn-sm btn-primary">Start
+                                                    Treatment</a>
+                                            </td>
+                                        </tr>
                                     @endforeach
-                                    {{$operation->links()}}
-                                @else
-                                    <h3 style="color:red;text-align: center;">NO PATIENT HAS BEEN REGISTERED YET</h3>
-                                @endif
+                                </tbody>
+
                             </table>
+                            {{--{{$operation->links()}}--}}
+                            @else
+                                <h3 style="color:red;text-align: center;">NO PATIENT HAS BEEN REGISTERED YET</h3>
+                            @endif
                         </div>
                     </div>
 

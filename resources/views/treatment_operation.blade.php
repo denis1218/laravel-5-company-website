@@ -161,7 +161,10 @@
                                 {{-- start for each here --}}
                                 <div class="row shadow p-3 mb-5 rounded bg-info"
                                      table-exchange
-                                     style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
+                                     style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px; font-size: 17px;">
+                                    <strong>{{ $treats->visits }} \ &nbsp;&nbsp; <i class="fa fa-calendar"></i>&nbsp;
+                                        Date : {{ \Carbon\Carbon::parse($treats->created_at)->diffForHumans() }}
+                                    </strong>
                                     <h3 style="font-weight: bold"></h3>
                                 </div>
                                 <br>
@@ -189,14 +192,15 @@
                                             <tr>
                                                 <td>Have Xray :</td>
                                                 <td>{{ $treats->have_xray }}</td>
-                                                <td>Date  Visited :</td>
+                                                <td>Date Visited :</td>
                                                 <td>{{ $treats->created_at }}</td>
                                             </tr>
                                             <tr>
-                                                <td> Required : </td>
-                                                <td>Cover for teeth</td>
+                                                <td> status treatment</td>
+                                                <td>{{ $treats->status_visits }}</td>
                                                 <td>Next Appointment :</td>
-                                                <td>{{ $treats->next_appointment }}&nbsp; in &nbsp;{{ $treats->meridiem }}</td>
+                                                <td>{{ $treats->next_appointment }}&nbsp; in
+                                                    &nbsp;{{ $treats->meridiem }}</td>
                                             </tr>
                                         </table>
                                         <div>
@@ -205,7 +209,12 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <a href="/operation/{{ $treats->id }}/edit/{{ $patient_id }}" class="btn btn-md btn-primary">Continue this treatment</a>
+                                        @if($treats->status_visits == 'not complete')
+                                            <a href="/operation/{{ $treats->id }}/edit/{{ $patient_id }}"
+                                               class="btn btn-md btn-primary">Continue this treatment</a>
+                                        @else
+                                            <h4 class="text-info"> This treatment has been done !</h4>
+                                        @endif
                                     </div>
                                 </div>
                             @endforeach
@@ -217,50 +226,37 @@
                         <div class="panel-body">
                             <br>
                             {{-- Header of title --}}
-                            <div class="row  bg-info" style=" padding-left:20px; border-radius: 5px;margin-left:0px;margin-right: 10px;">
+                            <div class="row  bg-info"
+                                 style=" padding-left:20px; border-radius: 5px;margin-left:0px;margin-right: 10px;">
                                 <h3 style="font-weight: bold;">Present History</h3>
                             </div>
                             <br>
                             <form action="/xray" method="post">
                                 {{csrf_field()}}
-                                <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="i-checks"><label for=""><h4 style="color:green">Is X-Ray Needed?</h4></label>&nbsp;&nbsp;
-                                        <div class="input-group">
-                                             <div class="i-checks"><input type="radio"  value="not" name="xray_status" id="check">yes</div></div>
-                                             <div class="i-checks"><input type="radio" id="id"  name="xray_status" checked="checked">No</div></div>
-                                        </div>
-                                </div>
 
-                                <br>
                                 <div class="row">
-                                <div class="col-sm-12">
-                                    <table class="table table-striped">
-                                        <tr>
-                                            <td colspan="2">
-                                                <div class="row">
-                                                    <div class="col-sm-2 text-right">
-                                                        <h3 style="letter-spacing: 2px; line-height: 30px;">Tooth_Number:</h3>
-                                                    </div>
-                                                    <div class="col-sm-8">
-                                                        <input type="number" class="form-control" id="teeth" required name="tooth_number" onblur="copyvalue()" placeholder="Enter Tooth Number" style="width: 100%;height:36px;">
-                                                    </div>
-                                                    <div class="col-sm-2 text-left">
-                                                        <button class="btn btn-primary" id="but" type="submit" disabled> Send To X-Ray&nbsp;<i class="fa fa-send"></i></button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                </div>
-                                <input type="text" name="doctor_name" value="{{ $patient_in_treatment->doctor->first_name }}" style="visibility: hidden;">
-                                <input type="text" name="patient_name" value="{{ $patient_in_treatment->name }}" style="visibility: hidden;">
-                                <input type="text" name="patient_id" value="{{ $patient_in_treatment->id_patient }}"style="visibility: hidden;">
+                                    <div class="col-sm-4">
+
+                                    </div>
+
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+                                        </div>
+                                    </div>
+                                    <input type="text" name="doctor_name"
+                                           value="{{ $patient_in_treatment->doctor->first_name }}"
+                                           style="visibility: hidden;">
+                                    <input type="text" name="patient_name" value="{{ $patient_in_treatment->name }}"
+                                           style="visibility: hidden;">
+                                    <input type="text" name="patient_id" value="{{ $patient_in_treatment->id_patient }}"
+                                           style="visibility: hidden;">
                             </form>
                             <form action="/operation" method="POST">
 
                                 <input hidden type="hidden"/>
+                                <input type="hidden" value="{{ $checkValue = $checkValue + 1 }}" name="visits">
                                 <input hidden type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
                                 {{--<input hidden type="hidden" name="visits" value="{{ $treatments->visits  }}"/>--}}
 
@@ -268,7 +264,8 @@
                                     <div class="col-md-6" style="margin-top: -85px;">
                                         <div class="form-group">
                                             <label></label>
-                                            <input type="number" class="form-control" id="copyteeth" required name="teeth_number"style="visibility: hidden">
+                                            <input type="number" class="form-control" id="copyteeth" required
+                                                   name="teeth_number" style="visibility: hidden">
                                         </div>
                                         <div class="form-group">
                                             <div class="i-checks" for="nex">Have X-Ray :
@@ -288,18 +285,21 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Treatment :</label>
-                                            <select class="form-control" name="treatment">
-                                                <option disabled selected>Select Treatment</option>
+                                            <select class="form-control" name="treatment"
+                                                    onchange="getFeeTreatment(this);">
+                                                <option disabled>Select Treatment</option>
                                                 @foreach($treatementList as $listTreatement)
                                                     <option value="{{ $listTreatement->treatment }}"
-                                                    > {{ $listTreatement->treatment }} </option>
+                                                            id="{{ $listTreatement->estimated_fee }}">
+                                                        {{ $listTreatement->treatment }} </option>
                                                 @endforeach
                                             </select>
                                         </div>
                                         {{--<input type="hidden" class="form-control" name="id_treatment" id="id_treatment">--}}
                                         <div class="form-group">
                                             <label for="nex">Treatment Cost :</label>
-                                            <input type="number" class="form-control" name="estimated_fee">
+                                            <input type="number" class="form-control" id="cost_treatment"
+                                                   name="estimated_fee" value="">
                                         </div>
                                         <div class="form-group">
                                             <label for="nex">Discount :</label>
@@ -311,9 +311,10 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="i-checks" for="nex">Set Meridiem :<label>&nbsp;&nbsp;
-                                                        <input type="radio" value="morning" checked name="meridiem">
-                                                         Morning</label>
-                                                    &nbsp;&nbsp;&nbsp; <input type="radio" checked value="afternoon" name="meridiem">Afternoon
+                                                    <input type="radio" value="morning" checked name="meridiem">
+                                                    Morning</label>
+                                                &nbsp;&nbsp;&nbsp; <input type="radio" checked value="afternoon"
+                                                                          name="meridiem">Afternoon
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -321,6 +322,15 @@
                                             <textarea rows="5" type="text" class="form-control" name="description"
                                                       placeholder="Type Description ...."
                                                       id="description"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="i-checks" for="nex"><label>&nbsp;&nbsp;
+                                                    <input type="checkbox" value="complete"
+                                                           class="checkbox checkbox-warning"
+                                                           name="status_visits"/><span>&nbsp;&nbsp; Check it, To complete treatment of tooth for this patient
+                                                        when check it the finance must get all remaining fee from patient.</span>
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -330,6 +340,9 @@
                                 <div class="row">
                                     <div class="col-md-5">
                                         <button type="submit" class="btn btn-primary"> Save&nbsp;<i
+                                                    class="fa fa-save"></i>
+                                        </button>
+                                        <button type="reset" class="btn btn-white"> Reset&nbsp;<i
                                                     class="fa fa-save"></i>
                                         </button>
                                     </div>
@@ -349,43 +362,40 @@
 @section('script')
 
     <script src="{{ asset('js/tooths.js') }}" type="javascript"></script>
+
     <script>
-
-
         function getFeeTreatment(e) {
-//           alert(e[e.selectedIndex].id);
-            document.getElementById('cost_treatment').value = e[e.selectedIndex].value
-            document.getElementById('id_treatment').value = e[e.selectedIndex].id
-//            alert('const = '+e.target.id);
+            document.getElementById('cost_treatment').value = e[e.selectedIndex].id
         }
     </script>
+
     {{-- Copying input from tooth number --}}
     <script type="text/javascript">
         function copyvalue() {
-        var teeth=document.getElementById('teeth').value;
-        document.getElementById('copyteeth').value=teeth;
+            var teeth = document.getElementById('teeth').value;
+            document.getElementById('copyteeth').value = teeth;
         }
-        </script>
+    </script>
 
-        {{-- disabling send to xray button --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    {{-- disabling send to xray button --}}
+
     <script>
-       $(document).ready(function () {
-           $('#check').change(function () {
-              var ch=this.checked;
-              if(!ch){
-                  $('#but').prop('disabled',true);
-              }else{
-                  $('#but').prop('disabled',false);
-              }
-           });
-       });
+        $(document).ready(function () {
+            $('#check').change(function () {
+                var ch = this.checked;
+                if (!ch) {
+                    $('#but').prop('disabled', true);
+                } else {
+                    $('#but').prop('disabled', false);
+                }
+            });
+        });
     </script>
     <script>
         $(document).ready(function () {
-           $('#id').click(function () {
-               $('#but').prop('disabled',true);
-           });
+            $('#id').click(function () {
+                $('#but').prop('disabled', true);
+            });
         });
     </script>
 

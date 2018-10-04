@@ -29,7 +29,7 @@
                         <a href="/dash"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
                     </li>
                     <li>
-                        <a href="/doctor_operations"><i class="fa fa-sitemap"></i> <span
+                        <a><i class="fa fa-sitemap"></i> <span
                                     class="nav-label">Department</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/operation"><i class="fa fa-user-md"></i>Doctor</a></li>
