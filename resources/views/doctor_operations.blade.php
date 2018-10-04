@@ -111,6 +111,7 @@
                                             </td>
                                         </tr>
                                     @endforeach
+<<<<<<< HEAD
                                 </tbody>
 
                             </table>
@@ -118,6 +119,13 @@
                             @else
                                 <h3 style="color:red;text-align: center;">NO PATIENT HAS BEEN REGISTERED YET</h3>
                             @endif
+=======
+                                @else
+                                    <h3 style="color:red;text-align: center;">NO PATIENT HAS BEEN REGISTERED YET</h3>
+                                @endif
+                            </table>
+                            {{$operation->links()}}
+>>>>>>> b586c647018e93540a5ffcaae308e1f5fe08cf01
                         </div>
                     </div>
 

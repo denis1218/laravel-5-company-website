@@ -235,14 +235,35 @@
                                 {{csrf_field()}}
 
                                 <div class="row">
-                                    <div class="col-sm-4">
-
-                                    </div>
+                                   <div class="col-sm-4">
+                                    <h4 style="color:green">Is X-Ray Needed?</h4>
+                                        <div class="input-group">
+                                             <input type="radio" onchange="activation()"  value="not" name="xray_status" id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>YES</b></strong> &nbsp;&nbsp;&nbsp;
+                                             <input type="radio" onchange="deactivation()" id="id"  name="xray_status" checked="checked" style="height: 20px;width:20px;"> &nbsp;<strong><b>NO</b></strong>
+                                        </div>
+                                   </div>
+                                </div>
 
                                     <br>
                                     <div class="row">
                                         <div class="col-sm-12">
-
+                                            <table class="table table-striped">
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <div class="row">
+                                                            <div class="col-sm-2 text-right">
+                                                                <h3 style="letter-spacing: 2px; line-height: 30px;">Tooth_Number:</h3>
+                                                            </div>
+                                                            <div class="col-sm-8">
+                                                                <input type="number" class="form-control" id="teeth" required name="tooth_number" onblur="copyvalue()" placeholder="Enter Tooth Number" style="width: 100%;height:36px;">
+                                                            </div>
+                                                            <div class="col-sm-2 text-left">
+                                                                <button class="btn btn-primary" id="but" type="submit" disabled> Send To X-Ray&nbsp;<i class="fa fa-send"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                         </div>
                                     </div>
                                     <input type="text" name="doctor_name"
@@ -267,13 +288,7 @@
                                             <input type="number" class="form-control" id="copyteeth" required
                                                    name="teeth_number" style="visibility: hidden">
                                         </div>
-                                        <div class="form-group">
-                                            <div class="i-checks" for="nex">Have X-Ray :
-                                                <label>&nbsp;&nbsp;
-                                                    <input type="checkbox" name="have_xray">
-                                                </label>
-                                            </div>
-                                        </div>
+                                            <input type="checkbox" id="next" name="have_xray" style="visibility:hidden;">
                                         <div class="form-group">
                                             <label>Select Dental Defect :</label>
                                             <select class="form-control" name="dentaldefect">
@@ -379,6 +394,7 @@
 
     {{-- disabling send to xray button --}}
 
+<<<<<<< HEAD
     <script>
         $(document).ready(function () {
             $('#check').change(function () {
@@ -398,7 +414,34 @@
             });
         });
     </script>
+=======
+        {{-- disabling send to xray button --}}
+>>>>>>> b586c647018e93540a5ffcaae308e1f5fe08cf01
 
+    <script type="text/javascript">
+        function activation() {
+            var ch=document.getElementById('check').value;
+            if(ch=='not'){
+                document.getElementById('but').disabled=false;
+                document.getElementById('next').checked=true;
+            } else{
+                document.getElementById('but').disabled=true;
+                document.getElementById('next').checked=false;
+            }
+        }
+    </script>
 
+    <script type="text/javascript">
+        function deactivation() {
+            var deac=document.getElementById('id').value;
+            if(deac=='on'){
+                document.getElementById('but').disabled=true;
+                document.getElementById('next').checked=false;
+            }else {
+                document.getElementById('but').disabled=false;
+                document.getElementById('next').checked=true;
+            }
+        }
+    </script>
 
 @endsection
