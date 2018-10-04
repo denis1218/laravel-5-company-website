@@ -232,13 +232,13 @@
                                             <input type="number" class="form-control" required name="teeth_number"
                                                    value="{{ $treatments->teeth_number }}"/>
                                         </div>
-                                        <div class="form-group">
-                                            <div class="i-checks" for="nex">Have X-Ray :
-                                                <label>&nbsp;&nbsp;
-                                                    <input type="checkbox" name="have_xray">
-                                                </label>
-                                            </div>
-                                        </div>
+                                        {{--<div class="form-group">--}}
+                                            {{--<div class="i-checks" for="nex">Have X-Ray :--}}
+                                                {{--<label>&nbsp;&nbsp;--}}
+                                                    {{--<input type="checkbox" name="have_xray">--}}
+                                                {{--</label>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
                                         <div class="form-group">
                                             <label>Select Dental Defect :</label>
                                             <select class="form-control" name="dentaldefect">
