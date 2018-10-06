@@ -196,7 +196,7 @@ Route::resource('/doctors','DoctorController');
 
 
 //Doctor Operation
-Route::resource('operation','OperationController');
+//Route::resource('operation','OperationController');
 
 //Xray Controller
 Route::resource('xray','XrayController');
@@ -224,4 +224,5 @@ Route::patch('income3/{id}','incomeController@editPaid');
 
 Route::resource('xrey_income','xrayincomeController');
 Route::get('xrey_income2','xrayincomeController@showComplete');
+Route::patch('xrey_income3/{id}','xrayincomeController@update2');
 

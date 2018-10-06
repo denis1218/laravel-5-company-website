@@ -21,11 +21,11 @@ class TreatmentController extends Controller
      */
     public function index()
     {
-
         $operation = Patient::orderBy('id', 'asc')->paginate(10);
         return view('doctor_operations')->with('operation', $operation);
 
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -35,13 +35,15 @@ class TreatmentController extends Controller
     public function create($id)
     {
         $patient_in_treatment = Patient::find($id);
-        $last_treatment = Treatment::orderBy('id', 'desc')->first();
+//        return $patient_in_treatment;
+        $treatmentt = Treatment::orderBy('id', 'desc')->find($id);
 
-                if($last_treatment== null)
+
+                if($treatmentt== null)
                 {
                     $checkValue = 0;
                 }else{
-                    $checkValue = $last_treatment->visits;
+                    $checkValue = $treatmentt->visits;
                 }
                 $treatments = Treatment::find($id);
 
@@ -141,10 +143,16 @@ class TreatmentController extends Controller
     public function edit_treatment($id,$patient_id)
     {
         $patient_in_treatment = Patient::find($patient_id);
+//        return $patient_in_treatment->visit;
 //        dd($patient_in_treatment);
-        $treatments = Treatment::find($id);
-        $checkValue = 0;
-        $checkValue += 1;
+        $treatments = Treatment::orderBy('id', 'desc')->find($id);
+
+        if($treatments== null)
+        {
+            $checkValue = 0;
+        }else{
+            $checkValue = $treatments->visits;
+        }
         $treatementList = TreatmentList::all();
         $dentalDefectList = DentalDefectList::all();
         $patient_id = $patient_in_treatment->id;

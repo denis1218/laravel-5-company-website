@@ -55,7 +55,7 @@ class xrayincomeController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified reso`urce.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -78,6 +78,12 @@ class xrayincomeController extends Controller
         $xry->paid_amount = $request->paid_amount;
         $xry->save();
         return redirect('xrey_income');
+    }
+    public function update2(Request $request,$id){
+        $xry = XRay::find($id);
+        $xry->paid_amount = $request->paid_amount;
+        $xry->save();
+        return back();
     }
 
     /**

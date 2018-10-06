@@ -103,6 +103,7 @@
                                         data-target="#d{{$xr->id}}">&nbsp;P-Details
                                 </button>
                             </td>
+
                         </tr>
 
                         @endforeach
@@ -150,55 +151,7 @@
                     </div>
                     <!-- end of model -->
                     @endforeach
-                    {{--Edit modal--}}
-                    {{--<div class="modal inmodal" id="edit" tabindex="-1" role="dialog" aria-hidden="true">--}}
-                        {{--<div class="modal-dialog">--}}
-                            {{--<div class="modal-content animated fadeIn">--}}
-                                {{--<div class="modal-header">--}}
-                                    {{--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span--}}
-                                                {{--class="sr-only">Close</span></button>--}}
-                                    {{--<i class="fa fa-edit modal-icon text-primary"></i>--}}
-                                    {{--<h4 class="modal-title">Edit Content</h4>--}}
-                                    {{--<small>Edit information</small>--}}
-                                {{--</div>--}}
-                                {{--<div class="modal-body">--}}
-                                    {{--<div class="row">--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="pid">PID</label>--}}
-                                        {{--<input type="text" name="pid" class="form-control" value="p-078678976" disabled>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="p-name">Patient Name</label>--}}
-                                            {{--<input type="text" name="p-name" class="form-control" placeholder="Patient Name" value="Ahmad">--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="doctor-name">Doctor Name</label>--}}
-                                            {{--<input type="text" name="doctor-name" class="form-control" placeholder="Doctor Name" value="Dr.Samim">--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="estimated-fee">Estimated Fee</label>--}}
-                                            {{--<input type="text" name="estimated-fee" class="form-control" placeholder="Estimated Fee" value="2000">--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="p-amount">Paid Amount</label>--}}
-                                            {{--<input type="text" name="p-amount" class="form-control" placeholder="Paid Amount" value="1500">--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="discount">Discount</label>--}}
-                                            {{--<input type="text" name="discount" class="form-control" placeholder="Discount" value="200">--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
 
-                                {{--</div>--}}
-                                {{--<div class="modal-footer">--}}
-                                    {{--<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>--}}
-                                    {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
-
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--end of edit modal--}}
                     @foreach($xrey as $xr)
                     <!-- edit model -->
                     <div class="modal inmodal" id="d{{$xr->id}}" tabindex="-1" role="dialog" aria-hidden="true">
