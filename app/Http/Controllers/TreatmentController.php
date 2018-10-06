@@ -36,21 +36,24 @@ class TreatmentController extends Controller
     {
         $patient_in_treatment = Patient::find($id);
         $last_treatment = Treatment::orderBy('id', 'desc')->first();
-        if($last_treatment->visits <= 0)
-        {
-            $checkValue = 0;
-        }else{
-            $checkValue = $last_treatment->visits;
-        }
-        $treatments = Treatment::find($id);
 
-        $treatementList = TreatmentList::all();
+                if($last_treatment== null)
+                {
+                    $checkValue = 0;
+                }else{
+                    $checkValue = $last_treatment->visits;
+                }
+                $treatments = Treatment::find($id);
 
-        $dentalDefectList = DentalDefectList::all();
+                $treatementList = TreatmentList::all();
 
-        $patient_id = $patient_in_treatment->id;
+                $dentalDefectList = DentalDefectList::all();
 
-        return view('treatment_operation', compact('patient_in_treatment','patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments'));
+                $patient_id = $patient_in_treatment->id;
+
+                return view('treatment_operation', compact('patient_in_treatment','patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments'));
+//return $last_treatment;
+
     }
 
 
