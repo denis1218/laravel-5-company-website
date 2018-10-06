@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-2 ">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
-                   href="/ext_income"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> From
+                   href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> From
                     Other</a></h2>
         </div>
         <div class="col-lg-4" style="float:right;">
@@ -69,7 +69,9 @@
                             <input type="text" placeholder="Patient ID" class="input-sm form-control">
                         </div>
                     </div>
-
+                    <div class="col-sm-3" style="margin-top:25px;">
+                        <a href="xrey_income2" type="button" class="btn btn-sm btn-primary">Show completed Xray</a>
+                    </div>
                     <table class="table table-striped table-bordered table-hover" id="editable"
                            style="margin-top:80px;margin-left:30px;width:95%;">
                         <thead>
@@ -77,108 +79,39 @@
                             <th>ID</th>
                             <th>P-ID</th>
                             <th>P-Name</th>
-                            <th>Estimated Fee</th>
+                            <th>Doctor Name</th>
                             <th>Paid Amount</th>
                             <th>Paid</th>
                             <th>P-Details</th>
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($xrey as $xr)
                         <tr class="gradeX">
-                            <td>1</td>
-                            <td>p011</td>
-                            <td>Abdullah</td>
-                            <td>1900</td>
-                            <td>100</td>
+                            <td>{{$xr->id}}</td>
+                            <td>{{$xr->patient_id}}</td>
+                            <td>{{$xr->patient_name}}</td>
+                            <td>{{$xr->doctor_name}}</td>
+                            <td>{{$xr->paid_amount}}</td>
                             <td>
                                 <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
-                                        data-target="#eprice">&nbsp;Paid
+                                        data-target="#p{{$xr->id}}">&nbsp;Paid
                                 </button>
                             </td>
                             <td>
                                 <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
-                                        data-target="#pinfo">&nbsp;P-Details
+                                        data-target="#d{{$xr->id}}">&nbsp;P-Details
                                 </button>
                             </td>
                         </tr>
 
-                        <tr class="gradeX">
-                            <td>2</td>
-                            <td>p012</td>
-                            <td>Mansoor</td>
-                            <td>1500</td>
-                            <td>100</td>
-                            <td>
-                                <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
-                                        data-target="#eprice">&nbsp;Paid
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
-                                        data-target="#pinfo">&nbsp;P-Details
-                                </button>
-                            </td>
-                        </tr>
-
-                        <tr class="gradeX">
-                            <td>3</td>
-                            <td>p013</td>
-                            <td>Arash</td>
-                            <td>3500</td>
-                            <td>300</td>
-                            <td>
-                                <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
-                                        data-target="#eprice">&nbsp;Paid
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
-                                        data-target="#pinfo">&nbsp;P-Details
-                                </button>
-                            </td>
-                        </tr>
-
-                        <tr class="gradeX">
-                            <td>4</td>
-                            <td>p014</td>
-                            <td>Manizhah</td>
-                            <td>700</td>
-                            <td>50</td>
-                            <td>
-                                <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
-                                        data-target="#eprice">&nbsp;Paid
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
-                                        data-target="#pinfo">&nbsp;P-Details
-                                </button>
-                            </td>
-                        </tr>
-
-                        <tr class="gradeX">
-                            <td>5</td>
-                            <td>p015</td>
-                            <td>Erfanullah</td>
-                            <td>1100</td>
-                            <td>00</td>
-                            <td>
-                                <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
-                                        data-target="#eprice">&nbsp;Paid
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
-                                        data-target="#pinfo">&nbsp;P-Details
-                                </button>
-                            </td>
-                        </tr>
+                        @endforeach
 
                         </tbody>
                     </table>
-
+                    @foreach($xrey as $xr)
                     <!-- edit model -->
-                    <div class="modal inmodal" id="eprice" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal inmodal" id="p{{$xr->id}}" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content animated fadeIn">
                                 <div class="modal-header">
@@ -189,91 +122,85 @@
                                     <small>Fill the Paid amount</small>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="row">
-                                        <div class="form-group"><label class="col-md-3 control-label">Estimated Fee
-                                                :</label>
-
-                                            <div class="col-md-6"><h4>1900</h4></div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="row">
-                                        <div class="form-group"><label class="col-md-3 control-label">Discount :</label>
-
-                                            <div class="col-md-6"><h4>10 %</h4></div>
-                                        </div>
-                                    </div>
+                                    <form action="/xrey_income/{{$xr->id}}" method="post">
+                                        {{method_field('patch')}}
                                     <div class="row">
                                         <div class="form-group"><label class="col-md-3 control-label">Paid Amount
                                                 :</label>
 
-                                            <div class="col-sm-6"><input type="text" class="form-control"
+                                            <div class="col-sm-6"><input type="text" name="paid_amount" class="form-control"
                                                                          placeholder="Paid Amount"></div>
                                         </div>
                                     </div>
+                                        <br><br>
+                                        <button type="submit" class="btn btn-primary pull-right" style="margin-right: 5px">Save changes</button>
+
+                                        <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-right: 5px">Close</button>
+                                        <br>
+
+                                    </form>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+
 
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- end of model -->
+                    @endforeach
                     {{--Edit modal--}}
-                    <div class="modal inmodal" id="edit" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content animated fadeIn">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                                class="sr-only">Close</span></button>
-                                    <i class="fa fa-edit modal-icon text-primary"></i>
-                                    <h4 class="modal-title">Edit Content</h4>
-                                    <small>Edit information</small>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label for="pid">PID</label>
-                                        <input type="text" name="pid" class="form-control" value="p-078678976" disabled>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="p-name">Patient Name</label>
-                                            <input type="text" name="p-name" class="form-control" placeholder="Patient Name" value="Ahmad">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="doctor-name">Doctor Name</label>
-                                            <input type="text" name="doctor-name" class="form-control" placeholder="Doctor Name" value="Dr.Samim">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="estimated-fee">Estimated Fee</label>
-                                            <input type="text" name="estimated-fee" class="form-control" placeholder="Estimated Fee" value="2000">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="p-amount">Paid Amount</label>
-                                            <input type="text" name="p-amount" class="form-control" placeholder="Paid Amount" value="1500">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="discount">Discount</label>
-                                            <input type="text" name="discount" class="form-control" placeholder="Discount" value="200">
-                                        </div>
-                                    </div>
+                    {{--<div class="modal inmodal" id="edit" tabindex="-1" role="dialog" aria-hidden="true">--}}
+                        {{--<div class="modal-dialog">--}}
+                            {{--<div class="modal-content animated fadeIn">--}}
+                                {{--<div class="modal-header">--}}
+                                    {{--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span--}}
+                                                {{--class="sr-only">Close</span></button>--}}
+                                    {{--<i class="fa fa-edit modal-icon text-primary"></i>--}}
+                                    {{--<h4 class="modal-title">Edit Content</h4>--}}
+                                    {{--<small>Edit information</small>--}}
+                                {{--</div>--}}
+                                {{--<div class="modal-body">--}}
+                                    {{--<div class="row">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="pid">PID</label>--}}
+                                        {{--<input type="text" name="pid" class="form-control" value="p-078678976" disabled>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="p-name">Patient Name</label>--}}
+                                            {{--<input type="text" name="p-name" class="form-control" placeholder="Patient Name" value="Ahmad">--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="doctor-name">Doctor Name</label>--}}
+                                            {{--<input type="text" name="doctor-name" class="form-control" placeholder="Doctor Name" value="Dr.Samim">--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="estimated-fee">Estimated Fee</label>--}}
+                                            {{--<input type="text" name="estimated-fee" class="form-control" placeholder="Estimated Fee" value="2000">--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="p-amount">Paid Amount</label>--}}
+                                            {{--<input type="text" name="p-amount" class="form-control" placeholder="Paid Amount" value="1500">--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="discount">Discount</label>--}}
+                                            {{--<input type="text" name="discount" class="form-control" placeholder="Discount" value="200">--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
 
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                {{--</div>--}}
+                                {{--<div class="modal-footer">--}}
+                                    {{--<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>--}}
+                                    {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 {{--end of edit modal--}}
-
+                    @foreach($xrey as $xr)
                     <!-- edit model -->
-                    <div class="modal inmodal" id="pinfo" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal inmodal" id="d{{$xr->id}}" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content animated fadeIn">
                                 <div class="modal-header">
@@ -286,32 +213,23 @@
                                     <table class="table table-hover table-responsive">
                                         <tr>
                                             <td style="font-weight:bold;">Patient ID:</td>
-                                            <td>p001</td>
+                                            <td>{{$xr->patient_id}}</td>
                                         </tr>
                                         <tr>
                                             <td style="font-weight:bold;">Patient Name:</td>
-                                            <td>Eqbal</td>
+                                            <td>{{$xr->patient_name}}</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-weight:bold;">Patient Age:</td>
-                                            <td>28</td>
+                                            <td style="font-weight:bold;">Doctor Name:</td>
+                                            <td>{{$xr->doctor_name}}</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-weight:bold;">Patient Gender:</td>
-                                            <td>Male</td>
+                                            <td style="font-weight:bold;">Tooth Number:</td>
+                                            <td>{{$xr->tooth_number}}</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-weight:bold;">Patient Address:</td>
-                                            <td>Karte Char Pole Surkh</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight:bold;">Phone Number:</td>
-                                            <td>0786859890</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td style="font-weight:bold;">Registration Date:</td>
-                                            <td>07-March-18</td>
+                                            <td style="font-weight:bold;">Date :</td>
+                                            <td>{{$xr->created_at}}</td>
                                         </tr>
 
                                     </table>
@@ -324,6 +242,7 @@
                         </div>
                     </div>
                     <!-- end of model -->
+                        @endforeach
 
                 </div>
             </div>
