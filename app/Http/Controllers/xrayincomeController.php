@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\XRay;
+use DB;
 
 class xrayincomeController extends Controller
 {
@@ -51,7 +52,8 @@ class xrayincomeController extends Controller
     }
     public function showComplete(){
         $xrey = XRay::where('paid_amount','>','0')->get();
-        return view('completeXray',compact('xrey'));
+        $total=DB::table('xrays')->sum('paid_amount');
+        return view('completeXray',compact('xrey','total'));
     }
 
     /**

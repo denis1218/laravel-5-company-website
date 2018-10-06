@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Oincom;
+use DB;
 use Illuminate\Http\Request;
 use function Sodium\compare;
 
@@ -16,7 +17,8 @@ class OincomController extends Controller
     public function index()
     {
         $others=Oincom::orderBy('created_at','desc')->paginate(10);
-        return view('ext_income',compact('others'));
+        $total=DB::table('oincoms')->sum('amount');
+        return view('ext_income',compact('others','total'));
 //        return $others;
     }
 
@@ -44,7 +46,7 @@ class OincomController extends Controller
         $other->purpose=$request->purpose;
         $other->description=$request->description;
         $other->save();
-        return redirect('other');
+        return redirect('/other');
     }
 
     /**

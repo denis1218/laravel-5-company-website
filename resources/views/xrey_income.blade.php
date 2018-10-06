@@ -19,18 +19,18 @@
                    href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> From
                     Other</a></h2>
         </div>
-        <div class="col-lg-4" style="float:right;">
-            <div class="ibox float-e-margins" style=" background-color: lightyellow;">
-                <div class="ibox-title" style=" background-color: lightyellow;">
-                    <h5>Capital</h5>
-                </div>
-                <div class="ibox-content" style=" background-color: lightyellow;">
-                    <h1 class="no-margins">40 886,200</h1>
-                    <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
+        {{--<div class="col-lg-4" style="float:right;">--}}
+            {{--<div class="ibox float-e-margins" style=" background-color: lightyellow;">--}}
+                {{--<div class="ibox-title" style=" background-color: lightyellow;">--}}
+                    {{--<h5>Capital</h5>--}}
+                {{--</div>--}}
+                {{--<div class="ibox-content" style=" background-color: lightyellow;">--}}
+                    {{--<h1 class="no-margins">40 886,200</h1>--}}
+                    {{--<div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>--}}
 
-                </div>
-            </div>
-        </div>
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
     </div>
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
