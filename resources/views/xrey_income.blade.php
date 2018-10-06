@@ -109,6 +109,10 @@
 
                         </tbody>
                     </table>
+<<<<<<< HEAD
+=======
+                   <div style="margin-left: 30px">{{$xrey->links()}}</div>
+>>>>>>> d2a7c38058f1f61e9ed9697b06758e37e16d9d13
                     @foreach($xrey as $xr)
                     <!-- edit model -->
                     <div class="modal inmodal" id="p{{$xr->id}}" tabindex="-1" role="dialog" aria-hidden="true">

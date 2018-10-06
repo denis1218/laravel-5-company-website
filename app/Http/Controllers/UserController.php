@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
-use App\XRay;
-use DB;
 
-class xrayincomeController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +14,8 @@ class xrayincomeController extends Controller
      */
     public function index()
     {
-
-
-        $xrey = XRay::where('paid_amount',0)->paginate(10);
-
-        return view('xrey_income',compact('xrey'));
+        $users =  User::all();
+        return view ('account',compact('users'));
     }
 
     /**
@@ -29,7 +25,7 @@ class xrayincomeController extends Controller
      */
     public function create()
     {
-        //
+        return view ('create_account');
     }
 
     /**
@@ -40,32 +36,28 @@ class xrayincomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create($request->all());
+        return redirect('/account');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-
-    }
-    public function showComplete(){
-        $xrey = XRay::where('paid_amount','>','0')->get();
-        $total=DB::table('xrays')->sum('paid_amount');
-        return view('completeXray',compact('xrey','total'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
         //
     }
@@ -74,24 +66,21 @@ class xrayincomeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        $xry = XRay::find($id);
-        $xry->paid_amount = $request->paid_amount;
-        $xry->save();
-        return redirect('xrey_income');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
         //
     }

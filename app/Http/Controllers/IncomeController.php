@@ -17,12 +17,14 @@ class IncomeController extends Controller
      */
     public function index()
     {
+
         $income = Treatment::where('remaining_fee','>','0')->get();
         $ptotal=DB::table('treatments')->sum('paid_amount');
         $xtotal=DB::table('xrays')->sum('paid_amount');
         $ototal=DB::table('oincoms')->sum('amount');
         $Gtotal=$ptotal+$xtotal+$ototal;
             return view('income',compact('income','Gtotal'));
+
 
     }
 
