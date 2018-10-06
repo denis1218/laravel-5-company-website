@@ -20,12 +20,16 @@
 @endsection
 
 @section('content')
-    <div class="row wrapper border-bottom white-bg page-heading" style="margin-left:1px;margin-top:-20px; margin-bottom: 10px;">
+    <div class="row wrapper border-bottom white-bg page-heading"
+         style="margin-left:1px;margin-top:-20px; margin-bottom: 10px;">
         <div class="col-md-2">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left:30px;" href="/account"><i class="fa fa-users"  style="font-size: 30px; color:#ffcf1c ;"></i><br>List Of Accounts</a></h2>
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left:30px;" href="/account"><i
+                            class="fa fa-users" style="font-size: 30px; color:#ffcf1c ;"></i><br>List Of Accounts</a>
+            </h2>
         </div>
         <div class="col-md-2">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px;" href="/create_account"><i class="fa fa-user" style="color:#ffcf1c; font-size: 30px;"></i> <br/>Create Account</a></h2>
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px;" href="/account/create"><i
+                            class="fa fa-user" style="color:#ffcf1c; font-size: 30px;"></i> <br/>Create Account</a></h2>
         </div>
     </div>
 
@@ -54,133 +58,76 @@
             </div>
             <div class="ibox-content">
 
-                <form id="form" method="post" class="wizard-big">
-
-                    <h1>Account</h1>
-                    <fieldset>
-                        <h2>Account Information</h2>
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="form-group">
-                                    <label>Username *</label>
-                                    <input id="userName" name="userName" type="text" class="form-control required">
-                                </div>
-                                <div class="form-group">
-                                    <label>Password *</label>
-                                    <input id="password" name="password" type="text" class="form-control required">
-                                </div>
-                                <div class="form-group">
-                                    <label>Confirm Password *</label>
-                                    <input id="confirm" name="confirm" type="text" class="form-control required">
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="text-center">
-                                    <div style="margin-top: 20px">
-                                        <i class="fa fa-sign-in" style="font-size: 180px;color: #e5e5e5 "></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <h1>Profile</h1>
-                    <fieldset>
-
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label>First name *</label>
-                                    <input id="name" name="name" type="text" class="form-control required">
-                                </div>
-                                <div class="form-group">
-                                    <label>Last name *</label>
-                                    <input id="surname" name="surname" type="text" class="form-control required">
-                                </div>
-                                <div class="form-group">
-                                    <label>Gender &nbsp;&nbsp;&nbsp;</label>
-                                    <label> <input type="radio" value="option1" name="a"> <i></i> Male </label>&nbsp;&nbsp;
-                                    <label> <input type="radio" value="option1" name="a"> <i></i> Female </label>
-                                </div>
-                                <div class="form-group">
-                                    <label>Department *</label>
-                                    <select class="form-control" required>
-                                        <option value="">Select Department</option>
-                                        <option value="1">Doctor</option>
-                                        <option value="2">Receptionist</option>
-                                        <option value="3">Finance</option>
-                                        <option value="4">Admin</option>
-                                        <option value="5">Other</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Age *</label>
-                                    <input id="age" name="age" type="number" class="form-control required">
-                                </div>
-                                <div class="form-group">
-                                    <label>Phonenumber *</label>
-                                    <input id="phonenumber" name="text" type="text" class="form-control required">
-                                </div>
-                                <div class="form-group">
-                                    <label>Email *</label>
-                                    <input id="email" name="email" type="text" class="form-control required email">
-                                </div>
-                                <div class="form-group">
-                                    <label>Address *</label>
-                                    <input id="address" name="address" type="text" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <h1>Your Information</h1>
-                    <fieldset>
-                        <div class="row">
-                            <div class="col-lg-5">
-                                <table class="table table-bordered text-bold table-striped hvr-glow">
-                                    <thead>
-                                    <td><b>Info</b></td><td><b>Details</b></td>
-                                    </thead>
-                                    <tr>
-                                        <td>P-ID:</td><td>P-223</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Name:</td><td>Ahamd</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gender:</td><td>Male</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Department:</td><td>Doct</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Age:</td><td>25</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Phone:</td><td>0780552233</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Address:</td><td>Carte Char, Pole Sourkhe, Kabul, Afghanistan</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <h1>Finish</h1>
-
-                    <fieldset>
-
-                        <h3></h3>
+                <form id="form" method="POST" action="/account" class="wizard-big">
+                    <h2>Account Information</h2>
+                    <div class="row">
                         <div class="col-lg-5">
-                            <div class="text-center">
-                                <div style="margin-top: 10px">
-                                    <i class="fa fa-check" style="font-size: 180px;color: #5be560 "></i>
-                                </div>
-                                <h3>Account Successfully Created!</h3>
+                            <div class="form-group">
+                                <label>Username *</label>
+                                <input id="" name="username" type="text" class="form-control required">
                             </div>
+                            <div class="form-group">
+                                <label>Password *</label>
+                                <input id="password" name="password" type="password" class="form-control required" onkeyup='check();' >
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password *</label>
+                                <input id="confirm_password" name="confirm_password" type="password" class="form-control required" onkeyup='check();' >
+                            </div>
+                            <span id='message'></span>
+                            <div class="form-group">
+                                <label>First name *</label>
+                                <input id="name" name="firstname" type="text" class="form-control required">
+                            </div>
+                            <div class="form-group">
+                                <label>Last name *</label>
+                                <input id="surname" name="lastname" type="text" class="form-control required">
+                            </div>
+                            <div class="form-group">
+                                <label>Gender &nbsp;&nbsp;&nbsp;</label>
+                                <label> <input type="radio" value="male" name="gender"> <i></i> Male </label>&nbsp;&nbsp;
+                                <label> <input type="radio" value="female" name="gender"> <i></i> Female </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Role *</label>
+                                <select class="form-control" required name="role">
+                                    <option value="" disabled>Select Department</option>
+                                    <option value="writer">Writer</option>
+                                    <option value="reader">Reader</option>
+                                    <option value="editor">Editor</option>
+                                    <option value="admin">Admin</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Department *</label>
+                                <select class="form-control" required name="department">
+                                    <option value="" disabled>Select Department</option>
+                                    <option value="doctor">Doctor</option>
+                                    <option value="finance">Finance</option>
+                                    <option value="reception">Reception</option>
+                                    <option value="owner">Owner</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Age *</label>
+                                <input id="age" name="age" type="number" class="form-control required">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone *</label>
+                                <input id="" name="phone" type="text" class="form-control required">
+                            </div>
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input id="" name="email" type="text" class="form-control required email">
+                            </div>
+                            <div class="form-group">
+                                <label>Address *</label>
+                                <input id="" name="address" type="text" class="form-control">
+                            </div>
+                            <input id="" name="" type="submit" class="btn btn-primary"/>
+                            <input id="" name="reset" type="reset" class="btn btn-white"/>
                         </div>
-                    </fieldset>
+                    </div>
                 </form>
             </div>
         </div>
@@ -191,99 +138,16 @@
 
 
 @section('script')
-
-    <!-- Steps -->
-    <script src="dashboard/js/plugins/staps/jquery.steps.min.js"></script>
-
-    <!-- Jquery Validate -->
-    <script src="dashboard/js/plugins/validate/jquery.validate.min.js"></script>
-
-    <!-- Custom and plugin javascript -->
-    <script src="dashboard/js/inspinia.js"></script>
-    <script src="dashboard/js/plugins/pace/pace.min.js"></script>
-
     <script>
-        $(document).ready(function(){
-            $("#wizard").steps();
-            $("#form").steps({
-                bodyTag: "fieldset",
-                onStepChanging: function (event, currentIndex, newIndex)
-                {
-                    // Always allow going backward even if the current step contains invalid fields!
-                    if (currentIndex > newIndex)
-                    {
-                        return true;
-                    }
-
-                    // Forbid suppressing "Warning" step if the user is to young
-                    if (newIndex === 4 && Number($("#age").val()) < 18)
-                    {
-                        return false;
-                    }
-
-                    var form = $(this);
-
-                    // Clean up if user went backward before
-                    if (currentIndex < newIndex)
-                    {
-                        // To remove error styles
-                        $(".body:eq(" + newIndex + ") label.error", form).remove();
-                        $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
-                    }
-
-                    // Disable validation on fields that are disabled or hidden.
-                    form.validate().settings.ignore = ":disabled,:hidden";
-
-                    // Start validation; Prevent going forward if false
-                    return form.valid();
-                },
-                onStepChanged: function (event, currentIndex, priorIndex)
-                {
-                    // Suppress (skip) "Warning" step if the user is old enough.
-//                    if (currentIndex === 3 && Number($("#age").val()) >= 18)
-//                    {
-//                        $(this).steps("next");
-//                    }
-
-                    // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
-                    if (currentIndex === 3 && priorIndex === 4)
-                    {
-                        $(this).steps("previous");
-                    }
-                },
-                onFinishing: function (event, currentIndex)
-                {
-                    var form = $(this);
-
-                    // Disable validation on fields that are disabled.
-                    // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
-                    form.validate().settings.ignore = ":disabled";
-
-                    // Start validation; Prevent form submission if false
-                    return form.valid();
-                },
-                onFinished: function (event, currentIndex)
-                {
-                    var form = $(this);
-
-                    // Submit form input
-                    form.submit();
-                }
-            }).validate({
-                errorPlacement: function (error, element)
-                {
-                    element.before(error);
-                },
-                rules: {
-                    confirm: {
-                        equalTo: "#password"
-                    }
-                }
-            });
-        });
-
+        var check = function () {
+            if (document.getElementById('password').value ==
+                document.getElementById('confirm_password').value) {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML = 'matching';
+            } else {
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').innerHTML = 'not matching';
+            }
+        }
     </script>
-
-
-
 @endsection
