@@ -14,7 +14,10 @@ class xrayincomeController extends Controller
      */
     public function index()
     {
-        $xrey = XRay::where('paid_amount',0)->get();
+
+
+        $xrey = XRay::where('paid_amount',0)->paginate(10);
+
         return view('xrey_income',compact('xrey'));
     }
 

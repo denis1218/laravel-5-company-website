@@ -15,7 +15,11 @@ class IncomeController extends Controller
      */
     public function index()
     {
-        $income = Treatment::where('remaining_fee','>','0')->get();
+
+
+
+        $income = Treatment::where('remaining_fee','>','0')->paginate(10);
+
             return view('income',compact('income'));
 
     }
