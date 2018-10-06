@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Income;
-use App\Treatment;
+use App\User;
 use Illuminate\Http\Request;
 
-class IncomeController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,13 +14,8 @@ class IncomeController extends Controller
      */
     public function index()
     {
-
-
-
-        $income = Treatment::where('remaining_fee','>','0')->paginate(10);
-
-            return view('income',compact('income'));
-
+        $users =  User::all();
+        return view ('account',compact('users'));
     }
 
     /**
@@ -31,7 +25,7 @@ class IncomeController extends Controller
      */
     public function create()
     {
-        //
+        return view ('create_account');
     }
 
     /**
@@ -42,64 +36,52 @@ class IncomeController extends Controller
      */
     public function store(Request $request)
     {
-
+        User::create($request->all());
+        return redirect('/account');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Income  $income
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Income $income)
+    public function show(User $user)
     {
-        $income = Treatment::where('remaining_fee',0)->get();
-
-        return view('complete_income',compact('income'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Income  $income
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Income $income)
+    public function edit(User $user)
     {
-
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Income  $income
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, User $user)
     {
-        $incom = Treatment::find($id);
-        $incom->paid_amount = $incom->paid_amount + $request->paid_amount;
-        $incom->remaining_fee = $incom->remaining_fee - $request->paid_amount;
-        $incom->save();
-        return redirect('income');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Income  $income
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Income $income)
+    public function destroy(User $user)
     {
         //
-    }
-    public  function editPaid(Request $request,$id){
-         $treat = Treatment::find($id);
-         $treat->paid_amount = $request->paid_amount;
-         $treat->save();
-         return redirect('income');
-
     }
 }

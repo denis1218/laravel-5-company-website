@@ -19,6 +19,7 @@ class CreateTreatmentsTable extends Migration
             $table->integer('teeth_number');
             $table->string('treatment');
             $table->string('dentaldefect');
+
             $table->integer('visits')->nullable();
             $table->date('next_appointment')->nullable();
             $table->string('meridiem')->nullable();
