@@ -277,7 +277,7 @@
                             <form action="/operation" method="POST">
 
                                 <input hidden type="hidden"/>
-                                <input type="hidden" value="{{ $checkValue = $checkValue + 1 }}" name="visits">
+                                <input type="hidden" value="{{ $checkValue }}" name="visits">
                                 <input hidden type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
                                 {{--<input hidden type="hidden" name="visits" value="{{ $treatments->visits  }}"/>--}}
 
