@@ -192,6 +192,10 @@
                                 </td>
                             </tr>
                                 @endforeach
+                                <tr>
+                                    <td colspan="2">Total Amount</td>
+                                    <td>{{$total}}</td>
+                                </tr>
                             @else
                                 <h1 style="color:red;">No Externel Income</h1>
                             @endif

@@ -33,7 +33,7 @@
                     <h5>Capital</h5>
                 </div>
                 <div class="ibox-content" style=" background-color: lightyellow;">
-                    <h1 class="no-margins">40 886,200</h1>
+                    <h1 class="no-margins">{{$Gtotal}}</h1>
                     <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
 
                 </div>
@@ -130,8 +130,17 @@
 
 
                         </tbody>
+<<<<<<< HEAD
                     </table>
 
+=======
+                        <tfoot>
+
+                        </tfoot>
+                    </table>
+
+                <div style="margin-left: 30px">{{$income->links()}}</div>
+>>>>>>> d2a7c38058f1f61e9ed9697b06758e37e16d9d13
                     <!-- detailss modal -->
                     @foreach($income as $in)
                     <div class="modal inmodal" id="{{$in->id}}" tabindex="-1" role="dialog" aria-hidden="true">
