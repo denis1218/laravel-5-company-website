@@ -209,6 +209,11 @@ Route::resource('/operation','TreatmentController');
 Route::get('/operation/create/{id}','TreatmentController@create');
 Route::get('/operation/{id}/edit/{patient_id}','TreatmentController@edit_treatment');
 
+
+//Other Income Route
+Route::resource('other','OincomController');
+
+
 //route for income
 
 Route::resource('income','IncomeController');
@@ -219,3 +224,4 @@ Route::patch('income3/{id}','incomeController@editPaid');
 
 Route::resource('xrey_income','xrayincomeController');
 Route::get('xrey_income2','xrayincomeController@showComplete');
+
