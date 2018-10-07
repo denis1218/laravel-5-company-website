@@ -225,20 +225,10 @@ Route::patch('income3/{id}','incomeController@editPaid');
 Route::resource('xrey_income','xrayincomeController');
 Route::get('xrey_income2','xrayincomeController@showComplete');
 
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
->>>>>>> 3f214eff500319b42aced6b5e75eb6b3af481dfc
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/account','UserController');
-<<<<<<< HEAD
 
-=======
-=======
->>>>>>> d2a7c38058f1f61e9ed9697b06758e37e16d9d13
->>>>>>> 3f214eff500319b42aced6b5e75eb6b3af481dfc
