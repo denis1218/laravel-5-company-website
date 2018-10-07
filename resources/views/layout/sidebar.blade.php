@@ -1,6 +1,14 @@
 <body>
+<<<<<<< HEAD
 
 <div style="position: fixed;" class="pull-right">
+=======
+<<<<<<< HEAD
+<div style="position: fixed;">
+=======
+<div style="position: fixed;" class="pull-right">
+>>>>>>> d2a7c38058f1f61e9ed9697b06758e37e16d9d13
+>>>>>>> 3f214eff500319b42aced6b5e75eb6b3af481dfc
     <div id="wrapper">
         <nav class="navbar-default navbar-static-side" role="navigation">
             <div class="sidebar-collapse">
