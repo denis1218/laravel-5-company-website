@@ -23,6 +23,10 @@ class DoctorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+//    public  function  showdoctor(){
+//        $doc = Doctor::orderBy('id','desc')->paginate(10);
+//        return view('doctor_salary',compact('doc'));
+//    }
     public function create()
     {
         return view('employee');
@@ -62,9 +66,9 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        $doctor=Doctor::find($doctor);
-        return view('doctor_report')->with('doctor',$doctor);
-//        return $doctor;
+        $doc = Doctor::orderBy('id','desc')->paginate(10);
+        return view('doctor_salary',compact('doc'));
+//
     }
 
     /**
@@ -73,9 +77,12 @@ class DoctorController extends Controller
      * @param  \App\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Doctor $doctor)
+    public function edit( $id)
     {
-        //
+        $doctor=Doctor::find($id);
+        $patient=Doctor::find($id)->patient;
+        return view('doctor_report',compact('doctor','patient'))->with('doctor',$doctor);
+
     }
 
     /**

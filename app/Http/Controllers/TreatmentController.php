@@ -38,9 +38,10 @@ class TreatmentController extends Controller
 
         $checkValue=Patient::find($id)->treatment;
         foreach ($checkValue as $ch) {
-            if($ch->visits==null){
+            if($ch->visits==0){
                 $ch->visits=1;
             }
+            $ch->visits=$ch->visits+1;
         }
         $treatments = Treatment::find($id);
 

@@ -48,90 +48,34 @@
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover dataTables-example">
                                     <thead>
-                                    <tr>
+                                    <tr style="color:black;">
                                         <th>Doctor-ID</th>
-                                        <th>Name</th>
-                                        <th>Departement</th>
-                                        <th>Working time</th>
+                                        <th>DoctorName</th>
+                                        <th>Department</th>
                                         <th colspan="2">Time Period</th>
                                         <th>Salary type</th>
                                         <th>Salary amount</th>
                                         <th>Paid amount</th>
                                         <th>Remaining</th>
-                                        <th>Edit</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($doc as $d)
                                     <tr class="gradeX">
-                                        <td>D-434</td>
-                                        <td>Dr.Ahmadi</td>
-                                        <td class="center">Orthodontist</td>
-                                        <td class="center">11:00AM to 3:00PM</td>
-                                        <td>01-sep-18</td>
-                                        <td>01-oct-18</td>
-                                        <td>fix</td>
-                                        <td class="center">15000 Afg</td>
-                                        <td>15000 Afg</td>
-                                        <td>00</td>
-                                        <td>
-                                            <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                                    data-target="#eprice">&nbsp;Edit
-                                            </button>
-                                        </td>
+                                        <td>{{$d->id}}</td>
+                                        <td>{{$d->first_name}}</td>
+                                        <td>{{$d->department}}</td>
+                                        <td>{{$d->created_at}}</td>
+                                        <td>{{$d->updated_at}}</td>
+                                        <td>{{$d->salary_type}}</td>
+                                        <td>{{$d->salary_amount}}</td>
+                                        <td>{{$d->paid}}</td>
+                                        <td>{{$d->remaining}}</td>
                                     </tr>
-                                    <tr class="gradeX">
-                                        <td>D-434</td>
-                                        <td>Dr.Jalal</td>
-                                        <td class="center">Orthodontist</td>
-                                        <td class="center">11:00AM to 3:00PM</td>
-                                        <td>01-sep-18</td>
-                                        <td>01-oct-18</td>
-                                        <td>percentage</td>
-                                        <td class="center">14000</td>
-                                        <td>12000 Afg</td>
-                                        <td>2000</td>
-                                        <td>
-                                            <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                                    data-target="#eprice">&nbsp;Edit
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>D-434</td>
-                                        <td>Dr.Samim</td>
-                                        <td class="center">Orthodontist</td>
-                                        <td class="center">11:00AM to 3:00PM</td>
-                                        <td>01-sep-18</td>
-                                        <td>01-oct-18</td>
-                                        <td>percentage</td>
-                                        <td class="center">11000</td>
-                                        <td>11000 Afg</td>
-                                        <td>00</td>
-                                        <td>
-                                            <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                                    data-target="#eprice">&nbsp;Edit
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>D-434</td>
-                                        <td>Dr.Tamim</td>
-                                        <td class="center">Orthodontist</td>
-                                        <td class="center">11:00AM to 3:00PM</td>
-                                        <td>01-sep-18</td>
-                                        <td>01-oct-18</td>
-                                        <td>fix</td>
-                                        <td class="center">18000</td>
-                                        <td>12000 Afg</td>
-                                        <td>6000</td>
-                                        <td>
-                                            <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                                    data-target="#eprice">&nbsp;Edit
-                                            </button>
-                                        </td>
-                                    </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
+                                {{$doc->links()}}
                             </div>
 
                         </div>

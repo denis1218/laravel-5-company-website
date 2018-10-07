@@ -168,9 +168,7 @@ Route::get('/iframe', function () {
     Route::get('/pdf', 'PdfGenerator@PDF');
 
 //doctor salary
-    Route::get('/doctor_salary', function () {
-        return view('doctor_salary');
-    });
+Route::get('/doctors2', 'DoctorController@show');
 
 Route::get('/patient/{id}/delete', 'PatientController@destroy');
 

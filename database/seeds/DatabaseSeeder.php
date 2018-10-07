@@ -47,7 +47,6 @@ class DatabaseSeeder extends Seeder
         DB::table('dental_defect_lists')->insert([
             'dental_defect' => 'Atrision',
         ]);
-<<<<<<< HEAD
 
         DB::table('users')->insert([
             'firstname' => 'mahdi',
@@ -62,8 +61,6 @@ class DatabaseSeeder extends Seeder
             'age' => '24',
             'address' => 'Kabul, Afghanistan',
         ]);
-=======
->>>>>>> d2a7c38058f1f61e9ed9697b06758e37e16d9d13
     }
 }
 

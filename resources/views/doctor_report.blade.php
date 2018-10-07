@@ -61,53 +61,53 @@
                 <div class="row" style="padding-left:30px; font-size: 20px;">
                     <div class="row m-b-lg m-t-lg">
                         <div class="col-md-5">
-                            @foreach($doctor as $d)
+{{--                            @foreach($doctor as $d)--}}
                             <div class="profile-info">
                                 <div class="">
                                     <div>
                                         <h2 class="no-margins font-b">
-                                            {{ $d->first_name }}
+                                            {{ $doctor->first_name }}
                                         </h2>
-                                        <h4> ID:&nbsp{{$d->id}}</h4>
+                                        <h4> ID:&nbsp;{{$doctor->id}}</h4>
                                         <small class="font-m">
                                             Dental Expert for 2 years work in dental clinics and more 100 patient visited
                                         </small>
                                     </div>
                                 </div>
                             </div>
-                            @endforeach
+                            {{--@endforeach--}}
                         </div>
                         <div class="col-md-7">
-                            @foreach($doctor as $do)
+{{--                            @foreach($doctor as $do)--}}
                             <table class="table small m-b-xs">
                                 <tbody>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Gender:<b>&nbsp;{{$do->gender}}</b>&nbsp;<i class="fa fa-male"></i></span>
+                                        <span class="font-m">Gender:<b>&nbsp;{{$doctor->gender}}</b>&nbsp;<i class="fa fa-male"></i></span>
                                     </td>
                                     <td>
-                                        <span class="font-m">Age:<b>&nbsp;{{$do->age}}</b>&nbsp;<i class=""></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-m">Salary Type:<b>&nbsp; {{$do->salary_type}}</b>&nbsp;<i class="fa fa-user-md"></i></span>
-                                    </td>
-                                    <td>
-                                        <span class="font-m">Salary :<b>&nbsp;{{$do->salary_amount}}</b>&nbsp;<i class=""></i></span>
+                                        <span class="font-m">Age:<b>&nbsp;{{$doctor->age}}</b>&nbsp;<i class=""></i></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Date Reg:<b>&nbsp;{{$do->created_at}}</b>&nbsp;<i class="fa fa-calendar"></i></span>
+                                        <span class="font-m">Salary Type:<b>&nbsp; {{$doctor->salary_type}}</b>&nbsp;<i class="fa fa-user-md"></i></span>
                                     </td>
                                     <td>
-                                        <span class="font-m">Department:<b>&nbsp {{$do->dept_id}}</b>&nbsp;<i class=""></i></span>
+                                        <span class="font-m">Salary :<b>&nbsp;{{$doctor->salary_amount}}</b>&nbsp;<i class=""></i></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="font-m">Date Reg:<b>&nbsp;{{$doctor->created_at}}</b>&nbsp;<i class="fa fa-calendar"></i></span>
+                                    </td>
+                                    <td>
+                                        <span class="font-m">Department:<b>&nbsp {{$doctor->dept_id}}</b>&nbsp;<i class=""></i></span>
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
-                            @endforeach
+                            {{--@endforeach--}}
                         </div>
                     </div>
                 </div>
@@ -138,26 +138,23 @@
                         <table class="table table-hover table-bordered">
                             <thead>
                             <tr>
-                                <th>#</th>
                                 <th>Patient P-ID</th>
                                 <th>Treatment</th>
-                                <th>Fee AFG</th>
-
+                                <th>Treatment Fee</th>
                                 <th>Date</th>
                                 <th>Status</th>
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($patient as $pat)
                             <tr>
-                                <td>1</td>
-                                <td>P-5543</td>
-                                <td>Permanent Filling</td>
+                                <td>{{$pat->id_patient}}</td>
+                                <td></td>
                                 <td>2000</td>
-
                                 <td>2018/5/6</td>
-                                <td> <span class="label label-info">Complete</span></td>
+                                <td><span class="label label-info">Complete</span></td>
                             </tr>
-
+                            @endforeach
                             <tr>
                                 <td>2</td>
                                 <td>P-2665</td>
