@@ -102,7 +102,7 @@
                                         <span class="font-m">Date Reg:<b>&nbsp;{{$doctor->created_at}}</b>&nbsp;<i class="fa fa-calendar"></i></span>
                                     </td>
                                     <td>
-                                        <span class="font-m">Department:<b>&nbsp {{$doctor->dept_id}}</b>&nbsp;<i class=""></i></span>
+                                        <span class="font-m">Department:<b>&nbsp {{$doctor->department}}</b>&nbsp;<i class=""></i></span>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -116,7 +116,7 @@
                 <hr/>
                 {{-- table info patient --}}
                 <div class="row">
-
+                    <form action="/doctors/{{$doctor->id}}" method="post">
                     <div class="col-md-12">
                         <div class="row">
                         <div class="col-md-6">
@@ -138,7 +138,7 @@
                         <table class="table table-hover table-bordered">
                             <thead>
                             <tr>
-                                <th>Patient P-ID</th>
+                                <th>Patient ID</th>
                                 <th>Treatment</th>
                                 <th>Treatment Fee</th>
                                 <th>Date</th>
@@ -146,89 +146,17 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($patient as $pat)
+                            @foreach($treatment as $treat)
+                                @if($treat->status_visits=='complete')
                             <tr>
-                                <td>{{$pat->id_patient}}</td>
-                                <td></td>
-                                <td>2000</td>
-                                <td>2018/5/6</td>
-                                <td><span class="label label-info">Complete</span></td>
+                                <td>{{$treat->patient->id_patient}}</td>
+                                <td>{{$treat->treatment}}</td>
+                                <td>{{$treat->paid_amount}}</td>
+                                <td>{{$treat->created_at}}</td>
+                                <td><span class="label label-info">{{$treat->status_visits}}</span></td>
                             </tr>
+                                @endif
                             @endforeach
-                            <tr>
-                                <td>2</td>
-                                <td>P-2665</td>
-                                <td>Extraction</td>
-                                <td>2500</td>
-
-                                <td>2018/5/7</td>
-                                <td> <span class="label label-info">Complete</span></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>P-3252</td>
-                                <td>Permanent Filling</td>
-                                <td>4500</td>
-
-                                <td>2018/5/6</td>
-                                <td> <span class="label label-info">Complete</span></td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>P-3256</td>
-                                <td>Extraction</td>
-                                <td>2000</td>
-
-                                <td>2018/5/4</td>
-                                <td> <span class="label label-info">Complete</span></td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>P-2152</td>
-                                <td>Permanent Filling</td>
-                                <td>2300</td>
-
-                                <td>2018/5/1</td>
-                                <td> <span class="label label-info">Complete</span></td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>P-2152</td>
-                                <td>Extraction</td>
-                                <td>2000</td>
-
-                                <td>2018/5/12</td>
-                                <td> <span class="label label-info">Complete</span></td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>P-2163</td>
-                                <td>Extraction</td>
-                                <td>700</td>
-
-                                <td>2018/5/12</td>
-                                <td> <span class="label label-warning">Not Visited</span></td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>P-2145</td>
-                                <td>Extraction</td>
-                                <td>1500</td>
-
-                                <td>2018/5/12</td>
-                                <td> <span class="label label-warning">Not Visited</span></td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>P-2184</td>
-                                <td>Extraction</td>
-                                <td>4510</td>
-
-                                <td>2018/5/12</td>
-                                <td> <span class="label label-warning">Not Visited</span></td>
-                            </tr>
-
-
                             </tbody>
                         </table>
                         <div class="row">
@@ -237,37 +165,33 @@
 
                                     <tr>
                                         <td class="text-bold"><h4>Total fee cash: </h4></td>
-                                        <td>15300 Afg</td>
+                                        <td>{{$total}}</td>
                                     </tr>
                                     <tr>
                                         <td class="text-bold"><h4>Doctor Fee: </h4></td>
-                                        <td>1700 Afg</td>
+                                        <td>{{$docfee}}</td>
 
                                     </tr>
                                     <tr>
                                         <td class="text-bold"><h4>Past Remaining: </h4></td>
-                                        <td> 00 </td>
+                                        <td>{{$doctor->remaining}}</td>
 
                                     </tr>
-                                    <form action="doctor_salary">
+
                                     <tr>
 
                                         <td class="text-bold"><h4>Paid amount: </h4></td>
                                         <td>
-                                            <input type="text" class="form-control" placeholder="Enter amount" required></td>
-
+                                            <input type="text" class="form-control" placeholder="Enter amount" name="salary" required></td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" class="text-right"> <button class="btn btn-primary" type="submit">Pay Salary</button></td>
                                     </tr>
-                                    </form>
-
                                 </table>
                             </div>
-
-                        </div>
-                    </div>
-
+                          </div>
+                       </div>
+                    </form>
                 </div>
                 {{-- table info patient --}}
             </div>

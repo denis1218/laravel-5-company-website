@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use App\Doctor;
 use Illuminate\Http\Request;
 
@@ -81,8 +81,15 @@ class DoctorController extends Controller
     {
         $doctor=Doctor::find($id);
         $patient=Doctor::find($id)->patient;
-        return view('doctor_report',compact('doctor','patient'))->with('doctor',$doctor);
-
+        $treatment=Doctor::find($id)->treatment;
+        $total=DB::table('treatments')->sum('paid_amount');
+        if($doctor->salary_type=='fix'){
+            $docfee=$doctor->salary_amount;
+        }else{
+            $docfee=($total*$doctor->salary_amount)/100;
+        }
+        return view('doctor_report',compact('doctor','patient','treatment','total','docfee'));
+//        return $treatment;
     }
 
     /**
