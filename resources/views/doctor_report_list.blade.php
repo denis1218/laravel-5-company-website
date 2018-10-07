@@ -92,7 +92,7 @@
                                         <td class="center">{{$doctor->start_work_time}}</td>
                                         <td class="center">{{$doctor->end_work_time}}</td>
                                         <td>{{$doctor->phone}}</td>
-                                        <td class="center">{{$doctor->dept_id}}</td>
+                                        <td class="center">{{$doctor->department}}</td>
                                         <td>{{$doctor->gender}}</td>
                                         <td>{{$doctor->max_patient}}</td>
                                         <td>{{$doctor->salary_type}}</td>
@@ -117,44 +117,62 @@
     {{-- show all doctors --}}
 
     {{-- Modal window dialog --}}
-    <div class="modal inmodal" id="medicine-model" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal inmodal" id="eprice" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content animated fadeIn">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span
-                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <i class=" modal-icon"><img src="img/medicine_drug.png" width="80px"/></i>
-                    <h4 class="modal-title">Medicine patient</h4>
-                    <small>information patient medicine</small>
+                                aria-hidden="true">&times;</span><span
+                                class="sr-only">Close</span></button>
+                    <i class="fa fa-edit modal-icon text-primary"></i>
+                    <h4 class="modal-title">Edit Content</h4>
+                    <small>Edit Doctor Information</small>
                 </div>
                 <div class="modal-body">
-                    <table class="table table-hover no-margins table-striped">
-                        <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>Name Drug</th>
-                            <th>Each day</th>
-                            <th>Total Days</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Ampicilne</td>
-                            <td>1+1+1</td>
-                            <td>2 days</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Brophine</td>
-                            <td>1+1+1</td>
-                            <td>1 day</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <div class="row">
+
+                        <div class="form-group">
+                            <label for="dr-name">Doctor Name :</label>
+                            <input type="text" name="dr-name" class="form-control" placeholder="Doctor Name" value="Dr.Ahmadi">
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department :</label>
+                            <input type="text" name="department" class="form-control" placeholder="Department" value="orthodontist">
+                        </div>
+                        <div class="form-group">
+                            <label for="worktime">Work Time :</label>
+                            <input type="text" name="worktime" class="form-control" placeholder="Work Time" value="11:00 AM To 3:00 PM">
+                        </div>
+                        <div class="form-group">
+                            <label for="timeperiod">Time Period :</label>
+                            <input type="text" name="timeperiod" class="form-control" placeholder="Time Period" value="01-sep-18 To 01-oct-18">
+                        </div>
+                        <div class="form-group">
+                            <label for="salary_type">Salary Type :</label>
+                            <input type="text" name="salary_type" class="form-control" placeholder="Salary Type" value="Fix">
+                        </div>
+                        <div class="form-group">
+                            <label for="salary_amount">Salary Amount :</label>
+                            <input type="text" name="salary_amount" class="form-control" placeholder="Salary Amount" value="15000">
+                        </div>
+                        <div class="form-group">
+                            <label for="paid_amount">Paid Amount :</label>
+                            <input type="text" name="paid_amount" class="form-control" placeholder="Paid Amount" value="10000">
+                        </div>
+                        <div class="form-group">
+                            <label for="remaining">Remaining :</label>
+                            <input type="text" name="remaining" class="form-control" placeholder="Remaining" value="5000">
+                        </div>
+
+                    </div>
+
+
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+
                 </div>
             </div>
         </div>
