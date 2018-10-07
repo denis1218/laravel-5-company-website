@@ -20,12 +20,25 @@
 @endsection
 
 @section('content')
+<<<<<<< HEAD
+    <div class="row wrapper border-bottom white-bg page-heading"
+         style="margin-left:1px;margin-top:-20px; margin-bottom: 10px;">
+        <div class="col-md-2">
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left:30px;" href="/account"><i
+                            class="fa fa-users" style="font-size: 30px; color:#ffcf1c ;"></i><br>List Of Accounts</a>
+            </h2>
+        </div>
+        <div class="col-md-2">
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px;" href="/account/create"><i
+                            class="fa fa-user" style="color:#ffcf1c; font-size: 30px;"></i> <br/>Create Account</a></h2>
+=======
     <div class="row wrapper border-bottom white-bg page-heading" style="margin-left:1px;margin-top:-20px; margin-bottom: 10px;">
         <div class="col-md-2">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left:30px;" href="/account"><i class="fa fa-users"  style="font-size: 30px; color:#ffcf1c ;"></i><br>List Of Accounts</a></h2>
         </div>
         <div class="col-md-2">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px;" href="/create_account"><i class="fa fa-user" style="color:#ffcf1c; font-size: 30px;"></i> <br/>Create Account</a></h2>
+>>>>>>> d2a7c38058f1f61e9ed9697b06758e37e16d9d13
         </div>
     </div>
 
@@ -54,6 +67,78 @@
             </div>
             <div class="ibox-content">
 
+<<<<<<< HEAD
+                <form id="form" method="POST" action="/account" class="wizard-big">
+                    <h2>Account Information</h2>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <label>Username *</label>
+                                <input id="" name="username" type="text" class="form-control required">
+                            </div>
+                            <div class="form-group">
+                                <label>Password *</label>
+                                <input id="password" name="password" type="password" class="form-control required" onkeyup='check();' >
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password *</label>
+                                <input id="confirm_password" name="confirm_password" type="password" class="form-control required" onkeyup='check();' >
+                            </div>
+                            <span id='message'></span>
+                            <div class="form-group">
+                                <label>First name *</label>
+                                <input id="name" name="firstname" type="text" class="form-control required">
+                            </div>
+                            <div class="form-group">
+                                <label>Last name *</label>
+                                <input id="surname" name="lastname" type="text" class="form-control required">
+                            </div>
+                            <div class="form-group">
+                                <label>Gender &nbsp;&nbsp;&nbsp;</label>
+                                <label> <input type="radio" value="male" name="gender"> <i></i> Male </label>&nbsp;&nbsp;
+                                <label> <input type="radio" value="female" name="gender"> <i></i> Female </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Role *</label>
+                                <select class="form-control" required name="role">
+                                    <option value="" disabled>Select Department</option>
+                                    <option value="writer">Writer</option>
+                                    <option value="reader">Reader</option>
+                                    <option value="editor">Editor</option>
+                                    <option value="admin">Admin</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Department *</label>
+                                <select class="form-control" required name="department">
+                                    <option value="" disabled>Select Department</option>
+                                    <option value="doctor">Doctor</option>
+                                    <option value="finance">Finance</option>
+                                    <option value="reception">Reception</option>
+                                    <option value="owner">Owner</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Age *</label>
+                                <input id="age" name="age" type="number" class="form-control required">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone *</label>
+                                <input id="" name="phone" type="text" class="form-control required">
+                            </div>
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input id="" name="email" type="text" class="form-control required email">
+                            </div>
+                            <div class="form-group">
+                                <label>Address *</label>
+                                <input id="" name="address" type="text" class="form-control">
+                            </div>
+                            <input id="" name="" type="submit" class="btn btn-primary"/>
+                            <input id="" name="reset" type="reset" class="btn btn-white"/>
+                        </div>
+                    </div>
+=======
                 <form id="form" method="post" class="wizard-big">
 
                     <h1>Account</h1>
@@ -181,6 +266,7 @@
                             </div>
                         </div>
                     </fieldset>
+>>>>>>> d2a7c38058f1f61e9ed9697b06758e37e16d9d13
                 </form>
             </div>
         </div>
@@ -191,6 +277,20 @@
 
 
 @section('script')
+<<<<<<< HEAD
+    <script>
+        var check = function () {
+            if (document.getElementById('password').value ==
+                document.getElementById('confirm_password').value) {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML = 'matching';
+            } else {
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').innerHTML = 'not matching';
+            }
+        }
+    </script>
+=======
 
     <!-- Steps -->
     <script src="dashboard/js/plugins/staps/jquery.steps.min.js"></script>
@@ -286,4 +386,5 @@
 
 
 
+>>>>>>> d2a7c38058f1f61e9ed9697b06758e37e16d9d13
 @endsection

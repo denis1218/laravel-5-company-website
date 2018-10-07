@@ -35,13 +35,13 @@ class TreatmentController extends Controller
     public function create($id)
     {
         $patient_in_treatment = Patient::find($id);
+
         $checkValue=Patient::find($id)->treatment;
         foreach ($checkValue as $ch) {
             if($ch->visits==null){
                 $ch->visits=1;
             }
         }
-
         $treatments = Treatment::find($id);
 
         $treatementList = TreatmentList::all();
@@ -51,6 +51,7 @@ class TreatmentController extends Controller
         $patient_id = $patient_in_treatment->id;
 
         return view('treatment_operation', compact('patient_in_treatment','patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments'));
+
     }
 
 

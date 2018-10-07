@@ -132,6 +132,7 @@
                         </tbody>
                     </table>
 
+                <div style="margin-left: 30px">{{$income->links()}}</div>
                     <!-- detailss modal -->
                     @foreach($income as $in)
                     <div class="modal inmodal" id="{{$in->id}}" tabindex="-1" role="dialog" aria-hidden="true">
