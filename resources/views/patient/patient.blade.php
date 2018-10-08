@@ -78,7 +78,7 @@
                                         <td>{{ $doctors->first_name }}</td>
                                         <td>{{ $doctors->start_work_time }}&nbsp;- &nbsp;{{ $doctors->end_work_time}}</td>
                                         <td>{{ $doctors->max_patient }}</td>
-                                        <td>{{ $doctors->have_patient }}</td>
+                                        <td>{{ count($doctors->patient) }}</td>
                                         <td>
                                             <div class="i-checks"><input type="radio"  value="{{ $doctors->id }}" name="FK_id_Doctor" id="FK_id_Doctor" required></div>
                                         </td>

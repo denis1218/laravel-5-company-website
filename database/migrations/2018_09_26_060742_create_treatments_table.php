@@ -19,7 +19,11 @@ class CreateTreatmentsTable extends Migration
             $table->integer('teeth_number');
             $table->string('treatment');
             $table->string('dentaldefect');
+<<<<<<< HEAD
             $table->integer('visits');
+=======
+            $table->integer('visits')->nullable();
+>>>>>>> d2a7c38058f1f61e9ed9697b06758e37e16d9d13
             $table->date('next_appointment')->nullable();
             $table->string('meridiem')->nullable();
             $table->string('status_visits');
@@ -27,7 +31,9 @@ class CreateTreatmentsTable extends Migration
             $table->longText('description')->nullable();
             $table->boolean('have_xray');
             $table->integer('estimated_fee');
+            $table->integer('paid_amount')->nullable();
             $table->integer('discount')->nullable();
+            $table->integer('remaining_fee')->nullable();
             $table->unsignedInteger('patient_id')->nullable();
             $table->timestamps();
 

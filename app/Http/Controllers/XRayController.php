@@ -43,10 +43,12 @@ class XrayController extends Controller
         $rey->patient_id=$request->patient_id;
         $rey->patient_name=$request->patient_name;
         $rey->doctor_name=$request->doctor_name;
+        $rey->paid_amount= 0;
         $rey->xray_status=$request->input('xray_status');
         $rey->save();
+
         return redirect('/xray');
-    //    return $request;
+
 
     }
 

@@ -47,6 +47,23 @@ class DatabaseSeeder extends Seeder
         DB::table('dental_defect_lists')->insert([
             'dental_defect' => 'Atrision',
         ]);
+<<<<<<< HEAD
+
+        DB::table('users')->insert([
+            'firstname' => 'mahdi',
+            'lastname' => 'safari',
+            'username' => 'mahdi@safariAdmin',
+            'password' => '123456',
+            'email' => 'mahdi@gmail.com',
+            'department' => 'Doctor',
+            'phone' => '0790424144',
+            'gender' => 'male',
+            'role' => 'Owner',
+            'age' => '24',
+            'address' => 'Kabul, Afghanistan',
+        ]);
+=======
+>>>>>>> d2a7c38058f1f61e9ed9697b06758e37e16d9d13
     }
 }
 

@@ -92,7 +92,7 @@
                                         </h2>
                                         <h4>ID: {{ $patient_in_treatment->id_patient }}</h4>
                                         <small style="font-size: 15px;">
-                                            <span class="text-warning" style="font-size: 15px; font-weight: bold;">Problem Health : </span>Blood
+                                            <span class="text-warning" style="font-size: 15px; font-weight: bold;">Problem Health : </span>
                                             {{ $patient_in_treatment->problem_health }}
                                         </small>
                                     </div>
@@ -277,7 +277,7 @@
                             <form action="/operation" method="POST">
 
                                 <input hidden type="hidden"/>
-                                <input type="hidden" value="{{ $checkValue = $checkValue + 1 }}" name="visits">
+                                <input type="hidden" value="{{ $checkValue }}" name="visits">
                                 <input hidden type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
                                 {{--<input hidden type="hidden" name="visits" value="{{ $treatments->visits  }}"/>--}}
 
@@ -316,6 +316,7 @@
                                             <input type="number" class="form-control" id="cost_treatment"
                                                    name="estimated_fee" value="">
                                         </div>
+                                        <input type="text" name="paid_amount" hidden>
                                         <div class="form-group">
                                             <label for="nex">Discount :</label>
                                             <input type="number" class="form-control" name="discount">
@@ -370,7 +371,7 @@
             </div>
         </div>
     </div>
-    </div>
+
 
 @endsection
 
@@ -394,7 +395,7 @@
 
     {{-- disabling send to xray button --}}
 
-<<<<<<< HEAD
+
     <script>
         $(document).ready(function () {
             $('#check').change(function () {
@@ -407,16 +408,7 @@
             });
         });
     </script>
-    <script>
-        $(document).ready(function () {
-            $('#id').click(function () {
-                $('#but').prop('disabled', true);
-            });
-        });
-    </script>
-=======
-        {{-- disabling send to xray button --}}
->>>>>>> b586c647018e93540a5ffcaae308e1f5fe08cf01
+
 
     <script type="text/javascript">
         function activation() {
