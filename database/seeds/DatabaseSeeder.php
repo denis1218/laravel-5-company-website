@@ -18,14 +18,28 @@ class DatabaseSeeder extends Seeder
         DB::Table('users')->insert([
             'firstname' => 'mahdi',
             'lastname' => 'safari',
-            'username' => 'mahdi@safariAdmin',
-            'password' => '123456',
+            'username' => 'admin',
+            'password' => Hash::make('123456'),
             'email' => 'mahdi@gmail.com',
-            'department' => 'Doctor',
+            'department' => 'doctor',
             'phone' => '0790424144',
             'gender' => 'male',
             'role' => 'Owner',
             'age' => '24',
+            'address' => 'Kabul, Afghanistan',
+        ]);
+
+        DB::Table('users')->insert([
+            'firstname' => 'ali',
+            'lastname' => 'zamani',
+            'username' => 'user',
+            'password' => Hash::make('123456'),
+            'email' => 'ali@gmail.com',
+            'department' => 'reception',
+            'phone' => '0790424144',
+            'gender' => 'male',
+            'role' => 'Owner',
+            'age' => '45',
             'address' => 'Kabul, Afghanistan',
         ]);
 //        if(UserTableSeeder::countt() == 0)$this->call(UserTableSeeder::class );

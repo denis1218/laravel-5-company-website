@@ -42,12 +42,16 @@ class LoginController extends Controller
     {
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            echo "your login";
-            return redirect()->intended('home');
+            return redirect()->intended('/dash');
+        }else{
+            return redirect('/login');
         }
     }
 
-
+    public function logout(Request $request) {
+        Auth::logout();
+        return redirect('/login');
+    }
 
 
 

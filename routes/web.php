@@ -13,13 +13,14 @@
 |
 */
 Auth::routes();
-Route::post('/login','HomeController@login')->name('login');
-Route::get('/login','HomeController@showLoginForm');
 
-Route::get('/dash', 'HomeController@index')->name('home');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
 
+Route::middleware('auth')->group(function () {
+
+    Route::get('/dash', 'HomeController@index')->name('home');
     Route::get('/patient', function () {
         return view('patient');
     });
@@ -78,8 +79,6 @@ Route::get('/dash', 'HomeController@index')->name('home');
     Route::get('/iframe', function () {
         return view('/iframe');
     });
-
-
 
 
 // show all account users
@@ -221,15 +220,7 @@ Route::get('/dash', 'HomeController@index')->name('home');
     Route::get('xrey_income2', 'xrayincomeController@showComplete');
 
 
-
-
     Route::resource('/account', 'UserController');
 
+});
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
