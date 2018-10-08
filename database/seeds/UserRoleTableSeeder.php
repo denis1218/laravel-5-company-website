@@ -14,9 +14,5 @@ class UserRoleTableSeeder extends Seeder
     {
         $admin = User::find(1);
         $admin->assignRole('admin');
-
-        $guest = User::find(2);
-        $guest->assignRole('doctor');
-
     }
 }

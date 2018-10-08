@@ -29,41 +29,53 @@
 <div class="row">
     <div class="col-lg-6"></div>
     <div class="col-lg-6">
-<<<<<<< HEAD
+
         <div class="middle-box text-center loginscreen animated fadeInDown" style="margin-top: 100px;">
             <div style="box-shadow:3px 3px 3px 3px  lightblue">
                 <div>
                     <img src="/img/Dentaa3.png" width="650px" class="img-responsive" alt="">
                 </div>
                 <h3 style="color: white;">Welcome to HK|Clinic</h3>
-                <form class="m-t" role="form" action="">
-                    {{--<input type="hidden" name="_token" value="{{csrf_token()}}">--}}
+                <form class="m-t" role="form" method="POST" action="{{ route('login') }}">
+                    {{--@csrf--}}
 
                     <div class="form-group">
-                        <select class="form-control" required>
-                            <option value="">Select Your Position</option>
-                            <option value="1">Doctor</option>
-                            <option value="2">Receptionist</option>
-                            <option value="3">Finance</option>
-                            <option value="4">Admin</option>
-                            <option value="5">other</option>
-                        </select>
+                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                        @endif
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" name="email" placeholder="Email Address" required="">
+                        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                        @if ($errors->has('password'))
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                        @endif
                     </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" name="pass" placeholder="Password" required="">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                        <label class="form-check-label" for="remember">
+                            {{ __('Remember Me') }}
+                        </label>
                     </div>
-                    <a href="/dash" class="btn btn-success block full-width m-b">Login</a>
-                    <a href="#">
-                        <small style="color:white;">Forgot password?</small>
+                    <button type="submit" class="btn btn-primary">
+                        {{ __('Login') }}
+                    </button>
+
+                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                        {{ __('Forgot Your Password?') }}
                     </a>
                 </form>
             </div>
         </div>
     </div>
-<div style="box-shadow:3px 3px 3px 3px  lightblue">
+<div>
     <div>
 
         <!-- Mainly scripts -->
