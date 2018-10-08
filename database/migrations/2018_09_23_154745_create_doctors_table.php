@@ -22,7 +22,7 @@ class CreateDoctorsTable extends Migration
             $table->time('start_work_time')->nullable();
             $table->time('end_work_time')->nullable();
             $table->date('from')->nullable();
-            $table->time('to')->nullable();
+            $table->date('to')->nullable();
             $table->string('phone');
             $table->string('department');
             $table->string('gender');

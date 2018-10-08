@@ -101,7 +101,14 @@ class DoctorController extends Controller
      */
     public function update(Request $request, Doctor $doctor)
     {
-        //
+        $payment=Doctor::find($doctor)->first();
+        $payment->paid=$request->salary;
+        $payment->remaining=$request->colection-$request->salary;
+        $payment->from=$request->start;
+        $payment->to=$request->end;
+        $payment->save();
+        return redirect('/doctors2');
+//        return $payment;
     }
 
     /**

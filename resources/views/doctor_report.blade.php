@@ -117,6 +117,8 @@
                 {{-- table info patient --}}
                 <div class="row">
                     <form action="/doctors/{{$doctor->id}}" method="post">
+                        {{csrf_field()}}
+                        {{method_field('PUT')}}
                     <div class="col-md-12">
                         <div class="row">
                         <div class="col-md-6">
@@ -165,24 +167,31 @@
 
                                     <tr>
                                         <td class="text-bold"><h4>Total fee cash: </h4></td>
-                                        <td>{{$total}}</td>
+                                        <td><input type="text" class="form-control" value="{{$total}}" readonly></td>
                                     </tr>
                                     <tr>
                                         <td class="text-bold"><h4>Doctor Fee: </h4></td>
-                                        <td>{{$docfee}}</td>
+                                        <td><input type="text" name="fee" class="form-control" value="{{$docfee}}" readonly></td>
 
                                     </tr>
                                     <tr>
                                         <td class="text-bold"><h4>Past Remaining: </h4></td>
-                                        <td>{{$doctor->remaining}}</td>
+                                        <td><input type="text" class="form-control" value="{{$doctor->remaining}}" readonly=""></td>
 
                                     </tr>
 
                                     <tr>
 
+                                        <td class="text-bold"><h4>Total Doctor Fee: </h4></td>
+                                        <td>
+                                            <input type="text" class="form-control" value="{{$docfee+$doctor->remaining}}" name="colection" readonly>
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td class="text-bold"><h4>Paid amount: </h4></td>
                                         <td>
-                                            <input type="text" class="form-control" placeholder="Enter amount" name="salary" required></td>
+                                            <input type="text" class="form-control" placeholder="Enter the fee amount" name="salary" required>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" class="text-right"> <button class="btn btn-primary" type="submit">Pay Salary</button></td>
