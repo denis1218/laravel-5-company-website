@@ -1,7 +1,10 @@
 <?php
 
 use App\Doctor;
+use App\Patient;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,9 +15,53 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        DB::Table('users')->insert([
+            'firstname' => 'jawad',
+            'lastname' => 'mohammadi',
+            'username' => 'jawadFB',
+            'password' => Hash::make('123456'),
+            'email' => 'jawad@gmail.com',
+            'department' => 'doctor',
+            'phone' => '0790424144',
+            'gender' => 'male',
+            'role' => 'Owner',
+            'age' => '25',
+            'address' => 'Kabul, Afghanistan',
+        ]);
+
+        DB::Table('users')->insert([
+            'firstname' => 'mahdi',
+            'lastname' => 'safari',
+            'username' => 'admin',
+            'password' => Hash::make('123456'),
+            'email' => 'mahdi@gmail.com',
+            'department' => 'doctor',
+            'phone' => '0790424144',
+            'gender' => 'male',
+            'role' => 'Owner',
+            'age' => '24',
+            'address' => 'Kabul, Afghanistan',
+        ]);
+
+        DB::Table('users')->insert([
+            'firstname' => 'haidar',
+            'lastname' => 'alami',
+            'username' => 'user',
+            'password' => Hash::make('123456'),
+            'email' => 'haidar@gmail.com',
+            'department' => 'reception',
+            'phone' => '0790424144',
+            'gender' => 'male',
+            'role' => 'Owner',
+            'age' => '22',
+            'address' => 'Kabul, Afghanistan',
+        ]);
+//        if(UserTableSeeder::countt() == 0)$this->call(UserTableSeeder::class );
         if(\App\Doctor::count() == 0)$this->call(DoctorTableSeeder::class );
-        if(\App\Patient::count() == 0)$this->call(PatientTableSeeder::class );
+        if(Patient::count() == 0)$this->call(PatientTableSeeder::class );
+        if(Permission::count() == 0)$this->call(PermissionTableSeeder::class );
+        if(Role::count() == 0)$this->call(RoleTableSeeder::class );
+        $this->call(UserRoleTableSeeder::class);
 
         DB::table('treatment_lists')->insert([
             'treatment' => 'PF Parmanent Filling',
@@ -48,19 +95,7 @@ class DatabaseSeeder extends Seeder
             'dental_defect' => 'Atrision',
         ]);
 
-        DB::table('users')->insert([
-            'firstname' => 'mahdi',
-            'lastname' => 'safari',
-            'username' => 'mahdi@safariAdmin',
-            'password' => '123456',
-            'email' => 'mahdi@gmail.com',
-            'department' => 'Doctor',
-            'phone' => '0790424144',
-            'gender' => 'male',
-            'role' => 'Owner',
-            'age' => '24',
-            'address' => 'Kabul, Afghanistan',
-        ]);
+
     }
 }
 
@@ -76,7 +111,7 @@ class PatientTableSeeder extends Seeder
 {
     public function run()
     {
-        factory(\App\Patient::class, 10)->create();
+        factory(Patient::class, 10)->create();
     }
 }
 
