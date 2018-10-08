@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Treatment;
 use DB;
 use App\Doctor;
 use Illuminate\Http\Request;
