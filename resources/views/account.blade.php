@@ -116,7 +116,7 @@
                                     <td>{{ $user->firstname }}</td>
                                     <td>{{ $user->lastname }}</td>
                                     <td>{{ $user->username }}</td>
-                                    <td>{{ $user->password }}</td>
+                                    <td>{{ str_limit($user->password ,7)}}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->phone }}</td>
                                     <td>{{ $user->department }}</td>

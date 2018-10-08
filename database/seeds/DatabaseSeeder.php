@@ -16,6 +16,20 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::Table('users')->insert([
+            'firstname' => 'jawad',
+            'lastname' => 'mohammadi',
+            'username' => 'jawadFB',
+            'password' => Hash::make('123456'),
+            'email' => 'jawad@gmail.com',
+            'department' => 'doctor',
+            'phone' => '0790424144',
+            'gender' => 'male',
+            'role' => 'Owner',
+            'age' => '25',
+            'address' => 'Kabul, Afghanistan',
+        ]);
+
+        DB::Table('users')->insert([
             'firstname' => 'mahdi',
             'lastname' => 'safari',
             'username' => 'admin',
@@ -30,16 +44,16 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::Table('users')->insert([
-            'firstname' => 'ali',
-            'lastname' => 'zamani',
+            'firstname' => 'haidar',
+            'lastname' => 'alami',
             'username' => 'user',
             'password' => Hash::make('123456'),
-            'email' => 'ali@gmail.com',
+            'email' => 'haidar@gmail.com',
             'department' => 'reception',
             'phone' => '0790424144',
             'gender' => 'male',
             'role' => 'Owner',
-            'age' => '45',
+            'age' => '22',
             'address' => 'Kabul, Afghanistan',
         ]);
 //        if(UserTableSeeder::countt() == 0)$this->call(UserTableSeeder::class );
