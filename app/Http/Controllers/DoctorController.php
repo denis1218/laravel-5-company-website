@@ -66,7 +66,7 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        $doc = Doctor::orderBy('id','desc')->paginate(10);
+        $doc = Doctor::orderBy('id','asc')->paginate(10);
         return view('doctor_salary',compact('doc'));
 //
     }
@@ -82,7 +82,7 @@ class DoctorController extends Controller
         $doctor=Doctor::find($id);
         $patient=Doctor::find($id)->patient;
         $treatment=Doctor::find($id)->treatment;
-        $total=DB::table('treatments')->sum('paid_amount');
+        $total=$treatment->sum('paid_amount');
         if($doctor->salary_type=='fix'){
             $docfee=$doctor->salary_amount;
         }else{
