@@ -57,7 +57,7 @@
                             <div class="ibox-content">
                                 <div class="row">
                                     <div class="col">
-                                        <a type="button" class="btn btn-primary" href="doctor_salary" style="margin-left: 16px;">Go To Doctor Salary <i class="fa fa-arrow-right"></i> </a>
+                                        <a type="button" class="btn btn-primary" href="/doctors2" style="margin-left: 16px;">Go To Doctor Salary <i class="fa fa-arrow-right"></i> </a>
                                         <hr>
                                     </div>
                                 </div>
@@ -92,12 +92,12 @@
                                         <td class="center">{{$doctor->start_work_time}}</td>
                                         <td class="center">{{$doctor->end_work_time}}</td>
                                         <td>{{$doctor->phone}}</td>
-                                        <td class="center">{{$doctor->dept_id}}</td>
+                                        <td class="center">{{$doctor->department}}</td>
                                         <td>{{$doctor->gender}}</td>
                                         <td>{{$doctor->max_patient}}</td>
                                         <td>{{$doctor->salary_type}}</td>
                                         <td class="center">{{$doctor->salary_amount}}</td>
-                                        <td class="center"><a class="btn btn-xs btn-info" href="/doctors/{{$doctor->id}}">Details &nbsp;<i class="fa fa-file-o"></i></a></td>
+                                        <td class="center"><a class="btn btn-xs btn-info" href="/doctors/{{$doctor->id}}/edit">PaySalary &nbsp;<i class="fa fa-file-o"></i></a></td>
                                         </tr>
                                         </tbody>
                                          @endforeach

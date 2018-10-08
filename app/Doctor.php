@@ -15,4 +15,8 @@ class Doctor extends Model
     public function xray(){
         return $this->hasMany(Xray::class);
     }
+
+    public function treatment(){
+        return $this->hasManyThrough(Treatment::class ,Patient::class);
+    }
 }
