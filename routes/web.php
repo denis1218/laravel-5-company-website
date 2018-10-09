@@ -185,17 +185,13 @@ Route::get('/doctors2', 'DoctorController@show');
 
 
 //Doctor Operation
-<<<<<<< HEAD
-//Route::resource('operation','OperationController');
-=======
     Route::resource('operation', 'OperationController');
->>>>>>> c224ed7b11bbbc0e03cef7aea8075b7975456b6e
 
 //Xray Controller
     Route::resource('xray', 'XrayController');
 
 //Treatment controller
-    Route::resource('/treat', 'TreatmentController');
+//    Route::resource('/treat', 'TreatmentController');
 
     Route::resource('/operation', 'TreatmentController');
 
@@ -215,7 +211,6 @@ Route::get('/doctors2', 'DoctorController@show');
 
 //route for xray income
 
-<<<<<<< HEAD
 Route::resource('xrey_income','xrayincomeController');
 Route::get('xrey_income2','xrayincomeController@showComplete');
 Route::patch('xrey_income3/{id}','xrayincomeController@update2');
@@ -229,18 +224,7 @@ Route::get('finance_report_income3','FinanceReportIncomeController@selectType');
 //financial report income select type and range
 Route::get('finance_report_income4','FinanceReportIncomeController@selectRange');
 Auth::routes();
-=======
-    Route::resource('xrey_income', 'xrayincomeController');
-    Route::get('xrey_income2', 'xrayincomeController@showComplete');
-
-
-    Route::resource('/account', 'UserController');
+Route::resource('/account', 'UserController');
 
 });
->>>>>>> c224ed7b11bbbc0e03cef7aea8075b7975456b6e
 
-
-<<<<<<< HEAD
-Route::resource('/account','UserController');
-=======
->>>>>>> c224ed7b11bbbc0e03cef7aea8075b7975456b6e

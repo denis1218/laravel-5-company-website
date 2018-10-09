@@ -128,6 +128,12 @@
                 </div>
                 <div class="row">
 
+
+        </div>
+    </div>
+    {{-- select report by type income --}}
+
+
                     <div class="col-md-7">
                         <div class="form-group" style="margin-left:35px;">
                             <label class="font-noraml">Select single day </label>
@@ -292,6 +298,7 @@
             $('.getl').collapse('hide');
         })
     </script>
+
 
 
 @endsection
