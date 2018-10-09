@@ -2,6 +2,7 @@
 
 use App\Doctor;
 use App\Patient;
+use App\Treatment;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -59,6 +60,7 @@ class DatabaseSeeder extends Seeder
 //        if(UserTableSeeder::countt() == 0)$this->call(UserTableSeeder::class );
         if(\App\Doctor::count() == 0)$this->call(DoctorTableSeeder::class );
         if(Patient::count() == 0)$this->call(PatientTableSeeder::class );
+        if(Treatment::count() == 0)$this->call(TreatmentTableSeeder::class );
         if(Permission::count() == 0)$this->call(PermissionTableSeeder::class );
         if(Role::count() == 0)$this->call(RoleTableSeeder::class );
         $this->call(UserRoleTableSeeder::class);
