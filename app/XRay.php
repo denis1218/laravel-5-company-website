@@ -4,8 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
+
 class Xray extends Model
 {
+    public  $timestamps = false;
     public function treatment(){
         return $this->belongsTo(Treatment::class , 'FK_id_treatment', 'id');
     }
@@ -18,4 +21,6 @@ class Xray extends Model
     public function doctor(){
         return $this->belongsTo(Doctor::class,'doctor_id','id');
     }
+
 }
+

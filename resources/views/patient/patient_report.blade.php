@@ -94,7 +94,7 @@
                                                 <td>{{$patient->id_patient}}</td>
                                                 <td>{{$patient->name}}</td>
                                                 <td>{{$patient->lastname}}</td>
-                                                <td></i>{{$patient->doctor->first_name}}</td>
+                                                <td>{{$patient->doctor->first_name}}</td>
                                                 <td>{{$patient->status}}</td>
                                                 <td><i class="fa fa-calendar"></i>{{$patient->created_at}}</td>
                                                 <td class="">{{$patient->problem_health}}</td>
