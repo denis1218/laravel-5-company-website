@@ -275,9 +275,9 @@
                                            style="visibility: hidden;">
                             </form>
                             <form action="/operation" method="POST">
-
-                                <input hidden type="hidden"/>
-                                <input type="hidden" value="{{ $checkValue = $checkValue + 1 }}" name="visits">
+                                @foreach($checkValue as $check)
+                                <input type="hidden" value="{{ ++$check->visits }}" name="visits">
+                                @endforeach
                                 <input hidden type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
                                 {{--<input hidden type="hidden" name="visits" value="{{ $treatments->visits  }}"/>--}}
 

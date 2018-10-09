@@ -1,6 +1,13 @@
 <body>
 
+<<<<<<< HEAD
 <div style="position: fixed;">
+=======
+
+
+
+<div style="position: fixed;" class="pull-right">
+>>>>>>> c224ed7b11bbbc0e03cef7aea8075b7975456b6e
 
     <div id="wrapper">
         <nav class="navbar-default navbar-static-side" role="navigation">
@@ -79,5 +86,3 @@
 
             </div>
         </nav>
-    </div>
-</div>

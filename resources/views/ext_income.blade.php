@@ -192,12 +192,16 @@
                                 </td>
                             </tr>
                                 @endforeach
+                                <tr>
+                                    <td colspan="2">Total Amount</td>
+                                    <td>{{$total}}</td>
+                                </tr>
                             @else
                                 <h1 style="color:red;">No Externel Income</h1>
                             @endif
                             </tbody>
                         </table>
-
+                            {{$others->links()}}
                         {{--Edit modal--}}
                         @foreach($others as $other)
                         <div class="modal inmodal" id="{{$other->id}}" tabindex="-1" role="dialog" aria-hidden="true">

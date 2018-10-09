@@ -16,21 +16,21 @@
         </div>
         <div class="col-md-2 ">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
-                   href="/ext_income"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> From
+                   href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> From
                     Other</a></h2>
         </div>
-        <div class="col-lg-4" style="float:right;">
-            <div class="ibox float-e-margins" style=" background-color: lightyellow;">
-                <div class="ibox-title" style=" background-color: lightyellow;">
-                    <h5>Capital</h5>
-                </div>
-                <div class="ibox-content" style=" background-color: lightyellow;">
-                    <h1 class="no-margins">40 886,200</h1>
-                    <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
+        {{--<div class="col-lg-4" style="float:right;">--}}
+            {{--<div class="ibox float-e-margins" style=" background-color: lightyellow;">--}}
+                {{--<div class="ibox-title" style=" background-color: lightyellow;">--}}
+                    {{--<h5>Capital</h5>--}}
+                {{--</div>--}}
+                {{--<div class="ibox-content" style=" background-color: lightyellow;">--}}
+                    {{--<h1 class="no-margins">40 886,200</h1>--}}
+                    {{--<div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>--}}
 
-                </div>
-            </div>
-        </div>
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
     </div>
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
@@ -110,10 +110,9 @@
 
                         </tbody>
                     </table>
-<<<<<<< HEAD
-=======
+
                    <div style="margin-left: 30px">{{$xrey->links()}}</div>
->>>>>>> d2a7c38058f1f61e9ed9697b06758e37e16d9d13
+
                     @foreach($xrey as $xr)
                     <!-- edit model -->
                     <div class="modal inmodal" id="p{{$xr->id}}" tabindex="-1" role="dialog" aria-hidden="true">

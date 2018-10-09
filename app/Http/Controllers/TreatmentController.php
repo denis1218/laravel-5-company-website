@@ -36,6 +36,7 @@ class TreatmentController extends Controller
     public function create($id)
     {
         $patient_in_treatment = Patient::find($id);
+<<<<<<< HEAD
 //        return $patient_in_treatment;
         $last_treatment = Treatment::orderBy('id', 'desc')->find($id);
 
@@ -45,6 +46,15 @@ class TreatmentController extends Controller
             $checkValue = 0;
         }else{
             $checkValue = $last_treatment->visits;
+=======
+
+        $checkValue=Patient::find($id)->treatment;
+        foreach ($checkValue as $ch) {
+            if($ch->visits==0){
+                $ch->visits=1;
+            }
+            $ch->visits=$ch->visits+1;
+>>>>>>> c224ed7b11bbbc0e03cef7aea8075b7975456b6e
         }
         $treatments = Treatment::find($id);
 
@@ -56,8 +66,11 @@ class TreatmentController extends Controller
 
         return view('treatment_operation', compact('patient_in_treatment','patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments'));
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c224ed7b11bbbc0e03cef7aea8075b7975456b6e
     }
 
 
@@ -147,6 +160,7 @@ class TreatmentController extends Controller
         $patient_in_treatment = Patient::find($patient_id);
 //        return $patient_in_treatment->visit;
 //        dd($patient_in_treatment);
+<<<<<<< HEAD
         $treatments = Treatment::orderBy('id', 'desc')->find($id);
 
         if($treatments== null)
@@ -155,11 +169,21 @@ class TreatmentController extends Controller
         }else{
             $checkValue = $treatments->visits;
         }
+=======
+        $last_treatment = Treatment::orderBy('id', 'desc')->find($id);
+        if($last_treatment==null)
+        {
+            $checkValue = 0;
+        }else{
+            $checkValue = $last_treatment->visits;
+        }
+        $checkValue=$checkValue+1;
+>>>>>>> c224ed7b11bbbc0e03cef7aea8075b7975456b6e
         $treatementList = TreatmentList::all();
         $dentalDefectList = DentalDefectList::all();
         $patient_id = $patient_in_treatment->id;
         return view('treatment_operation_edit', compact('patient_in_treatment',
-            'treatementList','patient_id','checkValue', 'dentalDefectList', 'treatments'));
+            'treatementList','patient_id','checkValue', 'dentalDefectList','last_treatment'));
     }
 
     /**

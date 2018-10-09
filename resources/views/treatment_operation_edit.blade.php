@@ -230,7 +230,7 @@
                                         <div class="form-group">
                                             <label>Tooth Number :</label>
                                             <input type="number" class="form-control" required name="teeth_number"
-                                                   value="{{ $treatments->teeth_number }}"/>
+                                                   value="{{ $last_treatment->teeth_number }}"/>
                                         </div>
                                         {{--<div class="form-group">--}}
                                             {{--<div class="i-checks" for="nex">Have X-Ray :--}}
@@ -244,7 +244,7 @@
                                             <select class="form-control" name="dentaldefect">
                                                 <option disabled>Select Dental Defect</option>
                                                 @foreach($dentalDefectList as $list)
-                                                    <option value="{{ $treatments->dentaldefect }}">{{ $list->dental_defect }}</option>
+                                                    <option value="{{ $last_treatment->dentaldefect }}">{{ $list->dental_defect }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -253,7 +253,7 @@
                                             <select class="form-control" name="treatment">
                                                 <option disabled>Select Treatment</option>
                                                 @foreach($treatementList as $listTreatement)
-                                                    <option value="{{ $treatments->treatment }}"
+                                                    <option value="{{ $last_treatment->treatment }}"
                                                     > {{ $listTreatement->treatment }} </option>
                                                 @endforeach
                                             </select>
@@ -262,28 +262,28 @@
                                         <div class="form-group">
                                             <label for="nex">Treatment Cost :</label>
                                             <input type="number" class="form-control" name="estimated_fee"
-                                                   value="{{ $treatments->estimated_fee }}">
+                                                   value="{{ $last_treatment->estimated_fee }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="nex">Discount :</label>
                                             <input type="number" class="form-control" name="discount"
-                                                   value="{{ $treatments->discount }}">
+                                                   value="{{ $last_treatment->discount }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="nex">Next Appointment :</label>
                                             <input type="date" class="form-control" name="next_appointment"
-                                                   value="{{ $treatments->next_appointment }}">
+                                                   value="{{ $last_treatment->next_appointment }}">
                                         </div>
                                         <div class="form-group">
                                             <div class="i-checks" for="nex">Set Meridiem :<label>&nbsp;&nbsp;
-                                                    @if($treatments->meridiem == 'morning')
+                                                    @if($last_treatment->meridiem == 'morning')
                                                         <input type="radio" value="morning" checked name="meridiem">
                                                         <i></i> Morning
                                                         <input type="radio" value="afternoon"
                                                                name="meridiem">
                                                         <i></i> Afternoon
                                                 </label>
-                                                @elseif($treatments->meridiem == 'afternoon')
+                                                @elseif($last_treatment->meridiem == 'afternoon')
                                                     <input type="radio" value="morning" name="meridiem">
                                                     <i></i> Morning
                                                     &nbsp;&nbsp;&nbsp; <input type="radio" checked value="afternoon"

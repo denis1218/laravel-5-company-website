@@ -151,7 +151,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Spatie\Permission\PermissionServiceProvider::class,
 
         // Barryvdh\DomPDF\ServiceProvider::class,
 
