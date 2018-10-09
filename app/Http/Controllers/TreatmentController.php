@@ -8,6 +8,7 @@ use App\Patient;
 use App\Treatment;
 use App\TreatmentList;
 use App\XRay;
+use Carbon;
 use Illuminate\Http\Request;
 
 class TreatmentController extends Controller
@@ -39,7 +40,7 @@ class TreatmentController extends Controller
         $last_treatment = Treatment::orderBy('id', 'desc')->find($id);
 
 
-        if($last_treatment->visits <= 0)
+        if($last_treatment->visits == 0)
         {
             $checkValue = 0;
         }else{
@@ -86,7 +87,7 @@ class TreatmentController extends Controller
         $treatment->dentaldefect = $request->input('dentaldefect');
         $treatment->status_pay = true;
         $treatment->have_xray = false;
-
+        $treatment->created_at = Carbon\Carbon::now();
         if($request->status_visits == null)
         {
             $treatment->status_visits = 'not complete';

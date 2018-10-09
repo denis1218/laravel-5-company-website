@@ -32,7 +32,7 @@ class CreateTreatmentsTable extends Migration
             $table->integer('discount')->nullable();
             $table->integer('remaining_fee')->nullable();
             $table->unsignedInteger('patient_id')->nullable();
-            $table->timestamps();
+            $table->date('created_at');
 
             $table->foreign('patient_id')
                 ->references('id')->on('patients')
