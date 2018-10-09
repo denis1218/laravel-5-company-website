@@ -9,7 +9,7 @@ class Treatment extends Model
 {
 
 //    protected $dateFormat = 'd.m.Y';
-//    protected $dates = ['created_at', 'updated_at', 'published_at', 'deleted_at'];
+//    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
     // etc...
     protected $guarded = [];
     public $table = 'treatments';

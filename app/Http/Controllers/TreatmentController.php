@@ -24,7 +24,6 @@ class TreatmentController extends Controller
     {
         $operation = Patient::orderBy('id', 'asc')->paginate(10);
         return view('doctor_operations')->with('operation', $operation);
-
     }
 
 

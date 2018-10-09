@@ -23,6 +23,7 @@ $factory->define(\App\Treatment::class, function (Faker $faker) {
         'paid_amount' => $faker->numberBetween(1000,3000),
         'discount' => $faker->numberBetween(0,500),
         'patient_id' => $faker->numberBetween(1,9),
-        'remaining_fee' => $faker->numberBetween(0,10)
+        'remaining_fee' => $faker->numberBetween(0,10),
+        'created_at' => $faker->dateTimeThisMonth()->format('Y-m-d H:i:s')
     ];
 });

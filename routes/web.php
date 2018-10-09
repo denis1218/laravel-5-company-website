@@ -14,13 +14,12 @@
 */
 Auth::routes();
 
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
-
+Route::get('/dash', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/dash', 'HomeController@index')->name('home');
+//    Route::get('/dash', 'HomeController@index');
+
     Route::get('/patient', function () {
         return view('patient');
     });
@@ -121,7 +120,6 @@ Route::middleware('auth')->group(function () {
     });
 
 
-
 // Financial report date
     Route::get('/finance_report_expenses', function () {
         return view('finance_report.finance_report_expenses');
@@ -161,7 +159,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/pdf', 'PdfGenerator@PDF');
 
 //doctor salary
-Route::get('/doctors2', 'DoctorController@show');
+    Route::get('/doctors2', 'DoctorController@show');
 
     Route::get('/patient/{id}/delete', 'PatientController@destroy');
 
@@ -211,20 +209,21 @@ Route::get('/doctors2', 'DoctorController@show');
 
 //route for xray income
 
-Route::resource('xrey_income','xrayincomeController');
-Route::get('xrey_income2','xrayincomeController@showComplete');
-Route::patch('xrey_income3/{id}','xrayincomeController@update2');
+    Route::resource('xrey_income', 'xrayincomeController');
+    Route::get('xrey_income2', 'xrayincomeController@showComplete');
+    Route::patch('xrey_income3/{id}', 'xrayincomeController@update2');
 // Financial report daily
-Route::resource('/finance_report_income','FinanceReportIncomeController');
+    Route::resource('/finance_report_income', 'FinanceReportIncomeController');
 //financial report income daily report range
-Route::get('finance_report_income2','FinanceReportIncomeController@rangeDay');
+    Route::get('finance_report_income2', 'FinanceReportIncomeController@rangeDay');
 //financial report income select type single
-Route::get('finance_report_income3','FinanceReportIncomeController@selectType');
+    Route::get('finance_report_income3', 'FinanceReportIncomeController@selectType');
 
 //financial report income select type and range
-Route::get('finance_report_income4','FinanceReportIncomeController@selectRange');
-Auth::routes();
-Route::resource('/account', 'UserController');
+    Route::get('finance_report_income4', 'FinanceReportIncomeController@selectRange');
+
+    Route::resource('/account', 'UserController');
 
 });
+
 
