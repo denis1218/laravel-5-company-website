@@ -1,10 +1,4 @@
 <body>
-
-
-
-
-<div style="position: fixed;" class="pull-right">
-
     <div id="wrapper">
         <nav class="navbar-default navbar-static-side" role="navigation">
             <div class="sidebar-collapse">
@@ -79,6 +73,5 @@
                         </ul>
                     </li>
                 </ul>
-
             </div>
         </nav>
