@@ -143,7 +143,7 @@ class TreatmentController extends Controller
         $last_treatment = Treatment::orderBy('id', 'desc')->find($id);
         if($last_treatment==null)
         {
-            $checkValue = 0;
+            $checkValue = 1;
         }else{
             $checkValue = $last_treatment->visits;
         }

@@ -81,17 +81,22 @@ class DoctorController extends Controller
     public function edit( $id)
     {
         $doctor=Doctor::find($id);
-        $patient=Doctor::find($id)->patient;
+        $patient=Doctor::find($id)->with('patient')->get();
         $treatment=Doctor::find($id)->treatment;
         $selectedTreatment=Treatment::whereBetween('created_at',[$doctor->to,now()])->get();
-        $total=$selectedTreatment->sum('paid_amount');
+        if($doctor->to==null){
+            $total=$treatment->sum('paid_amount');
+        }else{
+            $total=$selectedTreatment->sum('paid_amount');
+        }
+
         if($doctor->salary_type=='fix'){
             $docfee=$doctor->salary_amount;
         }else{
             $docfee=($total*$doctor->salary_amount)/100;
         }
         return view('doctor_report',compact('doctor','patient','treatment','total','docfee'));
-//        return $total;
+//        return $treatment;
     }
 
     /**

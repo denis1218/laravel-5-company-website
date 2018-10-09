@@ -170,7 +170,7 @@
                                         <div class="form-group"><label class="col-md-3 control-label">Paid Amount
                                                 :</label>
 
-                                            <div class="col-sm-6"><input type="text" class="form-control"
+                                            <div class="col-sm-6"><input type="number" class="form-control" max="{{$in->remaining_fee}}"
                                                                          name="paid_amount" placeholder="Paid Amount"></div>
                                         </div>
                                     </div>
