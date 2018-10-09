@@ -186,15 +186,11 @@ Route::get('/doctors2', 'DoctorController@show');
 // Doctor Registration
     Route::resource('/doctors', 'DoctorController');
 
-
-//Doctor Operation
-    Route::resource('operation', 'OperationController');
-
 //Xray Controller
     Route::resource('xray', 'XrayController');
 
 //Treatment controller
-    Route::resource('/treat', 'TreatmentController');
+//    Route::resource('/treat', 'TreatmentController');
 
     Route::resource('/operation', 'TreatmentController');
 
