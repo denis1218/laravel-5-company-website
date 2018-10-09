@@ -124,23 +124,12 @@
                                         data-target="#e{{$incom->id}}">&nbsp;Edit
                                 </button>
                             </td>
-
                         </tr>
                         @endforeach
-
-
                         </tbody>
-<<<<<<< HEAD
                     </table>
-
-=======
-                        <tfoot>
-
-                        </tfoot>
-                    </table>
-
                 <div style="margin-left: 30px">{{$income->links()}}</div>
->>>>>>> d2a7c38058f1f61e9ed9697b06758e37e16d9d13
+
                     <!-- detailss modal -->
                     @foreach($income as $in)
                     <div class="modal inmodal" id="{{$in->id}}" tabindex="-1" role="dialog" aria-hidden="true">

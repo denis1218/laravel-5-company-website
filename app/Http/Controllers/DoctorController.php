@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use App\Doctor;
 use Illuminate\Http\Request;
 
@@ -23,6 +23,10 @@ class DoctorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+//    public  function  showdoctor(){
+//        $doc = Doctor::orderBy('id','desc')->paginate(10);
+//        return view('doctor_salary',compact('doc'));
+//    }
     public function create()
     {
         return view('employee');
@@ -44,7 +48,7 @@ class DoctorController extends Controller
         $doctor->start_work_time=$request->input('start_work_time');
         $doctor->end_work_time=$request->input('end_work_time');
         $doctor->phone=$request->input('phone');
-        $doctor->department=$request->input('dept_id');
+        $doctor->department=$request->input('department');
         $doctor->gender=$request->input('gender');
         $doctor->salary_type=$request->input('salary_type');
         $doctor->salary_amount=$request->input('salary_amount');
@@ -62,9 +66,9 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        $doctor=Doctor::find($doctor);
-        return view('doctor_report')->with('doctor',$doctor);
-//        return $doctor;
+        $doc = Doctor::orderBy('id','desc')->paginate(10);
+        return view('doctor_salary',compact('doc'));
+//
     }
 
     /**
@@ -73,9 +77,19 @@ class DoctorController extends Controller
      * @param  \App\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Doctor $doctor)
+    public function edit( $id)
     {
-        //
+        $doctor=Doctor::find($id);
+        $patient=Doctor::find($id)->patient;
+        $treatment=Doctor::find($id)->treatment;
+        $total=DB::table('treatments')->sum('paid_amount');
+        if($doctor->salary_type=='fix'){
+            $docfee=$doctor->salary_amount;
+        }else{
+            $docfee=($total*$doctor->salary_amount)/100;
+        }
+        return view('doctor_report',compact('doctor','patient','treatment','total','docfee'));
+//        return $treatment;
     }
 
     /**
@@ -87,7 +101,14 @@ class DoctorController extends Controller
      */
     public function update(Request $request, Doctor $doctor)
     {
-        //
+        $payment=Doctor::find($doctor)->first();
+        $payment->paid=$request->salary;
+        $payment->remaining=$request->colection-$request->salary;
+        $payment->from=$request->start;
+        $payment->to=$request->end;
+        $payment->save();
+        return redirect('/doctors2');
+//        return $payment;
     }
 
     /**

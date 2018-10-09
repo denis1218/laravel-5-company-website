@@ -70,7 +70,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Departement</label>
                             <div class="col-md-4">
-                                <select class="select2_demo_1 form-control" id="dept" name="dept_id" required>
+                                <select class="select2_demo_1 form-control" id="dept" name="department" required>
                                     <option value="0">Select Department</option>
                                     <option value="regular basis">regular basis</option>
                                     <option value="Orthodontist">Orthodontist</option>

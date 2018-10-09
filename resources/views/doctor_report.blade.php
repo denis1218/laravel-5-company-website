@@ -61,53 +61,53 @@
                 <div class="row" style="padding-left:30px; font-size: 20px;">
                     <div class="row m-b-lg m-t-lg">
                         <div class="col-md-5">
-                            @foreach($doctor as $d)
+{{--                            @foreach($doctor as $d)--}}
                             <div class="profile-info">
                                 <div class="">
                                     <div>
                                         <h2 class="no-margins font-b">
-                                            {{ $d->first_name }}
+                                            {{ $doctor->first_name }}
                                         </h2>
-                                        <h4> ID:&nbsp{{$d->id}}</h4>
+                                        <h4> ID:&nbsp;{{$doctor->id}}</h4>
                                         <small class="font-m">
                                             Dental Expert for 2 years work in dental clinics and more 100 patient visited
                                         </small>
                                     </div>
                                 </div>
                             </div>
-                            @endforeach
+                            {{--@endforeach--}}
                         </div>
                         <div class="col-md-7">
-                            @foreach($doctor as $do)
+{{--                            @foreach($doctor as $do)--}}
                             <table class="table small m-b-xs">
                                 <tbody>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Gender:<b>&nbsp;{{$do->gender}}</b>&nbsp;<i class="fa fa-male"></i></span>
+                                        <span class="font-m">Gender:<b>&nbsp;{{$doctor->gender}}</b>&nbsp;<i class="fa fa-male"></i></span>
                                     </td>
                                     <td>
-                                        <span class="font-m">Age:<b>&nbsp;{{$do->age}}</b>&nbsp;<i class=""></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-m">Salary Type:<b>&nbsp; {{$do->salary_type}}</b>&nbsp;<i class="fa fa-user-md"></i></span>
-                                    </td>
-                                    <td>
-                                        <span class="font-m">Salary :<b>&nbsp;{{$do->salary_amount}}</b>&nbsp;<i class=""></i></span>
+                                        <span class="font-m">Age:<b>&nbsp;{{$doctor->age}}</b>&nbsp;<i class=""></i></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Date Reg:<b>&nbsp;{{$do->created_at}}</b>&nbsp;<i class="fa fa-calendar"></i></span>
+                                        <span class="font-m">Salary Type:<b>&nbsp; {{$doctor->salary_type}}</b>&nbsp;<i class="fa fa-user-md"></i></span>
                                     </td>
                                     <td>
-                                        <span class="font-m">Department:<b>&nbsp {{$do->dept_id}}</b>&nbsp;<i class=""></i></span>
+                                        <span class="font-m">Salary :<b>&nbsp;{{$doctor->salary_amount}}</b>&nbsp;<i class=""></i></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="font-m">Date Reg:<b>&nbsp;{{$doctor->created_at}}</b>&nbsp;<i class="fa fa-calendar"></i></span>
+                                    </td>
+                                    <td>
+                                        <span class="font-m">Department:<b>&nbsp {{$doctor->department}}</b>&nbsp;<i class=""></i></span>
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
-                            @endforeach
+                            {{--@endforeach--}}
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,9 @@
                 <hr/>
                 {{-- table info patient --}}
                 <div class="row">
-
+                    <form action="/doctors/{{$doctor->id}}" method="post">
+                        {{csrf_field()}}
+                        {{method_field('PUT')}}
                     <div class="col-md-12">
                         <div class="row">
                         <div class="col-md-6">
@@ -138,100 +140,25 @@
                         <table class="table table-hover table-bordered">
                             <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Patient P-ID</th>
+                                <th>Patient ID</th>
                                 <th>Treatment</th>
-                                <th>Fee AFG</th>
-
+                                <th>Treatment Fee</th>
                                 <th>Date</th>
                                 <th>Status</th>
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($treatment as $treat)
+                                @if($treat->status_visits=='complete')
                             <tr>
-                                <td>1</td>
-                                <td>P-5543</td>
-                                <td>Permanent Filling</td>
-                                <td>2000</td>
-
-                                <td>2018/5/6</td>
-                                <td> <span class="label label-info">Complete</span></td>
+                                <td>{{$treat->patient->id_patient}}</td>
+                                <td>{{$treat->treatment}}</td>
+                                <td>{{$treat->paid_amount}}</td>
+                                <td>{{$treat->created_at}}</td>
+                                <td><span class="label label-info">{{$treat->status_visits}}</span></td>
                             </tr>
-
-                            <tr>
-                                <td>2</td>
-                                <td>P-2665</td>
-                                <td>Extraction</td>
-                                <td>2500</td>
-
-                                <td>2018/5/7</td>
-                                <td> <span class="label label-info">Complete</span></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>P-3252</td>
-                                <td>Permanent Filling</td>
-                                <td>4500</td>
-
-                                <td>2018/5/6</td>
-                                <td> <span class="label label-info">Complete</span></td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>P-3256</td>
-                                <td>Extraction</td>
-                                <td>2000</td>
-
-                                <td>2018/5/4</td>
-                                <td> <span class="label label-info">Complete</span></td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>P-2152</td>
-                                <td>Permanent Filling</td>
-                                <td>2300</td>
-
-                                <td>2018/5/1</td>
-                                <td> <span class="label label-info">Complete</span></td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>P-2152</td>
-                                <td>Extraction</td>
-                                <td>2000</td>
-
-                                <td>2018/5/12</td>
-                                <td> <span class="label label-info">Complete</span></td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>P-2163</td>
-                                <td>Extraction</td>
-                                <td>700</td>
-
-                                <td>2018/5/12</td>
-                                <td> <span class="label label-warning">Not Visited</span></td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>P-2145</td>
-                                <td>Extraction</td>
-                                <td>1500</td>
-
-                                <td>2018/5/12</td>
-                                <td> <span class="label label-warning">Not Visited</span></td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>P-2184</td>
-                                <td>Extraction</td>
-                                <td>4510</td>
-
-                                <td>2018/5/12</td>
-                                <td> <span class="label label-warning">Not Visited</span></td>
-                            </tr>
-
-
+                                @endif
+                            @endforeach
                             </tbody>
                         </table>
                         <div class="row">
@@ -240,37 +167,40 @@
 
                                     <tr>
                                         <td class="text-bold"><h4>Total fee cash: </h4></td>
-                                        <td>15300 Afg</td>
+                                        <td><input type="text" class="form-control" value="{{$total}}" readonly></td>
                                     </tr>
                                     <tr>
                                         <td class="text-bold"><h4>Doctor Fee: </h4></td>
-                                        <td>1700 Afg</td>
+                                        <td><input type="text" name="fee" class="form-control" value="{{$docfee}}" readonly></td>
 
                                     </tr>
                                     <tr>
                                         <td class="text-bold"><h4>Past Remaining: </h4></td>
-                                        <td> 00 </td>
+                                        <td><input type="text" class="form-control" value="{{$doctor->remaining}}" readonly=""></td>
 
                                     </tr>
-                                    <form action="doctor_salary">
+
                                     <tr>
 
+                                        <td class="text-bold"><h4>Total Doctor Fee: </h4></td>
+                                        <td>
+                                            <input type="text" class="form-control" value="{{$docfee+$doctor->remaining}}" name="colection" readonly>
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td class="text-bold"><h4>Paid amount: </h4></td>
                                         <td>
-                                            <input type="text" class="form-control" placeholder="Enter amount" required></td>
-
+                                            <input type="text" class="form-control" placeholder="Enter the fee amount" name="salary" required>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" class="text-right"> <button class="btn btn-primary" type="submit">Pay Salary</button></td>
                                     </tr>
-                                    </form>
-
                                 </table>
                             </div>
-
-                        </div>
-                    </div>
-
+                          </div>
+                       </div>
+                    </form>
                 </div>
                 {{-- table info patient --}}
             </div>
