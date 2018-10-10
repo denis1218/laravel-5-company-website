@@ -24,10 +24,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/patient', function () {
         return view('patient');
     });
-// Employee Registration
-    Route::get('/employee', function () {
-        return view('/employee');
-    });
 
     Route::get('/appo', function () {
         return view('appointment');
@@ -168,6 +164,7 @@ Route::get('/doctors2', 'DoctorController@show');
 
 // Doctor Registrationexp
     Route::resource('doctors', 'DoctorController');
+    Route::get('/doctorregister','DoctorController@create');
     Route::get('expense_form', function () {
         return view('expense_form');
     });
@@ -201,6 +198,7 @@ Route::get('/doctors2', 'DoctorController@show');
 
 //Other Income Route
     Route::resource('other', 'OincomController');
+    Route::get('/other2','OincomController@create');
 
 
 //route for income
