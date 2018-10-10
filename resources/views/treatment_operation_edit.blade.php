@@ -163,7 +163,7 @@
                                 <div class="row shadow p-3 mb-5 rounded bg-info"
                                      table-exchange
                                      style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
-                                    <h3 style="font-weight: bold">{{ $treats->visits }}</h3>
+                                    <h3 style="font-weight: bold">{{ $checkValue}}</h3>
                                 </div>
                                 <br>
                                 <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
@@ -223,7 +223,7 @@
 
                                 <input hidden type="hidden"/>
                                 <input hidden type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
-                                <input hidden type="hidden" name="visits" value="{{ $checkValue  }}"/>
+                                <input hidden type="hidden" name="visits" value="1"/>
 
                                 <div class="row" style="margin-top:30px;">
                                     <div class="col-md-6">

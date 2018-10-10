@@ -82,6 +82,7 @@
                             <th>Doctor Name</th>
                             <th>Paid Amount</th>
                             <th>P-Details</th>
+                            <th>Edit</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -96,6 +97,11 @@
                                     <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
                                             data-target="#pinfo">&nbsp;P-Details
                                     </button>
+                                <td>
+                                    <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal"
+                                            data-target="#e{{$xr->id}}">&nbsp;Edit
+                                    </button>
+                                </td>
                                 </td>
                             </tr>
 
@@ -147,108 +153,53 @@
                         </div>
                         <!-- end of model -->
                     @endforeach
-                    {{--Edit modal--}}
-                    <div class="modal inmodal" id="edit" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content animated fadeIn">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                                class="sr-only">Close</span></button>
-                                    <i class="fa fa-edit modal-icon text-primary"></i>
-                                    <h4 class="modal-title">Edit Content</h4>
-                                    <small>Edit information</small>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label for="pid">PID</label>
-                                            <input type="text" name="pid" class="form-control" value="p-078678976" disabled>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="p-name">Patient Name</label>
-                                            <input type="text" name="p-name" class="form-control" placeholder="Patient Name" value="Ahmad">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="doctor-name">Doctor Name</label>
-                                            <input type="text" name="doctor-name" class="form-control" placeholder="Doctor Name" value="Dr.Samim">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="estimated-fee">Estimated Fee</label>
-                                            <input type="text" name="estimated-fee" class="form-control" placeholder="Estimated Fee" value="2000">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="p-amount">Paid Amount</label>
-                                            <input type="text" name="p-amount" class="form-control" placeholder="Paid Amount" value="1500">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="discount">Discount</label>
-                                            <input type="text" name="discount" class="form-control" placeholder="Discount" value="200">
-                                        </div>
+                    @foreach($xrey as $xr)
+                        {{--Edit modal--}}
+                        <div class="modal inmodal" id="e{{$xr->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content animated fadeIn">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                                                    class="sr-only">Close</span></button>
+                                        <i class="fa fa-edit modal-icon text-primary"></i>
+                                        <h4 class="modal-title">Edit Content</h4>
+                                        <small>Edit information</small>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="/xrey_income3/{{$xr->id}}" method="post">
+                                            {{method_field('patch')}}
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    <label for="pid">PID</label>
+                                                    <input type="text" name="pid" class="form-control" value="{{$xr->patient_id}}" disabled>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="p-name">Patient Name</label>
+                                                    <input type="text" name="p-name" class="form-control" placeholder="Patient Name" value="{{$xr->patient_name}}" disabled>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="doctor-name">Doctor Name</label>
+                                                    <input type="text" name="doctor-name" class="form-control" placeholder="Doctor Name" value="{{$xr->doctor_name}}" disabled>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="estimated-fee">Paid Amount</label>
+                                                    <input type="text" name="paid_amount" class="form-control" placeholder="Estimated Fee" value="{{$xr->paid_amount}}">
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Save changes</button>
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+
                                     </div>
 
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-
-                                </div>
                             </div>
                         </div>
-                    </div>
-                {{--end of edit modal--}}
-
-                <!-- edit model -->
-                    <div class="modal inmodal" id="pinfo" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content animated fadeIn">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                                class="sr-only">Close</span></button>
-
-                                    <h4 class="modal-title">Patient Informatino</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <table class="table table-hover table-responsive">
-                                        <tr>
-                                            <td style="font-weight:bold;">Patient ID:</td>
-                                            <td>p001</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight:bold;">Patient Name:</td>
-                                            <td>Eqbal</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight:bold;">Patient Age:</td>
-                                            <td>28</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight:bold;">Patient Gender:</td>
-                                            <td>Male</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight:bold;">Patient Address:</td>
-                                            <td>Karte Char Pole Surkh</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight:bold;">Phone Number:</td>
-                                            <td>0786859890</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td style="font-weight:bold;">Registration Date:</td>
-                                            <td>07-March-18</td>
-                                        </tr>
-
-                                    </table>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end of model -->
+                    {{--end of edit modal--}}
+                @endforeach
 
                 </div>
             </div>
