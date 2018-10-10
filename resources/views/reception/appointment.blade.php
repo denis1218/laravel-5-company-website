@@ -36,7 +36,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <a href="/patient/create">
-                                    <button class="btn btn-primary" style="width:100%;">
+                                    <button class="btn btn-primary" style="width:87%;">
                                         <li class="fa fa-plus"></li>&nbsp; Add new Patient
                                     </button>
                                 </a>
@@ -62,9 +62,9 @@
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-md-3">
-                                                    <button class="btn btn-primary">
-                                                        <li class="fa fa-list"></li>&nbsp; Next Appointment List
-                                                    </button>
+                                                    {{--<button class="btn btn-primary">--}}
+                                                        {{--<li class="fa fa-list"></li>&nbsp; Next Appointment List--}}
+                                                    {{--</button>--}}
                                                 </div>
                                             </div>
                                             <br/>
@@ -122,14 +122,14 @@
 
                                         <div id="{{ $list->id }}" class="tab-pane">
                                             <div class="panel-body">
-                                                <div class="row">
+                                                {{--<div class="row">--}}
 
-                                                    <div class="col-md-3">
-                                                        <button class="btn btn-primary">
-                                                            <li class="fa fa-list"></li>&nbsp; Next Appointment List
-                                                        </button>
-                                                    </div>
-                                                </div>
+                                                    {{--<div class="col-md-3">--}}
+                                                        {{--<button class="btn btn-primary">--}}
+                                                            {{--<li class="fa fa-list"></li>&nbsp; Next Appointment List--}}
+                                                        {{--</button>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
                                                 <div class="row" style="margin-top:-120px;">
                                                     <div class="col-sm-7">
                                                         <div class="input-group">
@@ -141,16 +141,16 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-sm-4">
-                                                        <div class="btn-group">
-                                                            <button class="btn btn-white" type="button">Previous
-                                                            </button>
-                                                            <button class="btn btn-primary" type="button">Today
-                                                            </button>
-                                                            <button class="btn btn-white" type="button">Next
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                                    {{--<div class="col-sm-4">--}}
+                                                        {{--<div class="btn-group">--}}
+                                                            {{--<button class="btn btn-white" type="button">Previous--}}
+                                                            {{--</button>--}}
+                                                            {{--<button class="btn btn-primary" type="button">Today--}}
+                                                            {{--</button>--}}
+                                                            {{--<button class="btn btn-white" type="button">Next--}}
+                                                            {{--</button>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
                                                 </div>
                                                 <div class="row" style="margin-top:-50px;">
                                                     <div class="col-sm-11">

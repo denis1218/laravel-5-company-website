@@ -48,9 +48,24 @@
                         <!-- Table -->
                         <div class="table-responsive">
                             <!-- Expenditure Table -->
+                            <div class="col-md-8">
+                                <a href="/expense_form" class="btn btn-primary btn-lg fa fa-plus" style="margin-top: 70px;">Add New Expense</a>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="ibox float-e-margins" style=" background-color: lightyellow;">
+                                    <div class="ibox-title" style="background-color:  lightyellow;">
+                                        <h5 style="">Capital</h5>
+                                    </div>
+                                    <div class="ibox-content"style=" background-color: lightyellow;">
+                                        <h1 class="no-margins">{{$capital}}</h1>
+                                        {{--<div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i>--}}
+                                        </div>
 
+                                    </div>
+                                </div>
+                            </div>
                             <table class="table table-striped table-bordered table-hover " id="editable">
-                                <a href="/expense_form" class="btn btn-primary btn-lg fa fa-plus">Add New Expense</a>
+
                                 <thead>
                                 <tr>
                                     <th>Exp ID</th>
@@ -112,9 +127,7 @@
                     <form action="/expenditure/{{$exs->id}}" method="post">
                         {{method_field('patch')}}
                     {{--<div class="form-group"><label>ID</label> <input type="text" placeholder="Id" value="" class="form-control"></div>--}}
-                    <div class="form-group"><label>ExpID</label> <input type="text" placeholder="Exp Id" value="{{$exs->id}}"
-                                                                         class="form-control" disabled></div>
-                    <div class="form-group"><label>To Whom</label> <input type="text" placeholder="Receiver of money"
+                        <div class="form-group"><label>To Whom</label> <input type="text" placeholder="Receiver of money"
                                                                           value="{{$exs->receiver}}" class="form-control" name="receiver"></div>
                     <div class="form-group"><label>Paid_Amount</label> <input type="text" placeholder="Paid Amount"
                                                                               value="{{$exs->amount}}" class="form-control" name="amount"></div>
@@ -122,7 +135,6 @@
                         <input type="text" placeholder="parpose"
                                value="{{$exs->category}}" class="form-control" name="category">
                     </div>
-                     <div class="form-group"><label>Date Of Payment</label> <input type="text" placeholder="Date of payment" value="" class="form-control"></div>
                     <div class="form-group"><label>Description</label> <textarea placeholder="Enter more Information"
                                                                                  class="form-control"
                                                                                  style="resize: none;" name="description">{{$exs->description}}</textarea></div>

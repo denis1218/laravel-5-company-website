@@ -169,7 +169,8 @@ Route::get('/doctors2', 'DoctorController@show');
     Route::resource('doctors', 'DoctorController');
     Route::get('/doctorregister','DoctorController@create');
     Route::get('expense_form', function () {
-        return view('expense_form');
+        $capital=DB::table('expenses')->sum('amount');
+        return view('expense_form')->with('capital',$capital);
     });
     Route::resource('/expenditure', 'ExpenseController');
     Route::get('expenditure2/{id}', 'ExpenseController@destroy');
