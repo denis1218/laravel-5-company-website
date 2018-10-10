@@ -1,10 +1,6 @@
 <body>
-<<<<<<< HEAD
  <div id="wrapper">
-=======
-<div  class="pull-right">
-    <div id="wrapper">
->>>>>>> c6c40b35cdd9e73705d195d16d36e3ac2e38a667
+
         <nav class="navbar-default navbar-static-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav metismenu" id="side-menu">
