@@ -67,13 +67,13 @@
                                         <div>
                                             <select class="select2_demo_1 form-control" name="category">
                                                 <option value="">Select The Category</option>
-                                                <option value="Rent">Rent</option>
-                                                <option value="Office Supply">Office Supply</option>
-                                                <option value="Personal">Personal</option>
-                                                <option value="Taxes">Taxes</option>
-                                                <option value="Employee salary">Employee Salary</option>
-                                                <option value="Clinical Instrument">Clinical Instrument</option>
-                                                <option value="Miscellaneous">Miscellaneous</option>
+                                                <option class="item">Rent</option>
+                                                <option class="item">Office Supply</option>
+                                                <option class="item">Personal</option>
+                                                <option class="item">Taxes</option>
+                                                <option class="item">Employee Salary</option>
+                                                <option class="item">Clinical Instrument</option>
+                                                <option  class="item">Miscellaneous</option>
                                             </select>
                                         </div>
                                     </div>

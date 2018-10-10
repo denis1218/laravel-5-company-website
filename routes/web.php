@@ -17,7 +17,7 @@ Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
-Route::middleware('auth')->group(function () {
+//Route::middleware('auth')->group(function () {
 
     Route::get('/dash', 'HomeController@index')->name('home');
     Route::get('/patient', function () {
@@ -226,6 +226,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/finance_report_expenses','FinanceReportExpenseController@show');
     //financial report expense single date
     Route::get('/finance_report_expenses1','FinanceReportExpenseController@showSingle');
+    //financial report expenses range day
+    Route::get('/finance_report_expenses2','FinanceReportExpenseController@showRangeDay');
+    //financial report expense single day select type
+    Route::get('/finance_report_expenses3','FinanceReportExpenseController@singleDaySelect');
+    //financial report expense select type range day
+    Route::get('/finance_report_expenses4','FinanceReportExpenseController@RangeDaySelect');
+
     Auth::routes();
 
     Route::resource('xrey_income', 'xrayincomeController');
@@ -235,7 +242,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/account', 'UserController');
 
-});
+//});
 
 
 Route::resource('/account','UserController');
