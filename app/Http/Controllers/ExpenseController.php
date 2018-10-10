@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Expense;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
+use Carbon;
 
 class ExpenseController extends Controller
 {
@@ -46,6 +46,7 @@ class ExpenseController extends Controller
         $expense->amount = $request->amount;
         $expense->category = $request->category;
         $expense->description = $request->description;
+        $expense->created_at = Carbon\Carbon::now();
         $expense->save();
         return redirect('expenditure');
     }

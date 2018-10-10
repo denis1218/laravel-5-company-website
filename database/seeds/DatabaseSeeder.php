@@ -95,7 +95,7 @@ class DatabaseSeeder extends Seeder
             'dental_defect' => 'Atrision',
         ]);
 
-<<<<<<< HEAD
+
         DB::table('users')->insert([
             'firstname' => 'mahdi',
             'lastname' => 'safari',
@@ -109,8 +109,7 @@ class DatabaseSeeder extends Seeder
             'age' => '24',
             'address' => 'Kabul, Afghanistan',
         ]);
-=======
->>>>>>> c224ed7b11bbbc0e03cef7aea8075b7975456b6e
+
 
     }
 }

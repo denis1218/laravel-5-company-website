@@ -19,7 +19,7 @@ class CreateExpensesTable extends Migration
             $table->integer('amount');
             $table->string('category');
             $table->longText('description');
-            $table->timestamps();
+            $table->date('created_at');
         });
     }
 
