@@ -33,14 +33,10 @@
                 {{-- current exchange --}}
 
                 <li>
-                    <a class="" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                           document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i>Logout
+                    <a href="/logout">
+                        <i class="fa fa-sign-out text-warning"></i>Log out
                     </a>
                 </li>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
                 {{-- current exchange --}}
             </ul>
 

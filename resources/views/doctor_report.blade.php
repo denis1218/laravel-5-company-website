@@ -126,9 +126,9 @@
                                 <label class="font-noraml">Select Range</label>
                                 <div class="input-daterange input-group" id="" >
                                     <span class="input-group-addon">From &nbsp;<i class="fa fa-arrow-right"></i></span>
-                                    <input type="date" class="input-sm form-control" name="start" required>
+                                    <input type="date" class="input-sm form-control" name="start"/>
                                     <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
-                                    <input type="date" class="input-sm form-control" name="end" required>
+                                    <input type="date" class="input-sm form-control" name="end" />
 
                                 </div>
                             </div>
@@ -149,8 +149,7 @@
                             </thead>
                             <tbody>
                             @foreach($treatment as $treat)
-                                @if($treat->created_at>$doctor->to)
-{{--                                @if($treat->status_visits=='complete')--}}
+                                @if($treat->status_visits=='complete')
                             <tr>
                                 <td>{{$treat->patient->id_patient}}</td>
                                 <td>{{$treat->treatment}}</td>
@@ -158,7 +157,6 @@
                                 <td>{{$treat->created_at}}</td>
                                 <td><span class="label label-info">{{$treat->status_visits}}</span></td>
                             </tr>
-                                {{--@endif--}}
                                 @endif
                             @endforeach
                             </tbody>

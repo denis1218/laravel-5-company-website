@@ -16,9 +16,4 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
     protected $guarded = ['confirm_password'];
-
-    public function SetDate()
-    {
-        $this->timestamps();
-    }
 }

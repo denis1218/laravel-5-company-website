@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Treatment;
 use DB;
 use App\Doctor;
 use Illuminate\Http\Request;
@@ -67,7 +66,7 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        $doc = Doctor::orderBy('id','asc')->paginate(10);
+        $doc = Doctor::orderBy('id','desc')->paginate(10);
         return view('doctor_salary',compact('doc'));
 //
     }
@@ -83,15 +82,14 @@ class DoctorController extends Controller
         $doctor=Doctor::find($id);
         $patient=Doctor::find($id)->patient;
         $treatment=Doctor::find($id)->treatment;
-        $selectedTreatment=Treatment::whereBetween('created_at',[$doctor->to,now()])->get();
-        $total=$selectedTreatment->sum('paid_amount');
+        $total=DB::table('treatments')->sum('paid_amount');
         if($doctor->salary_type=='fix'){
             $docfee=$doctor->salary_amount;
         }else{
             $docfee=($total*$doctor->salary_amount)/100;
         }
         return view('doctor_report',compact('doctor','patient','treatment','total','docfee'));
-//        return $total;
+//        return $treatment;
     }
 
     /**
