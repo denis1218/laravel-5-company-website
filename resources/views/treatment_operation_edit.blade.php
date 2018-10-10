@@ -299,6 +299,15 @@
                                                       placeholder="Type Description ...."
                                                       id="description"></textarea>
                                         </div>
+                                        <div class="form-group">
+                                            <div class="i-checks" for="nex"><label>&nbsp;&nbsp;
+                                                    <input type="checkbox" value="complete"
+                                                           class="checkbox checkbox-warning"
+                                                           name="status_visits"/><span>&nbsp;&nbsp; Check it, To complete treatment of tooth for this patient
+                                                        when check it the finance must get all remaining fee from patient.</span>
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-md-6">
                                         <img src="{{ asset('img/all_tooth.jpg') }}" width="100%"/>
