@@ -95,22 +95,6 @@ class DatabaseSeeder extends Seeder
             'dental_defect' => 'Atrision',
         ]);
 
-<<<<<<< HEAD
-        DB::table('users')->insert([
-            'firstname' => 'mahdi',
-            'lastname' => 'safari',
-            'username' => 'mahdi@safariAdmin',
-            'password' => '123456',
-            'email' => 'mahdi@gmail.com',
-            'department' => 'Doctor',
-            'phone' => '0790424144',
-            'gender' => 'male',
-            'role' => 'Owner',
-            'age' => '24',
-            'address' => 'Kabul, Afghanistan',
-        ]);
-=======
->>>>>>> c224ed7b11bbbc0e03cef7aea8075b7975456b6e
 
     }
 }

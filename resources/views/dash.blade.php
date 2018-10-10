@@ -68,77 +68,77 @@
             {{-- Dash graph area --}}
             <div class="wrapper wrapper-content">
                 <div class="container">
-                    <div class="row">
-                        {{-- Graph Area --}}
-                        <div class="col-md-2" >
-                            <button class="btn btn-primary dim dim-large-dim" ><a href="/income"><img src="img/income_icon_dash.png"  width="150px;" style="border-radius: 8px;"/></a></button>
-                        </div>
-                        <div class="col-md-2" style="margin-left:30px;">
-                            <button class="btn btn-primary dim dim-large-dim" ><a href="/expenditure"><img src="img/expense_icon_dash.png" width="150px;" style="border-radius: 8px;"/></a></button>
-                        </div>
-                        <div class="col-md-2"  style="margin-left:30px;">
-                            <button class="btn btn-primary dim dim-large-dim" ><a href="/doctor_report"><img src="img/doctor_icon_dash.png" width="150px;" style="  border-radius: 8px;height: 60px;"/></a></button>
-                        </div>
-                        <div class="col-md-2"  style="margin-left:30px;">
-                            <button class="btn btn-primary dim dim-large-dim" ><a href="/finance_report_income"><img src="img/report_icon_dash.png" width="150px;" style="border-radius: 8px;height: 60px"/></a></button>
-                        </div>
-                        <div class="col-md-2"  style="margin-left:30px;">
-                            <button class="btn btn-primary dim dim-large-dim" ><a href="/patient"><img src="img/patient_icon_dash.png" width="70px;"  style="border-radius: 8px;height: 60px;"/>&nbsp;&nbsp;<span style="color: white;">Patient</span></a></button>
-                        </div>
+                <div class="row">
+                    {{-- Graph Area --}}
+                            <div class="col-md-2" >
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/income"><img src="img/income_icon_dash.png"  width="150px;" style="border-radius: 8px;"/></a></button>
+                            </div>
+                            <div class="col-md-2" style="margin-left:30px;">
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/expenditure"><img src="img/expense_icon_dash.png" width="150px;" style="border-radius: 8px;"/></a></button>
+                            </div>
+                            <div class="col-md-2"  style="margin-left:30px;">
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/doctor_report"><img src="img/doctor_icon_dash.png" width="150px;" style="  border-radius: 8px;height: 60px;"/></a></button>
+                            </div>
+                            <div class="col-md-2"  style="margin-left:30px;">
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/finance_report_income"><img src="img/report_icon_dash.png" width="150px;" style="border-radius: 8px;height: 60px"/></a></button>
+                            </div>
+                            <div class="col-md-2"  style="margin-left:30px;">
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/patient"><img src="img/patient_icon_dash.png" width="70px;"  style="border-radius: 8px;height: 60px;"/>&nbsp;&nbsp;<span style="color: white;">Patient</span></a></button>
+                            </div>
 
 
-                        {{-- End Graph--}}
-                        <div class="col-lg-4">
-                            <div class="ibox float-e-margins">
-                                <div class="ibox-title">
-                                    <h5>Quick Enter Expenses</h5>
-                                    <div class="ibox-tools">
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <i class="fa fa-wrench"></i>
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-user">
-                                            <li><a href="#">Config option 1</a>
-                                            </li>
-                                            <li><a href="#">Config option 2</a>
-                                            </li>
-                                        </ul>
-                                        <a class="close-link">
-                                            <i class="fa fa-times"></i>
-                                        </a>
-                                    </div>
+                    {{-- End Graph--}}
+                    <div class="col-lg-4">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>Quick Enter Expenses</h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        <li><a href="#">Config option 1</a>
+                                        </li>
+                                        <li><a href="#">Config option 2</a>
+                                        </li>
+                                    </ul>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
                                 </div>
-                                <div class="ibox-content">
-                                    <form>
-                                        <div class="row">
-                                            <div class="col">
-                                                <input type="text" class="form-control" style="width:100%" placeholder="Money receiver"><br>
-                                                <input type="text" class="form-control" style="width:100%" placeholder="Paid Amount"><br>
+                            </div>
+                            <div class="ibox-content">
+                                <form>
+                                    <div class="row">
+                                      <div class="col">
+                                        <input type="text" class="form-control" style="width:100%" placeholder="Money receiver"><br>
+                                        <input type="text" class="form-control" style="width:100%" placeholder="Paid Amount"><br>
+                                        
+                                        <select class="form-control" style="width:100%">
+                                            <option value="1" disabled selected>Select The Category</option>
+                                            <option value="1">Rent</option>
+                                            <option value="2">Office Supply</option>
+                                            <option value="3">Personal</option>
+                                            <option value="4">Taxes</option>
+                                            <option value="5">Employee Salary</option>
+                                            <option value="6">Clinical Instrument</option>
+                                            <option value="7">Miscellaneous</option>                          
+                                        </select><br>
 
-                                                <select class="form-control" style="width:100%">
-                                                    <option value="1" disabled selected>Select The Category</option>
-                                                    <option value="1">Rent</option>
-                                                    <option value="2">Office Supply</option>
-                                                    <option value="3">Personal</option>
-                                                    <option value="4">Taxes</option>
-                                                    <option value="5">Employee Salary</option>
-                                                    <option value="6">Clinical Instrument</option>
-                                                    <option value="7">Miscellaneous</option>
-                                                </select><br>
 
-
-                                                <textarea name="msg" id="" placeholder="Enter your message"  class="form-control" style="resize: none;"></textarea><br>
-                                                <button type="submit"  value="Pay" class="btn btn-primary">Save &nbsp;<i class="fa fa-save"></i></button>
-                                                <button  value="Pay" class="btn btn-warning" data-toggle="modal" data-target="#remaining">Remainder &nbsp;<i class="fa fa-arrow-circle-down"></i></button>
-                                            </div>
+                                        <textarea name="msg" id="" placeholder="Enter your message"  class="form-control" style="resize: none;"></textarea><br>
+                      <button type="submit"  value="Pay" class="btn btn-primary">Save &nbsp;<i class="fa fa-save"></i></button>
+                                        <button  value="Pay" class="btn btn-warning" data-toggle="modal" data-target="#remaining">Remainder &nbsp;<i class="fa fa-arrow-circle-down"></i></button>
                                         </div>
-                                    </form>
-                                </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
             {{-- Graph area --}}

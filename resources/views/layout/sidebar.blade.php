@@ -1,5 +1,8 @@
 <body>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0fe4cc9bce4eeb50214efb51b2adcf339cbfca4c
  <div id="wrapper">
 
         <nav class="navbar-default navbar-static-side" role="navigation">
