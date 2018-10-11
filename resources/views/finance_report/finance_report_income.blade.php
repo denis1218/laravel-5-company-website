@@ -41,117 +41,110 @@
     <br/>
 
 
-     {{--financial report all report--}}
+    {{--financial report all report--}}
     <div class="row page-wrapper border-bottom white-bg"
          style=" margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
-        <div class="row">
 
-            <div class="col-md-5">
-                <div class="row">
-                    <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
-                        <h3> Report Income single day </h3>
-                    </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
+                    <h3> Report Income single day </h3>
                 </div>
-                <form action="/finance_report_income/create">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group" style="margin-left:35px;">
-                                <label class="font-noraml">Select single day </label>
-                                <div class="input-daterange input-group" id="">
+            </div>
+            <form action="/finance_report_income/create">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group" style="margin-left:35px;">
+                            <label class="font-noraml">Select single day </label>
+                            <div class="input-daterange input-group" id="">
                                 <span class="input-group-addon">&nbsp;  <i class="fa fa-calendar"></i> &nbsp;<i
                                             class="fa fa-arrow-right"></i></span>
-                                    <input type="date" class="input-sm form-control" name="create_date" required/>
-                                </div>
+                                <input type="date" class="input-sm form-control" name="create_date" required/>
                             </div>
                         </div>
-                        <div class="col-md-2">
-                            <button class="btn btn-sm btn-primary" type="submit" style="margin-top:23px;"><i
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group pull-left" style="margin-left:35px;">
+                            <button class="btn btn-sm btn-primary" type="submit"><i
                                         class="fa fa-tag" style=" color:#ffe118 ;"></i>
                                 &nbsp;Report &nbsp;&nbsp;
                             </button>
                         </div>
                     </div>
-                </form>
-
-            </div>
-
-
-            <div class="col-md-7">
-                <div class="row">
-                    <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
-                        <h3> Report Income range day all type</h3>
-                    </div>
                 </div>
-                <form action="/finance_report_income2">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <div class="form-group" style="margin-left:35px;">
-                                <label class="font-noraml">Select Range</label>
-                                <div class="input-daterange input-group" id="">
-                                    <input type="date" class="input-sm form-control" name="start" required/>
-                                    <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
-                                    <input type="date" class="input-sm form-control" name="end" required/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <button class="btn btn-sm btn-primary" type="submit"
-                                    style="margin-top:23px; margin-left:10px;">
-                                <i class="fa fa-tag"
-                                   style=" color:#ffe118 ;"></i>
-                                &nbsp;Report&nbsp;&nbsp;<span class="caret"></span></button>
-
-                        </div>
-                    </div>
-                </form>
-
-            </div>
+            </form>
 
         </div>
+
+
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-8" style="margin-top:15px; margin-left:20px;">
+                    <h3> Report Income range day all type</h3>
+                </div>
+            </div>
+            <form action="/finance_report_income2">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <label class="font-noraml">Select Range</label>
+                            <div class="input-daterange input-group" id="">
+                                <input type="date" class="input-sm form-control col-sm-4" name="start" required/>
+                                <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
+                                <input type="date" class="input-sm form-control col-sm-4" name="end" required/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <button class="btn btn-sm btn-primary " type="submit"
+                                style="margin-top:23px; ">
+                            <i class="fa fa-tag"
+                               style=" color:#ffe118 ;"></i>
+                            &nbsp;Report&nbsp;&nbsp
+                        </button>
+
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
     </div>
-     {{--end all report--}}
+    {{--end all report--}}
 
 
     <br/>
 
 
-     {{--finance report select by type income--}}
+    {{--finance report select by type income--}}
     <div class="row page-wrapper border-bottom white-bg "
          style=" margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
 
         <div class="col-md-6">
             <form action="/finance_report_income3">
                 <div class="row">
-                    <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
+                    <div class="col-md-8" style="margin-top:15px; margin-left:20px;">
                         <h3> Report Income single day select type</h3>
                     </div>
                 </div>
                 <div class="row">
-
-
-        </div>
-    </div>
-    {{-- select report by type income --}}
-
-
-                    <div class="col-md-7">
+                    {{-- select report by type income --}}
+                    <div class="col-md-6">
                         <div class="form-group" style="margin-left:35px;">
                             <label class="font-noraml">Select single day </label>
                             <div class="input-daterange input-group" id="">
-                            <span class="input-group-addon">&nbsp;  <i class="fa fa-calendar"></i> &nbsp;<i
-                                        class="fa fa-arrow-right"></i></span>
+                                <span class="input-group-addon">&nbsp;  <i class="fa fa-calendar"></i> &nbsp;<i
+                                            class="fa fa-arrow-right"></i></span>
                                 <input type="date" class="input-sm form-control" name="single" required/>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-sm btn-primary " type="submit"
-                                style="margin-top:23px;"><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
-                            &nbsp;Report &nbsp
-                        </button>
-                    </div>
-
                 </div>
+
                 <div class="row">
                     <div class="col-md-5">
                         <div class="form-group" style="margin-left:35px;">
@@ -168,18 +161,26 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <button class="btn btn-sm btn-primary pull-left" type="submit" style="margin-left:35px;"><i
+                                    class="fa fa-tag" style=" color:#ffe118 ;"></i>
+                            &nbsp;Report &nbsp;&nbsp;
+                        </button>
+                    </div>
+                </div>
             </form>
         </div>
         <div class="col-md-6">
             <div class="row">
-                <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
+                <div class="col-md-8" style="margin-top:15px; margin-left:20px;">
                     <h3> Report Income range day select type </h3>
                 </div>
             </div>
             <form action="/finance_report_income4">
                 <div class="row">
-                    <div class="col-md-8">
-                        <div class="form-group" style="margin-left:35px;">
+                    <div class="form-group">
+                        <div class="col-md-6">
                             <label class="font-noraml">Select Range</label>
                             <div class="input-daterange input-group" id="">
                                 <input type="date" class="input-sm form-control" name="start" required/>
@@ -188,15 +189,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-sm btn-primary" type="submit" style="margin-top:23px; margin-left:10px;"><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
-                            &nbsp;Report&nbsp</button>
 
-                    </div>
                 </div>
+                <br>
                 <div class="row">
                     <div class="col-md-5">
-                        <div class="form-group" style="margin-left:35px;">
+                        <div class="form-group">
                             <label class="font-noraml">Select type income</label>
                             <div class="input-daterange input-group" id="">
                             <span class="input-group-addon">&nbsp;  <i class="fa fa-bars"></i> &nbsp;<i
@@ -211,11 +209,20 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <button class="btn btn-sm btn-primary pull-left" type="submit" ><i
+                                    class="fa fa-tag" style=" color:#ffe118 ;"></i>
+                            &nbsp;Report &nbsp;&nbsp;
+                        </button>
+                    </div>
+                </div>
             </form>
 
         </div>
     </div>
-     {{--select report by type income--}}
+    {{--select report by type income--}}
 @endsection
 
 

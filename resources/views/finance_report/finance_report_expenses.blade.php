@@ -60,15 +60,20 @@
                             <div class="input-daterange input-group" id="">
                                 <span class="input-group-addon">&nbsp;  <i class="fa fa-calendar"></i> &nbsp;<i
                                             class="fa fa-arrow-right"></i></span>
-                                <input type="date" class="input-sm form-control" name="single"/>
+                                <input type="date" class="input-sm form-control" name="single" required/>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-sm btn-primary " type="submit"
-                                style="margin-top:23px;"><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
-                            &nbsp;Report &nbsp;&nbsp;<span class="caret"></span></button>
+                </div>
+                <div class="row">
+                    <div class="form-group" style="margin-left:35px;">
+                        <div class="col-md-2">
+                            <button class="btn btn-sm btn-primary " type="submit"
+                            ><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
+                                &nbsp;Report &nbsp
+                            </button>
 
+                        </div>
                     </div>
                 </div>
             </form>
@@ -77,7 +82,7 @@
         </div>
         <div class="col-md-6">
             <div class="row">
-                <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
+                <div class="col-md-6" style="margin-top:15px;">
                     <h3> Report Expense range day</h3>
                 </div>
             </div>
@@ -85,21 +90,26 @@
             <form action="finance_report_expenses2">
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="form-group" style="margin-left:35px;">
+                        <div class="form-group">
                             <label class="font-noraml">Select Range</label>
                             <div class="input-daterange input-group" id="">
-                                <input type="date" class="input-sm form-control" name="start"/>
+                                <input type="date" class="input-sm form-control" name="start" required/>
                                 <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
-                                <input type="date" class="input-sm form-control" name="end"/>
+                                <input type="date" class="input-sm form-control" name="end" required/>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-sm btn-primary" type="submit"
-                                style="margin-top:23px; margin-left:10px;"><i class="fa fa-tag"
-                                                                              style=" color:#ffe118 ;"></i>
-                            &nbsp;Report&nbsp;&nbsp;<span class="caret"></span></button>
 
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <button class="btn btn-sm btn-primary" type="submit"
+                            ><i class="fa fa-tag"
+                                style=" color:#ffe118 ;"></i>
+                                &nbsp;Report&nbsp;&nbsp;</button>
+
+                        </div>
                     </div>
                 </div>
             </form>
@@ -132,17 +142,12 @@
                             <div class="input-daterange input-group" id="">
                             <span class="input-group-addon">&nbsp;  <i class="fa fa-calendar"></i> &nbsp;<i
                                         class="fa fa-arrow-right"></i></span>
-                                <input type="date" class="input-sm form-control" name="singDay"/>
+                                <input type="date" class="input-sm form-control" name="singDay" required/>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-sm btn-primary" type="submit"
-                                style="margin-top:23px;"
-                                ><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
-                            &nbsp;Report&nbsp;&nbsp;<span class="caret"></span></button>
-                    </div>
                 </div>
+
                 <div class="row">
                     <div class="col-md-5">
                         <div class="form-group" style="margin-left:35px;">
@@ -150,17 +155,27 @@
                             <div class="input-daterange input-group" id="">
                             <span class="input-group-addon">&nbsp;  <i class="fa fa-bars"></i> &nbsp;<i
                                         class="fa fa-arrow-right"></i></span>
-                                <select type="text" class="input-sm form-control" name="selectTypeSingle">
+                                <select type="text" class="input-sm form-control" name="selectTypeSingle" required>
                                     <option class="item">Rent</option>
                                     <option class="item">Office Supply</option>
                                     <option class="item">Personal</option>
                                     <option class="item">Taxes</option>
                                     <option class="item">Employee Salary</option>
                                     <option class="item">Clinical Instrument</option>
-                                    <option  class="item">Miscellaneous</option>
+                                    <option class="item">Miscellaneous</option>
 
                                 </select>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group"  style="margin-left:35px;">
+                        <div class="col-md-2">
+                            <button class="btn btn-sm btn-primary" type="submit"
+
+                            ><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
+                                &nbsp;Report&nbsp;&nbsp;</button>
                         </div>
                     </div>
                 </div>
@@ -174,44 +189,49 @@
                 </div>
             </div>
             <form action="finance_report_expenses4">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="form-group" style="margin-left:35px;">
-                        <label class="font-noraml">Select Range</label>
-                        <div class="input-daterange input-group" id="">
-                            <input type="date" class="input-sm form-control" name="start"/>
-                            <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
-                            <input type="date" class="input-sm form-control" name="end"/>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group" style="margin-left:35px;">
+                            <label class="font-noraml">Select Range</label>
+                            <div class="input-daterange input-group" id="">
+                                <input type="date" class="input-sm form-control" name="start" required/>
+                                <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
+                                <input type="date" class="input-sm form-control" name="end" required/>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <button class="btn btn-sm btn-primary" type="submit"
-                            style="margin-top:23px; margin-left:10px;" ><i class="fa fa-tag"
-                                                                                  style=" color:#ffe118 ;"></i>
-                        &nbsp;Report&nbsp;&nbsp;<span class="caret"></span></button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="form-group" style="margin-left:35px;">
-                        <label class="font-noraml">Select Category Expense</label>
-                        <div class="input-daterange input-group" id="">
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group" style="margin-left:35px;">
+                            <label class="font-noraml">Select Category Expense</label>
+                            <div class="input-daterange input-group" id="">
                             <span class="input-group-addon">&nbsp;  <i class="fa fa-bars"></i> &nbsp;<i
                                         class="fa fa-arrow-right"></i></span>
-                            <select type="text" class="input-sm form-control" name="category">
-                                <option class="item">Rent</option>
-                                <option class="item">Office Supply</option>
-                                <option class="item">Personal</option>
-                                <option class="item">Taxes</option>
-                                <option class="item">Employee Salary</option>
-                                <option class="item">Clinical Instrument</option>
-                                <option  class="item">Miscellaneous</option>
-                            </select>
+                                <select type="text" class="input-sm form-control" name="category" required>
+                                    <option class="item">Rent</option>
+                                    <option class="item">Office Supply</option>
+                                    <option class="item">Personal</option>
+                                    <option class="item">Taxes</option>
+                                    <option class="item">Employee Salary</option>
+                                    <option class="item">Clinical Instrument</option>
+                                    <option class="item">Miscellaneous</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="form-group" style="margin-left:35px;">
+                        <div class="col-md-2">
+                            <button class="btn btn-sm btn-primary" type="submit"
+                            ><i class="fa fa-tag"
+                                style=" color:#ffe118 ;"></i>
+                                &nbsp;Report&nbsp;&nbsp;</button>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -219,530 +239,6 @@
 
 
 
-    {{-- start tag tabs patient and otherIncome --}}
-    <div class="col-lg-12 collapse" id="income">
-        <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>Income</h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="ibox-content">
-                <div class="row">
-                    <!-- card show -->
-                    <div class="col-lg-3 animated fadeInRight hvr-glow">
-                        <div class="ibox float-e-margins">
-                            <div class="ibox-title">
-                                <span class="label label-success pull-right">To day</span>
-                                <h5>Income</h5>
-                            </div>
-                            <div class="ibox-content">
-                                <h1 class="no-margins">886,200</h1>
-                                <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
-                                <small>Total Income</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 animated fadeInRight hvr-glow">
-                        <div class="ibox float-e-margins">
-                            <div class="ibox-title">
-                                <span class="label label-info pull-right">Today</span>
-                                <h5>Remaining</h5>
-                            </div>
-                            <div class="ibox-content">
-                                <h1 class="no-margins">275,800</h1>
-                                <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
-                                <small>Total Remaining</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 animated fadeInRight hvr-glow">
-                        <div class="ibox float-e-margins">
-                            <div class="ibox-title">
-                                <span class="label label-info pull-right">Today</span>
-                                <h5>Discount</h5>
-                            </div>
-                            <div class="ibox-content">
-                                <h1 class="no-margins">275,800</h1>
-                                <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
-                                <small>Total Discount</small>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end of card show -->
-                </div>
-                <br/>
-
-                {{-- Box content area --}}
-                <div class="tabs-container">
-                    <ul class="nav nav-tabs">
-                        <li class="active hvr-glow"><a data-toggle="tab" href="#tab-1">Patient &nbsp; <i
-                                        class="fa fa-medkit"></i></a></li>
-                        <li class=" hvr-glow" style="margin-left:7px;"><a data-toggle="tab" href="#tab-2"
-                                                                          style="background: #d4ee3d">Others &nbsp;<i
-                                        class="fa fa-user"></i></a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="tab-1" class="tab-pane active">
-                            <div class="panel-body">
-                            {{-- content body of patient --}}
-                            <!-- report -->
-                                <div class="col-lg-12 animated fadeInRight">
-                                    <div class="ibox float-e-margins">
-                                        <div class="ibox-content">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <!--Search -->
-                                                    <div class="col-md-5">
-                                                        <div class="input-group" style="margin-left:14px;">
-                                                            <input type="text" placeholder="Insert Patient ID"
-                                                                   class="input-sm form-control">
-                                                            <span class="input-group-btn">
-                             <button type="button" class="btn btn-sm btn-primary"> Search</button></span>
-                                                        </div>
-                                                    </div>
-                                                    <!-- end of Search -->
-                                                    <div class="col-md-7 text-right">
-                                                        <button type="button" class="btn btn-primary btn-md"
-                                                                style="width:110px;" name="button">PDF by Name
-                                                        </button>
-                                                        <button type="button" class="btn btn-primary btn-md"
-                                                                style="margin-right:8px;width:110px;" name="button">PDF
-                                                            All
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-md-12">
-
-                                                    <table class="table table-striped table-bordered table-hover "
-                                                           id="editable"
-                                                           style="visibility:;margin-top:20px;margin-left: 30px;width:95%;">
-                                                        <thead>
-                                                        <tr>
-                                                            <th>ID</th>
-                                                            <th>Name</th>
-                                                            <th>Amount</th>
-                                                            <th>Purpose</th>
-                                                            <th>Date</th>
-                                                            <th>Remaining</th>
-                                                            <th>Discount</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr class="gradeX">
-                                                            <td>1</td>
-                                                            <td>Hamid</td>
-                                                            <td>1900</td>
-                                                            <td>Purchase</td>
-                                                            <td>04/06/2018</td>
-                                                            <td>600</td>
-                                                            <td>130</td>
-                                                        </tr>
-                                                        <tr class="gradeX">
-                                                            <td>1</td>
-                                                            <td>Hamid</td>
-                                                            <td>1900</td>
-                                                            <td>Purchase</td>
-                                                            <td>04/06/2018</td>
-                                                            <td>600</td>
-                                                            <td>130</td>
-                                                        </tr>
-                                                        <tr class="gradeX">
-                                                            <td>1</td>
-                                                            <td>Hamid</td>
-                                                            <td>1900</td>
-                                                            <td>Purchase</td>
-                                                            <td>04/06/2018</td>
-                                                            <td>600</td>
-                                                            <td>130</td>
-                                                        </tr>
-
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end of  report -->
-                                <!-- End of Income Content -->
-                            </div>
-                        </div>
-                        <div id="tab-2" class="tab-pane">
-                            <div class="panel-body">
-                                {{-- content body of others --}}
-                                <div class="col-lg-12">
-                                    <div class="ibox float-e-margins">
-
-                                        <div class="ibox-content">
-                                            <div class="row">
-                                                <div class="col-md-12">
-
-                                                    <!--Search -->
-                                                    <div class="col-md-5">
-                                                        <div class="input-group" style="margin-left:14px;">
-                                                            <input type="text" placeholder="Insert Patient ID"
-                                                                   class="input-sm form-control">
-                                                            <span class="input-group-btn">
-									<button type="button" class="btn btn-sm btn-primary"> Search</button></span>
-                                                        </div>
-                                                    </div>
-                                                    <!-- end of Search -->
-                                                    <div class="col-md-7 text-right">
-                                                        <button type="button" class="btn btn-primary btn-md"
-                                                                style="width:110px;" name="button">PDF by
-                                                            Name
-                                                        </button>
-                                                        <button type="button" class="btn btn-primary btn-md"
-                                                                style="margin-right:8px;width:110px;" name="button">PDF
-                                                            All
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <table class="table table-striped table-bordered table-hover "
-                                                           id="editable"
-                                                           style="visibility:;margin-top:20px;margin-left: 30px;width:95%;">
-                                                        <thead>
-                                                        <tr>
-                                                            <th>ID</th>
-                                                            <th>Name</th>
-                                                            <th>Amount</th>
-                                                            <th>Purpose</th>
-                                                            <th>Date</th>
-                                                            <th>Remaining</th>
-                                                            <th>Discount</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr class="gradeX">
-                                                            <td>1</td>
-                                                            <td>Hamid</td>
-                                                            <td>1900</td>
-                                                            <td>Purchase</td>
-                                                            <td>04/06/2018</td>
-                                                            <td>600</td>
-                                                            <td>130</td>
-                                                        </tr>
-                                                        <tr class="gradeX">
-                                                            <td>1</td>
-                                                            <td>Hamid</td>
-                                                            <td>1900</td>
-                                                            <td>Purchase</td>
-                                                            <td>04/06/2018</td>
-                                                            <td>600</td>
-                                                            <td>130</td>
-                                                        </tr>
-                                                        <tr class="gradeX">
-                                                            <td>1</td>
-                                                            <td>Hamid</td>
-                                                            <td>1900</td>
-                                                            <td>Purchase</td>
-                                                            <td>04/06/2018</td>
-                                                            <td>600</td>
-                                                            <td>130</td>
-                                                        </tr>
-
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end of  report -->
-
-                            </div>
-                        </div>
-                    </div>
-                    {{-- End of Content area Box --}}
-                </div>
-            </div>
-        </div>
-    </div>
-    {{-- end of tag tabs patient and other Income --}}
-
-
-
-    {{-- start of expenditure --}}
-    <div class="col-lg-12 collapse" id="expenditure">
-        <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>Expenditure</h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="ibox-content">
-                <div class="row" style="margin-left: 20px;">
-                    <!-- Expenditure content -->
-                    <div class="col-lg-3  animated fadeInRight hvr-glow">
-                        <div class="ibox float-e-margins">
-                            <div class="ibox-title">
-                                <span class="label label-success pull-right">To day</span>
-                                <h5>Expences</h5>
-                            </div>
-                            <div class="ibox-content">
-                                <h1 class="no-margins">886,200</h1>
-                                <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
-                                <small>Total Expences</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3  animated fadeInRight hvr-glow">
-                        <div class="ibox float-e-margins">
-                            <div class="ibox-title">
-                                <span class="label label-info pull-right">Today</span>
-                                <h5>Loan</h5>
-                            </div>
-                            <div class="ibox-content">
-                                <h1 class="no-margins">275,800</h1>
-                                <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
-                                <small>Total loan</small>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- expenditure table -->
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="wrapper wrapper-content animated fadeInRight">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="ibox float-e-margins">
-                                    {{-- Start Table --}}
-                                    <div class="table-responsive">
-                                        <button type="button" class="btn btn-md btn-primary">Show Report</button>
-                                        <table class="table table-striped table-bordered table-hover " id="editable">
-                                            <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Given Amount</th>
-                                                <th>To_Whom</th>
-                                                <th>Purpose</th>
-                                                <th>Item</th>
-                                                <th>Price</th>
-                                                <th>Description</th>
-                                                <th>Remaining</th>
-                                                <th>Loan</th>
-                                                <th>Edit</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr class="gradeX">
-                                                <td>1</td>
-                                                <td>900</td>
-                                                <td>Ahmad</td>
-                                                <td>lunch</td>
-                                                <td>Tooth Material</td>
-                                                <td>750</td>
-                                                <td>remaining is:150Af</td>
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add
-                                                        Back
-                                                    </button>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                                    <button class="btn btn-xs btn-success fa fa-edit"
-                                                            data-toggle="modal" data-target="#eprice">&nbsp;Edit
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <tr class="gradeX">
-                                                <td>2</td>
-                                                <td>1000</td>
-                                                <td>Ahmad</td>
-                                                <td>material purchase</td>
-                                                <td>Tooth Material</td>
-                                                <td>740</td>
-                                                <td>remaining is:260Af</td>
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add
-                                                        Back
-                                                    </button>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                                    <button class="btn btn-xs btn-success fa fa-edit"
-                                                            data-toggle="modal" data-target="#eprice">&nbsp;Edit
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <tr class="gradeX">
-                                                <td>3</td>
-                                                <td>1000</td>
-                                                <td>Ahmad</td>
-                                                <td>material purchase</td>
-                                                <td>Tooth Material</td>
-                                                <td>740</td>
-                                                <td>remaining is:260Af</td>
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add
-                                                        Back
-                                                    </button>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                                    <button class="btn btn-xs btn-success fa fa-edit"
-                                                            data-toggle="modal" data-target="#eprice">&nbsp;Edit
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <tr class="gradeX">
-                                                <td>4</td>
-                                                <td>1000</td>
-                                                <td>Ahmad</td>
-                                                <td>material purchase</td>
-                                                <td>Tooth Material</td>
-                                                <td>740</td>
-                                                <td>remaining is:260Af</td>
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add
-                                                        Back
-                                                    </button>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                                    <button class="btn btn-xs btn-success fa fa-edit"
-                                                            data-toggle="modal" data-target="#eprice">&nbsp;Edit
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr class="gradeX">
-                                                <td>5</td>
-                                                <td>1000</td>
-                                                <td>Ahmad</td>
-                                                <td>material purchase</td>
-                                                <td>Tooth Material</td>
-                                                <td>740</td>
-                                                <td>remaining is:260Af</td>
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary fa fa-plus demo3">&nbsp;Add
-                                                        Back
-                                                    </button>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-xs btn-primary fa fa-minus demo3">&nbsp;Reduce</button>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
-                                                    <button class="btn btn-xs btn-success fa fa-edit"
-                                                            data-toggle="modal" data-target="#eprice">&nbsp;Edit
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                        <!-- End of the table -->
-                                    </div>
-                                    {{-- End table --}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- edit model -->
-                <div class="modal inmodal" id="eprice" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content animated fadeIn">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                            class="sr-only">Close</span></button>
-                                <i class="fa fa-edit modal-icon text-primary"></i>
-                                <h4 class="modal-title">Edit Content</h4>
-                                <small>Edit expenditure details</small>
-                            </div>
-                            <div class="modal-body">
-                                <div class="form-group"><label>ID</label> <input type="text" placeholder="Id" value=""
-                                                                                 class="form-control"></div>
-                                <div class="form-group"><label>Amount</label> <input type="number" placeholder="Amount"
-                                                                                     value="" class="form-control">
-                                </div>
-                                <div class="form-group"><label>To Whom</label> <input type="text" placeholder="Receiver"
-                                                                                      value="" class="form-control">
-                                </div>
-                                <div class="form-group"><label>Purpose</label> <input type="text" placeholder="purpose"
-                                                                                      value="" class="form-control">
-                                </div>
-                                <div class="form-group"><label>Item</label> <input type="text"
-                                                                                   placeholder="Purchased item" value=""
-                                                                                   class="form-control"></div>
-                                <div class="form-group"><label>Price</label> <input type="text" placeholder="Price"
-                                                                                    value="" class="form-control"></div>
-                                <div class="form-group"><label>Calculated Result</label> <input type="text"
-                                                                                                placeholder="" value=""
-                                                                                                class="form-control"
-                                                                                                readonly></div>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- end of body content of others--}}
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    {{-- end of expenditure --}}
 
 @endsection
 

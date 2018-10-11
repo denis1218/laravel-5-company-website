@@ -58,14 +58,19 @@
                             <div class="input-daterange input-group" id="">
                                 <span class="input-group-addon">&nbsp;  <i class="fa fa-calendar"></i> &nbsp;<i
                                             class="fa fa-arrow-right"></i></span>
-                                <input type="date" class="input-sm form-control" name="single"/>
+                                <input type="date" class="input-sm form-control" name="single" required/>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-sm btn-primary " type="submit" style="margin-top:23px;"><i
-                                    class="fa fa-tag" style=" color:#ffe118 ;"></i>
-                            &nbsp;Report &nbsp;&nbsp;<span class="caret"></span></button>
+                </div>
+                <div class="row">
+                    <div class="form-group" style="margin-left: 35px">
+                        <div class="col-md-2">
+                            <button class="btn btn-sm btn-primary " type="submit"><i
+                                        class="fa fa-tag" style=" color:#ffe118 ;"></i>
+                                &nbsp;Report &nbsp;
+                            </button>
+                        </div>
                     </div>
                 </div>
             </form>
@@ -82,24 +87,29 @@
                         <div class="form-group" style="margin-left:35px;">
                             <label class="font-noraml">Select Range</label>
                             <div class="input-daterange input-group" id="">
-                                <input type="date" class="input-sm form-control" name="start"/>
+                                <input type="date" class="input-sm form-control" name="start" required/>
                                 <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
-                                <input type="date" class="input-sm form-control" name="end"/>
+                                <input type="date" class="input-sm form-control" name="end" required/>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-sm btn-primary" type="submit"
-                                style="margin-top:23px; margin-left:10px;" ><i class="fa fa-tag"
-                                                                                      style=" color:#ffe118 ;"></i>
-                            &nbsp;Report&nbsp;&nbsp;<span class="caret"></span></button>
+                </div>
+                <div class="row">
+                    <div class="form-group" style="margin-left: 35px">
+                        <div class="col-md-2">
+                            <button class="btn btn-sm btn-primary" type="submit"
+                            ><i class="fa fa-tag"
+                                style=" color:#ffe118 ;"></i>
+                                &nbsp;Report&nbsp;&nbsp;
+                            </button>
 
+                        </div>
                     </div>
                 </div>
             </form>
 
 
-    </div>
+        </div>
     </div>
     {{-- end all report --}}
 
