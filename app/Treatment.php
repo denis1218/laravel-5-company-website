@@ -7,10 +7,14 @@ use Carbon\Carbon;
 
 class Treatment extends Model
 {
-    public $table = 'treatments';
 
+//    protected $dateFormat = 'd.m.Y';
+//    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
+    // etc...
     protected $guarded = [];
+    public $table = 'treatments';
     public  $timestamps = false;
+
     public function patient()
     {
         return $this->belongsTo(Patient::class, 'patient_id', 'id');

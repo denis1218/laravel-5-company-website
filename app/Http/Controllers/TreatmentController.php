@@ -24,7 +24,6 @@ class TreatmentController extends Controller
     {
         $operation = Patient::orderBy('id', 'asc')->paginate(10);
         return view('doctor_operations')->with('operation', $operation);
-
     }
 
 
@@ -37,6 +36,7 @@ class TreatmentController extends Controller
     {
         $patient_in_treatment = Patient::find($id);
 
+
 //        return $patient_in_treatment;
         $last_treatment = Treatment::orderBy('id', 'desc')->find($id);
 
@@ -44,8 +44,16 @@ class TreatmentController extends Controller
         if($last_treatment->visits == 0)
         {
             $checkValue = 0;
-        }else{
+        }else {
             $checkValue = $last_treatment->visits;
+
+            $checkValue = Patient::find($id)->treatment;
+            foreach ($checkValue as $ch) {
+                if ($ch->visits == null) {
+                    $ch->visits = 1;
+                }
+
+            }
         }
         $treatments = Treatment::find($id);
 
@@ -144,6 +152,7 @@ class TreatmentController extends Controller
     public function edit_treatment($id,$patient_id)
     {
         $patient_in_treatment = Patient::find($patient_id);
+
 //        return $patient_in_treatment->visit;
 //        dd($patient_in_treatment);
       $treatments = Treatment::orderBy('id', 'desc')->find($id);

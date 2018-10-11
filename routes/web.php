@@ -14,12 +14,19 @@
 */
 Auth::routes();
 
+
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
 //Route::middleware('auth')->group(function () {
 
-    Route::get('/dash', 'HomeController@index')->name('home');
+//Route::get('/dash', 'HomeController@index')->name('home');
+
+//Route::middleware('auth')->group(function () {
+
+
+//    Route::get('/dash', 'HomeController@index');
+
     Route::get('/patient', function () {
         return view('patient');
     });
@@ -121,10 +128,6 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
 
-// Financial report date
-    Route::get('/finance_report_profit', function () {
-        return view('finance_report.finance_report_profit');
-    });
 
     Route::get('/date_report_patient', function () {
         return view('date_report_patient');
@@ -180,6 +183,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 //Doctor Operation
 
+
     Route::resource('operation', 'OperationController');
 
 
@@ -187,7 +191,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
     Route::resource('xray', 'XrayController');
 
 //Treatment controller
-    Route::resource('/treat', 'TreatmentController');
+//    Route::resource('/treat', 'TreatmentController');
 
     Route::resource('/operation', 'TreatmentController');
 
@@ -218,20 +222,30 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 //financial report income select type single
     Route::get('finance_report_income3', 'FinanceReportIncomeController@selectType');
 
+
     //financial report income select type and range
     Route::get('finance_report_income4', 'FinanceReportIncomeController@selectRange');
 
 
     //financial report expense
-    Route::get('/finance_report_expenses','FinanceReportExpenseController@show');
+    Route::get('/finance_report_expenses', 'FinanceReportExpenseController@show');
     //financial report expense single date
-    Route::get('/finance_report_expenses1','FinanceReportExpenseController@showSingle');
+    Route::get('/finance_report_expenses1', 'FinanceReportExpenseController@showSingle');
     //financial report expenses range day
-    Route::get('/finance_report_expenses2','FinanceReportExpenseController@showRangeDay');
+    Route::get('/finance_report_expenses2', 'FinanceReportExpenseController@showRangeDay');
     //financial report expense single day select type
-    Route::get('/finance_report_expenses3','FinanceReportExpenseController@singleDaySelect');
+    Route::get('/finance_report_expenses3', 'FinanceReportExpenseController@singleDaySelect');
     //financial report expense select type range day
-    Route::get('/finance_report_expenses4','FinanceReportExpenseController@RangeDaySelect');
+    Route::get('/finance_report_expenses4', 'FinanceReportExpenseController@RangeDaySelect');
+    //financial report income select type and range
+    Route::get('finance_report_income4', 'FinanceReportIncomeController@selectRange');
+    //financial report profit
+    Route::get('/finance_report_profit','FinanceReportProfitController@show');
+    //financial report profit single day report
+    Route::get('finance_report_profit1','FinanceReportProfitController@showSingle');
+    //financial report profit range day
+    Route::get('finance_report_profit2','FinanceReportProfitController@rangeDay');
+
 
     Auth::routes();
 
@@ -240,10 +254,12 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
 
+
+
+
     Route::resource('/account', 'UserController');
 
 //});
 
 
-Route::resource('/account','UserController');
 
