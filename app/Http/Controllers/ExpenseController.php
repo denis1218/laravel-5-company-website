@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Doctor;
 use App\Expense;
+use App\Patient;
 use Illuminate\Http\Request;
 use Carbon;
 
@@ -49,6 +51,21 @@ class ExpenseController extends Controller
         $expense->created_at = Carbon\Carbon::now();
         $expense->save();
         return redirect('expenditure');
+    }
+    public function FromDash(Request $request){
+        $expense = new Expense();
+        $expense->receiver = $request->receiver;
+        $expense->amount = $request->amount;
+        $expense->category = $request->category;
+        $expense->description = $request->description;
+        $expense->created_at = Carbon\Carbon::now();
+        $expense->save();
+        $patient = Patient::count();
+        $apatient = Patient::whereDate('created_at', Carbon::today())->get();
+        $doctor = Doctor::count();
+        return back();
+        $msg  = 'Successfully Inserted Into Database';
+//        return view('dash',compact('patient','doctor','apatient','msg'));
     }
 
     /**

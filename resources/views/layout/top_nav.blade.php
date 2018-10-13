@@ -18,7 +18,7 @@
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-calendar text-navy">&nbsp;</i><strong>Today : Wednesday, September 12, 2018
+                        <i class="fa fa-calendar text-navy">&nbsp;</i><strong>Today : {{ Carbon\Carbon::now()->format('l d F Y') }}
                             &nbsp;&nbsp;|</strong>
                     </a>
                 </li>

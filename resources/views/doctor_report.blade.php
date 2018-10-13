@@ -65,6 +65,7 @@
                             <div class="profile-info">
                                 <div class="">
                                     <div>
+
                                         <h2 class="no-margins font-b">
                                             {{ $doctor->first_name }}
                                         </h2>
@@ -72,6 +73,7 @@
                                         <small class="font-m">
                                             Dental Expert for 2 years work in dental clinics and more 100 patient visited
                                         </small>
+
                                     </div>
                                 </div>
                             </div>
@@ -107,6 +109,7 @@
                                 </tr>
                                 </tbody>
                             </table>
+
                             {{--@endforeach--}}
                         </div>
                     </div>
@@ -209,7 +212,7 @@
         </div>
     </div>
 
-  
+
 
 
 

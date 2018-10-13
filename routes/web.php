@@ -25,7 +25,8 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 //Route::middleware('auth')->group(function () {
 
 
-//    Route::get('/dash', 'HomeController@index');
+    Route::get('/dash', 'HomeController@index');
+
 
     Route::get('/patient', function () {
         return view('patient');
@@ -170,6 +171,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
     });
     Route::resource('/expenditure', 'ExpenseController');
     Route::get('expenditure2/{id}', 'ExpenseController@destroy');
+    Route::post('/expenditure3','ExpenseController@FromDash');
 
 
 // report patient

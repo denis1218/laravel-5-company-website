@@ -60,13 +60,18 @@ class LoginController extends Controller
      * if user already authticated login it
      * or else return to view login.
      */
-//    public function showLoginForm()
-//    {
-//        if (Auth::check()) {
-//            return redirect('/dash');
-//        }
+    public function showLoginForm()
+    {
+        if (Auth::check()) {
+//            $user = Auth::user()->firstname;
+            return redirect('/dash');
+
+        }
 //        return view('login');
-//    }
+        else {
+            return view('/login');
+        }
+    }
 
 
 
@@ -76,12 +81,17 @@ class LoginController extends Controller
      * get value from form email , password and attempt to Auth::
      * if successfull match got to route /dash else got to route:login
      */
+
     public function login(Request $request)
     {
 //        $this->validateLogin($request);
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/dash');
+            $user = Auth::user();
+            return redirect()->intended('/dash')->with(['user' => $user]);
+//            return view('dash',compact('user'));
+//            return $user->firstname;
+
         }
     }
 
