@@ -18,9 +18,12 @@ class PatientController extends Controller
      */
     public function index()
     {
+
         $patient_all = Patient::whereDate('updated_at',Carbon::today())->get();
+        $doctor = Doctor::find(1);
         $doctor_list = Doctor::all();
-        return view('reception.appointment',compact('patient_all','doctor_list'));
+        return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
+
     }
 
     /**

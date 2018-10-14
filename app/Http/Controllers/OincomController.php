@@ -22,7 +22,9 @@ class OincomController extends Controller
         $ototal=DB::table('oincoms')->sum('amount');
         $Gtotal=$ptotal+$xtotal+$ototal;
         $total=DB::table('oincoms')->sum('amount');
+
         return view('ext_table',compact('others','total','Gtotal'));
+
 //        return $others;
     }
 

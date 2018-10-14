@@ -35,6 +35,7 @@
         </div>
         <div class="col-md-2 ">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px;margin-left:15px;"
+
                    href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>Other Income</a></h2>
         </div>
         <div class="col-lg-4" style="float:right;">
