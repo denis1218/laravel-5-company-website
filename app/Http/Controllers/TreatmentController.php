@@ -35,7 +35,6 @@ class TreatmentController extends Controller
     public function create($id)
     {
         $patient_in_treatment = Patient::find($id);
-
         $checkValue=Patient::find($id)->treatment;
         foreach ($checkValue as $ch) {
             if($ch->visits==0){
