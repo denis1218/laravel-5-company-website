@@ -1,4 +1,4 @@
-    @extends('master')
+@extends('master')
 
 @section('style')
     <link href="dashboard/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
@@ -7,20 +7,22 @@
     <link href="css/dropdown_menu.css" rel="stylesheet">
     <link href="dashboard/css/animate.css" rel="stylesheet">
     <link href="dashboard/css/style.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
     <link href="css/hover/hover-min.css" rel="stylesheet">
     <link href="dashboard/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
 
     <style media="screen">
-        .bts:hover{
-            box-shadow:4px 4px 4px 4px grey;
-            transform:scale(1.1);
-        }
-        .bts{
-            height:70px; width:155px;
+        .bts:hover {
+            box-shadow: 4px 4px 4px 4px grey;
+            transform: scale(1.1);
         }
 
-        #menu-me-drop{
+        .bts {
+            height: 70px;
+            width: 155px;
+        }
+
+        #menu-me-drop {
             overflow: hidden;
             position: absolute;
             transition: height 1s ease;
@@ -40,33 +42,39 @@
 
 
     {{-- financial report all report --}}
-    <div class="row page-wrapper border-bottom white-bg" style=" margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
+    <div class="row page-wrapper border-bottom white-bg"
+         style=" margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
-                    <h3> Report  Profit </h3>
+                    <h3> Report Profit </h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="form-group" style="margin-left:35px;">
-                        <label class="font-noraml">Select single day</label>
-                        <div class="input-daterange input-group" id="" >
-                            <span class="input-group-addon">&nbsp;  <i class="fa fa-calendar"></i> &nbsp;<i class="fa fa-arrow-right"></i></span>
-                            <input type="date" class="input-sm form-control" name="end" />
+            <form action="finance_report_profit1">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group" style="margin-left:35px;">
+                            <label class="font-noraml">Select single day</label>
+                            <div class="input-daterange input-group" id="">
+                                <span class="input-group-addon">&nbsp;  <i class="fa fa-calendar"></i> &nbsp;<i
+                                            class="fa fa-arrow-right"></i></span>
+                                <input type="date" class="input-sm form-control" name="single" required/>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <button class="btn btn-sm btn-primary dropdown-toggle" type="submit" data-toggle="dropdown" style="margin-top:23px;" href=""><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
-                        &nbsp;Report &nbsp;&nbsp;<span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">PDF<i class="fa fa-lg fa-file-pdf-o pull-right text-danger" style="margin-top:6px;"></i></a></li>
-                        <li><a href="#">Excel<i class="fa fa-lg fa-file-excel-o pull-right text-navy" style="margin-top:6px;"></i></a></li>
-                    </ul>
-                </div>
-            </div>
+                <div class="row">
+                    <div class="form-group" style="margin-left: 35pxph">
 
+                        <div class="col-md-2">
+                            <button class="btn btn-sm btn-primary " type="submit"><i
+                                        class="fa fa-tag" style=" color:#ffe118 ;"></i>
+                                &nbsp;Report &nbsp;
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
         <div class="col-md-6">
             <div class="row">
@@ -74,26 +82,33 @@
                     <h3> Report Income range day</h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="form-group" style="margin-left:35px;">
-                        <label class="font-noraml">Select Range</label>
-                        <div class="input-daterange input-group" id="" >
-                            <input type="date" class="input-sm form-control" name="start"/>
-                            <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
-                            <input type="date" class="input-sm form-control" name="end" />
+            <form action="finance_report_profit2">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group" style="margin-left:35px;">
+                            <label class="font-noraml">Select Range</label>
+                            <div class="input-daterange input-group" id="">
+                                <input type="date" class="input-sm form-control" name="start" required/>
+                                <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
+                                <input type="date" class="input-sm form-control" name="end" required/>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <button class="btn btn-sm btn-primary" type="submit" data-toggle="dropdown" style="margin-top:23px; margin-left:10px;" href=""><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
-                        &nbsp;Report&nbsp;&nbsp;<span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">PDF<i class="fa fa-lg fa-file-pdf-o pull-right text-danger" style="margin-top:6px;"></i></a></li>
-                        <li><a href="#">Excel<i class="fa fa-lg fa-file-excel-o pull-right text-navy" style="margin-top:6px;"></i></a></li>
-                    </ul>
+                <div class="row">
+                    <div class="form-group" style="margin-left: 35px">
+                        <div class="col-md-2">
+                            <button class="btn btn-sm btn-primary" type="submit"
+                            ><i class="fa fa-tag"
+                                style=" color:#ffe118 ;"></i>
+                                &nbsp;Report&nbsp;&nbsp;
+                            </button>
+
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </form>
+
 
         </div>
     </div>
@@ -178,7 +193,7 @@
                     });
             });
         });
-        $(document).on('click',function(){
+        $(document).on('click', function () {
             $('.getl').collapse('hide');
         })
     </script>

@@ -1,4 +1,4 @@
-@extends('master')
+    @extends('master')
 
 
 @section('style')
@@ -14,9 +14,12 @@
                         <h5>User</h5>
                     </div>
                     <div class="ibox-content">
-                        <h2 class="no-margins">Welcome Qasim</h2>
+                        <h2 class="no-margins">
+
+                            Welcome  {{ Auth::user()->firstname }}</h2>
                         <div class="stat-percent font-bold text-danger"></div>
-                        <small>Finance</small>
+                        <small>{{ Auth::user()->department }}</small>
+
                     </div>
                 </div>
             </div>
@@ -27,8 +30,10 @@
                         <h5>Patient</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">35<img  src="img/patienticon2.png" width="45px;"style="float: right;"/></h1>
+
+                        <h1 class="no-margins">{{$patient}}<img  src="img/patienticon2.png" width="45px;"style="float: right;"/></h1>
                         <small>Total patient for today</small>
+
                     </div>
                 </div>
             </div>
@@ -39,7 +44,7 @@
                         <h5>Doctors</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">7<img  src="img/doctors.png" width="60px;"style="float: right;"/></h1>
+                        <h1 class="no-margins">{{$doctor}}<img  src="img/doctors.png" width="60px;"style="float: right;"/></h1>
                         <div class="stat-percent font-bold text-navy"></div>
                         <small>Total Doctors Available</small>
                     </div>
@@ -52,9 +57,15 @@
                         <h5>Appointment patients</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">25<img  src="img/appintmentincon.png" width="60px;"style="float: right;"/></h1>
+                        <h1 class="no-margins">{{count($apatient)}}<img  src="img/appintmentincon.png" width="60px;"style="float: right;"/></h1>
                         <div class="stat-percent font-bold text-danger"></div>
-                        <small>Total Appointment</small>
+                        <small>Total Appointment
+                            <br>
+                            @if(isset($msg))
+
+                            @endif
+
+                        </small>
                     </div>
                 </div>
             </div>
@@ -68,6 +79,7 @@
             {{-- Dash graph area --}}
             <div class="wrapper wrapper-content">
                 <div class="container">
+
                 <div class="row">
                     {{-- Graph Area --}}
                             <div class="col-md-2" >
@@ -85,6 +97,7 @@
                             <div class="col-md-2"  style="margin-left:30px;">
                                 <button class="btn btn-primary dim dim-large-dim" ><a href="/patient"><img src="img/patient_icon_dash.png" width="70px;"  style="border-radius: 8px;height: 60px;"/>&nbsp;&nbsp;<span style="color: white;">Patient</span></a></button>
                             </div>
+
 
 
                     {{-- End Graph--}}
@@ -109,6 +122,7 @@
                                         <i class="fa fa-times"></i>
                                     </a>
                                 </div>
+
                             </div>
                             <div class="ibox-content">
                                 <form>
@@ -132,6 +146,7 @@
                                         <textarea name="msg" id="" placeholder="Enter your message"  class="form-control" style="resize: none;"></textarea><br>
                       <button type="submit"  value="Pay" class="btn btn-primary">Save &nbsp;<i class="fa fa-save"></i></button>
                                         <button  value="Pay" class="btn btn-warning" data-toggle="modal" data-target="#remaining">Remainder &nbsp;<i class="fa fa-arrow-circle-down"></i></button>
+
                                         </div>
                                     </div>
                                 </form>
@@ -160,7 +175,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-primary" >Save changes</button>
 
                         </div>
                     </div>
@@ -186,7 +201,21 @@
 
     <script>
 
+
         $(document).ready(function() {
+            $('.demo_connection').click(function () {
+                swal({
+                        title: "Inserted!",
+                        text: "Your Row Has Been Inserted.",
+                        type: "success",
+                        timer: 5000
+                    },
+                    function () {
+                        location.reload(true);
+                        tr.hide();
+                    });
+            });
+
 
             var lineData = {
                 labels: ["January", "February", "March", "April", "May", "June", "July"],

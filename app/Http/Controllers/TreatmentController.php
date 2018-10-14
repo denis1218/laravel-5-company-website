@@ -36,12 +36,33 @@ class TreatmentController extends Controller
     {
         $patient_in_treatment = Patient::find($id);
 
+
         $checkValue=Patient::find($id)->treatment;
         foreach ($checkValue as $ch) {
             if($ch->visits==0){
                 $ch->visits=1;
             }
             $ch->visits=$ch->visits+1;
+
+
+//        return $patient_in_treatment;
+        $last_treatment = Treatment::orderBy('id', 'desc')->find($id);
+
+
+        if($last_treatment->visits == 0)
+        {
+            $checkValue = 0;
+        }else {
+            $checkValue = $last_treatment->visits;
+
+            $checkValue = Patient::find($id)->treatment;
+            foreach ($checkValue as $ch) {
+                if ($ch->visits == null) {
+                    $ch->visits = 1;
+                }
+
+            }
+
         }
         $treatments = Treatment::find($id);
 
@@ -133,14 +154,19 @@ class TreatmentController extends Controller
      */
     public function edit($id)
     {
-//        dd($id);
 
     }
 
     public function edit_treatment($id,$patient_id)
     {
         $patient_in_treatment = Patient::find($patient_id);
+
+
+//        return $patient_in_treatment->visit;
 //        dd($patient_in_treatment);
+
+
+
         $last_treatment = Treatment::orderBy('id', 'desc')->find($id);
         if($last_treatment==null)
         {
@@ -149,6 +175,7 @@ class TreatmentController extends Controller
             $checkValue = $last_treatment->visits;
         }
         $checkValue=$checkValue+1;
+
         $treatementList = TreatmentList::all();
         $dentalDefectList = DentalDefectList::all();
         $patient_id = $patient_in_treatment->id;
