@@ -128,11 +128,9 @@
                         @endforeach
                         </tbody>
                     </table>
-<<<<<<< HEAD
 
-=======
                 <div style="margin-left: 30px">{{$income->links()}}</div>
->>>>>>> c224ed7b11bbbc0e03cef7aea8075b7975456b6e
+
 
                     <!-- detailss modal -->
                     @foreach($income as $in)

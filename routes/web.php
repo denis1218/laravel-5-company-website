@@ -19,11 +19,10 @@ Route::get('/dash', 'HomeController@index')->name('home');
 Route::middleware('auth')->group(function () {
 
 //    Route::get('/dash', 'HomeController@index');
-
     Route::get('/patient', function () {
         return view('patient');
     });
-// Employee Registration
+
     Route::get('/employee', function () {
         return view('/employee');
     });
@@ -32,9 +31,8 @@ Route::middleware('auth')->group(function () {
         return view('appointment');
     });
 
-    Route::get('/reception', function () {
-        return view('reception');
-    });
+
+
 
     Route::get('/detailinvoice', function () {
         return view('detailsReception');
@@ -114,7 +112,7 @@ Route::middleware('auth')->group(function () {
     });
 
 
-    // report doctors
+// report doctors
     Route::get('/report_doctors', function () {
         return view('report_doctors');
     });
