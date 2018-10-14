@@ -67,13 +67,13 @@
                                         <div>
                                             <select class="select2_demo_1 form-control" name="category">
                                                 <option value="">Select The Category</option>
-                                                <option value="Rent">Rent</option>
-                                                <option value="Office Supply">Office Supply</option>
-                                                <option value="Personal">Personal</option>
-                                                <option value="Taxes">Taxes</option>
-                                                <option value="Employee salary">Employee Salary</option>
-                                                <option value="Clinical Instrument">Clinical Instrument</option>
-                                                <option value="Miscellaneous">Miscellaneous</option>
+                                                <option class="item">Rent</option>
+                                                <option class="item">Office Supply</option>
+                                                <option class="item">Personal</option>
+                                                <option class="item">Taxes</option>
+                                                <option class="item">Employee Salary</option>
+                                                <option class="item">Clinical Instrument</option>
+                                                <option  class="item">Miscellaneous</option>
                                             </select>
                                         </div>
                                     </div>
@@ -89,6 +89,7 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <button class="btn btn-primary" type="submit">Save</button>
+                                            <button class="btn btn-white" type="reset">Reset</button>
                                         </div>
                                     </div>
                                 </form>
@@ -100,8 +101,8 @@
                                         <h5 style="">Capital</h5>
                                     </div>
                                     <div class="ibox-content"style=" background-color: lightyellow;">
-                                        <h1 class="no-margins">40 886,200</h1>
-                                        <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i>
+                                        <h1 class="no-margins">{{$capital}}</h1>
+                                        {{--<div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i>--}}
                                         </div>
 
                                     </div>

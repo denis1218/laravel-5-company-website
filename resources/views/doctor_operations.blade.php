@@ -1,6 +1,9 @@
 @extends('master')
 
 @section('style')
+
+
+
     <style rel="stylesheet">
         .font-m {
             font-size: 1.5em;
@@ -40,6 +43,7 @@
             margin-bottom: 0px;
         }
     </style>
+
 @endsection
 
 @section('content')
@@ -73,10 +77,10 @@
                 <br/>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="input-group"> <span
-                                    class="input-group-btn">
-                                        <button type="button" class="btn  btn-primary"> <i class="fa fa-search"></i>&nbsp;&nbsp;Search</button> </span><input
-                                    type="text" placeholder="Search patient name"
+                        <div class="input-group"><span class="input-group-btn">
+                        <button type="button" disabled class="btn btn-white"><i class="fa fa-search"></i>
+                        </button> </span>
+                            <input  type="text" id="search" onkeyup="filter_search()" name="search_patient" placeholder="Search patient ID"
                                     class=" form-control"></div>
                     </div>
                 </div>
@@ -84,7 +88,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="ibox float-e-margins">
-                            <table class="table table-hover no-margins">
+                            <table class="table table-hover no-margins" id="table_patient">
                                 <thead>
                                 <tr>
                                     <th>P-ID</th>
@@ -128,75 +132,32 @@
 @endsection
 @section('script')
 
+
+
+
+
+    {{-- filter search for patient name --}}
     <script>
-        $(function () {
-            $('.list-group.checked-list-box .list-group-item').each(function () {
-                // Settings
-                var $widget = $(this),
-                    $checkbox = $('<inpu    t type="checkbox" class="hidden" />'),
-                    color = ($widget.data('color') ? $widget.data('color') : "primary"),
-                    style = ($widget.data('style') == "button" ? "btn-" : "list-group-item-"),
-                    settings = {
-                        on: {
-                            icon: ''
-                        },
-                        off: {
-                            icon: ''
-                        }
-                    };
-                $widget.css('cursor', 'pointer')
-                $widget.append($checkbox);
-                // Event Handlers
-                $widget.on('click', function () {
-                    $checkbox.prop('checked', !$checkbox.is(':checked'));
-                    $checkbox.triggerHandler('change');
-                    updateDisplay();
-                });
-                $checkbox.on('change', function () {
-                    updateDisplay();
-                });
+        function filter_search() {
+            // Declare variables
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("table_patient");
+            tr = table.getElementsByTagName("tr");
 
-                // Actions
-                function updateDisplay() {
-                    var isChecked = $checkbox.is(':checked');
-                    // Set the button's state
-                    $widget.data('state', (isChecked) ? "on" : "off");
-                    // Set the button's icon
-                    $widget.find('.state-icon')
-                        .removeClass()
-                        .addClass('state-icon ' + settings[$widget.data('state')].icon);
-                    // Update the button's color
-                    if (isChecked) {
-                        $widget.addClass(style + color + ' active');
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
                     } else {
-                        $widget.removeClass(style + color + ' active');
+                        tr[i].style.display = "none";
                     }
                 }
-
-                // Initialization
-                function init() {
-                    if ($widget.data('checked') == true) {
-                        $checkbox.prop('checked', !$checkbox.is(':checked'));
-                    }
-                    updateDisplay();
-                    // Inject the icon if applicable
-                    if ($widget.find('.state-icon').length == 0) {
-                        $widget.prepend('<span class="state-icon ' + settings[$widget.data('state')].icon + '"></span>');
-                    }
-                }
-
-                init();
-            });
-            $('#get-checked-data').on('click', function (event) {
-                event.preventDefault();
-                var checkedItems = {}, counter = 0;
-                $("#check-list-box li.active").each(function (idx, li) {
-                    checkedItems[counter] = $(li).text();
-                    counter++;
-                });
-                $('#display-json').html(JSON.stringify(checkedItems, null, '\t'));
-            });
-        });
+            }
+        }
     </script>
 
     {{-- sweet alert --}}

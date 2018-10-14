@@ -65,6 +65,7 @@
                             <div class="profile-info">
                                 <div class="">
                                     <div>
+
                                         <h2 class="no-margins font-b">
                                             {{ $doctor->first_name }}
                                         </h2>
@@ -72,6 +73,7 @@
                                         <small class="font-m">
                                             Dental Expert for 2 years work in dental clinics and more 100 patient visited
                                         </small>
+
                                     </div>
                                 </div>
                             </div>
@@ -107,6 +109,7 @@
                                 </tr>
                                 </tbody>
                             </table>
+
                             {{--@endforeach--}}
                         </div>
                     </div>
@@ -126,9 +129,9 @@
                                 <label class="font-noraml">Select Range</label>
                                 <div class="input-daterange input-group" id="" >
                                     <span class="input-group-addon">From &nbsp;<i class="fa fa-arrow-right"></i></span>
-                                    <input type="date" class="input-sm form-control" name="start" required>
+                                    <input type="date" class="input-sm form-control" name="start"/>
                                     <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
-                                    <input type="date" class="input-sm form-control" name="end" required>
+                                    <input type="date" class="input-sm form-control" name="end" />
 
                                 </div>
                             </div>
@@ -149,8 +152,7 @@
                             </thead>
                             <tbody>
                             @foreach($treatment as $treat)
-                                @if($treat->created_at>$doctor->to)
-{{--                                @if($treat->status_visits=='complete')--}}
+                                @if($treat->status_visits=='complete')
                             <tr>
                                 <td>{{$treat->patient->id_patient}}</td>
                                 <td>{{$treat->treatment}}</td>
@@ -158,7 +160,6 @@
                                 <td>{{$treat->created_at}}</td>
                                 <td><span class="label label-info">{{$treat->status_visits}}</span></td>
                             </tr>
-                                {{--@endif--}}
                                 @endif
                             @endforeach
                             </tbody>
@@ -172,7 +173,7 @@
                                         <td><input type="text" class="form-control" value="{{$total}}" readonly></td>
                                     </tr>
                                     <tr>
-                                        <td class="text-bold"><h4>Doctor Fee: </h4></td>
+                                        <td class="text-bold"><h4>Doctor Salary: </h4></td>
                                         <td><input type="text" name="fee" class="form-control" value="{{$docfee}}" readonly></td>
 
                                     </tr>
@@ -184,15 +185,15 @@
 
                                     <tr>
 
-                                        <td class="text-bold"><h4>Total Doctor Fee: </h4></td>
+                                        <td class="text-bold"><h4>Total Doctor Salary: </h4></td>
                                         <td>
                                             <input type="text" class="form-control" value="{{$docfee+$doctor->remaining}}" name="colection" readonly>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-bold"><h4>Paid amount: </h4></td>
+                                        <td class="text-bold"><h4>Payment amount: </h4></td>
                                         <td>
-                                            <input type="text" class="form-control" placeholder="Enter the fee amount" name="salary" required>
+                                            <input type="number" max="{{$docfee+$doctor->remaining}}" class="form-control" placeholder="Enter the fee amount" name="salary" required>
                                         </td>
                                     </tr>
                                     <tr>
@@ -209,7 +210,7 @@
         </div>
     </div>
 
-  
+
 
 
 

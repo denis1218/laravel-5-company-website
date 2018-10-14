@@ -1,4 +1,4 @@
-@extends('master')
+    @extends('master')
 
 
 @section('style')
@@ -14,9 +14,12 @@
                         <h5>User</h5>
                     </div>
                     <div class="ibox-content">
-                        <h2 class="no-margins">Welcome Qasim</h2>
+                        <h2 class="no-margins">
+
+                            Welcome  {{ Auth::user()->firstname }}</h2>
                         <div class="stat-percent font-bold text-danger"></div>
-                        <small>Finance</small>
+                        <small>{{ Auth::user()->department }}</small>
+
                     </div>
                 </div>
             </div>
@@ -27,8 +30,10 @@
                         <h5>Patient</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">35<img  src="img/patienticon2.png" width="45px;"style="float: right;"/></h1>
+
+                        <h1 class="no-margins">{{$patient}}<img  src="img/patienticon2.png" width="45px;"style="float: right;"/></h1>
                         <small>Total patient for today</small>
+
                     </div>
                 </div>
             </div>
@@ -39,7 +44,7 @@
                         <h5>Doctors</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">7<img  src="img/doctors.png" width="60px;"style="float: right;"/></h1>
+                        <h1 class="no-margins">{{$doctor}}<img  src="img/doctors.png" width="60px;"style="float: right;"/></h1>
                         <div class="stat-percent font-bold text-navy"></div>
                         <small>Total Doctors Available</small>
                     </div>
@@ -52,9 +57,15 @@
                         <h5>Appointment patients</h5>
                     </div>
                     <div class="ibox-content">
-                        <h1 class="no-margins">25<img  src="img/appintmentincon.png" width="60px;"style="float: right;"/></h1>
+                        <h1 class="no-margins">{{count($apatient)}}<img  src="img/appintmentincon.png" width="60px;"style="float: right;"/></h1>
                         <div class="stat-percent font-bold text-danger"></div>
-                        <small>Total Appointment</small>
+                        <small>Total Appointment
+                            <br>
+                            @if(isset($msg))
+
+                            @endif
+
+                        </small>
                     </div>
                 </div>
             </div>
@@ -68,77 +79,81 @@
             {{-- Dash graph area --}}
             <div class="wrapper wrapper-content">
                 <div class="container">
-                    <div class="row">
-                        {{-- Graph Area --}}
-                        <div class="col-md-2" >
-                            <button class="btn btn-primary dim dim-large-dim" ><a href="/income"><img src="img/income_icon_dash.png"  width="150px;" style="border-radius: 8px;"/></a></button>
-                        </div>
-                        <div class="col-md-2" style="margin-left:30px;">
-                            <button class="btn btn-primary dim dim-large-dim" ><a href="/expenditure"><img src="img/expense_icon_dash.png" width="150px;" style="border-radius: 8px;"/></a></button>
-                        </div>
-                        <div class="col-md-2"  style="margin-left:30px;">
-                            <button class="btn btn-primary dim dim-large-dim" ><a href="/doctor_report"><img src="img/doctor_icon_dash.png" width="150px;" style="  border-radius: 8px;height: 60px;"/></a></button>
-                        </div>
-                        <div class="col-md-2"  style="margin-left:30px;">
-                            <button class="btn btn-primary dim dim-large-dim" ><a href="/finance_report_income"><img src="img/report_icon_dash.png" width="150px;" style="border-radius: 8px;height: 60px"/></a></button>
-                        </div>
-                        <div class="col-md-2"  style="margin-left:30px;">
-                            <button class="btn btn-primary dim dim-large-dim" ><a href="/patient"><img src="img/patient_icon_dash.png" width="70px;"  style="border-radius: 8px;height: 60px;"/>&nbsp;&nbsp;<span style="color: white;">Patient</span></a></button>
-                        </div>
+
+                <div class="row">
+                    {{-- Graph Area --}}
+                            <div class="col-md-2" >
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/income"><img src="img/income_icon_dash.png"  width="150px;" style="border-radius: 8px;"/></a></button>
+                            </div>
+                            <div class="col-md-2" style="margin-left:30px;">
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/expenditure"><img src="img/expense_icon_dash.png" width="150px;" style="border-radius: 8px;"/></a></button>
+                            </div>
+                            <div class="col-md-2"  style="margin-left:30px;">
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/doctor_report"><img src="img/doctor_icon_dash.png" width="150px;" style="  border-radius: 8px;height: 60px;"/></a></button>
+                            </div>
+                            <div class="col-md-2"  style="margin-left:30px;">
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/finance_report_income"><img src="img/report_icon_dash.png" width="150px;" style="border-radius: 8px;height: 60px"/></a></button>
+                            </div>
+                            <div class="col-md-2"  style="margin-left:30px;">
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/patient"><img src="img/patient_icon_dash.png" width="70px;"  style="border-radius: 8px;height: 60px;"/>&nbsp;&nbsp;<span style="color: white;">Patient</span></a></button>
+                            </div>
 
 
-                        {{-- End Graph--}}
-                        <div class="col-lg-4">
-                            <div class="ibox float-e-margins">
-                                <div class="ibox-title">
-                                    <h5>Quick Enter Expenses</h5>
-                                    <div class="ibox-tools">
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <i class="fa fa-wrench"></i>
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-user">
-                                            <li><a href="#">Config option 1</a>
-                                            </li>
-                                            <li><a href="#">Config option 2</a>
-                                            </li>
-                                        </ul>
-                                        <a class="close-link">
-                                            <i class="fa fa-times"></i>
-                                        </a>
-                                    </div>
+
+                    {{-- End Graph--}}
+                    <div class="col-lg-4">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>Quick Enter Expenses</h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        <li><a href="#">Config option 1</a>
+                                        </li>
+                                        <li><a href="#">Config option 2</a>
+                                        </li>
+                                    </ul>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
                                 </div>
-                                <div class="ibox-content">
-                                    <form>
-                                        <div class="row">
-                                            <div class="col">
-                                                <input type="text" class="form-control" style="width:100%" placeholder="Money receiver"><br>
-                                                <input type="text" class="form-control" style="width:100%" placeholder="Paid Amount"><br>
 
-                                                <select class="form-control" style="width:100%">
-                                                    <option value="1" disabled selected>Select The Category</option>
-                                                    <option value="1">Rent</option>
-                                                    <option value="2">Office Supply</option>
-                                                    <option value="3">Personal</option>
-                                                    <option value="4">Taxes</option>
-                                                    <option value="5">Employee Salary</option>
-                                                    <option value="6">Clinical Instrument</option>
-                                                    <option value="7">Miscellaneous</option>
-                                                </select><br>
+                            </div>
+                            <div class="ibox-content">
+                                <form>
+                                    <div class="row">
+                                      <div class="col">
+                                        <input type="text" class="form-control" style="width:100%" placeholder="Money receiver"><br>
+                                        <input type="text" class="form-control" style="width:100%" placeholder="Paid Amount"><br>
+                                        
+                                        <select class="form-control" style="width:100%">
+                                            <option value="1" disabled selected>Select The Category</option>
+                                            <option value="1">Rent</option>
+                                            <option value="2">Office Supply</option>
+                                            <option value="3">Personal</option>
+                                            <option value="4">Taxes</option>
+                                            <option value="5">Employee Salary</option>
+                                            <option value="6">Clinical Instrument</option>
+                                            <option value="7">Miscellaneous</option>                          
+                                        </select><br>
 
 
-                                                <textarea name="msg" id="" placeholder="Enter your message"  class="form-control" style="resize: none;"></textarea><br>
-                                                <button type="submit"  value="Pay" class="btn btn-primary">Save &nbsp;<i class="fa fa-save"></i></button>
-                                                <button  value="Pay" class="btn btn-warning" data-toggle="modal" data-target="#remaining">Remainder &nbsp;<i class="fa fa-arrow-circle-down"></i></button>
-                                            </div>
+                                        <textarea name="msg" id="" placeholder="Enter your message"  class="form-control" style="resize: none;"></textarea><br>
+                      <button type="submit"  value="Pay" class="btn btn-primary">Save &nbsp;<i class="fa fa-save"></i></button>
+                                        <button  value="Pay" class="btn btn-warning" data-toggle="modal" data-target="#remaining">Remainder &nbsp;<i class="fa fa-arrow-circle-down"></i></button>
+
                                         </div>
-                                    </form>
-                                </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
             {{-- Graph area --}}
@@ -160,7 +175,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-primary" >Save changes</button>
 
                         </div>
                     </div>
@@ -186,7 +201,21 @@
 
     <script>
 
+
         $(document).ready(function() {
+            $('.demo_connection').click(function () {
+                swal({
+                        title: "Inserted!",
+                        text: "Your Row Has Been Inserted.",
+                        type: "success",
+                        timer: 5000
+                    },
+                    function () {
+                        location.reload(true);
+                        tr.hide();
+                    });
+            });
+
 
             var lineData = {
                 labels: ["January", "February", "March", "April", "May", "June", "July"],

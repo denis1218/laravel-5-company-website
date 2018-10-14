@@ -58,7 +58,7 @@
                             <label class="col-sm-2 control-label">Working Time</label>
                             <div class="col-md-4">
                                 <label for=""> From </label><input type="time" class="form-control" name="start_work_time" style="width: 40%" required>
-                                <label for=""> To </label> <input type="time" class="form-control" name="end_work_time" style="width: 40%">
+                                <label for=""> To </label> <input type="time" class="form-control" name="end_work_time" style="width: 40%" required>
                             </div>
                         </div>
 
@@ -84,31 +84,31 @@
                         </div>
 
                         <div class="form-group"><label class="col-sm-2 control-label">Max Patient can visits</label>
-                            <div class="col-md-4"><input type="number" class="form-control" name="max_patient"  placeholder="Enter Maximum patient can visits"></div>
+                            <div class="col-md-4"><input type="number" class="form-control" name="max_patient"  placeholder="Enter Maximum patient can visits" required></div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Gender</label>
-                            <div class="col-sm-2"><div class="i-checks"><label> <input type="radio" value="Male" name="gender" required> <i></i> Male </label></div></div>
-                            <div class="col-sm-2"><div class="i-checks"><label> <input type="radio" value="Female" name="gender" required> <i></i> Female </label></div></div>
+                            <div class="col-sm-1"><div class="i-checks"><label> <input type="radio" value="Male" name="gender" required> <i></i> Male </label></div></div>
+                            <div class="col-sm-1"><div class="i-checks"><label> <input type="radio" value="Female" name="gender" required> <i></i> Female </label></div></div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Salary Type</label>
-                            <div class="col-sm-2"> <div class="input-group" style="display: inline">
+                            <div class="col-sm-1"> <div class="input-group" style="display: inline">
                                 <div class="i-checks"><label>
                                      <input type="radio" name="salary_type" value="percentage" name="a2" id="per" required> <i></i> Per% </label></div></div></div>
-                            <div class="col-sm-2"><div class="i-checks">
+                            <div class="col-sm-1"><div class="i-checks">
                                 <label> <input type="radio" name="salary_type" value="fix" name="a2"> <i></i>  Fix </label></div></div>
                         </div>
 
                         <div class="form-group"><label class="col-sm-2 control-label">Salary amount</label>
-                            <div class="col-md-4"><input type="text" class="form-control" name="salary_amount" id="sal" placeholder="Enter amount or percentage of salary"></div>
+                            <div class="col-md-4"><input type="text" class="form-control" name="salary_amount" id="sal" placeholder="Enter amount or percentage of salary" required></div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2">
-                                <button class="btn btn-white" type='reset'>Cancel</button>
+                                <button class="btn btn-white" type='reset'>Reset</button>
                                 <button class="btn btn-primary" type="submit"  name="submit" value="Save">Save</button>
                             </div>
                         </div>

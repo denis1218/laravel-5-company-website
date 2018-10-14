@@ -36,7 +36,7 @@
     <div class="col-lg-6">
 
         <div class="middle-box text-center loginscreen animated fadeInDown" style="margin-top: 100px;">
-            <div style="box-shadow:3px 3px 3px 3px  lightblue">
+            <div style="">
                 <div>
                     <img src="/img/Dentaa3.png" width="650px" class="img-responsive" alt="">
                 </div>
@@ -68,13 +68,13 @@
                         {{ __('Login') }}
                     </button>
 
-                    <div class="form-check pull-left rememberme">
-                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    {{--<div class="form-check pull-left rememberme">--}}
+                        {{--<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>--}}
 
-                        <label class="form-check-label" for="remember">
-                            {{ __('Remember Me') }}
-                        </label>
-                    </div>
+                        {{--<label class="form-check-label" for="remember">--}}
+                            {{--{{ __('Remember Me') }}--}}
+                        {{--</label>--}}
+                    {{--</div>--}}
 
                 </form>
             </div>

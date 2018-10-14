@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+
+use App\Patient;
+use App\Doctor;
+
+
 
 class HomeController extends Controller
 {
@@ -10,7 +15,9 @@ class HomeController extends Controller
      * Create a new controller instance.
      *
      */
-    public function __construct()
+
+
+    function __construct()
     {
         $this->middleware('auth');
     }
@@ -21,7 +28,10 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('dash');
+    {   $patient = Patient::count();
+        $apatient = Patient::whereDate('created_at', Carbon::today())->get();
+        $doctor = Doctor::count();
+        return view('dash',compact('patient','doctor','apatient'));
     }
+
 }

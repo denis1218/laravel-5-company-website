@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Doctor;
 use App\Expense;
+use App\Patient;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
+use Carbon;
 
 class ExpenseController extends Controller
 {
@@ -17,7 +19,8 @@ class ExpenseController extends Controller
     {
 
        $expen =  Expense::whereDate('created_at', Carbon::today())->get();
-        return view('expenditure',compact('expen'));
+       $capital=$expen->sum('amount');
+        return view('expenditure',compact('expen','capital'));
 
 
     }
@@ -29,8 +32,9 @@ class ExpenseController extends Controller
      */
     public function create()
     {
-
-
+        $capital=DB::table('expenses')->sum('amount');
+        return view('expense_form',compact('capital'));
+//        return $capital;
     }
 
     /**
@@ -46,8 +50,24 @@ class ExpenseController extends Controller
         $expense->amount = $request->amount;
         $expense->category = $request->category;
         $expense->description = $request->description;
+        $expense->created_at = Carbon\Carbon::now();
         $expense->save();
         return redirect('expenditure');
+    }
+    public function FromDash(Request $request){
+        $expense = new Expense();
+        $expense->receiver = $request->receiver;
+        $expense->amount = $request->amount;
+        $expense->category = $request->category;
+        $expense->description = $request->description;
+        $expense->created_at = Carbon\Carbon::now();
+        $expense->save();
+        $patient = Patient::count();
+        $apatient = Patient::whereDate('created_at', Carbon::today())->get();
+        $doctor = Doctor::count();
+        return back();
+        $msg  = 'Successfully Inserted Into Database';
+//        return view('dash',compact('patient','doctor','apatient','msg'));
     }
 
     /**

@@ -163,7 +163,7 @@
                                 <div class="row shadow p-3 mb-5 rounded bg-info"
                                      table-exchange
                                      style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px;">
-                                    <h3 style="font-weight: bold">{{ $checkValue}}</h3>
+                                    <h3 style="font-weight: bold">{{ $treats->visits }}</h3>
                                 </div>
                                 <br>
                                 <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
@@ -223,7 +223,7 @@
 
                                 <input hidden type="hidden"/>
                                 <input hidden type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
-                                <input hidden type="hidden" name="visits" value="1"/>
+                                <input hidden type="hidden" name="visits" value="{{ $checkValue  }}"/>
 
                                 <div class="row" style="margin-top:30px;">
                                     <div class="col-md-6">
@@ -298,6 +298,15 @@
                                             <textarea rows="5" type="text" class="form-control" name="description"
                                                       placeholder="Type Description ...."
                                                       id="description"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="i-checks" for="nex"><label>&nbsp;&nbsp;
+                                                    <input type="checkbox" value="complete"
+                                                           class="checkbox checkbox-warning"
+                                                           name="status_visits"/><span>&nbsp;&nbsp; Check it, To complete treatment of tooth for this patient
+                                                        when check it the finance must get all remaining fee from patient.</span>
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">

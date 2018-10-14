@@ -8,7 +8,6 @@ use App\Patient;
 use App\Treatment;
 use App\TreatmentList;
 use App\XRay;
-use Carbon;
 use Illuminate\Http\Request;
 
 class TreatmentController extends Controller
@@ -22,10 +21,11 @@ class TreatmentController extends Controller
      */
     public function index()
     {
+
         $operation = Patient::orderBy('id', 'asc')->paginate(10);
         return view('doctor_operations')->with('operation', $operation);
-    }
 
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -35,10 +35,32 @@ class TreatmentController extends Controller
     public function create($id)
     {
         $patient_in_treatment = Patient::find($id);
+
+
         $checkValue=Patient::find($id)->treatment;
         foreach ($checkValue as $ch) {
-            if($ch->visits==null){
+            if($ch->visits==0){
                 $ch->visits=1;
+            }
+            $ch->visits=$ch->visits+1;
+
+
+//        return $patient_in_treatment;
+        $last_treatment = Treatment::orderBy('id', 'desc')->find($id);
+
+
+        if($last_treatment->visits == 0)
+        {
+            $checkValue = 0;
+        }else {
+            $checkValue = $last_treatment->visits;
+
+            $checkValue = Patient::find($id)->treatment;
+            foreach ($checkValue as $ch) {
+                if ($ch->visits == null) {
+                    $ch->visits = 1;
+                }
+
             }
 
         }
@@ -51,6 +73,7 @@ class TreatmentController extends Controller
         $patient_id = $patient_in_treatment->id;
 
         return view('treatment_operation', compact('patient_in_treatment','patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments'));
+
     }
 
 
@@ -80,7 +103,7 @@ class TreatmentController extends Controller
         $treatment->dentaldefect = $request->input('dentaldefect');
         $treatment->status_pay = true;
         $treatment->have_xray = false;
-        $treatment->created_at = Carbon\Carbon::now();
+
         if($request->status_visits == null)
         {
             $treatment->status_visits = 'not complete';
@@ -131,21 +154,28 @@ class TreatmentController extends Controller
      */
     public function edit($id)
     {
-//        dd($id);
 
     }
 
     public function edit_treatment($id,$patient_id)
     {
         $patient_in_treatment = Patient::find($patient_id);
+
+
+//        return $patient_in_treatment->visit;
+//        dd($patient_in_treatment);
+
+
+
         $last_treatment = Treatment::orderBy('id', 'desc')->find($id);
         if($last_treatment==null)
         {
-            $checkValue = 0;
+            $checkValue = 1;
         }else{
             $checkValue = $last_treatment->visits;
         }
         $checkValue=$checkValue+1;
+
         $treatementList = TreatmentList::all();
         $dentalDefectList = DentalDefectList::all();
         $patient_id = $patient_in_treatment->id;
