@@ -242,7 +242,7 @@
 
                                             {{--<div class="i-checks">--}}
                                             <input type="radio" onchange="activation()" value="not" name="xray_status"
-                                                   id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>YES</b></strong>
+                                                   id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>YES</b></strong>&nbsp;&nbsp;&nbsp;
                                             {{--</div>--}}
                                             {{--<div class="i-checks">--}}
                                             <input type="radio" onchange="deactivation()" id="id" name="xray_status"
@@ -250,14 +250,14 @@
                                             {{--</div>--}}
                                     </div>
                                 </div>
+                                </div>
 
                                 <br>
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="input-group" style="margin-top:25px;">
+                                    <div class="col-md-6 text-left">
+                                        <div class="input-group" style="margin-top:px;">
                                             <label for="number">Enter tooth number:</label>
-                                            <input type="number" class="form-control" id="teeth"
-                                            required name="tooth_number" onblur="copyvalue()" placeholder="Enter Tooth Number" style="width: 100%;height:36px;">
+                                            <input type="number" class="form-control" id="teeth" name="tooth_number" onblur="copyvalue()" placeholder="Enter Tooth Number" style="width: 100%;height:36px;" required>
                                             <span class="input-group-btn">
                                             <button type="submit" class="btn btn-primary" id="but"  style="margin-top: 23px;height:36px;" disabled>
                                             Send To X-Ray &nbsp;<i class="fa fa-send">
@@ -279,7 +279,7 @@
                             {{--end of x-ray form--}}
                             <form action="/operation" method="POST">
                                 @foreach($checkValue as $check)
-                                <input type="hidden" value="{{ ++$check->visits }}" name="visits">
+                                <input type="hidden" value="{{ $check->visits }}" name="visits">
                                 @endforeach
                                 <input hidden type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
                                 {{--<input hidden type="hidden" name="visits" value="{{ $treatments->visits  }}"/>--}}
@@ -294,7 +294,7 @@
                                             <input type="checkbox" id="next" name="have_xray" style="visibility:hidden;">
                                         <div class="form-group">
                                             <label>Select Dental Defect :</label>
-                                            <select class="form-control" name="dentaldefect">
+                                            <select class="form-control" name="dentaldefect" required>
                                                 <option disabled selected>Select Dental Defect</option>
                                                 @foreach($dentalDefectList as $list)
                                                     <option value="{{ $list->dental_defect }}">{{ $list->dental_defect }}</option>
@@ -304,7 +304,7 @@
                                         <div class="form-group">
                                             <label>Treatment :</label>
                                             <select class="form-control" name="treatment"
-                                                    onchange="getFeeTreatment(this);">
+                                                    onchange="getFeeTreatment(this);" required>
                                                 <option disabled>Select Treatment</option>
                                                 @foreach($treatementList as $listTreatement)
                                                     <option value="{{ $listTreatement->treatment }}"
@@ -317,7 +317,7 @@
                                         <div class="form-group">
                                             <label for="nex">Treatment Cost :</label>
                                             <input type="number" class="form-control" id="cost_treatment"
-                                                   name="estimated_fee" value="">
+                                                   name="estimated_fee" value="" required>
                                         </div>
                                         <input type="text" name="paid_amount" hidden>
                                         <div class="form-group">
@@ -352,7 +352,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6" style="margin-top: -70px;">
                                         <img src="{{ asset('img/all_tooth.jpg') }}" width="100%"/>
                                     </div>
                                 </div>

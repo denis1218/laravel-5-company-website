@@ -19,7 +19,9 @@ class PatientController extends Controller
     public function index()
     {
 
+
         $patient_all = Patient::whereDate('updated_at',Carbon::today())->get();
+
 
         $doctor = Doctor::find(1);
         $doctor_list = Doctor::all();

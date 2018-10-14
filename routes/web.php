@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
 
 
 
+
     Route::get('/detailinvoice', function () {
         return view('detailsReception');
     });
@@ -211,9 +212,7 @@ Route::get('/doctors2', 'DoctorController@show');
 
     Route::resource('xrey_income', 'xrayincomeController');
     Route::get('xrey_income2', 'xrayincomeController@showComplete');
-<<<<<<< HEAD
 
-=======
     Route::patch('xrey_income3/{id}', 'xrayincomeController@update2');
 // Financial report daily
     Route::resource('/finance_report_income', 'FinanceReportIncomeController');
@@ -225,7 +224,7 @@ Route::get('/doctors2', 'DoctorController@show');
 
     //financial report income select type and range
     Route::get('finance_report_income4', 'FinanceReportIncomeController@selectRange');
->>>>>>> 79c73fdd0e2c5eb7d982dfc74057e1e2e812c438
+
 
 
     //financial report expense

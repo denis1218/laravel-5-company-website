@@ -62,8 +62,10 @@
                                         <div class="panel-body">
 
 
+
                                             <div class="col-md-8">
                                                 <div class="input-group">
+
 
                                                         <span class="input-group-btn">
                                                         <button type="button"
@@ -125,25 +127,37 @@
                                         <div id="{{ $list->id }}" class="tab-pane">
                                             <div class="panel-body">
 
+                                                {{--<div class="row">--}}
 
-
-                                                <div class="col-md-3">
-                                                    <button class="btn btn-primary">
-                                                        <li class="fa fa-list"></li>&nbsp; Next Appointment List
-                                                    </button>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="btn-group">
-                                                        <button class="btn btn-white" type="button">Previous
-                                                        </button>
-                                                        <button class="btn btn-primary" type="button">Today
-                                                        </button>
-                                                        <button class="btn btn-white" type="button">Next
-                                                        </button>
+                                                    {{--<div class="col-md-3">--}}
+                                                        {{--<button class="btn btn-primary">--}}
+                                                            {{--<li class="fa fa-list"></li>&nbsp; Next Appointment List--}}
+                                                        {{--</button>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                                <div class="row" style="margin-top:-120px;">
+                                                    <div class="col-sm-7">
+                                                        <div class="input-group">
+                                                        <span class="input-group-btn">
+                                                        <button type="button"
+                                                                class="btn btn-sm btn-primary"> Search</button> </span>
+                                                            <input type="text" placeholder="Search patient name"
+                                                                   class="input-sm form-control">
+                                                        </div>
                                                     </div>
-                                                </div>
 
-                                                <div class="row">
+                                                    {{--<div class="col-sm-4">--}}
+                                                        {{--<div class="btn-group">--}}
+                                                            {{--<button class="btn btn-white" type="button">Previous--}}
+                                                            {{--</button>--}}
+                                                            {{--<button class="btn btn-primary" type="button">Today--}}
+                                                            {{--</button>--}}
+                                                            {{--<button class="btn btn-white" type="button">Next--}}
+                                                            {{--</button>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                </div>
+                                                <div class="row" style="margin-top:-50px;">
 
                                                     <div class="col-sm-11">
                                                         <div class="table-responsive">
