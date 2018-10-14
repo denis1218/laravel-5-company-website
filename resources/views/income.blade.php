@@ -34,8 +34,6 @@
                 </div>
                 <div class="ibox-content" style=" background-color: #1ab394;color:white">
                     <h1 class="no-margins">Amount:&nbsp;{{$Gtotal}}</h1>
-                    {{--<div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>--}}
-
                 </div>
             </div>
         </div>

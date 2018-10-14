@@ -38,6 +38,7 @@
                    href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>Other Income</a></h2>
         </div>
     </div>
+
     <!-- End of navButtons -->
 
 

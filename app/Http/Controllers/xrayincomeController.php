@@ -18,8 +18,12 @@ class xrayincomeController extends Controller
 
 
         $xrey = XRay::where('paid_amount',0)->paginate(10);
+        $ptotal=DB::table('treatments')->sum('paid_amount');
+        $xtotal=DB::table('xrays')->sum('paid_amount');
+        $ototal=DB::table('oincoms')->sum('amount');
+        $Gtotal=$ptotal+$xtotal+$ototal;
 
-        return view('xrey_income',compact('xrey'));
+        return view('xrey_income',compact('xrey','Gtotal'));
     }
 
     /**
