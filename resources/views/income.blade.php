@@ -34,6 +34,7 @@
                 </div>
                 <div class="ibox-content" style=" background-color: #1ab394;color:white">
                     <h1 class="no-margins">Amount:&nbsp;{{$Gtotal}}</h1>
+
                 </div>
             </div>
         </div>
@@ -130,11 +131,6 @@
 
                 <div style="margin-left: 30px">{{$income->links()}}</div>
 
-
-
-
-
-
                     <!-- detailss modal -->
                     @foreach($income as $in)
                     <div class="modal inmodal" id="{{$in->id}}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -144,7 +140,9 @@
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
                                                 class="sr-only">Close</span></button>
                                     {{--<i class="fa fa-edit-o modal-icon text-primary"></i>--}}
+
                                     <h4 class="modal-title">Fee Payment</h4>
+
                                     <small>Fill the Paid amount</small>
                                 </div>
                                 <div class="modal-body">

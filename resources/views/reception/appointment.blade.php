@@ -62,6 +62,7 @@
                                         <div class="panel-body">
 
 
+
                                             <div class="col-md-8">
                                                 <div class="input-group">
 
@@ -70,7 +71,9 @@
                                                                 class="btn btn-primary"><i class="fa fa-search"></i> Search</button> </span>
                                                     <input type="text" id="search_all_patient"
                                                            onkeyup="search_all_patient()"
+
                                                            placeholder="Search patient name"
+
                                                            class="input-md form-control">
                                                 </div>
                                             </div>
@@ -83,8 +86,10 @@
                                             {{-- tab all patient in queue with defirrent doctor --}}
 
 
+
                                             <div class="col-md-12">
                                                 <h5>show all patients present now</h5>
+
                                                 <div class="table-responsive">
                                                     <table class="table table-hover  no-margins" id="table_all_patient">
                                                         <thead>
@@ -113,6 +118,7 @@
                                                                     <form action="/patient/{{ $patients->id }}" method="post">
                                                                         <button class="btn btn-xs btn-warning done">Visited</button>
                                                                     </form>
+
                                                                 </td>
                                                             </tr>
                                                         @endforeach
@@ -135,6 +141,7 @@
                                                         <li class="fa fa-list"></li>&nbsp; Next Appointment List
                                                     </button>
                                                 </div>
+
                                                 <div class="col-sm-4">
                                                     <div class="btn-group">
                                                         <button class="btn btn-white" type="button">Previous
@@ -147,6 +154,7 @@
                                                 </div>
 
                                                 <div class="row">
+
 
                                                     <div class="col-sm-11">
                                                         <div class="table-responsive">
@@ -241,6 +249,7 @@
     <script>
         $(document).ready(function () {
 
+
             $('.demo3').on('click', function (e) {
                 e.preventDefault();
                 var form = $(this).parents('form');
@@ -272,10 +281,6 @@
                     if (isConfirm) form.submit();
                 });
             });
-
-
-
-
 
         });
     </script>

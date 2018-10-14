@@ -8,7 +8,6 @@ use App\Patient;
 use App\Doctor;
 use Illuminate\Support\Carbon;
 
-
 class HomeController extends Controller
 {
     /**

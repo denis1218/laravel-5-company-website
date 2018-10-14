@@ -18,9 +18,12 @@ class PatientController extends Controller
      */
     public function index()
     {
+
         $patient_all = Patient::whereDate('next_appointment',Carbon::today())->orderBy('updated_at', 'ASC')->get();
+
         $doctor_list = Doctor::all();
-        return view('reception.appointment',compact('patient_all','doctor_list'));
+        return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
+
     }
 
     /**
