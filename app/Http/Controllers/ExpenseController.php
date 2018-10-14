@@ -115,8 +115,9 @@ class ExpenseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Expense  $expense
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param Expense $expense
      */
     public function destroy($id)
     {
