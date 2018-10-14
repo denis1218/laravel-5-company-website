@@ -13,7 +13,8 @@ use Illuminate\Http\Request;
 class TreatmentController extends Controller
 {
 
-    protected $idPatient ;
+    protected $idPatient;
+
     /**
      * Display a listing of the resource.
      *
@@ -37,45 +38,43 @@ class TreatmentController extends Controller
         $patient_in_treatment = Patient::find($id);
 
 
-        $checkValue=Patient::find($id)->treatment;
+        $checkValue = Patient::find($id)->treatment;
         foreach ($checkValue as $ch) {
-            if($ch->visits==0){
-                $ch->visits=1;
+            if ($ch->visits == 0) {
+                $ch->visits = 1;
             }
-            $ch->visits=$ch->visits+1;
+            $ch->visits = $ch->visits + 1;
+
+            $last_treatment = Treatment::orderBy('id', 'desc')->find($id);
 
 
-//        return $patient_in_treatment;
-        $last_treatment = Treatment::orderBy('id', 'desc')->find($id);
+            if ($last_treatment->visits == 0) {
+                $checkValue = 0;
+            } else {
+                $checkValue = $last_treatment->visits;
 
+                $checkValue = Patient::find($id)->treatment;
+                foreach ($checkValue as $ch) {
+                    if ($ch->visits == null) {
+                        $ch->visits = 1;
+                    }
 
-        if($last_treatment->visits == 0)
-        {
-            $checkValue = 0;
-        }else {
-            $checkValue = $last_treatment->visits;
-
-            $checkValue = Patient::find($id)->treatment;
-            foreach ($checkValue as $ch) {
-                if ($ch->visits == null) {
-                    $ch->visits = 1;
                 }
 
+
+                $treatments = Treatment::find($id);
+
+                $treatementList = TreatmentList::all();
+
+                $dentalDefectList = DentalDefectList::all();
+
+                $patient_id = $patient_in_treatment->id;
+
+                return view('treatment_operation', compact('patient_in_treatment', 'patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments'));
+
             }
-
         }
-        $treatments = Treatment::find($id);
-
-        $treatementList = TreatmentList::all();
-
-        $dentalDefectList = DentalDefectList::all();
-
-        $patient_id = $patient_in_treatment->id;
-
-        return view('treatment_operation', compact('patient_in_treatment','patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments'));
-
     }
-
 
 
     /**
@@ -84,7 +83,8 @@ class TreatmentController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public
+    function store(Request $request)
     {
         $treatment = new Treatment();
 
@@ -104,10 +104,9 @@ class TreatmentController extends Controller
         $treatment->status_pay = true;
         $treatment->have_xray = false;
 
-        if($request->status_visits == null)
-        {
+        if ($request->status_visits == null) {
             $treatment->status_visits = 'not complete';
-        }else{
+        } else {
             $treatment->status_visits = $request->status_visits;
         }
 
@@ -118,7 +117,8 @@ class TreatmentController extends Controller
     }
 
 
-    public function checkVisits()
+    public
+    function checkVisits()
     {
         $treatment = new Treatment();
         $count_visits = 0;
@@ -140,7 +140,8 @@ class TreatmentController extends Controller
      * @return \Illuminate\Http\Response
      * @internal param Treatment $treatment
      */
-    public function show($id)
+    public
+    function show($id)
     {
 
     }
@@ -152,35 +153,42 @@ class TreatmentController extends Controller
      * @return \Illuminate\Http\Response
      * @internal param Treatment $treatment
      */
-    public function edit($id)
+    public
+    function edit($id)
     {
+//        dd($id);
 
     }
 
-    public function edit_treatment($id,$patient_id)
+    public function edit_treatment($id, $patient_id)
     {
         $patient_in_treatment = Patient::find($patient_id);
 
 
 //        return $patient_in_treatment->visit;
 //        dd($patient_in_treatment);
+        $treatments = Treatment::orderBy('id', 'desc')->find($id);
 
+        if ($treatments == null) {
+            $checkValue = 0;
+        } else {
+            $checkValue = $treatments->visits;
+        }
 
 
         $last_treatment = Treatment::orderBy('id', 'desc')->find($id);
-        if($last_treatment==null)
-        {
+        if ($last_treatment == null) {
             $checkValue = 1;
-        }else{
+        } else {
             $checkValue = $last_treatment->visits;
         }
-        $checkValue=$checkValue+1;
+        $checkValue = $checkValue + 1;
 
         $treatementList = TreatmentList::all();
         $dentalDefectList = DentalDefectList::all();
         $patient_id = $patient_in_treatment->id;
         return view('treatment_operation_edit', compact('patient_in_treatment',
-            'treatementList','patient_id','checkValue', 'dentalDefectList','last_treatment'));
+            'treatementList', 'patient_id', 'checkValue', 'dentalDefectList', 'last_treatment'));
     }
 
     /**
