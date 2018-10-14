@@ -36,7 +36,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <a href="/patient/create">
-                                    <button class="btn btn-primary" style="width:100%;">
+                                    <button class="btn btn-primary" style="width:87%;">
                                         <li class="fa fa-plus"></li>&nbsp; Add new Patient
                                     </button>
                                 </a>
@@ -61,8 +61,10 @@
                                     <div id="home" class="tab-pane active">
                                         <div class="panel-body">
 
+
                                             <div class="col-md-8">
                                                 <div class="input-group">
+
                                                         <span class="input-group-btn">
                                                         <button type="button"
                                                                 class="btn btn-primary"><i class="fa fa-search"></i> Search</button> </span>
@@ -124,6 +126,7 @@
                                             <div class="panel-body">
 
 
+
                                                 <div class="col-md-3">
                                                     <button class="btn btn-primary">
                                                         <li class="fa fa-list"></li>&nbsp; Next Appointment List
@@ -141,6 +144,7 @@
                                                 </div>
 
                                                 <div class="row">
+
                                                     <div class="col-sm-11">
                                                         <div class="table-responsive">
                                                             <table class="table table-hover  no-margins">

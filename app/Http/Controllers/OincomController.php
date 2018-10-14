@@ -18,7 +18,7 @@ class OincomController extends Controller
     {
         $others=Oincom::orderBy('created_at','desc')->paginate(10);
         $total=DB::table('oincoms')->sum('amount');
-        return view('ext_income',compact('others','total'));
+        return view('ext_table',compact('others','total'));
 //        return $others;
     }
 

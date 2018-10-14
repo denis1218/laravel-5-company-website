@@ -89,16 +89,16 @@
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Gender</label>
-                            <div class="col-sm-2"><div class="i-checks"><label> <input type="radio" value="Male" name="gender" required> <i></i> Male </label></div></div>
-                            <div class="col-sm-2"><div class="i-checks"><label> <input type="radio" value="Female" name="gender" required> <i></i> Female </label></div></div>
+                            <div class="col-sm-1"><div class="i-checks"><label> <input type="radio" value="Male" name="gender" required> <i></i> Male </label></div></div>
+                            <div class="col-sm-1"><div class="i-checks"><label> <input type="radio" value="Female" name="gender" required> <i></i> Female </label></div></div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Salary Type</label>
-                            <div class="col-sm-2"> <div class="input-group" style="display: inline">
+                            <div class="col-sm-1"> <div class="input-group" style="display: inline">
                                 <div class="i-checks"><label>
                                      <input type="radio" name="salary_type" value="percentage" name="a2" id="per" required> <i></i> Per% </label></div></div></div>
-                            <div class="col-sm-2"><div class="i-checks">
+                            <div class="col-sm-1"><div class="i-checks">
                                 <label> <input type="radio" name="salary_type" value="fix" name="a2"> <i></i>  Fix </label></div></div>
                         </div>
 
@@ -108,7 +108,7 @@
 
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2">
-                                <button class="btn btn-white" type='reset'>Cancel</button>
+                                <button class="btn btn-white" type='reset'>Reset</button>
                                 <button class="btn btn-primary" type="submit"  name="submit" value="Save">Save</button>
                             </div>
                         </div>

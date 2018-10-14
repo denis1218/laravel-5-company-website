@@ -89,6 +89,7 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <button class="btn btn-primary" type="submit">Save</button>
+                                            <button class="btn btn-white" type="reset">Reset</button>
                                         </div>
                                     </div>
                                 </form>
@@ -100,8 +101,8 @@
                                         <h5 style="">Capital</h5>
                                     </div>
                                     <div class="ibox-content"style=" background-color: lightyellow;">
-                                        <h1 class="no-margins">40 886,200</h1>
-                                        <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i>
+                                        <h1 class="no-margins">{{$capital}}</h1>
+                                        {{--<div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i>--}}
                                         </div>
 
                                     </div>
