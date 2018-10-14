@@ -17,7 +17,8 @@ class ExpenseController extends Controller
     {
 
        $expen =  Expense::whereDate('created_at', Carbon::today())->get();
-        return view('expenditure',compact('expen'));
+       $capital=$expen->sum('amount');
+        return view('expenditure',compact('expen','capital'));
 
 
     }
@@ -29,8 +30,9 @@ class ExpenseController extends Controller
      */
     public function create()
     {
-
-
+        $capital=DB::table('expenses')->sum('amount');
+        return view('expense_form',compact('capital'));
+//        return $capital;
     }
 
     /**

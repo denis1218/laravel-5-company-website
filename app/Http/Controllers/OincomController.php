@@ -17,8 +17,12 @@ class OincomController extends Controller
     public function index()
     {
         $others=Oincom::orderBy('created_at','desc')->paginate(10);
+        $ptotal=DB::table('treatments')->sum('paid_amount');
+        $xtotal=DB::table('xrays')->sum('paid_amount');
+        $ototal=DB::table('oincoms')->sum('amount');
+        $Gtotal=$ptotal+$xtotal+$ototal;
         $total=DB::table('oincoms')->sum('amount');
-        return view('ext_income',compact('others','total'));
+        return view('ext_table',compact('others','total','Gtotal'));
 //        return $others;
     }
 
@@ -29,7 +33,11 @@ class OincomController extends Controller
      */
     public function create()
     {
-        return view('ext_income');
+        $ptotal=DB::table('treatments')->sum('paid_amount');
+        $xtotal=DB::table('xrays')->sum('paid_amount');
+        $ototal=DB::table('oincoms')->sum('amount');
+        $Gtotal=$ptotal+$xtotal+$ototal;
+        return view('ext_income',compact('Gtotal'));
     }
 
     /**

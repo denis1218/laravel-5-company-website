@@ -16,7 +16,7 @@ class PatientController extends Controller
      */
     public function index()
     {
-        $patient_all = Patient::all();
+        $patient_all = Patient::orderBy('created_at','desc')->get();
         $doctor = Doctor::find(1);
         $doctor_list = Doctor::all();
 
