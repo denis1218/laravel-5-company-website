@@ -108,7 +108,7 @@
                                                                 <td>{{ $patients->lastname }}</td>
                                                                 <td>{{ str_limit($patients->doctor->first_name ,7)}}</td>
                                                                 <td>{{ $patients->status }}</td>
-                                                                <td>{{ str_limit($patients->created_at,16 )}}</td>
+                                                                <td>{{ str_limit($patients->next_appointment,16 )}}</td>
                                                                 <td>
                                                                     <form action="/patient/{{ $patients->id }}" method="post">
                                                                         <button class="btn btn-xs btn-warning done">Visited</button>
@@ -168,7 +168,7 @@
                                                                         <td>{{ $pati->name }}</td>
                                                                         <td>{{ $pati->lastname }}</td>
                                                                         <td>{{ $pati->status }}</td>
-                                                                        <td>{{ str_limit($pati->created_at ,15)}}</td>
+                                                                        <td>{{ $pati->created_at }}</td>
                                                                         <td>
                                                                             <form action="/patient/{{ $pati->id }}" method="post">
 {{--                                                                                {{ method_field('patch') }}--}}

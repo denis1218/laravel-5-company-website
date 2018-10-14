@@ -20,7 +20,7 @@ class CreateTreatmentsTable extends Migration
             $table->string('treatment');
             $table->string('dentaldefect');
             $table->integer('visits')->nullable();
-            $table->date('next_appointment')->nullable();
+//            $table->date('next_appointment')->nullable();
             $table->string('meridiem')->nullable();
             $table->string('status_visits');
             $table->boolean('status_pay');

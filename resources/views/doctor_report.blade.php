@@ -152,6 +152,7 @@
                             </thead>
                             <tbody>
                             @foreach($treatment as $treat)
+                                @if($treat->created_at>$doctor->to)
                                 @if($treat->status_visits=='complete')
                             <tr>
                                 <td>{{$treat->patient->id_patient}}</td>
@@ -160,6 +161,7 @@
                                 <td>{{$treat->created_at}}</td>
                                 <td><span class="label label-info">{{$treat->status_visits}}</span></td>
                             </tr>
+                                @endif
                                 @endif
                             @endforeach
                             </tbody>

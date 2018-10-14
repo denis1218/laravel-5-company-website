@@ -10,7 +10,7 @@ $factory->define(\App\Treatment::class, function (Faker $faker) {
         'teeth_number' => $faker->numberBetween(1,32),
         'treatment' => $treatmentList,
         'dentaldefect' => $dentalDefect,
-        'next_appointment' => $faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
+//        'next_appointment' => $faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
         'meridiem' => $meridim,
         'visits' => $faker->numberBetween(1,5),
         'status_visits' => $status_visit,
