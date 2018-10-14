@@ -177,9 +177,7 @@ Route::get('/doctors2', 'DoctorController@show');
     Route::resource('/doctors', 'DoctorController');
 
 
-//Doctor Operation
-
-
+    //Doctor Operation
     Route::resource('operation', 'OperationController');
 
 

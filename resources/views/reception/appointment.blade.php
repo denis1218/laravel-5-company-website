@@ -168,7 +168,7 @@
                                                                         <td>{{ $pati->name }}</td>
                                                                         <td>{{ $pati->lastname }}</td>
                                                                         <td>{{ $pati->status }}</td>
-                                                                        <td>{{ $pati->created_at }}</td>
+                                                                        <td>{{ $pati->next_appointment }}</td>
                                                                         <td>
                                                                             <form action="/patient/{{ $pati->id }}" method="post">
 {{--                                                                                {{ method_field('patch') }}--}}
