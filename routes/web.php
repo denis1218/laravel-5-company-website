@@ -19,9 +19,7 @@ Route::get('/dash', 'HomeController@index')->name('home');
 Route::middleware('auth')->group(function () {
 
 //    Route::get('/dash', 'HomeController@index');
-    Route::get('/patient', function () {
-        return view('patient');
-    });
+
 
     Route::get('/employee', function () {
         return view('/employee');

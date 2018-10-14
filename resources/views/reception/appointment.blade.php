@@ -60,59 +60,59 @@
                                 <div class="tab-content bg-success" style="">
                                     <div id="home" class="tab-pane active">
                                         <div class="panel-body">
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <button class="btn btn-primary">
-                                                        <li class="fa fa-list"></li>&nbsp; Next Appointment List
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <br/>
-                                            <div class="row" style="margin-top:-120px;">
-                                                <div class="col-sm-7">
-                                                    <div class="input-group">
+
+                                            <div class="col-md-8">
+                                                <div class="input-group">
                                                         <span class="input-group-btn">
                                                         <button type="button"
-                                                                class="btn btn-sm btn-primary"> Search</button> </span>
-                                                        <input type="text" placeholder="Search patient name"
-                                                               class="input-sm form-control">
-                                                    </div>
+                                                                class="btn btn-primary"><i class="fa fa-search"></i> Search</button> </span>
+                                                    <input type="text" id="search_all_patient"
+                                                           onkeyup="search_all_patient()"
+                                                           placeholder="Search patient ID"
+                                                           class="input-md form-control">
                                                 </div>
                                             </div>
-                                            {{-- tab all patient in queue with defirrent doctor--}}
-                                            <div class="row" style="margin-top:-50px;">
-                                                <div class="col-sm-11">
-                                                    <div class="table-responsive">
-                                                        <table class="table table-hover  no-margins">
-                                                            <thead>
+                                            <div class="col-md-3">
+                                                <button class="btn btn-primary">
+                                                    <li class="fa fa-list"></li>&nbsp; Next Appointment List
+                                                </button>
+                                            </div>
+
+                                            {{-- tab all patient in queue with defirrent doctor --}}
+
+                                            <p>show all patient created at today </p>
+                                            <div class="col-md-12">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover  no-margins" id="table_all_patient">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>P-ID</th>
+                                                            <th>Patient Name</th>
+                                                            <th>Last Name</th>
+                                                            <th>Doctor Name</th>
+                                                            <th>Status</th>
+                                                            <th>Appointment date</th>
+                                                            <th>Add to visited</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        @foreach($patient_all as $patients)
                                                             <tr>
-                                                                <th>#</th>
-                                                                <th>P-ID</th>
-                                                                <th>Patient Name</th>
-                                                                <th>Last Name</th>
-                                                                <th>Doctor Name</th>
-                                                                <th>Status</th>
-                                                                <th>Appointment date</th>
-                                                                <th>Add to visited</th>
+                                                                <td>{{ $patients->id }}</td>
+                                                                <td>{{ $patients->id_patient }}</td>
+                                                                <td>{{ str_limit($patients->name ,8)}}</td>
+                                                                <td>{{ $patients->lastname }}</td>
+                                                                <td>{{ str_limit($patients->doctor->first_name ,7)}}</td>
+                                                                <td>{{ $patients->status }}</td>
+                                                                <td>{{ str_limit($patients->created_at,16 )}}</td>
+                                                                <td>
+                                                                    <a class="btn btn-xs btn-warning demo4" href="">Done</a>
+                                                                </td>
                                                             </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                            @foreach($patient_all as $patients)
-                                                                <tr>
-                                                                    <td>{{ $patients->id }}</td>
-                                                                    <td>{{ $patients->id_patient }}</td>
-                                                                    <td>{{ $patients->name }}</td>
-                                                                    <td>{{ $patients->lastname }}</td>
-                                                                    <td>{{ $patients->doctor->first_name }}</td>
-                                                                    <td>{{ $patients->status }}</td>
-                                                                    <td>{{ $patients->created_at }}</td>
-                                                                    <td><a class="btn btn-xs btn-warning" href="" onclick="deletePatient({{ $patients->id }})">remove</a>
-                                                                    </td>
-                                                                </tr>
-                                                            @endforeach
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
+                                                        @endforeach
+                                                        </tbody>
+                                                    </table>
                                                 </div>
                                             </div>
                                         </div>
@@ -122,37 +122,25 @@
 
                                         <div id="{{ $list->id }}" class="tab-pane">
                                             <div class="panel-body">
-                                                <div class="row">
 
-                                                    <div class="col-md-3">
-                                                        <button class="btn btn-primary">
-                                                            <li class="fa fa-list"></li>&nbsp; Next Appointment List
+
+                                                <div class="col-md-3">
+                                                    <button class="btn btn-primary">
+                                                        <li class="fa fa-list"></li>&nbsp; Next Appointment List
+                                                    </button>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-white" type="button">Previous
+                                                        </button>
+                                                        <button class="btn btn-primary" type="button">Today
+                                                        </button>
+                                                        <button class="btn btn-white" type="button">Next
                                                         </button>
                                                     </div>
                                                 </div>
-                                                <div class="row" style="margin-top:-120px;">
-                                                    <div class="col-sm-7">
-                                                        <div class="input-group">
-                                                        <span class="input-group-btn">
-                                                        <button type="button"
-                                                                class="btn btn-sm btn-primary"> Search</button> </span>
-                                                            <input type="text" placeholder="Search patient name"
-                                                                   class="input-sm form-control">
-                                                        </div>
-                                                    </div>
 
-                                                    <div class="col-sm-4">
-                                                        <div class="btn-group">
-                                                            <button class="btn btn-white" type="button">Previous
-                                                            </button>
-                                                            <button class="btn btn-primary" type="button">Today
-                                                            </button>
-                                                            <button class="btn btn-white" type="button">Next
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row" style="margin-top:-50px;">
+                                                <div class="row">
                                                     <div class="col-sm-11">
                                                         <div class="table-responsive">
                                                             <table class="table table-hover  no-margins">
@@ -175,9 +163,14 @@
                                                                         <td>{{ $pati->status }}</td>
                                                                         <td>{{ $pati->created_at }}</td>
                                                                         <td>
-                                                                            <button class="btn btn-xs btn-primary">In
-                                                                                Queue
-                                                                            </button>
+                                                                            <form action="/patient/{{ $pati->id }}" method="post">
+{{--                                                                                {{ method_field('patch') }}--}}
+                                                                                @method('PUT')
+                                                                                @csrf
+                                                                                <button type="button" class="btn btn-xs btn-primary demo3">
+                                                                                    In Queue
+                                                                                </button>
+                                                                            </form>
                                                                         </td>
                                                                     </tr>
                                                                 @endforeach
@@ -274,11 +267,97 @@
 
 @section('script')
     <script>
+        {{-- filter search all patient table --}}
+        function search_all_patient() {
+            // Declare variables
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("search_all_patient");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("table_all_patient");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[2];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+    </script>
+
+    <script>
         function deletePatient(id) {
             event.preventDefault();
             $('#delete-patient').modal('show');
             $('#delete-route').attr('href', 'patient/' + id + '/delete');
         }
+    </script>
+
+
+    {{-- sweet alert --}}
+    <script>
+        $(document).ready(function () {
+
+            $('.demo1').click(function () {
+                swal({
+                    title: "Welcome in Alerts",
+                    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                });
+            });
+
+            $('.demo2').click(function () {
+                swal({
+                    title: "Successfully Send!",
+                    text: "X-Ray Document Successfully send to doctor!",
+                    type: "success"
+                });
+            });
+            $('.demo3').on('click', function (e) {
+                e.preventDefault();
+                var form = $(this).parents('form');
+                swal({
+                    title: "Are you sure?",
+                    text: "To put this patient in queue for today!",
+                    type: "success",
+                    showCancelButton: true,
+                    confirmButtonColor: "#317cdd",
+                    confirmButtonText: "Yes, put it!",
+                    closeOnConfirm: false
+                }, function (isConfirm) {
+                    if (isConfirm) form.submit();
+                });
+            });
+
+
+            $('.demo4').click(function () {
+                swal({
+                        title: "Are you sure?",
+                        text: "Your will not be able to recover this imaginary file!",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Yes, delete it!",
+                        cancelButtonText: "No, cancel plx!",
+                        closeOnConfirm: false,
+                        closeOnCancel: false
+                    },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                            swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                        } else {
+                            swal("Cancelled", "Your imaginary file is safe :)", "error");
+                        }
+                    });
+            });
+
+
+        });
     </script>
 @endsection
 

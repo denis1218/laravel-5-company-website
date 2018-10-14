@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Doctor;
 use App\DoctorDemo;
 use App\Patient;
+use App\Treatment;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PatientController extends Controller
@@ -16,10 +18,9 @@ class PatientController extends Controller
      */
     public function index()
     {
-        $patient_all = Patient::all();
+        $patient_all = Patient::whereDate('updated_at',Carbon::today())->get();
         $doctor = Doctor::find(1);
         $doctor_list = Doctor::all();
-
         return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
     }
 
@@ -82,22 +83,27 @@ class PatientController extends Controller
      * @param  \App\Patient  $patient
      * @return \Illuminate\Http\Response
      */
-    public function edit(Patient $patient)
+    public function edit($id)
     {
-        //
+//        return $id;
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Patient  $patient
+     * @param  \Illuminate\Http\Request $request
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param Patient $patient
      */
-    public function update(Request $request, Patient $patient)
+    public function update(Request $request,$id)
     {
-        //
+        $patient = Patient::find($id);
+        $patient->updated_at = Carbon::now();
+        $patient->update();
+        return redirect()->back();
     }
+
 
     /**
      * Remove the specified resource from storage.
