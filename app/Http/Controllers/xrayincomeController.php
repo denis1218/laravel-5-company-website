@@ -60,7 +60,11 @@ class xrayincomeController extends Controller
     public function showComplete(){
         $xrey = XRay::where('paid_amount','>','0')->get();
         $total=DB::table('xrays')->sum('paid_amount');
-        return view('completeXray',compact('xrey','total'));
+        $ptotal=DB::table('treatments')->sum('paid_amount');
+        $xtotal=DB::table('xrays')->sum('paid_amount');
+        $ototal=DB::table('oincoms')->sum('amount');
+        $Gtotal=$ptotal+$xtotal+$ototal;
+        return view('completeXray',compact('xrey','total','Gtotal'));
     }
 
     /**

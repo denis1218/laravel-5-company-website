@@ -26,6 +26,16 @@
                    href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>
                     Other Income</a></h2>
         </div>
+        <div class="col-lg-4" style="float:right;">
+            <div class="ibox float-e-margins" style=" margin-top: 20px;">
+                <div class="ibox-title" style=" background-color: #1ab394;color:white">
+                    <h5>Total Income</h5>
+                </div>
+                <div class="ibox-content" style=" background-color: #1ab394;color:white">
+                    <h1 class="no-margins">Amount:&nbsp;{{$Gtotal}}</h1>
+                </div>
+            </div>
+        </div>
 
         {{--<div class="col-lg-4" style="float:right;">--}}
             {{--<div class="ibox float-e-margins" style=" background-color: lightyellow;">--}}
