@@ -32,7 +32,6 @@ Route::middleware('auth')->group(function () {
 
 
 
-
     Route::get('/detailinvoice', function () {
         return view('detailsReception');
     });
@@ -210,6 +209,43 @@ Route::get('/doctors2', 'DoctorController@show');
 //route for xray income
 
 
+
+    Route::resource('xrey_income', 'xrayincomeController');
+    Route::get('xrey_income2', 'xrayincomeController@showComplete');
+
+    Route::patch('xrey_income3/{id}', 'xrayincomeController@update2');
+// Financial report daily
+    Route::resource('/finance_report_income', 'FinanceReportIncomeController');
+//financial report income daily report range
+    Route::get('finance_report_income2', 'FinanceReportIncomeController@rangeDay');
+//financial report income select type single
+    Route::get('finance_report_income3', 'FinanceReportIncomeController@selectType');
+
+
+    //financial report income select type and range
+    Route::get('finance_report_income4', 'FinanceReportIncomeController@selectRange');
+
+
+    //financial report expense
+    Route::get('/finance_report_expenses', 'FinanceReportExpenseController@show');
+    //financial report expense single date
+    Route::get('/finance_report_expenses1', 'FinanceReportExpenseController@showSingle');
+    //financial report expenses range day
+    Route::get('/finance_report_expenses2', 'FinanceReportExpenseController@showRangeDay');
+    //financial report expense single day select type
+    Route::get('/finance_report_expenses3', 'FinanceReportExpenseController@singleDaySelect');
+    //financial report expense select type range day
+    Route::get('/finance_report_expenses4', 'FinanceReportExpenseController@RangeDaySelect');
+    //financial report income select type and range
+    Route::get('finance_report_income4', 'FinanceReportIncomeController@selectRange');
+    //financial report profit
+    Route::get('/finance_report_profit','FinanceReportProfitController@show');
+    //financial report profit single day report
+    Route::get('finance_report_profit1','FinanceReportProfitController@showSingle');
+    //financial report profit range day
+    Route::get('finance_report_profit2','FinanceReportProfitController@rangeDay');
+
+
     Route::resource('xrey_income', 'xrayincomeController');
     Route::get('xrey_income2', 'xrayincomeController@showComplete');
 
@@ -257,9 +293,14 @@ Route::get('/doctors2', 'DoctorController@show');
 
 
 
+
+
+
+
     Route::resource('/account', 'UserController');
 
 //});
+
 
 
 
