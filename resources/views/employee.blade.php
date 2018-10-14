@@ -96,11 +96,13 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Salary Type</label>
                             <div class="col-sm-1"> <div class="input-group" style="display: inline">
+
                                 {{--<div class="i-checks">--}}
                                     <label><input type="radio" name="salary_type" value="percentage" id="per" onclick="perSal()" style="height: 25px;width:25px;" required> <i></i> Per% </label></div></div>
                             <div class="col-sm-1">
                                 {{--<div class="i-checks">--}}
                                 <label> <input type="radio" name="salary_type" onclick="fixSal()" id="fix" value="fix" style="height: 25px;width:25px;"> <i></i>  Fix </label></div>
+
                         </div>
 
                         <div class="form-group"><label class="col-sm-2 control-label" id="label" >Salary amount</label>

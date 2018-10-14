@@ -24,6 +24,7 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
 
+
     protected function validateLogin(Request $request)
     {
         $this->validate($request, [
@@ -31,6 +32,8 @@ class LoginController extends Controller
             'password' => 'required|string',
         ]);
     }
+
+
 
     /**
      * LoginController constructor.
@@ -50,10 +53,12 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
+
         if (auth()->check()) {
             return redirect('home');
         }
         return view('login');
+
     }
 
 
@@ -64,6 +69,7 @@ class LoginController extends Controller
      * get value from form email , password and attempt to Auth::
      * if successfull match got to route /dash else got to route:login
      */
+
     public function login(Request $request)
     {
         $this->validateLogin($request);
@@ -72,6 +78,7 @@ class LoginController extends Controller
             return redirect()->intended('/dash');
         }else{
             return redirect('/login');
+
         }
     }
 
