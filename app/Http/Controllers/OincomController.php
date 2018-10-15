@@ -56,7 +56,8 @@ class OincomController extends Controller
         $other->purpose=$request->purpose;
         $other->description=$request->description;
         $other->save();
-        return redirect('/other');
+        notificationMessage('success','Record Added successfully');
+        return redirect()->route('/other');
     }
 
     /**

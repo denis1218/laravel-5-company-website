@@ -17,7 +17,7 @@ Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
-Route::middleware('auth')->group(function () {
+//Route::middleware('auth')->group(function () {
 
 
     Route::get('/dash', 'HomeController@index')->name('home');
@@ -272,7 +272,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/account', 'UserController');
 
-});
+//});
 
 
 

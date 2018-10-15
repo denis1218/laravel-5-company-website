@@ -55,10 +55,10 @@ class LoginController extends Controller
     {
 
         if (auth()->check()) {
-            return redirect('home');
-        }
+            return view('dash');
+        }else{
         return view('login');
-
+        }
     }
 
 
@@ -76,10 +76,8 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             return redirect()->intended('/dash');
-        }else{
-            return redirect('/login');
-
         }
+//            return redirect('/login');
     }
 
 
