@@ -49,5 +49,4 @@
             </ul>
 
         </nav>
-        @include('layout.messages');
     </div>
