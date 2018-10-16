@@ -19,8 +19,8 @@ class PatientController extends Controller
     public function index()
     {
 
-        $patient_all = Patient::whereDate('updated_at',Carbon::today())->get();
-        $doctor = Doctor::find(1);
+        $patient_all = Patient::whereDate('next_appointment',Carbon::today())->orderBy('updated_at', 'ASC')->get();
+
         $doctor_list = Doctor::all();
         return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
 
@@ -61,6 +61,7 @@ class PatientController extends Controller
             $phonenumber = $request->phone;
 
         $patient->doctor_id = $request->input('FK_id_Doctor');
+        $patient->next_appointment = Carbon::now();
         $patient->status = 'new patient';
         $patient->problem_health = $string;
         $patient->id_patient = 'P-'.$phonenumber;
@@ -101,7 +102,7 @@ class PatientController extends Controller
     public function update(Request $request,$id)
     {
         $patient = Patient::find($id);
-        $patient->updated_at = Carbon::now();
+        $patient->next_appointment = Carbon::now();
         $patient->update();
         return redirect()->back();
     }

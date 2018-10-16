@@ -160,7 +160,6 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
     Route::resource('/doctors', 'DoctorController');
 
 
-//Doctor Operation
     Route::resource('operation', 'OperationController');
 
 
