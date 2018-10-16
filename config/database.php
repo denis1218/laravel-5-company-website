@@ -52,6 +52,9 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
+            'dump' => [
+                'setDumpBinaryPath' => 'C:\\wamp64\\bin\\mysql\\mysql5.7.19\\bin',
+            ],
         ],
 
         'pgsql' => [

@@ -13,8 +13,14 @@ class Doctor extends Model
     }
 
     public function patient_for_today(){
-        return $this->hasMany(Patient::class,'doctor_id','id')->whereDate('updated_at',Carbon::today());
+        return $this->hasMany(Patient::class,'doctor_id','id')->whereDate('next_appointment',Carbon::today());
     }
+
+    public function user()
+    {
+        return $this->belongsTo('users','doctor_id', 'id');
+    }
+
 
 
     public function xray(){
