@@ -17,75 +17,58 @@ Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
-Route::middleware('auth')->group(function () {
-
-
-
+//Route::middleware('auth')->group(function () {
 
 
     Route::get('/dash', 'HomeController@index')->name('home');
 
-
-
-
-
-
-
-
-    Route::get('/detailinvoice', function () {
-        return view('detailsReception');
-    });
-
 // doctor treatment operation page have three option
-    Route::get('/doctor_operations', function () {
-        return view('doctor_operations');
-    });
+//    Route::get('/doctor_operations', function () {
+//        return view('doctor_operations');
+//    });
 
 // X-Ray page
-    Route::get('/xray', function () {
-        return view('Xrey_dep');
-    });
-    Route::get('treatment_operation', function () {
-        return view('treatment_operation');
-    });
+//    Route::get('/xray', function () {
+//        return view('Xrey_dep');
+//    });
+//    Route::get('treatment_operation', function () {
+//        return view('treatment_operation');
+//    });
 
-// medicine page in treatement -> medicine route
-    Route::get('/medicine', function () {
-        return view('medicine');
-    });
     Route::resource('/patient', 'PatientController');
 
 
-// next appointment page
-    Route::get('/next_appointment', function () {
-        return view('next_appointment');
-    });
+//// next appointment page
+//    Route::get('/next_appointment', function () {
+//        return view('next_appointment');
+//    });
+
+//
+//    Route::get('/ext_income', function () {
+//        return view('ext_income');
+//    });
 
 
-    Route::get('/ext_income', function () {
-        return view('ext_income');
-    });
+//    Route::get('/iframe', function () {
+//        return view('iframe');
+//    });
+//
+//    Route::get('/iframe', function () {
+//        return view('/iframe');
+//    });
 
 
-    Route::get('iframe', function () {
-        return view('iframe');
-    });
+//// show all account users
+//    Route::get('/account', function () {
+//        return view('account');
+//    });
+//
+//// create new users
+//    Route::get('/create_account', function () {
+//        return view('create_account');
+//    });
 
-    Route::get('/iframe', function () {
-        return view('/iframe');
-    });
-
-
-// show all account users
-    Route::get('/account', function () {
-        return view('account');
-    });
-
-// create new users
-    Route::get('/create_account', function () {
-        return view('create_account');
-    });
-
+//Back up page
     Route::get('/restore', function () {
         return view('restore');
     });
@@ -127,7 +110,7 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::get('/patient_history_print', function () {
-        return view('patient_history_print');
+        return view('patient.patient_history_print');
     });
 
     Route::get('/next_appointment_list', function () {
@@ -151,10 +134,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/pdf', 'PdfGenerator@PDF');
 
 //doctor salary
-Route::get('/doctors2', 'DoctorController@show');
+    Route::get('/doctors2', 'DoctorController@show');
 
+//    Patient Deletion
     Route::get('/patient/{id}/delete', 'PatientController@destroy');
-
 
 // Doctor Registrationexp
     Route::resource('doctors', 'DoctorController');
@@ -177,7 +160,6 @@ Route::get('/doctors2', 'DoctorController@show');
     Route::resource('/doctors', 'DoctorController');
 
 
-    //Doctor Operation
     Route::resource('operation', 'OperationController');
 
 
@@ -285,14 +267,6 @@ Route::get('/doctors2', 'DoctorController@show');
 
     Route::resource('xrey_income', 'xrayincomeController');
     Route::get('xrey_income2', 'xrayincomeController@showComplete');
-
-
-
-
-
-
-
-
 
 
     Route::resource('/account', 'UserController');
