@@ -26,6 +26,13 @@ class CreateUsersTable extends Migration
             $table->string('phone');
             $table->string('age');
             $table->string('address');
+            $table->unsignedInteger('doctor_id')->nullable();
+
+            $table->foreign('doctor_id')
+                ->references('id')->on('doctors')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
             $table->rememberToken();
             $table->timestamps();
         });
