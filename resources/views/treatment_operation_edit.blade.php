@@ -280,6 +280,20 @@
                                         </div>
 
                                         <input type="checkbox" id="next" name="have_xray" style="visibility:hidden;">
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <div class="col-sm-4"><div class="i-checks"><label> <input type="checkbox" value="upper_left" name="upper_left"> &nbsp;&nbsp; Upper Left </label></div></div>
+                                                <div class="col-sm-4"><div class="i-checks"><label> <input type="checkbox" value="upper_right" name="upper_right"> &nbsp;&nbsp; Upper Rigth </label></div></div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <div class="col-sm-4"><div class="i-checks"><label><input type="checkbox" value="lower_left" name="lower_left">&nbsp;&nbsp; Lower Left</label></div></div>
+                                                <div class="col-sm-4"><div class="i-checks"><label><input type="checkbox" value="lower_right" name="lower_right">&nbsp;&nbsp; Lower Right </label></div></div>
+                                            </div>
+                                        </div>
+                                        <br>
                                         <div class="form-group">
                                             <label>Select Dental Defect :</label>
                                             <select class="form-control" name="dentaldefect">
