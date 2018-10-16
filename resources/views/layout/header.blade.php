@@ -6,8 +6,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>HK | Clinic</title>
     <link href="{{ asset('dashboard/css/plugins/sweetalert/sweetalert.css') }}" rel="stylesheet"/>
     <link href="{{ asset('dashboard/css/bootstrap.min.css') }}" rel="stylesheet">

@@ -110,7 +110,7 @@
 
                                                     <br/>
                                                     <div class="table-responsive">
-                                                        <label style="margin-left: 10px;font-size: 20px"><strong><b>Number of patient:&nbsp; {!!count($patient)!!} Patients </b></strong></label>
+                                                        <label style="margin-left: 10px;font-size: 15px"><strong><b>Number of patient:&nbsp; <span style="color:orange">{!!count($not)!!}</span> &nbsp; Patients </b></strong></label>
                                                         <hr>
                                                         <table class="table table-hover table-bordered table-striped">
                                                             <thead>
@@ -120,6 +120,7 @@
                                                                 <th>Patient ID</th>
                                                                 <th>Patient Name</th>
                                                                 <th>Doctor Name</th>
+                                                                <th>Status of payment</th>
                                                                 <th>Status of X-Ray</th>
                                                                 <th>Details</th>
                                                             </tr>
@@ -134,6 +135,7 @@
                                                                             <td>{{$pat->patient_id}}</td>
                                                                             <td>{{$pat->patient_name}}</td>
                                                                             <td>{{$pat->doctor_name}}</td>
+                                                                            <td>{{$pat->paid_amount}}</td>
                                                                             <td>{{$pat->xray_status}}</td>
                                                                             <td><a class="btn btn-xs btn-info" href="/xray/{{$pat->id}}/edit">Details &nbsp;<i class="fa fa-file-o"></i></a></td></td>
                                                                         </tr>
@@ -160,7 +162,7 @@
 
                                                     <br/>
                                                     <div class="table-responsive">
-                                                        <label style="margin-left: 10px;font-size: 20px"><strong><b>Number of patient:&nbsp; {!!count($patient)!!} Patients </b></strong></label>
+                                                                <label style="margin-left: 10px;font-size: 15px"><strong><b>Number of patient:&nbsp; <span style="color:orange">{!!count($yes)!!}</span> &nbsp; Patients </b></strong></label>
                                                         <hr>
                                                         <table class="table table-hover table-bordered table-striped">
                                                             <thead>
@@ -170,6 +172,7 @@
                                                                 <th>Patient ID</th>
                                                                 <th>Patient Name</th>
                                                                 <th>Doctor Name</th>
+                                                                <th>Status of Payment</th>
                                                                 <th>Status of X-Ray</th>
                                                             </tr>
                                                             </thead>
@@ -183,6 +186,7 @@
                                                                             <td>{{$pat->patient_id}}</td>
                                                                             <td>{{$pat->patient_name}}</td>
                                                                             <td>{{$pat->doctor_name}}</td>
+                                                                            <td>{{$pat->paid_amount}}</td>
                                                                             <td>{{$pat->xray_status}}</td>
                                                                         </tr>
                                                                     @endif

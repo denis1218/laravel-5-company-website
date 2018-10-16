@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,15 +24,7 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
 
-//    protected function validateLogin(Request $request)
-//    {
-//        $this->validate($request, [
-//            $this->username() => 'required|string',
-//            'password' => 'required|string',
-//        ]);
 
-//
-//    }
     protected function validateLogin(Request $request)
     {
         $this->validate($request, [
@@ -41,7 +33,6 @@ class LoginController extends Controller
         ]);
     }
 
-//    }
 
 
     /**
@@ -62,15 +53,12 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        if (Auth::check()) {
-//            $user = Auth::user()->firstname;
-            return redirect('/dash');
 
+        if (auth()->check()) {
+            return redirect('home');
         }
-//        return view('login');
-        else {
-            return view('/login');
-        }
+        return view('login');
+
     }
 
 
@@ -84,13 +72,12 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-//        $this->validateLogin($request);
+        $this->validateLogin($request);
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            $user = Auth::user();
-            return redirect()->intended('/dash')->with(['user' => $user]);
-//            return view('dash',compact('user'));
-//            return $user->firstname;
+            return redirect()->intended('/dash');
+        }else{
+            return redirect('/login');
 
         }
     }
@@ -108,6 +95,9 @@ class LoginController extends Controller
         Auth::logout();
         return redirect('/login');
     }
+
+
+
 
 
 }

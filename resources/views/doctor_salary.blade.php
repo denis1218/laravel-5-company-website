@@ -65,8 +65,8 @@
                                         <td>{{$d->id}}</td>
                                         <td>{{$d->first_name}}</td>
                                         <td>{{$d->department}}</td>
-                                        <td>{{$d->from}}</td>
-                                        <td>{{$d->to}}</td>
+                                        <td>{{$d->created_at}}</td>
+                                        <td>{{$d->updated_at}}</td>
                                         <td>{{$d->salary_type}}</td>
                                         <td>{{$d->salary_amount}}</td>
                                         <td>{{$d->paid}}</td>

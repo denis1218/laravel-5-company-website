@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Expense;
-use Illuminate\Http\Request;
+
+
 use App\Patient;
 use App\Doctor;
-use Carbon;
+use Illuminate\Support\Carbon;
 
 class HomeController extends Controller
 {
@@ -14,7 +14,9 @@ class HomeController extends Controller
      * Create a new controller instance.
      *
      */
-    public function __construct()
+
+
+    function __construct()
     {
         $this->middleware('auth');
     }

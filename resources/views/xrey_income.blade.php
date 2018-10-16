@@ -16,8 +16,17 @@
         </div>
         <div class="col-md-2 ">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
-                   href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> From
-                    Other</a></h2>
+                   href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> Other Income</a></h2>
+        </div>
+        <div class="col-lg-4" style="float:right;">
+            <div class="ibox float-e-margins" style=" margin-top: 20px;">
+                <div class="ibox-title" style=" background-color: #1ab394;color:white">
+                    <h5>Total Income</h5>
+                </div>
+                <div class="ibox-content" style=" background-color: #1ab394;color:white">
+                    <h1 class="no-margins">Amount:&nbsp;{{$Gtotal}}</h1>
+                </div>
+            </div>
         </div>
         {{--<div class="col-lg-4" style="float:right;">--}}
             {{--<div class="ibox float-e-margins" style=" background-color: lightyellow;">--}}
@@ -103,7 +112,6 @@
                                         data-target="#d{{$xr->id}}">&nbsp;P-Details
                                 </button>
                             </td>
-
                         </tr>
 
                         @endforeach
@@ -153,7 +161,55 @@
                     </div>
                     <!-- end of model -->
                     @endforeach
+                    {{--Edit modal--}}
+                    {{--<div class="modal inmodal" id="edit" tabindex="-1" role="dialog" aria-hidden="true">--}}
+                        {{--<div class="modal-dialog">--}}
+                            {{--<div class="modal-content animated fadeIn">--}}
+                                {{--<div class="modal-header">--}}
+                                    {{--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span--}}
+                                                {{--class="sr-only">Close</span></button>--}}
+                                    {{--<i class="fa fa-edit modal-icon text-primary"></i>--}}
+                                    {{--<h4 class="modal-title">Edit Content</h4>--}}
+                                    {{--<small>Edit information</small>--}}
+                                {{--</div>--}}
+                                {{--<div class="modal-body">--}}
+                                    {{--<div class="row">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="pid">PID</label>--}}
+                                        {{--<input type="text" name="pid" class="form-control" value="p-078678976" disabled>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="p-name">Patient Name</label>--}}
+                                            {{--<input type="text" name="p-name" class="form-control" placeholder="Patient Name" value="Ahmad">--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="doctor-name">Doctor Name</label>--}}
+                                            {{--<input type="text" name="doctor-name" class="form-control" placeholder="Doctor Name" value="Dr.Samim">--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="estimated-fee">Estimated Fee</label>--}}
+                                            {{--<input type="text" name="estimated-fee" class="form-control" placeholder="Estimated Fee" value="2000">--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="p-amount">Paid Amount</label>--}}
+                                            {{--<input type="text" name="p-amount" class="form-control" placeholder="Paid Amount" value="1500">--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="discount">Discount</label>--}}
+                                            {{--<input type="text" name="discount" class="form-control" placeholder="Discount" value="200">--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
 
+                                {{--</div>--}}
+                                {{--<div class="modal-footer">--}}
+                                    {{--<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>--}}
+                                    {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
+
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--end of edit modal--}}
                     @foreach($xrey as $xr)
                     <!-- edit model -->
                     <div class="modal inmodal" id="d{{$xr->id}}" tabindex="-1" role="dialog" aria-hidden="true">

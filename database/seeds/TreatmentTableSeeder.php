@@ -1,8 +1,6 @@
 <?php
-
 use App\Treatment;
 use Illuminate\Database\Seeder;
-
 class TreatmentTableSeeder extends Seeder
 {
     /**
