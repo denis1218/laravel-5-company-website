@@ -240,14 +240,13 @@
                                     <h4 style="color:green">Is X-Ray Needed?</h4>
                                         <div class="input-group">
 
-                                            {{--<div class="i-checks">--}}
+
                                             <input type="radio" onchange="activation()" value="not" name="xray_status"
                                                    id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>YES</b></strong>&nbsp;&nbsp;&nbsp;
-                                            {{--</div>--}}
-                                            {{--<div class="i-checks">--}}
+
                                             <input type="radio" onchange="deactivation()" id="id" name="xray_status"
                                                    checked="checked" style="height: 20px;width:20px;"> &nbsp;<strong><b>NO</b></strong>
-                                            {{--</div>--}}
+
                                     </div>
                                 </div>
                                 </div>
@@ -281,7 +280,7 @@
                                 @foreach($checkValue as $check)
                                 <input type="hidden" value="{{ $check->visits }}" name="visits">
                                 @endforeach
-                                <input hidden type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
+                                <input  type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
                                 {{--<input hidden type="hidden" name="visits" value="{{ $treatments->visits  }}"/>--}}
 
                                 <div class="row">

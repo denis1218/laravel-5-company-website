@@ -219,26 +219,67 @@
                             </div>
 
                             <br>
+                            {{--x-ray form--}}
+                            <form action="/xray" method="post">
+                                {{csrf_field()}}
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h4 style="color:green">Is X-Ray Needed?</h4>
+                                        <div class="input-group">
+
+                                            {{--<div class="i-checks">--}}
+                                            <input type="radio" onchange="activation()" value="not" name="xray_status"
+                                                   id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>YES</b></strong>&nbsp;&nbsp;&nbsp;
+                                            {{--</div>--}}
+                                            {{--<div class="i-checks">--}}
+                                            <input type="radio" onchange="deactivation()" id="id" name="xray_status"
+                                                   checked="checked" style="height: 20px;width:20px;"> &nbsp;<strong><b>NO</b></strong>
+                                            {{--</div>--}}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-6 text-left">
+                                        <div class="input-group" style="margin-top:px;">
+                                            <label for="number">Enter tooth number:</label>
+                                            <input type="number" class="form-control" id="teeth" name="tooth_number" onblur="copyvalue()" value="{{$last_treatment->teeth_number}}" style="width: 100%;height:36px;" required>
+                                            <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-primary" id="but"  style="margin-top: 23px;height:36px;" disabled>
+                                            Send To X-Ray &nbsp;<i class="fa fa-send">
+                                            </i></button></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <input type="text" name="doctor_name"
+                                       value="{{ $patient_in_treatment->doctor->first_name }}"
+                                       style="visibility: hidden;">
+                                <input type="text" name="patient_name" value="{{ $patient_in_treatment->name }}"
+                                       style="visibility: hidden;">
+                                <input type="text" name="patient_id" value="{{ $patient_in_treatment->id_patient }}"
+                                       style="visibility: hidden;">
+
+                            </form>
+                            {{--end of x-ray form--}}
                             <form action="/operation" method="POST">
 
                                 <input hidden type="hidden"/>
                                 <input hidden type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
                                 <input hidden type="hidden" name="visits" value="{{ $checkValue  }}"/>
 
-                                <div class="row" style="margin-top:30px;">
-                                    <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6" style="margin-top: -85px;">
                                         <div class="form-group">
-                                            <label>Tooth Number :</label>
-                                            <input type="number" class="form-control" required name="teeth_number"
-                                                   value="{{ $last_treatment->teeth_number }}"/>
+                                            <label></label>
+                                            <input type="number" class="form-control" id="copyteeth" required
+                                                   name="teeth_number" style="visibility: hidden">
                                         </div>
-                                        {{--<div class="form-group">--}}
-                                            {{--<div class="i-checks" for="nex">Have X-Ray :--}}
-                                                {{--<label>&nbsp;&nbsp;--}}
-                                                    {{--<input type="checkbox" name="have_xray">--}}
-                                                {{--</label>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
+
+                                        <input type="checkbox" id="next" name="have_xray" style="visibility:hidden;">
                                         <div class="form-group">
                                             <label>Select Dental Defect :</label>
                                             <select class="form-control" name="dentaldefect">
@@ -309,7 +350,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6" style="margin-top: -70px;">
                                         <img src="{{ asset('img/all_tooth.jpg') }}" width="100%"/>
                                     </div>
                                 </div>
@@ -344,6 +385,64 @@
             document.getElementById('cost_treatment').value = e[e.selectedIndex].value
             document.getElementById('id_treatment').value = e[e.selectedIndex].id
 //            alert('const = '+e.target.id);
+        }
+    </script>
+    <script src="{{ asset('js/tooths.js') }}" type="javascript"></script>
+
+    <script>
+        function getFeeTreatment(e) {
+            document.getElementById('cost_treatment').value = e[e.selectedIndex].id
+        }
+    </script>
+
+    {{-- Copying input from tooth number --}}
+    <script type="text/javascript">
+        function copyvalue() {
+            var teeth = document.getElementById('teeth').value;
+            document.getElementById('copyteeth').value = teeth;
+        }
+    </script>
+
+    {{-- disabling send to xray button --}}
+
+
+    <script>
+        $(document).ready(function () {
+            $('#check').change(function () {
+                var ch = this.checked;
+                if (!ch) {
+                    $('#but').prop('disabled', true);
+                } else {
+                    $('#but').prop('disabled', false);
+                }
+            });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        function activation() {
+            var ch=document.getElementById('check').value;
+            if(ch=='not'){
+                document.getElementById('but').disabled=false;
+                document.getElementById('next').checked=true;
+            } else{
+                document.getElementById('but').disabled=true;
+                document.getElementById('next').checked=false;
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        function deactivation() {
+            var deac=document.getElementById('id').value;
+            if(deac=='on'){
+                document.getElementById('but').disabled=true;
+                document.getElementById('next').checked=false;
+            }else {
+                document.getElementById('but').disabled=false;
+                document.getElementById('next').checked=true;
+            }
         }
     </script>
 @endsection
