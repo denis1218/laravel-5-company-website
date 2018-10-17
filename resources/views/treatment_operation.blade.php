@@ -258,8 +258,8 @@
                                 <br>
                                 <div class="row">
                                     <div class="form-group">
-                                        <div class="col-sm-2"><label><input type="radio" value="lower_left" onchange="lowerLeft()" name="tooth_position" style="width:25px;height:20px" required>&nbsp;&nbsp; Lower Left</label></div>
-                                        <div class="col-sm-2"><label><input type="radio" value="lower_right" onchange="lowerRight()" name="tooth_position" style="width:25px;height:20px" required>&nbsp;&nbsp; Lower Right </label></div>
+                                        <div class="col-sm-2"><label><input type="radio" id="mll" value="lower_left" onchange="lowerLeft()" name="tooth_position" style="width:25px;height:20px" required>&nbsp;&nbsp; Lower Left</label></div>
+                                        <div class="col-sm-2"><label><input type="radio" id="mlr" value="lower_right" onchange="lowerRight()" name="tooth_position" style="width:25px;height:20px" required>&nbsp;&nbsp; Lower Right </label></div>
                                     </div>
                                 </div>
                                 <br>
@@ -302,7 +302,7 @@
                                         <div class="form-group">
                                             <label></label>
                                             <input type="number" class="form-control" id="copyteeth" required
-                                                   name="teeth_number" min="1" max="8" style="visibility: hidden">
+                                                   name="teeth_number" min="1" max="8"  style="visibility: hidden">
                                         </div>
                                         <br>
                                         <div class="form-group">
@@ -371,7 +371,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <button type="submit" class="btn btn-primary"> Save&nbsp;<i
+                                        <button type="submit" class="btn btn-primary" onsubmit="position()"> Save&nbsp;<i
                                                     class="fa fa-save"></i>
                                         </button>
                                         <button type="reset" class="btn btn-white"> Reset&nbsp;<i
@@ -413,8 +413,12 @@
         function copyvalue() {
             var teeth = document.getElementById('teeth').value;
             document.getElementById('copyteeth').value = teeth;
+            if(teeth>8){
+                alert('Tooth number must be less than or equal to 8');
+            }
         }
     </script>
+    {{--copy radio buttons values to another radio buttons--}}
     <script type="text/javascript">
         function upperLeft(){
             document.getElementById('ul').click();

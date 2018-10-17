@@ -424,6 +424,9 @@
         function copyvalue() {
             var teeth = document.getElementById('teeth').value;
             document.getElementById('copyteeth').value = teeth;
+            if(teeth>8){
+                alert('Tooth number must be less than or equal to 8');
+            }
         }
     </script>
 

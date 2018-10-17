@@ -117,6 +117,7 @@
                                                             <tr>
                                                                 <th>X-Ray ID</th>
                                                                 <th>Tooth Number</th>
+                                                                <th>Tooth position</th>
                                                                 <th>Patient ID</th>
                                                                 <th>Patient Name</th>
                                                                 <th>Doctor Name</th>
@@ -132,6 +133,7 @@
                                                                         <tr>
                                                                             <td>{{$pat->id}}</td>
                                                                             <td>{{$pat->tooth_number}}</td>
+                                                                            <td>{{$pat->tooth_position}}</td>
                                                                             <td>{{$pat->patient_id}}</td>
                                                                             <td>{{$pat->patient_name}}</td>
                                                                             <td>{{$pat->doctor_name}}</td>
@@ -169,6 +171,7 @@
                                                             <tr>
                                                                 <th>X-Ray ID</th>
                                                                 <th>Tooth Number</th>
+                                                                <th>Tooth Positino</th>
                                                                 <th>Patient ID</th>
                                                                 <th>Patient Name</th>
                                                                 <th>Doctor Name</th>
@@ -183,6 +186,7 @@
                                                                         <tr>
                                                                             <td>{{$pat->id}}</td>
                                                                             <td>{{$pat->tooth_number}}</td>
+                                                                            <td>{{$pat->tooth_position}}</td>
                                                                             <td>{{$pat->patient_id}}</td>
                                                                             <td>{{$pat->patient_name}}</td>
                                                                             <td>{{$pat->doctor_name}}</td>
