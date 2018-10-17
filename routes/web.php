@@ -17,7 +17,7 @@ Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
-//Route::middleware('auth')->group(function () {
+Route::middleware('auth')->group(function () {
 
 
     Route::get('/dash', 'HomeController@index')->name('home');
@@ -36,6 +36,8 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 //    });
 
     Route::resource('/patient', 'PatientController');
+    Route::get('/new-patient-today','PatientController@show_new_patients');
+    Route::get('/next-appointment-patient','PatientController@show_next_appointment_patient');
 
 
 //// next appointment page
@@ -141,7 +143,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 // Doctor Registrationexp
     Route::resource('doctors', 'DoctorController');
-    Route::get('/doctorregister','DoctorController@create');
+//    Route::get('/doctorregister','DoctorController@create');
     Route::get('expense_form', function () {
         $capital=DB::table('expenses')->sum('amount');
         return view('expense_form')->with('capital',$capital);
