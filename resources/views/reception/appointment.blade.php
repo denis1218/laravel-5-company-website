@@ -41,7 +41,45 @@
                                     </button>
                                 </a>
                             </div>
+
+                            <div class="col-md-9 pull-right">
+                                <h3>--- Note : these navigration date just effect on All patient tab</h3>
+                                <div class="row">
+                                    <div class="col-sm-2 no-padding no-margin">
+
+                                        <form method="get" action="/patient">
+                                            <input type="hidden" name="date"
+                                                   value="{{ \Carbon\Carbon::yesterday()->toDateString() }}"/>
+                                            <button class="btn btn-white" type="submit"><i class="fa fa-arrow-left"></i>&nbsp;Previous
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <div class="col-sm-2 no-padding no-margin">
+                                        <a href="/patient" class="btn btn-primary" type="button">Today
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-2 no-padding no-margin">
+                                        <form method="get" action="/patient">
+                                            <input type="hidden" name="date"
+                                                   value="{{ \Carbon\Carbon::tomorrow()->toDateString() }}"/>
+                                            <button class="btn btn-white" type="submit">Next&nbsp;<i
+                                                        class="fa fa-arrow-right"></i></button>
+                                        </form>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <form action="/patient" method="get">
+                                            <div class="input-group">
+                                                        <span class="input-group-btn">
+                                                        <button type="submit"
+                                                                class="btn btn-primary"><i class="fa fa-calendar"></i> Set Date</button> </span>
+                                                <input type="date" name="date"  class="form-control"/>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <br/>
                         <div class="tabs-container">
                             <div class="tabs-left">
                                 {{--navigation list--}}
@@ -60,12 +98,8 @@
                                 <div class="tab-content bg-success" style="">
                                     <div id="home" class="tab-pane active">
                                         <div class="panel-body">
-
-
-
                                             <div class="col-md-8">
                                                 <div class="input-group">
-
                                                         <span class="input-group-btn">
                                                         <button type="button"
                                                                 class="btn btn-primary"><i class="fa fa-search"></i> Search</button> </span>
@@ -77,16 +111,7 @@
                                                            class="input-md form-control">
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
-                                                <button class="btn btn-primary">
-                                                    <li class="fa fa-list"></li>&nbsp; Next Appointment List
-                                                </button>
-                                            </div>
-
                                             {{-- tab all patient in queue with defirrent doctor --}}
-
-
-
                                             <div class="col-md-12">
                                                 <h5>show all patients present now</h5>
 
@@ -101,29 +126,27 @@
                                                             <th>Doctor Name</th>
                                                             <th>Status</th>
                                                             <th>Appointment date</th>
-                                                            <th>Add to visited</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                        @foreach($patient_all as $patients)
-                                                            <tr>
-                                                                <td>{{ $patients->id }}</td>
-                                                                <td>{{ $patients->id_patient }}</td>
-                                                                <td>{{ str_limit($patients->name ,8)}}</td>
-                                                                <td>{{ $patients->lastname }}</td>
-                                                                <td>{{ str_limit($patients->doctor->first_name ,7)}}</td>
-                                                                <td>{{ $patients->status }}</td>
-                                                                <td>{{ str_limit($patients->next_appointment,16 )}}</td>
-                                                                <td>
-                                                                    <form action="/patient/{{ $patients->id }}" method="post">
-                                                                        <button class="btn btn-xs btn-warning done">Visited</button>
-                                                                    </form>
-
-                                                                </td>
-                                                            </tr>
-                                                        @endforeach
+                                                        @if($patient_all != null)
+                                                            @foreach($patient_all as $patients)
+                                                                <tr>
+                                                                    <td>{{ $patients->id }}</td>
+                                                                    <td>{{ $patients->id_patient }}</td>
+                                                                    <td>{{ str_limit($patients->name ,8)}}</td>
+                                                                    <td>{{ $patients->lastname }}</td>
+                                                                    <td>{{ str_limit($patients->doctor->first_name ,7)}}</td>
+                                                                    <td>{{ $patients->status }}</td>
+                                                                    <td>{{ str_limit($patients->next_appointment,16 )}}</td>
+                                                                </tr>
+                                                            @endforeach
+                                                        @else
+                                                            <h3 class="text-danger">There is not patient</h3>
+                                                        @endif
                                                         </tbody>
                                                     </table>
+                                                    {{--                                                    {{ $patient_all->links() }}--}}
                                                 </div>
                                             </div>
                                         </div>
@@ -133,29 +156,7 @@
 
                                         <div id="{{ $list->id }}" class="tab-pane">
                                             <div class="panel-body">
-
-
-
-                                                <div class="col-md-3">
-                                                    <button class="btn btn-primary">
-                                                        <li class="fa fa-list"></li>&nbsp; Next Appointment List
-                                                    </button>
-                                                </div>
-
-                                                <div class="col-sm-4">
-                                                    <div class="btn-group">
-                                                        <button class="btn btn-white" type="button">Previous
-                                                        </button>
-                                                        <button class="btn btn-primary" type="button">Today
-                                                        </button>
-                                                        <button class="btn btn-white" type="button">Next
-                                                        </button>
-                                                    </div>
-                                                </div>
-
                                                 <div class="row">
-
-
                                                     <div class="col-sm-11">
                                                         <div class="table-responsive">
                                                             <table class="table table-hover  no-margins">
@@ -170,27 +171,34 @@
                                                                 </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                @foreach($list->patient_for_today as $pati)
-                                                                    <tr>
-                                                                        <td>{{ $pati->id_patient }}</td>
-                                                                        <td>{{ $pati->name }}</td>
-                                                                        <td>{{ $pati->lastname }}</td>
-                                                                        <td>{{ $pati->status }}</td>
-                                                                        <td>{{ $pati->next_appointment }}</td>
-                                                                        <td>
-                                                                            <form action="/patient/{{ $pati->id }}" method="post">
-{{--                                                                                {{ method_field('patch') }}--}}
-                                                                                @method('PUT')
-                                                                                @csrf
-                                                                                <button type="button" class="btn btn-xs btn-primary demo3">
-                                                                                    In Queue
-                                                                                </button>
-                                                                            </form>
-                                                                        </td>
-                                                                    </tr>
-                                                                @endforeach
+                                                                @if(!$list->isEmpty)
+                                                                    @foreach($list->patient_for_today as $pati)
+                                                                        <tr>
+                                                                            <td>{{ $pati->id_patient }}</td>
+                                                                            <td>{{ $pati->name }}</td>
+                                                                            <td>{{ $pati->lastname }}</td>
+                                                                            <td>{{ $pati->status }}</td>
+                                                                            <td>{{ $pati->next_appointment }}</td>
+                                                                            <td>
+                                                                                <form action="/patient/{{ $pati->id }}"
+                                                                                      method="post">
+                                                                                    {{--                                                                                {{ method_field('patch') }}--}}
+                                                                                    @method('PUT')
+                                                                                    @csrf
+                                                                                    <button type="button"
+                                                                                            class="btn btn-xs btn-primary demo3">
+                                                                                        Check in
+                                                                                    </button>
+                                                                                </form>
+                                                                            </td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                                @else
+                                                                    <h3 class="text-danger">There is not patient </h3>
+                                                                @endif
                                                                 </tbody>
                                                             </table>
+                                                            {{--                                                            {{ $list->links() }}--}}
                                                         </div>
                                                     </div>
                                                 </div>

@@ -263,7 +263,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
     Route::get('finance_report_profit2','FinanceReportProfitController@rangeDay');
 
 
-    Auth::routes();
+
 
     Route::resource('xrey_income', 'xrayincomeController');
     Route::get('xrey_income2', 'xrayincomeController@showComplete');
@@ -271,7 +271,15 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
     Route::resource('/account', 'UserController');
 
-//});
+
+
+//    Route::get('/patient/date/{$id}','PatientController@indexShowNextDay');
+        Route::get('/patient/{id}','PatientController@index');
+//    Route::get('/patient/preday/{id}','PatientController@indexShowPreDay');
+
+});
+
+
 
 
 

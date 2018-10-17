@@ -8,6 +8,7 @@ use App\Patient;
 use App\Treatment;
 use App\TreatmentList;
 use App\XRay;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class TreatmentController extends Controller
@@ -23,7 +24,7 @@ class TreatmentController extends Controller
     public function index()
     {
 
-        $operation = Patient::orderBy('id', 'asc')->paginate(10);
+        $operation = Patient::whereDate('next_appointment',Carbon::today())->orderBy('id', 'asc')->paginate(10);
         return view('doctor_operations')->with('operation', $operation);
 
     }
