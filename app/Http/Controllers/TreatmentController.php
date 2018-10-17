@@ -154,14 +154,14 @@ class TreatmentController extends Controller
 
 //        return $patient_in_treatment->visit;
 //        dd($patient_in_treatment);
-//
-//        $treatments = Treatment::orderBy('id', 'desc')->find($id);
-//
-//        if ($treatments == null) {
-//            $checkValue = 0;
-//        } else {
-//            $checkValue = $treatments->visits;
-//        }
+
+        $treatments = Treatment::orderBy('id', 'desc')->find($id);
+
+        if ($treatments == null) {
+            $checkValue = 0;
+        } else {
+            $checkValue = $treatments->visits;
+        }
 
 
         $last_treatment = Treatment::orderBy('id', 'desc')->find($id);
