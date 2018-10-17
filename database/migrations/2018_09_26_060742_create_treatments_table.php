@@ -22,11 +22,11 @@ class CreateTreatmentsTable extends Migration
             $table->string('dentaldefect');
             $table->integer('visits')->nullable();
             $table->date('next_appointment')->nullable();
-            $table->string('meridiem')->nullable();
+//            $table->string('meridiem')->nullable();
             $table->string('status_visits');
             $table->boolean('status_pay');
             $table->longText('description')->nullable();
-            $table->boolean('have_xray')->nullable();
+            $table->string('have_xray')->nullable();
             $table->integer('estimated_fee');
             $table->integer('paid_amount')->nullable();
             $table->integer('discount')->nullable();

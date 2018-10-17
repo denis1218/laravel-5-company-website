@@ -88,6 +88,9 @@ class TreatmentController extends Controller
         $treatment->dentaldefect = $request->input('dentaldefect');
         $treatment->status_pay = true;
         $treatment->have_xray = $request->have_xray;
+        if($treatment->have_xray==null){
+            $treatment->have_xray='no';
+        }
 
         if ($request->status_visits == null) {
             $treatment->status_visits = 'not complete';

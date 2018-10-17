@@ -283,7 +283,7 @@
                                                    name="teeth_number" style="visibility: hidden">
                                         </div>
 
-                                        <input type="checkbox" id="next" name="have_xray" style="visibility:hidden;">
+                                        <input type="checkbox" id="next" name="have_xray" value="yes" style="visibility:hidden;">
                                         <div class="row">
                                             <div class="form-group">
                                                 <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" value="upper_left" name="tooth_position" required> &nbsp;&nbsp; Upper Left </label></div></div>
@@ -333,25 +333,25 @@
                                             {{--<input type="date" class="form-control" name="next_appointment"--}}
                                                    {{--value="{{ $last_treatment->next_appointment }}">--}}
                                         {{--</div>--}}
-                                        <div class="form-group">
-                                            <div class="i-checks" for="nex">Set Meridiem :<label>&nbsp;&nbsp;
-                                                    @if($last_treatment->meridiem == 'morning')
-                                                        <input type="radio" value="morning" checked name="meridiem">
-                                                        <i></i> Morning
-                                                        <input type="radio" value="afternoon"
-                                                               name="meridiem">
-                                                        <i></i> Afternoon
-                                                </label>
-                                                @elseif($last_treatment->meridiem == 'afternoon')
-                                                    <input type="radio" value="morning" name="meridiem">
-                                                    <i></i> Morning
-                                                    &nbsp;&nbsp;&nbsp; <input type="radio" checked value="afternoon"
-                                                                              name="meridiem">
-                                                    <i></i> Afternoon
-                                                @endif
+                                        {{--<div class="form-group">--}}
+                                            {{--<div class="i-checks" for="nex">Set Meridiem :<label>&nbsp;&nbsp;--}}
+                                                    {{--@if($last_treatment->meridiem == 'morning')--}}
+                                                        {{--<input type="radio" value="morning" checked name="meridiem">--}}
+                                                        {{--<i></i> Morning--}}
+                                                        {{--<input type="radio" value="afternoon"--}}
+                                                               {{--name="meridiem">--}}
+                                                        {{--<i></i> Afternoon--}}
+                                                {{--</label>--}}
+                                                {{--@elseif($last_treatment->meridiem == 'afternoon')--}}
+                                                    {{--<input type="radio" value="morning" name="meridiem">--}}
+                                                    {{--<i></i> Morning--}}
+                                                    {{--&nbsp;&nbsp;&nbsp; <input type="radio" checked value="afternoon"--}}
+                                                                              {{--name="meridiem">--}}
+                                                    {{--<i></i> Afternoon--}}
+                                                {{--@endif--}}
 
-                                            </div>
-                                        </div>
+                                            {{--</div>--}}
+                                        {{--</div>--}}
                                         <div class="form-group">
                                             <label for="nex">Description :</label>
                                             <textarea rows="5" type="text" class="form-control" name="description"

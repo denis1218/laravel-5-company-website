@@ -348,14 +348,14 @@
                                             {{--<label for="nex">Next Appointment :</label>--}}
                                             {{--<input type="date" class="form-control" name="next_appointment">--}}
                                         {{--</div>--}}
-                                        <div class="form-group">
-                                            <div class="i-checks" for="nex">Set Meridiem :<label>&nbsp;&nbsp;
-                                                    <input type="radio" value="morning" checked name="meridiem">
-                                                    Morning</label>
-                                                &nbsp;&nbsp;&nbsp; <input type="radio" checked value="afternoon"
-                                                                          name="meridiem">Afternoon
-                                            </div>
-                                        </div>
+                                        {{--<div class="form-group">--}}
+                                            {{--<div class="i-checks" for="nex">Set Meridiem :<label>&nbsp;&nbsp;--}}
+                                                    {{--<input type="radio" value="morning" checked name="meridiem">--}}
+                                                    {{--Morning</label>--}}
+                                                {{--&nbsp;&nbsp;&nbsp; <input type="radio" checked value="afternoon"--}}
+                                                                          {{--name="meridiem">Afternoon--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
                                         <div class="form-group">
                                             <label for="nex">Description :</label>
                                             <textarea rows="5" type="text" class="form-control" name="description"
