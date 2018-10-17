@@ -23,18 +23,17 @@
         </div>
         <div class="col-md-2 ">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
-                   href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> From
-                    Other</a></h2>
+                   href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>
+                    Other Income</a></h2>
         </div>
 
         <div class="col-lg-4" style="float:right;">
-            <div class="ibox float-e-margins" style=" background-color: lightyellow;">
-                <div class="ibox-title" style=" background-color: lightyellow;">
-                    <h5>Capital</h5>
+            <div class="ibox float-e-margins" style=" margin-top: 20px;">
+                <div class="ibox-title" style=" background-color: #1ab394;color:white">
+                    <h5>Total Income</h5>
                 </div>
-                <div class="ibox-content" style=" background-color: lightyellow;">
-                    <h1 class="no-margins">{{$Gtotal}}</h1>
-                    <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
+                <div class="ibox-content" style=" background-color: #1ab394;color:white">
+                    <h1 class="no-margins">Amount:&nbsp;{{$Gtotal}}</h1>
 
                 </div>
             </div>
@@ -96,7 +95,7 @@
                             <th>Remaining Fee</th>
                             <th>Paid</th>
                             <th>P-Details</th>
-                            <th>Edit</th>
+                            {{--<th>Edit</th>--}}
                         </tr>
                         </thead>
                         <tbody>
@@ -119,20 +118,18 @@
                                         data-target="#p{{$incom->id}}">&nbsp;P-Details
                                 </button>
                             </td>
-                            <td>
-                                <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
-                                        data-target="#e{{$incom->id}}">&nbsp;Edit
-                                </button>
-                            </td>
+                            {{--<td>--}}
+                                {{--<button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"--}}
+                                        {{--data-target="#e{{$incom->id}}">&nbsp;Edit--}}
+                                {{--</button>--}}
+                            {{--</td>--}}
                         </tr>
                         @endforeach
                         </tbody>
                     </table>
-<<<<<<< HEAD
 
-=======
+
                 <div style="margin-left: 30px">{{$income->links()}}</div>
->>>>>>> c224ed7b11bbbc0e03cef7aea8075b7975456b6e
 
                     <!-- detailss modal -->
                     @foreach($income as $in)
@@ -142,8 +139,10 @@
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
                                                 class="sr-only">Close</span></button>
-                                    <i class="fa fa-edit modal-icon text-primary"></i>
-                                    <h4 class="modal-title">Edit Content</h4>
+                                    {{--<i class="fa fa-edit-o modal-icon text-primary"></i>--}}
+
+                                    <h4 class="modal-title">Fee Payment</h4>
+
                                     <small>Fill the Paid amount</small>
                                 </div>
                                 <div class="modal-body">
@@ -165,23 +164,17 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="form-group"><label class="col-md-3 control-label">Discount :</label>
-
-                                            <div class="col-md-6"><h4>{{$in->discount}}</h4></div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="form-group"><label class="col-md-3 control-label">Paid Amount
                                                 :</label>
 
-                                            <div class="col-sm-6"><input type="text" class="form-control"
-                                                                         name="paid_amount" placeholder="Paid Amount"></div>
+                                            <div class="col-sm-6"><input type="number" class="form-control" max="{{$in->remaining_fee}}"
+                                                                         name="paid_amount" placeholder="Paid Amount" required></div>
                                         </div>
                                     </div>
                                         <br>
                                         <br>
                                         <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-bottom: 10px;">Close</button>
-                                         <button type="submit" class="btn btn-primary pull-right" style="margin-bottom: 10px;margin-right: 20px;">Save changes</button>
+                                         <button type="submit" class="btn btn-primary pull-right" style="margin-bottom: 10px;margin-right: 20px;">Paid Fee</button>
 
                                     </form>
                                     <br>

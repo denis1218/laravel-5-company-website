@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Faker\Generator as Faker;
 
 
@@ -16,6 +17,7 @@ $factory->define(\App\Patient::class, function (Faker $faker) {
         'age' => $faker->numberBetween(10,40),
         'phone'=> $faker->phoneNumber,
         'address' => $faker->streetAddress,
+        'next_appointment' => $faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
         'problem_health' => $faker->realText(10),
         'status' => $status,
         'doctor_id' => $faker->numberBetween(1,3)

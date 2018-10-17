@@ -17,8 +17,10 @@ class User extends Authenticatable
     ];
     protected $guarded = ['confirm_password'];
 
-    public function SetDate()
+    public function doctor()
     {
-        $this->timestamps();
+        return $this->hasOne('doctors','id_doctor','id');
     }
+
+
 }

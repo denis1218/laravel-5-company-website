@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Doctor;
 use App\DoctorDemo;
 use App\Patient;
+use App\Treatment;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PatientController extends Controller
@@ -14,14 +16,20 @@ class PatientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $patient_all = Patient::all();
-        $doctor = Doctor::find(1);
+        if($request->date == null){
+            $patient_all = Patient::whereDate('next_appointment',Carbon::today())->orderBy('updated_at', 'ASC')->get();
+        }else{
+            $patient_all = Patient::whereDate('next_appointment',$request->date)->orderBy('updated_at', 'ASC')->get();
+        }
         $doctor_list = Doctor::all();
-
         return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
     }
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -58,6 +66,7 @@ class PatientController extends Controller
             $phonenumber = $request->phone;
 
         $patient->doctor_id = $request->input('FK_id_Doctor');
+        $patient->next_appointment = Carbon::now();
         $patient->status = 'new patient';
         $patient->problem_health = $string;
         $patient->id_patient = 'P-'.$phonenumber;
@@ -68,36 +77,43 @@ class PatientController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Patient  $patient
+     * @param $date
      * @return \Illuminate\Http\Response
+     * @internal param Patient $patient
      */
-    public function show(Patient $patient)
+    public function show($id)
     {
-        //
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Patient  $patient
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param Patient $patient
      */
-    public function edit(Patient $patient)
+    public function edit($id)
     {
-        //
+//        return $id;
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Patient  $patient
+     * @param  \Illuminate\Http\Request $request
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param Patient $patient
      */
-    public function update(Request $request, Patient $patient)
+    public function update(Request $request,$id)
     {
-        //
+        $patient = Patient::find($id);
+        $patient->next_appointment = Carbon::now();
+        $patient->update();
+        return redirect()->back();
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -111,5 +127,20 @@ class PatientController extends Controller
         $patient = Patient::find($id);
         $patient->delete();
         return redirect()->back();
+    }
+
+    public function indexShowPreDay($id)
+    {
+//        $patient_all = Patient::whereDate('next_appointment',$id)->orderBy('updated_at', 'ASC')->get();
+//        $doctor_list = Doctor::all();
+//        return $patient_all;
+//        return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
+    }
+
+    public function indexShowNextDay($id)
+    {
+//        $patient_all = Patient::whereDate('next_appointment',$id)->orderBy('updated_at', 'ASC')->get();
+//        $doctor_list = Doctor::all();
+//        return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
     }
 }

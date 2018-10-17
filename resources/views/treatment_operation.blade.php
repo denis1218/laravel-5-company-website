@@ -223,8 +223,8 @@
                     </div>
 
                     {{-- panel tab 2 new history --}}
-                    <div id="tab-2" class="tab-pane ">
-                        <div class="panel-body">
+                    <div id="tab-2" class="tab-pane">
+                        <div class="panel-body"  style="padding-left: 60px;">
                             <br>
                             {{-- Header of title --}}
                             <div class="row  bg-info"
@@ -232,51 +232,46 @@
                                 <h3 style="font-weight: bold;">Present History</h3>
                             </div>
                             <br>
+<<<<<<< HEAD
 
+=======
+                            {{--x-ray form--}}
+>>>>>>> 47e6c7492cb3495eddd080da53bc2dff83fdf298
                             <form action="/xray" method="post">
                                 {{csrf_field()}}
 
                                 <div class="row">
-                                    <div class="col-sm-4">
-                                        <h4 style="color:green">Is X-Ray Needed?</h4>
+                                   <div class="col-sm-4">
+                                    <h4 style="color:green">Is X-Ray Needed?</h4>
                                         <div class="input-group">
+
+                                            {{--<div class="i-checks">--}}
                                             <input type="radio" onchange="activation()" value="not" name="xray_status"
-                                                   id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>YES</b></strong>
-                                            &nbsp;&nbsp;&nbsp;
+                                                   id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>YES</b></strong>&nbsp;&nbsp;&nbsp;
+                                            {{--</div>--}}
+                                            {{--<div class="i-checks">--}}
                                             <input type="radio" onchange="deactivation()" id="id" name="xray_status"
                                                    checked="checked" style="height: 20px;width:20px;"> &nbsp;<strong><b>NO</b></strong>
-                                        </div>
+                                            {{--</div>--}}
                                     </div>
+                                </div>
                                 </div>
 
                                 <br>
                                 <div class="row">
-                                    <div class="col-sm-12">
-                                        <table class="table table-striped">
-                                            <tr>
-                                                <td colspan="2">
-                                                    <div class="row">
-                                                        <div class="col-sm-2 text-right">
-                                                            <h3 style="letter-spacing: 2px; line-height: 30px;">
-                                                                Tooth_Number:</h3>
-                                                        </div>
-                                                        <div class="col-sm-8">
-                                                            <input type="number" class="form-control" id="teeth"
-                                                                   required name="tooth_number" onblur="copyvalue()"
-                                                                   placeholder="Enter Tooth Number"
-                                                                   style="width: 100%;height:36px;">
-                                                        </div>
-                                                        <div class="col-sm-2 text-left">
-                                                            <button class="btn btn-primary" id="but" type="submit"
-                                                                    disabled> Send To X-Ray&nbsp;<i
-                                                                        class="fa fa-send"></i></button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
+                                    <div class="col-md-6 text-left">
+                                        <div class="input-group" style="margin-top:px;">
+                                            <label for="number">Enter tooth number:</label>
+                                            <input type="number" class="form-control" id="teeth" name="tooth_number" onblur="copyvalue()" placeholder="Enter Tooth Number" style="width: 100%;height:36px;" required>
+                                            <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-primary" id="but"  style="margin-top: 23px;height:36px;" disabled>
+                                            Send To X-Ray &nbsp;<i class="fa fa-send">
+                                            </i></button></span>
+                                        </div>
                                     </div>
                                 </div>
+
+
                                 <input type="text" name="doctor_name"
                                        value="{{ $patient_in_treatment->doctor->first_name }}"
                                        style="visibility: hidden;">
@@ -284,10 +279,12 @@
                                        style="visibility: hidden;">
                                 <input type="text" name="patient_id" value="{{ $patient_in_treatment->id_patient }}"
                                        style="visibility: hidden;">
+
                             </form>
+                            {{--end of x-ray form--}}
                             <form action="/operation" method="POST">
                                 @foreach($checkValue as $check)
-                                    <input type="hidden" value="{{ ++$check->visits }}" name="visits">
+                                <input type="hidden" value="{{ $check->visits }}" name="visits">
                                 @endforeach
                                 <input hidden type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
                                 {{--<input hidden type="hidden" name="visits" value="{{ $treatments->visits  }}"/>--}}
@@ -299,10 +296,10 @@
                                             <input type="number" class="form-control" id="copyteeth" required
                                                    name="teeth_number" style="visibility: hidden">
                                         </div>
-                                        <input type="checkbox" id="next" name="have_xray" style="visibility:hidden;">
+                                            <input type="checkbox" id="next" name="have_xray" style="visibility:hidden;">
                                         <div class="form-group">
                                             <label>Select Dental Defect :</label>
-                                            <select class="form-control" name="dentaldefect">
+                                            <select class="form-control" name="dentaldefect" required>
                                                 <option disabled selected>Select Dental Defect</option>
                                                 @foreach($dentalDefectList as $list)
                                                     <option value="{{ $list->dental_defect }}">{{ $list->dental_defect }}</option>
@@ -312,7 +309,7 @@
                                         <div class="form-group">
                                             <label>Treatment :</label>
                                             <select class="form-control" name="treatment"
-                                                    onchange="getFeeTreatment(this);">
+                                                    onchange="getFeeTreatment(this);" required>
                                                 <option disabled>Select Treatment</option>
                                                 @foreach($treatementList as $listTreatement)
                                                     <option value="{{ $listTreatement->treatment }}"
@@ -325,7 +322,7 @@
                                         <div class="form-group">
                                             <label for="nex">Treatment Cost :</label>
                                             <input type="number" class="form-control" id="cost_treatment"
-                                                   name="estimated_fee" value="">
+                                                   name="estimated_fee" value="" required>
                                         </div>
                                         <input type="text" name="paid_amount" hidden>
                                         <div class="form-group">
@@ -360,7 +357,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6" style="margin-top: -70px;">
                                         <img src="{{ asset('img/all_tooth.jpg') }}" width="100%"/>
                                     </div>
                                 </div>
@@ -423,26 +420,26 @@
 
     <script type="text/javascript">
         function activation() {
-            var ch = document.getElementById('check').value;
-            if (ch == 'not') {
-                document.getElementById('but').disabled = false;
-                document.getElementById('next').checked = true;
-            } else {
-                document.getElementById('but').disabled = true;
-                document.getElementById('next').checked = false;
+            var ch=document.getElementById('check').value;
+            if(ch=='not'){
+                document.getElementById('but').disabled=false;
+                document.getElementById('next').checked=true;
+            } else{
+                document.getElementById('but').disabled=true;
+                document.getElementById('next').checked=false;
             }
         }
     </script>
 
     <script type="text/javascript">
         function deactivation() {
-            var deac = document.getElementById('id').value;
-            if (deac == 'on') {
-                document.getElementById('but').disabled = true;
-                document.getElementById('next').checked = false;
-            } else {
-                document.getElementById('but').disabled = false;
-                document.getElementById('next').checked = true;
+            var deac=document.getElementById('id').value;
+            if(deac=='on'){
+                document.getElementById('but').disabled=true;
+                document.getElementById('next').checked=false;
+            }else {
+                document.getElementById('but').disabled=false;
+                document.getElementById('next').checked=true;
             }
         }
     </script>

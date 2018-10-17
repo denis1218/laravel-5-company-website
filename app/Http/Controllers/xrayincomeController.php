@@ -18,8 +18,12 @@ class xrayincomeController extends Controller
 
 
         $xrey = XRay::where('paid_amount',0)->paginate(10);
+        $ptotal=DB::table('treatments')->sum('paid_amount');
+        $xtotal=DB::table('xrays')->sum('paid_amount');
+        $ototal=DB::table('oincoms')->sum('amount');
+        $Gtotal=$ptotal+$xtotal+$ototal;
 
-        return view('xrey_income',compact('xrey'));
+        return view('xrey_income',compact('xrey','Gtotal'));
     }
 
     /**
@@ -56,11 +60,15 @@ class xrayincomeController extends Controller
     public function showComplete(){
         $xrey = XRay::where('paid_amount','>','0')->get();
         $total=DB::table('xrays')->sum('paid_amount');
-        return view('completeXray',compact('xrey','total'));
+        $ptotal=DB::table('treatments')->sum('paid_amount');
+        $xtotal=DB::table('xrays')->sum('paid_amount');
+        $ototal=DB::table('oincoms')->sum('amount');
+        $Gtotal=$ptotal+$xtotal+$ototal;
+        return view('completeXray',compact('xrey','total','Gtotal'));
     }
 
     /**
-     * Show the form for editing the specified reso`urce.
+     * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -83,12 +91,6 @@ class xrayincomeController extends Controller
         $xry->paid_amount = $request->paid_amount;
         $xry->save();
         return redirect('xrey_income');
-    }
-    public function update2(Request $request,$id){
-        $xry = XRay::find($id);
-        $xry->paid_amount = $request->paid_amount;
-        $xry->save();
-        return back();
     }
 
     /**

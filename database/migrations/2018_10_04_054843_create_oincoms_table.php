@@ -19,7 +19,7 @@ class CreateOincomsTable extends Migration
             $table->integer('amount');
             $table->string('purpose');
             $table->longText('description');
-            $table->date('created_at');
+            $table->timestamps();
         });
     }
 
