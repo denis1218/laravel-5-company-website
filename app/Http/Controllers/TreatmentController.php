@@ -78,6 +78,7 @@ class TreatmentController extends Controller
         $treatment->discount = $request->discount;
         $treatment->remaining_fee = $treatment->estimated_fee - $treatment->discount;
         $treatment->paid_amount = 0;
+        $treatment->tooth_positino=$request->tooth_position;
         $treatment->visits = $request->input('visits');
         $treatment->next_appointment = $request->input('next_appointment');
         $treatment->meridiem = $request->input('meridiem');// it is morning and afternoon of next appointment

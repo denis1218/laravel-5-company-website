@@ -17,6 +17,7 @@ class CreateTreatmentsTable extends Migration
 
             $table->increments('id');
             $table->integer('teeth_number');
+            $table->string('tooth_position');
             $table->string('treatment');
             $table->string('dentaldefect');
             $table->integer('visits')->nullable();
