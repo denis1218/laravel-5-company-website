@@ -171,6 +171,7 @@
                                 <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
                                     <div class="col-md-8">
                                         <table class="table table-striped " style="font-weight: bold; ">
+
                                             <tr>
                                                 <td>Dental Defect :</td>
                                                 <td>{{ $treats->dentaldefect }}</td>
@@ -231,6 +232,7 @@
                                 <h3 style="font-weight: bold;">Present History</h3>
                             </div>
                             <br>
+
                             <form action="/xray" method="post">
                                 {{csrf_field()}}
 

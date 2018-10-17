@@ -79,7 +79,7 @@ class TreatmentController extends Controller
     {
         $treatment = new Treatment();
 
-        $treatment->teeth_number = $request->teeth_number;
+        $treatdoment->teeth_number = $request->teeth_number;
         $treatment->next_appointment = $request->next_appointment;
         $treatment->description = $request->description;
         $treatment->estimated_fee = $request->estimated_fee;
