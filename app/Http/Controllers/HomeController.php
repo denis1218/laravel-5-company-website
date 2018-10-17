@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-
-
-use App\Patient;
 use App\Doctor;
-use Illuminate\Support\Carbon;
+use App\Patient;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -14,9 +13,7 @@ class HomeController extends Controller
      * Create a new controller instance.
      *
      */
-
-
-    function __construct()
+    public function __construct()
     {
         $this->middleware('auth');
     }
@@ -27,10 +24,10 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $patient = Patient::count();
+    {
+        $patient = Patient::count();
         $apatient = Patient::whereDate('created_at', Carbon::today())->get();
         $doctor = Doctor::count();
         return view('dash',compact('patient','doctor','apatient'));
     }
-
 }
