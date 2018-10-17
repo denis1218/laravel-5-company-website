@@ -38,55 +38,14 @@ class TreatmentController extends Controller
     {
         $patient_in_treatment = Patient::find($id);
 
-
-
-
         $checkValue = Patient::find($id)->treatment;
         foreach ($checkValue as $ch) {
             if ($ch->visits == 0) {
                 $ch->visits = 1;
-            }
-          
-            $ch->visits=$ch->visits+1;
-
-
-//        return $patient_in_treatment;
-        $last_treatment = Treatment::orderBy('id', 'desc')->find($id);
-
-
-        if($last_treatment->visits == 0)
-        {
-            $checkValue = 0;
-        }else {
-            $checkValue = $last_treatment->visits;
-
-            $checkValue = Patient::find($id)->treatment;
-            foreach ($checkValue as $ch) {
-                if ($ch->visits == null) {
-                    $ch->visits = 1;
-                }
-
-            }
-
-        }
-        $treatments = Treatment::find($id);
-
-            $last_treatment = Treatment::orderBy('id', 'desc')->find($id);
-
-
-            if ($last_treatment->visits == 0) {
-                $checkValue = 0;
             } else {
-                $checkValue = $last_treatment->visits;
-
-                $checkValue = Patient::find($id)->treatment;
-                foreach ($checkValue as $ch) {
-                    if ($ch->visits == null) {
-                        $ch->visits = 1;
-                    }
-
-                }
-
+                $ch->visits = $ch->visits + 1;
+            }
+        }
 
                 $treatments = Treatment::find($id);
 
@@ -98,9 +57,8 @@ class TreatmentController extends Controller
 
                 return view('treatment_operation', compact('patient_in_treatment', 'patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments'));
 
-            }
-        }
     }
+
 
 
     /**

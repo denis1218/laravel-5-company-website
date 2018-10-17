@@ -19,6 +19,7 @@
     <link href="{{ asset('dashboard/css/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('dashboard/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/hover/hover-min.css') }}" rel="stylesheet">
+    <link href="{{ asset('dashboard/css/plugins/toastr/toastr.min.css') }}" rel="stylesheet">
     {{-- calender style link --}}
     @yield('style')
 
