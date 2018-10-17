@@ -26,13 +26,13 @@
             <div class="col-lg-3">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-info pull-right">Today</span>
+                        <span class="label label-info pull-right">All</span>
                         <h5>Patient</h5>
                     </div>
                     <div class="ibox-content">
 
                         <h1 class="no-margins">{{$patient}}<img  src="img/patienticon2.png" width="45px;"style="float: right;"/></h1>
-                        <small>Total patient for today</small>
+                        <small>All Patients count</small>
 
                     </div>
                 </div>
@@ -40,7 +40,7 @@
             <div class="col-lg-3">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-primary pull-right">Today</span>
+                        <span class="label label-primary pull-right">All</span>
                         <h5>Doctors</h5>
                     </div>
                     <div class="ibox-content">
