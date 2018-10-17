@@ -250,7 +250,23 @@
                                     </div>
                                 </div>
                                 </div>
-
+                                <br>
+                                <div class="row">
+                                    <strong><b><label for="position" style="margin-left: 20px;">Choose tooth position:</label></b></strong>
+                                    <br>
+                                    <div class="form-group">
+                                        <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" id="mul" value="upper_left" name="tooth_position" onchange="upperLeft()" required> &nbsp;&nbsp; Upper Left </label></div></div>
+                                        <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" id="mur" value="upper_right" name="tooth_position" onchange="upperRight()" required> &nbsp;&nbsp; Upper Rigth </label></div></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-sm-4"><div class="i-checks"><label><input type="radio" value="lower_left" name="tooth_position" required>&nbsp;&nbsp; Lower Left</label></div></div>
+                                        <div class="col-sm-4"><div class="i-checks"><label><input type="radio" value="lower_right" name="tooth_position" required>&nbsp;&nbsp; Lower Right </label></div></div>
+                                    </div>
+                                </div>
+                                <br>
                                 <br>
                                 <div class="row">
                                     <div class="col-md-6 text-left">
@@ -274,6 +290,7 @@
                                 <input type="text" name="patient_id" value="{{ $patient_in_treatment->id_patient }}"
                                        style="visibility: hidden;">
 
+
                             </form>
                             {{--end of x-ray form--}}
                             <form action="/operation" method="POST">
@@ -293,8 +310,8 @@
                                             <input type="checkbox" id="next" name="have_xray" value="yes" style="visibility:hidden;">
                                         <div class="row">
                                             <div class="form-group">
-                                                <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" value="upper_left" name="tooth_position" required> &nbsp;&nbsp; Upper Left </label></div></div>
-                                                <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" value="upper_right" name="tooth_position" required> &nbsp;&nbsp; Upper Rigth </label></div></div>
+                                                <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" id="ul" value="upper_left" name="tooth_position" required> &nbsp;&nbsp; Upper Left </label></div></div>
+                                                <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" id="ur" value="upper_right" name="tooth_position" required> &nbsp;&nbsp; Upper Rigth </label></div></div>
                                             </div>
                                         </div>
                                         <br>
@@ -305,6 +322,7 @@
                                             </div>
                                         </div>
                                         <br>
+
                                         <div class="form-group">
                                             <label>Select Dental Defect :</label>
                                             <select class="form-control" name="dentaldefect" required>
@@ -406,6 +424,16 @@
         function copyvalue() {
             var teeth = document.getElementById('teeth').value;
             document.getElementById('copyteeth').value = teeth;
+        }
+    </script>
+    <script type="text/javascript">
+        function upperLeft(){
+            document.getElementById('ul').click();
+        }
+    </script>
+    <script type="text/javascript">
+        function upperRight(){
+            document.getElementById('ur').click();
         }
     </script>
 

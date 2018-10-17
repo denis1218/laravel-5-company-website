@@ -67,7 +67,7 @@ class PatientController extends Controller
 
         $patient->doctor_id = $request->input('FK_id_Doctor');
         $patient->next_appointment = Carbon::now();
-        $patient->status = 'new patient';
+        $patient->status = 'first';
         $patient->problem_health = $string;
         $patient->id_patient = 'P-'.$phonenumber;
         $patient->save();
@@ -129,18 +129,37 @@ class PatientController extends Controller
         return redirect()->back();
     }
 
-    public function indexShowPreDay($id)
+
+    // show all new patient registred today
+    // show which patient have (status = first)
+    public function show_new_patients()
     {
-//        $patient_all = Patient::whereDate('next_appointment',$id)->orderBy('updated_at', 'ASC')->get();
-//        $doctor_list = Doctor::all();
-//        return $patient_all;
-//        return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
+//        echo "call method show new patients";
+        $allNewPatientToday = Patient::where([
+           ['status','=','first'],
+            ['next_appointment','=',Carbon::today()]
+        ])->get();
+//        $countNewPatientToday = $allNewPatientToday->count();
+//        return $countNewPatientToday;
+        return view ('reception.list_new_patient_today',compact('allNewPatientToday'));
     }
 
-    public function indexShowNextDay($id)
+    // show all patient have next appointment
+    // show all patient which (status != first)
+    public function show_next_appointment_patient()
     {
-//        $patient_all = Patient::whereDate('next_appointment',$id)->orderBy('updated_at', 'ASC')->get();
-//        $doctor_list = Doctor::all();
-//        return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
+        $allPatientNextAppointment = Patient::where('next_appointment','=',Carbon::today())->get();
+//        return $allPatientNextAppointment;
+        return view ('reception.list_next_appointment_patient_today',compact('allPatientNextAppointment'));
     }
+
+    // show all patient have next appointment have missing
+    // this is comparable with who patient had next appointment last day
+    // and the missing appointment and now we must call phone
+    // show all patient which (status != first and where Carbon->yestarday)
+    public function show_missing_next_appointment_patient()
+    {
+
+    }
+
 }

@@ -37,9 +37,20 @@
                             <div class="col-md-3">
                                 <a href="/patient/create">
                                     <button class="btn btn-primary" style="width:87%;">
-                                        <li class="fa fa-plus"></li>&nbsp; Add new Patient
+                                        <li class="fa fa-user-plus pull-left"></li>&nbsp; Add new patient
                                     </button>
                                 </a>
+                                <a href="/new-patient-today">
+                                    <button class="btn btn-info" style="width:87%;">
+                                        <li class="fa fa-table pull-left"></li>&nbsp;List new patient today
+                                    </button>
+                                </a>
+                                <a href="/next-appointment-patient">
+                                    <button class="btn btn-success" style="width:87%;">
+                                        <li class="fa fa-table pull-left"></li>&nbsp;List next appointment today
+                                    </button>
+                                </a>
+
                             </div>
 
                             <div class="col-md-9 pull-right">
