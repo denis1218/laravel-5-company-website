@@ -76,7 +76,7 @@
                 <div class="row">
                     <div class="alert alert-danger alert-dismissable col-md-12">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                        Patient have AIDS problem health <a class="alert-link" href="#"></a>.
+                        Patient have {{ $patient_in_treatment->problem_health }} problem health <a class="alert-link" href="#"></a>.
                     </div>
                 </div>
                 <div class="row" style="margin-left:-100px;">
@@ -92,10 +92,10 @@
                                         </h2>
                                         <h4>ID: {{ $patient_in_treatment->id_patient }}</h4>
                                         <small style="font-size: 15px;">
-                                            <span class="text-warning" style="font-size: 15px; font-weight: bold;">Problem Health : </span>Blood
+                                            <span class="text-warning" style="font-size: 15px; font-weight: bold;">Problem Health : </span>
                                             {{ $patient_in_treatment->problem_health }}
                                         </small>
-                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -184,12 +184,16 @@
                                             <tr>
                                                 <td>Tooth Number :</td>
                                                 <td>{{ $treats->teeth_number }}</td>
-                                                <td>Date First Visite :</td>
-                                                <td>{{ $treats->created_at }}</td>
+                                                <td>Tooth Position</td>
+                                                <td>{{$treats->tooth_position}}</td>
                                             </tr>
                                             <tr>
+                                                <td>Date First Visite :</td>
+                                                <td>{{ $treats->created_at }}</td>
                                                 <td>Have Xray :</td>
                                                 <td>{{ $treats->have_xray }}</td>
+                                            </tr>
+                                            <tr>
                                                 <td>Date First Visite :</td>
                                                 <td>{{ $treats->created_at }}</td>
                                             </tr>
@@ -282,15 +286,15 @@
                                         <input type="checkbox" id="next" name="have_xray" style="visibility:hidden;">
                                         <div class="row">
                                             <div class="form-group">
-                                                <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" value="upper_left" name="tooth_position"> &nbsp;&nbsp; Upper Left </label></div></div>
-                                                <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" value="upper_right" name="tooth_position"> &nbsp;&nbsp; Upper Rigth </label></div></div>
+                                                <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" value="upper_left" name="tooth_position" required> &nbsp;&nbsp; Upper Left </label></div></div>
+                                                <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" value="upper_right" name="tooth_position" required> &nbsp;&nbsp; Upper Rigth </label></div></div>
                                             </div>
                                         </div>
                                         <br>
                                         <div class="row">
                                             <div class="form-group">
-                                                <div class="col-sm-4"><div class="i-checks"><label><input type="radio" value="lower_left" name="tooth_position">&nbsp;&nbsp; Lower Left</label></div></div>
-                                                <div class="col-sm-4"><div class="i-checks"><label><input type="radio" value="lower_right" name="tooth_position">&nbsp;&nbsp; Lower Right </label></div></div>
+                                                <div class="col-sm-4"><div class="i-checks"><label><input type="radio" value="lower_left" name="tooth_position" required>&nbsp;&nbsp; Lower Left</label></div></div>
+                                                <div class="col-sm-4"><div class="i-checks"><label><input type="radio" value="lower_right" name="tooth_position" required>&nbsp;&nbsp; Lower Right </label></div></div>
                                             </div>
                                         </div>
                                         <br>
@@ -324,11 +328,11 @@
                                             <input type="number" class="form-control" name="discount"
                                                    value="{{ $last_treatment->discount }}">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="nex">Next Appointment :</label>
-                                            <input type="date" class="form-control" name="next_appointment"
-                                                   value="{{ $last_treatment->next_appointment }}">
-                                        </div>
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="nex">Next Appointment :</label>--}}
+                                            {{--<input type="date" class="form-control" name="next_appointment"--}}
+                                                   {{--value="{{ $last_treatment->next_appointment }}">--}}
+                                        {{--</div>--}}
                                         <div class="form-group">
                                             <div class="i-checks" for="nex">Set Meridiem :<label>&nbsp;&nbsp;
                                                     @if($last_treatment->meridiem == 'morning')

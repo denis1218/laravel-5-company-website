@@ -78,9 +78,9 @@ class TreatmentController extends Controller
         $treatment->discount = $request->discount;
         $treatment->remaining_fee = $treatment->estimated_fee - $treatment->discount;
         $treatment->paid_amount = 0;
-        $treatment->tooth_positino=$request->tooth_position;
+        $treatment->tooth_position=$request->tooth_position;
         $treatment->visits = $request->input('visits');
-        $treatment->next_appointment = $request->input('next_appointment');
+//        $treatment->next_appointment = $request->input('next_appointment');
         $treatment->meridiem = $request->input('meridiem');// it is morning and afternoon of next appointment
         $treatment->patient_id = $request->input('FK_id_patient');
         $treatment->treatment = $request->input('treatment');
@@ -150,14 +150,14 @@ class TreatmentController extends Controller
 
 //        return $patient_in_treatment->visit;
 //        dd($patient_in_treatment);
-
-        $treatments = Treatment::orderBy('id', 'desc')->find($id);
-
-        if ($treatments == null) {
-            $checkValue = 0;
-        } else {
-            $checkValue = $treatments->visits;
-        }
+//
+//        $treatments = Treatment::orderBy('id', 'desc')->find($id);
+//
+//        if ($treatments == null) {
+//            $checkValue = 0;
+//        } else {
+//            $checkValue = $treatments->visits;
+//        }
 
 
         $last_treatment = Treatment::orderBy('id', 'desc')->find($id);

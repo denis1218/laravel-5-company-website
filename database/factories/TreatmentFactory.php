@@ -6,8 +6,10 @@ $factory->define(\App\Treatment::class, function (Faker $faker) {
     $dentalDefect = $faker->randomElement(['BDR','G-Carios','Atrision']);
     $meridim = $faker->randomElement(['afternoon','morning']);
     $status_visit = $faker->randomElement(['complete','not complete']);
+    $teeth_position = $faker->randomElement(['upper right','upper left', 'lower left','lower right']);
     return [
-        'teeth_number' => $faker->numberBetween(1,32),
+        'teeth_number' => $faker->numberBetween(1,8),
+        'tooth_position' => $teeth_position,
         'treatment' => $treatmentList,
         'dentaldefect' => $dentalDefect,
 //        'next_appointment' => $faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
