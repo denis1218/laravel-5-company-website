@@ -256,7 +256,7 @@
                                     <br>
                                     <div class="form-group">
                                         <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" id="mul" value="upper_left" name="tooth_position" onchange="upperLeft()" required> &nbsp;&nbsp; Upper Left </label></div></div>
-                                        <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" value="upper_right" name="tooth_position" required> &nbsp;&nbsp; Upper Rigth </label></div></div>
+                                        <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" id="mur" value="upper_right" name="tooth_position" onchange="upperRight()" required> &nbsp;&nbsp; Upper Rigth </label></div></div>
                                     </div>
                                 </div>
                                 <br>
@@ -311,7 +311,7 @@
                                         <div class="row">
                                             <div class="form-group">
                                                 <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" id="ul" value="upper_left" name="tooth_position" required> &nbsp;&nbsp; Upper Left </label></div></div>
-                                                <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" value="upper_right" name="tooth_position" required> &nbsp;&nbsp; Upper Rigth </label></div></div>
+                                                <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" id="ur" value="upper_right" name="tooth_position" required> &nbsp;&nbsp; Upper Rigth </label></div></div>
                                             </div>
                                         </div>
                                         <br>
@@ -429,6 +429,11 @@
     <script type="text/javascript">
         function upperLeft(){
             document.getElementById('ul').click();
+        }
+    </script>
+    <script type="text/javascript">
+        function upperRight(){
+            document.getElementById('ur').click();
         }
     </script>
 
