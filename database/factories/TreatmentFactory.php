@@ -4,14 +4,16 @@ use Faker\Generator as Faker;
 $factory->define(\App\Treatment::class, function (Faker $faker) {
     $treatmentList = $faker->randomElement(['PF Parmanent Filling','RCT Root Canal','Extraction']);
     $dentalDefect = $faker->randomElement(['BDR','G-Carios','Atrision']);
-    $meridim = $faker->randomElement(['afternoon','morning']);
+//    $meridim = $faker->randomElement(['afternoon','morning']);
     $status_visit = $faker->randomElement(['complete','not complete']);
+    $teeth_position = $faker->randomElement(['upper right','upper left', 'lower left','lower right']);
     return [
-        'teeth_number' => $faker->numberBetween(1,32),
+        'teeth_number' => $faker->numberBetween(1,8),
+        'tooth_position' => $teeth_position,
         'treatment' => $treatmentList,
         'dentaldefect' => $dentalDefect,
 //        'next_appointment' => $faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
-        'meridiem' => $meridim,
+//        'meridiem' => $meridim,
         'visits' => $faker->numberBetween(1,5),
         'status_visits' => $status_visit,
         'status_pay' => $faker->boolean(30),
