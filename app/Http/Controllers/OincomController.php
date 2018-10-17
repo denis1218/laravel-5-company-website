@@ -57,7 +57,7 @@ class OincomController extends Controller
         $other->description=$request->description;
         $other->save();
 //        $toast=$request->toast;
-        return redirect('/other')->with('toast',['successfully inserted']);
+        return redirect('/other')->with('toast',['successfully inserted'])->with('success','Inserted successfully');
     }
 
     /**
