@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class Doctor extends Model
 {
@@ -12,6 +14,17 @@ class Doctor extends Model
         return $this->hasMany(Patient::class,'doctor_id','id');
     }
 
+    public function patient_for_today(){
+        return $this->hasMany(Patient::class,'doctor_id','id')->whereDate('next_appointment',Carbon::today());
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('users','doctor_id', 'id');
+    }
+
+
+
     public function xray(){
         return $this->hasMany(Xray::class);
     }
@@ -19,4 +32,6 @@ class Doctor extends Model
     public function treatment(){
         return $this->hasManyThrough(Treatment::class ,Patient::class);
     }
+
+
 }

@@ -15,7 +15,7 @@ class XrayController extends Controller
      */
     public function index()
     {
-        $patient=Xray::orderBy('id','asc')->paginate(10);
+        $patient=Xray::orderBy('created_at','desc')->paginate(12);
         $not=Xray::where('xray_status','=','not')->get();
         $yes=Xray::where('xray_status','=','yes')->get();
         return view('xraypatient_list',compact('patient','not','yes'));
@@ -45,7 +45,7 @@ class XrayController extends Controller
         $rey->patient_id=$request->patient_id;
         $rey->patient_name=$request->patient_name;
         $rey->doctor_name=$request->doctor_name;
-        $rey->paid_amount= 0;
+        $rey->paid_amount=0;
         $rey->xray_status=$request->input('xray_status');
         $rey->save();
 

@@ -24,6 +24,7 @@ class CreatePatientsTable extends Migration
             $table->longText('address');
             $table->longText('problem_health');
             $table->string('status');
+            $table->date('next_appointment');
             $table->unsignedInteger('doctor_id')->nullable();
             $table->timestamps();
             $table->foreign('doctor_id')

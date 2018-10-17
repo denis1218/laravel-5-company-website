@@ -2,6 +2,7 @@
 
 use App\Doctor;
 use App\Patient;
+use App\Treatment;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -15,6 +16,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+//        if(UserTableSeeder::countt() == 0)$this->call(UserTableSeeder::class );
+        if(\App\Doctor::count() == 0)$this->call(DoctorTableSeeder::class );
+
         DB::Table('users')->insert([
             'firstname' => 'jawad',
             'lastname' => 'mohammadi',
@@ -27,6 +32,7 @@ class DatabaseSeeder extends Seeder
             'role' => 'Owner',
             'age' => '25',
             'address' => 'Kabul, Afghanistan',
+            'doctor_id' => 3,
         ]);
 
         DB::Table('users')->insert([
@@ -41,6 +47,7 @@ class DatabaseSeeder extends Seeder
             'role' => 'Owner',
             'age' => '24',
             'address' => 'Kabul, Afghanistan',
+            'doctor_id' => 2,
         ]);
 
         DB::Table('users')->insert([
@@ -55,13 +62,16 @@ class DatabaseSeeder extends Seeder
             'role' => 'Owner',
             'age' => '22',
             'address' => 'Kabul, Afghanistan',
+            'doctor_id' => 1,
         ]);
-//        if(UserTableSeeder::countt() == 0)$this->call(UserTableSeeder::class );
-        if(\App\Doctor::count() == 0)$this->call(DoctorTableSeeder::class );
+
         if(Patient::count() == 0)$this->call(PatientTableSeeder::class );
+        if(Treatment::count() == 0)$this->call(TreatmentTableSeeder::class );
         if(Permission::count() == 0)$this->call(PermissionTableSeeder::class );
         if(Role::count() == 0)$this->call(RoleTableSeeder::class );
         $this->call(UserRoleTableSeeder::class);
+
+
 
         DB::table('treatment_lists')->insert([
             'treatment' => 'PF Parmanent Filling',
@@ -95,21 +105,6 @@ class DatabaseSeeder extends Seeder
             'dental_defect' => 'Atrision',
         ]);
 
-
-
-        DB::table('users')->insert([
-            'firstname' => 'mahdi',
-            'lastname' => 'safari',
-            'username' => 'mahdi@safariAdmin',
-            'password' => '123456',
-            'email' => 'mahdi@gmail.com',
-            'department' => 'Doctor',
-            'phone' => '0790424144',
-            'gender' => 'male',
-            'role' => 'Owner',
-            'age' => '24',
-            'address' => 'Kabul, Afghanistan',
-        ]);
     }
 }
 

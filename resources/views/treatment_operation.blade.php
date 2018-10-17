@@ -76,7 +76,7 @@
                 <div class="row">
                     <div class="alert alert-danger alert-dismissable col-md-12">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                        Patient have AIDS problem health <a class="alert-link" href="#"></a>.
+                        Patient have {{ $patient_in_treatment->problem_health }} problem health <a class="alert-link" href="#"></a>.
                     </div>
                 </div>
                 <div class="row" style="margin-left:-100px;">
@@ -91,7 +91,7 @@
                                             {{ $patient_in_treatment->name }}
                                         </h2>
                                         <h4>ID: {{ $patient_in_treatment->id_patient }}</h4>
-                                        <small style="font-size: 15px;">
+                                        <small style="font-size: 12px;">
                                             <span class="text-warning" style="font-size: 15px; font-weight: bold;">Problem Health : </span>
                                             {{ $patient_in_treatment->problem_health }}
                                         </small>
@@ -105,31 +105,31 @@
                                 <tr>
                                     <td>
                                             <span class=""
-                                                  style="font-size: 15px;">Gender:<b>&nbsp;{{ $patient_in_treatment->gender }}</b>&nbsp;<i
+                                                  style="font-size: 12px;">Gender:<b>&nbsp;{{ $patient_in_treatment->gender }}</b>&nbsp;<i
                                                         class="fa fa-male"></i></span>
                                     </td>
                                     <td>
-                                            <span style="font-size: 15px;">Age:<b>&nbsp;{{ $patient_in_treatment->age }}</b>&nbsp;<i
+                                            <span style="font-size: 12px;">Age:<b>&nbsp;{{ $patient_in_treatment->age }}</b>&nbsp;<i
                                                         class=""></i></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span style="font-size: 15px;">Doctor:<b>&nbsp;{{ $patient_in_treatment->doctor->first_name }}</b>&nbsp;<i
+                                        <span style="font-size: 12px;">Doctor:<b>&nbsp;{{ $patient_in_treatment->doctor->first_name }}</b>&nbsp;<i
                                                     class="fa fa-user-md"></i></span>
                                     </td>
                                     <td>
-                                        <span style="font-size: 15px;">Visited:<b>&nbsp;{{ $patient_in_treatment->status }}</b>&nbsp;<i
+                                        <span style="font-size: 12px;">Visited:<b>&nbsp;{{ $patient_in_treatment->status }}</b>&nbsp;<i
                                                     class=""></i></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span style="font-size: 15px;">Date Reg:<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
+                                        <span style="font-size: 12px;">Date Reg:<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
                                                     class="fa fa-calendar"></i></span>
                                     </td>
                                     <td>
-                                              <span style="font-size: 15px;">First Visited Date :<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
+                                              <span style="font-size: 12px;">First Visited Date :<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
                                                           class="fa fa-calendar"></i></span>
                                     </td>
                                 </tr>
@@ -186,21 +186,21 @@
                                             <tr>
                                                 <td>Tooth Number :</td>
                                                 <td>{{ $treats->teeth_number }}</td>
+                                                <td>Tooth Position :</td>
+                                                <td>{{ $treats->tooth_position }}</td>
+
+                                            </tr>
+                                            <tr>
                                                 <td>Remaining Fee :</td>
                                                 <td>null</td>
-                                            </tr>
-                                            <tr>
                                                 <td>Have Xray :</td>
                                                 <td>{{ $treats->have_xray }}</td>
-                                                <td>Date Visited :</td>
-                                                <td>{{ $treats->created_at }}</td>
                                             </tr>
                                             <tr>
+                                                <td>Date Visited :</td>
+                                                <td>{{ $treats->created_at }}</td>
                                                 <td> status treatment</td>
                                                 <td>{{ $treats->status_visits }}</td>
-                                                <td>Next Appointment :</td>
-                                                <td>{{ $treats->next_appointment }}&nbsp; in
-                                                    &nbsp;{{ $treats->meridiem }}</td>
                                             </tr>
                                         </table>
                                         <div>
@@ -240,24 +240,23 @@
                                     <h4 style="color:green">Is X-Ray Needed?</h4>
                                         <div class="input-group">
 
-                                            {{--<div class="i-checks">--}}
+
                                             <input type="radio" onchange="activation()" value="not" name="xray_status"
-                                                   id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>YES</b></strong>
-                                            {{--</div>--}}
-                                            {{--<div class="i-checks">--}}
+                                                   id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>YES</b></strong>&nbsp;&nbsp;&nbsp;
+
                                             <input type="radio" onchange="deactivation()" id="id" name="xray_status"
                                                    checked="checked" style="height: 20px;width:20px;"> &nbsp;<strong><b>NO</b></strong>
-                                            {{--</div>--}}
+
                                     </div>
+                                </div>
                                 </div>
 
                                 <br>
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="input-group" style="margin-top:25px;">
+                                    <div class="col-md-6 text-left">
+                                        <div class="input-group" style="margin-top:px;">
                                             <label for="number">Enter tooth number:</label>
-                                            <input type="number" class="form-control" id="teeth"
-                                            required name="tooth_number" onblur="copyvalue()" placeholder="Enter Tooth Number" style="width: 100%;height:36px;">
+                                            <input type="number" class="form-control" id="teeth" max="8" min="1"  name="tooth_number" onblur="copyvalue()" placeholder="Enter Tooth Number" style="width: 100%;height:36px;" required>
                                             <span class="input-group-btn">
                                             <button type="submit" class="btn btn-primary" id="but"  style="margin-top: 23px;height:36px;" disabled>
                                             Send To X-Ray &nbsp;<i class="fa fa-send">
@@ -279,9 +278,9 @@
                             {{--end of x-ray form--}}
                             <form action="/operation" method="POST">
                                 @foreach($checkValue as $check)
-                                <input type="hidden" value="{{ ++$check->visits }}" name="visits">
+                                <input type="hidden" value="{{ $check->visits }}" name="visits">
                                 @endforeach
-                                <input hidden type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
+                                <input  type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
                                 {{--<input hidden type="hidden" name="visits" value="{{ $treatments->visits  }}"/>--}}
 
                                 <div class="row">
@@ -289,12 +288,26 @@
                                         <div class="form-group">
                                             <label></label>
                                             <input type="number" class="form-control" id="copyteeth" required
-                                                   name="teeth_number" style="visibility: hidden">
+                                                   name="teeth_number" min="1" max="8" style="visibility: hidden">
                                         </div>
-                                            <input type="checkbox" id="next" name="have_xray" style="visibility:hidden;">
+                                            <input type="checkbox" id="next" name="have_xray" value="yes" style="visibility:hidden;">
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" value="upper_left" name="tooth_position" required> &nbsp;&nbsp; Upper Left </label></div></div>
+                                                <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" value="upper_right" name="tooth_position" required> &nbsp;&nbsp; Upper Rigth </label></div></div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <div class="col-sm-4"><div class="i-checks"><label><input type="radio" value="lower_left" name="tooth_position" required>&nbsp;&nbsp; Lower Left</label></div></div>
+                                                <div class="col-sm-4"><div class="i-checks"><label><input type="radio" value="lower_right" name="tooth_position" required>&nbsp;&nbsp; Lower Right </label></div></div>
+                                            </div>
+                                        </div>
+                                        <br>
                                         <div class="form-group">
                                             <label>Select Dental Defect :</label>
-                                            <select class="form-control" name="dentaldefect">
+                                            <select class="form-control" name="dentaldefect" required>
                                                 <option disabled selected>Select Dental Defect</option>
                                                 @foreach($dentalDefectList as $list)
                                                     <option value="{{ $list->dental_defect }}">{{ $list->dental_defect }}</option>
@@ -304,7 +317,7 @@
                                         <div class="form-group">
                                             <label>Treatment :</label>
                                             <select class="form-control" name="treatment"
-                                                    onchange="getFeeTreatment(this);">
+                                                    onchange="getFeeTreatment(this);" required>
                                                 <option disabled>Select Treatment</option>
                                                 @foreach($treatementList as $listTreatement)
                                                     <option value="{{ $listTreatement->treatment }}"
@@ -317,25 +330,25 @@
                                         <div class="form-group">
                                             <label for="nex">Treatment Cost :</label>
                                             <input type="number" class="form-control" id="cost_treatment"
-                                                   name="estimated_fee" value="">
+                                                   name="estimated_fee" value="" required>
                                         </div>
                                         <input type="text" name="paid_amount" hidden>
                                         <div class="form-group">
                                             <label for="nex">Discount :</label>
                                             <input type="number" class="form-control" name="discount">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="nex">Next Appointment :</label>
-                                            <input type="date" class="form-control" name="next_appointment">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="i-checks" for="nex">Set Meridiem :<label>&nbsp;&nbsp;
-                                                    <input type="radio" value="morning" checked name="meridiem">
-                                                    Morning</label>
-                                                &nbsp;&nbsp;&nbsp; <input type="radio" checked value="afternoon"
-                                                                          name="meridiem">Afternoon
-                                            </div>
-                                        </div>
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="nex">Next Appointment :</label>--}}
+                                            {{--<input type="date" class="form-control" name="next_appointment">--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<div class="i-checks" for="nex">Set Meridiem :<label>&nbsp;&nbsp;--}}
+                                                    {{--<input type="radio" value="morning" checked name="meridiem">--}}
+                                                    {{--Morning</label>--}}
+                                                {{--&nbsp;&nbsp;&nbsp; <input type="radio" checked value="afternoon"--}}
+                                                                          {{--name="meridiem">Afternoon--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
                                         <div class="form-group">
                                             <label for="nex">Description :</label>
                                             <textarea rows="5" type="text" class="form-control" name="description"
@@ -352,7 +365,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6" style="margin-top: -70px;">
                                         <img src="{{ asset('img/all_tooth.jpg') }}" width="100%"/>
                                     </div>
                                 </div>
