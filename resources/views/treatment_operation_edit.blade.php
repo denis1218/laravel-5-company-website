@@ -249,7 +249,7 @@
                                     <div class="col-md-6 text-left">
                                         <div class="input-group" style="margin-top:px;">
                                             <label for="number">Enter tooth number:</label>
-                                            <input type="number" class="form-control" id="teeth" name="tooth_number" onblur="copyvalue()" value="{{$last_treatment->teeth_number}}" style="width: 100%;height:36px;" required>
+                                            <input type="number" class="form-control" id="teeth" max="8" min="1" name="tooth_number" onblur="copyvalue()" value="{{$last_treatment->teeth_number}}" style="width: 100%;height:36px;" required>
                                             <span class="input-group-btn">
                                             <button type="submit" class="btn btn-primary" id="but"  style="margin-top: 23px;height:36px;" disabled>
                                             Send To X-Ray &nbsp;<i class="fa fa-send">
@@ -279,7 +279,7 @@
                                     <div class="col-md-6" style="margin-top: -85px;">
                                         <div class="form-group">
                                             <label></label>
-                                            <input type="number" class="form-control" id="copyteeth" required
+                                            <input type="number" max="8" min="1" class="form-control" id="copyteeth" required
                                                    name="teeth_number" style="visibility: hidden">
                                         </div>
 

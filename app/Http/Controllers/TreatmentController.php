@@ -82,7 +82,7 @@ class TreatmentController extends Controller
         $treatment->tooth_position=$request->tooth_position;
         $treatment->visits = $request->input('visits');
 //        $treatment->next_appointment = $request->input('next_appointment');
-        $treatment->meridiem = $request->input('meridiem');// it is morning and afternoon of next appointment
+//        $treatment->meridiem = $request->input('meridiem');// it is morning and afternoon of next appointment
         $treatment->patient_id = $request->input('FK_id_patient');
         $treatment->treatment = $request->input('treatment');
         $treatment->dentaldefect = $request->input('dentaldefect');

@@ -202,13 +202,6 @@
                                                 <td> status treatment</td>
                                                 <td>{{ $treats->status_visits }}</td>
                                             </tr>
-                                            <tr>
-                                                {{--<td>Next Appointment :</td>--}}
-                                                {{--<td>{{ $treats->next_appointment }}&nbsp;</td>--}}
-                                                <td>In</td>
-                                                <td>{{ $treats->meridiem }}</td>
-                                                    &nbsp;
-                                            </tr>
                                         </table>
                                         <div>
                                             <div><p><strong>Description:</strong>{{ $treats->description }}</p>
@@ -263,7 +256,7 @@
                                     <div class="col-md-6 text-left">
                                         <div class="input-group" style="margin-top:px;">
                                             <label for="number">Enter tooth number:</label>
-                                            <input type="number" class="form-control" id="teeth" name="tooth_number" onblur="copyvalue()" placeholder="Enter Tooth Number" style="width: 100%;height:36px;" required>
+                                            <input type="number" class="form-control" id="teeth" max="8" min="1"  name="tooth_number" onblur="copyvalue()" placeholder="Enter Tooth Number" style="width: 100%;height:36px;" required>
                                             <span class="input-group-btn">
                                             <button type="submit" class="btn btn-primary" id="but"  style="margin-top: 23px;height:36px;" disabled>
                                             Send To X-Ray &nbsp;<i class="fa fa-send">
@@ -295,7 +288,7 @@
                                         <div class="form-group">
                                             <label></label>
                                             <input type="number" class="form-control" id="copyteeth" required
-                                                   name="teeth_number" style="visibility: hidden">
+                                                   name="teeth_number" min="1" max="8" style="visibility: hidden">
                                         </div>
                                             <input type="checkbox" id="next" name="have_xray" value="yes" style="visibility:hidden;">
                                         <div class="row">
