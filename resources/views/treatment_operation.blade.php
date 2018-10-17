@@ -255,7 +255,7 @@
                                     <strong><b><label for="position" style="margin-left: 20px;">Choose tooth position:</label></b></strong>
                                     <br>
                                     <div class="form-group">
-                                        <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" id="mul" value="upper_left" name="tooth_position" required> &nbsp;&nbsp; Upper Left </label></div></div>
+                                        <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" id="mul" value="upper_left" name="tooth_position" onchange="upperLeft()" required> &nbsp;&nbsp; Upper Left </label></div></div>
                                         <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" value="upper_right" name="tooth_position" required> &nbsp;&nbsp; Upper Rigth </label></div></div>
                                     </div>
                                 </div>
@@ -424,6 +424,11 @@
         function copyvalue() {
             var teeth = document.getElementById('teeth').value;
             document.getElementById('copyteeth').value = teeth;
+        }
+    </script>
+    <script type="text/javascript">
+        function upperLeft(){
+            document.getElementById('ul').click();
         }
     </script>
 
