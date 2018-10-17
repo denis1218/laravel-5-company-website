@@ -73,20 +73,24 @@ class TreatmentController extends Controller
         $treatment = new Treatment();
 
         $treatment->teeth_number = $request->teeth_number;
-        $treatment->next_appointment = $request->next_appointment;
+//        $treatment->next_appointment = $request->next_appointment;
         $treatment->description = $request->description;
         $treatment->estimated_fee = $request->estimated_fee;
         $treatment->discount = $request->discount;
         $treatment->remaining_fee = $treatment->estimated_fee - $treatment->discount;
         $treatment->paid_amount = 0;
+        $treatment->tooth_position=$request->tooth_position;
         $treatment->visits = $request->input('visits');
-        $treatment->next_appointment = $request->input('next_appointment');
-        $treatment->meridiem = $request->input('meridiem');// it is morning and afternoon of next appointment
+//        $treatment->next_appointment = $request->input('next_appointment');
+//        $treatment->meridiem = $request->input('meridiem');// it is morning and afternoon of next appointment
         $treatment->patient_id = $request->input('FK_id_patient');
         $treatment->treatment = $request->input('treatment');
         $treatment->dentaldefect = $request->input('dentaldefect');
         $treatment->status_pay = true;
-        $treatment->have_xray = false;
+        $treatment->have_xray = $request->have_xray;
+        if($treatment->have_xray==null){
+            $treatment->have_xray='no';
+        }
 
         if ($request->status_visits == null) {
             $treatment->status_visits = 'not complete';
@@ -94,7 +98,7 @@ class TreatmentController extends Controller
             $treatment->status_visits = $request->status_visits;
         }
 
-
+//            return $treatment;
         $treatment->save();
         return redirect('/operation');
 
