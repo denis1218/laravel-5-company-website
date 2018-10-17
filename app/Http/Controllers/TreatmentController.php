@@ -73,7 +73,7 @@ class TreatmentController extends Controller
         $treatment = new Treatment();
 
         $treatment->teeth_number = $request->teeth_number;
-        $treatment->next_appointment = $request->next_appointment;
+//        $treatment->next_appointment = $request->next_appointment;
         $treatment->description = $request->description;
         $treatment->estimated_fee = $request->estimated_fee;
         $treatment->discount = $request->discount;
@@ -87,7 +87,7 @@ class TreatmentController extends Controller
         $treatment->treatment = $request->input('treatment');
         $treatment->dentaldefect = $request->input('dentaldefect');
         $treatment->status_pay = true;
-        $treatment->have_xray = false;
+        $treatment->have_xray = $request->have_xray;
 
         if ($request->status_visits == null) {
             $treatment->status_visits = 'not complete';
@@ -95,7 +95,7 @@ class TreatmentController extends Controller
             $treatment->status_visits = $request->status_visits;
         }
 
-
+//            return $treatment;
         $treatment->save();
         return redirect('/operation');
 

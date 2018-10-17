@@ -297,7 +297,7 @@
                                             <input type="number" class="form-control" id="copyteeth" required
                                                    name="teeth_number" style="visibility: hidden">
                                         </div>
-                                            <input type="checkbox" id="next" name="have_xray" style="visibility:hidden;">
+                                            <input type="checkbox" id="next" name="have_xray" value="yes" style="visibility:hidden;">
                                         <div class="row">
                                             <div class="form-group">
                                                 <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" value="upper_left" name="tooth_position" required> &nbsp;&nbsp; Upper Left </label></div></div>
