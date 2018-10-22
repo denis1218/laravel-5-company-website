@@ -42,6 +42,7 @@ class XrayController extends Controller
     {
         $rey=new Xray();
         $rey->tooth_number=$request->tooth_number;
+        $rey->tooth_position=$request->tooth_position;
         $rey->patient_id=$request->patient_id;
         $rey->patient_name=$request->patient_name;
         $rey->doctor_name=$request->doctor_name;
@@ -89,6 +90,7 @@ class XrayController extends Controller
     {
         $Edt=Xray::find($xray)->first();
         $Edt->tooth_number=$request->tooth_number;
+        $Edt->tooth_position=$request->tooth_position;
         $Edt->patient_id=$request->patient_id;
         $Edt->patient_name=$request->patient_name;
         $Edt->doctor_name=$request->doctor_name;

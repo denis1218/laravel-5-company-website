@@ -146,14 +146,17 @@
 
                                 <tr>
                                     <td>
-                                     <h3>X-Ray Status:&nbsp;</h3></td>
+                                     <h3>Tooth Position:&nbsp;</h3></td>
                                     <td>
-                                     <input type="text" id="status" style="font-size:15px;" name="xray_status" class="form-control" value="{{$spat->xray_status}}" readonly>
+                                        <input type="text" name="tooth_position" class="form-control" value="{{$spat->tooth_position}}" readonly>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" style="text-align:right">
+                                    <td>
                                            <button type="button" class="btn btn-primary btn-md" id="change">Change xray-ray Status</button>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="status" style="font-size:15px;" name="xray_status" class="form-control" value="{{$spat->xray_status}}" readonly>
                                     </td>
                                 </tr>
                                 @endforeach
