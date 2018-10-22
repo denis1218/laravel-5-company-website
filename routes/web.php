@@ -281,7 +281,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/patient/{id}','PatientController@index');
 //    Route::get('/patient/preday/{id}','PatientController@indexShowPreDay');
 
-});
+//});
 
 
 

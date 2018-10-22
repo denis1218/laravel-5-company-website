@@ -127,6 +127,14 @@
                                     @endforeach
                                 </tr>
                                 @foreach($spats as $spat)
+                                    <tr>
+                                        <td>
+                                            <span class="font-m">Date Reg:&nbsp;<i class="fa fa-calendar"></i></span>
+                                        </td>
+                                        <td>
+                                            <h3><b>&nbsp;{{$spat->created_at}}</b></h3>
+                                        </td>
+                                    </tr>
                                 <tr>
                                     <td>
                                         <span class="font-m">Doctor:&nbsp; <i class="fa fa-user-md"></i><input type="text" name="doctor_name" class="form-control" value="{{$spat->doctor_name}}" readonly> </span>
@@ -135,14 +143,7 @@
                                         <span class="font-m">X-Ray ID:&nbsp;<input type="text" name="id" class="form-control" value="{{$spat->id}}" readonly> </span>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                       <span class="font-m">Date Reg:&nbsp;<i class="fa fa-calendar"></i></span>
-                                    </td>
-                                    <td>
-                                        <h3><b>&nbsp;{{$spat->created_at}}</b></h3>
-                                    </td>
-                                </tr>
+
                                 <tr>
                                     <td>
                                      <h3>X-Ray Status:&nbsp;</h3></td>
