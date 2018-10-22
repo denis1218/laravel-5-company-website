@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Doctor;
+
 use App\Patient;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+
 
 class HomeController extends Controller
 {

@@ -210,6 +210,7 @@ Route::middleware('auth')->group(function () {
     Route::get('finance_report_income4', 'FinanceReportIncomeController@selectRange');
 
 
+
     //financial report expense
     Route::get('/finance_report_expenses', 'FinanceReportExpenseController@show');
     //financial report expense single date
@@ -282,6 +283,7 @@ Route::middleware('auth')->group(function () {
 //    Route::get('/patient/preday/{id}','PatientController@indexShowPreDay');
 
 //});
+
 
 
 
