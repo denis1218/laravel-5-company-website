@@ -93,7 +93,7 @@
                                         </button></td>
                                     <td>
                                         <form action="/expenditure2/{{$ex->id}}" id="myForm">
-                                        <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
+                                            <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                         </form>
                                     </td>
                                 </tr>

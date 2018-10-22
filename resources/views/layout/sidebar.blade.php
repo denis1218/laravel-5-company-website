@@ -74,6 +74,7 @@
                         <ul class="nav nav-second-level collapse">
                             <li><a href="account"><i class="fa fa-user-plus"></i>&nbsp;Accounts</a></li>
                             <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
+                            <li><a href="/expense-category"><i class="fa fa-pencil-square-o"></i> &nbsp;Expense category</a></li>
                         </ul>
                     </li>
                 </ul>
