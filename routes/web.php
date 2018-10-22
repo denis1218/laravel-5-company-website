@@ -123,7 +123,7 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('/dash_reception', function () {
-        return view('/dash_reception');
+        return view('reception.dash_reception');
     });
 
     Route::get('/doctor_report_list', function () {
@@ -281,7 +281,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/patient/{id}','PatientController@index');
 //    Route::get('/patient/preday/{id}','PatientController@indexShowPreDay');
 
-//});
+});
 
 
 
