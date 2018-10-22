@@ -86,7 +86,7 @@
                                     <td>{{$ex->receiver}}</td>
                                     <td>{{$ex->amount}}</td>
                                     <td>{{$ex->category}}</td>
-                                    <td>{{$ex->description}}</td>
+                                    <td>{{str_limit($ex->description,20)}}</td>
                                     <td>{{$ex->created_at}}</td>
                                     <td> <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal"
                                                  data-target="#{{$ex->id}}">&nbsp;Edit
