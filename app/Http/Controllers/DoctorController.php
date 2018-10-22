@@ -69,7 +69,6 @@ class DoctorController extends Controller
     {
         $doc = Doctor::orderBy('id','desc')->paginate(10);
         return view('doctor_salary',compact('doc'));
-//
     }
 
     /**
@@ -81,10 +80,10 @@ class DoctorController extends Controller
     public function edit( $id)
     {
         $doctor=Doctor::find($id);
-        $patient=Doctor::find($id)->with('patient')->get();
+        $patient=Doctor::find($id)->patient;
         $treatment=Doctor::find($id)->treatment;
-
         $selectedTreatment=Treatment::whereBetween('created_at',[$doctor->to,now()])->get();
+
         if($doctor->to==null){
             $total=$treatment->sum('paid_amount');
         }else{
@@ -97,7 +96,6 @@ class DoctorController extends Controller
             $docfee=($total*$doctor->salary_amount)/100;
         }
         return view('doctor_report',compact('doctor','patient','treatment','total','docfee'));
-//        return $treatment;
     }
 
     /**
