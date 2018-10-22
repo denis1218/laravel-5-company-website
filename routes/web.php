@@ -61,6 +61,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('/patient', 'PatientController');
     Route::get('/new-patient-today','PatientController@show_new_patients');
     Route::get('/next-appointment-patient','PatientController@show_next_appointment_patient');
+    Route::get('/miss-next-appointment-patient','PatientController@show_missing_next_appointment_patient');
+    Route::resource('/expense-category','ExpenseCatagoryController');
 
 
 //// next appointment page
