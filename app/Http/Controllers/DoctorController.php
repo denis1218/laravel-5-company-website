@@ -84,6 +84,7 @@ class DoctorController extends Controller
         $treatment=Doctor::find($id)->treatment;
         $selectedTreatment=Treatment::whereBetween('created_at',[$doctor->to,now()])->get();
 
+
         if($doctor->to==null){
             $total=$treatment->sum('paid_amount');
         }else{
