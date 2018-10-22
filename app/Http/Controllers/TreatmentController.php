@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\DentalDefectList;
 use App\Income;
+use App\Medicine;
 use App\Patient;
+use App\Prescription;
 use App\Treatment;
 use App\TreatmentList;
 use App\XRay;
@@ -46,7 +48,8 @@ class TreatmentController extends Controller
                 $ch->visits = $ch->visits + 1;
             }
         }
-
+                $prescription = Prescription::where('patient_id','=',$id)->get();
+                $medicine =  Medicine::all();
                 $treatments = Treatment::find($id);
 
                 $treatementList = TreatmentList::all();
@@ -55,7 +58,8 @@ class TreatmentController extends Controller
 
                 $patient_id = $patient_in_treatment->id;
 
-                return view('treatment_operation', compact('patient_in_treatment', 'patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments'));
+
+                return view('treatment_operation', compact('patient_in_treatment', 'patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments','medicine','prescription'));
 
     }
 
@@ -73,18 +77,25 @@ class TreatmentController extends Controller
         $treatment = new Treatment();
 
         $treatment->teeth_number = $request->teeth_number;
+
         $treatment->description = $request->description;
         $treatment->estimated_fee = $request->estimated_fee;
         $treatment->discount = $request->discount;
         $treatment->remaining_fee = $treatment->estimated_fee - $treatment->discount;
         $treatment->paid_amount = 0;
+        $treatment->tooth_position=$request->tooth_position;
         $treatment->visits = $request->input('visits');
-        $treatment->meridiem = $request->input('meridiem');// it is morning and afternoon of next appointment
+
+//        $treatment->next_appointment = $request->input('next_appointment');
+//        $treatment->meridiem = $request->input('meridiem');// it is morning and afternoon of next appointment
         $treatment->patient_id = $request->input('FK_id_patient');
         $treatment->treatment = $request->input('treatment');
         $treatment->dentaldefect = $request->input('dentaldefect');
         $treatment->status_pay = true;
-        $treatment->have_xray = false;
+        $treatment->have_xray = $request->have_xray;
+        if($treatment->have_xray==null){
+            $treatment->have_xray='no';
+        }
 
         if ($request->status_visits == null) {
             $treatment->status_visits = 'not complete';
@@ -92,7 +103,7 @@ class TreatmentController extends Controller
             $treatment->status_visits = $request->status_visits;
         }
 
-
+//            return $treatment;
         $treatment->save();
         return redirect('/operation');
 

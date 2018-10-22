@@ -24,7 +24,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 //route for dash
 
-//Route::middleware('auth')->group(function () {
+Route::middleware('auth')->group(function () {
 
 
     Route::get('/dash', 'HomeController@index');
@@ -59,6 +59,8 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 //    });
 
     Route::resource('/patient', 'PatientController');
+    Route::get('/new-patient-today','PatientController@show_new_patients');
+    Route::get('/next-appointment-patient','PatientController@show_next_appointment_patient');
 
 
 //// next appointment page
@@ -164,7 +166,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 // Doctor Registrationexp
     Route::resource('doctors', 'DoctorController');
-    Route::get('/doctorregister','DoctorController@create');
+//    Route::get('/doctorregister','DoctorController@create');
     Route::get('expense_form', function () {
         $capital=DB::table('expenses')->sum('amount');
         return view('expense_form')->with('capital',$capital);
@@ -183,7 +185,6 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
     Route::resource('/doctors', 'DoctorController');
 
 
-    Route::resource('operation', 'OperationController');
 
 
 //Xray Controller
@@ -299,8 +300,15 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 //    Route::get('/patient/date/{$id}','PatientController@indexShowNextDay');
         Route::get('/patient/{id}','PatientController@index');
 //    Route::get('/patient/preday/{id}','PatientController@indexShowPreDay');
+    //route for medicine
+    Route::resource('medicine','MedicineController');
+    //route for delet medicine
+    Route::get('medicine2/{id}','MedicineController@delete');
 
-//});
+    //route for prescription
+    Route::resource('prescription','PrescriptionController');
+
+});
 
 
 
