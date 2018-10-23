@@ -56,9 +56,7 @@ Route::middleware('auth')->group(function () {
 
 
 
-    Route::get('/dash_reception', function () {
-        return view('reception.dash_reception');
-    });
+    Route::get('/dash_reception', 'HomeController@index3');
 
 
 

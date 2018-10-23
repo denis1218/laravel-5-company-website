@@ -279,7 +279,7 @@
 =======
                                         <div class="col-sm-2"><label> <input type="radio" id="mul" value="upper_left" name="tooth_position" onchange="upperLeft()" style="width:25px;height:20px" required> &nbsp;&nbsp; Upper Left </label></div>
                                         <div class="col-sm-2"><label> <input type="radio" id="mur" value="upper_right" name="tooth_position" onchange="upperRight()" style="width:25px;height:20px" required> &nbsp;&nbsp; Upper Rigth </label></div>
->>>>>>> 0455fa35514aaa71b46163472641609ca225a654
+
                                     </div>
                                 </div>
                                 <br>
@@ -296,10 +296,10 @@
                                                                                 name="tooth_position" required>&nbsp;&nbsp;
                                                     Lower Right </label></div>
                                         </div>
-=======
+
                                         <div class="col-sm-2"><label><input type="radio" id="mll" value="lower_left" onchange="lowerLeft()" name="tooth_position" style="width:25px;height:20px" required>&nbsp;&nbsp; Lower Left</label></div>
                                         <div class="col-sm-2"><label><input type="radio" id="mlr" value="lower_right" onchange="lowerRight()" name="tooth_position" style="width:25px;height:20px" required>&nbsp;&nbsp; Lower Right </label></div>
->>>>>>> 0455fa35514aaa71b46163472641609ca225a654
+
                                     </div>
                                 </div>
                                 <br>

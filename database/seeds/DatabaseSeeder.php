@@ -24,46 +24,35 @@ class DatabaseSeeder extends Seeder
         DB::Table('users')->insert([
             'firstname' => 'jawad',
             'lastname' => 'mohammadi',
-            'username' => 'jawadFB',
             'password' => Hash::make('123456'),
             'email' => 'jawad@gmail.com',
             'department' => 'doctor',
-            'phone' => '0790424144',
-            'gender' => 'male',
-            'role' => 'Owner',
-            'age' => '25',
-            'address' => 'Kabul, Afghanistan',
-            'doctor_id' => 3,
+
         ]);
 
         DB::Table('users')->insert([
             'firstname' => 'mahdi',
             'lastname' => 'safari',
-            'username' => 'admin',
             'password' => Hash::make('123456'),
             'email' => 'mahdi@gmail.com',
             'department' => 'doctor',
-            'phone' => '0790424144',
-            'gender' => 'male',
-            'role' => 'Owner',
-            'age' => '24',
-            'address' => 'Kabul, Afghanistan',
-            'doctor_id' => 2,
         ]);
 
         DB::Table('users')->insert([
             'firstname' => 'haidar',
             'lastname' => 'alami',
-            'username' => 'user',
             'password' => Hash::make('123456'),
             'email' => 'haidar@gmail.com',
+            'department' => 'admin',
+
+        ]);
+        DB::Table('users')->insert([
+            'firstname' => 'ahmad',
+            'lastname' => 'ahmadi',
+            'password' => Hash::make('123456'),
+            'email' => 'ahmad@gmail.com',
             'department' => 'reception',
-            'phone' => '0790424144',
-            'gender' => 'male',
-            'role' => 'Owner',
-            'age' => '22',
-            'address' => 'Kabul, Afghanistan',
-            'doctor_id' => 1,
+
         ]);
 
         if(Patient::count() == 0)$this->call(PatientTableSeeder::class );
