@@ -14,9 +14,10 @@
                 <h5>User</h5>
             </div>
             <div class="ibox-content">
-                <h2 class="no-margins">Welcome Dr.Wahid</h2>
+                <h3 class="no-margins">Welcome {{Auth()->user()->firstname}}</h3>
                 <div class="stat-percent font-bold text-danger"></div>
-                <small>Finance</small>
+                <br>
+                <small>{{Auth()->user()->department}}</small>
             </div>
         </div>
     </div>

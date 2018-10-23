@@ -44,6 +44,18 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('/dash', 'HomeController@index')->name('home');
+    //route for dash doctor
+    Route::get('/dash_doctor',function (){
+       return view('dash_doctor');
+    });
+    Route::get('dash_doctor','HomeController@index2');
+
+
+
+    Route::get('/dash_reception', function () {
+        return view('reception.dash_reception');
+    });
+
 
 // doctor treatment operation page have three option
 //    Route::get('/doctor_operations', function () {
@@ -145,18 +157,12 @@ Route::middleware('auth')->group(function () {
     });
 
 
-    Route::get('/dash_reception', function () {
-        return view('reception.dash_reception');
-    });
-
     Route::get('/doctor_report_list', function () {
 
         return view('/doctor_report_list');
     });
 
-    Route::get('/dash_doctor', function () {
-        return view('/dash_doctor');
-    });
+
 
     Route::get('/pdf', 'PdfGenerator@PDF');
 
