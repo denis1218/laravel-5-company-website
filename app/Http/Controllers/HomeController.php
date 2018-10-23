@@ -7,6 +7,7 @@ use App\Doctor;
 use App\Patient;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class HomeController extends Controller
@@ -31,5 +32,11 @@ class HomeController extends Controller
         $apatient = Patient::whereDate('next_appointment', Carbon::today())->get();
         $doctor = Doctor::count();
         return view('dash',compact('patient','doctor','apatient'));
+    }
+    public function index2(){
+        $id = Auth::user()->doctor_id;
+        $doctor = Doctor::find($id)->with('patient')->get();
+//        return count($doctor);
+        return view('dash_doctor',compact('doctor'));
     }
 }

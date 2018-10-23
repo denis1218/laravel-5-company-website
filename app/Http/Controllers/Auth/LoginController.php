@@ -82,7 +82,10 @@ class LoginController extends Controller
             elseif(Auth()->user()->department == 'doctor'){
                 return redirect()->intended('/dash_doctor');
             }
-            return redirect()->intended('/dash');
+            elseif(Auth()->user()->department == 'admin'){
+                return redirect()->intended('/dash');
+            }
+            return redirect()->intended('/login');
         }
 //            return redirect('/login');
     }
