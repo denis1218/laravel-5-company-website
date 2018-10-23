@@ -80,11 +80,11 @@
                         <ul class="nav nav-second-level collapse">
                             <li><a href="account"><i class="fa fa-user-plus"></i>&nbsp;Accounts</a></li>
                             <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
-<<<<<<< HEAD
+
                             <li><a href="medicine"><i class="fa fa-plus"></i> Add Medicine</a></li>
-=======
+
                             <li><a href="/expense-category"><i class="fa fa-pencil-square-o"></i> &nbsp;Expense category</a></li>
->>>>>>> 7d3cae02d7afaad1eb67395c04de6653a432959d
+
                         </ul>
                     </li>
                 </ul>
