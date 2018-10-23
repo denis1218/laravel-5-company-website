@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\DentalDefectList;
 use App\Income;
+use App\Medicine;
 use App\Patient;
+use App\Prescription;
 use App\Treatment;
 use App\TreatmentList;
 use App\XRay;
@@ -46,7 +48,8 @@ class TreatmentController extends Controller
                 $ch->visits = $ch->visits + 1;
             }
         }
-
+                $prescription = Prescription::where('patient_id','=',$id)->get();
+                $medicine =  Medicine::all();
                 $treatments = Treatment::find($id);
 
                 $treatementList = TreatmentList::all();
@@ -55,7 +58,8 @@ class TreatmentController extends Controller
 
                 $patient_id = $patient_in_treatment->id;
 
-                return view('treatment_operation', compact('patient_in_treatment', 'patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments'));
+
+                return view('treatment_operation', compact('patient_in_treatment', 'patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments','medicine','prescription'));
 
     }
 
@@ -73,7 +77,7 @@ class TreatmentController extends Controller
         $treatment = new Treatment();
 
         $treatment->teeth_number = $request->teeth_number;
-//        $treatment->next_appointment = $request->next_appointment;
+
         $treatment->description = $request->description;
         $treatment->estimated_fee = $request->estimated_fee;
         $treatment->discount = $request->discount;
@@ -81,6 +85,7 @@ class TreatmentController extends Controller
         $treatment->paid_amount = 0;
         $treatment->tooth_position=$request->tooth_position;
         $treatment->visits = $request->input('visits');
+
 //        $treatment->next_appointment = $request->input('next_appointment');
 //        $treatment->meridiem = $request->input('meridiem');// it is morning and afternoon of next appointment
         $treatment->patient_id = $request->input('FK_id_patient');

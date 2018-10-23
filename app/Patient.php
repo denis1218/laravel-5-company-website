@@ -24,6 +24,9 @@ class Patient extends Model
     {
         return $this->hasMany(Income::class , 'patient_id','id');
     }
+    public function prescription(){
+        return $this->hasMany(Prescription::class,'patient_id','id');
+    }
 
 
 }

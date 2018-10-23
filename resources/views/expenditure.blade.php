@@ -86,14 +86,14 @@
                                     <td>{{$ex->receiver}}</td>
                                     <td>{{$ex->amount}}</td>
                                     <td>{{$ex->category}}</td>
-                                    <td>{{$ex->description}}</td>
+                                    <td>{{str_limit($ex->description,20)}}</td>
                                     <td>{{$ex->created_at}}</td>
                                     <td> <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal"
                                                  data-target="#{{$ex->id}}">&nbsp;Edit
                                         </button></td>
                                     <td>
                                         <form action="/expenditure2/{{$ex->id}}" id="myForm">
-                                        <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
+                                            <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
                                         </form>
                                     </td>
                                 </tr>

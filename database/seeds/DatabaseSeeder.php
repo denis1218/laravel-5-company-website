@@ -1,6 +1,7 @@
 <?php
 
 use App\Doctor;
+use App\Expense;
 use App\Patient;
 use App\Treatment;
 use Illuminate\Database\Seeder;
@@ -68,6 +69,7 @@ class DatabaseSeeder extends Seeder
         if(Patient::count() == 0)$this->call(PatientTableSeeder::class );
         if(Treatment::count() == 0)$this->call(TreatmentTableSeeder::class );
         if(Permission::count() == 0)$this->call(PermissionTableSeeder::class );
+        if(Expense::count() == 0)$this->call(ExpenseTableSeeder::class );
         if(Role::count() == 0)$this->call(RoleTableSeeder::class );
         $this->call(UserRoleTableSeeder::class);
 
@@ -113,6 +115,14 @@ class DoctorTableSeeder extends Seeder
     public function run()
     {
         factory(Doctor::class, 3)->create();
+    }
+}
+
+class ExpenseTableSeeder extends Seeder
+{
+    public function run()
+    {
+        factory(Expense::class, 20)->create();
     }
 }
 

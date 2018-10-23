@@ -17,7 +17,30 @@ Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
+//Route::middleware('auth')->group(function () {
+
+
+//Route::get('/dash', 'HomeController@index')->name('home');
+
+//route for dash
+
 Route::middleware('auth')->group(function () {
+
+
+    Route::get('/dash', 'HomeController@index');
+
+
+    Route::get('/patient', function () {
+        return view('patient');
+    });
+// Employee Registration
+    Route::get('/employee', function () {
+        return view('/employee');
+    });
+
+    Route::get('/appo', function () {
+        return view('appointment');
+    });
 
 
     Route::get('/dash', 'HomeController@index')->name('home');
@@ -38,6 +61,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('/patient', 'PatientController');
     Route::get('/new-patient-today','PatientController@show_new_patients');
     Route::get('/next-appointment-patient','PatientController@show_next_appointment_patient');
+    Route::get('/miss-next-appointment-patient','PatientController@show_missing_next_appointment_patient');
+    Route::resource('/expense-category','ExpenseCatagoryController');
 
 
 //// next appointment page
@@ -121,7 +146,7 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('/dash_reception', function () {
-        return view('/dash_reception');
+        return view('reception.dash_reception');
     });
 
     Route::get('/doctor_report_list', function () {
@@ -162,7 +187,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('/doctors', 'DoctorController');
 
 
-    Route::resource('operation', 'OperationController');
 
 
 //Xray Controller
@@ -279,8 +303,15 @@ Route::middleware('auth')->group(function () {
 //    Route::get('/patient/date/{$id}','PatientController@indexShowNextDay');
         Route::get('/patient/{id}','PatientController@index');
 //    Route::get('/patient/preday/{id}','PatientController@indexShowPreDay');
+    //route for medicine
+    Route::resource('medicine','MedicineController');
+    //route for delet medicine
+    Route::get('medicine2/{id}','MedicineController@delete');
 
-//});
+    //route for prescription
+    Route::resource('prescription','PrescriptionController');
+
+});
 
 
 
