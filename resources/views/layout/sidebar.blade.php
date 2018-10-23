@@ -149,6 +149,23 @@
                         </ul>
                     </li>
                     @endif
+<<<<<<< HEAD
+=======
+                    <li>
+                        <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span><span
+                                    class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="account"><i class="fa fa-user-plus"></i>&nbsp;Accounts</a></li>
+                            <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
+
+
+                            <li><a href="medicine"><i class="fa fa-plus"></i> Add Medicine</a></li>
+
+                            <li><a href="/expense-category"><i class="fa fa-pencil-square-o"></i> &nbsp;Expense category</a></li>
+                            <li><a href="/dental-defect-list"><i class="fa fa-list-ul"></i> &nbsp;Dental defect list</a></li>
+                            <li><a href="/treatment-list"><i class="fa fa-list-ul"></i> &nbsp;Treatment list</a></li>
+
+>>>>>>> 17b3d9746c08b7cdc6944c90c4216797a9c81a12
 
                 </ul>
 

@@ -26,8 +26,18 @@ class DatabaseSeeder extends Seeder
             'lastname' => 'mohammadi',
             'password' => Hash::make('123456'),
             'email' => 'jawad@gmail.com',
+<<<<<<< HEAD
             'department' => 'doctor',
 
+=======
+            'department' => 'admin',
+            'phone' => '0790424144',
+            'gender' => 'male',
+            'role' => 'Owner',
+            'age' => '25',
+            'address' => 'Kabul, Afghanistan',
+            'doctor_id' => 3,
+>>>>>>> 17b3d9746c08b7cdc6944c90c4216797a9c81a12
         ]);
 
         DB::Table('users')->insert([
@@ -35,7 +45,17 @@ class DatabaseSeeder extends Seeder
             'lastname' => 'safari',
             'password' => Hash::make('123456'),
             'email' => 'mahdi@gmail.com',
+<<<<<<< HEAD
             'department' => 'doctor',
+=======
+            'department' => 'admin',
+            'phone' => '0790424144',
+            'gender' => 'male',
+            'role' => 'Owner',
+            'age' => '24',
+            'address' => 'Kabul, Afghanistan',
+            'doctor_id' => 2,
+>>>>>>> 17b3d9746c08b7cdc6944c90c4216797a9c81a12
         ]);
 
         DB::Table('users')->insert([
@@ -44,6 +64,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123456'),
             'email' => 'haidar@gmail.com',
             'department' => 'admin',
+<<<<<<< HEAD
 
         ]);
         DB::Table('users')->insert([
@@ -53,6 +74,14 @@ class DatabaseSeeder extends Seeder
             'email' => 'ahmad@gmail.com',
             'department' => 'reception',
 
+=======
+            'phone' => '0790424144',
+            'gender' => 'male',
+            'role' => 'Owner',
+            'age' => '22',
+            'address' => 'Kabul, Afghanistan',
+            'doctor_id' => 1,
+>>>>>>> 17b3d9746c08b7cdc6944c90c4216797a9c81a12
         ]);
 
         if(Patient::count() == 0)$this->call(PatientTableSeeder::class );
