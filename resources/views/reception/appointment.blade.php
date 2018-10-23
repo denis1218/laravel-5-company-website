@@ -50,6 +50,11 @@
                                         <li class="fa fa-table pull-left"></li>&nbsp;List next appointment today
                                     </button>
                                 </a>
+                                <a href="/miss-next-appointment-patient">
+                                    <button class="btn btn-success" style="width:87%;">
+                                        <li class="fa fa-table pull-left"></li>&nbsp;Miss list next appointment
+                                    </button>
+                                </a>
 
                             </div>
 
