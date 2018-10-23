@@ -9,7 +9,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Dental Defect list form</h5>
+                <h5>Treatment List</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -33,10 +33,14 @@
                 {{-- row for table --}}
                 <div class="row">
                     <div class="col-md-6">
-                        <form action="/dental-defect-list" method="post">
+                        <form action="/treatment-list" method="post">
                             <div class="form-group">
-                                <lable for="form-control">Dental Defect</lable>
-                                <input type="text" class="form-control" name="dental_defect"/>
+                                <lable for="form-control">Treatment</lable>
+                                <input type="text" class="form-control" name="treatment" required/>
+                            </div>
+                            <div class="form-group">
+                                <lable for="form-control">Estimated Fee</lable>
+                                <input type="text" class="form-control" name="estimated_fee" required/>
                             </div>
                             <div class="col-md-4">
                                 <button type="submit" class="btn btn-primary" name="submit"><i class="fa fa-save"></i>&nbsp;Save</button>
@@ -49,19 +53,21 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Dental Defect</th>
+                                    <th>Treatment</th>
+                                    <th>Estimated fee</th>
                                     <th>Delete</th>
                                 <tr>
                             </thead>
                             <tbody>
-                                @foreach($dental as $dentals)
+                                @foreach($treatment as $treatments)
                                     <tr>
-                                        <td>{{ $dentals->id }}</td>
-                                        <td>{{ $dentals->dental_defect }}</td>
+                                        <td>{{ $treatments->id }}</td>
+                                        <td>{{ $treatments->treatment }}</td>
+                                        <td>{{ $treatments->estimated_fee }}</td>
                                         <td>
-                                            <form action="/expense-category/{{ $dentals->id }}" method="post" id="formDelete">
+                                            <form action="/expense-category/{{ $treatments->id }}" method="post" id="formDelete">
                                                 @method('delete')
-                                                <a  class="btn btn-xs btn-danger demoDelete"  name="delete" href="/expense-category/{{ $dentals->id }}">
+                                                <a  class="btn btn-xs btn-danger demoDelete"  name="delete" href="/expense-category/{{ $treatments->id }}">
                                                     Delete &nbsp;<i class="fa fa-trash"></i>
                                                 </a>
                                             </form>
@@ -72,7 +78,8 @@
                             <tfoot>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Dental Defect</th>
+                                    <th>Treatment</th>
+                                    <th>Estimated fee</th>
                                     <th>Delete</th>
                                 </tr>
                             </tfoot>

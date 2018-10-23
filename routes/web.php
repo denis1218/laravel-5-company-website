@@ -69,6 +69,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/miss-next-appointment-patient','PatientController@show_missing_next_appointment_patient');
     Route::resource('/expense-category','ExpenseCatagoryController');
     Route::resource('/dental-defect-list','DentalDefectListController');
+    Route::resource('/treatment-list','TreatmentListController');
 
 
 //// next appointment page
