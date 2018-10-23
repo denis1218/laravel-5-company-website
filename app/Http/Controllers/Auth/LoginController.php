@@ -55,6 +55,12 @@ class LoginController extends Controller
     {
 
         if (auth()->check()) {
+            if (Auth()->user()->department == 'reception'){
+                return view('reception.dash_reception');
+            }
+           elseif(Auth()->user()->department == 'doctor'){
+
+           }
             return view('dash');
         }else{
         return view('login');
