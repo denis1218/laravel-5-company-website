@@ -18,10 +18,10 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
 //Route::middleware('auth')->group(function () {
-<<<<<<< HEAD
+
+
 
 Route::get('/dash', 'HomeController@index')->name('home');
-=======
 
 
 //Route::get('/dash', 'HomeController@index')->name('home');
@@ -48,7 +48,6 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('/dash', 'HomeController@index')->name('home');
->>>>>>> 9502f2e32e468bc9d137ca1a6970b1e832e39dc9
 
 // doctor treatment operation page have three option
 //    Route::get('/doctor_operations', function () {
