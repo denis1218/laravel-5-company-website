@@ -11,6 +11,7 @@
     <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
 
     <link href="css/hover/hover-min.css" rel="stylesheet">
+
 @endsection
 
 
@@ -35,10 +36,20 @@
         </div>
         <div class="col-md-2 ">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px;margin-left:15px;"
-                   href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>From
-                    Others</a></h2>
+                   href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>Other Income</a></h2>
+        </div>
+        <div class="col-lg-4" style="float:right;">
+            <div class="ibox float-e-margins" style=" margin-top: 20px;">
+                <div class="ibox-title" style=" background-color: #1ab394;color:white">
+                    <h5>Total Income</h5>
+                </div>
+                <div class="ibox-content" style=" background-color: #1ab394;color:white">
+                    <h1 class="no-margins">Amount:&nbsp;{{$Gtotal}}</h1>
+                </div>
+            </div>
         </div>
     </div>
+
     <!-- End of navButtons -->
 
 
@@ -109,11 +120,13 @@
                             <div class="form-group">
                                 <label class="col-sm-1 control-label"></label>
                                 <div class="col-sm-10">
+                                    <input type="hidden" name="toast" value="toast">
                                     <button type="submit" class="btn btn-primary btn-md" style="margin-left:110px;">Save
                                         &nbsp;<i class="fa fa-save"></i></button>
                                     <input type="reset" class="btn btn-white btn-md" value="Reset">
                                 </div>
                             </div>
+
 
                         </form>
 
@@ -127,3 +140,4 @@
 
 
 @endsection
+

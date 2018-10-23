@@ -16,15 +16,21 @@ class PatientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if($request->date == null){
 
-        $patient_all = Patient::whereDate('updated_at',Carbon::today())->get();
-
-        $doctor = Doctor::find(1);
+            $patient_all = Patient::whereDate('next_appointment',Carbon::today())->orderBy('updated_at', 'ASC')->get();
+        }else{
+            $patient_all = Patient::whereDate('next_appointment',$request->date)->orderBy('updated_at', 'ASC')->get();
+        }
         $doctor_list = Doctor::all();
         return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
     }
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -61,7 +67,9 @@ class PatientController extends Controller
             $phonenumber = $request->phone;
 
         $patient->doctor_id = $request->input('FK_id_Doctor');
-        $patient->status = 'new patient';
+        $patient->next_appointment = Carbon::now();
+        $patient->status = 'first';
+        $patient->created_at = Carbon::today();
         $patient->problem_health = $string;
         $patient->id_patient = 'P-'.$phonenumber;
         $patient->save();
@@ -71,19 +79,21 @@ class PatientController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Patient  $patient
+     * @param $date
      * @return \Illuminate\Http\Response
+     * @internal param Patient $patient
      */
-    public function show(Patient $patient)
+    public function show($id)
     {
-        //
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Patient  $patient
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param Patient $patient
      */
     public function edit($id)
     {
@@ -101,7 +111,7 @@ class PatientController extends Controller
     public function update(Request $request,$id)
     {
         $patient = Patient::find($id);
-        $patient->updated_at = Carbon::now();
+        $patient->next_appointment = Carbon::now();
         $patient->update();
         return redirect()->back();
     }
@@ -120,4 +130,35 @@ class PatientController extends Controller
         $patient->delete();
         return redirect()->back();
     }
+
+
+    // show all new patient registred today
+    // show which patient have (status = first)
+    public function show_new_patients()
+    {
+//        echo "call method show new patients";
+        $allNewPatientToday = Patient::where('status','=','first')
+            ->whereDate('created_at','=',Carbon::today())->get();
+        $countNewPatient = $allNewPatientToday->count();
+        return view ('reception.list_new_patient_today',compact('allNewPatientToday','countNewPatient'));
+    }
+
+    // show all patient have next appointment
+    // show all patient which (status != first)
+    public function show_next_appointment_patient()
+    {
+        $allPatientNextAppointment = Patient::whereDate('next_appointment','=',Carbon::today())->get();
+        return view ('reception.list_next_appointment_patient_today',compact('allPatientNextAppointment'));
+    }
+
+    // show all patient have next appointment have missing
+    // this is comparable with who patient had next appointment last day
+    // and the missing appointment and now we must call phone
+    // show all patient which (status != first and where Carbon->yestarday)
+    public function show_missing_next_appointment_patient()
+    {
+        $allPatientMissNextAppointment = Patient::whereDate('next_appointment','<',Carbon::today())->get();
+        return view ('reception.miss_list_next_appointment_patient',compact('allPatientMissNextAppointment'));
+    }
+
 }

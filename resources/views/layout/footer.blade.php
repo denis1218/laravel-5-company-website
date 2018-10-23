@@ -26,6 +26,9 @@
 <!-- jQuery UI -->
 <script src="{{ asset('dashboard/js/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 
+{{--Toastr--}}
+<script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
+
 <!-- Jvectormap -->
 <script src="{{ asset('dashboard/js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
 <script src="{{ asset('dashboard/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>

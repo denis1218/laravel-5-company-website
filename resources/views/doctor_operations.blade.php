@@ -87,6 +87,7 @@
                 <br/>
                 <div class="row">
                     <div class="col-lg-12">
+                        <h5>Show all patients just for today</h5>
                         <div class="ibox float-e-margins">
                             <table class="table table-hover no-margins" id="table_patient">
                                 <thead>
@@ -104,12 +105,12 @@
                                 @if(count($operation)>0)
                                     @foreach($operation as $opr)
                                         <tr>
-                                            <td>{{$opr->id_patient}}</td>
-                                            <td>{{$opr->name}}</td>
-                                            <td>{{$opr->lastname}}</td>
-                                            <td>{{$opr->status}}</td>
-                                            <td>{{$opr->created_at}}</td>
-                                            <td>{{$opr->problem_health}}</td>
+                                            <td>{{ $opr->id_patient }}</td>
+                                            <td>{{ $opr->name }}</td>
+                                            <td>{{ $opr->lastname }}</td>
+                                            <td>{{ $opr->status }}</td>
+                                            <td>{{ $opr->next_appointment }}</td>
+                                            <td>{{ $opr->problem_health }}</td>
                                             <td><a href="/operation/create/{{$opr->id}}" class="btn btn-sm btn-primary">Start
                                                     Treatment</a>
                                             </td>

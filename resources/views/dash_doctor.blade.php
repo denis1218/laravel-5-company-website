@@ -14,9 +14,10 @@
                 <h5>User</h5>
             </div>
             <div class="ibox-content">
-                <h2 class="no-margins">Welcome Dr.Wahid</h2>
+                <h3 class="no-margins">Welcome {{Auth()->user()->firstname}}</h3>
                 <div class="stat-percent font-bold text-danger"></div>
-                <small>Finance</small>
+                <br>
+                <small>{{Auth()->user()->department}}</small>
             </div>
         </div>
     </div>
@@ -27,8 +28,10 @@
                 <h5>Patient</h5>
             </div>
             <div class="ibox-content">
-                <h1 class="no-margins">35<img  src="img/patienticon2.png" width="45px;"style="float: right;"/></h1>
-                <small>Total patient for today</small>
+                <h1 class="no-margins">{{count($doctor)}}<img  src="img/patienticon2.png" width="45px;"style="float: right;"/></h1>
+{{--                @foreach($doctor as $d)--}}
+                <small>Total patient for today </small>
+                    {{--@endforeach--}}
             </div>
         </div>
     </div>
@@ -39,7 +42,7 @@
                 <h5>Doctors</h5>
             </div>
             <div class="ibox-content">
-                <h1 class="no-margins">7<img  src="img/doctors.png" width="60px;"style="float: right;"/></h1>
+                <h1 class="no-margins">{{$doct}}<img  src="img/doctors.png" width="60px;"style="float: right;"/></h1>
                 <div class="stat-percent font-bold text-navy"></div>
                 <small>Total Doctors Available</small>
             </div>
@@ -52,7 +55,7 @@
                 <h5>Appointment patients</h5>
             </div>
             <div class="ibox-content">
-                <h1 class="no-margins">25<img  src="img/appintmentincon.png" width="60px;"style="float: right;"/></h1>
+                <h1 class="no-margins">{{count($patient)}}<img  src="img/appintmentincon.png" width="60px;"style="float: right;"/></h1>
                 <div class="stat-percent font-bold text-danger"></div>
                 <small>Total Appointment</small>
             </div>
@@ -98,76 +101,18 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($doctor as $d)
                         <tr>
-                            <td>P-0785544229</td>
-                            <td>Ahmad</td>
-                            <td>Dr.Samim</td>
-                            <td>Second Time</td>
-                            <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
-                            <td class="">Blood pressure</td>
+                            <td>{{$d->id_patient}}</td>
+                            <td>{{$d->name}}</td>
+                            <td>{{$d->doctor->first_name}}</td>
+                            <td>{{$d->status}}</td>
+                            <td><i class="fa fa-calendar"></i>&nbsp;{{$d->created_at}}</td>
+                            <td class="">{{$d->problem_health}}</td>
                             <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
                             </td>
                         </tr>
-                        <tr>
-                            <td>P-0780669022</td>
-                            <td>Naweed</td>
-                            <td>Dr.Samim</td>
-                            <td>Second Time</td>
-                            <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 9:00 AM</td>
-                            <td class="">Diabetics</td>
-                            <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>P-0790446690</td>
-                            <td>Qasim</td>
-                            <td>Dr.Samim</td>
-                            <td>Second Time</td>
-                            <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 10:00 AM</td>
-                            <td class="">Hepatitics</td>
-                            <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>P-0787206644</td>
-                            <td>Mahmood</td>
-                            <td>Dr.Samim</td>
-                            <td>First Time</td>
-                            <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 11:20 AM</td>
-                            <td class="">Asthma</td>
-                            <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>P-0702036768</td>
-                            <td>Ali</td>
-                            <td>Dr.Samim</td>
-                            <td>First Time</td>
-                            <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 1:00 PM</td>
-                            <td class="">Blood pressure</td>
-                            <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>P-0785454643</td>
-                            <td>Mahdi</td>
-                            <td>Dr.Samim</td>
-                            <td>First Time</td>
-                            <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 2:20 PM</td>
-                            <td class="">Diabetics</td>
-                            <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>P-0777506070</td>
-                            <td>Ahmad</td>
-                            <td>Dr.Samim</td>
-                            <td>First Time</td>
-                            <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 3:00 PM</td>
-                            <td class="">Blood pressure</td>
-                            <td><a href="treatment_operation" class="btn btn-sm btn-primary">Start Treatment</a>
-                            </td>
-                        </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
