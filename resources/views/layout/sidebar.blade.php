@@ -87,7 +87,7 @@
                             </ul>
                         </li>
                     {{--end condition of super admin--}}
-
+                    {{--condition for dash doctor --}}
                     @elseif(Auth::user()->department == 'doctor')
                         <li class="active">
                             <a href="/dash_doctor"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
@@ -112,6 +112,9 @@
 
                             </ul>
                         </li>
+                        {{--end condition of doctor--}}
+
+                        {{--condition for reception--}}
                     @elseif(Auth::user()->department == 'reception')
                         <li class="active">
                             <a href="/dash_reception"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
@@ -119,7 +122,8 @@
                     <li>
                         <a ><i class="fa fa-book"></i> <span class="nav-label">Reception</span><span
                                     class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
+                        <ul class="nav nav-second-l
+                        evel collapse">
                             <li><a href="/doctors/create"><i class="fa fa-save"></i>Doctor Registration</a></li>
                             <li><a href="/patient/create"><i class="fa fa-user-md"></i>Patient Registration</a></li>
                             <li><a href="/patient"><i class="fa fa-flash"></i>List of Patient</a></li>
@@ -149,8 +153,7 @@
                         </ul>
                     </li>
                     @endif
-<<<<<<< HEAD
-=======
+                        {{--end condition--}}
                     <li>
                         <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span><span
                                     class="fa arrow"></span></a>

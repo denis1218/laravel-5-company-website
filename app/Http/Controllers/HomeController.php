@@ -47,4 +47,5 @@ class HomeController extends Controller
         $patient = Patient::whereDate('next_appointment',Carbon::today())->get();
         return view('reception.dash_reception',compact('patient'));
     }
+
 }
