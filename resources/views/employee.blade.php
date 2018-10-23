@@ -133,6 +133,7 @@
         }
         function fixSal() {
             document.getElementById('label').innerHTML='Salary amount';
+            document.getElementById('sal').setAttribute('max',10000000);
             document.getElementById('sal').setAttribute('placeholder','Enter the amount  of salary');
         }
     </script>
