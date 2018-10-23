@@ -82,14 +82,15 @@ class DoctorController extends Controller
         $doctor=Doctor::find($id);
         $patient=Doctor::find($id)->patient;
         $treatment=Doctor::find($id)->treatment;
-        $selectedTreatment=Treatment::whereBetween('created_at',[$doctor->to,now()])->get();
-
+//        $selectedTreatment=Treatment::whereBetween('created_at',[$doctor->to,now()])->get();
 
         if($doctor->to==null){
             $total=$treatment->sum('paid_amount');
         }else{
-            $total=$selectedTreatment->sum('paid_amount');
+            $total=$treatment->sum('paid_amount');
         }
+//
+
 
         if($doctor->salary_type=='fix'){
             $docfee=$doctor->salary_amount;

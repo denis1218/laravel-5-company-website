@@ -153,7 +153,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                           <button type="button" class="btn btn-primary btn-md" id="change">Change xray-ray Status</button>
+                                           <button type="button" class="btn btn-primary btn-md" onclick="changeStatus()" id="change">Change xray-ray Status</button>
                                     </td>
                                     <td>
                                         <input type="text" id="status" style="font-size:15px;" name="xray_status" class="form-control" value="{{$spat->xray_status}}" readonly>
@@ -198,17 +198,11 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/tooths.js') }}" type="javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#change').click(function(){
-                $('#status').attr('value','yes');
-            });
-        });
+    <script type="text/javascript">
+        function changeStatus() {
+          document.getElementById('status').setAttribute('value','yes')
+        }
     </script>
-
-
 @endsection
 
 

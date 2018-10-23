@@ -248,11 +248,7 @@
                                                    id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>YES</b></strong>&nbsp;&nbsp;&nbsp;
                                             <input type="radio" onchange="deactivation()" id="id" name="xray_status"
                                                    checked="checked" style="height: 20px;width:20px;"> &nbsp;<strong><b>NO</b></strong>
-<<<<<<< HEAD
-
                                         </div>
-=======
->>>>>>> 0455fa35514aaa71b46163472641609ca225a654
                                     </div>
                                 </div>
                                 <br>
@@ -261,45 +257,15 @@
                                                 position:</label></b></strong>
                                     <br>
                                     <div class="form-group">
-<<<<<<< HEAD
-                                        <div class="col-sm-4">
-                                            <div class="i-checks"><label> <input type="radio" id="mul"
-                                                                                 value="upper_left"
-                                                                                 name="tooth_position"
-                                                                                 onchange="upperLeft()" required> &nbsp;&nbsp;
-                                                    Upper Left </label></div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="i-checks"><label> <input type="radio" id="mur"
-                                                                                 value="upper_right"
-                                                                                 name="tooth_position"
-                                                                                 onchange="upperRight()" required>
-                                                    &nbsp;&nbsp; Upper Rigth </label></div>
-                                        </div>
-=======
                                         <div class="col-sm-2"><label> <input type="radio" id="mul" value="upper_left" name="tooth_position" onchange="upperLeft()" style="width:25px;height:20px" required> &nbsp;&nbsp; Upper Left </label></div>
                                         <div class="col-sm-2"><label> <input type="radio" id="mur" value="upper_right" name="tooth_position" onchange="upperRight()" style="width:25px;height:20px" required> &nbsp;&nbsp; Upper Rigth </label></div>
->>>>>>> 0455fa35514aaa71b46163472641609ca225a654
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="form-group">
-<<<<<<< HEAD
-                                        <div class="col-sm-4">
-                                            <div class="i-checks"><label><input type="radio" value="lower_left"
-                                                                                name="tooth_position" required>&nbsp;&nbsp;
-                                                    Lower Left</label></div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="i-checks"><label><input type="radio" value="lower_right"
-                                                                                name="tooth_position" required>&nbsp;&nbsp;
-                                                    Lower Right </label></div>
-                                        </div>
-=======
                                         <div class="col-sm-2"><label><input type="radio" id="mll" value="lower_left" onchange="lowerLeft()" name="tooth_position" style="width:25px;height:20px" required>&nbsp;&nbsp; Lower Left</label></div>
                                         <div class="col-sm-2"><label><input type="radio" id="mlr" value="lower_right" onchange="lowerRight()" name="tooth_position" style="width:25px;height:20px" required>&nbsp;&nbsp; Lower Right </label></div>
->>>>>>> 0455fa35514aaa71b46163472641609ca225a654
                                     </div>
                                 </div>
                                 <br>
@@ -308,10 +274,8 @@
                                     <div class="col-md-6 text-left">
                                         <div class="input-group" style="margin-top:px;">
                                             <label for="number">Enter tooth number:</label>
-                                            <input type="number" class="form-control" id="teeth" max="8" min="1"
-                                                   name="tooth_number" onblur="copyvalue()"
-                                                   placeholder="Enter Tooth Number" style="width: 100%;height:36px;"
-                                                   required>
+                                            <input type="number" class="form-control" id="teeth" max="8" min="1" name="tooth_number" onblur="copyvalue()"
+                                                   placeholder="Enter Tooth Number" style="width: 100%;height:36px;" required>
                                             <span class="input-group-btn">
                                             <button type="submit" class="btn btn-primary" id="but"
                                                     style="margin-top: 23px;height:36px;" disabled>
@@ -322,13 +286,9 @@
                                 </div>
 
 
-                                <input type="text" name="doctor_name"
-                                       value="{{ $patient_in_treatment->doctor->first_name }}"
-                                       style="visibility: hidden;">
-                                <input type="text" name="patient_name" value="{{ $patient_in_treatment->name }}"
-                                       style="visibility: hidden;">
-                                <input type="text" name="patient_id" value="{{ $patient_in_treatment->id_patient }}"
-                                       style="visibility: hidden;">
+                                <input type="text" name="doctor_name" value="{{ $patient_in_treatment->doctor->first_name }}" style="visibility: hidden;">
+                                <input type="text" name="patient_name" value="{{ $patient_in_treatment->name }}" style="visibility: hidden;">
+                                <input type="text" name="patient_id" value="{{ $patient_in_treatment->id_patient }}" style="visibility: hidden;">
 
 
                             </form>
@@ -342,49 +302,9 @@
                                 {{--<input hidden type="hidden" name="visits" value="{{ $treatments->visits  }}"/>--}}
 
                                 <div class="row">
-                                    <div class="col-md-6" style="margin-top: -85px;">
-                                        <div class="form-group">
-                                            <label></label>
-                                            <input type="number" class="form-control" id="copyteeth" required
-<<<<<<< HEAD
-                                                   name="teeth_number" min="1" max="8" style="visibility: hidden">
-                                        </div>
-                                        <input type="checkbox" id="next" name="have_xray" value="yes"
-                                               style="visibility:hidden;">
-                                        <div class="row">
-                                            <div class="form-group">
-                                                <div class="col-sm-4">
-                                                    <div class="i-checks"><label> <input type="radio" id="ul"
-                                                                                         value="upper_left"
-                                                                                         name="tooth_position" required>
-                                                            &nbsp;&nbsp; Upper Left </label></div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="i-checks"><label> <input type="radio" id="ur"
-                                                                                         value="upper_right"
-                                                                                         name="tooth_position" required>
-                                                            &nbsp;&nbsp; Upper Rigth </label></div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="col-md-6" style="margin-top: -55px;">
                                         <br>
-                                        <div class="row">
-                                            <div class="form-group">
-                                                <div class="col-sm-4">
-                                                    <div class="i-checks"><label><input type="radio" value="lower_left"
-                                                                                        name="tooth_position" required>&nbsp;&nbsp;
-                                                            Lower Left</label></div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="i-checks"><label><input type="radio" value="lower_right"
-                                                                                        name="tooth_position" required>&nbsp;&nbsp;
-                                                            Lower Right </label></div>
-                                                </div>
-                                            </div>
-=======
-                                                   name="teeth_number" min="1" max="8"  style="visibility: hidden">
->>>>>>> 0455fa35514aaa71b46163472641609ca225a654
-                                        </div>
+                                        <br>
                                         <br>
                                         <div class="form-group">
                                             <label>Select Dental Defect :</label>
@@ -418,18 +338,6 @@
                                             <label for="nex">Discount :</label>
                                             <input type="number" class="form-control" name="discount">
                                         </div>
-                                        {{--<div class="form-group">--}}
-                                        {{--<label for="nex">Next Appointment :</label>--}}
-                                        {{--<input type="date" class="form-control" name="next_appointment">--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                        {{--<div class="i-checks" for="nex">Set Meridiem :<label>&nbsp;&nbsp;--}}
-                                        {{--<input type="radio" value="morning" checked name="meridiem">--}}
-                                        {{--Morning</label>--}}
-                                        {{--&nbsp;&nbsp;&nbsp; <input type="radio" checked value="afternoon"--}}
-                                        {{--name="meridiem">Afternoon--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
                                         <div class="form-group">
                                             <label for="nex">Description :</label>
                                             <textarea rows="5" type="text" class="form-control" name="description"
@@ -460,12 +368,13 @@
                                         </button>
                                     </div>
                                 </div>
-                                    <div class="row">
-                                        <input type="checkbox" id="next" name="have_xray" value="yes" style="visibility:hidden;">
-                                        <div class="col-sm-4"><input type="radio" value="upper_left"  id="ul"name="tooth_position" style="width:25px;height:20px; visibility: hidden"  required></div>
-                                        <div class="col-sm-4"><input type="radio" value="upper_right" id="ur" name="tooth_position" style="width:25px;height:20px; visibility: hidden" required></div>
-                                        <div class="col-sm-4"><input type="radio" value="lower_left"  id="ll" name="tooth_position" style="width:25px;height:20px; visibility: hidden" required></div>
-                                        <div class="col-sm-4"><input type="radio" value="lower_right" id="lr" name="tooth_position" style="width:25px;height:20px; visibility: hidden" required></div>
+                                    <input type="checkbox" id="next" name="have_xray" value="yes" style="visibility:hidden;">
+                                    <input type="number" class="form-control" name="teeth_number" id="copyteeth" style="visibility:hidden;" required>
+                                    <div class="row" style="visibility:hidden;">
+                                        <div class="col-sm-4"><label> <input type="radio" id="ul" value="upper_left" name="tooth_position" required>&nbsp;&nbsp; Upper Left </label></div>
+                                        <div class="col-sm-4"><label> <input type="radio" id="ur" value="upper_right" name="tooth_position" required>&nbsp;&nbsp; Upper Rigth </label></div>
+                                        <div class="col-sm-4"><label><input type="radio" id="ll" value="lower_left" name="tooth_position" required>&nbsp;&nbsp;Lower Left</label></div>
+                                        <div class="col-sm-4"><label><input type="radio" id="lr" value="lower_right" name="tooth_position" required>&nbsp;&nbsp;Lower Right </label></div>
                                     </div>
                             </form>
 
