@@ -20,6 +20,10 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 //Route::middleware('auth')->group(function () {
 
 
+Route::get('/dash', 'HomeController@index')->name('home');
+
+
+
 //Route::get('/dash', 'HomeController@index')->name('home');
 
 //route for dash
@@ -44,6 +48,7 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('/dash', 'HomeController@index')->name('home');
+
 
 // doctor treatment operation page have three option
 //    Route::get('/doctor_operations', function () {
@@ -298,10 +303,10 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/account', 'UserController');
 
-
+    Route::get('/patient/{id}','PatientController@index');
 
 //    Route::get('/patient/date/{$id}','PatientController@indexShowNextDay');
-        Route::get('/patient/{id}','PatientController@index');
+
 //    Route::get('/patient/preday/{id}','PatientController@indexShowPreDay');
     //route for medicine
     Route::resource('medicine','MedicineController');
