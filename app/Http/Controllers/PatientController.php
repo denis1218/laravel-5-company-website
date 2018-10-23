@@ -19,6 +19,7 @@ class PatientController extends Controller
     public function index(Request $request)
     {
         if($request->date == null){
+
             $patient_all = Patient::whereDate('next_appointment',Carbon::today())->orderBy('updated_at', 'ASC')->get();
         }else{
             $patient_all = Patient::whereDate('next_appointment',$request->date)->orderBy('updated_at', 'ASC')->get();
@@ -68,6 +69,7 @@ class PatientController extends Controller
         $patient->doctor_id = $request->input('FK_id_Doctor');
         $patient->next_appointment = Carbon::now();
         $patient->status = 'first';
+        $patient->created_at = Carbon::today();
         $patient->problem_health = $string;
         $patient->id_patient = 'P-'.$phonenumber;
         $patient->save();
@@ -135,21 +137,17 @@ class PatientController extends Controller
     public function show_new_patients()
     {
 //        echo "call method show new patients";
-        $allNewPatientToday = Patient::where([
-           ['status','=','first'],
-            ['next_appointment','=',Carbon::today()]
-        ])->get();
-//        $countNewPatientToday = $allNewPatientToday->count();
-//        return $countNewPatientToday;
-        return view ('reception.list_new_patient_today',compact('allNewPatientToday'));
+        $allNewPatientToday = Patient::where('status','=','first')
+            ->whereDate('created_at','=',Carbon::today())->get();
+        $countNewPatient = $allNewPatientToday->count();
+        return view ('reception.list_new_patient_today',compact('allNewPatientToday','countNewPatient'));
     }
 
     // show all patient have next appointment
     // show all patient which (status != first)
     public function show_next_appointment_patient()
     {
-        $allPatientNextAppointment = Patient::where('next_appointment','=',Carbon::today())->get();
-//        return $allPatientNextAppointment;
+        $allPatientNextAppointment = Patient::whereDate('next_appointment','=',Carbon::today())->get();
         return view ('reception.list_next_appointment_patient_today',compact('allPatientNextAppointment'));
     }
 
@@ -159,7 +157,8 @@ class PatientController extends Controller
     // show all patient which (status != first and where Carbon->yestarday)
     public function show_missing_next_appointment_patient()
     {
-
+        $allPatientMissNextAppointment = Patient::whereDate('next_appointment','<',Carbon::today())->get();
+        return view ('reception.miss_list_next_appointment_patient',compact('allPatientMissNextAppointment'));
     }
 
 }
