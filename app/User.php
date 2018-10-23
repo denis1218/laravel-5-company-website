@@ -16,4 +16,11 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
     protected $guarded = ['confirm_password'];
+
+    public function doctor()
+    {
+        return $this->hasOne('doctors','id_doctor','id');
+    }
+
+
 }

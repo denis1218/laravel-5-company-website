@@ -47,6 +47,6 @@
                 </li>
                 {{-- current exchange --}}
             </ul>
-
         </nav>
+
     </div>

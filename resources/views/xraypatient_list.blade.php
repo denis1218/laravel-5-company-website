@@ -117,10 +117,12 @@
                                                             <tr>
                                                                 <th>X-Ray ID</th>
                                                                 <th>Tooth Number</th>
+                                                                <th>Tooth position</th>
                                                                 <th>Patient ID</th>
                                                                 <th>Patient Name</th>
                                                                 <th>Doctor Name</th>
-                                                                {{--<th>Status of X-Ray</th>--}}
+                                                                <th>Status of payment</th>
+                                                                <th>Status of X-Ray</th>
                                                                 <th>Details</th>
                                                             </tr>
                                                             </thead>
@@ -131,10 +133,12 @@
                                                                         <tr>
                                                                             <td>{{$pat->id}}</td>
                                                                             <td>{{$pat->tooth_number}}</td>
+                                                                            <td>{{$pat->tooth_position}}</td>
                                                                             <td>{{$pat->patient_id}}</td>
                                                                             <td>{{$pat->patient_name}}</td>
                                                                             <td>{{$pat->doctor_name}}</td>
-{{--                                                                            <td>{{$pat->xray_status}}</td>--}}
+                                                                            <td>{{$pat->paid_amount}}</td>
+                                                                            <td>{{$pat->xray_status}}</td>
                                                                             <td><a class="btn btn-xs btn-info" href="/xray/{{$pat->id}}/edit">Details &nbsp;<i class="fa fa-file-o"></i></a></td></td>
                                                                         </tr>
                                                                     @endif
@@ -167,10 +171,12 @@
                                                             <tr>
                                                                 <th>X-Ray ID</th>
                                                                 <th>Tooth Number</th>
+                                                                <th>Tooth Positino</th>
                                                                 <th>Patient ID</th>
                                                                 <th>Patient Name</th>
                                                                 <th>Doctor Name</th>
-                                                                {{--<th>Status of X-Ray</th>--}}
+                                                                <th>Status of Payment</th>
+                                                                <th>Status of X-Ray</th>
                                                             </tr>
                                                             </thead>
                                                             @if(count($patient)>0)
@@ -180,10 +186,12 @@
                                                                         <tr>
                                                                             <td>{{$pat->id}}</td>
                                                                             <td>{{$pat->tooth_number}}</td>
+                                                                            <td>{{$pat->tooth_position}}</td>
                                                                             <td>{{$pat->patient_id}}</td>
                                                                             <td>{{$pat->patient_name}}</td>
                                                                             <td>{{$pat->doctor_name}}</td>
-{{--                                                                            <td>{{$pat->xray_status}}</td>--}}
+                                                                            <td>{{$pat->paid_amount}}</td>
+                                                                            <td>{{$pat->xray_status}}</td>
                                                                         </tr>
                                                                     @endif
                                                                     </tbody>

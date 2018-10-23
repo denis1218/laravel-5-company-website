@@ -96,14 +96,17 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Salary Type</label>
                             <div class="col-sm-1"> <div class="input-group" style="display: inline">
-                                <div class="i-checks"><label>
-                                     <input type="radio" name="salary_type" value="percentage" name="a2" id="per" required> <i></i> Per% </label></div></div></div>
-                            <div class="col-sm-1"><div class="i-checks">
-                                <label> <input type="radio" name="salary_type" value="fix" name="a2"> <i></i>  Fix </label></div></div>
+
+                                {{--<div class="i-checks">--}}
+                                    <label><input type="radio" name="salary_type" value="percentage" id="per" onclick="perSal()" style="height: 25px;width:25px;" required> <i></i> Per% </label></div></div>
+                            <div class="col-sm-1">
+                                {{--<div class="i-checks">--}}
+                                <label> <input type="radio" name="salary_type" onclick="fixSal()" id="fix" value="fix" style="height: 25px;width:25px;"> <i></i>  Fix </label></div>
+
                         </div>
 
-                        <div class="form-group"><label class="col-sm-2 control-label">Salary amount</label>
-                            <div class="col-md-4"><input type="text" class="form-control" name="salary_amount" id="sal" placeholder="Enter amount or percentage of salary" required></div>
+                        <div class="form-group"><label class="col-sm-2 control-label" id="label" >Salary amount</label>
+                            <div class="col-md-4"><input type="number" class="form-control" name="salary_amount" id="sal" required></div>
                         </div>
 
                         <div class="form-group">
@@ -118,6 +121,21 @@
         </div>
     </div>
 
+
+@endsection
+
+@section('script')
+    <script>
+        function perSal() {
+            document.getElementById('label').innerHTML='Salary Percentage';
+            document.getElementById('sal').setAttribute('max',100);
+            document.getElementById('sal').setAttribute('placeholder','Enter the percentage of salary');
+        }
+        function fixSal() {
+            document.getElementById('label').innerHTML='Salary amount';
+            document.getElementById('sal').setAttribute('placeholder','Enter the amount  of salary');
+        }
+    </script>
 
 @endsection
 

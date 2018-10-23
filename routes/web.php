@@ -17,75 +17,85 @@ Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
+//Route::middleware('auth')->group(function () {
+
+
+//Route::get('/dash', 'HomeController@index')->name('home');
+
+//route for dash
+
 Route::middleware('auth')->group(function () {
 
 
+    Route::get('/dash', 'HomeController@index');
 
+
+    Route::get('/patient', function () {
+        return view('patient');
+    });
+// Employee Registration
+    Route::get('/employee', function () {
+        return view('/employee');
+    });
+
+    Route::get('/appo', function () {
+        return view('appointment');
+    });
 
 
     Route::get('/dash', 'HomeController@index')->name('home');
 
-
-
-
-
-
-
-
-    Route::get('/detailinvoice', function () {
-        return view('detailsReception');
-    });
-
 // doctor treatment operation page have three option
-    Route::get('/doctor_operations', function () {
-        return view('doctor_operations');
-    });
+//    Route::get('/doctor_operations', function () {
+//        return view('doctor_operations');
+//    });
 
 // X-Ray page
-    Route::get('/xray', function () {
-        return view('Xrey_dep');
-    });
-    Route::get('treatment_operation', function () {
-        return view('treatment_operation');
-    });
+//    Route::get('/xray', function () {
+//        return view('Xrey_dep');
+//    });
+//    Route::get('treatment_operation', function () {
+//        return view('treatment_operation');
+//    });
 
-// medicine page in treatement -> medicine route
-    Route::get('/medicine', function () {
-        return view('medicine');
-    });
     Route::resource('/patient', 'PatientController');
+    Route::get('/new-patient-today','PatientController@show_new_patients');
+    Route::get('/next-appointment-patient','PatientController@show_next_appointment_patient');
+    Route::get('/miss-next-appointment-patient','PatientController@show_missing_next_appointment_patient');
+    Route::resource('/expense-category','ExpenseCatagoryController');
 
 
-// next appointment page
-    Route::get('/next_appointment', function () {
-        return view('next_appointment');
-    });
+//// next appointment page
+//    Route::get('/next_appointment', function () {
+//        return view('next_appointment');
+//    });
+
+//
+//    Route::get('/ext_income', function () {
+//        return view('ext_income');
+//    });
 
 
-    Route::get('/ext_income', function () {
-        return view('ext_income');
-    });
+//    Route::get('/iframe', function () {
+//        return view('iframe');
+//    });
+//
+//    Route::get('/iframe', function () {
+//        return view('/iframe');
+//    });
 
 
-    Route::get('iframe', function () {
-        return view('iframe');
-    });
+//// show all account users
+//    Route::get('/account', function () {
+//        return view('account');
+//    });
+//
+//// create new users
+//    Route::get('/create_account', function () {
+//        return view('create_account');
+//    });
 
-    Route::get('/iframe', function () {
-        return view('/iframe');
-    });
-
-
-// show all account users
-    Route::get('/account', function () {
-        return view('account');
-    });
-
-// create new users
-    Route::get('/create_account', function () {
-        return view('create_account');
-    });
-
+//Back up page
     Route::get('/restore', function () {
         return view('restore');
     });
@@ -127,7 +137,7 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::get('/patient_history_print', function () {
-        return view('patient_history_print');
+        return view('patient.patient_history_print');
     });
 
     Route::get('/next_appointment_list', function () {
@@ -136,7 +146,7 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('/dash_reception', function () {
-        return view('/dash_reception');
+        return view('reception.dash_reception');
     });
 
     Route::get('/doctor_report_list', function () {
@@ -151,14 +161,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/pdf', 'PdfGenerator@PDF');
 
 //doctor salary
-Route::get('/doctors2', 'DoctorController@show');
+    Route::get('/doctors2', 'DoctorController@show');
 
+//    Patient Deletion
     Route::get('/patient/{id}/delete', 'PatientController@destroy');
-
 
 // Doctor Registrationexp
     Route::resource('doctors', 'DoctorController');
-    Route::get('/doctorregister','DoctorController@create');
+//    Route::get('/doctorregister','DoctorController@create');
     Route::get('expense_form', function () {
         $capital=DB::table('expenses')->sum('amount');
         return view('expense_form')->with('capital',$capital);
@@ -177,10 +187,6 @@ Route::get('/doctors2', 'DoctorController@show');
     Route::resource('/doctors', 'DoctorController');
 
 
-//Doctor Operation
-
-
-    Route::resource('operation', 'OperationController');
 
 
 //Xray Controller
@@ -207,6 +213,7 @@ Route::get('/doctors2', 'DoctorController@show');
     Route::patch('income3/{id}', 'incomeController@editPaid');
 
 //route for xray income
+
 
 
     Route::resource('xrey_income', 'xrayincomeController');
@@ -246,19 +253,69 @@ Route::get('/doctors2', 'DoctorController@show');
     Route::get('finance_report_profit2','FinanceReportProfitController@rangeDay');
 
 
-    Auth::routes();
+    Route::resource('xrey_income', 'xrayincomeController');
+    Route::get('xrey_income2', 'xrayincomeController@showComplete');
+
+    Route::patch('xrey_income3/{id}', 'xrayincomeController@update2');
+// Financial report daily
+    Route::resource('/finance_report_income', 'FinanceReportIncomeController');
+//financial report income daily report range
+    Route::get('finance_report_income2', 'FinanceReportIncomeController@rangeDay');
+//financial report income select type single
+    Route::get('finance_report_income3', 'FinanceReportIncomeController@selectType');
+
+
+    //financial report income select type and range
+    Route::get('finance_report_income4', 'FinanceReportIncomeController@selectRange');
+
+
+
+    //financial report expense
+    Route::get('/finance_report_expenses', 'FinanceReportExpenseController@show');
+    //financial report expense single date
+    Route::get('/finance_report_expenses1', 'FinanceReportExpenseController@showSingle');
+    //financial report expenses range day
+    Route::get('/finance_report_expenses2', 'FinanceReportExpenseController@showRangeDay');
+    //financial report expense single day select type
+    Route::get('/finance_report_expenses3', 'FinanceReportExpenseController@singleDaySelect');
+    //financial report expense select type range day
+    Route::get('/finance_report_expenses4', 'FinanceReportExpenseController@RangeDaySelect');
+    //financial report income select type and range
+    Route::get('finance_report_income4', 'FinanceReportIncomeController@selectRange');
+    //financial report profit
+    Route::get('/finance_report_profit','FinanceReportProfitController@show');
+    //financial report profit single day report
+    Route::get('finance_report_profit1','FinanceReportProfitController@showSingle');
+    //financial report profit range day
+    Route::get('finance_report_profit2','FinanceReportProfitController@rangeDay');
+
+
+
 
     Route::resource('xrey_income', 'xrayincomeController');
     Route::get('xrey_income2', 'xrayincomeController@showComplete');
 
 
-
-
-
-
     Route::resource('/account', 'UserController');
 
+
+
+//    Route::get('/patient/date/{$id}','PatientController@indexShowNextDay');
+        Route::get('/patient/{id}','PatientController@index');
+//    Route::get('/patient/preday/{id}','PatientController@indexShowPreDay');
+    //route for medicine
+    Route::resource('medicine','MedicineController');
+    //route for delet medicine
+    Route::get('medicine2/{id}','MedicineController@delete');
+
+    //route for prescription
+    Route::resource('prescription','PrescriptionController');
+
 });
+
+
+
+
 
 
 

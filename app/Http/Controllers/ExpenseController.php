@@ -5,8 +5,12 @@ namespace App\Http\Controllers;
 use App\Doctor;
 use App\Expense;
 use App\Patient;
+
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Carbon;
+
+
+
 
 class ExpenseController extends Controller
 {
@@ -50,7 +54,9 @@ class ExpenseController extends Controller
         $expense->amount = $request->amount;
         $expense->category = $request->category;
         $expense->description = $request->description;
+
         $expense->created_at = Carbon\Carbon::now();
+
         $expense->save();
         return redirect('expenditure');
     }
@@ -60,7 +66,9 @@ class ExpenseController extends Controller
         $expense->amount = $request->amount;
         $expense->category = $request->category;
         $expense->description = $request->description;
+
         $expense->created_at = Carbon\Carbon::now();
+
         $expense->save();
         $patient = Patient::count();
         $apatient = Patient::whereDate('created_at', Carbon::today())->get();
@@ -113,8 +121,9 @@ class ExpenseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Expense  $expense
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param Expense $expense
      */
     public function destroy($id)
     {

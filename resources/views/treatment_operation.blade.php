@@ -76,7 +76,8 @@
                 <div class="row">
                     <div class="alert alert-danger alert-dismissable col-md-12">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                        Patient have AIDS problem health <a class="alert-link" href="#"></a>.
+                        Patient have {{ $patient_in_treatment->problem_health }} problem health <a class="alert-link"
+                                                                                                   href="#"></a>.
                     </div>
                 </div>
                 <div class="row" style="margin-left:-100px;">
@@ -91,7 +92,7 @@
                                             {{ $patient_in_treatment->name }}
                                         </h2>
                                         <h4>ID: {{ $patient_in_treatment->id_patient }}</h4>
-                                        <small style="font-size: 15px;">
+                                        <small style="font-size: 12px;">
                                             <span class="text-warning" style="font-size: 15px; font-weight: bold;">Problem Health : </span>
                                             {{ $patient_in_treatment->problem_health }}
                                         </small>
@@ -105,31 +106,31 @@
                                 <tr>
                                     <td>
                                             <span class=""
-                                                  style="font-size: 15px;">Gender:<b>&nbsp;{{ $patient_in_treatment->gender }}</b>&nbsp;<i
+                                                  style="font-size: 12px;">Gender:<b>&nbsp;{{ $patient_in_treatment->gender }}</b>&nbsp;<i
                                                         class="fa fa-male"></i></span>
                                     </td>
                                     <td>
-                                            <span style="font-size: 15px;">Age:<b>&nbsp;{{ $patient_in_treatment->age }}</b>&nbsp;<i
+                                            <span style="font-size: 12px;">Age:<b>&nbsp;{{ $patient_in_treatment->age }}</b>&nbsp;<i
                                                         class=""></i></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span style="font-size: 15px;">Doctor:<b>&nbsp;{{ $patient_in_treatment->doctor->first_name }}</b>&nbsp;<i
+                                        <span style="font-size: 12px;">Doctor:<b>&nbsp;{{ $patient_in_treatment->doctor->first_name }}</b>&nbsp;<i
                                                     class="fa fa-user-md"></i></span>
                                     </td>
                                     <td>
-                                        <span style="font-size: 15px;">Visited:<b>&nbsp;{{ $patient_in_treatment->status }}</b>&nbsp;<i
+                                        <span style="font-size: 12px;">Visited:<b>&nbsp;{{ $patient_in_treatment->status }}</b>&nbsp;<i
                                                     class=""></i></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span style="font-size: 15px;">Date Reg:<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
+                                        <span style="font-size: 12px;">Date Reg:<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
                                                     class="fa fa-calendar"></i></span>
                                     </td>
                                     <td>
-                                              <span style="font-size: 15px;">First Visited Date :<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
+                                              <span style="font-size: 12px;">First Visited Date :<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
                                                           class="fa fa-calendar"></i></span>
                                     </td>
                                 </tr>
@@ -150,6 +151,8 @@
                 <ul class="nav nav-tabs" id="demoTabs">
                     <li class="active"><a data-toggle="tab" href="#tab-1">Past History</a></li>
                     <li class=""><a data-toggle="tab" id="test" href="#tab-2">Present History</a></li>
+                    <li class=""><a data-toggle="tab" id="test" href="#tab-3">Prescription</a></li>
+
                 </ul>
 
                 <div class="tab-content">
@@ -160,7 +163,6 @@
                             @foreach($patient_in_treatment->treatment->sortByDesc('id') as $treats)
                                 {{-- start for each here --}}
                                 <div class="row shadow p-3 mb-5 rounded bg-info"
-                                     table-exchange
                                      style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px; font-size: 17px;">
                                     <strong>{{ $treats->visits }} \ &nbsp;&nbsp; <i class="fa fa-calendar"></i>&nbsp;
                                         Date : {{ \Carbon\Carbon::parse($treats->created_at)->diffForHumans() }}
@@ -171,6 +173,7 @@
                                 <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
                                     <div class="col-md-8">
                                         <table class="table table-striped " style="font-weight: bold; ">
+
                                             <tr>
                                                 <td>Dental Defect :</td>
                                                 <td>{{ $treats->dentaldefect }}</td>
@@ -186,21 +189,21 @@
                                             <tr>
                                                 <td>Tooth Number :</td>
                                                 <td>{{ $treats->teeth_number }}</td>
+                                                <td>Tooth Position :</td>
+                                                <td>{{ $treats->tooth_position }}</td>
+
+                                            </tr>
+                                            <tr>
                                                 <td>Remaining Fee :</td>
                                                 <td>null</td>
-                                            </tr>
-                                            <tr>
                                                 <td>Have Xray :</td>
                                                 <td>{{ $treats->have_xray }}</td>
-                                                <td>Date Visited :</td>
-                                                <td>{{ $treats->created_at }}</td>
                                             </tr>
                                             <tr>
+                                                <td>Date Visited :</td>
+                                                <td>{{ $treats->created_at }}</td>
                                                 <td> status treatment</td>
                                                 <td>{{ $treats->status_visits }}</td>
-                                                <td>Next Appointment :</td>
-                                                <td>{{ $treats->next_appointment }}&nbsp; in
-                                                    &nbsp;{{ $treats->meridiem }}</td>
                                             </tr>
                                         </table>
                                         <div>
@@ -223,7 +226,7 @@
 
                     {{-- panel tab 2 new history --}}
                     <div id="tab-2" class="tab-pane">
-                        <div class="panel-body"  style="padding-left: 60px;">
+                        <div class="panel-body" style="padding-left: 60px;">
                             <br>
                             {{-- Header of title --}}
                             <div class="row  bg-info"
@@ -231,35 +234,87 @@
                                 <h3 style="font-weight: bold;">Present History</h3>
                             </div>
                             <br>
+
                             {{--x-ray form--}}
+
                             <form action="/xray" method="post">
                                 {{csrf_field()}}
 
                                 <div class="row">
-                                   <div class="col-sm-4">
-                                    <h4 style="color:green">Is X-Ray Needed?</h4>
+                                    <div class="col-sm-4">
+                                        <h4 style="color:green">Is X-Ray Needed?</h4>
                                         <div class="input-group">
-
-                                            {{--<div class="i-checks">--}}
                                             <input type="radio" onchange="activation()" value="not" name="xray_status"
-                                                   id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>YES</b></strong>
-                                            {{--</div>--}}
-                                            {{--<div class="i-checks">--}}
+                                                   id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>YES</b></strong>&nbsp;&nbsp;&nbsp;
                                             <input type="radio" onchange="deactivation()" id="id" name="xray_status"
                                                    checked="checked" style="height: 20px;width:20px;"> &nbsp;<strong><b>NO</b></strong>
-                                            {{--</div>--}}
+<<<<<<< HEAD
+
+                                        </div>
+=======
+>>>>>>> 0455fa35514aaa71b46163472641609ca225a654
                                     </div>
                                 </div>
-
                                 <br>
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="input-group" style="margin-top:25px;">
+                                    <strong><b><label for="position" style="margin-left: 20px;">Choose tooth
+                                                position:</label></b></strong>
+                                    <br>
+                                    <div class="form-group">
+<<<<<<< HEAD
+                                        <div class="col-sm-4">
+                                            <div class="i-checks"><label> <input type="radio" id="mul"
+                                                                                 value="upper_left"
+                                                                                 name="tooth_position"
+                                                                                 onchange="upperLeft()" required> &nbsp;&nbsp;
+                                                    Upper Left </label></div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="i-checks"><label> <input type="radio" id="mur"
+                                                                                 value="upper_right"
+                                                                                 name="tooth_position"
+                                                                                 onchange="upperRight()" required>
+                                                    &nbsp;&nbsp; Upper Rigth </label></div>
+                                        </div>
+=======
+                                        <div class="col-sm-2"><label> <input type="radio" id="mul" value="upper_left" name="tooth_position" onchange="upperLeft()" style="width:25px;height:20px" required> &nbsp;&nbsp; Upper Left </label></div>
+                                        <div class="col-sm-2"><label> <input type="radio" id="mur" value="upper_right" name="tooth_position" onchange="upperRight()" style="width:25px;height:20px" required> &nbsp;&nbsp; Upper Rigth </label></div>
+>>>>>>> 0455fa35514aaa71b46163472641609ca225a654
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="form-group">
+<<<<<<< HEAD
+                                        <div class="col-sm-4">
+                                            <div class="i-checks"><label><input type="radio" value="lower_left"
+                                                                                name="tooth_position" required>&nbsp;&nbsp;
+                                                    Lower Left</label></div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="i-checks"><label><input type="radio" value="lower_right"
+                                                                                name="tooth_position" required>&nbsp;&nbsp;
+                                                    Lower Right </label></div>
+                                        </div>
+=======
+                                        <div class="col-sm-2"><label><input type="radio" id="mll" value="lower_left" onchange="lowerLeft()" name="tooth_position" style="width:25px;height:20px" required>&nbsp;&nbsp; Lower Left</label></div>
+                                        <div class="col-sm-2"><label><input type="radio" id="mlr" value="lower_right" onchange="lowerRight()" name="tooth_position" style="width:25px;height:20px" required>&nbsp;&nbsp; Lower Right </label></div>
+>>>>>>> 0455fa35514aaa71b46163472641609ca225a654
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-6 text-left">
+                                        <div class="input-group" style="margin-top:px;">
                                             <label for="number">Enter tooth number:</label>
-                                            <input type="number" class="form-control" id="teeth"
-                                            required name="tooth_number" onblur="copyvalue()" placeholder="Enter Tooth Number" style="width: 100%;height:36px;">
+                                            <input type="number" class="form-control" id="teeth" max="8" min="1"
+                                                   name="tooth_number" onblur="copyvalue()"
+                                                   placeholder="Enter Tooth Number" style="width: 100%;height:36px;"
+                                                   required>
                                             <span class="input-group-btn">
-                                            <button type="submit" class="btn btn-primary" id="but"  style="margin-top: 23px;height:36px;" disabled>
+                                            <button type="submit" class="btn btn-primary" id="but"
+                                                    style="margin-top: 23px;height:36px;" disabled>
                                             Send To X-Ray &nbsp;<i class="fa fa-send">
                                             </i></button></span>
                                         </div>
@@ -275,13 +330,15 @@
                                 <input type="text" name="patient_id" value="{{ $patient_in_treatment->id_patient }}"
                                        style="visibility: hidden;">
 
+
                             </form>
                             {{--end of x-ray form--}}
+
                             <form action="/operation" method="POST">
                                 @foreach($checkValue as $check)
-                                <input type="hidden" value="{{ ++$check->visits }}" name="visits">
+                                    <input type="hidden" value="{{ $check->visits }}" name="visits">
                                 @endforeach
-                                <input hidden type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
+                                <input type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
                                 {{--<input hidden type="hidden" name="visits" value="{{ $treatments->visits  }}"/>--}}
 
                                 <div class="row">
@@ -289,12 +346,49 @@
                                         <div class="form-group">
                                             <label></label>
                                             <input type="number" class="form-control" id="copyteeth" required
-                                                   name="teeth_number" style="visibility: hidden">
+<<<<<<< HEAD
+                                                   name="teeth_number" min="1" max="8" style="visibility: hidden">
                                         </div>
-                                            <input type="checkbox" id="next" name="have_xray" style="visibility:hidden;">
+                                        <input type="checkbox" id="next" name="have_xray" value="yes"
+                                               style="visibility:hidden;">
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <div class="col-sm-4">
+                                                    <div class="i-checks"><label> <input type="radio" id="ul"
+                                                                                         value="upper_left"
+                                                                                         name="tooth_position" required>
+                                                            &nbsp;&nbsp; Upper Left </label></div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="i-checks"><label> <input type="radio" id="ur"
+                                                                                         value="upper_right"
+                                                                                         name="tooth_position" required>
+                                                            &nbsp;&nbsp; Upper Rigth </label></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <div class="col-sm-4">
+                                                    <div class="i-checks"><label><input type="radio" value="lower_left"
+                                                                                        name="tooth_position" required>&nbsp;&nbsp;
+                                                            Lower Left</label></div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="i-checks"><label><input type="radio" value="lower_right"
+                                                                                        name="tooth_position" required>&nbsp;&nbsp;
+                                                            Lower Right </label></div>
+                                                </div>
+                                            </div>
+=======
+                                                   name="teeth_number" min="1" max="8"  style="visibility: hidden">
+>>>>>>> 0455fa35514aaa71b46163472641609ca225a654
+                                        </div>
+                                        <br>
                                         <div class="form-group">
                                             <label>Select Dental Defect :</label>
-                                            <select class="form-control" name="dentaldefect">
+                                            <select class="form-control" name="dentaldefect" required>
                                                 <option disabled selected>Select Dental Defect</option>
                                                 @foreach($dentalDefectList as $list)
                                                     <option value="{{ $list->dental_defect }}">{{ $list->dental_defect }}</option>
@@ -304,7 +398,7 @@
                                         <div class="form-group">
                                             <label>Treatment :</label>
                                             <select class="form-control" name="treatment"
-                                                    onchange="getFeeTreatment(this);">
+                                                    onchange="getFeeTreatment(this);" required>
                                                 <option disabled>Select Treatment</option>
                                                 @foreach($treatementList as $listTreatement)
                                                     <option value="{{ $listTreatement->treatment }}"
@@ -317,25 +411,25 @@
                                         <div class="form-group">
                                             <label for="nex">Treatment Cost :</label>
                                             <input type="number" class="form-control" id="cost_treatment"
-                                                   name="estimated_fee" value="">
+                                                   name="estimated_fee" value="" required>
                                         </div>
                                         <input type="text" name="paid_amount" hidden>
                                         <div class="form-group">
                                             <label for="nex">Discount :</label>
                                             <input type="number" class="form-control" name="discount">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="nex">Next Appointment :</label>
-                                            <input type="date" class="form-control" name="next_appointment">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="i-checks" for="nex">Set Meridiem :<label>&nbsp;&nbsp;
-                                                    <input type="radio" value="morning" checked name="meridiem">
-                                                    Morning</label>
-                                                &nbsp;&nbsp;&nbsp; <input type="radio" checked value="afternoon"
-                                                                          name="meridiem">Afternoon
-                                            </div>
-                                        </div>
+                                        {{--<div class="form-group">--}}
+                                        {{--<label for="nex">Next Appointment :</label>--}}
+                                        {{--<input type="date" class="form-control" name="next_appointment">--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                        {{--<div class="i-checks" for="nex">Set Meridiem :<label>&nbsp;&nbsp;--}}
+                                        {{--<input type="radio" value="morning" checked name="meridiem">--}}
+                                        {{--Morning</label>--}}
+                                        {{--&nbsp;&nbsp;&nbsp; <input type="radio" checked value="afternoon"--}}
+                                        {{--name="meridiem">Afternoon--}}
+                                        {{--</div>--}}
+                                        {{--</div>--}}
                                         <div class="form-group">
                                             <label for="nex">Description :</label>
                                             <textarea rows="5" type="text" class="form-control" name="description"
@@ -352,13 +446,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6" style="margin-top: -70px;">
                                         <img src="{{ asset('img/all_tooth.jpg') }}" width="100%"/>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <button type="submit" class="btn btn-primary"> Save&nbsp;<i
+                                        <button type="submit" class="btn btn-primary" onsubmit="position()"> Save&nbsp;<i
                                                     class="fa fa-save"></i>
                                         </button>
                                         <button type="reset" class="btn btn-white"> Reset&nbsp;<i
@@ -366,10 +460,103 @@
                                         </button>
                                     </div>
                                 </div>
+                                    <div class="row">
+                                        <input type="checkbox" id="next" name="have_xray" value="yes" style="visibility:hidden;">
+                                        <div class="col-sm-4"><input type="radio" value="upper_left"  id="ul"name="tooth_position" style="width:25px;height:20px; visibility: hidden"  required></div>
+                                        <div class="col-sm-4"><input type="radio" value="upper_right" id="ur" name="tooth_position" style="width:25px;height:20px; visibility: hidden" required></div>
+                                        <div class="col-sm-4"><input type="radio" value="lower_left"  id="ll" name="tooth_position" style="width:25px;height:20px; visibility: hidden" required></div>
+                                        <div class="col-sm-4"><input type="radio" value="lower_right" id="lr" name="tooth_position" style="width:25px;height:20px; visibility: hidden" required></div>
+                                    </div>
                             </form>
 
                         </div>
                     </div>
+                    {{--prescription tab 3--}}
+
+                    <div id="tab-3" class="tab-pane">
+                        <div class="panel-body">
+                            <form action="/prescription" method="post">
+                                <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
+                                    <div class="col-md-6">
+
+                                        <input type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
+                                        <label>Pattern :</label>
+
+                                        <div class="form-group">
+                                            <input type="number" name="pattern" class="form-control">
+                                        </div>
+                                        <label>Instruction :</label>
+
+                                        <div class="form-group">
+                                            <textarea name="instruction" class="form-control"
+                                                      style="resize: none;"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Medicine :</label>
+
+                                            <select class="form-control" name="medicine"
+                                                    required>
+                                                <option value="">Select Medicine </option>
+                                                @foreach($medicine as $medice)
+                                                    <option value="{{ $medice->name }}">
+                                                        {{ $medice->name}} </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <label>Days :</label>
+
+                                        <div class="form-group">
+                                            <input type="number" name="day" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Add Prescription</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                            <br>
+                            <div class="hr-line-dashed"></div>
+                            <table class="table table-striped table-bordered table-hover" id="editable"
+                                   style="margin-left:30px;width:95%;">
+                                <thead>
+                                <tr>
+                                    <th>Medicine</th>
+                                    <th>Pattern</th>
+                                    <th>Days</th>
+                                    <th>Drug Instruction</th>
+                                    <th>Edit</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach($prescription as $pres)
+                                        <tr class="gradeX">
+                                            <td>{{$pres->medicine}}</td>
+                                            <td>{{$pres->pattern}}</td>
+                                            <td>{{$pres->day}}</td>
+                                            <td>{{$pres->instruction}}</td>
+                                            <td>
+                                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
+                                                        data-target="#e{{$pres->id}}">&nbsp;Edit
+                                                </button>
+                                                <a class="btn btn-xs btn-danger fa fa-remove" href="/prescription/{{$pres->id}}">&nbsp;Delete
+                                                </a>
+                                            </td>
+
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+
+
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -393,6 +580,30 @@
         function copyvalue() {
             var teeth = document.getElementById('teeth').value;
             document.getElementById('copyteeth').value = teeth;
+            if(teeth>8){
+                alert('Tooth number must be less than or equal to 8');
+            }
+        }
+    </script>
+    {{--copy radio buttons values to another radio buttons--}}
+    <script type="text/javascript">
+        function upperLeft() {
+            document.getElementById('ul').click();
+        }
+    </script>
+    <script type="text/javascript">
+        function upperRight() {
+            document.getElementById('ur').click();
+        }
+    </script>
+    <script type="text/javascript">
+        function lowerLeft(){
+            document.getElementById('ll').click();
+        }
+    </script>
+    <script type="text/javascript">
+        function lowerRight(){
+            document.getElementById('lr').click();
         }
     </script>
 
@@ -415,26 +626,26 @@
 
     <script type="text/javascript">
         function activation() {
-            var ch=document.getElementById('check').value;
-            if(ch=='not'){
-                document.getElementById('but').disabled=false;
-                document.getElementById('next').checked=true;
-            } else{
-                document.getElementById('but').disabled=true;
-                document.getElementById('next').checked=false;
+            var ch = document.getElementById('check').value;
+            if (ch == 'not') {
+                document.getElementById('but').disabled = false;
+                document.getElementById('next').checked = true;
+            } else {
+                document.getElementById('but').disabled = true;
+                document.getElementById('next').checked = false;
             }
         }
     </script>
 
     <script type="text/javascript">
         function deactivation() {
-            var deac=document.getElementById('id').value;
-            if(deac=='on'){
-                document.getElementById('but').disabled=true;
-                document.getElementById('next').checked=false;
-            }else {
-                document.getElementById('but').disabled=false;
-                document.getElementById('next').checked=true;
+            var deac = document.getElementById('id').value;
+            if (deac == 'on') {
+                document.getElementById('but').disabled = true;
+                document.getElementById('next').checked = false;
+            } else {
+                document.getElementById('but').disabled = false;
+                document.getElementById('next').checked = true;
             }
         }
     </script>

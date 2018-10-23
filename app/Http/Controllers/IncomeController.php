@@ -59,8 +59,12 @@ class IncomeController extends Controller
     {
         $income = Treatment::where('remaining_fee',0)->get();
         $total=DB::table('treatments')->sum('paid_amount');
+        $ptotal=DB::table('treatments')->sum('paid_amount');
+        $xtotal=DB::table('xrays')->sum('paid_amount');
+        $ototal=DB::table('oincoms')->sum('amount');
+        $Gtotal=$ptotal+$xtotal+$ototal;
 
-        return view('complete_income',compact('income','total'));
+        return view('complete_income',compact('income','total','Gtotal'));
     }
 
     /**

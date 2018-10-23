@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use DB;
+use App\Treatment;
 use App\Doctor;
 use Illuminate\Http\Request;
 
