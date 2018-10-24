@@ -2,19 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Doctor;
-
-use App\Patient;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-
 
 class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
      *
+     * @return void
      */
     public function __construct()
     {
@@ -28,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         $patient = Patient::count();
         $apatient = Patient::whereDate('next_appointment', Carbon::today())->get();
         $doctor = Doctor::count();
@@ -42,6 +38,7 @@ class HomeController extends Controller
 
 
         return view('dash_doctor',compact('doctor','doct','patient'));
+
     }
     public  function index3(){
         $patient = Patient::whereDate('next_appointment',Carbon::today())->get();

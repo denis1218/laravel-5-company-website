@@ -193,7 +193,6 @@
                             <li><a href="account"><i class="fa fa-user-plus"></i>&nbsp;Accounts</a></li>
                             <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
 
-
                 <li>
                     <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span><span
                                 class="fa arrow"></span></a>
@@ -225,4 +224,5 @@
         </div>
     </nav>
 </div>
+
 
