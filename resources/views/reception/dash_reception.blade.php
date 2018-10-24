@@ -27,7 +27,7 @@
                 <h5>Patient</h5>
             </div>
             <div class="ibox-content">
-                <h1 class="no-margins">{{count($patient)}}<img  src="img/patienticon2.png" width="45px;"style="float: right;"/></h1>
+                <h1 class="no-margins">{{ count($patient) }}<img  src="img/patienticon2.png" width="45px;"style="float: right;"/></h1>
                 <small>Total patient for today</small>
             </div>
         </div>
@@ -52,7 +52,7 @@
                 <h5>Appointment patients</h5>
             </div>
             <div class="ibox-content">
-                <h1 class="no-margins">{{count($patient)}}<img  src="img/appintmentincon.png" width="60px;"style="float: right;"/></h1>
+                <h1 class="no-margins">{{ count($patient) }}<img  src="img/appintmentincon.png" width="60px;"style="float: right;"/></h1>
                 <div class="stat-percent font-bold text-danger"></div>
                 <small>Total Appointment</small>
             </div>

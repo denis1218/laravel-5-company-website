@@ -40,8 +40,9 @@ class HomeController extends Controller
         return view('dash_doctor',compact('doctor','doct','patient'));
 
     }
-    public  function index3(){
+    public function reception(){
         $patient = Patient::whereDate('next_appointment',Carbon::today())->get();
+//        return $patient;
         return view('reception.dash_reception',compact('patient'));
     }
 
