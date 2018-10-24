@@ -11,7 +11,7 @@ class Doctor extends Model
     protected $fillable=['id','first_name','last_name','father_name','start_work_time','end_work_time','phone','dept_id','gender','salary_type','salary_amount'];
 
     public function patient(){
-        return $this->hasMany(Patient::class,'doctor_id','id');
+        return $this->hasMany(Patient::class,'doctor_id','id')->whereDate('patients.created_at','=',Carbon::today());
     }
 
     public function patient_for_today(){
@@ -30,7 +30,7 @@ class Doctor extends Model
     }
 
     public function treatment(){
-        return $this->hasManyThrough(Treatment::class ,Patient::class);
+        return $this->hasManyThrough(Treatment::class ,Patient::class)->whereDate('treatments.created_at','>',$this->to);
     }
 
 

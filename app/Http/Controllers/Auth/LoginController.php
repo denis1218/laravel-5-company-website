@@ -56,7 +56,9 @@ class LoginController extends Controller
 
         if (auth()->check()) {
 
+
             return view('dash');
+
         }else{
         return view('login');
         }

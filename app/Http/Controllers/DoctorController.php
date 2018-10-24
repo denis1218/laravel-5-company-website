@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\User;
 use DB;
 use App\Treatment;
 use App\Doctor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class DoctorController extends Controller
 {
@@ -55,6 +57,17 @@ class DoctorController extends Controller
         $doctor->salary_amount=$request->input('salary_amount');
         $doctor->max_patient=$request->input('max_patient');
         $doctor->save();
+        $doct = Doctor::max('id');
+        $user = new User();
+        $user->firstname = $request->first_name;
+        $user->lastname = $request->last_name;
+        $user->password = Hash::make($request->password);
+        $user->email = $request->email;
+        $user->department = 'doctor';
+        $user->doctor_id = $doct;
+        $user->save();
+
+
 
         return redirect('/doctors')->with('success','Doctor registered successfully');
     }
@@ -82,14 +95,15 @@ class DoctorController extends Controller
         $doctor=Doctor::find($id);
         $patient=Doctor::find($id)->patient;
         $treatment=Doctor::find($id)->treatment;
-        $selectedTreatment=Treatment::whereBetween('created_at',[$doctor->to,now()])->get();
-
+//        $selectedTreatment=Treatment::whereBetween('created_at',[$doctor->to,now()])->get();
 
         if($doctor->to==null){
             $total=$treatment->sum('paid_amount');
         }else{
-            $total=$selectedTreatment->sum('paid_amount');
+            $total=$treatment->sum('paid_amount');
         }
+//
+
 
         if($doctor->salary_type=='fix'){
             $docfee=$doctor->salary_amount;
