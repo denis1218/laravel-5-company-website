@@ -137,9 +137,9 @@
                                                                             <td>{{$pat->patient_id}}</td>
                                                                             <td>{{$pat->patient_name}}</td>
                                                                             <td>{{$pat->doctor_name}}</td>
-                                                                            <td>{{$pat->paid_amount}}</td>
+                                                                            <td id="pay">{{$pat->paid_amount}}</td>
                                                                             <td>{{$pat->xray_status}}</td>
-                                                                            <td><a class="btn btn-xs btn-info" href="/xray/{{$pat->id}}/edit">Details &nbsp;<i class="fa fa-file-o"></i></a></td></td>
+                                                                            <td><a class="btn btn-xs btn-info" id="details" href="/xray/{{$pat->id}}/edit">Details &nbsp;<i class="fa fa-file-o"></i></a></td></td>
                                                                         </tr>
                                                                     @endif
                                                                     </tbody>

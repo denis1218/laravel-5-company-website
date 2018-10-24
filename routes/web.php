@@ -23,7 +23,6 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/dash', 'HomeController@index')->name('home');
 
 
-
 //Route::get('/dash', 'HomeController@index')->name('home');
 
 //route for dash
