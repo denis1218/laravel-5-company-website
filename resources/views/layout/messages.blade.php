@@ -9,7 +9,7 @@
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
-        <h2>{{session('success')}}</h2>
+        <h4>{{session('success')}}&nbsp;<i class="fa fa-arrow-down"></i></h4>
     </div>
 @endif
 
@@ -18,6 +18,6 @@
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
-        <h2>{{session('error')}}</h2>
+        <h4>{{session('error')}}</h4>
     </div>
 @endif

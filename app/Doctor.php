@@ -14,6 +14,8 @@ class Doctor extends Model
         return $this->hasMany(Patient::class,'doctor_id','id')->whereDate('patients.created_at','=',Carbon::today());
     }
 
+
+
     public function patient_for_today(){
         return $this->hasMany(Patient::class,'doctor_id','id')->whereDate('next_appointment',Carbon::today());
     }
@@ -30,7 +32,7 @@ class Doctor extends Model
     }
 
     public function treatment(){
-        return $this->hasManyThrough(Treatment::class ,Patient::class);
+        return $this->hasManyThrough(Treatment::class ,Patient::class)->whereDate('treatments.created_at','>',$this->to);
     }
 
 

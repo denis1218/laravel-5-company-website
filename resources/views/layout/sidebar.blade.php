@@ -29,6 +29,9 @@
                     </div>
                 </li>
                 {{--condition for super admin--}}
+
+
+                {{--condition for super admin--}}
                 @if(Auth::user()->department == 'admin')
                     <li class="active">
                         <a href="/dash"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
@@ -41,6 +44,7 @@
                             <li><a href="/xray"><i class="fa fa-flash"></i>X-Ray</a></li>
                         </ul>
                     </li>
+
 
                     <li>
                         <a><i class="fa fa-book"></i> <span class="nav-label">Reception</span><span
@@ -90,10 +94,13 @@
                     </li>
                     {{--end condition of super admin--}}
                     {{--condition for dash doctor --}}
+
                 @elseif(Auth::user()->department == 'doctor')
                     <li class="active">
                         <a href="/dash_doctor"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
                     </li>
+
+
                     <li>
                         <a><i class="fa fa-sitemap"></i> <span
                                     class="nav-label">Department</span><span class="fa arrow"></span></a>
@@ -102,6 +109,8 @@
                             <li><a href="/xray"><i class="fa fa-flash"></i>X-Ray</a></li>
                         </ul>
                     </li>
+
+
                     <li>
                         <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span><span
                                     class="fa arrow"></span></a>
@@ -110,6 +119,7 @@
                             <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
                             <li><a href="medicine"><i class="fa fa-plus"></i> Add Medicine</a></li>
 
+
                             <li><a href="/expense-category"><i class="fa fa-pencil-square-o"></i> &nbsp;Expense category</a>
                             </li>
 
@@ -117,16 +127,18 @@
                     </li>
                     {{--end condition of doctor--}}
 
+
                     {{--condition for reception--}}
                 @elseif(Auth::user()->department == 'reception')
                     <li class="active">
                         <a href="/dash_reception"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
                     </li>
+
+
                     <li>
                         <a><i class="fa fa-book"></i> <span class="nav-label">Reception</span><span
                                     class="fa arrow"></span></a>
-                        <ul class="nav nav-second-l
-                        evel collapse">
+                        <ul class="nav nav-second-level collapse">
                             <li><a href="/doctors/create"><i class="fa fa-save"></i>Doctor Registration</a></li>
                             <li><a href="/patient/create"><i class="fa fa-user-md"></i>Patient Registration</a></li>
                             <li><a href="/patient"><i class="fa fa-flash"></i>List of Patient</a></li>
@@ -156,30 +168,16 @@
                             </li>
                         </ul>
                     </li>
+
+
                 @endif
                 {{--end condition--}}
 
-                <li>
-                    <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span><span
-                                class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="account"><i class="fa fa-user-plus"></i>&nbsp;Accounts</a></li>
-                        <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
 
-
-                        <li><a href="medicine"><i class="fa fa-plus"></i> Add Medicine</a></li>
-
-                        <li><a href="/expense-category"><i class="fa fa-pencil-square-o"></i> &nbsp;Expense category</a>
-                        </li>
-                        <li><a href="/dental-defect-list"><i class="fa fa-list-ul"></i> &nbsp;Dental defect list</a>
-                        </li>
-                        <li><a href="/treatment-list"><i class="fa fa-list-ul"></i> &nbsp;Treatment list</a></li>
-
-
-                    </ul>
-                </li>
             </ul>
+
         </div>
     </nav>
 </div>
+
 
