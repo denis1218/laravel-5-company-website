@@ -55,7 +55,10 @@ class LoginController extends Controller
     {
 
         if (auth()->check()) {
-            return view('/dash');
+
+
+            return view('dash');
+
         }else{
         return view('login');
         }
@@ -75,7 +78,16 @@ class LoginController extends Controller
         $this->validateLogin($request);
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/dash');
+            if (Auth()->user()->department == 'reception'){
+                return redirect()->intended('/dash_reception');
+            }
+            elseif(Auth()->user()->department == 'doctor'){
+                return redirect()->intended('/dash_doctor');
+            }
+            elseif(Auth()->user()->department == 'admin'){
+                return redirect()->intended('/dash');
+            }
+            return redirect()->intended('/login');
         }
 //            return redirect('/login');
     }

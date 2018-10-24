@@ -63,18 +63,6 @@
                     <h2>Account Information</h2>
                     <div class="row">
                         <div class="col-lg-5">
-                            <div class="form-group">
-                                <label>Username *</label>
-                                <input id="" name="username" type="text" class="form-control required">
-                            </div>
-                            <div class="form-group">
-                                <label>Password *</label>
-                                <input id="password" name="password" type="password" class="form-control required" onkeyup='check();' >
-                            </div>
-                            <div class="form-group">
-                                <label>Confirm Password *</label>
-                                <input id="confirm_password" name="confirm_password" type="password" class="form-control required" onkeyup='check();' >
-                            </div>
                             <span id='message'></span>
                             <div class="form-group">
                                 <label>First name *</label>
@@ -85,20 +73,25 @@
                                 <input id="surname" name="lastname" type="text" class="form-control required">
                             </div>
                             <div class="form-group">
-                                <label>Gender &nbsp;&nbsp;&nbsp;</label>
-                                <label> <input type="radio" value="male" name="gender"> <i></i> Male </label>&nbsp;&nbsp;
-                                <label> <input type="radio" value="female" name="gender"> <i></i> Female </label>
+                                <label>Password *</label>
+                                <input id="password" name="password" type="password" class="form-control required" onkeyup='check();' >
                             </div>
                             <div class="form-group">
-                                <label>Role *</label>
-                                <select class="form-control" required name="role">
-                                    <option value="" disabled>Select Department</option>
-                                    <option value="writer">Writer</option>
-                                    <option value="reader">Reader</option>
-                                    <option value="editor">Editor</option>
-                                    <option value="admin">Admin</option>
-                                </select>
+                                <label>Confirm Password *</label>
+                                <input id="confirm_password" name="confirm_password" type="password" class="form-control required" onkeyup='check();' >
                             </div>
+
+
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input id="" name="email" type="text" class="form-control required email">
+                            </div>
+
+                            <input id="" name="" type="submit" class="btn btn-primary"/>
+                            <input id="" name="reset" type="reset" class="btn btn-white"/>
+                        </div>
+
+
                             <div class="form-group">
                                 <label>Department *</label>
                                 <select class="form-control" required name="department">
@@ -109,25 +102,7 @@
                                     <option value="owner">Owner</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label>Age *</label>
-                                <input id="age" name="age" type="number" class="form-control required">
-                            </div>
-                            <div class="form-group">
-                                <label>Phone *</label>
-                                <input id="" name="phone" type="text" class="form-control required">
-                            </div>
-                            <div class="form-group">
-                                <label>Email *</label>
-                                <input id="" name="email" type="text" class="form-control required email">
-                            </div>
-                            <div class="form-group">
-                                <label>Address *</label>
-                                <input id="" name="address" type="text" class="form-control">
-                            </div>
-                            <input id="" name="" type="submit" class="btn btn-primary"/>
-                            <input id="" name="reset" type="reset" class="btn btn-white"/>
-                        </div>
+
                     </div>
                 </form>
             </div>

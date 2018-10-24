@@ -17,15 +17,9 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('username');
             $table->string('password',255);
             $table->string('email');
-            $table->string('gender');
-            $table->string('role');
             $table->string('department');
-            $table->string('phone');
-            $table->string('age');
-            $table->string('address');
             $table->unsignedInteger('doctor_id')->nullable();
 
             $table->foreign('doctor_id')
