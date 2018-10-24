@@ -30,7 +30,7 @@ class Doctor extends Model
     }
 
     public function treatment(){
-        return $this->hasManyThrough(Treatment::class ,Patient::class);
+        return $this->hasManyThrough(Treatment::class ,Patient::class)->whereDate('treatments.created_at','>',$this->to);
     }
 
 

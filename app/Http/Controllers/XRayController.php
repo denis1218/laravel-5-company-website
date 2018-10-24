@@ -72,11 +72,10 @@ class XrayController extends Controller
      * @param  \App\Xray  $xray
      * @return \Illuminate\Http\Response
      */
-    public function edit(Xray $xray)
+    public function edit($id)
     {
-        $patients=Patient::find($xray);
-        $spats=Xray::find($xray);
-        return view('xray_show',compact('spats','patients'));
+        $spats=Xray::find($id);
+        return view('xray_show',compact('spats'));
     }
 
     /**
