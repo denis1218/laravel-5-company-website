@@ -14,7 +14,8 @@ class DentalDefectListController extends Controller
      */
     public function index()
     {
-        //
+        $dental = DentalDefectList::all();
+        return view('dental_defect_list',compact('dental'));
     }
 
     /**
@@ -35,7 +36,10 @@ class DentalDefectListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dental = new DentalDefectList();
+        $dental->dental_defect = $request->dental_defect;
+        $dental->save();
+        return redirect()->back();
     }
 
     /**

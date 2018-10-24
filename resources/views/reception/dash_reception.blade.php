@@ -14,9 +14,9 @@
                 <h5>User</h5>
             </div>
             <div class="ibox-content">
-                <h1 class="no-margins">Welcome Latifa</h1>
+                <h2 class="no-margins">Welcome {{Auth()->user()->firstname}}</h2>
                 <div class="stat-percent font-bold text-danger"></div>
-                <small>Reception</small>
+                <small>{{Auth()->user()->department}}</small>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
                 <h5>Patient</h5>
             </div>
             <div class="ibox-content">
-                <h1 class="no-margins">35<img  src="img/patienticon2.png" width="45px;"style="float: right;"/></h1>
+                <h1 class="no-margins">{{count($patient)}}<img  src="img/patienticon2.png" width="45px;"style="float: right;"/></h1>
                 <small>Total patient for today</small>
             </div>
         </div>
@@ -52,7 +52,7 @@
                 <h5>Appointment patients</h5>
             </div>
             <div class="ibox-content">
-                <h1 class="no-margins">25<img  src="img/appintmentincon.png" width="60px;"style="float: right;"/></h1>
+                <h1 class="no-margins">{{count($patient)}}<img  src="img/appintmentincon.png" width="60px;"style="float: right;"/></h1>
                 <div class="stat-percent font-bold text-danger"></div>
                 <small>Total Appointment</small>
             </div>
@@ -63,7 +63,7 @@
     {{-- End of Card area --}}
 
     {{-- Dash area --}}
-    <div class="col-lg-10">
+    <div class="col-lg-9">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>Patient List </h5>
@@ -99,62 +99,16 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($patient as $pa)
                         <tr>
-                            <td>P-078554422</td>
-                            <td>Ahmad</td>
-                            <td></i>Dr.Samim</td>
-                            <td>First Time</td>
-                            <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:00 AM</td>
-                            <td class="">Blood pressure</td>
+                                <td>{{$pa->id_patient}}</td>
+                            <td>{{$pa->name}}</td>
+                            <td>{{$pa->doctor->first_name}}</td>
+                            <td>{{$pa->status}}</td>
+                            <td><i class="fa fa-calendar"></i>{{$pa->next_appointment}}</td>
+                            <td class="">{{$pa->problem_health}}</td>
                         </tr>
-                        <tr>
-                            <td>P-0786906677</td>
-                            <td>Naweed</td>
-                            <td></i>Dr.Rashid</td>
-                            <td>Second Time</td>
-                            <td><i class="fa fa-calendar"></i>&nbsp;2018/8/1 - 8:20 AM</td>
-                            <td class="">Diabetics</td>
-                        </tr>
-                        <tr>
-                            <td>P-0785445580</td>
-                            <td>Qasim</td>
-                            <td></i>Dr.Ahmadi</td>
-                            <td>First Time</td>
-                            <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
-                            <td class="">Hepatitics</td>
-                        </tr>
-                        <tr>
-                            <td>P-0785564749</td>
-                            <td>Mahmood</td>
-                            <td></i>Dr.Ali</td>
-                            <td>Second Time</td>
-                            <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00 AM</td>
-                            <td class="">Asthma</td>
-                        </tr>
-                        <tr>
-                            <td>P-0785786788</td>
-                            <td>Ali</td>
-                            <td></i>Dr.Samim</td>
-                            <td>First Time</td>
-                            <td><i class="fa fa-calendar"></i>&nbsp;2018/8/2 - 9:00</td>
-                            <td class="">Blood pressure</td>
-                        </tr>
-                        <tr>
-                            <td>P-0785786866</td>
-                            <td>Mahdi</td>
-                            <td></i>Dr.Naweed</td>
-                            <td>Second Time</td>
-                            <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 10:00 AM</td>
-                            <td class="">Diabetics</td>
-                        </tr>
-                        <tr>
-                            <td>P-078558099</td>
-                            <td>Ahmad</td>
-                            <td></i>Dr.Samim</td>
-                            <td>First Time</td>
-                            <td><i class="fa fa-calendar"></i>&nbsp;2018/8/3 - 11:00 AM</td>
-                            <td class="">Blood pressure</td>
-                        </tr>
+                       @endforeach
                         </tbody>
                     </table>
                     <br/>
@@ -174,10 +128,44 @@
     {{-- Graph area --}}
 
     {{-- are of button new patient --}}
-    <div class="col-lg-2">
+    <div class="col-lg-3">
         <button class="btn btn-primary dim dim-large-dim" ><a href="/patient"><img src="img/teeth_patient.png" width="150px;" style="border-radius: 8px;"/></a></button>
+
     </div>
     {{-- are of button new patient --}}
+    <div class="col-lg-3">
+        <a href="/patient/create">
+            <button class="btn btn-primary" style="width:87%;">
+                <i class="fa fa-user-plus pull-left"></i>&nbsp; Add new patient
+            </button>
+        </a>
+    </div>
+    <br>
+    <div class="col-lg-3">
+
+        <a href="/new-patient-today">
+            <button class="btn btn-info" style="width:87%;">
+                <i class="fa fa-table pull-left"></i>&nbsp;List new patient today
+            </button>
+        </a>
+    </div>
+    <br>
+    <div class="col-lg-3">
+        <a href="/next-appointment-patient">
+            <button class="btn btn-success" style="width:87%;">
+                <i class="fa fa-table pull-left"></i>&nbsp;List next appointment today
+            </button>
+        </a>
+    </div>
+    <div class="col-lg-3">
+        <a href="/miss-next-appointment-patient">
+            <button class="btn btn-success" style="width:87%;">
+                <i class="fa fa-table pull-left"></i>&nbsp;Miss list next appointment
+            </button>
+        </a>
+
+    </div>
+
 
     {{-- Modal Window for remaining cash --}}
     <div class="modal inmodal" id="remaining" tabindex="-1" role="dialog"  aria-hidden="true">

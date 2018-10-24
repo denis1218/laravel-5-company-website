@@ -14,7 +14,8 @@ class TreatmentListController extends Controller
      */
     public function index()
     {
-        //
+        $treatment = TreatmentList::all();
+        return view('treatment_list',compact('treatment'));
     }
 
     /**
@@ -35,7 +36,11 @@ class TreatmentListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $treatment = new TreatmentList();
+        $treatment->treatment = $request->treatment;
+        $treatment->estimated_fee = $request->estimated_fee;
+        $treatment->save();
+        return redirect()->back();
     }
 
     /**

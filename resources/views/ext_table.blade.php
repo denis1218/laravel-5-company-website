@@ -95,22 +95,21 @@
                 <div class="ibox-content">
                     @include('layout.messages')
                     <div class="row">
-
                         <!--Search -->
                         <div class="col-sm-9">
-                            <div class="input-group" style="margin-top:25px;">
+                            <div class="input-group" style="margin-top:25px;margin-left: 15px;">
                         <span class="input-group-btn">
                         <button type="button" style="margin-left:17px;" class="btn btn-sm btn-primary"><i
                                     class="fa fa-search"></i> Search</button></span>
-                                <input type="text" placeholder="Patient ID" class="input-sm form-control">
+                                <input type="text" placeholder="Other Income" class="input-sm form-control">
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <a href="/other2" class="btn btn-primary text-right" style="margin-top: 20px;">Add New Income</a>
                         </div>
-
+                        <div class="col-sm-12">
                         <table class="table table-striped table-bordered table-hover" id="editable"
-                               style="margin-top:80px;margin-left:30px;width:95%;">
+                               style="margin-top:10px;margin-left:30px;width:95%;">
                             <thead>
                             <tr style="color:black;">
                                 <th>ID</th>
@@ -122,33 +121,34 @@
                                 <th>Edit</th>
                             </tr>
                             </thead>
+                            <tbody>
                             @if(count($others)>0)
-                                    <tbody>
-                                    @foreach($others as $other)
-                                    <tr class="gradeX">
-                                        <td>{{$other->id}}</td>
-                                        <td>{{$other->from_whom}}</td>
-                                        <td>{{$other->amount}}</td>
-                                        <td>{{$other->purpose}}</td>
-                                        <td>{{$other->description}}</td>
-                                        <td>{{$other->created_at}}</td>
-                                        <td>
-                                            <button  class="btn btn-sm btn-primary fa fa-edit" data-toggle="modal"
-                                                     data-target="#{{$other->id}}">&nbsp;Edit
-                                            </button>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                <tr>
-                                    <td colspan="2">Total Amount</td>
-                                    <td>{{$total}}</td>
-                                </tr>
-                            </tbody>
+                            @foreach($others as $other)
+                            <tr class="gradeX">
+                                <td>{{$other->id}}</td>
+                                <td>{{$other->from_whom}}</td>
+                                <td>{{$other->amount}}</td>
+                                <td>{{$other->purpose}}</td>
+                                <td>{{$other->description}}</td>
+                                <td>{{$other->created_at}}</td>
+                                <td>
+                                    <button  class="btn btn-sm btn-primary fa fa-edit" data-toggle="modal"
+                                             data-target="#{{$other->id}}">&nbsp;Edit
+                                    </button>
+                                </td>
+                            </tr>
+                            @endforeach
+                            <tr>
+                                <td colspan="2">Total Amount</td>
+                                <td>{{$total}}</td>
+                            </tr>
                             @else
-                                <h1 class="text-center" style="color:red;">No doctor registred yet</h1>
+                            <h2 class="text-center" style="color: red;">No other income yet</h2>
                             @endif
+                            </tbody>
                         </table>
                         {{$others->links()}}
+                        </div>
                         {{--Edit modal--}}
                         @foreach($others as $other)
                             <div class="modal inmodal" id="{{$other->id}}" tabindex="-1" role="dialog" aria-hidden="true">

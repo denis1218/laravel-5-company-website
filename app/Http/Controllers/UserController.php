@@ -43,17 +43,11 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = new User();
-        $user->username = $request->username;
-        $user->password = Hash::make($request->password);
         $user->firstname = $request->firstname;
         $user->lastname = $request->lastname;
-        $user->phone = $request->phone;
-        $user->age = $request->age;
-        $user->gender = $request->gender;
+        $user->password = Hash::make($request->password);
         $user->email = $request->email;
-        $user->address = $request->address;
         $user->department = $request->department;
-        $user->role = $request->role;
         $user->save();
         return redirect('/account');
     }

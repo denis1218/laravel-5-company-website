@@ -253,8 +253,7 @@
                                 </div>
                                 <br>
                                 <div class="row">
-                                    <strong><b><label for="position" style="margin-left: 20px;">Choose tooth
-                                                position:</label></b></strong>
+                                    <strong><b><label for="position" style="margin-left: 20px;">Choose tooth position:</label></b></strong>
                                     <br>
                                     <div class="form-group">
                                         <div class="col-sm-2"><label> <input type="radio" id="mul" value="upper_left" name="tooth_position" onchange="upperLeft()" style="width:25px;height:20px" required> &nbsp;&nbsp; Upper Left </label></div>
@@ -284,13 +283,9 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <input type="text" name="doctor_name" value="{{ $patient_in_treatment->doctor->first_name }}" style="visibility: hidden;">
                                 <input type="text" name="patient_name" value="{{ $patient_in_treatment->name }}" style="visibility: hidden;">
                                 <input type="text" name="patient_id" value="{{ $patient_in_treatment->id_patient }}" style="visibility: hidden;">
-
-
                             </form>
                             {{--end of x-ray form--}}
 
@@ -299,7 +294,7 @@
                                     <input type="hidden" value="{{ $check->visits }}" name="visits">
                                 @endforeach
                                 <input type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
-                                {{--<input hidden type="hidden" name="visits" value="{{ $treatments->visits  }}"/>--}}
+                                {{--<input hidden type="hidden" name="visits" value="{{ $treatme nts->visits  }}"/>--}}
 
                                 <div class="row">
                                     <div class="col-md-6" style="margin-top: -55px;">
@@ -360,12 +355,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <button type="submit" class="btn btn-primary" onsubmit="position()"> Save&nbsp;<i
-                                                    class="fa fa-save"></i>
-                                        </button>
-                                        <button type="reset" class="btn btn-white"> Reset&nbsp;<i
-                                                    class="fa fa-save"></i>
-                                        </button>
+                                        <button type="submit" class="btn btn-primary" onsubmit="position()">Save&nbsp;<i class="fa fa-save"></i></button>
+                                        <button type="reset" class="btn btn-white"> Reset&nbsp;<i class="fa fa-save"></i></button>
                                     </div>
                                 </div>
                                     <input type="checkbox" id="next" name="have_xray" value="yes" style="visibility:hidden;">
@@ -408,7 +399,7 @@
 
                                             <select class="form-control" name="medicine"
                                                     required>
-                                                <option value="">Select Medicine </option>
+                                                <option value="">Select Medicine</option>
                                                 @foreach($medicine as $medice)
                                                     <option value="{{ $medice->name }}">
                                                         {{ $medice->name}} </option>
@@ -421,7 +412,9 @@
                                             <input type="number" name="day" class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Add Prescription</button>
+                                            <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Add
+                                                Prescription
+                                            </button>
                                         </div>
                                     </div>
 
@@ -442,25 +435,25 @@
                                 </thead>
                                 <tbody>
 
-                                    @foreach($prescription as $pres)
-                                        <tr class="gradeX">
-                                            <td>{{$pres->medicine}}</td>
-                                            <td>{{$pres->pattern}}</td>
-                                            <td>{{$pres->day}}</td>
-                                            <td>{{$pres->instruction}}</td>
-                                            <td>
-                                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                                        data-target="#e{{$pres->id}}">&nbsp;Edit
-                                                </button>
-                                                <a class="btn btn-xs btn-danger fa fa-remove" href="/prescription/{{$pres->id}}">&nbsp;Delete
-                                                </a>
-                                            </td>
+                                @foreach($prescription as $pres)
+                                    <tr class="gradeX">
+                                        <td>{{$pres->medicine}}</td>
+                                        <td>{{$pres->pattern}}</td>
+                                        <td>{{$pres->day}}</td>
+                                        <td>{{$pres->instruction}}</td>
+                                        <td>
+                                            <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
+                                                    data-target="#e{{$pres->id}}">&nbsp;Edit
+                                            </button>
+                                            <a class="btn btn-xs btn-danger fa fa-remove"
+                                               href="/prescription/{{$pres->id}}">&nbsp;Delete
+                                            </a>
+                                        </td>
 
-                                        </tr>
-                                    @endforeach
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
-
 
 
                         </div>
@@ -489,7 +482,7 @@
         function copyvalue() {
             var teeth = document.getElementById('teeth').value;
             document.getElementById('copyteeth').value = teeth;
-            if(teeth>8){
+            if (teeth > 8) {
                 alert('Tooth number must be less than or equal to 8');
             }
         }
@@ -506,12 +499,12 @@
         }
     </script>
     <script type="text/javascript">
-        function lowerLeft(){
+        function lowerLeft() {
             document.getElementById('ll').click();
         }
     </script>
     <script type="text/javascript">
-        function lowerRight(){
+        function lowerRight() {
             document.getElementById('lr').click();
         }
     </script>
