@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Doctor;
+use App\Patient;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -31,10 +34,9 @@ class HomeController extends Controller
     }
     public function index2(){
         $id = Auth()->user()->doctor_id;
-        $doctor = Doctor::find($id)->patient;
-        $doct = Doctor::count();
-        $patient = Patient::where('doctor_id','=',$id)->get();
-
+            $doctor = Doctor::find($id)->patient;
+            $doct = Doctor::count();
+            $patient = Patient::where('doctor_id','=',$id)->get();
 
 
         return view('dash_doctor',compact('doctor','doct','patient'));

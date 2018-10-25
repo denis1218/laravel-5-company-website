@@ -21,18 +21,15 @@
                 </li>
 
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-language text-navy">&nbsp;</i><strong>Language <img src="img/un.png"
-                                                                                            width="20px"/>&nbsp;&nbsp;|</strong>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts" style="width: 150px;">
-                        <a href="#" class="hvr-grow" style="width: 100%">
-                            <li><img src="img/afg.png" width="20px;"/><strong>&nbsp;&nbsp;دری</strong></li>
-                        </a>
-                        <a href="#" class="hvr-grow" style="width:100%">
-                            <li><img src="img/un.png" width="20px"/><strong>&nbsp;&nbsp;English</strong></li>
-                        </a>
-                    </ul>
+                    <form action="/language" method="post">
+                    <select name="locale" id="selectLanguage">
+                        <option value="en">English</option>
+                        <option value="fr">دری</option>
+                    </select>
+                            {{--{{csrf_field()}}--}}
+                        <button type="submit" class="btn btn-primary btn-xs">change</button>
+                    </form>
+
                 </li>
 
                 {{-- current exchange --}}
