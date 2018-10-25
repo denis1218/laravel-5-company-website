@@ -106,6 +106,46 @@ return[
     'status_of_payment'=>'Status of Payment',
     'status_of_xray'=>'Status of X-ray',
     'details'=>'Details',
+//    Xray show part
+
+    'patient_xray_details'=>'Patient X-ray Details',
+    'change_xray_status'=>'Change X-ray Status',
+//    end of x-ray page
+
+// start of treatment operation
+    'visited'=>'Visited',
+    'first_visited_date'=>'First Visited Date',
+    'past_history'=>'Past History',
+    'present_history'=>'Present History',
+    'continue_treatment'=>'Continue Treatment',
+//    present history tab
+    'is_xray'=>'Is X-ray Needed?',
+    'yes'=>'Yes',
+    'no'=>'No',
+    'choose_tp'=>'Choose Tooth Position',
+    'upl'=>'Upper Left',
+    'upr'=>'Upper Right',
+    'lwl'=>'Lower Left',
+    'lwr'=>'Lower Right',
+    'enter_tooth'=>'Enter Tooth Number',
+    'select_dental_defect'=>'Select Dental Defect',
+    'treatment_cost'=>'Treatment Cost',
+    'discount'=>'Discount',
+    'description'=>'Description',
+    'radio_message'=>'Check it, if there is no more treatment for the specified tooth',
+    'cancel'=>'Cancel',
+    'send_to_xray'=>'Send to X-ray',
+//    prescription tab
+    'pattern'=>'Pattern',
+    'instruction'=>'Instruction',
+    'medicine'=>'Medicine',
+    'days'=>'Days',
+    'add_prescription'=>'Add Prescription',
+    'edit'=>'Edit',
+
+//    end of treatment operation
+
+//
 
 
 ];

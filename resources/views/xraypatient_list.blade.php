@@ -71,7 +71,7 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Your Patient's X-Ray List</h5>
+                    <h5>{{trans('file.patient_xray_list')}}</h5>
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
@@ -96,8 +96,8 @@
                         <div class="col-lg-12">
                             <div class="tabs-container">
                                 <ul class="nav nav-tabs" id="demoTabs">
-                                    <li class="active"><a data-toggle="tab" href="#tab-1">New Patient</a></li>
-                                    <li class=""><a data-toggle="tab" href="#tab-2">Already Done</a></li>
+                                    <li class="active"><a data-toggle="tab" href="#tab-1">{{trans('file.new_patient')}}</a></li>
+                                    <li class=""><a data-toggle="tab" href="#tab-2">{{trans('file.already_done')}}</a></li>
                                 </ul>
 
                                 <div class="tab-content">
@@ -111,20 +111,20 @@
 
                                                     <br/>
                                                     <div class="table-responsive">
-                                                        <label style="margin-left: 10px;font-size: 15px"><strong><b>Number of patient:&nbsp; <span style="color:orange">{!!count($not)!!}</span> &nbsp; Patients </b></strong></label>
+                                                        <label style="margin-left: 10px;font-size: 15px"><strong><b>{{trans('file.number_of_patient')}}:&nbsp; <span style="color:orange">{!!count($not)!!}</span> &nbsp; Patients </b></strong></label>
                                                         <hr>
                                                         <table class="table table-hover table-bordered table-striped">
                                                             <thead>
                                                             <tr>
-                                                                <th>X-Ray ID</th>
-                                                                <th>Tooth Number</th>
-                                                                <th>Tooth position</th>
-                                                                <th>Patient ID</th>
-                                                                <th>Patient Name</th>
-                                                                <th>Doctor Name</th>
-                                                                <th>Status of payment</th>
-                                                                <th>Status of X-Ray</th>
-                                                                <th>Details</th>
+                                                                <th>{{trans('file.xray_id')}}</th>
+                                                                <th>{{trans('file.teeth_number')}}</th>
+                                                                <th>{{trans('file.tooth_position')}}</th>
+                                                                <th>{{trans('file.patient_id')}}</th>
+                                                                <th>{{trans('file.patient_name')}}</th>
+                                                                <th>{{trans('file.doctor_name')}}</th>
+                                                                <th>{{trans('file.status_of_payment')}}</th>
+                                                                <th>{{trans('file.status_of_xray')}}</th>
+                                                                <th>{{trans('file.details')}}</th>
                                                             </tr>
                                                             </thead>
                                                             @if(count($count)>0)
