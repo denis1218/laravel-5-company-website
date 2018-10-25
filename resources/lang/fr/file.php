@@ -25,7 +25,7 @@ return[
     'expense_category'=>'کتگوری مصارف',
 //    end of side bar words
 
-//dashboard page
+//  page
     'user'=>'کاربر',
     'welcome'=>'خوش امدید',
     'logged_in'=>'ورود شد',
