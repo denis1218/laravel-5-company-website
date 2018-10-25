@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
     {
 
 //        if(UserTableSeeder::countt() == 0)$this->call(UserTableSeeder::class );
-        if(\App\Doctor::count() == 0)$this->call(DoctorTableSeeder::class );
+        if(\App\Doctor::count() == 0)$this->call(DoctorSeeder::class );
 
         DB::Table('users')->insert([
             'firstname' => 'jawad',
@@ -98,13 +98,7 @@ class DatabaseSeeder extends Seeder
     }
 }
 
-class DoctorTableSeeder extends Seeder
-{
-    public function run()
-    {
-        factory(Doctor::class, 3)->create();
-    }
-}
+
 
 class ExpenseTableSeeder extends Seeder
 {

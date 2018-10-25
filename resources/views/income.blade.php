@@ -75,16 +75,15 @@
                     <div class="col-sm-9">
                         <div class="input-group" style="margin-top:25px;">
                         <span class="input-group-btn">
-                        <button type="button" style="margin-left:17px;" class="btn btn-sm btn-primary"><i
-                                    class="fa fa-search"></i> Search</button></span>
-                            <input type="text" placeholder="Patient ID" class="input-sm form-control">
+                        <button type="button" style="margin-left:17px;" disabled class="btn btn-sm btn-primary"><i class="fa fa-search"></i> </button></span>
+                            <input type="text" placeholder="Search patient name" class="input-sm form-control" id="search_income" onkeyup="search_income()">
                         </div>
                     </div>
 
                     <div class="col-sm-3" style="margin-top:25px;">
                         <a href="income2" type="button" class="btn btn-sm btn-primary">Show completed Patient</a>
                     </div>
-                    <table class="table table-striped table-bordered table-hover" id="editable"
+                    <table class="table table-striped table-bordered table-hover" id="table_income"
                            style="margin-top:80px;margin-left:30px;width:95%;">
                         <thead>
                         <tr>
@@ -329,7 +328,32 @@
 
 @section('script')
 
-    <script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
+    {{-- javascript search on table --}}
+    <script>
+        {{-- filter search all patient table --}}
+        function search_income() {
+            // Declare variables
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("search_income");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("table_income");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[2];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+    </script>
+
     <script>
         $(document).ready(function () {
 
