@@ -28,7 +28,7 @@
     <div class="col-lg-12">
         <div class="ibox">
             <div class="ibox-title">
-                <h5>Patient Registration</h5>
+                <h5>{{trans('file.pr_form')}}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -49,26 +49,26 @@
             </div>
             <div class="ibox-content">
                 <h2>
-                    Patient Ragistration Form
+                    {{trans('file.pr_form')}}
                 </h2>
 
                 <form id="form" method="post" action="{{ url('/patient') }}" class="wizard-big">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    <h1 >Doctor Available</h1>
+                    <h1 >{{trans('file.doctor_available')}}</h1>
                     <fieldset>
-                        <h2>Select Doctor</h2>
+                        <h2>{{trans('file.select_doctor')}}</h2>
                         <hr class="hr-line-dashed">
                         <div class="row">
                             <div class="col-lg-12">
                                 <table class="table table-hover table-borderd table-striped">
                                     <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Doctor Name</th>
-                                        <th>Availability Time</th>
-                                        <th>Max Patient Accept</th>
-                                        <th>Registered Patients</th>
-                                        <th>Select Doctor</th>
+                                        <th>{{trans('file.id')}}</th>
+                                        <th>{{trans('file.doctor_name')}}</th>
+                                        <th>{{trans('file.availability_time')}}</th>
+                                        <th>{{trans('file.max_patient')}}</th>
+                                        <th>{{trans('file.registered_patient')}}</th>
+                                        <th>{{trans('file.select_doctor')}}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -93,38 +93,38 @@
                         </div>
                     </fieldset>
 
-                    <h1>Patient</h1>
+                    <h1>{{trans('file.patient')}}</h1>
                     <fieldset>
-                        <h2>Patient Information</h2>
+                        <h2>{{trans('file.patient_information')}}</h2>
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="form-group">
-                                    <label>Full Name *</label>
+                                    <label>{{trans('file.first_name')}} *</label>
                                     <input id="name" name="name" type="text" class="form-control required">
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Last Name *</label>
+                                    <label>{{trans('file.last_name')}} *</label>
                                     <input id="lastname" name="lastname" type="text" class="form-control required">
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Gender &nbsp;&nbsp;&nbsp;</label>
-                                    <label>  <div class="i-checks"><input type="radio"  value="male" name="gender"></div></i> Male </label>&nbsp;&nbsp;
-                                    <label>  <div class="i-checks"><input type="radio"  value="female" name="gender"></div></i> Female </label>
+                                    <label>{{trans('file.gender')}}&nbsp;&nbsp;&nbsp;</label>
+                                    <label>  <div class="i-checks"><input type="radio"  value="male" name="gender"></div></i> {{trans('file.male')}} </label>&nbsp;&nbsp;
+                                    <label>  <div class="i-checks"><input type="radio"  value="female" name="gender"></div></i> {{trans('file.female')}} </label>
 
 
                                 </div>
                                 <div class="form-group">
-                                    <label>Age *</label>
+                                    <label>{{trans('file.age')}} *</label>
                                     <input id="age" name="age" type="number" class="form-control required">
                                 </div>
                                 <div class="form-group">
-                                    <label>Phone *</label>
+                                    <label>{{trans('file.phone')}} *</label>
                                     <input id="phone" name="phone" type="phone" class="form-control required">
                                 </div>
                                 <div class="form-group">
-                                    <label>Address *</label>
+                                    <label>{{trans('file.address')}} *</label>
                                     <textarea rows="5" id="address" name="address" type="text" class="form-control required"></textarea>
                                 </div>
                             </div>
@@ -138,34 +138,34 @@
                         </div>
 
                     </fieldset>
-                    <h1>Healths Problems</h1>
+                    <h1>{{trans('file.health_problem')}}</h1>
                     <fieldset>
 
-                        <h2>Any treatment prior to this treatment?</h2>
+                        <h2>{{trans('file.p_treatment')}}?</h2>
                         <div class="row">
                             <div class="col-lg-7">
                                 <div class="form-group">
                                     <div class="col-sm-10">
-                                        <div class="i-checks"><label> <input type="checkbox" value="prior" name="problem_health[]"> <i></i>Prior Problem</label></div>
+                                        <div class="i-checks"><label> <input type="checkbox" value="prior" name="problem_health[]"> <i></i>{{trans('file.p_problem')}}</label></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <br>
 
-                        <h2>Allergy to Anesthitic drug </h2>
+                        <h2>{{trans('file.allergy')}} </h2>
                         <div class="row">
                             <div class="col-lg-7">
                                 <div class="form-group">
                                     <div class="col-sm-10">
-                                        <div class="i-checks"><label> <input type="checkbox" value="Anesthitic" name="problem_health[]"> <i></i>Anesthitic Problem</label></div>
+                                        <div class="i-checks"><label> <input type="checkbox" value="Anesthitic" name="problem_health[]"> <i></i>{{trans('file.anesthetic_problem')}}</label></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <br>
 
-                        <h2>Other Health Problem</h2>
+                        <h2>{{trans('file.o_problem')}}</h2>
                         <div class="row" >
                             <div class="col-lg-7">
                                 <div class="row">
