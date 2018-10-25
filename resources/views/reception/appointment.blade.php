@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="ibox-content">
-
+                @include('layout.messages')
                 {{--doctor's specific patients--}}
                 <div class="row">
                     <div class="col-12">

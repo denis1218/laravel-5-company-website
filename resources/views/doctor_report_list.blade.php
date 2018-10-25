@@ -50,6 +50,7 @@
                 </div>
             </div>
             <div class="ibox-content">
+                @include('layout.messages')
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="ibox float-e-margins">
@@ -116,125 +117,7 @@
     </div>
     {{-- show all doctors --}}
 
-    {{-- Modal window dialog --}}
-    <div class="modal inmodal" id="medicine-model" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content animated fadeIn">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span
-                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <i class=" modal-icon"><img src="img/medicine_drug.png" width="80px"/></i>
-                    <h4 class="modal-title">Medicine patient</h4>
-                    <small>information patient medicine</small>
-                </div>
-                <div class="modal-body">
-                    <table class="table table-hover no-margins table-striped">
-                        <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>Name Drug</th>
-                            <th>Each day</th>
-                            <th>Total Days</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Ampicilne</td>
-                            <td>1+1+1</td>
-                            <td>2 days</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Brophine</td>
-                            <td>1+1+1</td>
-                            <td>1 day</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 
 @endsection
 
 
-@section('script')
-    <!-- script -->
-
-    <script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
-    <script>
-        $(document).ready(function () {
-
-            $('.demo1').click(function () {
-                swal({
-                    title: "Welcome in Alerts",
-                    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-                });
-            });
-
-            $('.demo2').click(function () {
-                swal({
-                    title: "Successfully Send!",
-                    text: "X-Ray Document Successfully send to doctor!",
-                    type: "success"
-                });
-            });
-
-            $('.demo3').click(function () {
-                swal({
-                    title: "Are you sure?",
-                    text: "You will not be able to recover this imaginary file!",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes, delete it!",
-                    closeOnConfirm: false
-                }, function () {
-                    swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                });
-            });
-
-            $('.demo4').click(function () {
-                swal({
-                        title: "Are you sure?",
-                        text: "Your will not be able to recover this imaginary file!",
-                        type: "warning",
-                        showCancelButton: true,
-                        confirmButtonColor: "#DD6B55",
-                        confirmButtonText: "Yes, delete it!",
-                        cancelButtonText: "No, cancel plx!",
-                        closeOnConfirm: false,
-                        closeOnCancel: false
-                    },
-                    function (isConfirm) {
-                        if (isConfirm) {
-                            swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                        } else {
-                            swal("Cancelled", "Your imaginary file is safe :)", "error");
-                        }
-                    });
-            });
-
-
-        });
-    </script>
-
-    <!-- Data Tables -->
-    <script src="dashboard/js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.bootstrap.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.responsive.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
-
-    <!-- Custom and plugin javascript -->
-    <script src="dashboard/js/inspinia.js"></script>
-    <script src="dashboard/js/plugins/pace/pace.min.js"></script>
-
-
-@endsection

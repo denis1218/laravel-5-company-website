@@ -11,7 +11,7 @@
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <span class="label label-info pull-right">Logged in</span>
-                        <h5>User</h5>
+                        <h5>Usergiyt </h5>
                     </div>
                     <div class="ibox-content">
                         <h2 class="no-margins">

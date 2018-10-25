@@ -129,9 +129,9 @@
                                 <label class="font-noraml">Select Range</label>
                                 <div class="input-daterange input-group" id="" >
                                     <span class="input-group-addon">From &nbsp;<i class="fa fa-arrow-right"></i></span>
-                                    <input type="date" class="input-sm form-control" name="start"/>
+                                    <input type="date" class="input-sm form-control" name="start" required>
                                     <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
-                                    <input type="date" class="input-sm form-control" name="end" />
+                                    <input type="date" class="input-sm form-control" name="end" required="">
 
                                 </div>
                             </div>
@@ -195,7 +195,7 @@
                                     <tr>
                                         <td class="text-bold"><h4>Payment amount: </h4></td>
                                         <td>
-                                            <input type="number" max="{{$docfee+$doctor->remaining}}" class="form-control" placeholder="Enter the fee amount" name="salary" required>
+                                            <input type="number" min="1" max="{{$docfee+$doctor->remaining}}" class="form-control" placeholder="Enter the fee amount" name="salary" required>
                                         </td>
                                     </tr>
                                     <tr>

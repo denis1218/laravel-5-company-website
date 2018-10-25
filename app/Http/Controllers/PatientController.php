@@ -73,7 +73,7 @@ class PatientController extends Controller
         $patient->problem_health = $string;
         $patient->id_patient = 'P-'.$phonenumber;
         $patient->save();
-        return redirect('/patient');
+        return redirect('/patient')->with('success','patient registered successfully');
     }
 
     /**
@@ -113,7 +113,7 @@ class PatientController extends Controller
         $patient = Patient::find($id);
         $patient->next_appointment = Carbon::now();
         $patient->update();
-        return redirect()->back();
+        return redirect()->back()->with('success','Patient information updated successfully');
     }
 
 
@@ -128,7 +128,7 @@ class PatientController extends Controller
     {
         $patient = Patient::find($id);
         $patient->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success','Patient deleted from databae successfully');
     }
 
 

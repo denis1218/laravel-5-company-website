@@ -66,9 +66,6 @@ class DoctorController extends Controller
         $user->department = 'doctor';
         $user->doctor_id = $doct;
         $user->save();
-
-
-
         return redirect('/doctors')->with('success','Doctor registered successfully');
     }
 
@@ -95,14 +92,12 @@ class DoctorController extends Controller
         $doctor=Doctor::find($id);
         $patient=Doctor::find($id)->patient;
         $treatment=Doctor::find($id)->treatment;
-//        $selectedTreatment=Treatment::whereBetween('created_at',[$doctor->to,now()])->get();
 
         if($doctor->to==null){
             $total=$treatment->sum('paid_amount');
         }else{
             $total=$treatment->sum('paid_amount');
         }
-//
 
 
         if($doctor->salary_type=='fix'){
