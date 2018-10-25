@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DentalDefectList;
+use App\Doctor;
 use App\Income;
 use App\Medicine;
 use App\Patient;
@@ -25,11 +26,12 @@ class TreatmentController extends Controller
      */
     public function index()
     {
-
-        $operation = Patient::whereDate('next_appointment',Carbon::today())->orderBy('id', 'asc')->paginate(10);
-        return view('doctor_operations')->with('operation', $operation);
-
+        $id = Auth()->user()->doctor_id;
+        $operation = Doctor::find($id)->patient_for_today;
+        $doctor = Doctor::all();
+        return view('doctor_operations',compact('operation','doctor'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -126,14 +128,13 @@ class TreatmentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param $id
+     * @param Request $request
      * @return \Illuminate\Http\Response
+     * @internal param $id
      * @internal param Treatment $treatment
      */
-    public
-    function show($id)
+    public function show(Request $request)
     {
-
     }
 
     /**

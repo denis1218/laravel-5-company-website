@@ -54,7 +54,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Patient Appointment List </h5>
+                <h5>{{trans('file.patient_appointment_list')}} </h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -78,9 +78,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="input-group"><span class="input-group-btn">
-                        <button type="button" disabled class="btn btn-white"><i class="fa fa-search"></i>
+                        <button type="button" disabled class="btn btn-white"><i class="fa fa-search text-success"></i>
                         </button> </span>
-                            <input  type="text" id="search" onkeyup="filter_search()" name="search_patient" placeholder="Search patient ID"
+                            <input  type="text" id="search" onkeyup="filter_search()" name="search_patient" placeholder="{{trans('file.search_patient_id')}}"
                                     class=" form-control"></div>
                     </div>
                 </div>
@@ -92,13 +92,13 @@
                             <table class="table table-hover no-margins" id="table_patient">
                                 <thead>
                                 <tr>
-                                    <th>P-ID</th>
-                                    <th>Patient Name</th>
-                                    <th>Last Name</th>
-                                    <th>Status</th>
-                                    <th>Date & Time Appointment</th>
-                                    <th>Health Problem</th>
-                                    <th>Operation</th>
+                                    <th>{{trans('file.p_id')}}</th>
+                                    <th>{{trans('file.patient_name')}}</th>
+                                    <th>{{trans('file.last_name')}}</th>
+                                    <th>{{trans('file.status')}}</th>
+                                    <th>{{trans('file.date_appointment')}}</th>
+                                    <th>{{trans('file.health_problem')}}</th>
+                                    <th>{{trans('file.operation')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -111,8 +111,9 @@
                                             <td>{{ $opr->status }}</td>
                                             <td>{{ $opr->next_appointment }}</td>
                                             <td>{{ $opr->problem_health }}</td>
-                                            <td><a href="/operation/create/{{$opr->id}}" class="btn btn-sm btn-primary">Start
-                                                    Treatment</a>
+
+                                            <td><a href="/operation/create/{{$opr->id}}" class="btn btn-sm btn-primary">{{trans('file.start_operation')}}</a>
+
                                             </td>
                                         </tr>
                                     @endforeach
@@ -121,7 +122,7 @@
                             </table>
                             {{--{{$operation->links()}}--}}
                             @else
-                                <h3 style="color:red;text-align: center;">NO PATIENT HAS BEEN REGISTERED YET</h3>
+                                <h5 style="color:red;text-align: center;">NO PATIENT HAS BEEN REGISTERED YET</h5>
                             @endif
                         </div>
                     </div>
@@ -134,6 +135,10 @@
 @section('script')
 
 
+    <script>
+        var e = document.getElementById("ddlViewBy");
+        var strUser = e.options[e.selectedIndex].value;
+    </script>
 
 
 
