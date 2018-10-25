@@ -24,6 +24,66 @@ Route::post('language',array(
     'uses'=>'LanguageController@index'
 ));
 
+
+////Route Group & Middleware for Admin
+//Route::middleware('auth','admin')->group(function () {
+//
+//    Route::resource('/patient', 'PatientController');
+//
+//
+//    Route::get('/new-patient-today', 'PatientController@show_new_patients');
+//
+//    Route::get('/next-appointment-patient', 'PatientController@show_next_appointment_patient');
+//
+//    Route::get('/miss-next-appointment-patient', 'PatientController@show_missing_next_appointment_patient');
+//
+//    Route::get('/dash_reception', function () {
+//        return view('reception.dash_reception');
+//    });
+//
+//    Route::resource('/expense-category', 'ExpenseCatagoryController');
+//
+//    Route::get('/employee', function () {
+//        return view('/employee');
+//    });
+//
+//// report doctors
+//    Route::get('/doctor_report', function () {
+//        return view('doctor_report');
+//    });
+//// Financial report
+//    Route::get('/finance_report', function () {
+//        return view('finance_report');
+//    });
+//// report docors
+//    Route::get('/report_doctors', function () {
+//        return view('report_doctors');
+//    });
+//// Financial report daily
+//    Route::get('/finance_report_income', function () {
+//        return view('finance_report.finance_report_income');
+//    });
+//
+//    Route::get('/date_report_patient', function () {
+//        return view('date_report_patient');
+//    });
+//
+//    Route::get('/patient_history_print', function () {
+//        return view('patient.patient_history_print');
+//    });
+//
+//    Route::get('/next_appointment_list', function () {
+//        return view('next_appointment_list');
+//    });
+//
+//    Route::get('/doctor_report_list', function () {
+//
+//
+//        return view('/doctor_report_list');
+//    });
+//});
+//// End Route Admin
+
 //Route Group & Middleware for Admin
 Route::middleware('auth','admin')->group(function () {
 
@@ -216,6 +276,7 @@ Route::middleware('auth','admin')->group(function () {
     Route::get('/patient/{id}','PatientController@index');
 });
 // End Route Admin
+
 
 
 // Route Group & Middleware for doctor

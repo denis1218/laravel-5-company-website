@@ -107,6 +107,7 @@ return[
     'status_of_xray'=>'Status of X-ray',
     'details'=>'Details',
 
+
 ];
 
 
