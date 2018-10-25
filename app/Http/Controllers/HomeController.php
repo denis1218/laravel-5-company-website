@@ -32,17 +32,16 @@ class HomeController extends Controller
         return view('dash',compact('patient','doctor','apatient'));
     }
 
-    public function index2(){
+    public function doctor_dashboard(){
         $id = Auth()->user()->doctor_id;
-        $doctor = Doctor::find($id)->patient;
+        $doctor = Doctor::find($id)->patient_for_today;
         $doct = Doctor::count();
         $patient = Patient::where('doctor_id','=',$id)->get();
         return view('dash_doctor',compact('doctor','doct','patient'));
-
     }
+
     public function reception(){
         $patient = Patient::whereDate('next_appointment',Carbon::today())->get();
-//        return $patient;
         return view('reception.dash_reception',compact('patient'));
     }
 

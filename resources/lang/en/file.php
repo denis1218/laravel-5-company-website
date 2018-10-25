@@ -145,7 +145,38 @@ return[
 
 //    end of treatment operation
 
-//
+//Start of Doctor Registration
+
+    'first_name'=>'First Name',
+    'father_name'=>'Father Name',
+    'max_patient'=>'Max Patient Can Visit',
+    'email'=>'Email',
+    'password'=>'Password',
+    'working_time'=>'Working Time',
+    'from'=>'From',
+    'to'=>'To',
+    'salary_type'=>'Salary Type',
+    'per'=>'Per',
+    'fix'=>'Fix',
+    'salary_amount'=>'Salary Amount',
+    'male'=>'Male',
+    'female'=>'Female',
+    'reset'=>'Reset',
+//    End of Dr. registration
+
+//Start of patient registration form
+    'id'=>'ID',
+    'pr_form'=>'Patient Registration From',
+    'doctor_available'=>'Available doctors',
+    'select_doctor'=>'Select Doctor',
+    'availability_time'=>'Availability Time',
+    'registered_patient'=>'Registered Patient',
+    'p_treatment'=>'Any previous treatment for same tooth',
+    'p_problem'=>'Prior Problem',
+    'allergy'=>'Allergy',
+    'anesthetic_problem'=>'Anesthetic Problem',
+    'o_problem'=>'Other Problem',
+//    End of patient registration
 
 
 ];
