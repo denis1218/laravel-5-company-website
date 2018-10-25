@@ -43,7 +43,6 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123456'),
             'email' => 'haidar@gmail.com',
             'department' => 'admin',
-
         ]);
         DB::Table('users')->insert([
             'firstname' => 'ahmad',
@@ -51,7 +50,6 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123456'),
             'email' => 'ahmad@gmail.com',
             'department' => 'reception',
-
         ]);
 
         if(Patient::count() == 0)$this->call(PatientTableSeeder::class );
