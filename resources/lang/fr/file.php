@@ -24,6 +24,9 @@ return[
     'add_medicine'=>'ادویه',
     'expense_category'=>'کتگوری مصارف',
 //    end of side bar words
+
+//DashBoard page
+ 'user'=>'کاربر'
 ];
 
 
