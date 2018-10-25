@@ -221,6 +221,8 @@ Route::middleware('auth','reception')->group(function () {
 
     Route::get('/patient/{id}','PatientController@index');
 
+    Route::resource('/doctor-department','DoctorDepartmentController');
+
 });
 // End Route Reception
 

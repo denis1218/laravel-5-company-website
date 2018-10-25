@@ -114,6 +114,9 @@
                             <li><a href="/treatment-list"><i
                                             class="fa fa-pencil-square-o"></i>Treatment List</a>
                             </li>
+                            <li><a href="/doctor-department"><i
+                                            class="fa fa-pencil-square-o"></i>Doctor Department</a>
+                            </li>
 
                         </ul>
                     </li>

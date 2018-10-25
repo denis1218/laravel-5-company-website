@@ -85,14 +85,11 @@
                                             <label class="control-label">Departement</label>
                                             <select class="select2_demo_1 form-control" id="dept" name="department"
                                                     required>
-                                                <option value="0">Select Department</option>
+                                                <option select="">Select Department</option>
+                                                @foreach($department as $departments)
+
                                                 <option value="regular basis">regular basis</option>
-                                                <option value="Orthodontist">Orthodontist</option>
-                                                <option value="Oral and maxillofacial surgeon">Oral and maxillofacialsurgeon</option>
-                                                <option value="Periodontist">Periodontist</option>
-                                                <option value="Prosthodontist">Prosthodontist</option>
-                                                <option value="Endodontist">Endodontist</option>
-                                                <option value="General">General</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
