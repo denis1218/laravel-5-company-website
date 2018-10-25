@@ -33,15 +33,16 @@
                 @if(Auth::user()->department == 'admin')
                     <li class="active">
 
-                        <a href="/dash"><i class="fa fa-home"></i> <span class="nav-label">{{trans('file.home')}}</span> </a>
+                        <a href="/dash"><i class="fa fa-home"></i> <span class="nav-label">{{trans('file.home')}}</span>
+                        </a>
                     </li>
 
                     <li>
                         <a><i class="fa fa-sitemap"></i> <span
                                     class="nav-label">{{trans('file.department')}}</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/operation"><i class="fa fa-user-md"></i>Doctor</a></li>
-                            <li><a href="/xray"><i class="fa fa-flash"></i>X-Ray</a></li>
+                            <li><a href="/operation"><i class="fa fa-user-md"></i>{{trans('file.doctor')}}</a></li>
+                            <li><a href="/xray"><i class="fa fa-flash"></i>{{trans('file.xray')}}</a></li>
                         </ul>
                     </li>
 
@@ -52,44 +53,58 @@
 
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/doctors/create"><i class="fa fa-save"></i>Doctor Registration</a></li>
-                            <li><a href="/patient/create"><i class="fa fa-user-md"></i>Patient Registration</a></li>
-                            <li><a href="/patient"><i class="fa fa-flash"></i>List of Patient</a></li>
-                            <li><a href="/patient_report"><i class="fa fa-file-o"></i>Patient Report</a></li>
-                            <li><a href="/prescription"><i class="fa fa-file-pdf-o"></i>Prescriptions</a></li>
+                            <li><a href="/doctors/create"><i
+                                            class="fa fa-save"></i>{{trans('file.doctor_registration')}}</a></li>
+                            <li><a href="/patient/create"><i
+                                            class="fa fa-user-md"></i>{{trans('file.patient_registration')}}</a></li>
+                            <li><a href="/patient"><i class="fa fa-flash"></i>{{trans('list_of_patient')}}</a></li>
+                            <li><a href="/patient_report"><i class="fa fa-file-o"></i>{{trans('patient_report')}}</a>
+                            </li>
+                            <li><a href="/prescription"><i class="fa fa-file-pdf-o"></i>{{trans('file.prescription')}}
+                                </a></li>
 
                         </ul>
                     </li>
 
                     <li>
-                        <a><i class="fa fa-calculator"></i> <span class="nav-label">{{trans('file.finance')}}</span><span
+                        <a><i class="fa fa-calculator"></i> <span
+                                    class="nav-label">{{trans('file.finance')}}</span><span
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/expenditure"><i class="fa fa-shopping-cart"></i>Expenditure</a></li>
-                            <li><a href="/income"><i class="fa fa-arrow-circle-o-down"></i>Income</a></li>
-                            <li><a href="/doctors"><i class="fa fa-user-md"></i>Doctors</a></li>
-                            <li><a href="/finance_report"><i class="fa fa-file-o"></i> Financial report<span
+                            <li><a href="/expenditure"><i class="fa fa-shopping-cart"></i>{{trans('file.expenditure')}}
+                                </a></li>
+                            <li><a href="/income"><i class="fa fa-arrow-circle-o-down"></i>{{trans('file.income')}}</a>
+                            </li>
+                            <li><a href="/doctors"><i class="fa fa-user-md"></i>{{trans('file.doctors')}}</a></li>
+                            <li><a href="/finance_report"><i class="fa fa-file-o"></i>{{trans('file.financial_report')}}
+                                    <span
                                             class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level collapse">
-                                    <li><a href="/finance_report_income"><i class="fa fa-tag"></i>&nbsp;&nbsp;Income</a>
+                                    <li><a href="/finance_report_income"><i
+                                                    class="fa fa-tag"></i>&nbsp;&nbsp;{{trans('file.income')}}</a>
                                     </li>
-                                    <li><a href="/finance_report_expenses"><i class="fa fa-tag"></i>&nbsp;&nbsp;Expenses</a>
+                                    <li><a href="/finance_report_expenses"><i
+                                                    class="fa fa-tag"></i>{{trans('file.expense')}}</a>
                                     </li>
-                                    <li><a href="/finance_report_profit"><i class="fa fa-tag"></i>&nbsp;&nbsp;Profit</a>
+                                    <li><a href="/finance_report_profit"><i
+                                                    class="fa fa-tag"></i>&nbsp;&nbsp;{{trans('file.profit')}}</a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">{{trans('file.setting')}}</span><span
+                        <a href="setting"><i class="fa fa-cog"></i> <span
+                                    class="nav-label">{{trans('file.setting')}}</span><span
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="account"><i class="fa fa-user-plus"></i>&nbsp;Accounts</a></li>
-                            <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
-                            <li><a href="medicine"><i class="fa fa-plus"></i> Add Medicine</a></li>
+                            <li><a href="account"><i class="fa fa-user-plus"></i>{{trans('file.account')}}</a></li>
+                            <li><a href="explore_backups"><i class="fa fa-database"></i>{{trans('file.backup_db')}}</a>
+                            </li>
+                            <li><a href="medicine"><i class="fa fa-plus"></i>{{trans('file.add_medicine')}}</a></li>
 
-                            <li><a href="/expense-category"><i class="fa fa-pencil-square-o"></i> &nbsp;Expense category</a>
+                            <li><a href="/expense-category"><i
+                                            class="fa fa-pencil-square-o"></i>{{trans('file.expense_category')}}</a>
                             </li>
 
                         </ul>
@@ -100,71 +115,76 @@
 
                 @if(Auth::user()->department == 'doctor')
                     <li class="active">
-                        <a href="/dash_doctor"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
+                        <a href="/dash_doctor"><i class="fa fa-home"></i> <span
+                                    class="nav-label">{{trans('file.home')}}</span> </a>
                     </li>
 
 
                     <li>
                         <a><i class="fa fa-sitemap"></i> <span
-                                    class="nav-label">Department</span><span class="fa arrow"></span></a>
+                                    class="nav-label">{{trans('file.department')}}</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/operation"><i class="fa fa-user-md"></i>Doctor</a></li>
-                            <li><a href="/xray"><i class="fa fa-flash"></i>X-Ray</a></li>
+                            <li><a href="/operation"><i class="fa fa-user-md"></i>{{trans('file.doctor')}}</a></li>
+                            <li><a href="/xray"><i class="fa fa-flash"></i>{{trans('file.xray')}}</a></li>
                         </ul>
                     </li>
-                        </ul>
-                    </li>
-                    {{--end condition of doctor--}}
+            </ul>
+            {{--end condition of doctor--}}
 
-                @endif
-                {{--condition for reception--}}
-                @if(Auth::user()->department == 'reception')
-                    <li class="active">
-                        <a href="/dash_reception"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
-                    </li>
-
-
-                    <li>
-                        <a><i class="fa fa-book"></i> <span class="nav-label">Reception</span><span
-                                    class="fa arrow"></span></a>
-                        <ul class="nav nav-second-l
-                        evel collapse">
-                            <li><a href="/doctors/create"><i class="fa fa-save"></i>Doctor Registration</a></li>
-                            <li><a href="/patient/create"><i class="fa fa-user-md"></i>Patient Registration</a></li>
-                            <li><a href="/patient"><i class="fa fa-flash"></i>List of Patient</a></li>
-                            <li><a href="/patient_report"><i class="fa fa-file-o"></i>Patient Report</a></li>
-                            <li><a href="/prescription"><i class="fa fa-file-pdf-o"></i>Prescriptions</a></li>
-
-                        </ul>
-                    </li>
+            @endif
+            {{--condition for reception--}}
+            @if(Auth::user()->department == 'reception')
+                <li class="active">
+                    <a href="/dash_reception"><i class="fa fa-home"></i> <span
+                                class="nav-label">{{trans('file.home')}}</span> </a>
+                </li>
 
 
-                    <li>
-                        <a><i class="fa fa-calculator"></i> <span class="nav-label">Finance</span><span
-                                    class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="/expenditure"><i class="fa fa-shopping-cart"></i>Expenditure</a></li>
-                            <li><a href="/income"><i class="fa fa-arrow-circle-o-down"></i>Income</a></li>
-                            <li><a href="/doctors"><i class="fa fa-user-md"></i>Doctors</a></li>
-                            <li><a href="/finance_report"><i class="fa fa-file-o"></i> Financial report<span
-                                            class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level collapse">
-                                    <li><a href="/finance_report_income"><i class="fa fa-tag"></i>&nbsp;&nbsp;Income</a>
-                                    </li>
-                                    <li><a href="/finance_report_expenses"><i class="fa fa-tag"></i>&nbsp;&nbsp;Expenses</a>
-                                    </li>
-                                    <li><a href="/finance_report_profit"><i class="fa fa-tag"></i>&nbsp;&nbsp;Profit</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+                <li>
+                    <a><i class="fa fa-book"></i> <span class="nav-label">{{trans('file.reception')}}</span><span
 
+                                class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="/doctors/create"><i class="fa fa-save"></i>{{trans('file.doctor_registration')}}
+                            </a></li>
+                        <li><a href="/patient/create"><i
+                                        class="fa fa-user-md"></i>{{trans('file.patient_registration')}}</a></li>
+                        <li><a href="/patient"><i class="fa fa-flash"></i>{{trans('list_of_patient')}}</a></li>
+                        <li><a href="/patient_report"><i class="fa fa-file-o"></i>{{trans('patient_report')}}</a></li>
+                        <li><a href="/prescription"><i class="fa fa-file-pdf-o"></i>{{trans('file.prescription')}}</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a><i class="fa fa-calculator"></i> <span class="nav-label">{{trans('file.finance')}}</span><span
+                                class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="/expenditure"><i class="fa fa-shopping-cart"></i>{{trans('file.expenditure')}}</a>
+                        </li>
+                        <li><a href="/income"><i class="fa fa-arrow-circle-o-down"></i>{{trans('file.income')}}</a></li>
+                        <li><a href="/doctors"><i class="fa fa-user-md"></i>{{trans('file.doctors')}}</a></li>
+                        <li><a href="/finance_report"><i class="fa fa-file-o"></i>{{trans('file.financial_report')}}<span
+                                        class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li><a href="/finance_report_income"><i
+                                                class="fa fa-tag"></i>&nbsp;&nbsp;{{trans('file.income')}}</a>
+                                </li>
+                                <li><a href="/finance_report_expenses"><i
+                                                class="fa fa-tag"></i>{{trans('file.expense')}}</a>
+                                </li>
+                                <li><a href="/finance_report_profit"><i
+                                                class="fa fa-tag"></i>&nbsp;&nbsp;{{trans('file.profit')}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
 
                 @endif
                 {{--end condition--}}
 
-            </ul>
         </div>
     </nav>
 </div>
