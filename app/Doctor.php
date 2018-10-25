@@ -32,7 +32,12 @@ class Doctor extends Model
     }
 
     public function treatment(){
-        return $this->hasManyThrough(Treatment::class ,Patient::class)->whereDate('treatments.created_at','>',$this->to);
+        $first = Carbon::now()->startOfMonth()->toDateString();
+        if ($this->to != null){
+            return $this->hasManyThrough(Treatment::class ,Patient::class)->whereDate('treatments.created_at','>',$this->to);
+        } else{
+            return $this->hasManyThrough(Treatment::class ,Patient::class)->whereDate('treatments.created_at','>',$first);
+        }
     }
 
 

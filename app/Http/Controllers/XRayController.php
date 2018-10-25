@@ -16,9 +16,10 @@ class XrayController extends Controller
     public function index()
     {
         $patient=Xray::orderBy('created_at','desc')->paginate(12);
+        $count=Xray::where('xray_status','=','not')->get();
         $not=Xray::where('xray_status','=','not')->get();
         $yes=Xray::where('xray_status','=','yes')->get();
-        return view('xraypatient_list',compact('patient','not','yes'));
+        return view('xraypatient_list',compact('patient','not','yes','count'));
 //        return $not;
     }
 
@@ -50,7 +51,7 @@ class XrayController extends Controller
         $rey->xray_status=$request->input('xray_status');
         $rey->save();
 
-        return redirect('/xray');
+        return redirect('/xray')->with('success','Patient registered for x-ray successfully');
 
 
     }
@@ -95,7 +96,7 @@ class XrayController extends Controller
         $Edt->doctor_name=$request->doctor_name;
         $Edt->xray_status=$request->xray_status;
         $Edt->save();
-        return redirect('/xray');
+        return redirect('/xray')->with('success','X-ray is done for $request->patient_name');
     //    return $request;
     }
 

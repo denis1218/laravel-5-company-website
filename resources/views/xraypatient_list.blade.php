@@ -91,6 +91,7 @@
                     </div>
                 </div>
                 <div class="ibox-content">
+                    @include('layout.messages')
                     <div class="row" style="margin-right: 0px;margin-left:0PX;">
                         <div class="col-lg-12">
                             <div class="tabs-container">
@@ -126,7 +127,7 @@
                                                                 <th>Details</th>
                                                             </tr>
                                                             </thead>
-                                                            @if(count($patient)>0)
+                                                            @if(count($count)>0)
                                                                 @foreach($patient as $pat)
                                                                     <tbody>
                                                                     @if($pat->xray_status=='not')
