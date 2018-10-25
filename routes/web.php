@@ -24,7 +24,7 @@ Route::post('language',array(
     'uses'=>'LanguageController@index'
 ));
 
-<<<<<<< HEAD
+
 ////Route Group & Middleware for Admin
 //Route::middleware('auth','admin')->group(function () {
 //
@@ -83,7 +83,7 @@ Route::post('language',array(
 //    });
 //});
 //// End Route Admin
-=======
+
 //Route Group & Middleware for Admin
 Route::middleware('auth','admin')->group(function () {
 
@@ -276,7 +276,7 @@ Route::middleware('auth','admin')->group(function () {
     Route::get('/patient/{id}','PatientController@index');
 });
 // End Route Admin
->>>>>>> f3b9ebc7224cbd791a853c87d5beda1599471f59
+
 
 
 // Route Group & Middleware for doctor

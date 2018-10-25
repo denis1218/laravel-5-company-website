@@ -70,7 +70,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Patient X-Ray Details </h5>
+                <h5>{{trans('file.patient_xray_details')}} </h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -100,10 +100,10 @@
                             <div class="profile-info">
                                 <div class="">
                                     <div>
-                                        <h2 class="no-margins font-b"><label>Patient Name:&nbsp;</label>
+                                        <h2 class="no-margins font-b"><label>{{trans('file.patient_name')}}:&nbsp;</label>
                                             <h3><input type="text" name="patient_name" value="{{$spats->patient_name}}" class="form-control" readonly></h3>
                                         </h2>
-                                        <h2 class="no-margins font-b"><label>Patient ID:&nbsp;</label>
+                                        <h2 class="no-margins font-b"><label>{{trans('file.patient_id')}}:&nbsp;</label>
                                             <input type="text" name="patient_id" value="{{$spats->patient_id}}" class="form-control" readonly>
                                         </h2>
                                     </div>
@@ -115,7 +115,7 @@
                                 <tbody>
                                    <tr>
                                         <td>
-                                            <span class="font-m">Date Reg:&nbsp;<i class="fa fa-calendar"></i></span>
+                                            <span class="font-m">{{trans('file.date')}}:&nbsp;<i class="fa fa-calendar"></i></span>
                                         </td>
                                         <td>
                                             <h3><b>&nbsp;{{$spats->created_at}}</b></h3>
@@ -123,23 +123,23 @@
                                     </tr>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Doctor:&nbsp; <i class="fa fa-user-md"></i><input type="text" name="doctor_name" class="form-control" value="{{$spats->doctor_name}}" readonly> </span>
+                                        <span class="font-m">{{trans('file.doctor')}}:&nbsp; <i class="fa fa-user-md"></i><input type="text" name="doctor_name" class="form-control" value="{{$spats->doctor_name}}" readonly> </span>
                                     </td>
                                     <td>
-                                        <span class="font-m">X-Ray ID:&nbsp;<input type="text" name="id" class="form-control" value="{{$spats->id}}" readonly> </span>
+                                        <span class="font-m">{{trans('file.xray_id')}}:&nbsp;<input type="text" name="id" class="form-control" value="{{$spats->id}}" readonly> </span>
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td>
-                                     <h3>Tooth Position:&nbsp;</h3></td>
+                                     <h3>{{trans('file.tooth_position')}}:&nbsp;</h3></td>
                                     <td>
                                         <input type="text" name="tooth_position" class="form-control" value="{{$spats->tooth_position}}" readonly>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                           <button type="button" class="btn btn-primary btn-md" onclick="changeStatus()" id="change">Change xray-ray Status</button>
+                                           <button type="button" class="btn btn-primary btn-md" onclick="changeStatus()" id="change">{{trans('file.change_xray_status')}}</button>
                                     </td>
                                     <td>
                                         <input type="text" id="status" style="font-size:15px;" name="xray_status" class="form-control" value="{{$spats->xray_status}}" readonly>
@@ -155,7 +155,7 @@
                     <div class="col-md-6">
                         <table class="table table-condensed table-bordered text-center">
                             <tr>
-                                <td><strong>Tooth Number :</strong></td>
+                                <td><strong>{{trans('file.teeth_number')}} :</strong></td>
                                 <td><input type="text" name="tooth_number" class="form-control" value="{{$spats->tooth_number}}" readonly></td>
                             </tr>
                         </table>
@@ -166,8 +166,8 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-3" style="margin-top:30px;">
-                    <button class="btn btn-primary xray" type="submit" value="Done">Done &nbsp;<i class="fa fa-save"></i></button>&nbsp;&nbsp;
-                        <a class="btn btn-white" href="/xray">Cancel</a>
+                    <button class="btn btn-primary xray" type="submit" value="Done">{{trans('file.save')}} &nbsp;<i class="fa fa-save"></i></button>&nbsp;&nbsp;
+                        <a class="btn btn-white" href="/xray">{{trans('file.cancel')}}</a>
                     </div>
                 </div>
                 </form>
