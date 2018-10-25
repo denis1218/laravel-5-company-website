@@ -30,6 +30,9 @@
                     </div>
                 </li>
                 {{--condition for super admin--}}
+
+
+                {{--condition for super admin--}}
                 @if(Auth::user()->department == 'admin')
                     <li class="active">
 
@@ -44,7 +47,6 @@
                             <li><a href="/xray"><i class="fa fa-flash"></i>X-Ray</a></li>
                         </ul>
                     </li>
-
 
 
                     <li>
@@ -96,9 +98,11 @@
                     </li>
                     {{--end condition of super admin--}}
                 @endif
-                {{--condition for dash doctor --}}
+            
+
 
                 @if(Auth::user()->department == 'doctor')
+
                     <li class="active">
                         <a href="/dash_doctor"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
                     </li>
@@ -112,11 +116,10 @@
                             <li><a href="/xray"><i class="fa fa-flash"></i>X-Ray</a></li>
                         </ul>
                     </li>
-                        </ul>
-                    </li>
-                    {{--end condition of doctor--}}
 
+                    {{--end condition of doctor--}}
                 @endif
+                
                 {{--condition for reception--}}
                 @if(Auth::user()->department == 'reception')
                     <li class="active">
@@ -127,8 +130,7 @@
                     <li>
                         <a><i class="fa fa-book"></i> <span class="nav-label">Reception</span><span
                                     class="fa arrow"></span></a>
-                        <ul class="nav nav-second-l
-                        evel collapse">
+                        <ul class="nav nav-second-level collapse">
                             <li><a href="/doctors/create"><i class="fa fa-save"></i>Doctor Registration</a></li>
                             <li><a href="/patient/create"><i class="fa fa-user-md"></i>Patient Registration</a></li>
                             <li><a href="/patient"><i class="fa fa-flash"></i>List of Patient</a></li>
@@ -165,6 +167,7 @@
                 {{--end condition--}}
 
             </ul>
+
         </div>
     </nav>
 </div>
