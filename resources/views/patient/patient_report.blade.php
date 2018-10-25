@@ -1,40 +1,15 @@
 @extends('master')
 
 @section('style')
-    <link href="dashboard/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
 
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
-    <style media="screen">
-        .bts:hover {
-            box-shadow: 4px 4px 4px 4px grey;
-            transform: scale(1.1);
-        }
-
-        .bts {
-            height: 70px;
-            width: 155px;
-        }
-    </style>
 @endsection
 
 @section('content')
 
-
-
-
-
-
-
-
-
 <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Patient Information <i class="fa fa-info"></i></h5>
+                <h5>Patient Report Table <i class="fa fa-info"></i></h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -64,8 +39,8 @@
                                 <div class="col-sm-5">
                                     <div class="input-group">
                                         <span class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-primary"> Search</button> </span>
-                                        <input type="text" placeholder="Search patient name"
+                                        <button type="button" class="btn btn-sm btn-primary" disabled=""> Search</button> </span>
+                                        <input type="text" placeholder="Search patient name" id="search_all_patient" onkeyup="search_all_patient()"
                                                 class="input-sm form-control"> 
                                     </div>
                                 </div>
@@ -74,7 +49,7 @@
 
                             <div class="row" style="margin-top:30px;">
                                 <div class="col-sm-11">
-                                        <table class="table table-hover  no-margins" >
+                                        <table class="table table-hover  no-margins" id="table_all_patient">
                                             <thead>
                                             <tr class="bg-light">
                                                 <th>P-ID</th>
@@ -84,7 +59,7 @@
                                                 <th>Status</th>
                                                 <th>Date & Time Appointment</th>
                                                 <th>Healths Problem</th>
-                                                <th>Full Details</th>
+
                                                 <th>Print</th>
                                             </tr>
                                             </thead>
@@ -98,8 +73,6 @@
                                                 <td>{{$patient->status}}</td>
                                                 <td><i class="fa fa-calendar"></i>{{$patient->created_at}}</td>
                                                 <td class="">{{$patient->problem_health}}</td>
-                                                <td><a class="btn btn-xs btn-primary" href="/patient_report2/{{$patient->id}}" ><i class="fa fa-info"></i>
-                                                        Details</a></td>
                                                 <td><a class="btn btn-xs btn-primary" href="/patient_report/{{$patient->id}}" ><i class="fa fa-info"></i>
                                                         Print</a></td>
 
@@ -186,6 +159,30 @@
         });
     </script>
 
+    <script>
+        {{-- filter search all patient table --}}
+        function search_all_patient() {
+            // Declare variables
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("search_all_patient");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("table_all_patient");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+    </script>
 
 
     <!-- Data Tables -->

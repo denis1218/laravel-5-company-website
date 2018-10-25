@@ -221,10 +221,10 @@ Route::middleware('auth','doctor')->group(function () {
 
     Route::resource('/treatment-list','TreatmentListController');
 
-    Route::get('/dash_doctor',function (){
-        return view('dash_doctor');
-    });
-    Route::get('dash_doctor','HomeController@index2');
+//    Route::get('/dash_doctor',function (){
+//        return view('dash_doctor');
+//    });
+    Route::get('dash_doctor','HomeController@doctor_dashboard');
     //Treatment controller
     Route::resource('/treat', 'TreatmentController');
 

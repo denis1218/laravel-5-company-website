@@ -78,7 +78,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="input-group"><span class="input-group-btn">
-                        <button type="button" disabled class="btn btn-white"><i class="fa fa-search"></i>
+                        <button type="button" disabled class="btn btn-white"><i class="fa fa-search text-success"></i>
                         </button> </span>
                             <input  type="text" id="search" onkeyup="filter_search()" name="search_patient" placeholder="Search patient ID"
                                     class=" form-control"></div>
@@ -112,7 +112,7 @@
                                             <td>{{ $opr->next_appointment }}</td>
                                             <td>{{ $opr->problem_health }}</td>
                                             <td><a href="/operation/create/{{$opr->id}}" class="btn btn-sm btn-primary">Start
-                                                    Treatment</a>
+                                                    Treatment &nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -121,7 +121,7 @@
                             </table>
                             {{--{{$operation->links()}}--}}
                             @else
-                                <h3 style="color:red;text-align: center;">NO PATIENT HAS BEEN REGISTERED YET</h3>
+                                <h5 style="color:red;text-align: center;">NO PATIENT HAS BEEN REGISTERED YET</h5>
                             @endif
                         </div>
                     </div>
@@ -134,6 +134,10 @@
 @section('script')
 
 
+    <script>
+        var e = document.getElementById("ddlViewBy");
+        var strUser = e.options[e.selectedIndex].value;
+    </script>
 
 
 

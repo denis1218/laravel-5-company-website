@@ -119,12 +119,7 @@
                                                         <span class="input-group-btn">
                                                         <button type="button"
                                                                 class="btn btn-primary"><i class="fa fa-search"></i> Search</button> </span>
-                                                    <input type="text" id="search_all_patient"
-                                                           onkeyup="search_all_patient()"
-
-                                                           placeholder="Search patient name"
-
-                                                           class="input-md form-control">
+                                                    <input type="text" id="search_all_patient" onkeyup="search_all_patient()" placeholder="Search patient name" class="input-md form-control">
                                                 </div>
                                             </div>
                                             {{-- tab all patient in queue with defirrent doctor --}}

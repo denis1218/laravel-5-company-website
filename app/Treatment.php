@@ -20,6 +20,7 @@ class Treatment extends Model
         return $this->hasMany(Income::class , 'treatment_id', 'id');
     }
 
+
     public function xray(){
         return $this->hasOne(Xray::class);
     }
