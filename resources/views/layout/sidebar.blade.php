@@ -116,7 +116,10 @@
             
 
 
-                @if(Auth::user()->department == 'doctor')
+
+
+                @elseif(Auth::user()->department == 'doctor')
+
 
                     <li class="active">
                         <a href="/dash_doctor"><i class="fa fa-home"></i> <span
@@ -128,49 +131,31 @@
                         <a><i class="fa fa-sitemap"></i> <span
                                     class="nav-label">{{trans('file.department')}}</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
+
                             <li><a href="/operation"><i class="fa fa-user-md"></i>{{trans('file.doctor')}}</a></li>
                             <li><a href="/xray"><i class="fa fa-flash"></i>{{trans('file.xray')}}</a></li>
+
                         </ul>
                     </li>
-<<<<<<< HEAD
+
             </ul>
             {{--end condition of doctor--}}
 
             @endif
-            {{--condition for reception--}}
-            @if(Auth::user()->department == 'reception')
-                <li class="active">
-                    <a href="/dash_reception"><i class="fa fa-home"></i> <span
-                                class="nav-label">{{trans('file.home')}}</span> </a>
-                </li>
+            
 
 
-                <li>
-                    <a><i class="fa fa-book"></i> <span class="nav-label">{{trans('file.reception')}}</span><span
-=======
-
-                    {{--end condition of doctor--}}
-                @endif
-                
-                {{--condition for reception--}}
+                    {{--condition for reception--}}
                 @if(Auth::user()->department == 'reception')
+
+
                     <li class="active">
                         <a href="/dash_reception"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
                     </li>
 
 
                     <li>
-                        <a><i class="fa fa-book"></i> <span class="nav-label">Reception</span><span
-                                    class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="/doctors/create"><i class="fa fa-save"></i>Doctor Registration</a></li>
-                            <li><a href="/patient/create"><i class="fa fa-user-md"></i>Patient Registration</a></li>
-                            <li><a href="/patient"><i class="fa fa-flash"></i>List of Patient</a></li>
-                            <li><a href="/patient_report"><i class="fa fa-file-o"></i>Patient Report</a></li>
-                            <li><a href="/prescription"><i class="fa fa-file-pdf-o"></i>Prescriptions</a></li>
->>>>>>> f3b9ebc7224cbd791a853c87d5beda1599471f59
-
-                                class="fa arrow"></span></a>
+                        
                     <ul class="nav nav-second-level collapse">
                         <li><a href="/doctors/create"><i class="fa fa-save"></i>{{trans('file.doctor_registration')}}
                             </a></li>
@@ -212,11 +197,13 @@
                 @endif
                 {{--end condition--}}
 
-<<<<<<< HEAD
-=======
+
             </ul>
 
->>>>>>> f3b9ebc7224cbd791a853c87d5beda1599471f59
+
+            </ul>
+
+
         </div>
     </nav>
 </div>
