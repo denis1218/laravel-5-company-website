@@ -249,6 +249,7 @@
                                             <input type="radio" onchange="deactivation()" id="id" name="xray_status"
                                                    checked="checked" style="height: 20px;width:20px;"> &nbsp;<strong><b>NO</b></strong>
                                         </div>
+
                                     </div>
                                 </div>
                                 <br>
@@ -256,6 +257,7 @@
                                     <strong><b><label for="position" style="margin-left: 20px;">Choose tooth position:</label></b></strong>
                                     <br>
                                     <div class="form-group">
+
                                         <div class="col-sm-2"><label> <input type="radio" id="mul" value="upper_left" name="tooth_position" onchange="upperLeft()" style="width:25px;height:20px" required> &nbsp;&nbsp; Upper Left </label></div>
                                         <div class="col-sm-2"><label> <input type="radio" id="mur" value="upper_right" name="tooth_position" onchange="upperRight()" style="width:25px;height:20px" required> &nbsp;&nbsp; Upper Rigth </label></div>
                                     </div>
@@ -263,6 +265,7 @@
                                 <br>
                                 <div class="row">
                                     <div class="form-group">
+
                                         <div class="col-sm-2"><label><input type="radio" id="mll" value="lower_left" onchange="lowerLeft()" name="tooth_position" style="width:25px;height:20px" required>&nbsp;&nbsp; Lower Left</label></div>
                                         <div class="col-sm-2"><label><input type="radio" id="mlr" value="lower_right" onchange="lowerRight()" name="tooth_position" style="width:25px;height:20px" required>&nbsp;&nbsp; Lower Right </label></div>
                                     </div>

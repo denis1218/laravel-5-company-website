@@ -40,7 +40,7 @@
                                     <div class="col-sm-5">
                                         <div class="form-group">
                                             <label class="control-label">First name</label>
-                                            <input type="text" class="form-control" name="first_name"
+                                            <input type="text" maxlength="20" class="form-control" name="first_name"
                                                    placeholder="Doctor's firstname" required>
                                         </div>
                                     </div>
@@ -48,7 +48,7 @@
                                     <div class="col-sm-5">
                                         <div class="form-group">
                                             <label class="control-label">Last name</label>
-                                            <input type="text" class="form-control" name="last_name"
+                                            <input type="text" maxlength="20" class="form-control" name="last_name"
                                                    placeholder="Doctor's last name" required>
                                         </div>
                                     </div>
@@ -58,7 +58,7 @@
                                     <div class="col-sm-5">
                                         <div class="form-group">
                                             <label class="control-label">Father name</label>
-                                            <input type="text" class="form-control" name="father_name"
+                                            <input type="text" maxlength="20" class="form-control" name="father_name"
                                                    placeholder="Doctor's father name" required>
                                         </div>
                                     </div>
@@ -66,7 +66,7 @@
                                     <div class="col-sm-5">
                                         <div class="form-group">
                                             <label class="control-label">Age</label>
-                                            <input type="number" class="form-control" name="age"
+                                            <input type="number" max="100" min="20" class="form-control" name="age"
                                                    placeholder="Doctor's age">
                                         </div>
                                     </div>
@@ -76,7 +76,7 @@
                                     <div class="col-sm-5">
                                         <div class="form-group">
                                             <label class=" control-label">Phone</label>
-                                            <input type="text" class="form-control" name="phone" placeholder="Doctor's Phone number" required>
+                                            <input type="text" maxlength="10" class="form-control" name="phone" placeholder="Doctor's Phone number" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-1"></div>
@@ -88,9 +88,7 @@
                                                 <option value="0">Select Department</option>
                                                 <option value="regular basis">regular basis</option>
                                                 <option value="Orthodontist">Orthodontist</option>
-                                                <option value="Oral and maxillofacial surgeon">Oral and maxillofacial
-                                                    surgeon
-                                                </option>
+                                                <option value="Oral and maxillofacial surgeon">Oral and maxillofacialsurgeon</option>
                                                 <option value="Periodontist">Periodontist</option>
                                                 <option value="Prosthodontist">Prosthodontist</option>
                                                 <option value="Endodontist">Endodontist</option>
@@ -102,7 +100,7 @@
                                 <div class="col-sm-12">
                                     <div class="col-sm-3">
                                         <div class="form-group"><label class="control-label">Max Patient can visits</label>
-                                            <input type="number" class="form-control" name="max_patient" placeholder="Enter Maximum patient can visits" required>
+                                            <input type="number" max="100" class="form-control" name="max_patient" placeholder="Enter Maximum patient can visits" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-1"></div>
