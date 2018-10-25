@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Doctor;
 use App\Expense;
+use App\ExpenseCatagory;
 use App\Patient;
 
 use Carbon\Carbon;
@@ -21,12 +22,11 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-
-       $expen =  Expense::whereDate('created_at', Carbon::today())->get();
-       $totalExpense=$expen->sum('amount');
+        $dateNow = Carbon::now()->toDateString();
+        $start = new Carbon('first day of this month');
+        $expen =  Expense::whereBetween('created_at',[$start->toDateString(),$dateNow])->paginate(10);
+        $totalExpense = $expen->sum('amount');
         return view('expenditure',compact('expen','totalExpense'));
-
-
     }
 
     /**
@@ -36,8 +36,9 @@ class ExpenseController extends Controller
      */
     public function create()
     {
-        $capital=DB::table('expenses')->sum('amount');
-        return view('expense_form',compact('capital'));
+        $expenseCategory = ExpenseCatagory::all();
+        $capital= Expense::sum('amount');
+        return view('expense_form',compact('capital','expenseCategory'));
 //        return $capital;
     }
 
@@ -54,12 +55,12 @@ class ExpenseController extends Controller
         $expense->amount = $request->amount;
         $expense->category = $request->category;
         $expense->description = $request->description;
-
-        $expense->created_at = Carbon\Carbon::now();
-
+        $expense->created_at = Carbon::now();
         $expense->save();
         return redirect('expenditure');
     }
+
+
     public function FromDash(Request $request){
         $expense = new Expense();
         $expense->receiver = $request->receiver;

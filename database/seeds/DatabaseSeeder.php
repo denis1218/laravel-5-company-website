@@ -2,6 +2,7 @@
 
 use App\Doctor;
 use App\Expense;
+use App\ExpenseCatagory;
 use App\Patient;
 use App\Treatment;
 use Illuminate\Database\Seeder;
@@ -57,6 +58,7 @@ class DatabaseSeeder extends Seeder
         if(Permission::count() == 0)$this->call(PermissionTableSeeder::class );
         if(Expense::count() == 0)$this->call(ExpenseTableSeeder::class );
         if(Role::count() == 0)$this->call(RoleTableSeeder::class );
+        if(ExpenseCatagory::count() == 0)$this->call(TreatmentListTableSeeder::class );
         $this->call(UserRoleTableSeeder::class);
 
 
@@ -117,6 +119,31 @@ class PatientTableSeeder extends Seeder
     public function run()
     {
         factory(Patient::class, 10)->create();
+    }
+}
+
+class TreatmentListTableSeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('expense_catagories')->insert([
+            'category' => 'rent',
+        ]);
+        DB::table('expense_catagories')->insert([
+            'category' => 'office supply',
+        ]);
+        DB::table('expense_catagories')->insert([
+            'category' => 'salary',
+        ]);
+        DB::table('expense_catagories')->insert([
+            'category' => 'other expense',
+        ]);
+        DB::table('expense_catagories')->insert([
+            'category' => 'personal',
+        ]);
+        DB::table('expense_catagories')->insert([
+            'category' => 'tax',
+        ]);
     }
 }
 
