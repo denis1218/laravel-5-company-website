@@ -59,8 +59,8 @@
                                             class="fa fa-save"></i>{{trans('file.doctor_registration')}}</a></li>
                             <li><a href="/patient/create"><i
                                             class="fa fa-user-md"></i>{{trans('file.patient_registration')}}</a></li>
-                            <li><a href="/patient"><i class="fa fa-flash"></i>{{trans('list_of_patient')}}</a></li>
-                            <li><a href="/patient_report"><i class="fa fa-file-o"></i>{{trans('patient_report')}}</a>
+                            <li><a href="/patient"><i class="fa fa-flash"></i>{{trans('file.list_of_patient')}}</a></li>
+                            <li><a href="/patient_report"><i class="fa fa-file-o"></i>{{trans('file.patient_report')}}</a>
                             </li>
                             <li><a href="/prescription"><i class="fa fa-file-pdf-o"></i>{{trans('file.prescription')}}
                                 </a></li>

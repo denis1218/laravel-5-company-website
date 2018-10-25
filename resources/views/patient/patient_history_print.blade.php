@@ -9,11 +9,11 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Patient Information <i class="fa fa-info"></i></h5>
+                <h5>{{trans('file.patient_information')}}<i class="fa fa-info"></i></h5>
                 <div class="ibox-tools">
-                    <button class="btn btn-primary btn-lg" onclick="PrintElem();">Print &nbsp;<span
+                    <button class="btn btn-primary btn-lg" onclick="PrintElem();">{{trans('file.print')}}&nbsp;<span
                                 class="fa fa-print"></span></button>
-                    <button class="btn btn-primary btn-lg" onclick="PrintPDF();">Print PDF &nbsp;<span
+                    <button class="btn btn-primary btn-lg" onclick="PrintPDF();">{{trans('file.print_pdf')}}<span
                                 class="fa fa-print"></span></button>
 
                     <a class="collapse-link">
@@ -41,10 +41,10 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <h2> Hakim Alikozay Dental Clinic</h2>
-                        <h4>Patient History File</h4>
-                        <h4>Doctor Name : Dr.Rahmati</h4>
-                        <h4>Date : 2018/5/4</h4>
+                        <h2> {{trans('file.dc')}}</h2>
+                        <h4>{{trans('file.phf')}}</h4>
+                        <h4>{{trans('file.doctor_name')}}</h4>
+                        <h4>{{trans('file.date')}}</h4>
                     </div>
 
                 </div>
@@ -54,27 +54,27 @@
                     <div class="col-md-12">
                         <div class="row shadow p-3 mb-5 bg-white rounded"
                                    style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
-                            <h3 style="font-weight: bold">Personal Information of Patient</h3>
+                            <h3 style="font-weight: bold">{{trans('file.patient_personal_info')}}</h3>
                         </div>
                         <div class="row"  style="margin-left:10px;margin-right: 10px;">
                             <div class="col-md-4">
                                 <table class="table table-striped text-bold" style="margin-top:30px;" border="1">
                                     <tbody>
                                     <tr>
-                                        <td>P-ID :</td>
+                                        <td>{{trans('file.p_id')}} :</td>
                                         <td>P-0786807788</td>
                                     </tr>
                                     <tr>
-                                        <td>Patient Name :</td>
+                                        <td>{{trans('file.patient_name')}} :</td>
                                         <td>Ahmad</td>
 
                                     </tr>
                                     <tr>
-                                        <td>Age :</td>
+                                        <td>{{trans('file.age')}} :</td>
                                         <td>25</td>
                                     </tr>
                                     <tr>
-                                        <td>Gender :</td>
+                                        <td>{{trans('file.gender')}}:</td>
                                         <td>Male</td>
                                     </tr>
                                     </tbody>
@@ -84,20 +84,20 @@
                                 <table class="table table-striped text-bold" style="margin-top:30px;">
                                     <tbody>
                                     <tr>
-                                        <td>Patient Problem Health :</td>
+                                        <td>{{trans('file.health_problem')}} :</td>
                                         <td>Blood Pressure, Diabetics</td>
                                     </tr>
                                     <tr>
-                                        <td>Address :</td>
+                                        <td>{{trans('file.address')}}:</td>
                                         <td>Kabul , Afghanistan</td>
 
                                     </tr>
                                     <tr>
-                                        <td>Phone :</td>
+                                        <td>{{trans('file.phone')}} :</td>
                                         <td>078558252</td>
                                     </tr>
                                     <tr>
-                                        <td>Date Reg :</td>
+                                        <td>{{trans('file.date')}} :</td>
                                         <td>Male</td>
                                     </tr>
                                     </tbody>
@@ -111,22 +111,22 @@
                     <div class="col-md-12">
                         <div class="row shadow p-3 mb-5 bg-white rounded"
                              style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
-                            <h3 style="font-weight: bold">Kind of Prosthesis</h3>
+                            <h3 style="font-weight: bold">{{trans('file.kind_of_prosthesis')}}</h3>
                         </div>
                         <div class="row" style="margin-left:10px;margin-right: 10px;">
                             <div class="col-md-4">
                                 <table class="table table-striped text-bold" style="margin-top:30px;">
                                     <tbody>
                                     <tr>
-                                        <td>Dental Defect :</td>
+                                        <td>{{trans('file.dental_defect')}} :</td>
                                         <td>BDR</td>
                                     </tr>
                                     <tr>
-                                        <td>Dental Treatment :</td>
+                                        <td>{{trans('file.dental_treatment')}} :</td>
                                         <td>Extraction</td>
                                     </tr>
                                     <tr>
-                                        <td>Teeth Number:</td>
+                                        <td>{{trans('file.teeth_number')}}:</td>
                                         <td>26</td>
                                     </tr>
                                     </tbody>
@@ -140,29 +140,29 @@
                     <div class="col-md-12">
                         <div class="row shadow p-3 mb-5 bg-white rounded"
                              style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:10px;margin-right: 10px;">
-                            <h3 style="font-weight: bold">Payment Information</h3>
+                            <h3 style="font-weight: bold">{{trans('file.payment_info')}}</h3>
                         </div>
                         <div class="row"  style="margin-left:10px;margin-right: 10px;">
                             <div class="col-md-4">
                                 <table class="table table-striped text-bold" style="margin-top:30px;">
                                     <tbody>
                                     <tr>
-                                        <td>Unit Price :</td>
+                                        <td>{{trans('file.unit_price')}} :</td>
                                         <td>500</td>
 
 
                                     </tr>
                                     <tr>
-                                        <td>Total :</td>
+                                        <td>{{trans('file.total')}} :</td>
                                         <td>2000</td>
 
                                     </tr>
                                     <tr>
-                                        <td>Paid :</td>
+                                        <td>{{trans('file.paid')}} :</td>
                                         <td>1000</td>
                                     </tr>
                                     <tr>
-                                        <td>Remaining :</td>
+                                        <td>{{trans('file.remaining')}} :</td>
                                         <td>1000</td>
                                     </tr>
                                     </tbody>
@@ -172,7 +172,7 @@
                     </div>
                     <br/>
                     <br/>
-                    <h5 class="text-right" style="margin-right: 60px;color:grey;margin-bottom: 70px;" >Doctor Signature </h5>
+                    <h5 class="text-right" style="margin-right: 60px;color:grey;margin-bottom: 70px;" >{{trans('file.doctor_signature')}} </h5>
                 </div>
             </div>
         </div>
