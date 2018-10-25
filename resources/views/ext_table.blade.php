@@ -2,7 +2,7 @@
 
 @section('style')
     <!-- Data Tables -->
-    <link href="dashboard/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="{{ asset('dashboard/css/plugins/dataTables/dataTables.bootstrap.css') }}" rel="stylesheet">
     <link href="dashboard/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
     <link href="dashboard/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
 

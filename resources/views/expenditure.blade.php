@@ -54,13 +54,11 @@
                             <div class="col-md-4">
                                 <div class="ibox float-e-margins" style=" background-color: lightyellow;">
                                     <div class="ibox-title" style="background-color:  lightyellow;">
-                                        <h5 style="">Capital</h5>
+                                        <h5 style="">Total Expenses</h5>
                                     </div>
-                                    <div class="ibox-content"style=" background-color: lightyellow;">
-                                        <h1 class="no-margins">{{$capital}}</h1>
-                                        {{--<div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i>--}}
+                                        <div class="ibox-content"style=" background-color: lightyellow;">
+                                            <h1 class="no-margins">{{$totalExpense}}</h1>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>

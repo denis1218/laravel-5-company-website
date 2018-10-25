@@ -32,20 +32,24 @@
                 {{--condition for super admin--}}
                 @if(Auth::user()->department == 'admin')
                     <li class="active">
-                        <a href="/dash"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
+
+                        <a href="/dash"><i class="fa fa-home"></i> <span class="nav-label">{{trans('file.home')}}</span> </a>
                     </li>
 
                     <li>
                         <a><i class="fa fa-sitemap"></i> <span
-                                    class="nav-label">Department</span><span class="fa arrow"></span></a>
+                                    class="nav-label">{{trans('file.department')}}</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/operation"><i class="fa fa-user-md"></i>Doctor</a></li>
                             <li><a href="/xray"><i class="fa fa-flash"></i>X-Ray</a></li>
                         </ul>
                     </li>
 
+
+
                     <li>
-                        <a><i class="fa fa-book"></i> <span class="nav-label">Reception</span><span
+                        <a><i class="fa fa-book"></i> <span class="nav-label">{{trans('file.reception')}}</span><span
+
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/doctors/create"><i class="fa fa-save"></i>Doctor Registration</a></li>
@@ -58,7 +62,7 @@
                     </li>
 
                     <li>
-                        <a><i class="fa fa-calculator"></i> <span class="nav-label">Finance</span><span
+                        <a><i class="fa fa-calculator"></i> <span class="nav-label">{{trans('file.finance')}}</span><span
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/expenditure"><i class="fa fa-shopping-cart"></i>Expenditure</a></li>
@@ -77,26 +81,29 @@
                             </li>
                         </ul>
                     </li>
-
-
                     <li>
-                        <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span><span
+                        <a href="setting"><i class="fa fa-cog"></i> <span class="nav-label">{{trans('file.setting')}}</span><span
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="account"><i class="fa fa-user-plus"></i>&nbsp;Accounts</a></li>
                             <li><a href="explore_backups"><i class="fa fa-database"></i> &nbsp;Backup DB</a></li>
                             <li><a href="medicine"><i class="fa fa-plus"></i> Add Medicine</a></li>
-                            <li><a href="/expense-category"><i class="fa fa-pencil-square-o"></i> &nbsp;Expense category</a></li>
+
+                            <li><a href="/expense-category"><i class="fa fa-pencil-square-o"></i> &nbsp;Expense category</a>
+                            </li>
 
                         </ul>
                     </li>
-                @endif
                     {{--end condition of super admin--}}
-                    {{--condition for dash doctor --}}
+                @endif
+                {{--condition for dash doctor --}}
+
                 @if(Auth::user()->department == 'doctor')
                     <li class="active">
                         <a href="/dash_doctor"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
                     </li>
+
+
                     <li>
                         <a><i class="fa fa-sitemap"></i> <span
                                     class="nav-label">Department</span><span class="fa arrow"></span></a>
@@ -105,12 +112,18 @@
                             <li><a href="/xray"><i class="fa fa-flash"></i>X-Ray</a></li>
                         </ul>
                     </li>
+                        </ul>
+                    </li>
+                    {{--end condition of doctor--}}
+
                 @endif
-                    {{--end of doctor--}}
+                {{--condition for reception--}}
                 @if(Auth::user()->department == 'reception')
                     <li class="active">
                         <a href="/dash_reception"><i class="fa fa-home"></i> <span class="nav-label">Home</span> </a>
                     </li>
+
+
                     <li>
                         <a><i class="fa fa-book"></i> <span class="nav-label">Reception</span><span
                                     class="fa arrow"></span></a>
@@ -125,6 +138,7 @@
                         </ul>
                     </li>
 
+
                     <li>
                         <a><i class="fa fa-calculator"></i> <span class="nav-label">Finance</span><span
                                     class="fa arrow"></span></a>
@@ -145,6 +159,8 @@
                             </li>
                         </ul>
                     </li>
+
+
                 @endif
                 {{--end condition--}}
 
