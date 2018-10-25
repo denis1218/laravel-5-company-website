@@ -25,9 +25,6 @@ Route::post('language',array(
 ));
 
 
-
-
-
 // Route Group & Middleware for doctor
 Route::middleware('auth','doctor')->group(function () {
 

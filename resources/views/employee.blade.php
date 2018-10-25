@@ -10,7 +10,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Doctor Registration </h5>
+                <h5>{{trans('file.doctor_registration')}}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -39,17 +39,17 @@
                                 <div class="col-sm-12">
                                     <div class="col-sm-5">
                                         <div class="form-group">
-                                            <label class="control-label">First name</label>
+                                            <label class="control-label">{{trans('file.first_name')}}</label>
                                             <input type="text" maxlength="20" class="form-control" name="first_name"
-                                                   placeholder="Doctor's firstname" required>
+                                                   placeholder="{{trans('file.first_name')}}" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-5">
                                         <div class="form-group">
-                                            <label class="control-label">Last name</label>
+                                            <label class="control-label">{{trans('file.last_name')}}</label>
                                             <input type="text" maxlength="20" class="form-control" name="last_name"
-                                                   placeholder="Doctor's last name" required>
+                                                   placeholder="{{trans('file.last_name')}}" required>
                                         </div>
                                     </div>
                                 </div>
@@ -57,17 +57,17 @@
                                 <div class="col-sm-12">
                                     <div class="col-sm-5">
                                         <div class="form-group">
-                                            <label class="control-label">Father name</label>
+                                            <label class="control-label">{{trans('file.father_name')}}</label>
                                             <input type="text" maxlength="20" class="form-control" name="father_name"
-                                                   placeholder="Doctor's father name" required>
+                                                   placeholder="{{trans('file.father_name')}}" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-5">
                                         <div class="form-group">
-                                            <label class="control-label">Age</label>
+                                            <label class="control-label">{{trans('file.age')}}</label>
                                             <input type="number" max="100" min="20" class="form-control" name="age"
-                                                   placeholder="Doctor's age">
+                                                   placeholder="{{trans('file.age')}}">
                                         </div>
                                     </div>
                                 </div>
@@ -75,19 +75,19 @@
                                 <div class="col-sm-12">
                                     <div class="col-sm-5">
                                         <div class="form-group">
-                                            <label class=" control-label">Phone</label>
-                                            <input type="text" maxlength="10" class="form-control" name="phone" placeholder="Doctor's Phone number" required>
+                                            <label class=" control-label">{{trans('file.phone')}}</label>
+                                            <input type="text" maxlength="10" class="form-control" name="phone" placeholder="{{trans('file.phone')}}" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-5">
                                         <div class="form-group">
-                                            <label class="control-label">Departement</label>
+                                            <label class="control-label">{{trans('file.department')}}</label>
                                             <select class="select2_demo_1 form-control" id="dept" name="department"
                                                     required>
                                                 <option select="">Select Department</option>
                                                 @foreach($department as $departments)
-
+                                                <option value="0">{{trans('file.department')}}</option>
                                                 <option value="regular basis">regular basis</option>
                                                 @endforeach
                                             </select>
@@ -96,42 +96,42 @@
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="col-sm-3">
-                                        <div class="form-group"><label class="control-label">Max Patient can visits</label>
-                                            <input type="number" max="100" class="form-control" name="max_patient" placeholder="Enter Maximum patient can visits" required>
+                                        <div class="form-group"><label class="control-label">{{trans('file.max_patient')}}</label>
+                                            <input type="number" max="100" class="form-control" name="max_patient" placeholder="{{trans('file.max_patient')}}" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-3">
                                         <div class="form-group">
-                                            <label class=" control-label">Email</label>
-                                            <input type="email" class="form-control" name="email" placeholder="Enter doctor's email"  required>
+                                            <label class=" control-label">{{trans('file.email')}}</label>
+                                            <input type="email" class="form-control" name="email" placeholder="{{trans('file.email')}}"  required>
                                         </div>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-3">
                                         <div class="form-group">
-                                            <label class=" control-label">password</label>
-                                            <input type="password" class="form-control" name="password" placeholder="Enter doctor's account password" required>
+                                            <label class=" control-label">{{trans('file.password')}}</label>
+                                            <input type="password" class="form-control" name="password" placeholder="{{trans('file.password')}}" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-12" style="margin-top: 18px;">
                                     <div class="col-sm-3 text-center" style="margin-top: 40px">
                                         <div class="form-group">
-                                          <label class=" control-label" style="letter-spacing: 2px;line-height: 12px;font-size: 18px">Working Time: <i class="fa fa-arrow-right"></i></label>
+                                          <label class=" control-label" style="letter-spacing: 2px;line-height: 12px;font-size: 18px">{{trans('file.working_time')}}: <i class="fa fa-arrow-right"></i></label>
                                         </div>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-3">
                                         <div class="form-group">
-                                           <label style="line-height: 35px;"> From </label>
+                                           <label style="line-height: 35px;">{{trans('file.from')}} </label>
                                            <input type="time" class="form-control" name="start_work_time" style="width: 40%" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-3">
                                        <div class="form-group">
-                                        <label style="line-height: 35px;"> To </label>
+                                        <label style="line-height: 35px;">{{trans('file.to')}}</label>
                                         <input type="time" class="form-control" name="end_work_time" style="width: 40%" required>
                                        </div>
                                     </div>
@@ -139,15 +139,15 @@
                                 <div class="col-sm-12" style="margin-top: 20px;">
                                     <div class="col-sm-5 text-center" style="margin-top: 22px;">
                                         <div class="form-group">
-                                            <div class="col-sm-3"><label class=" control-label">Salary Type:</label></div>
-                                            <div class="col-sm-3"><label><input type="radio" name="salary_type" value="percentage" id="per" onclick="perSal()" style="height: 22px;width:22px;" required><i></i>Per%</label></div>
-                                            <div class="col-sm-3"><label><input type="radio" name="salary_type" onclick="fixSal()" id="fix" value="fix" style="height: 22px;width:22px;"> <i></i> Fix </label></div>
+                                            <div class="col-sm-3"><label class=" control-label">{{trans('file.salary_type')}}:</label></div>
+                                            <div class="col-sm-3"><label><input type="radio" name="salary_type" value="percentage" id="per" onclick="perSal()" style="height: 22px;width:22px;" required><i></i>{{trans('file.per')}}%</label></div>
+                                            <div class="col-sm-3"><label><input type="radio" name="salary_type" onclick="fixSal()" id="fix" value="fix" style="height: 22px;width:22px;"> <i></i>{{trans('file.fix')}}</label></div>
                                         </div>
                                     </div>
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-5 text-left">
                                         <div class="form-group">
-                                            <label class=" control-label" id="label">Salary amount</label>
+                                            <label class=" control-label" id="label">{{trans('file.salary_amount')}}</label>
                                             <input type="number" class="form-control" name="salary_amount" id="sal" required>
                                         </div>
                                     </div>
@@ -155,16 +155,16 @@
                                 <div class="col-sm-12" style="margin-top: 25px;">
                                 <div class="col-sm-5">
                                 <div class="form-group">
-                                    <div class="col-sm-3"><label class="control-label">Gender:</label></div>
-                                    <div class="col-sm-3" style="margin-left: 15px;"><div class="i-checks"><label><input type="radio" value="Male" name="gender"  required><i></i> Male </label></div></div>
-                                    <div class="col-sm-3"><div class="i-checks"><label> <input type="radio" value="Female" name="gender" required><i></i> Female </label></div></div>
+                                    <div class="col-sm-3"><label class="control-label">{{trans('file.gender')}}:</label></div>
+                                    <div class="col-sm-3" style="margin-left: 15px;"><div class="i-checks"><label><input type="radio" value="Male" name="gender"  required><i></i>{{trans('file.male')}}</label></div></div>
+                                    <div class="col-sm-3"><div class="i-checks"><label> <input type="radio" value="Female" name="gender" required><i></i> {{trans('file.female')}}</label></div></div>
                                 </div>
                                 </div>
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-5 text-right">
                                 <div class="form-group">
-                                        <button class="btn btn-white"  type='reset'>Reset</button>&nbsp;
-                                        <button class="btn btn-primary " type="submit" name="submit" value="Save">Save
+                                        <button class="btn btn-white"  type='reset'>{{trans('file.reset')}}</button>&nbsp;
+                                        <button class="btn btn-primary " type="submit" name="submit" value="Save">{{trans('file.save')}}
                                         </button>
                                 </div>
                                 </div>
