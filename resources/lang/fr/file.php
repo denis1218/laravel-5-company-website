@@ -24,6 +24,7 @@ return[
     'add_medicine'=>'ادویه',
     'expense_category'=>'کتگوری مصارف',
 //    end of side bar words
+
 //dashboard page
     'user'=>'کاربر',
     'welcome'=>'خوش امدید',
@@ -100,6 +101,7 @@ return[
     'status_of_payment'=>'حالت پرداخت',
     'status_of_xray'=>'حالت اکسری',
     'details'=>'جزییات',
+
 
 
 
