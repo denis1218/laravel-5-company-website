@@ -168,6 +168,46 @@ return[
     'anesthetic_problem'=>'مشکل بی حسی',
 //end of patient registration
 
+//start of expense
+
+    'expense_table'=>'جدول مصارف',
+    'add_new_expense'=>'ایجاد مصرف جدید',
+    'total_expense'=>'مجموعه مصارف',
+    'exp_id'=>'آی دی مصرف',
+    'to_whom'=>'گیرنده پول',
+    'category'=>'دسته بندی مصرف',
+    'delete'=>'حذف',
+//    adding expense
+    'expenses'=>'مصارف',
+    'capital'=>'سرمایه',
+    'edit_content'=>'ویرایش محتویات',
+//end of expense
+
+//start of Income
+//patient income
+    'income_details'=>'حزوئیات عایدات',
+    'from_patient'=>'عواید مریضان',
+    'xray_income'=>'عواید ایکسری',
+    'other_income'=>'عواید دیگر',
+    'total_income'=>'عاید مجموعی',
+    'amount'=>'مقدار',
+    'patient_income'=>'عاید از طریق مریضان',
+    'show_completed_patient'=>'مریضان پرداخت شده',
+    'p_name'=>'نام مریض',
+    'estimated_fee'=>'مبلغ تعیین شده',
+    'remaining_fee'=>'فیس باقی مانده',
+    'p_details'=>'جزئیات مریض',
+    'search'=>'جستجو',
+    'show_loan_patient'=>'مریضان پرداخت ناشده',
+    'print_bill'=>'چاپ بیل',
+//    X-ray Incomer
+    'show_completed_xray'=>'مریضان ایکسری شده',
+    'show_uncompleted_xray'=>'مریضان ایکسری نشده',
+//    Other Income
+    'add_new_income'=>'ایجاد عاید جدید',
+    'purpose'=>'هدف',
+//    End of Income
+
 
 
 

@@ -178,8 +178,45 @@ return[
     'o_problem'=>'Other Problem',
 //    End of patient registration
 
-//start of list of patient
-    ''=>'',
+//start of expense
+
+    'expense_table'=>'Expense Table',
+    'add_new_expense'=>'Add New Expense',
+    'total_expense'=>'Total Expense',
+    'exp_id'=>'Exp ID',
+    'to_whom'=>'To Whom',
+    'category'=>'Category',
+    'delete'=>'Delete',
+//    adding expense
+    'expenses'=>'Expenses',
+    'capital'=>'Capital',
+    'edit_content'=>'Edit Content',
+//end of expense
+
+//start of Income
+//patient income
+    'income_details'=>'Income Details',
+    'from_patient'=>'From Patient',
+    'xray_income'=>'X-ray Income',
+    'other_income'=>'Other Income',
+    'total_income'=>'Total Income',
+    'amount'=>'Amount',
+    'patient_income'=>'Patient Income',
+    'show_completed_patient'=>'Show Completed Patient',
+    'p_name'=>'P_Name',
+    'estimated_fee'=>'Estimated Fee',
+    'remaining_fee'=>'Remaining Fee',
+    'p_details'=>'P_Details',
+    'search'=>'Search',
+    'show_loan_patient'=>'Show Loan Patient',
+    'print_bill'=>'Print Bill',
+//    X-ray Incomer
+    'show_completed_xray'=>'Show Completed X-Ray',
+    'show_uncompleted_xray'=>'Show Uncompleted X-Ray',
+//    Other Income
+    'add_new_income'=>'Add New Income',
+    'purpose'=>'Purpose',
+//    End of Income
 
 
 ];
