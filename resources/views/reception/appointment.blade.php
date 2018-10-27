@@ -9,7 +9,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Appointment patient</h5>
+                <h5>{{trans('file.appointment_patient')}}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -37,48 +37,48 @@
                             <div class="col-md-3">
                                 <a href="/patient/create">
                                     <button class="btn btn-primary" style="width:87%;">
-                                        <li class="fa fa-user-plus pull-left"></li>&nbsp; Add new patient
+                                        <li class="fa fa-user-plus pull-left"></li>&nbsp; {{trans('file.add_new_patient')}}
                                     </button>
                                 </a>
                                 <a href="/new-patient-today">
                                     <button class="btn btn-info" style="width:87%;">
-                                        <li class="fa fa-table pull-left"></li>&nbsp;List new patient today
+                                        <li class="fa fa-table pull-left"></li>&nbsp;{{trans('file.list_new_patient_today')}}
                                     </button>
                                 </a>
                                 <a href="/next-appointment-patient">
                                     <button class="btn btn-success" style="width:87%;">
-                                        <li class="fa fa-table pull-left"></li>&nbsp;List next appointment today
+                                        <li class="fa fa-table pull-left"></li>{{trans('file.list_next_appointment_today')}}
                                     </button>
                                 </a>
                                 <a href="/miss-next-appointment-patient">
                                     <button class="btn btn-success" style="width:87%;">
-                                        <li class="fa fa-table pull-left"></li>&nbsp;Miss list next appointment
+                                        <li class="fa fa-table pull-left"></li>&nbsp;{{trans('file.miss_list_next_appointment')}}
                                     </button>
                                 </a>
 
                             </div>
 
                             <div class="col-md-9 pull-right">
-                                <h3>--- Note : these navigration date just effect on All patient tab</h3>
+                                <h3>{{trans('file.note')}}</h3>
                                 <div class="row">
                                     <div class="col-sm-2 no-padding no-margin">
 
                                         <form method="get" action="/patient">
                                             <input type="hidden" name="date"
                                                    value="{{ \Carbon\Carbon::yesterday()->toDateString() }}"/>
-                                            <button class="btn btn-white" type="submit"><i class="fa fa-arrow-left"></i>&nbsp;Previous
+                                            <button class="btn btn-white" type="submit"><i class="fa fa-arrow-left"></i>{{trans('file.previous')}}
                                             </button>
                                         </form>
                                     </div>
                                     <div class="col-sm-2 no-padding no-margin">
-                                        <a href="/patient" class="btn btn-primary" type="button">Today
+                                        <a href="/patient" class="btn btn-primary" type="button">{{trans('file.today')}}
                                         </a>
                                     </div>
                                     <div class="col-sm-2 no-padding no-margin">
                                         <form method="get" action="/patient">
                                             <input type="hidden" name="date"
                                                    value="{{ \Carbon\Carbon::tomorrow()->toDateString() }}"/>
-                                            <button class="btn btn-white" type="submit">Next&nbsp;<i
+                                            <button class="btn btn-white" type="submit">{{trans('file.next')}}<i
                                                         class="fa fa-arrow-right"></i></button>
                                         </form>
                                     </div>
@@ -87,7 +87,7 @@
                                             <div class="input-group">
                                                         <span class="input-group-btn">
                                                         <button type="submit"
-                                                                class="btn btn-primary"><i class="fa fa-calendar"></i> Set Date</button> </span>
+                                                                class="btn btn-primary"><i class="fa fa-calendar"></i> {{trans('file.set_date')}}</button> </span>
                                                 <input type="date" name="date"  class="form-control"/>
                                             </div>
                                         </form>
@@ -100,8 +100,7 @@
                             <div class="tabs-left">
                                 {{--navigation list--}}
                                 <ul class="nav nav-tabs">
-                                    <li class="active"><a data-toggle="tab" href="#home" style="color:black;">All
-                                            Patients</a></li>
+                                    <li class="active"><a data-toggle="tab" href="#home" style="color:black;">{{trans('file.all_patient')}}</a></li>
                                     @foreach($doctor_list as $doctors)
                                         <li class=""><a data-toggle="tab" href="#{{ $doctors->id }}"
                                                         style="color:black;">Dr.
@@ -118,25 +117,25 @@
                                                 <div class="input-group">
                                                         <span class="input-group-btn">
                                                         <button type="button"
-                                                                class="btn btn-primary"><i class="fa fa-search"></i> Search</button> </span>
-                                                    <input type="text" id="search_all_patient" onkeyup="search_all_patient()" placeholder="Search patient name" class="input-md form-control">
+                                                                class="btn btn-primary"><i class="fa fa-search"></i>{{trans('file.search')}}</button> </span>
+                                                    <input type="text" id="search_all_patient" onkeyup="search_all_patient()" placeholder="{{trans('file.search_patient_name')}}" class="input-md form-control">
                                                 </div>
                                             </div>
                                             {{-- tab all patient in queue with defirrent doctor --}}
                                             <div class="col-md-12">
-                                                <h5>show all patients present now</h5>
+                                                <h5>{{trans('file.show_all_patient')}}</h5>
 
                                                 <div class="table-responsive">
                                                     <table class="table table-hover  no-margins" id="table_all_patient">
                                                         <thead>
                                                         <tr>
                                                             <th>#</th>
-                                                            <th>P-ID</th>
-                                                            <th>Patient Name</th>
-                                                            <th>Last Name</th>
-                                                            <th>Doctor Name</th>
-                                                            <th>Status</th>
-                                                            <th>Appointment date</th>
+                                                            <th>{{trans('file.p_id')}}</th>
+                                                            <th>{{trans('file.patient_name')}}</th>
+                                                            <th>{{trans('file.last_name')}}</th>
+                                                            <th>{{trans('file.doctor_name')}}</th>
+                                                            <th>{{trans('file.status')}}</th>
+                                                            <th>{{trans('file.appointment_date')}}</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
@@ -173,12 +172,12 @@
                                                             <table class="table table-hover  no-margins">
                                                                 <thead>
                                                                 <tr>
-                                                                    <td>P-ID</td>
-                                                                    <th>Patient Name</th>
-                                                                    <th>Last Name</th>
-                                                                    <th>Status</th>
-                                                                    <th>Appointment Date</th>
-                                                                    <th>Add to Queue</th>
+                                                                    <td>{{trans('file.p_id')}}</td>
+                                                                    <th>{{trans('file.patient_name')}}</th>
+                                                                    <th>{{trans('file.last_name')}}</th>
+                                                                    <th>{{trans('file.status')}}</th>
+                                                                    <th>{{trans('file.appointment_date')}}</th>
+                                                                    <th>{{trans('file.add_to_queue')}}</th>
                                                                 </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -205,7 +204,7 @@
                                                                         </tr>
                                                                     @endforeach
                                                                 @else
-                                                                    <h3 class="text-danger">There is not patient </h3>
+                                                                    <h3 class="text-danger">{{trans('file.there_is_no')}}</h3>
                                                                 @endif
                                                                 </tbody>
                                                             </table>

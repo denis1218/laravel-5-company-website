@@ -1,6 +1,5 @@
 <body>
 
-
 <div id="wrapper">
 
 
@@ -13,8 +12,8 @@
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong
-                                            class="font-bold">HK Dental Clinic</strong>
-                             </span> <span class="text-muted text-xs block">Profile <b class="caret"></b></span> </span>
+                                            class="font-bold">{{trans('file.hk_dental_clinic')}}</strong>
+                             </span> <span class="text-muted text-xs block">{{trans('file.profile')}} <b class="caret"></b></span> </span>
 
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -22,7 +21,7 @@
                             {{--<li><a href="#">Contacts</a></li>--}}
                             {{--<li><a href="#">Mailbox</a></li>--}}
                             <li class="divider"></li>
-                            <li><a href="/login">Logout</a></li>
+                            <li><a href="/login">{{trans('file.logout')}}</a></li>
                         </ul>
                     </div>
                     <div class="logo-element">
