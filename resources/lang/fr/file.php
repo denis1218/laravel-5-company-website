@@ -50,7 +50,7 @@ return[
     'report_patient'=>'گزارش مریض',
     'patient_appointment_list'=>'لیست مریضان به ملاقات',
     'search_patient_id'=>'ای دی مریض را جستجو کنید',
-    'p_id'=>'ای دی',
+    'p_id'=>'ای دی مریض',
     'patient_name'=>'نام مریض',
     'last_name'=>'تخلص',
     'status'=>'حالت',
@@ -101,6 +101,7 @@ return[
     'patient_id'=>'ای دی مریض',
     'status_of_payment'=>'حالت پرداخت',
     'status_of_xray'=>'حالت اکسری',
+    'nprfx'=>'تاکنون مریضی برای ایکسری راجستر نشده است',
     'details'=>'جزییات',
 //    xray show part
     'patient_xray_details'=>'جزییات مریضان اکسری',
@@ -171,6 +172,7 @@ return[
 //start of expense
 
     'expense_table'=>'جدول مصارف',
+    'close'=>'بستن',
     'add_new_expense'=>'ایجاد مصرف جدید',
     'total_expense'=>'مجموعه مصارف',
     'exp_id'=>'آی دی مصرف',
@@ -200,16 +202,60 @@ return[
     'search'=>'جستجو',
     'show_loan_patient'=>'مریضان پرداخت ناشده',
     'print_bill'=>'چاپ بیل',
+    'fee_payment'=>'پرداخت پول',
+    'fill_pa'=>'مقدار قابل پرداخت را وارد کنید',
 //    X-ray Incomer
     'show_completed_xray'=>'مریضان ایکسری شده',
     'show_uncompleted_xray'=>'مریضان ایکسری نشده',
 //    Other Income
     'add_new_income'=>'ایجاد عاید جدید',
     'purpose'=>'هدف',
+    'noiy'=>'هنوز عایدی ثبت نگردیده است',
+    'from_whom'=>'شخص پول دهنده',
 //    End of Income
 
+//Start Of Doctor Salary
+//Doctor List
+    'list_of_doctors'=>'لیست داکتران',
+    'goto_ds'=>'معاش داکتران',
+    'salary_payment'=>'پرداخت معاش',
+//    payment page
+    'back_to_doctor'=>'لیست داکتران',
+    'date_of_registration'=>'تاریخ راجستر',
+    'treatment_fee'=>'پول تداوی',
+    'total_fee'=>'پول مجموعی',
+    'doctor_salary'=>'معاش داکتر',
+    'past_remaining'=>'باقی مانده قبلی',
+    'total_doctor_salary'=>'معاش مجموعی داکتر',
+    'payment_amount'=>'مبلغ قابل پرداخت',
+    'pay_salary'=>'پرداخت معاش',
+//Doctor Salary page
+    'goto_dl'=>'لیست داکتران',
+    'time_period'=>'دوره زمانی',
+//  End of Doctor Salary
 
-
+//  Start of Financial Report
+//  Income Report
+    'ifr'=>'راپور مالی عایدات',
+    'atir_single_day'=>'راپور مالی انواع عایدات روز خاص',
+    'select_day'=>'انتخاب روز',
+    'report'=>'راپور',
+    'atir_range'=>'راپور مالی انواع عایدات در یک دروه زمانی',
+    'select_range'=>'انتخاب دوره زمانی',
+    'irs_type'=>'راپور مالی نوع خاص عاید از روز خاص',
+    'irr_type'=>'راپور مالی نوع خاص عاید در یک دوره زمانی',
+    'select_income_type'=>'انتخاب نوع عاید',
+//   Expense report
+    'efr'=>'راپور مالی مصارف',
+    'expr_single_day'=>'راپور مصرف روز معینه',
+    'expr_range'=>'راپور مصرف در دوره زمانی معینه',
+    'expr_single_category'=>'راپور دسته خاص از مصرف درروز معینه',
+    'expr_range_category'=>'راپور دسته خاص از مصرف در دوره زمانی معینه',
+//  Profit report
+    'pfr'=>'راپور مالی مفاد',
+    'profit_report'=>' راپور مفاد روز معینه',
+    'profit_report_range'=>'راپور مفاد دوره زمانی معینه ',
+//End of financial report
 
 
 

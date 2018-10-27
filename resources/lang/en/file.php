@@ -97,6 +97,7 @@ return[
 //X-ray page
 
     'Patient_xray_list'=>'Patient X-ray List',
+    'nprfx'=>'No Patient Has Been Registered For X-Ray ',
     'new_patient'=>'New Patient',
     'already_done'=>'Already Done',
     'number_of_patient'=>'Number Of Patient',
@@ -181,6 +182,7 @@ return[
 //start of expense
 
     'expense_table'=>'Expense Table',
+    'close'=>'Close',
     'add_new_expense'=>'Add New Expense',
     'total_expense'=>'Total Expense',
     'exp_id'=>'Exp ID',
@@ -210,14 +212,61 @@ return[
     'search'=>'Search',
     'show_loan_patient'=>'Show Loan Patient',
     'print_bill'=>'Print Bill',
-//    X-ray Incomer
+    'fee_payment'=>'Fee Payment',
+    'fill_pa'=>'Enter Amount of Payment',
+
+//    X-ray Income
     'show_completed_xray'=>'Show Completed X-Ray',
     'show_uncompleted_xray'=>'Show Uncompleted X-Ray',
 //    Other Income
     'add_new_income'=>'Add New Income',
     'purpose'=>'Purpose',
+    'noiy'=>'NO Other Income Yet',
+    'from_whom'=>'From Whom',
 //    End of Income
 
+//Start Of Doctor Salary
+//Doctor List
+    'list_of_doctors'=>'List of Doctors',
+    'goto_ds'=>'Doctor Salary',
+    'salary_payment'=>'Salary Payment',
+//    payment page
+    'back_to_doctor'=>'Doctor List',
+    'date_of_registration'=>'Date of Registration',
+    'treatment_fee'=>'Treatment Fee',
+    'total_fee'=>'Total Fee',
+    'doctor_salary'=>'Doctor Salary',
+    'past_remaining'=>'Past Remaining',
+    'total_doctor_salary'=>'Total Doctor Salary',
+    'payment_amount'=>'Payment Amount',
+    'pay_salary'=>'Pay Salary',
+//Doctor Salary page
+    'goto_dl'=>'Doctor List',
+    'time_period'=>'Time Period',
+//  End of Doctor Salary
+
+//  Start of Financial Report
+//  Income Report
+    'ifr'=>'Income Financial Report',
+    'atir_single_day'=>'All Type Income Report For Single Day',
+    'select_day'=>'Select Day',
+    'report'=>'Report',
+    'atir_range'=>'All Type Income Report Between Range',
+    'select_range'=>'Select Range',
+    'irs_type'=>'Single day income report of specific type',
+    'irr_type'=>'Income report of specific type in a range',
+    'select_income_type'=>'Select Income Type',
+//   Expense report
+    'efr'=>'Expense Financial Report',
+    'expr_single_day'=>'Expense report of single day',
+    'expr_range'=>'Expense report of given range',
+    'expr_single_category'=>'Single day expense report of specific category',
+    'expr_range_category'=>'Expense report of specific category in a range',
+//  Profit report
+    'pfr'=>'Profit Financial Report',
+    'profit_report'=>'Profit Report',
+    'profit_report_range'=>'Profit Report in a given range',
+//End of financial report
 
 ];
 

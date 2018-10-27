@@ -130,24 +130,24 @@
                                        </div>
                                         </div>
                                 </div>
-                                <div class="col-sm-5" style="margin-left: 85px;margin-top: 30px">
+                                <div class="col-sm-5" style="margin-left: 100px;margin-top: 30px">
                                     <div class="form-group">
-                                        <div class="col-sm-3"><label class="control-label">{{trans('file.gender')}}:</label></div>
-                                        <div class="col-sm-3" style="margin-left: 15px;"><div class="i-checks"><label><input type="radio" value="Male" name="gender"  required>&nbsp;&nbsp;{{trans('file.male')}}</label></div></div>
-                                        <div class="col-sm-3"><div class="i-checks"><label> <input type="radio" value="Female" name="gender" required>&nbsp;&nbsp; {{trans('file.female')}}</label></div></div>
+                                        <div class="col-sm-3" style="margin-left: -17px;"><label class=" control-label">{{trans('file.salary_type')}}:</label></div>
+                                        <div class="col-sm-3"><label><input type="radio" name="salary_type" value="percentage" id="per" onclick="perSal()" style="height: 22px;width:22px;" required><i></i>{{trans('file.per')}}%</label></div>
+                                        <div class="col-sm-3"><label><input type="radio" name="salary_type" onclick="fixSal()" id="fix" value="fix" style="height: 22px;width:22px;"> <i></i>{{trans('file.fix')}}</label></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-12" style="margin-top: 20px;">
-                                    <div class="col-sm-5 text-center" style="margin-top: 22px;">
+                                    <div class="col-sm-5 text-center" style="margin-top: 22px;margin-left: -30px;">
                                         <div class="form-group">
-                                            <div class="col-sm-3" style="margin-left: -17px;"><label class=" control-label">{{trans('file.salary_type')}}:</label></div>
-                                            <div class="col-sm-3"><label><input type="radio" name="salary_type" value="percentage" id="per" onclick="perSal()" style="height: 22px;width:22px;" required><i></i>{{trans('file.per')}}%</label></div>
-                                            <div class="col-sm-3"><label><input type="radio" name="salary_type" onclick="fixSal()" id="fix" value="fix" style="height: 22px;width:22px;"> <i></i>{{trans('file.fix')}}</label></div>
+                                            <div class="col-sm-3"><label class="control-label">{{trans('file.gender')}}:</label></div>
+                                            <div class="col-sm-4" style="margin-left: 15px;"><div class="i-checks"><label><input type="radio" value="Male" name="gender"  required>&nbsp;&nbsp;{{trans('file.male')}}</label></div></div>
+                                            <div class="col-sm-4"><div class="i-checks"><label> <input type="radio" value="Female" name="gender" required>&nbsp;&nbsp; {{trans('file.female')}}</label></div></div>
                                         </div>
                                     </div>
                                     <div class="col-sm-1"></div>
-                                    <div class="col-sm-5 text-left">
-                                        <div class="form-group">
+                                    <div class="col-sm-6 text-left" style="width: 44%">
+                                        <div class="form-group" style="margin-left: 20px;">
                                             <label class=" control-label" id="label">{{trans('file.salary_amount')}}</label>
                                             <input type="number" class="form-control" name="salary_amount" id="sal" disabled required>
                                         </div>

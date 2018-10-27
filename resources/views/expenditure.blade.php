@@ -3,13 +3,13 @@
 
 @section('style')
     <!-- Data Tables -->
-    <link href="dashboard/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/dataTables/dataTables.bootstrap.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/dataTables/dataTables.responsive.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/dataTables/dataTables.tableTools.min.css')}}" rel="stylesheet">
 
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
+    <link href="{{asset('dashboard/css/animate.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/sweetalert/sweetalert.css')}}" rel="stylesheet"/>
 
 @endsection
 
@@ -22,7 +22,7 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Expense Table</h5>
+                        <h5>{{trans('file.expense_table')}}</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -49,12 +49,12 @@
                         <div class="table-responsive">
                             <!-- Expenditure Table -->
                             <div class="col-md-8">
-                                <a href="/expense_form" class="btn btn-primary btn-lg fa fa-plus" style="margin-top: 70px;">Add New Expense</a>
+                                <a href="/expense_form" class="btn btn-primary btn-lg fa fa-plus" style="margin-top: 70px;">{{trans('file.add_new_expense')}}</a>
                             </div>
                             <div class="col-md-4">
                                 <div class="ibox float-e-margins" style=" background-color: lightyellow;">
                                     <div class="ibox-title" style="background-color:  lightyellow;">
-                                        <h5 style="">Total Expenses</h5>
+                                        <h5 style="">{{trans('file.total_expense')}}</h5>
                                     </div>
                                         <div class="ibox-content"style=" background-color: lightyellow;">
                                             <h1 class="no-margins">{{$totalExpense}}</h1>
@@ -66,14 +66,14 @@
 
                                 <thead>
                                 <tr>
-                                    <th>Exp ID</th>
-                                    <th>To Whom</th>
-                                    <th>Paid Amount</th>
-                                    <th>Category</th>
-                                    <th>Description</th>
-                                    <th>Date Of Payment</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th>{{trans('file.exp_id')}}</th>
+                                    <th>{{trans('file.to_whom')}}</th>
+                                    <th>{{trans('file.paid_amount')}}</th>
+                                    <th>{{trans('file.category')}}</th>
+                                    <th>{{trans('file.description')}}</th>
+                                    <th>{{trans('file.date')}}</th>
+                                    <th>{{trans('file.edit')}}</th>
+                                    <th>{{trans('file.delete')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -87,11 +87,11 @@
                                     <td>{{str_limit($ex->description,20)}}</td>
                                     <td>{{$ex->created_at}}</td>
                                     <td> <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal"
-                                                 data-target="#{{$ex->id}}">&nbsp;Edit
+                                                 data-target="#{{$ex->id}}">&nbsp;{{trans('file.edit')}}
                                         </button></td>
                                     <td>
                                         <form action="/expenditure2/{{$ex->id}}" id="myForm">
-                                            <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
+                                            <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;{{trans('file.delete')}}</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -119,25 +119,25 @@
                     <button type="button" class="close" data-dismiss="modal"><span
                                 aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <i class="fa fa-edit modal-icon text-primary"></i>
-                    <h4 class="modal-title">Edit Content</h4>
+                    <h4 class="modal-title">{{trans('file.edit_content')}}</h4>
                 </div>
                 <div class="modal-body">
                     <form action="/expenditure/{{$exs->id}}" method="post">
                         {{method_field('patch')}}
                     {{--<div class="form-group"><label>ID</label> <input type="text" placeholder="Id" value="" class="form-control"></div>--}}
-                        <div class="form-group"><label>To Whom</label> <input type="text" placeholder="Receiver of money"
+                        <div class="form-group"><label>{{trans('file.to_whom')}}</label> <input type="text" placeholder="{{trans('file.to_whom')}}"
                                                                           value="{{$exs->receiver}}" class="form-control" name="receiver"></div>
-                    <div class="form-group"><label>Paid_Amount</label> <input type="text" placeholder="Paid Amount"
+                    <div class="form-group"><label>{{trans('file.paid_amount')}}</label> <input type="text" placeholder="{{trans('file.paid_amount')}}"
                                                                               value="{{$exs->amount}}" class="form-control" name="amount"></div>
-                    <div class="form-group"><label>Category</label>
-                        <input type="text" placeholder="parpose"
+                    <div class="form-group"><label>{{trans('file.category')}}</label>
+                        <input type="text" placeholder="{{trans('file.purpose')}}"
                                value="{{$exs->category}}" class="form-control" name="category">
                     </div>
-                    <div class="form-group"><label>Description</label> <textarea placeholder="Enter more Information"
+                    <div class="form-group"><label>{{trans('file.description')}}</label> <textarea placeholder="{{trans('file.description')}}"
                                                                                  class="form-control"
                                                                                  style="resize: none;" name="description">{{$exs->description}}</textarea></div>
-                        <button type="submit" class="btn btn-primary pull-right" >Save changes</button>
-                        <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-right: 5px;">Close</button>
+                        <button type="submit" class="btn btn-primary pull-right" >{{trans('file.save')}}</button>
+                        <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-right: 5px;">{{trans('file.close')}}</button>
 
                     </form>
                     <br>
@@ -228,14 +228,14 @@
 
 
     <!-- Data Tables -->
-    <script src="dashboard/js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.bootstrap.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.responsive.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
+    <script src="{{asset('dashboard/js/plugins/dataTables/jquery.dataTables.js')}}"></script>
+    <script src="{{asset('dashboard/js/plugins/dataTables/dataTables.bootstrap.js')}}"></script>
+    <script src="{{asset('dashboard/js/plugins/dataTables/dataTables.responsive.js')}}"></script>
+    <script src="{{asset('dashboard/js/plugins/dataTables/dataTables.tableTools.min.js')}}"></script>
 
     <!-- Custom and plugin javascript -->
-    <script src="dashboard/js/inspinia.js"></script>
-    <script src="dashboard/js/plugins/pace/pace.min.js"></script>
+    <script src="{{asset('dashboard/js/inspinia.js')}}"></script>
+    <script src="{{asset('dashboard/js/plugins/pace/pace.min.js')}}"></script>
 
     <style>
     </style>

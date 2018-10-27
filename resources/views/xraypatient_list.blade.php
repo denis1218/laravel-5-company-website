@@ -66,9 +66,8 @@
 
 
 @section('content')
-
         {{-- table of patient's x-ray --}}
-        <div class="col-lg-12">
+        <div class="col-lg-12" >
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <h5>{{trans('file.patient_xray_list')}}</h5>
@@ -91,6 +90,7 @@
                     </div>
                 </div>
                 <div class="ibox-content">
+                    @include('layout.load')
                     @include('layout.messages')
                     <div class="row" style="margin-right: 0px;margin-left:0PX;">
                         <div class="col-lg-12">
@@ -110,8 +110,9 @@
                                                 <div class="col-md-12">
 
                                                     <br/>
+                                                    <form action="" ></form>
                                                     <div class="table-responsive">
-                                                        <label style="margin-left: 10px;font-size: 15px"><strong><b>{{trans('file.number_of_patient')}}:&nbsp; <span style="color:orange">{!!count($not)!!}</span> &nbsp; Patients </b></strong></label>
+                                                        <label style="margin-left: 10px;font-size: 15px"><strong><b>{{trans('file.number_of_patient')}}:&nbsp; <span style="color:orange">{!!count($not)!!}</span> &nbsp; {{trans('file.patient')}} </b></strong></label>
                                                         <hr>
                                                         <table class="table table-hover table-bordered table-striped">
                                                             <thead>
@@ -138,15 +139,15 @@
                                                                             <td>{{$pat->patient_id}}</td>
                                                                             <td>{{$pat->patient_name}}</td>
                                                                             <td>{{$pat->doctor_name}}</td>
-                                                                            <td id="pay">{{$pat->paid_amount}}</td>
+                                                                            <td><p id="pay">{{$pat->paid_amount}}</p></td>
                                                                             <td>{{$pat->xray_status}}</td>
-                                                                            <td><a class="btn btn-xs btn-info" id="details" href="/xray/{{$pat->id}}/edit">Details &nbsp;<i class="fa fa-file-o"></i></a></td></td>
+                                                                            <td><a class="btn btn-xs btn-info" id="details" href="/xray/{{$pat->id}}/edit">{{trans('file.details')}} &nbsp;<i class="fa fa-file-o"></i></a></td></td>
                                                                         </tr>
                                                                     @endif
                                                                     </tbody>
                                                                 @endforeach
                                                             @else
-                                                                <h1 class="text-center" style="color:red;font-size: 20px;">No patient registered for x-ray</h1>
+                                                                <h1 class="text-center" style="color:red;font-size: 20px;">{{trans('file.nprfx')}}</h1>
                                                             @endif
                                                         </table>
                                                         {{$patient->links()}}
@@ -165,19 +166,19 @@
 
                                                     <br/>
                                                     <div class="table-responsive">
-                                                                <label style="margin-left: 10px;font-size: 15px"><strong><b>Number of patient:&nbsp; <span style="color:orange">{!!count($yes)!!}</span> &nbsp; Patients </b></strong></label>
+                                                                <label style="margin-left: 10px;font-size: 15px"><strong><b>{{trans('file.number_of_patient')}}:&nbsp; <span style="color:orange">{!!count($yes)!!}</span> &nbsp; {{trans('file.patient')}} </b></strong></label>
                                                         <hr>
                                                         <table class="table table-hover table-bordered table-striped">
                                                             <thead>
                                                             <tr>
-                                                                <th>X-Ray ID</th>
-                                                                <th>Tooth Number</th>
-                                                                <th>Tooth Positino</th>
-                                                                <th>Patient ID</th>
-                                                                <th>Patient Name</th>
-                                                                <th>Doctor Name</th>
-                                                                <th>Status of Payment</th>
-                                                                <th>Status of X-Ray</th>
+                                                                <th>{{trans('file.id')}}</th>
+                                                                <th>{{trans('file.teeth_number')}}</th>
+                                                                <th>{{trans('file.tooth_position')}}</th>
+                                                                <th>{{trans('file.p_id')}}</th>
+                                                                <th>{{trans('file.p_name')}}</th>
+                                                                <th>{{trans('file.doctor_name')}}</th>
+                                                                <th>{{trans('file.status_of_payment')}}</th>
+                                                                <th>{{trans('file.status_of_xray')}}</th>
                                                             </tr>
                                                             </thead>
                                                             @if(count($patient)>0)
@@ -198,7 +199,7 @@
                                                                     </tbody>
                                                                 @endforeach
                                                             @else
-                                                                <h1 class="text-center" style="color:red;font-size: 20px;">No patient registered for x-ray</h1>
+                                                                <h1 class="text-center" style="color:red;font-size: 20px;">{{trans('file.nprfx')}}</h1>
                                                             @endif
                                                         </table>
                                                         {{$patient->links()}}
@@ -215,3 +216,12 @@
             </div>
         </div>
 @endsection
+
+{{--@section('script')--}}
+    {{--<script type="text/javascript">--}}
+        {{--function takeXray() {--}}
+           {{--var num=document.getElementById('pay').value;--}}
+           {{--alert--}}
+        {{--}--}}
+    {{--</script>--}}
+{{--@endsection--}}
