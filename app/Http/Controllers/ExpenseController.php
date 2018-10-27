@@ -55,6 +55,7 @@ class ExpenseController extends Controller
         $expense->amount = $request->amount;
         $expense->category = $request->category;
         $expense->description = $request->description;
+
         $expense->created_at = Carbon::now();
         $expense->save();
         return redirect('expenditure');
