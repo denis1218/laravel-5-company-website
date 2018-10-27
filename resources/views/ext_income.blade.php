@@ -21,39 +21,7 @@
 
 
     <!-- Nav-buttons -->
-    <div class="row wrapper border-bottom white-bg page-heading"
-         style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
-        <h3 style="margin-left:43px;margin-top:10px;">Other income</h3>
-        <div class="col-md-2 ">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px;width:155px; margin-left:25px;"
-                   href="/income"><i class="fa fa-money" style="color:#ffc000; font-size: 30px;"></i> <br/>From Patient</a>
-            </h2>
-        </div>
-        <div class="col-md-2 ">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
-                   href="/xrey_income"><i class="fa fa-xing" style="color:#ffc000; font-size: 30px;"></i> <br/>X-Rey
-                    Income</a></h2>
-        </div>
-        <div class="col-md-2 ">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px;margin-left:15px;"
-                   href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>Other Income</a></h2>
-        </div>
-        <div class="col-sm-4" style="float:right;margin-top: 10px;">
-            <div class="widget style1 navy-bg">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h2>Total Income</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 text-left">
-                        <h2 class="font-bold"><span> Amount:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{{$Gtotal}}</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    @include('part.income_button_top')
     <!-- End of navButtons -->
 
 
@@ -62,7 +30,7 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Other income</h5>
+                        <h5>Form Other income</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -117,7 +85,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Description:</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" name="description" placeholder="Enter more information"
+                                    <textarea rows="5" class="form-control" name="description" placeholder="Enter more information"
                                               style="width:50%; resize: none;" required></textarea>
                                 </div>
                             </div>

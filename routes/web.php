@@ -38,6 +38,8 @@ Route::middleware('auth','doctor')->group(function () {
 
     Route::resource('/operation', 'TreatmentController');
 
+    Route::get('/next_appointment_list', 'TreatmentController@next_appointment_list');
+
     Route::get('/operation/create/{id}', 'TreatmentController@create');
 
     Route::get('/operation/{id}/edit/{patient_id}', 'TreatmentController@edit_treatment');
@@ -100,9 +102,6 @@ Route::middleware('auth','reception')->group(function () {
         return view('patient.patient_history_print');
     });
 
-    Route::get('/next_appointment_list', function () {
-        return view('next_appointment_list');
-    });
 
     Route::get('/doctor_report_list', function () {
 
@@ -136,9 +135,7 @@ Route::middleware('auth','reception')->group(function () {
 //Xray Controller
     Route::resource('xray', 'XrayController');
 //Other Income Route
-    Route::resource('other', 'OincomController');
-
-    Route::get('/other2','OincomController@create');
+    Route::resource('other-income', 'OincomController');
 
     Route::resource('income', 'IncomeController');
 
