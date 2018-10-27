@@ -2,24 +2,7 @@
 @extends('master')
 
 @section('style')
-    <link href="dashboard/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
 
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
-    <style media="screen">
-        .bts:hover {
-            box-shadow: 4px 4px 4px 4px grey;
-            transform: scale(1.1);
-        }
-
-        .bts {
-            height: 70px;
-            width: 155px;
-        }
-    </style>
 @endsection
 
 @section('content')
@@ -65,7 +48,6 @@
                             <div class="profile-info">
                                 <div class="">
                                     <div>
-
                                         <h2 class="no-margins font-b">
                                             {{ $doctor->first_name }}
                                         </h2>
@@ -222,7 +204,6 @@
 @section('script')
     <!-- script -->
 
-    <script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
     <script>
         $(document).ready(function () {
 
@@ -280,15 +261,7 @@
         });
     </script>
 
-    <!-- Data Tables -->
-    <script src="dashboard/js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.bootstrap.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.responsive.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
 
-    <!-- Custom and plugin javascript -->
-    <script src="dashboard/js/inspinia.js"></script>
-    <script src="dashboard/js/plugins/pace/pace.min.js"></script>
 
 
 @endsection

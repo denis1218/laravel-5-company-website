@@ -18,6 +18,10 @@ class Doctor extends Model
         return $this->hasMany(Patient::class,'doctor_id','id')->whereDate('next_appointment',Carbon::today());
     }
 
+    public function patient_for_next_day(){
+        return $this->hasMany(Patient::class,'doctor_id','id')->whereDate('next_appointment','>',Carbon::today());
+    }
+
     public function user()
     {
         return $this->belongsTo('users','doctor_id', 'id');

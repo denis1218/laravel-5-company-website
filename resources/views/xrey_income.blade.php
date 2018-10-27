@@ -1,54 +1,15 @@
 @extends('master')
 @section('content')
 
-    <div class="row wrapper border-bottom white-bg page-heading"
-         style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
-        <h3 style="margin-left:43px;margin-top:10px;">Income Details</h3>
-        <div class="col-md-2 ">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px;width:155px; margin-left:25px;"
-                   href="/income"><i class="fa fa-money" style="color:#ffc000; font-size: 30px;"></i> <br/>From Patient</a>
-            </h2>
-        </div>
-        <div class="col-md-2 ">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
-                   href="/xrey_income"><i class="fa fa-xing" style="color:#ffc000; font-size: 30px;"></i> <br/>X-Ray
-                    Income</a></h2>
-        </div>
-        <div class="col-md-2 ">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
-                   href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> Other Income</a></h2>
-        </div>
-        <div class="col-sm-4" style="float:right;margin-top: 10px;">
-            <div class="widget style1 navy-bg">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h2>Total Income</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 text-left">
-                        <h2 class="font-bold"><span> Amount:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{{$Gtotal}}</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{--<div class="col-lg-4" style="float:right;">--}}
-            {{--<div class="ibox float-e-margins" style=" background-color: lightyellow;">--}}
-                {{--<div class="ibox-title" style=" background-color: lightyellow;">--}}
-                    {{--<h5>Capital</h5>--}}
-                {{--</div>--}}
-                {{--<div class="ibox-content" style=" background-color: lightyellow;">--}}
-                    {{--<h1 class="no-margins">40 886,200</h1>--}}
-                    {{--<div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>--}}
 
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    </div>
+    <!-- Nav-buttons -->
+    @include('part.income_button_top')
+    <!-- End of navButtons -->
+
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Xrey income</h5>
+                <h5>X-Ray income</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -73,19 +34,21 @@
             <div class="ibox-content">
                 <div class="row">
 
+
                     <!--Search -->
                     <div class="col-sm-9">
                         <div class="input-group" style="margin-top:25px;">
                         <span class="input-group-btn">
-                        <button type="button" style="margin-left:17px;" class="btn btn-sm btn-primary"><i
-                                    class="fa fa-search"></i> Search</button></span>
-                            <input type="text" placeholder="Patient ID" class="input-sm form-control">
+                        <button type="button" style="margin-left:17px;" disabled class="btn btn-sm btn-primary"><i class="fa fa-search"></i> </button></span>
+                            <input type="text" placeholder="Search patient name" class="input-sm form-control" id="search_xray" onkeyup="search_xray()">
                         </div>
                     </div>
+                    {{-- End search --}}
+
                     <div class="col-sm-3" style="margin-top:25px;">
                         <a href="xrey_income2" type="button" class="btn btn-sm btn-primary">Show completed Xray</a>
                     </div>
-                    <table class="table table-striped table-bordered table-hover" id="editable"
+                    <table class="table table-striped table-bordered table-hover" id="table_xray_income"
                            style="margin-top:80px;margin-left:30px;width:95%;">
                         <thead>
                         <tr>
@@ -125,95 +88,8 @@
 
                    <div style="margin-left: 30px">{{$xrey->links()}}</div>
 
-                    @foreach($xrey as $xr)
-                    <!-- edit model -->
-                    <div class="modal inmodal" id="p{{$xr->id}}" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content animated fadeIn">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                                class="sr-only">Close</span></button>
-                                    <i class="fa fa-edit modal-icon text-primary"></i>
-                                    <h4 class="modal-title">Pay Amount</h4>
-                                    <small>Fill the Paid amount</small>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="/xrey_income/{{$xr->id}}" method="post">
-                                        {{method_field('patch')}}
-                                    <div class="row">
-                                        <div class="form-group"><label class="col-md-3 control-label">Paid Amount
-                                                :</label>
-
-                                            <div class="col-sm-6"><input type="text" name="paid_amount" class="form-control"
-                                                                         placeholder="Paid Amount"></div>
-                                        </div>
-                                    </div>
-                                        <br><br>
-                                        <button type="submit" class="btn btn-primary pull-right" style="margin-right: 5px">Save changes</button>
-
-                                        <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-right: 5px">Close</button>
-                                        <br>
-
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
 
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end of model -->
-                    @endforeach
-                    {{--Edit modal--}}
-                    {{--<div class="modal inmodal" id="edit" tabindex="-1" role="dialog" aria-hidden="true">--}}
-                        {{--<div class="modal-dialog">--}}
-                            {{--<div class="modal-content animated fadeIn">--}}
-                                {{--<div class="modal-header">--}}
-                                    {{--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span--}}
-                                                {{--class="sr-only">Close</span></button>--}}
-                                    {{--<i class="fa fa-edit modal-icon text-primary"></i>--}}
-                                    {{--<h4 class="modal-title">Edit Content</h4>--}}
-                                    {{--<small>Edit information</small>--}}
-                                {{--</div>--}}
-                                {{--<div class="modal-body">--}}
-                                    {{--<div class="row">--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="pid">PID</label>--}}
-                                        {{--<input type="text" name="pid" class="form-control" value="p-078678976" disabled>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="p-name">Patient Name</label>--}}
-                                            {{--<input type="text" name="p-name" class="form-control" placeholder="Patient Name" value="Ahmad">--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="doctor-name">Doctor Name</label>--}}
-                                            {{--<input type="text" name="doctor-name" class="form-control" placeholder="Doctor Name" value="Dr.Samim">--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="estimated-fee">Estimated Fee</label>--}}
-                                            {{--<input type="text" name="estimated-fee" class="form-control" placeholder="Estimated Fee" value="2000">--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="p-amount">Paid Amount</label>--}}
-                                            {{--<input type="text" name="p-amount" class="form-control" placeholder="Paid Amount" value="1500">--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="discount">Discount</label>--}}
-                                            {{--<input type="text" name="discount" class="form-control" placeholder="Discount" value="200">--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-
-                                {{--</div>--}}
-                                {{--<div class="modal-footer">--}}
-                                    {{--<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>--}}
-                                    {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
-
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--end of edit modal--}}
                     @foreach($xrey as $xr)
                     <!-- edit model -->
                     <div class="modal inmodal" id="d{{$xr->id}}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -265,3 +141,33 @@
         </div>
     </div>
 @endsection
+
+@section('script')
+
+    {{-- javascript search on table --}}
+    <script>
+        {{-- filter search all patient table --}}
+        function search_xray() {
+            // Declare variables
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("search_xray");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("table_xray_income");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[2];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+    </script>
+
+    @endsection

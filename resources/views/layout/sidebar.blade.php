@@ -107,6 +107,15 @@
                             <li><a href="/expense-category"><i
                                             class="fa fa-pencil-square-o"></i>{{trans('file.expense_category')}}</a>
                             </li>
+                            <li><a href="/dental-defect-list"><i
+                                            class="fa fa-pencil-square-o"></i>Dental Defect List</a>
+                            </li>
+                            <li><a href="/treatment-list"><i
+                                            class="fa fa-pencil-square-o"></i>Treatment List</a>
+                            </li>
+                            <li><a href="/doctor-department"><i
+                                            class="fa fa-pencil-square-o"></i>Doctor Department</a>
+                            </li>
 
                         </ul>
                     </li>

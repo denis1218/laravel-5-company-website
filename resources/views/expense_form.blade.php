@@ -2,13 +2,7 @@
 
 @section('style')
     <!-- Data Tables -->
-    <link href="dashboard/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
 
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
 
 @endsection
 
@@ -66,14 +60,10 @@
                                         <label>Category</label>
                                         <div>
                                             <select class="select2_demo_1 form-control" name="category">
-                                                <option value="">Select The Category</option>
-                                                <option class="item">Rent</option>
-                                                <option class="item">Office Supply</option>
-                                                <option class="item">Personal</option>
-                                                <option class="item">Taxes</option>
-                                                <option class="item">Employee Salary</option>
-                                                <option class="item">Clinical Instrument</option>
-                                                <option  class="item">Miscellaneous</option>
+                                                <option value="" selected disabled>Select The Category</option>
+                                                @foreach($expenseCategory as $categories)
+                                                    <option value="{{ $categories->category }}">{{ $categories->category }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -95,15 +85,16 @@
                                 </form>
                             </div>
                             <div class="col-md-3"></div>
-                            <div class="col-lg-4" style="float:right;">
-                                <div class="ibox float-e-margins" style=" background-color: lightyellow;">
-                                    <div class="ibox-title" style="background-color:  lightyellow;">
-                                        <h5 style="">Capital</h5>
+                            <div class="col-lg-4" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <span class="label label-info pull-right">All</span>
+                                        <h5>Total Expenses</h5>
                                     </div>
-                                    <div class="ibox-content"style=" background-color: lightyellow;">
-                                        <h1 class="no-margins">{{$capital}}</h1>
-                                        {{--<div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i>--}}
-                                        </div>
+                                    <div class="ibox-content">
+
+                                        <h1 class="no-margins">{{$capital}}&nbsp;&nbsp;Afg<img  src="{{ asset('img/expense_icon.png') }}" width="80px;"style="float: right;"/></h1>
+                                        <small>All Expenses</small>
 
                                     </div>
                                 </div>
