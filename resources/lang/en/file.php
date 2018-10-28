@@ -1,6 +1,9 @@
 <?php
 return[
 //    side bar words
+    'hk_dental_clinic'=>'HK Dental Clinic',
+    'profile'=>'profile',
+    'logout'=>'Logout',
     'home'=>'Home',
     'department'=>'Department',
     'reception'=>'Reception',
@@ -25,6 +28,11 @@ return[
     'expense_category'=>'Expense Category',
 //    end of side bar words
 
+//top nav
+    'welcome_to'=>'Welcome To',
+    'todayDate'=> Carbon\Carbon::now()->format('l d F Y'),
+    'change'=>'change',
+
 
 //dashboard page
     'user'=>'User',
@@ -35,6 +43,7 @@ return[
     'apc'=>'All Patient Count',
     'tda'=>'Total Doctors Available',
     'ap'=>'Appointment Patient',
+    'total_appointment'=>'Total Appointment',
     'today'=>'Today',
     'qee'=>'Quick Enter Expenses',
     'money_receiver'=>'Money Receiver',
@@ -92,6 +101,7 @@ return[
     'paid'=>'Paid',
     'remaining'=>'Remaining',
     'doctor_signature'=>'Doctor Signature',
+    'patient_history_file'=>'Patient History File ',
 //    end of patient history print
 
 //X-ray page
@@ -179,10 +189,12 @@ return[
     'o_problem'=>'Other Problem',
 //    End of patient registration
 
+
 //start of expense
 
     'expense_table'=>'Expense Table',
     'close'=>'Close',
+    'saejf'=>'Show All Expenses Just For',
     'add_new_expense'=>'Add New Expense',
     'total_expense'=>'Total Expense',
     'exp_id'=>'Exp ID',
@@ -267,6 +279,44 @@ return[
     'profit_report'=>'Profit Report',
     'profit_report_range'=>'Profit Report in a given range',
 //End of financial report
+
+//    list of patient
+    'appointment_patient'=>'Appointment Patient',
+    'add_new_patient'=>'Add New Patient',
+    'list_new_patient_today'=>'List New Patient Today',
+    'list_next_appointment_today'=>'List Next Appointment Today',
+    'miss_list_next_appointment'=>'Miss Next Appointment ',
+    'note'=>'Note:These Navigation Date Just Effect On All Patient Tab',
+    'previous'=>'Previous',
+    'Today'=>'Today',
+    'next'=>'Next',
+    'set_date'=>'Set Date',
+    'all_patient'=>'All Patient',
+    'search'=>'Search',
+    'search_patient_name'=>'Search Patient Name',
+    'show_all_patient'=>'Show All Patients Presents Now',
+    'patient_name'=>'Patient Name',
+    'appointment_date'=>'Appointment Date',
+    'add_to_queue'=>'Add To Queue',
+    'there_is_no'=>'There Is No Patient',
+//    new patient today
+    'list_patient_today'=>'List Patient Today',
+    'back'=>'Back',
+    'total_new'=>'Total New Register Today',
+    'visits'=>'Visits',
+//    list next appointment today
+    'next_appointment'=>'List Next Appointment Today',
+    'next_appointment_date'=>'Next Appointmentٔ',
+//    miss list next appointment
+    'miss_next_appointment_patient'=>'Miss Next Appointment Patient',
+
+//  patient report
+    'patient_report_table'=>'Patient Report Table',
+//    patient prescription
+    'patient_prescription'=>'Patient Prescription',
+
+
+
 
 ];
 

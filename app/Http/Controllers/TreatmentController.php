@@ -32,6 +32,19 @@ class TreatmentController extends Controller
         return view('doctor_operations',compact('operation','doctor'));
     }
 
+    public function next_appointment_list(Request $request)
+    {
+        $id = Auth()->user()->doctor_id;
+        if($request->date == null){
+            $next_appointment = Patient::where('doctor_id','=',$id)
+                ->where('next_appointment','>',Carbon::today())->get();
+        }else{
+            $next_appointment = Patient::where('doctor_id','=',$id)
+                ->where('next_appointment','>',Carbon::today())
+                ->where('next_appointment','=',$request->date)->get();
+        }
+        return view('next_appointment_list',compact('next_appointment'));
+    }
 
     /**
      * Show the form for creating a new resource.

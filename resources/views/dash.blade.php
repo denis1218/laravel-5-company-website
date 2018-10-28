@@ -10,13 +10,13 @@
             <div class="col-lg-3">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-info pull-right">Logged in</span>
-                        <h5>Usergiyt </h5>
+                        <span class="label label-info pull-right">{{trans('file.logged_in')}}</span>
+                        <h5>{{trans('file.user')}}</h5>
                     </div>
                     <div class="ibox-content">
                         <h2 class="no-margins">
 
-                            Welcome  {{ Auth::user()->firstname }}</h2>
+                           {{trans('file.welcome')}} {{ Auth::user()->firstname }}</h2>
                         <div class="stat-percent font-bold text-danger"></div>
                         <small>{{ Auth::user()->department }}</small>
 
@@ -26,13 +26,13 @@
             <div class="col-lg-3">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-info pull-right">All</span>
-                        <h5>Patient</h5>
+                        <span class="label label-info pull-right">{{trans('file.all')}}</span>
+                        <h5>{{trans('file.patient')}}</h5>
                     </div>
                     <div class="ibox-content">
 
                         <h1 class="no-margins">{{$patient}}<img  src="img/patienticon2.png" width="45px;"style="float: right;"/></h1>
-                        <small>All Patients count</small>
+                        <small>{{trans('file.apc')}}</small>
 
                     </div>
                 </div>
@@ -40,26 +40,26 @@
             <div class="col-lg-3">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-primary pull-right">All</span>
-                        <h5>Doctors</h5>
+                        <span class="label label-primary pull-right">{{trans('file.all')}}</span>
+                        <h5>{{trans('file.doctors')}}</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins">{{$doctor}}<img  src="img/doctors.png" width="60px;"style="float: right;"/></h1>
                         <div class="stat-percent font-bold text-navy"></div>
-                        <small>Total Doctors Available</small>
+                        <small>{{trans('file.tda')}}</small>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <span class="label label-danger pull-right">Today</span>
-                        <h5>Appointment patients</h5>
+                        <span class="label label-danger pull-right">{{trans('file.today')}}</span>
+                        <h5>{{trans('file.appointment_patient')}}</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins">{{count($apatient)}}<img  src="img/appintmentincon.png" width="60px;"style="float: right;"/></h1>
                         <div class="stat-percent font-bold text-danger"></div>
-                        <small>Total Appointment
+                        <small>{{trans('file.total_appointment')}}
                             <br>
                             @if(isset($msg))
 
@@ -104,7 +104,7 @@
                     <div class="col-lg-4">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
-                                <h5>Quick Enter Expenses</h5>
+                                <h5>{{trans('file.qee')}}</h5>
                                 <div class="ibox-tools">
                                     <a class="collapse-link">
                                         <i class="fa fa-chevron-up"></i>
@@ -128,11 +128,11 @@
                                 <form>
                                     <div class="row">
                                       <div class="col">
-                                        <input type="text" class="form-control" style="width:100%" placeholder="Money receiver"><br>
-                                        <input type="text" class="form-control" style="width:100%" placeholder="Paid Amount"><br>
+                                        <input type="text" class="form-control" style="width:100%" placeholder="{{trans('file.money_receiver')}}"><br>
+                                        <input type="text" class="form-control" style="width:100%" placeholder="{{trans('file.paid_amount')}}"><br>
                                         
                                         <select class="form-control" style="width:100%">
-                                            <option value="1" disabled selected>Select The Category</option>
+                                            <option value="1" disabled selected>{{trans('file.select_category')}}</option>
                                             <option value="1">Rent</option>
                                             <option value="2">Office Supply</option>
                                             <option value="3">Personal</option>
@@ -143,9 +143,9 @@
                                         </select><br>
 
 
-                                        <textarea name="msg" id="" placeholder="Enter your message"  class="form-control" style="resize: none;"></textarea><br>
-                      <button type="submit"  value="Pay" class="btn btn-primary">Save &nbsp;<i class="fa fa-save"></i></button>
-                                        <button  value="Pay" class="btn btn-warning" data-toggle="modal" data-target="#remaining">Remainder &nbsp;<i class="fa fa-arrow-circle-down"></i></button>
+                                        <textarea name="msg" id="" placeholder="{{trans('file.eym')}}"  class="form-control" style="resize: none;"></textarea><br>
+                                        <button type="submit"  value="Pay" class="btn btn-primary">{{trans('file.save')}}&nbsp;<i class="fa fa-save"></i></button>
+                                        <button  value="Pay" class="btn btn-warning" data-toggle="modal" data-target="#remaining">{{trans('file.remainder')}}<i class="fa fa-arrow-circle-down"></i></button>
 
                                         </div>
                                     </div>

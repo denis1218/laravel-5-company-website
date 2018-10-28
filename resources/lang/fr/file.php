@@ -1,6 +1,9 @@
 <?php
 return[
 //    side bar words
+    'hk_dental_clinic'=>'کلینیک دندان حکیم الکوزی',
+    'profile'=>'پروفایل',
+    'logout'=>'خروج',
     'home'=>'خانه',
     'department'=>'دیپارتمنت',
     'reception'=>'معلومات',
@@ -24,6 +27,10 @@ return[
     'add_medicine'=>'ادویه',
     'expense_category'=>'کتگوری مصارف',
 //    end of side bar words
+//  top nav
+    'welcome_to'=>'خوش آمدید به ',
+    'todayDate'=> Carbon\Carbon::now()->timezone('Asia/kabul')->format('l d F Y'),
+    'change'=>'تغیر زبان',
 
 //  page
     'user'=>'کاربر',
@@ -34,6 +41,7 @@ return[
     'apc'=>'لیست تمام مریضان',
     'tda'=>'داکتر های قابل دسترس',
     'ap'=>'ملاقات مریض',
+    'total_appointment'=>'همه ملاقات',
     'today'=>'امروز',
     'qee'=>'ثبت سریع مصارف',
     'money_receiver'=>'دریافت کننده پول',
@@ -67,6 +75,7 @@ return[
 //    end of next appointment patient
 
 //start of patient history print page
+    'patient_history_file'=>'تاریخچه مریض',
     'patient_information'=>'معلومات مریض',
     'dc'=>'کلینک دندان',
     'phf'=>'یاداشت مریض',
@@ -169,10 +178,12 @@ return[
     'anesthetic_problem'=>'مشکل بی حسی',
 //end of patient registration
 
+
 //start of expense
 
     'expense_table'=>'جدول مصارف',
     'close'=>'بستن',
+    'saejf'=>'نمایش همه مصارف فقط برای',
     'add_new_expense'=>'ایجاد مصرف جدید',
     'total_expense'=>'مجموعه مصارف',
     'exp_id'=>'آی دی مصرف',
@@ -256,6 +267,43 @@ return[
     'profit_report'=>' راپور مفاد روز معینه',
     'profit_report_range'=>'راپور مفاد دوره زمانی معینه ',
 //End of financial report
+
+//    list of patient
+    'appointment_patient'=>'ملاقات مریض',
+    'add_new_patient'=>'اضافه کردن مریض جدید',
+    'list_new_patient_today'=>'لیست مریضان جدید امروز',
+    'list_next_appointment_today'=>'لیست مریضان بار دوم',
+    'miss_list_next_appointment'=>'لیست مریضان بار دوم غیرحاضر ',
+    'note'=>' نوت‌: این تاریخ بالای تمام مریض های که در بخش تمام مریضان است تاثیر دارد',
+    'previous'=>'قبلی',
+    'Today'=>'امروز',
+    'next'=>'بعدی',
+    'set_date'=>'تعین تاریخ',
+    'all_patient'=>'تمام مریضان',
+    'search'=>'جستجو',
+    'search_patient_name'=>'جستجو نام مریض',
+    'show_all_patient'=>'نمایش تمام مریضان حال حاضر',
+    'appointment_date'=>'تاریخ ملاقات',
+    'add_to_queue'=>'اضافه کردن در قطار',
+    'there_is_no'=>'تا به حال مریض موجود نیست',
+//    new patient today
+    'list_patient_today'=>'لیست مریضان امروز',
+    'back'=>'قبلی',
+    'total_new'=>'مجموع مریضان راجستر شده امروز',
+    'visits'=>'ملاقات',
+//    list next appointment today
+    'next_appointment'=>'لیست مریضان بار دوم امروز',
+    'next_appointment_date'=>'تاریخ بار بعدی',
+//    miss list next appointment
+    'miss_next_appointment_patient'=>'لیست مریضان غیر حاضر  ',
+//    doctor navbar
+
+
+//  patient report
+    'patient_report_table'=>'جدول گزارشات مریضان',
+//    patient prescription
+    'patient_prescription'=>'نسخه مریض',
+
 
 
 

@@ -9,7 +9,7 @@
 <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Patient Report Table <i class="fa fa-info"></i></h5>
+                <h5>{{trans('file.patient_report_table')}}<i class="fa fa-info"></i></h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -39,8 +39,8 @@
                                 <div class="col-sm-5">
                                     <div class="input-group">
                                         <span class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-primary" disabled=""> Search</button> </span>
-                                        <input type="text" placeholder="Search patient name" id="search_all_patient" onkeyup="search_all_patient()"
+                                        <button type="button" class="btn btn-sm btn-primary" disabled="">{{trans('file.search')}}</button> </span>
+                                        <input type="text" placeholder="{{trans('file.search_patient_name')}}" id="search_all_patient" onkeyup="search_all_patient()"
                                                 class="input-sm form-control"> 
                                     </div>
                                 </div>
@@ -52,15 +52,15 @@
                                         <table class="table table-hover  no-margins" id="table_all_patient">
                                             <thead>
                                             <tr class="bg-light">
-                                                <th>P-ID</th>
-                                                <th>Patient Name</th>
-                                                <th>Last Name</th>
-                                                <th>Doctor Name</th>
-                                                <th>Status</th>
-                                                <th>Date & Time Appointment</th>
-                                                <th>Healths Problem</th>
+                                                <th>{{trans('file.p_id')}}</th>
+                                                <th>{{trans('file.patient_name')}}</th>
+                                                <th>{{trans('file.last_name')}}</th>
+                                                <th>{{trans('file.doctor_name')}}</th>
+                                                <th>{{trans('file.status')}}</th>
+                                                <th>{{trans('file.next_appointment_date')}}</th>
+                                                <th>{{trans('file.health_problem')}}</th>
 
-                                                <th>Print</th>
+                                                <th>{{trans('file.print')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -74,7 +74,7 @@
                                                 <td><i class="fa fa-calendar"></i>{{$patient->created_at}}</td>
                                                 <td class="">{{$patient->problem_health}}</td>
                                                 <td><a class="btn btn-xs btn-primary" href="/patient_report/{{$patient->id}}" ><i class="fa fa-info"></i>
-                                                        Print</a></td>
+                                                        {{trans('file.print')}}</a></td>
 
                                             </tr>
                                                 @endforeach

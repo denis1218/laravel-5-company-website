@@ -1,6 +1,5 @@
 <body>
 
-
 <div id="wrapper">
 
 
@@ -13,8 +12,8 @@
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong
-                                            class="font-bold">HK Dental Clinic</strong>
-                             </span> <span class="text-muted text-xs block">Profile <b class="caret"></b></span> </span>
+                                            class="font-bold">{{trans('file.hk_dental_clinic')}}</strong>
+                             </span> <span class="text-muted text-xs block">{{trans('file.profile')}} <b class="caret"></b></span> </span>
 
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -22,7 +21,7 @@
                             {{--<li><a href="#">Contacts</a></li>--}}
                             {{--<li><a href="#">Mailbox</a></li>--}}
                             <li class="divider"></li>
-                            <li><a href="/login">Logout</a></li>
+                            <li><a href="/login">{{trans('file.logout')}}</a></li>
                         </ul>
                     </div>
                     <div class="logo-element">
@@ -107,6 +106,15 @@
 
                             <li><a href="/expense-category"><i
                                             class="fa fa-pencil-square-o"></i>{{trans('file.expense_category')}}</a>
+                            </li>
+                            <li><a href="/dental-defect-list"><i
+                                            class="fa fa-pencil-square-o"></i>Dental Defect List</a>
+                            </li>
+                            <li><a href="/treatment-list"><i
+                                            class="fa fa-pencil-square-o"></i>Treatment List</a>
+                            </li>
+                            <li><a href="/doctor-department"><i
+                                            class="fa fa-pencil-square-o"></i>Doctor Department</a>
                             </li>
 
                         </ul>

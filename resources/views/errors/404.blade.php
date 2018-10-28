@@ -32,7 +32,7 @@
         <div class="col-md-6">
             <div class="error-desc">
                 <h3 class="font-bold">Page Not Found</h3>
-                Sorry, but the page you are looking for has note been found. Try checking the URL for error, then hit the refresh button on your browser or try found something else in our app.
+                Sorry, but the page you are looking for has not been found. Try checking the URL for error, then hit the refresh button on your browser or try found something else in our app.
                 <a href="/login"  class="btn btn-success" style="margin-top:20px;">GO TO HOME PAGE</a>
 
             </div>
