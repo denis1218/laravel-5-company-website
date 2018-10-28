@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\DoctorDepartment;
 use App\User;
 use DB;
 use App\Treatment;
@@ -32,7 +33,8 @@ class DoctorController extends Controller
 //    }
     public function create()
     {
-        return view('employee');
+        $doctor_department = DoctorDepartment::all();
+        return view('employee',compact('doctor_department'));
     }
 
     /**

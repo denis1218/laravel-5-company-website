@@ -57,7 +57,7 @@ class OincomController extends Controller
         $other->description=$request->description;
         $other->save();
 //        $toast=$request->toast;
-        return redirect('/other')->with('toast',['successfully inserted'])->with('success','Inserted successfully');
+        return redirect('/other-income')->with('toast',['successfully inserted'])->with('success','Inserted successfully');
     }
 
     /**
@@ -98,7 +98,7 @@ class OincomController extends Controller
         $Edt->purpose=$request->purpose;
         $Edt->description=$request->description;
         $Edt->save();
-        return redirect('/other');
+        return redirect('/other-income');
     }
 
     /**

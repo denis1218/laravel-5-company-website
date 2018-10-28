@@ -22,7 +22,7 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Xrey table income</h5>
+                    <h5>Other Income</h5>
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
@@ -113,7 +113,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="row">
-                                                <form action="/other/{{$other->id}}" method="post">
+                                                <form action="/other-income/{{$other->id}}" method="post">
                                                     {{method_field('PUT')}}
                                                     <div class="form-group">
                                                         <label for="p-name">From Whom</label>
