@@ -1,6 +1,6 @@
 <div class="row wrapper border-bottom white-bg page-heading"
      style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
-    <h3 style="margin-left:43px;margin-top:10px;">Income Button Navigate</h3>
+    <h3 style="margin-left:43px;margin-top:10px;">{{trans('file.inb')}}</h3>
     <div class="col-md-2 ">
         <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px;width:155px; margin-left:25px;"
                href="/income"><i class="fa fa-money" style="color:#ffc000; font-size: 30px;"></i> <br/>{{trans('file.from_patient')}}</a>

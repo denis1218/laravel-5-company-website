@@ -200,6 +200,7 @@ return[
 //patient income
     'income_details'=>'حزوئیات عایدات',
     'from_patient'=>'عواید مریضان',
+    'inb'=>'کلید های مرور بین صفحات عواید',
     'xray_income'=>'عواید ایکسری',
     'other_income'=>'عواید دیگر',
     'total_income'=>'عاید مجموعی',

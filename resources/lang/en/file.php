@@ -210,6 +210,7 @@ return[
 //start of Income
 //patient income
     'income_details'=>'Income Details',
+    'inb'=>'Income Navigation Buttons',
     'from_patient'=>'From Patient',
     'xray_income'=>'X-ray Income',
     'other_income'=>'Other Income',

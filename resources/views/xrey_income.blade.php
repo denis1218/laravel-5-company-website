@@ -37,7 +37,7 @@
                     <div class="col-sm-9">
                         <div class="input-group" style="margin-top:25px;">
                         <span class="input-group-btn">
-                        <button type="button" style="margin-left:17px;" disabled class="btn btn-sm btn-primary"><i class="fa fa-search"></i> </button>
+                            <button type="button" style="margin-left:17px;" disabled class="btn btn-sm btn-primary"><i class="fa fa-search"></i> </button></span>
                             <input type="text" placeholder="{{trans('file.p_name')}}" class="input-sm form-control" id="search_xray" onkeyup="search_xray()">
 
                         </div>
