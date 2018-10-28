@@ -90,7 +90,6 @@
                     </div>
                 </div>
                 <div class="ibox-content">
-                    @include('layout.load')
                     @include('layout.messages')
                     <div class="row" style="margin-right: 0px;margin-left:0PX;">
                         <div class="col-lg-12">
@@ -141,7 +140,7 @@
                                                                             <td>{{$pat->doctor_name}}</td>
                                                                             <td><p id="pay">{{$pat->paid_amount}}</p></td>
                                                                             <td>{{$pat->xray_status}}</td>
-                                                                            <td><a class="btn btn-xs btn-info" id="details" href="/xray/{{$pat->id}}/edit">{{trans('file.details')}} &nbsp;<i class="fa fa-file-o"></i></a></td></td>
+                                                                            <td><a class="btn btn-xs btn-info" id="details" href="/xray/{{$pat->id}}/edit" onclick="takeXray()">{{trans('file.details')}} &nbsp;<i class="fa fa-file-o"></i></a></td></td>
                                                                         </tr>
                                                                     @endif
                                                                     </tbody>
@@ -217,11 +216,11 @@
         </div>
 @endsection
 
-{{--@section('script')--}}
-    {{--<script type="text/javascript">--}}
-        {{--function takeXray() {--}}
-           {{--var num=document.getElementById('pay').value;--}}
-           {{--alert--}}
-        {{--}--}}
-    {{--</script>--}}
-{{--@endsection--}}
+@section('script')
+    <script type="text/javascript">
+        function takeXray() {
+            var pa=document.getElementById('pay').value;
+            alert(pa);
+        }
+    </script>
+@endsection
