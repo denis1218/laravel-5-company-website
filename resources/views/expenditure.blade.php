@@ -3,13 +3,7 @@
 
 @section('style')
     <!-- Data Tables -->
-    <link href="dashboard/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
 
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
 
 @endsection
 
@@ -48,21 +42,28 @@
                         <!-- Table -->
                         <div class="table-responsive">
                             <!-- Expenditure Table -->
+                            <div class="row">
                             <div class="col-md-8">
-                                <a href="/expense_form" class="btn btn-primary btn-lg fa fa-plus" style="margin-top: 70px;">Add New Expense</a>
+                                <a href="/expenditure/create" class="btn btn-primary btn-md" style=""><i class="fa fa-plus"></i>&nbsp;&nbsp;Add New Expense</a>
+                                <div><h4>Show all expense just for (this month {{ \Carbon\Carbon::now()->month }})</h4></div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="ibox float-e-margins" style=" background-color: lightyellow;">
-                                    <div class="ibox-title" style="background-color:  lightyellow;">
-                                        <h5 style="">Total Expenses</h5>
+
+                            <div class="col-md-4" style="margin-bottom: 30px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                <div class="ibox ">
+                                    <div class="ibox-title">
+                                        <span class="label label-info pull-right">All</span>
+                                        <h5>Total Expenses</h5>
                                     </div>
-                                        <div class="ibox-content"style=" background-color: lightyellow;">
-                                            <h1 class="no-margins">{{$totalExpense}}</h1>
-                                        </div>
+                                    <div class="ibox-content">
+
+                                        <h1 class="no-margins">{{$totalExpense}}&nbsp;&nbsp;Afg<img  src="{{ asset('img/expense_icon.png') }}" width="60px;"style="float: right;"/></h1>
+                                        <small>All Expenses</small>
+
                                     </div>
                                 </div>
                             </div>
-                            <table class="table table-striped table-bordered table-hover " id="editable">
+                            </div>
+                            <table class="table table-striped table-bordered table-hover " >
 
                                 <thead>
                                 <tr>
@@ -101,6 +102,7 @@
                                 </tbody>
                             </table>
                             <!-- End of the table -->
+                            {{ $expen->links() }}
                         </div>
 
                     </div>
@@ -165,7 +167,7 @@
 @section('script')
     <!-- script -->
 
-    <script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
+
     <script>
         $(document).ready(function () {
 
@@ -227,52 +229,5 @@
 
 
 
-    <!-- Data Tables -->
-    <script src="dashboard/js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.bootstrap.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.responsive.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
 
-    <!-- Custom and plugin javascript -->
-    <script src="dashboard/js/inspinia.js"></script>
-    <script src="dashboard/js/plugins/pace/pace.min.js"></script>
-
-    <style>
-    </style>
-
-    <!-- Page-Level Scripts -->
-    <script>
-        $(document).ready(function () {
-            $('.dataTables-example').DataTable({
-                "dom": 'lTfigt',
-                "tableTools": {
-                    "sSwfPath": "dashboard/js/plugins/dataTables/swf/copy_csv_xls_pdf.swf"
-                }
-            });
-
-            /* Init DataTables */
-            var oTable = $('#editable').DataTable();
-
-            /* Apply the jEditable handlers to the table */
-            oTable.$('td').editable('../example_ajax.html', {
-                "callback": function (sValue, y) {
-                    var aPos = oTable.fnGetPosition(this);
-                    oTable.fnUpdate(sValue, aPos[0], aPos[1]);
-                },
-                "submitdata": function (value, settings) {
-                    return {
-                        "row_id": this.parentNode.getAttribute('id'),
-                        "column": oTable.fnGetPosition(this)[2]
-                    };
-                },
-
-                "width": "90%",
-                "height": "100%"
-            });
-
-
-        });
-
-
-    </script>
 @endsection

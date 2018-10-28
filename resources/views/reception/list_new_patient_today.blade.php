@@ -9,7 +9,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>List patient today</h5>
+                <h5>{{trans('file.list_new_patient_today')}}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -34,7 +34,7 @@
                 {{-- row for buttons --}}
                 <div class="row">
                     <div class="col-md-2">
-                        <a class="btn btn-primary" href="/patient"><i class="fa fa-arrow-left"></i>&nbsp;Back</a>
+                        <a class="btn btn-primary" href="/patient"><i class="fa fa-arrow-left"></i>{{trans('file.back')}}</a>
                     </div>
 
                     <div class="col-md-4 pull-right">
@@ -44,7 +44,7 @@
                                     <i class="fa fa-user-plus fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <span> Total new register today {{ \Carbon\Carbon::today()->toDateString() }}</span>
+                                    <span> {{trans('file.total_new')}}&nbsp;&nbsp;{{ \Carbon\Carbon::today()->toDateString() }}</span>
                                     <h2 class="font-bold">{{ $countNewPatient }}</h2>
                                 </div>
                             </div>
@@ -59,14 +59,14 @@
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Firstname</th>
-                                    <th>Lastname</th>
-                                    <th>Visits</th>
-                                    <th>Doctor &nbsp;<i class="fa fa-stethoscope"></i></th>
-                                    <th>Date Reg &nbsp;<i class="fa fa-calendar"></i></th>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.first_name')}}</th>
+                                    <th>{{trans('file.last_name')}}</th>
+                                    <th>{{trans('file.visits')}}</th>
+                                    <th>{{trans('file.doctor')}}&nbsp;<i class="fa fa-stethoscope"></i></th>
+                                    <th>{{trans('file.date')}}<i class="fa fa-calendar"></i></th>
                                     {{--<th>Next appointment &nbsp;<i class="fa fa-calendar"></i></th>--}}
-                                    <th>Phone &nbsp;<i class="fa fa-phone"></i></th>
+                                    <th>{{trans('file.phone')}}&nbsp;<i class="fa fa-phone"></i></th>
                                 <tr>
                             </thead>
                             <tbody>
@@ -85,14 +85,14 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Firstname</th>
-                                    <th>Lastname</th>
-                                    <th>Visits</th>
-                                    <th>Doctor &nbsp;<i class="fa fa-stethoscope"></i></th>
-                                    <th>Date Reg &nbsp;<i class="fa fa-calendar"></i></th>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.first_name')}}</th>
+                                    <th>{{trans('file.last_name')}}</th>
+                                    <th>{{trans('file.visits')}}</th>
+                                    <th>{{trans('file.doctor')}}&nbsp;<i class="fa fa-stethoscope"></i></th>
+                                    <th>{{trans('file.date')}}&nbsp;<i class="fa fa-calendar"></i></th>
                                     {{--<th>Next appointment &nbsp;<i class="fa fa-calendar"></i></th>--}}
-                                    <th>Phone &nbsp;<i class="fa fa-phone"></i></th>
+                                    <th>{{trans('file.phone')}}&nbsp;<i class="fa fa-phone"></i></th>
                                 </tr>
                             </tfoot>
                         </table>

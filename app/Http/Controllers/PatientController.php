@@ -26,6 +26,7 @@ class PatientController extends Controller
         }
         $doctor_list = Doctor::all();
         return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
+
     }
 
 
