@@ -12,17 +12,16 @@
 
         <div class="col-md-2 ">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height: 65px; width:130px;"
-                   href="/explore_backups"></i>
-                    <img src="img/db.png" width="30px"/><br/>Backup list<br/></a></h2>
+                   href="/backup"></i><img src="img/db.png" width="30px"/><br/>{{trans('file.backup_list')}}<br/></a></h2>
         </div>
         <div class="col-md-2" style="margin-left:-50px;">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height: 65px;" href="/create_backups"></i>
-                    <img src="img/db_plus.png" width="30px"/><br/>Database Backup<br/></a></h2>
+                    <img src="img/db_plus.png" width="30px"/><br/>{{trans('file.database_backup')}}<br/></a></h2>
         </div>
         <div class="col-md-2" style="margin-left:-40px;">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height: 65px;" href="/restore">
                     <img src="img/db_restor.png" width="30px"/>
-                    <br/>Restore Database<br/></a></h2>
+                    <br/>{{trans('file.restore_database')}}<br/></a></h2>
         </div>
     </div>
     {{-- buttons --}}
@@ -31,7 +30,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Treatment Operation (Mostafa Ahamdi) </h5>
+                <h5>{{trans('file.backup_creation')}} </h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -56,8 +55,8 @@
                     <div class="col-md-12">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label>Database Name</label>
-                                <input type="text" class="form-control" placeholder="Enter Database Name"/>
+                                <label>{{trans('file.db_name')}}</label>
+                                <input type="text" class="form-control" placeholder="{{trans('file.enter_db_name')}}"/>
                             </div>
                         </div>
                     </div>
@@ -67,18 +66,18 @@
                 <div class="row">
 
                     <div class="ibox-content">
-                        <h3>Backup Method</h3>
+                        <h3>{{trans('file.backup_method')}}</h3>
                         <table class="table">
                             <tbody>
                             <tr>
                                 <td class="col-md-3">
                                     <div class="i-checks">
                                         <label> <input type="radio" value="option1" name="a"> <i
-                                                    class="fa fa-dropbox"></i> Dropbox </label>
+                                                    class="fa fa-dropbox"></i>{{trans('file.drop_box')}}</label>
                                     </div>
                                 </td>
                                 <th class="col-xs-1">
-                                    <center>Path:</center>
+                                    <center>{{trans('file.path')}}:</center>
                                 </th>
                                 <td class="col-md-3">
                                     <div class="form-group"><input type="text" class="form-control"
@@ -91,11 +90,11 @@
                                 <td>
                                     <div class="i-checks">
                                         <label> <input type="radio" value="option1" name="a"> <i
-                                                    class="fa fa-location-arrow"></i> Local Network Drive </label>
+                                                    class="fa fa-location-arrow"></i> {{trans('file.local_network_drive')}} </label>
                                     </div>
                                 </td>
                                 <th class="col-xs-1">
-                                    <center>Path:</center>
+                                    <center>{{trans('file.path')}}:</center>
                                 </th>
                                 <td class="col-md-3">
                                     <div class="form-group"><input type="text" class="form-control"
@@ -107,7 +106,7 @@
                             </tbody>
                         </table>
                         <p>
-                            <button type="button" class="btn btn-w-m btn-primary demo_DB_create">Create Backup</button>
+                            <button type="button" class="btn btn-w-m btn-primary demo_DB_create">{{trans('file.create_backup')}}</button>
                         </p>
                     </div>
                 </div>

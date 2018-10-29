@@ -82,8 +82,10 @@ class DentalDefectListController extends Controller
      * @param  \App\DentalDefectList  $dentalDefectList
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DentalDefectList $dentalDefectList)
+    public function destroy($id)
     {
-        //
+        $delete=DentalDefectList::find($id);
+        $delete->delete();
+        return redirect('doctor_department')->with('success','Record Deleted Successfully');
     }
 }

@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('style')
-    <link href="css/hover/hover-min.css" rel="stylesheet">
+    <link href="{{asset('css/hover/hover-min.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -14,7 +14,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Patient Income</h5>
+                <h5>{{trans('file.patient_income')}}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -44,26 +44,27 @@
                         <div class="input-group" style="margin-top:25px;">
                         <span class="input-group-btn">
                         <button type="button" style="margin-left:17px;" disabled class="btn btn-sm btn-primary"><i class="fa fa-search"></i> </button></span>
-                            <input type="text" placeholder="Search patient name" class="input-sm form-control" id="search_income" onkeyup="search_income()">
+                            <input type="text" placeholder="{{trans('file.p_name')}}" class="input-sm form-control" id="search_income" onkeyup="search_income()">
+
                         </div>
                     </div>
 
                     <div class="col-sm-3" style="margin-top:25px;">
-                        <a href="income2" type="button" class="btn btn-sm btn-primary">Show completed Patient</a>
+                        <a href="income2" type="button" class="btn btn-sm btn-primary">{{trans('file.show_completed_patient')}}</a>
                     </div>
                     <table class="table table-striped table-bordered table-hover" id="table_income"
                            style="margin-top:80px;margin-left:30px;width:95%;">
                         <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>P-ID</th>
-                            <th>P-Name</th>
-                            <th>Estimated Fee</th>
-                            <th>Paid Amount</th>
-                            <th>Discount</th>
-                            <th>Remaining Fee</th>
-                            <th>Paid</th>
-                            <th>P-Details</th>
+                            <th>{{trans('file.id')}}</th>
+                            <th>{{trans('file.p_id')}}</th>
+                            <th>{{trans('file.p_name')}}</th>
+                            <th>{{trans('file.estimated_fee')}}</th>
+                            <th>{{trans('file.paid_amount')}}</th>
+                            <th>{{trans('file.discount')}}</th>
+                            <th>{{trans('file.remaining_fee')}}</th>
+                            <th>{{trans('file.paid')}}</th>
+                            <th>{{trans('file.p_details')}}</th>
                             {{--<th>Edit</th>--}}
                         </tr>
                         </thead>
@@ -78,20 +79,18 @@
                             <td>{{$incom->discount}}</td>
                             <td>{{$incom->remaining_fee}}</td>
                             <td>
+
+
                                 <button class="btn btn-xs btn-primary" data-toggle="modal"
-                                        data-target="#{{$incom->id}}"><img src="{{ asset('img/icon_paid.png') }}" width="20px"/>&nbsp;Paid
+                                        data-target="#{{$incom->id}}"><img src="{{ asset('img/icon_paid.png') }}" width="20px"/>&nbsp;{{trans('file.paid')}}
+
                                 </button>
                             </td>
                             <td>
                                 <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
-                                        data-target="#p{{$incom->id}}">&nbsp;P-Details
+                                        data-target="#p{{$incom->id}}">&nbsp;{{trans('file.p_details')}}
                                 </button>
                             </td>
-                            {{--<td>--}}
-                                {{--<button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"--}}
-                                        {{--data-target="#e{{$incom->id}}">&nbsp;Edit--}}
-                                {{--</button>--}}
-                            {{--</td>--}}
                         </tr>
                         @endforeach
                         </tbody>
@@ -107,25 +106,25 @@
                             <div class="modal-content animated fadeIn">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                                class="sr-only">Close</span></button>
+                                                class="sr-only">{{trans('file.close')}}</span></button>
                                     {{--<i class="fa fa-edit-o modal-icon text-primary"></i>--}}
 
-                                    <h4 class="modal-title">Fee Payment</h4>
+                                    <h4 class="modal-title">{{trans('file.fee_payment')}}</h4>
 
-                                    <small>Fill the Paid amount</small>
+                                    <small>{{trans('file.fill_pa')}}</small>
                                 </div>
                                 <div class="modal-body">
                                     <form action="/income/{{$in->id}}" method="post">
                                         {{method_field('patch')}}
                                     <div class="row">
-                                        <div class="form-group"><label class="col-md-3 control-label">Estimated Fee
+                                        <div class="form-group"><label class="col-md-3 control-label">{{trans('file.estimated_fee')}}
                                                 :</label>
                                             <div class="col-md-6"><h4>{{$in->estimated_fee}}</h4></div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="form-group"><label class="col-md-3 control-label">Remaining Fee
+                                        <div class="form-group"><label class="col-md-3 control-label">{{trans('file.remaining_fee')}}
                                                 :</label>
 
                                             <div class="col-md-6"><h4>{{$in->remaining_fee}}</h4></div>
@@ -133,17 +132,17 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="form-group"><label class="col-md-3 control-label">Paid Amount
+                                        <div class="form-group"><label class="col-md-3 control-label">{{trans('file.paid_amount')}}
                                                 :</label>
 
                                             <div class="col-sm-6"><input type="number" class="form-control" max="{{$in->remaining_fee}}"
-                                                                         name="paid_amount" placeholder="Paid Amount" required></div>
+                                                                         name="paid_amount" placeholder="{{trans('file.paid_amount')}}" required></div>
                                         </div>
                                     </div>
                                         <br>
                                         <br>
-                                        <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-bottom: 10px;">Close</button>
-                                         <button type="submit" class="btn btn-primary pull-right" style="margin-bottom: 10px;margin-right: 20px;">Paid Fee</button>
+                                        <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-bottom: 10px;">{{trans('file.close')}}</button>
+                                         <button type="submit" class="btn btn-primary pull-right" style="margin-bottom: 10px;margin-right: 20px;">{{trans('file.paid')}}</button>
 
                                     </form>
                                     <br>
@@ -167,43 +166,43 @@
                                 <div class="modal-content animated fadeIn">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                                    class="sr-only">Close</span></button>
+                                                    class="sr-only">{{trans('file.close')}}</span></button>
                                         <i class="fa fa-edit modal-icon text-primary"></i>
-                                        <h4 class="modal-title">Edit Content</h4>
+                                        <h4 class="modal-title">{{trans('file.edit_content')}}</h4>
                                     </div>
                                     <div class="modal-body">
                                         <form action="/income3/{{$in->id}}" method="post">
                                             {{method_field('patch')}}
                                             <div class="row">
-                                                <label class="control-label">P-ID:</label>
+                                                <label class="control-label">{{trans('file.p_id')}}:</label>
                                                 <div class="form-group">
                                                     <input type="text" class="form-control" value="{{$in->patient->id_patient}}" readonly>
                                                 </div>
-                                                <label class="control-label">Patient Name:</label>
+                                                <label class="control-label">{{trans('file.p_name')}}:</label>
                                                 <div class="form-group">
                                                     <input type="text" class="form-control" value="{{$in->patient->name}}" readonly>
                                                 </div>
-                                                <label class="control-label">Estimated Fee:</label>
+                                                <label class="control-label">{{trans('file.estimated_fee')}}:</label>
                                                 <div class="form-group">
                                                     <input type="text" class="form-control" value="{{$in->estimated_fee}}" readonly>
                                                 </div>
-                                                <label class="control-label">Paid Amount:</label>
+                                                <label class="control-label">{{trans('file.paid_amount')}}:</label>
                                                 <div class="form-group">
                                                     <input type="text" class="form-control" name="paid_amount" value="{{$in->paid_amount}}">
                                                 </div>
-                                                <label class="control-label">Discount:</label>
+                                                <label class="control-label">{{trans('file.discount')}}:</label>
                                                 <div class="form-group">
                                                     <input type="text" class="form-control" value="{{$in->discount}}" readonly>
                                                 </div>
-                                                <label class="control-label">Remaining Fee:</label>
+                                                <label class="control-label">{{trans('file.remaining_fee')}}:</label>
                                                 <div class="form-group">
                                                     <input type="text" class="form-control" value="{{$in->remaining_fee}}" readonly>
                                                 </div>
                                             </div>
                                             <br>
                                             <br>
-                                            <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-bottom: 10px;">Close</button>
-                                            <button type="submit" class="btn btn-primary pull-right" style="margin-bottom: 10px;margin-right: 20px;">Save changes</button>
+                                            <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-bottom: 10px;">{{trans('file.close')}}</button>
+                                            <button type="submit" class="btn btn-primary pull-right" style="margin-bottom: 10px;margin-right: 20px;">{{trans('file.save')}}</button>
 
                                         </form>
                                         <br>
@@ -229,54 +228,56 @@
                             <div class="modal-content animated fadeIn">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                                class="sr-only">Close</span></button>
+                                                class="sr-only">{{trans('file.close')}}</span></button>
                                     {{-- <i class="fa fa-edit modal-icon text-primary"></i> --}}
-                                    <h4 class="modal-title">Patient Information</h4>
+
+                                    <h4 class="modal-title">{{trans('file.patient_information')}}</h4>
+
                                 </div>
                                 <div class="modal-body">
                                     <table class="table table-hover table-responsive">
                                         <tr>
-                                            <td style="font-weight:bold;">Patient ID:</td>
+                                            <td style="font-weight:bold;">{{trans('file.p_id')}}:</td>
                                             <td>{{$in->id}}</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-weight:bold;">Patient Name:</td>
+                                            <td style="font-weight:bold;">{{trans('file.p_name')}}:</td>
                                             <td>{{$in->patient->name}}</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-weight:bold;">Patient Age:</td>
+                                            <td style="font-weight:bold;">{{trans('file.age')}}:</td>
                                             <td>{{$in->patient->age}}</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-weight:bold;">Patient Gender:</td>
+                                            <td style="font-weight:bold;">{{trans('file.gender')}}:</td>
                                             <td>{{$in->patient->gender}}</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-weight:bold;">Patient Address:</td>
+                                            <td style="font-weight:bold;">{{trans('file.address')}}:</td>
                                             <td>{{$in->patient->address}}</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-weight:bold;">Phone Number:</td>
+                                            <td style="font-weight:bold;">{{trans('file.phone')}}:</td>
                                             <td>{{$in->patient->phone}}</td>
                                         </tr>
 
                                         <tr>
-                                            <td style="font-weight:bold;">Dental Defect:</td>
+                                            <td style="font-weight:bold;">{{trans('file.dental_defect')}}:</td>
                                             <td>{{$in->dentaldefect}}</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-weight:bold;">Treatment:</td>
+                                            <td style="font-weight:bold;">{{trans('file.treatment')}}:</td>
                                             <td>{{$in->treatment}}</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-weight:bold;">Registration Date:</td>
+                                            <td style="font-weight:bold;">{{trans('file.date_of_registration')}}:</td>
                                             <td>{{$in->created_at}}</td>
                                         </tr>
 
                                     </table>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-white" data-dismiss="modal">{{trans('file.close')}}</button>
                                     {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
 
                                 </div>
@@ -321,7 +322,6 @@
         }
 
     </script>
-
     <script>
         $(document).ready(function () {
 
