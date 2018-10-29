@@ -29,6 +29,9 @@ return[
     'dental_defect_list'=>'Dental Defect List',
     'treatment_list'=>'Treatment List',
     'doctor_department'=>'Doctor Department',
+    'contact'=>'Contact',
+    'contactUs'=>'Contact Us',
+    'help'=>'Help',
 //    end of side bar words
 
 //top nav
@@ -109,7 +112,7 @@ return[
 
 //X-ray page
 
-    'Patient_xray_list'=>'Patient X-ray List',
+    'patient_xray_list'=>'Patient X-ray List',
     'nprfx'=>'No Patient Has Been Registered For X-Ray ',
     'new_patient'=>'New Patient',
     'already_done'=>'Already Done',

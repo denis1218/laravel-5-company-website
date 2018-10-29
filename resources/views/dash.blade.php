@@ -30,10 +30,8 @@
                         <h5>{{trans('file.patient')}}</h5>
                     </div>
                     <div class="ibox-content">
-
-                        <h1 class="no-margins">{{$patient}}<img  src="img/patienticon2.png" width="45px;"style="float: right;"/></h1>
+                        <h1 class="no-margins">{{$patient}}<img  src="img/patient.png" width="45px;"style="float: right;"/></h1>
                         <small>{{trans('file.apc')}}</small>
-
                     </div>
                 </div>
             </div>
@@ -90,13 +88,13 @@
                                 <button class="btn btn-primary dim dim-large-dim" ><a href="/expenditure"><img src="img/expense_icon_dash.png" width="150px;" style="border-radius: 8px;"/></a></button>
                             </div>
                             <div class="col-md-2"  style="margin-left:30px;">
-                                <button class="btn btn-primary dim dim-large-dim" ><a href="/doctor_report"><img src="img/doctor_icon_dash.png" width="150px;" style="  border-radius: 8px;height: 60px;"/></a></button>
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/doctors"><img src="img/doctor_icon_dash.png" width="150px;" style="  border-radius: 8px;height: 60px;"/></a></button>
                             </div>
                             <div class="col-md-2"  style="margin-left:30px;">
                                 <button class="btn btn-primary dim dim-large-dim" ><a href="/finance_report_income"><img src="img/report_icon_dash.png" width="150px;" style="border-radius: 8px;height: 60px"/></a></button>
                             </div>
                             <div class="col-md-2"  style="margin-left:30px;">
-                                <button class="btn btn-primary dim dim-large-dim" ><a href="/patient"><img src="img/patient_icon_dash.png" width="70px;"  style="border-radius: 8px;height: 60px;"/>&nbsp;&nbsp;<span style="color: white;">Patient</span></a></button>
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/patient"><img src="img/patientBigIcon.png" width="150px;" style="border-radius: 8px;height: 60px"/></a></button>
                             </div>
 
 
@@ -130,22 +128,18 @@
                                     {{csrf_field()}}
                                     <div class="row">
                                       <div class="col">
-                                        <input type="text" name="receiver" class="form-control" style="width:100%" placeholder="{{trans('file.money_receiver')}}"><br>
-                                        <input type="text" name="amount" class="form-control" style="width:100%" placeholder="{{trans('file.paid_amount')}}"><br>
+                                        <input type="text" name="receiver" class="form-control" maxlength="20" style="width:100%" placeholder="{{trans('file.money_receiver')}}" required=""><br>
+                                        <input type="number" name="amount" class="form-control"  style="width:100%" placeholder="{{trans('file.paid_amount')}}" required=""><br>
                                         
-                                        <select class="form-control" name="category" style="width:100%">
-                                            <option value="1" disabled selected>{{trans('file.select_category')}}</option>
-                                            <optiartisanon value="1">Rent</optiartisan serveon>
-                                            <option value="2">Office Supply</option>
-                                            <option value="3">Personal</option>
-                                            <option value="4">Taxes</option>
-                                            <option value="5">Employee Salary</option>
-                                            <option value="6">Clinical Instrument</option>
-                                            <option value="7">Miscellaneous</option>                          
+                                        <select class="form-control" name="category" style="width:100%" required>
+                                            <option disabled selected>{{trans('file.select_category')}}</option>
+                                        @foreach($categories as $category)
+                                            <option value="{{$category->category}}">{{$category->category}}</option>
+                                            @endforeach
                                         </select><br>
 
 
-                                        <textarea name="msg" id="" placeholder="{{trans('file.eym')}}"  class="form-control" style="resize: none;"></textarea><br>
+                                        <textarea name="msg" id="" placeholder="{{trans('file.eym')}}"  class="form-control" style="resize: none;" required></textarea><br>
                                         <button type="submit"  value="Pay" class="btn btn-primary">{{trans('file.save')}}&nbsp;<i class="fa fa-save"></i></button>
                                         <button  value="Pay" class="btn btn-warning" data-toggle="modal" data-target="#remaining">{{trans('file.remainder')}}<i class="fa fa-arrow-circle-down"></i></button>
 
@@ -192,14 +186,14 @@
 
 @section('script')
 
-    <script src="dashboard/js/plugins/chartJs/Chart.min.js"></script>
-    <script src="dashboard/js/plugins/flot/jquery.flot.js"></script>
-    <script src="dashboard/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="dashboard/js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="{{asset('dashboard/js/plugins/chartJs/Chart.min.js')}}"></script>
+    <script src="{{asset('dashboard/js/plugins/flot/jquery.flot.js')}}"></script>
+    <script src="{{asset('dashboard/js/plugins/flot/jquery.flot.tooltip.min.js')}}"></script>
+    <script src="{{asset('dashboard/js/plugins/flot/jquery.flot.resize.js')}}"></script>
     <!-- Peity -->
-    <script src="dashboard/js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="{{asset('dashboard/js/plugins/peity/jquery.peity.min.js')}}"></script>
     <!-- Peity demo -->
-    <script src="dashboard/js/demo/peity-demo.js"></script>
+    <script src="{{asset('dashboard/js/demo/peity-demo.js')}}"></script>
 
     <script>
 
