@@ -30,7 +30,7 @@ class DoctorDepartmentController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     *return back to Doctor form
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */

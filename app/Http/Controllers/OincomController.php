@@ -56,7 +56,10 @@ class OincomController extends Controller
         $other->purpose=$request->purpose;
         $other->description=$request->description;
         $other->save();
+
         return redirect('/other-income')->with('success','Inserted successfully');
+
+
     }
 
     /**
@@ -96,7 +99,9 @@ class OincomController extends Controller
         $Edt->purpose=$request->purpose;
         $Edt->description=$request->description;
         $Edt->save();
+
         return redirect('/other-income')->with('success','Updated successfully');
+
     }
 
     /**

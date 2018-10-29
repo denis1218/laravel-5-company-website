@@ -12,9 +12,17 @@ use App\XRay;
 
 class FinanceReportProfitController extends Controller
 {
+
+    /**
+     * show just page report profit
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show(){
         return view('finance_report.finance_report_profit');
     }
+
+
     public function showSingle(Request $request){
         $single = $request->single;
         $expense = Expense::where('created_at','=',$single)->get();

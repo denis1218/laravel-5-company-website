@@ -1,6 +1,7 @@
 @extends('master')
 
 @section('style')
+
     <!-- Data Tables -->
     <link href="{{asset('dashboard/css/plugins/dataTables/dataTables.bootstrap.css')}}" rel="stylesheet">
     <link href="{{asset('dashboard/css/plugins/dataTables/dataTables.responsive.css')}}" rel="stylesheet">
@@ -11,6 +12,7 @@
     <link href="{{asset('dashboard/css/plugins/sweetalert/sweetalert.css')}}" rel="stylesheet"/>
 
     <link href="{{asset('css/hover/hover-min.css')}}" rel="stylesheet">
+
 
 @endsection
 

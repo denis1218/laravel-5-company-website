@@ -39,7 +39,6 @@ class ExpenseController extends Controller
         $expenseCategory = ExpenseCatagory::all();
         $capital= Expense::sum('amount');
         return view('expense_form',compact('capital','expenseCategory'));
-//        return $capital;
     }
 
     /**
@@ -55,29 +54,27 @@ class ExpenseController extends Controller
         $expense->amount = $request->amount;
         $expense->category = $request->category;
         $expense->description = $request->description;
-
         $expense->created_at = Carbon::now();
         $expense->save();
         return redirect('expenditure');
     }
 
 
+    /**
+     *Form store expense
+     * given request from /dash - quick expense
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function FromDash(Request $request){
         $expense = new Expense();
         $expense->receiver = $request->receiver;
         $expense->amount = $request->amount;
         $expense->category = $request->category;
         $expense->description = $request->description;
-
         $expense->created_at = Carbon\Carbon::now();
-
         $expense->save();
-        $patient = Patient::count();
-        $apatient = Patient::whereDate('created_at', Carbon::today())->get();
-        $doctor = Doctor::count();
-        return back();
-        $msg  = 'Successfully Inserted Into Database';
-//        return view('dash',compact('patient','doctor','apatient','msg'));
+        return redirect()->back();
     }
 
     /**
@@ -105,9 +102,10 @@ class ExpenseController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Expense  $expense
+     * @param  \Illuminate\Http\Request $request
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param Expense $expense
      */
     public function update(Request $request, $id)
     {

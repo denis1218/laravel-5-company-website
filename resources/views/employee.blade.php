@@ -83,12 +83,14 @@
                                     <div class="col-sm-5">
                                         <div class="form-group">
                                             <label class="control-label">{{trans('file.department')}}</label>
+
                                             <select class="select2_demo_1 form-control" id="dept" name="department" required>
                                                 <option select="">{{trans('file.sd')}}</option>
 {{--                                                @foreach($department as $departments)--}}
                                                 <option value="Orthodentist">Orthodentist</option>
                                                 <option value="regular basis">regular basis</option>
                                                 {{--@endforeach--}}
+
                                             </select>
                                         </div>
                                     </div>
