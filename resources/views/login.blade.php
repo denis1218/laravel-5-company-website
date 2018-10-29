@@ -10,10 +10,10 @@
 
     <title>HK | Login</title>
 
-    <link href="dashboard/css/bootstrap.min.css" rel="stylesheet">
-    <link href="dashboard/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
+    <link href="{{ asset('dashboard/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('dashboard/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('dashboard/css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('dashboard/css/style.css') }}" rel="stylesheet">
 
     <style>
         .background-image {
@@ -42,25 +42,30 @@
                 </div>
                 <h3>Welcome to HK|Clinic</h3>
 
+                @if(isset($value))
+                    <div class="alert alert-danger" role="alert">
+                        {{ $value }}
+                    </div>
+                @endif
                 <form class="m-t" role="form" method="POST" action="{{ route('login') }}">
                     {{--@csrf--}}
 
                     <div class="form-group">
                         <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-                        @if ($errors->has('email'))
-                            <span class="invalid-feedback" role="alert">
-                                        <strong class="">{{ $errors->first('email') }}</strong>
-                                    </span>
-                        @endif
+                        {{--@if ($errors->any())--}}
+                            {{--<span class="invalid-feedback" role="alert">--}}
+                                        {{--<strong class="">{{ $errors->first('email') }}</strong>--}}
+                                    {{--</span>--}}
+                        {{--@endif--}}
 
                     </div>
                     <div class="form-group">
                         <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                        @if ($errors->has('password'))
-                            <span class="invalid-feedback alert alert-danger" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                        @endif
+                        {{--@if ($errors->has('password'))--}}
+                            {{--<span class="invalid-feedback alert alert-danger" role="alert">--}}
+                                        {{--<strong>{{ $errors->first('password') }}</strong>--}}
+                                    {{--</span>--}}
+                        {{--@endif--}}
 
                     </div>
 
@@ -84,8 +89,8 @@
     <div>
 
         <!-- Mainly scripts -->
-        <script src="js/jquery-2.1.1.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="{{ asset('js/jquery-2.1.1.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     </div>
 </div>
 </body>

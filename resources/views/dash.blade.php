@@ -30,10 +30,8 @@
                         <h5>{{trans('file.patient')}}</h5>
                     </div>
                     <div class="ibox-content">
-
-                        <h1 class="no-margins">{{$patient}}<img  src="img/patienticon2.png" width="45px;"style="float: right;"/></h1>
+                        <h1 class="no-margins">{{$patient}}<img  src="img/patient.png" width="45px;"style="float: right;"/></h1>
                         <small>{{trans('file.apc')}}</small>
-
                     </div>
                 </div>
             </div>
@@ -96,7 +94,7 @@
                                 <button class="btn btn-primary dim dim-large-dim" ><a href="/finance_report_income"><img src="img/report_icon_dash.png" width="150px;" style="border-radius: 8px;height: 60px"/></a></button>
                             </div>
                             <div class="col-md-2"  style="margin-left:30px;">
-                                <button class="btn btn-primary dim dim-large-dim" ><a href="/patient"><img src="img/patient_icon_dash.png" width="70px;"  style="border-radius: 8px;height: 60px;"/>&nbsp;&nbsp;<span style="color: white;">Patient</span></a></button>
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/patient"><img src="img/patientBigIcon.png" width="150px;" style="border-radius: 8px;height: 60px"/></a></button>
                             </div>
 
 
