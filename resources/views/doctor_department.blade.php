@@ -9,7 +9,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Doctor Department</h5>
+                <h5>{{trans('file.doctor_department')}}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -35,22 +35,23 @@
                     <div class="col-md-6">
                         <form action="/doctor-department" method="post">
                             <div class="form-group">
-                                <lable for="form-control">Department</lable>
+                                <lable for="form-control">{{trans('file.department')}}</lable>
                                 <input type="text" class="form-control" name="department"/>
                             </div>
-                            <div class="col-md-4">
-                                <button type="submit" class="btn btn-primary" name="submit"><i class="fa fa-save"></i>&nbsp;Save</button>
-                                <button type="reset" class="btn btn-white" name="reset"><i class="fa fa-spin"></i>&nbsp;reset</button>
+                            <div class="col-md-5">
+                                <button type="submit" class="btn btn-primary" name="submit"><i class="fa fa-save"></i>&nbsp;{{trans('file.save')}}</button>
+                                <button type="reset" class="btn btn-white" name="reset"><i class="fa fa-spin"></i>&nbsp;{{trans('file.reset')}}</button>
                             </div>
                         </form>
                     </div>
+                    @include('layout.messages')
                     <div class="col-md-6">
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Department</th>
-                                    <th>Delete</th>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.department')}}</th>
+                                    <th>{{trans('file.delete')}}</th>
                                 <tr>
                             </thead>
                             <tbody>
@@ -59,10 +60,10 @@
                                         <td>{{ $departments->id }}</td>
                                         <td>{{ $departments->department }}</td>
                                         <td>
-                                            <form action="/expense-category/{{ $departments->id }}" method="post" id="formDelete">
+                                            <form action="/doctor-department/{{ $departments->id }}" method="post" id="formDelete">
                                                 @method('delete')
                                                 <a  class="btn btn-xs btn-danger demoDelete"  name="delete" href="/expense-category/{{ $departments->id }}">
-                                                    delete
+                                                    {{trans('file.delete')}}
                                                 </a>
                                             </form>
                                         </td>
@@ -71,15 +72,14 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Department</th>
-                                    <th>Delete</th>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.department')}}</th>
+                                    <th>{{trans('file.delete')}}</th>
                                 </tr>
                             </tfoot>
                         </table>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -95,12 +95,12 @@
                 e.preventDefault();
                 var form = $(this).parents('form');
                 swal({
-                    title: "Are you sure?",
-                    text: "You will not be able to recover this imaginary file!",
+                    title: "{{trans('file.are_you_sure')}}",
+                    text: "{{trans('file.ywnba')}}",
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes, delete it!",
+                    confirmButtonText: "{{trans('file.yes_delete')}}",
                     closeOnConfirm: false
                 }, function(isConfirm){
                     if (isConfirm) form.submit();

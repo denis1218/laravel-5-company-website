@@ -9,7 +9,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Dental Defect list form</h5>
+                <h5>{{trans('file.ddl')}}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -35,12 +35,12 @@
                     <div class="col-md-6">
                         <form action="/dental-defect-list" method="post">
                             <div class="form-group">
-                                <lable for="form-control">Dental Defect</lable>
+                                <lable for="form-control">{{trans('file.dental_defect')}}</lable>
                                 <input type="text" class="form-control" name="dental_defect"/>
                             </div>
-                            <div class="col-md-4">
-                                <button type="submit" class="btn btn-primary" name="submit"><i class="fa fa-save"></i>&nbsp;Save</button>
-                                <button type="reset" class="btn btn-white" name="reset"><i class="fa fa-spin"></i>&nbsp;reset</button>
+                            <div class="col-md-5">
+                                <button type="submit" class="btn btn-primary" name="submit"><i class="fa fa-save"></i>&nbsp;{{trans('file.save')}}</button>
+                                <button type="reset" class="btn btn-white" name="reset"><i class="fa fa-spin"></i>&nbsp;{{trans('file.reset')}}</button>
                             </div>
                         </form>
                     </div>
@@ -48,9 +48,9 @@
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Dental Defect</th>
-                                    <th>Delete</th>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.dental_defect')}}</th>
+                                    <th>{{trans('file.delete')}}</th>
                                 <tr>
                             </thead>
                             <tbody>
@@ -59,10 +59,10 @@
                                         <td>{{ $dentals->id }}</td>
                                         <td>{{ $dentals->dental_defect }}</td>
                                         <td>
-                                            <form action="/expense-category/{{ $dentals->id }}" method="post" id="formDelete">
+                                            <form action="/dental-defect-list/{{ $dentals->id }}" method="post" id="formDelete">
                                                 @method('delete')
-                                                <a  class="btn btn-xs btn-danger demoDelete"  name="delete" href="/expense-category/{{ $dentals->id }}">
-                                                    Delete &nbsp;<i class="fa fa-trash"></i>
+                                                <a  class="btn btn-xs btn-danger demoDelete"  name="delete" href="/dental-defect-list/{{ $dentals->id }}">
+                                                    {{trans('file.delete')}}&nbsp;<i class="fa fa-trash"></i>
                                                 </a>
                                             </form>
                                         </td>
@@ -71,9 +71,9 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Dental Defect</th>
-                                    <th>Delete</th>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.dental_defect')}}</th>
+                                    <th>{{trans('file.delete')}}</th>
                                 </tr>
                             </tfoot>
                         </table>

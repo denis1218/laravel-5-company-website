@@ -49,7 +49,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->department = $request->department;
         $user->save();
-        return redirect('/account');
+        return redirect('/user');
     }
 
     /**

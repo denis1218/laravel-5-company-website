@@ -166,7 +166,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-3" style="margin-top:30px;">
-                    <button class="btn btn-primary xray" type="submit" value="Done">{{trans('file.save')}} &nbsp;<i class="fa fa-save"></i></button>&nbsp;&nbsp;
+                    <button class="btn btn-primary xray" type="submit" value="save">{{trans('file.save')}} &nbsp;<i class="fa fa-save"></i></button>&nbsp;&nbsp;
                         <a class="btn btn-white" href="/xray">{{trans('file.cancel')}}</a>
                     </div>
                 </div>

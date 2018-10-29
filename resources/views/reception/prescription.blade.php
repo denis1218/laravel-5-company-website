@@ -55,6 +55,8 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @if(count($prescription)>0)
+
                                     @foreach($prescription as $pres)
                                         <tr>
                                             <td>{{$pres->patient->id_patient}}</td>
@@ -69,6 +71,9 @@
 
                                         </tr>
                                     @endforeach
+                                        @else
+                                    <h3 style="color: red;">{{trans('file.there_is_no_pres')}}</h3>
+                                    @endif
                                     </tbody>
                                 </table>
                             </div>

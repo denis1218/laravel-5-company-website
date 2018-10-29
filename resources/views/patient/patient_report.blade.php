@@ -64,6 +64,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
+                                            @if(count($all_patient)>0)
                                             @foreach($all_patient as $patient)
                                             <tr>
                                                 <td>{{$patient->id_patient}}</td>
@@ -78,6 +79,9 @@
 
                                             </tr>
                                                 @endforeach
+                                            @else
+                                                <h3 style="color:red;">{{trans('file.there_is_no')}}</h3>
+                                            @endif
                                             </tbody>
                                         </table>
                                 </div>
