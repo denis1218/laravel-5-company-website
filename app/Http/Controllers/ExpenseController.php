@@ -72,13 +72,10 @@ class ExpenseController extends Controller
         $expense->amount = $request->amount;
         $expense->category = $request->category;
         $expense->description = $request->msg;
-
         $expense->created_at = Carbon::now();
-
         $expense->save();
         $msg  = 'Successfully Inserted Into Database';
         return redirect()->back()->with(compact('msg'));
-
     }
 
     /**
