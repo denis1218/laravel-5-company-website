@@ -13,7 +13,7 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Expenses</h5>
+                        <h5>{{trans('file.expense')}}</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -47,20 +47,20 @@
                                     {{csrf_field()}}
 
                                     <div class="form-group">
-                                        <label>To Whom</label>
-                                        <div><input type="text" name="receiver" class="form-control" placeholder="Money receiver"></div>
+                                        <label>{{trans('file.to_whom')}}</label>
+                                        <div><input type="text" name="receiver" class="form-control" placeholder="{{trans('file.to_whom')}}"></div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Paid_Amount</label>
-                                        <div><input type="text" name="amount" class="form-control" placeholder="Paid Amount"></div>
+                                        <label>{{trans('file.paid_amount')}}</label>
+                                        <div><input type="text" name="amount" class="form-control" placeholder="{{trans('file.paid_amount')}}"></div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Category</label>
+                                        <label>{{trans('file.category')}}</label>
                                         <div>
                                             <select class="select2_demo_1 form-control" name="category">
-                                                <option value="" selected disabled>Select The Category</option>
+                                                <option value="" selected disabled>{{trans('file.select_category')}}</option>
                                                 @foreach($expenseCategory as $categories)
                                                     <option value="{{ $categories->category }}">{{ $categories->category }}</option>
                                                 @endforeach
@@ -70,16 +70,16 @@
 
 
                                     <div class="form-group">
-                                        <label>Description</label>
+                                        <label>{{trans('file.description')}}</label>
                                         <div><textarea class="form-control" name="description" id="grade"
-                                                       placeholder="Enter more information"
+                                                       placeholder="{{trans('file.description')}}"
                                                        style="resize:none;"></textarea></div>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="form-group">
-                                            <button class="btn btn-primary" type="submit">Save</button>
-                                            <button class="btn btn-white" type="reset">Reset</button>
+                                            <button class="btn btn-primary" type="submit">{{trans('file.save')}}</button>
+                                            <button class="btn btn-white" type="reset">{{trans('file.reset')}}</button>
                                         </div>
                                     </div>
                                 </form>
@@ -88,13 +88,13 @@
                             <div class="col-lg-4" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                                 <div class="ibox float-e-margins">
                                     <div class="ibox-title">
-                                        <span class="label label-info pull-right">All</span>
-                                        <h5>Total Expenses</h5>
+                                        <span class="label label-info pull-right">{{trans('file.all')}}</span>
+                                        <h5>{{trans('file.total_expense')}}</h5>
                                     </div>
                                     <div class="ibox-content">
 
-                                        <h1 class="no-margins">{{$capital}}&nbsp;&nbsp;Afg<img  src="{{ asset('img/expense_icon.png') }}" width="80px;"style="float: right;"/></h1>
-                                        <small>All Expenses</small>
+                                        <h1 class="no-margins">{{$capital}}&nbsp;&nbsp;{{trans('file.afg')}}<img  src="{{ asset('img/expense_icon.png') }}" width="80px;"style="float: right;"/></h1>
+                                        <small>{{trans('file.expenses')}}</small>
 
                                     </div>
                                 </div>
