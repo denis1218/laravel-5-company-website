@@ -56,7 +56,7 @@
 
                         <!-- form -->
 
-                        <form method="post" class="form-horizontal" action="/other">
+                        <form method="post" class="form-horizontal" action="/other-income">
                             {{csrf_field()}}
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">{{trans('file.from_whom')}}:</label>

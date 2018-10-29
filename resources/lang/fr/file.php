@@ -6,7 +6,7 @@ return[
     'logout'=>'خروج',
     'home'=>'خانه',
     'department'=>'دیپارتمنت',
-    'reception'=>'معلومات',
+    'reception'=>'پذیرش',
     'finance'=>'مالی',
     'setting'=>'تنظیمات',
     'doctor'=>'داکتر',
@@ -26,6 +26,9 @@ return[
     'backup_db'=>'بازیابی',
     'add_medicine'=>'ادویه',
     'expense_category'=>'کتگوری مصارف',
+    'dental_defect_list'=>'لیست امراض دندان',
+    'treatment_list'=>'لیست درمان های دندان',
+    'doctor_department'=>'دیپارتمینت های داکتران',
 //    end of side bar words
 //  top nav
     'welcome_to'=>'خوش آمدید به ',
@@ -57,8 +60,8 @@ return[
     'next_appointment_list'=>'لیست مریضان بعدی',
     'report_patient'=>'گزارش مریض',
     'patient_appointment_list'=>'لیست مریضان به ملاقات',
-    'search_patient_id'=>'ای دی مریض را جستجو کنید',
-    'p_id'=>'ای دی مریض',
+    'search_patient_id'=>'آی دی مریض را جستجو کنید',
+    'p_id'=>'آی دی مریض',
     'patient_name'=>'نام مریض',
     'last_name'=>'تخلص',
     'status'=>'حالت',
@@ -96,7 +99,7 @@ return[
     'paid'=>'پرداخت',
     'remaining'=>'باقیمانده',
     'doctor_signature'=>'امضای داکتر',
-    'id'=>'ای دی',
+    'id'=>'آی دی',
 
 //    end of patient history print
 
@@ -105,9 +108,9 @@ return[
     'new_patient'=>'مریض جدید',
     'already_done'=>'اکسری انجام شده',
     'number_of_patient'=>'تعداد مریضان',
-    'xray_id'=>'اکسری ای دی',
+    'xray_id'=>'اکسری آی دی',
     'tooth_position'=>'موقیعت دندان',
-    'patient_id'=>'ای دی مریض',
+    'patient_id'=>'آی دی مریض',
     'status_of_payment'=>'حالت پرداخت',
     'status_of_xray'=>'حالت اکسری',
     'nprfx'=>'تاکنون مریضی برای ایکسری راجستر نشده است',
@@ -151,6 +154,7 @@ return[
 
 //start of doctor registration
     'first_name'=>'نام',
+    'sd'=>'دیپارتمینت را انتخاب کنید',
     'father_name'=>'نام پدر',
     'max_patient'=>'حداکثر تعداد مریض',
     'email'=>'ایمیل',
@@ -164,7 +168,7 @@ return[
     'salary_amount'=>'مقدار معاش',
     'male'=>'مرد',
     'female'=>'زن',
-    'reset'=>'منصرف شدن',
+    'reset'=>'پاک کردن همه',
 //end of doctor registration
 //    start of patient registration
     'pr_form'=>'فورم راجستر مریضان',
@@ -201,6 +205,7 @@ return[
     'income_details'=>'حزوئیات عایدات',
     'from_patient'=>'عواید مریضان',
     'inb'=>'کلید های مرور بین صفحات عواید',
+    'afg'=>'افغانی',
     'xray_income'=>'عواید ایکسری',
     'other_income'=>'عواید دیگر',
     'total_income'=>'عاید مجموعی',
@@ -230,11 +235,13 @@ return[
 //Doctor List
     'list_of_doctors'=>'لیست داکتران',
     'goto_ds'=>'معاش داکتران',
+    'ndry'=>'هنوز هیچ داکتری راجستر نگردیده است',
     'salary_payment'=>'پرداخت معاش',
 //    payment page
     'back_to_doctor'=>'لیست داکتران',
     'date_of_registration'=>'تاریخ راجستر',
     'treatment_fee'=>'پول تداوی',
+    'lpd'=>'تاریخ پرداخت آخرین معاش',
     'total_fee'=>'پول مجموعی',
     'doctor_salary'=>'معاش داکتر',
     'past_remaining'=>'باقی مانده قبلی',
@@ -305,6 +312,47 @@ return[
 //    patient prescription
     'patient_prescription'=>'نسخه مریض',
 
+//    Start of Create Account
+
+    'list_of_account'=>'لیست حساب ها',
+    'create_account'=>'ایجاد حساب',
+    'owner'=>'مالک',
+    'user_name'=>'نام کاربر',
+    'role'=>'رول',
+    'permission'=>'اجازه',
+    //    create account
+    'account_registration'=>'راجستر نمودن حساب',
+    'account_info'=>'معلومات حساب',
+    'confirm_password'=>'تصدیق رمز عبور',
+    'submit'=>'ایجاد',
+//    End of account
+//  Start of Backup page
+    'backup_list'=>'لیست بازیابی',
+    'database_backup'=>'بازیابی دیتابیس',
+    'restore_database'=>'بازگرداندن دیتابیس',
+    'backup_creation'=>'ایجاد کردن بازیابی',
+    'db_name'=>'نام دیتابیس',
+    'enter_db_name'=>'نام دیتابیس را وارد کنید',
+    'backup_method'=>'روش بازیابی',
+    'drop_box'=>'دراپ باکس',
+    'path'=>'مسیر',
+    'local_network_drive'=>'ذخیره گاه شبکه محلی',
+    'create_backup'=>'ایجاد بازیابی',
+//    End of backup creation
+
+//Start of Medicine
+    'medicine_name'=>'نام دوا',
+    'medicine_unit'=>'واحد دوا',
+    'unit'=>'واحد',
+    'name'=>'اسم دوا',
+//    End of medicine
+//Start of dental defect list
+    'ddl'=>'لیست امراض دندان',
+//Start of delete model
+    'are_you_sure'=>'مطمئن هستید؟',
+    'ywnba'=>'شما قادر به بازیابی این محتویات نخواهی بود',
+    'yes_delete'=>'بلی حذف شود',
+    'rds'=>'محتوا موفقانه حذف گردید',
 
 
 

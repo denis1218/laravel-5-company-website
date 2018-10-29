@@ -82,8 +82,10 @@ class DoctorDepartmentController extends Controller
      * @param  \App\DoctorDepartment  $doctorDepartment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DoctorDepartment $doctorDepartment)
+    public function destroy($id)
     {
-        //
+        $delete=DoctorDepartment::find($id);
+        $delete->delete();
+        return back();
     }
 }

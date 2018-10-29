@@ -83,8 +83,10 @@ class TreatmentListController extends Controller
      * @param  \App\TreatmentList  $treatmentList
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TreatmentList $treatmentList)
+    public function destroy($id)
     {
-        //
+        $delete=TreatmentList::find($id);
+        $delete->delete();
+        return back();
     }
 }

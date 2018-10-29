@@ -49,7 +49,7 @@
                         <!--Search -->
                         <!--Search -->
                         <div class="col-sm-9">
-                            <div class="input-group" style="margin-top:25px;">
+                            <div class="input-group" style="margin-top:25px;margin-left: 15px;">
                         <span class="input-group-btn">
                         <button type="button" style="margin-left:17px;" disabled class="btn btn-sm btn-primary"><i class="fa fa-search"></i> </button></span>
                                 <input type="text" placeholder="{{trans('file.p_name')}}" class="input-sm form-control" id="search_otherIncome" onkeyup="search_otherIncome()">
@@ -111,8 +111,8 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="row">
-                                                <form action="/other/{{$other->id}}" method="post">
-                                                    {{method_field('PUT')}}
+                                                <form action="/other-income/{{$other->id}}" method="post">
+                                                    {{method_field('patch')}}
                                                     <div class="form-group">
                                                         <label for="p-name">{{trans('file.from_whom')}}</label>
                                                         <input type="text" name="from_whom" class="form-control" value="{{$other->from_whom}}">

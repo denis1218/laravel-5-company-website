@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+
     <!-- Nav-buttons -->
     @include('part.income_button_top')
     <!-- End of navButtons -->
@@ -37,9 +38,8 @@
                     <div class="col-sm-9">
                         <div class="input-group" style="margin-top:25px;">
                         <span class="input-group-btn">
-                            <button type="button" style="margin-left:17px;" disabled class="btn btn-sm btn-primary"><i class="fa fa-search"></i> </button></span>
+                        <button type="button" style="margin-left:17px;" disabled class="btn btn-sm btn-primary"><i class="fa fa-search"></i> </button></span>
                             <input type="text" placeholder="{{trans('file.p_name')}}" class="input-sm form-control" id="search_xray" onkeyup="search_xray()">
-
                         </div>
                     </div>
                     {{-- End search --}}
@@ -86,6 +86,47 @@
                     </table>
 
                    <div style="margin-left: 30px">{{$xrey->links()}}</div>
+
+                    @foreach($xrey as $xr)
+                    <!-- edit model -->
+                    <div class="modal inmodal" id="p{{$xr->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content animated fadeIn">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                                                class="sr-only">{{trans('file.close')}}</span></button>
+                                    <i class="fa fa-edit modal-icon text-primary"></i>
+                                    <small>{{trans('file.fill_pa')}}</small>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/xrey_income/{{$xr->id}}" method="post">
+                                        {{method_field('patch')}}
+                                    <div class="row">
+                                        <div class="form-group"><label class="col-md-3 control-label">{{trans('file.paid_amount')}}
+                                                :</label>
+
+                                            <div class="col-sm-6"><input type="text" name="paid_amount" class="form-control"
+                                                                         placeholder="{{trans('file.paid_amount')}}"></div>
+                                        </div>
+                                    </div>
+                                        <br><br>
+                                        <button type="submit" class="btn btn-primary pull-right" style="margin-right: 5px">{{trans('file.save')}}</button>
+
+                                        <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-right: 5px">{{trans('file.close')}}</button>
+                                        <br>
+
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of model -->
+                    @endforeach
+                    {{--show modal--}}
 
                     @foreach($xrey as $xr)
                     <!-- edit model -->

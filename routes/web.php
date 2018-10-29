@@ -217,6 +217,14 @@ Route::middleware('auth','reception')->group(function () {
 
     Route::resource('/doctor-department','DoctorDepartmentController');
 
+//    User Route
+    Route::resource('/user','UserController');
+//    backup route
+    Route::get('/backup',function (){
+        return view('create_backups');
+        return view('create_backups');
+    });
+
 });
 // End Route Reception
 

@@ -99,22 +99,22 @@
                                     class="nav-label">{{trans('file.setting')}}</span><span
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="account"><i class="fa fa-user-plus"></i>{{trans('file.account')}}</a></li>
-                            <li><a href="explore_backups"><i class="fa fa-database"></i>{{trans('file.backup_db')}}</a>
+                            <li><a href="/user"><i class="fa fa-user-plus"></i>{{trans('file.account')}}</a></li>
+                            <li><a href="/backup"><i class="fa fa-database"></i>{{trans('file.backup_db')}}</a>
                             </li>
-                            <li><a href="medicine"><i class="fa fa-plus"></i>{{trans('file.add_medicine')}}</a></li>
+                            <li><a href="/medicine"><i class="fa fa-plus"></i>{{trans('file.add_medicine')}}</a></li>
 
                             <li><a href="/expense-category"><i
                                             class="fa fa-pencil-square-o"></i>{{trans('file.expense_category')}}</a>
                             </li>
                             <li><a href="/dental-defect-list"><i
-                                            class="fa fa-pencil-square-o"></i>Dental Defect List</a>
+                                            class="fa fa-pencil-square-o"></i>{{trans('file.dental_defect_list')}}</a>
                             </li>
                             <li><a href="/treatment-list"><i
-                                            class="fa fa-pencil-square-o"></i>Treatment List</a>
+                                            class="fa fa-pencil-square-o"></i>{{trans('file.treatment_list')}}</a>
                             </li>
                             <li><a href="/doctor-department"><i
-                                            class="fa fa-pencil-square-o"></i>Doctor Department</a>
+                                            class="fa fa-pencil-square-o"></i>{{trans('file.doctor_department')}}</a>
                             </li>
 
                         </ul>

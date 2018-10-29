@@ -138,7 +138,7 @@
                                                                             <td>{{$pat->patient_id}}</td>
                                                                             <td>{{$pat->patient_name}}</td>
                                                                             <td>{{$pat->doctor_name}}</td>
-                                                                            <td><p id="pay">{{$pat->paid_amount}}</p></td>
+                                                                            <td id="pay">{{$pat->paid_amount}}</td>
                                                                             <td>{{$pat->xray_status}}</td>
                                                                             <td><a class="btn btn-xs btn-info" id="details" href="/xray/{{$pat->id}}/edit" onclick="takeXray()">{{trans('file.details')}} &nbsp;<i class="fa fa-file-o"></i></a></td></td>
                                                                         </tr>
@@ -217,10 +217,12 @@
 @endsection
 
 @section('script')
-    <script type="text/javascript">
+    <script>
         function takeXray() {
-            var pa=document.getElementById('pay').value;
-            alert(pa);
+            var pa=document.getElementById('pay').innerHTML;
+            if(pa==0){
+                alert('This patient has not paid the x-ray fee!');
+            }
         }
     </script>
 @endsection

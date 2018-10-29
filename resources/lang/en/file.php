@@ -26,6 +26,9 @@ return[
     'backup_db'=>'Backup DB',
     'add_medicine'=>'Add Medicine',
     'expense_category'=>'Expense Category',
+    'dental_defect_list'=>'Dental Defect List',
+    'treatment_list'=>'Treatment List',
+    'doctor_department'=>'Doctor Department',
 //    end of side bar words
 
 //top nav
@@ -159,6 +162,7 @@ return[
 //Start of Doctor Registration
 
     'first_name'=>'First Name',
+    'sd'=>'Select Department',
     'father_name'=>'Father Name',
     'max_patient'=>'Max Patient Can Visit',
     'email'=>'Email',
@@ -210,6 +214,7 @@ return[
 //start of Income
 //patient income
     'income_details'=>'Income Details',
+    'afg'=>'Afg',
     'inb'=>'Income Navigation Buttons',
     'from_patient'=>'From Patient',
     'xray_income'=>'X-ray Income',
@@ -242,9 +247,11 @@ return[
 //Doctor List
     'list_of_doctors'=>'List of Doctors',
     'goto_ds'=>'Doctor Salary',
+    'ndry'=>'No Doctor Registered yet',
     'salary_payment'=>'Salary Payment',
 //    payment page
     'back_to_doctor'=>'Doctor List',
+    'lpd'=>'Last Payment Date',
     'date_of_registration'=>'Date of Registration',
     'treatment_fee'=>'Treatment Fee',
     'total_fee'=>'Total Fee',
@@ -315,6 +322,49 @@ return[
     'patient_report_table'=>'Patient Report Table',
 //    patient prescription
     'patient_prescription'=>'Patient Prescription',
+
+//  Start of Create Account
+//  List of account
+    'list_of_account'=>'List Of Account',
+    'owner'=>'Owner',
+    'create_account'=>'Create Account',
+    'user_name'=>'User Name',
+    'role'=>'Role',
+    'permission'=>'Permission',
+//    create account
+    'account_registration'=>'Account Registration',
+    'account_info'=>'Account Information',
+    'confirm_password'=>'Confirm Password',
+    'submit'=>'Submit',
+//    End of account
+
+//  Start of Backup page
+    'backup_list'=>'Backup List',
+    'database_backup'=>'Database Backup',
+    'restore_database'=>'Restore Database',
+    'backup_creation'=>'Backup Creation',
+    'db_name'=>'Database Name',
+    'enter_db_name'=>'Enter database name',
+    'backup_method'=>'Backup Method',
+    'drop_box'=>'Drop Box',
+    'path'=>'Path',
+    'local_network_drive'=>'Local Network Drive',
+    'create_backup'=>'Create Backup',
+//    End of backup creation
+
+//Start of Medicine
+    'medicine_name'=>'Medicine Name',
+    'medicine_unit'=>'Medicine Unit',
+    'unit'=>'Unit',
+    'name'=>'Name',
+//    End of medicine
+
+//Start of delete model
+    'are_you_sure'=>'Are you sure ',
+    'ywnba'=>'You will not be able to recover this content!',
+    'yes_delete'=>'Yes Delet It',
+    'rds'=>'Record Deleted Successfully',
+
 
 
 

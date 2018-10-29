@@ -23,7 +23,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-8 text-left">
-                    <h3 class="font-bold"><span> {{trans('file.amount')}}:&nbsp;&nbsp; </span>{{$Gtotal}} Afg</h3>
+                    <h3 class="font-bold"><span> {{trans('file.amount')}}:&nbsp;&nbsp; </span>{{$Gtotal}} {{trans('file.afg')}}</h3>
                 </div>
                 <div class="col-sm-4 pull-right" style="margin-top:-20px;">
                     <img src="img/totalIncome.png" width="50px"/>
