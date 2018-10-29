@@ -75,11 +75,9 @@
                             <div class="form-group">
                                 <label>{{trans('file.department')}} *</label>
                                 <select class="form-control" required name="department">
-                                    <option value="{{trans('file.sd')}}" disabled>{{trans('file.sd')}}</option>
-                                    <option value="{{trans('file.doctor')}}">{{trans('file.doctor')}}</option>
-                                    <option value="{{trans('file.finance')}}">{{trans('file.finance')}}</option>
-                                    <option value="{{trans('file.reception')}}">{{trans('file.reception')}}</option>
-                                    <option value="{{trans('file.owner')}}">{{trans('file.owner')}}</option>
+                                    <option value="doctor">{{trans('file.doctor')}}</option>
+                                    <option value="reception">{{trans('file.reception')}}</option>
+                                    <option value="admin">{{trans('file.owner')}}</option>
                                 </select>
                             </div>
                             <div class="form-group">
