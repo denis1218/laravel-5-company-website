@@ -21,7 +21,9 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
+
                     <h5>{{trans('file.other_income')}}</h5>
+
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
@@ -112,7 +114,9 @@
                                         <div class="modal-body">
                                             <div class="row">
                                                 <form action="/other-income/{{$other->id}}" method="post">
+
                                                     {{method_field('patch')}}
+
                                                     <div class="form-group">
                                                         <label for="p-name">{{trans('file.from_whom')}}</label>
                                                         <input type="text" name="from_whom" class="form-control" value="{{$other->from_whom}}">

@@ -79,8 +79,11 @@
                             <td>{{$incom->discount}}</td>
                             <td>{{$incom->remaining_fee}}</td>
                             <td>
-                                <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                        data-target="#{{$incom->id}}">&nbsp;{{trans('file.paid')}}
+
+
+                                <button class="btn btn-xs btn-primary" data-toggle="modal"
+                                        data-target="#{{$incom->id}}"><img src="{{ asset('img/icon_paid.png') }}" width="20px"/>&nbsp;{{trans('file.paid')}}
+
                                 </button>
                             </td>
                             <td>
@@ -227,7 +230,9 @@
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
                                                 class="sr-only">{{trans('file.close')}}</span></button>
                                     {{-- <i class="fa fa-edit modal-icon text-primary"></i> --}}
+
                                     <h4 class="modal-title">{{trans('file.patient_information')}}</h4>
+
                                 </div>
                                 <div class="modal-body">
                                     <table class="table table-hover table-responsive">
