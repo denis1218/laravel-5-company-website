@@ -320,8 +320,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>{{trans('file.treatment')}} :</label>
-                                            <select class="form-control" name="treatment"
-                                                    onchange="getFeeTreatment(this);" required>
+                                            <select class="form-control" name="treatment" onchange="getFeeTreatment(this);" required>
                                                 <option disabled>{{trans('file.treatment')}}</option>
                                                 @foreach($treatementList as $listTreatement)
                                                     <option value="{{ $listTreatement->treatment }}"
