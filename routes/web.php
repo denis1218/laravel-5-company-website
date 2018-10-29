@@ -76,7 +76,7 @@ Route::middleware('auth','reception')->group(function () {
         return view('/employee');
     });
 
-//    Route::get('/dash', 'HomeController@index')->name('home');
+    Route::get('/dash', 'HomeController@index')->name('home');
 // report doctors
     Route::get('/doctor_report', function () {
         return view('doctor_report');
@@ -222,7 +222,7 @@ Route::middleware('auth','reception')->group(function () {
 //    backup route
     Route::get('/backup',function (){
         return view('create_backups');
-        return view('create_backups');
+
     });
 
 });

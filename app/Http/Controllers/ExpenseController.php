@@ -71,7 +71,7 @@ class ExpenseController extends Controller
         $expense->receiver = $request->receiver;
         $expense->amount = $request->amount;
         $expense->category = $request->category;
-<<<<<<< HEAD
+
         $expense->description = $request->msg;
 
         $expense->created_at = Carbon::now();
@@ -84,12 +84,7 @@ class ExpenseController extends Controller
 //        return redirect()->back()->with('msg', 'Successfully Inserted Into Database');
         return redirect()->back()->with(compact('msg'));
 //        return view('dash',compact('patient','doctor','apatient','msg'));
-=======
-        $expense->description = $request->description;
-        $expense->created_at = Carbon\Carbon::now();
-        $expense->save();
-        return redirect()->back();
->>>>>>> 9f64d30381acd5f1acd50d180a55686089bac5d4
+
     }
 
     /**
