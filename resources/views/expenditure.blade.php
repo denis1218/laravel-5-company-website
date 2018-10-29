@@ -2,8 +2,6 @@
 @extends('master')
 
 @section('style')
-    <!-- Data Tables -->
-
 
 @endsection
 
@@ -16,7 +14,7 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Expense Table</h5>
+                        <h5>{{trans('file.expense_table')}}</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -44,20 +42,20 @@
                             <!-- Expenditure Table -->
                             <div class="row">
                             <div class="col-md-8">
-                                <a href="/expenditure/create" class="btn btn-primary btn-md" style=""><i class="fa fa-plus"></i>&nbsp;&nbsp;Add New Expense</a>
-                                <div><h4>Show all expense just for (this month {{ \Carbon\Carbon::now()->month }})</h4></div>
+                                <a href="/expenditure/create" class="btn btn-primary btn-md" style=""><i class="fa fa-plus"></i>&nbsp;&nbsp;{{trans('file.add_new_expense')}}</a>
+                                <div><h4>{{trans('file.saejf')}} (this month {{ \Carbon\Carbon::now()->month }})</h4></div>
                             </div>
 
                             <div class="col-md-4" style="margin-bottom: 30px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                                 <div class="ibox ">
                                     <div class="ibox-title">
-                                        <span class="label label-info pull-right">All</span>
-                                        <h5>Total Expenses</h5>
+                                        <span class="label label-info pull-right">{{trans('file.all')}}</span>
+                                        <h5>{{trans('file.total_expense')}}</h5>
                                     </div>
                                     <div class="ibox-content">
 
                                         <h1 class="no-margins">{{$totalExpense}}&nbsp;&nbsp;Afg<img  src="{{ asset('img/expense_icon.png') }}" width="60px;"style="float: right;"/></h1>
-                                        <small>All Expenses</small>
+                                        <small>{{trans('file.total_expense')}}</small>
 
                                     </div>
                                 </div>
@@ -67,14 +65,14 @@
 
                                 <thead>
                                 <tr>
-                                    <th>Exp ID</th>
-                                    <th>To Whom</th>
-                                    <th>Paid Amount</th>
-                                    <th>Category</th>
-                                    <th>Description</th>
-                                    <th>Date Of Payment</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th>{{trans('file.exp_id')}}</th>
+                                    <th>{{trans('file.to_whom')}}</th>
+                                    <th>{{trans('file.paid_amount')}}</th>
+                                    <th>{{trans('file.category')}}</th>
+                                    <th>{{trans('file.description')}}</th>
+                                    <th>{{trans('file.date')}}</th>
+                                    <th>{{trans('file.edit')}}</th>
+                                    <th>{{trans('file.delete')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -88,11 +86,11 @@
                                     <td>{{str_limit($ex->description,20)}}</td>
                                     <td>{{$ex->created_at}}</td>
                                     <td> <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal"
-                                                 data-target="#{{$ex->id}}">&nbsp;Edit
+                                                 data-target="#{{$ex->id}}">&nbsp;{{trans('file.edit')}}
                                         </button></td>
                                     <td>
                                         <form action="/expenditure2/{{$ex->id}}" id="myForm">
-                                            <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
+                                            <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;{{trans('file.delete')}}</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -121,25 +119,25 @@
                     <button type="button" class="close" data-dismiss="modal"><span
                                 aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <i class="fa fa-edit modal-icon text-primary"></i>
-                    <h4 class="modal-title">Edit Content</h4>
+                    <h4 class="modal-title">{{trans('file.edit_content')}}</h4>
                 </div>
                 <div class="modal-body">
                     <form action="/expenditure/{{$exs->id}}" method="post">
                         {{method_field('patch')}}
                     {{--<div class="form-group"><label>ID</label> <input type="text" placeholder="Id" value="" class="form-control"></div>--}}
-                        <div class="form-group"><label>To Whom</label> <input type="text" placeholder="Receiver of money"
+                        <div class="form-group"><label>{{trans('file.to_whom')}}</label> <input type="text" placeholder="{{trans('file.to_whom')}}"
                                                                           value="{{$exs->receiver}}" class="form-control" name="receiver"></div>
-                    <div class="form-group"><label>Paid_Amount</label> <input type="text" placeholder="Paid Amount"
+                    <div class="form-group"><label>{{trans('file.paid_amount')}}</label> <input type="text" placeholder="{{trans('file.paid_amount')}}"
                                                                               value="{{$exs->amount}}" class="form-control" name="amount"></div>
-                    <div class="form-group"><label>Category</label>
-                        <input type="text" placeholder="parpose"
+                    <div class="form-group"><label>{{trans('file.category')}}</label>
+                        <input type="text" placeholder="{{trans('file.purpose')}}"
                                value="{{$exs->category}}" class="form-control" name="category">
                     </div>
-                    <div class="form-group"><label>Description</label> <textarea placeholder="Enter more Information"
+                    <div class="form-group"><label>{{trans('file.description')}}</label> <textarea placeholder="{{trans('file.description')}}"
                                                                                  class="form-control"
                                                                                  style="resize: none;" name="description">{{$exs->description}}</textarea></div>
-                        <button type="submit" class="btn btn-primary pull-right" >Save changes</button>
-                        <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-right: 5px;">Close</button>
+                        <button type="submit" class="btn btn-primary pull-right" >{{trans('file.save')}}</button>
+                        <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-right: 5px;">{{trans('file.close')}}</button>
 
                     </form>
                     <br>
@@ -226,8 +224,4 @@
 
         });
     </script>
-
-
-
-
 @endsection

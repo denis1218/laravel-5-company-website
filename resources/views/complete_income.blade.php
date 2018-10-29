@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('style')
-    <link href="css/hover/hover-min.css" rel="stylesheet">
+    <link href="{{asset('css/hover/hover-min.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -10,56 +10,42 @@
     <!-- Nav-buttons -->
     <div class="row wrapper border-bottom white-bg page-heading"
          style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
-        <h3 style="margin-left:43px;margin-top:10px;">Income Details</h3>
+        <h3 style="margin-left:43px;margin-top:10px;">{{trans('file.income_details')}}</h3>
         <div class="col-md-2 ">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px;width:155px; margin-left:25px;"
-                   href="/income"><i class="fa fa-money" style="color:#ffc000; font-size: 30px;"></i> <br/>From Patient</a>
+                   href="/income"><i class="fa fa-money" style="color:#ffc000; font-size: 30px;"></i> <br/>{{trans('file.from_patient')}}</a>
             </h2>
         </div>
         <div class="col-md-2 ">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
-                   href="/xrey_income"><i class="fa fa-xing" style="color:#ffc000; font-size: 30px;"></i> <br/>X-Rey
-                    Income</a></h2>
+                   href="/xrey_income"><i class="fa fa-xing" style="color:#ffc000; font-size: 30px;"></i> <br/>{{trans('file.xray_income')}}</a></h2>
         </div>
         <div class="col-md-2 ">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
                    href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>
-                    Other Income</a></h2>
+                    {{trans('file.other_income')}}</a></h2>
         </div>
         <div class="col-sm-4" style="float:right;margin-top: 10px;">
             <div class="widget style1 navy-bg">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h2>Total Income</h2>
+                        <h2>{{trans('file.total_income')}}</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 text-left">
-                        <h2 class="font-bold"><span> Amount:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{{$Gtotal}}</h2>
+                        <h2 class="font-bold"><span> {{trans('file.amount')}}:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{{$Gtotal}}</h2>
                     </div>
                 </div>
             </div>
         </div>
-
-        {{--<div class="col-lg-4" style="float:right;">--}}
-            {{--<div class="ibox float-e-margins" style=" background-color: lightyellow;">--}}
-                {{--<div class="ibox-title" style=" background-color: lightyellow;">--}}
-                    {{--<h5>Capital</h5>--}}
-                {{--</div>--}}
-                {{--<div class="ibox-content" style=" background-color: lightyellow;">--}}
-                    {{--<h1 class="no-margins">40 886,200</h1>--}}
-                    {{--<div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>--}}
-
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
     </div>
     <!-- End of navButtons -->
 
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Patient Income</h5>
+                <h5>{{trans('file.patient_income')}}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -89,27 +75,27 @@
                         <div class="input-group" style="margin-top:25px;">
                         <span class="input-group-btn">
                         <button type="button" style="margin-left:17px;" class="btn btn-sm btn-primary"><i
-                                    class="fa fa-search"></i> Search</button></span>
-                            <input type="text" placeholder="Patient ID" class="input-sm form-control">
+                                    class="fa fa-search"></i> {{trans('file.search')}}</button></span>
+                            <input type="text" placeholder="{{trans('file.p_id')}}" class="input-sm form-control">
                         </div>
                     </div>
 
                     <div class="col-sm-3" style="margin-top:25px;">
-                        <a href="income" type="button" class="btn btn-sm btn-primary">Show Loan Patient</a>
+                        <a href="income" type="button" class="btn btn-sm btn-primary">{{trans('file.show_loan_patient')}}</a>
                     </div>
                     <table class="table table-striped table-bordered table-hover" id="editable"
                            style="margin-top:80px;margin-left:30px;width:95%;">
                         <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>P-ID</th>
-                            <th>P-Name</th>
-                            <th>Estimated Fee</th>
-                            <th>Paid Amount</th>
-                            <th>Discount</th>
-                            <th>Remaining Fee</th>
-                            <th>P-Details</th>
-                            <th>Print Bill</th>
+                            <th>{{trans('file.id')}}</th>
+                            <th>{{trans('file.p_id')}}</th>
+                            <th>{{trans('file.p_name')}}</th>
+                            <th>{{trans('file.estimated_fee')}}</th>
+                            <th>{{trans('file.paid_amount')}}</th>
+                            <th>{{trans('file.discount')}}</th>
+                            <th>{{trans('file.remaining_fee')}}</th>
+                            <th>{{trans('file.p_details')}}</th>
+                            <th>{{trans('file.print_bill')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -125,18 +111,17 @@
 
                                 <td>
                                     <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
-                                            data-target="#p{{$incom->id}}">&nbsp;P-Details
+                                            data-target="#p{{$incom->id}}">&nbsp;{{trans('file.p_details')}}
                                     </button>
                                 </td>
                                 <td>
-                                    <a href="/patient_report/{{$incom->id}}" class="btn btn-xs btn btn-primary"><i class="fa fa-print"></i>&nbsp;&nbsp;Print
-                                        Bill</a>
+                                    <a href="/patient_report/{{$incom->id}}" class="btn btn-xs btn btn-primary"><i class="fa fa-print"></i>&nbsp;&nbsp;{{trans('file.print_bill')}}</a>
                                 </td>
 
                             </tr>
                         @endforeach
                         <tr>
-                            <td colspan="4" class="text-center">Total Patient's Income</td>
+                            <td colspan="4" class="text-center">{{trans('file.total')}}</td>
                             <td colspan="3" class="text-left">{{$total}}</td>
                         </tr>
 
@@ -151,54 +136,54 @@
                                 <div class="modal-content animated fadeIn">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                                    class="sr-only">Close</span></button>
+                                                    class="sr-only">{{trans('file.close')}}</span></button>
                                         {{-- <i class="fa fa-edit modal-icon text-primary"></i> --}}
-                                        <h4 class="modal-title">Patient Informatino</h4>
+                                        <h4 class="modal-title">{{trans('file.patient_information')}}</h4>
                                     </div>
                                     <div class="modal-body">
                                         <table class="table table-hover table-responsive">
                                             <tr>
-                                                <td style="font-weight:bold;">Patient ID:</td>
+                                                <td style="font-weight:bold;">{{trans('file.p_id')}}:</td>
                                                 <td>{{$in->id}}</td>
                                             </tr>
                                             <tr>
-                                                <td style="font-weight:bold;">Patient Name:</td>
+                                                <td style="font-weight:bold;">{{trans('file.p_name')}}:</td>
                                                 <td>{{$in->patient->name}}</td>
                                             </tr>
                                             <tr>
-                                                <td style="font-weight:bold;">Patient Age:</td>
+                                                <td style="font-weight:bold;">{{trans('file.age')}}:</td>
                                                 <td>{{$in->patient->age}}</td>
                                             </tr>
                                             <tr>
-                                                <td style="font-weight:bold;">Patient Gender:</td>
+                                                <td style="font-weight:bold;">{{trans('file.gender')}}:</td>
                                                 <td>{{$in->patient->gender}}</td>
                                             </tr>
                                             <tr>
-                                                <td style="font-weight:bold;">Patient Address:</td>
+                                                <td style="font-weight:bold;">{{trans('file.address')}}:</td>
                                                 <td>{{$in->patient->address}}</td>
                                             </tr>
                                             <tr>
-                                                <td style="font-weight:bold;">Phone Number:</td>
+                                                <td style="font-weight:bold;">{{trans('file.phone')}}:</td>
                                                 <td>{{$in->patient->phone}}</td>
                                             </tr>
 
                                             <tr>
-                                                <td style="font-weight:bold;">Dental Defect:</td>
+                                                <td style="font-weight:bold;">{{trans('file.dental_defect')}}:</td>
                                                 <td>{{$in->dentaldefect}}</td>
                                             </tr>
                                             <tr>
-                                                <td style="font-weight:bold;">Treatment:</td>
+                                                <td style="font-weight:bold;">{{trans('file.treatment')}}:</td>
                                                 <td>{{$in->treatment}}</td>
                                             </tr>
                                             <tr>
-                                                <td style="font-weight:bold;">Registration Date:</td>
+                                                <td style="font-weight:bold;">{{trans('file.date_of_registration')}}:</td>
                                                 <td>{{$in->created_at}}</td>
                                             </tr>
 
                                         </table>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-white" data-dismiss="modal">{{trans('file.close')}}</button>
                                         {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
 
                                     </div>
@@ -213,9 +198,9 @@
                             <div class="modal-content animated fadeIn">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                                class="sr-only">Close</span></button>
+                                                class="sr-only">C{{trans('file.close')}}</span></button>
                                     {{-- <i class="fa fa-edit modal-icon text-primary"></i> --}}
-                                    <h4 class="modal-title">Patient Informatino</h4>
+                                    <h4 class="modal-title">{{trans('file.patient_information')}}</h4>
                                 </div>
                                 <div class="modal-body">
                                     <table class="table table-hover table-responsive">

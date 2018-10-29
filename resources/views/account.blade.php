@@ -1,12 +1,9 @@
 @extends('master')
 
 @section('style')
-    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
-    <link href="css/hover/hover-min.css" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/sweetalert/sweetalert.css')}}" rel="stylesheet"/>
+    <link href="{{asset('css/hover/hover-min.css')}}" rel="stylesheet">
     <style rel="stylesheet">
-
-
-
         .font-m {
             font-size: 1.5em;
         }
@@ -53,14 +50,13 @@
     <div class="row wrapper border-bottom white-bg page-heading"
          style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
         <div class="col-md-2">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left: 30px; " href="/account"><i
-                            class="fa fa-users" style="font-size: 30px; color:#ffac1b ;"></i><br>List of account</a>
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left: 30px; " href="/user"><i
+                            class="fa fa-users" style="font-size: 30px; color:#ffac1b ;"></i><br>{{trans('file.list_of_account')}}</a>
             </h2>
         </div>
         <div class="col-md-2">
             <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left:0px;"
-                   href="/account/create"><i class="fa fa-user" style="color:#ffac1b; font-size: 30px;"></i> <br/>Create
-                    account</a></h2>
+                   href="/user/create"><i class="fa fa-user" style="color:#ffac1b; font-size: 30px;"></i> <br/>{{trans('file.create_account')}}</a></h2>
 
         </div>
 
@@ -70,7 +66,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>List of account </h5>
+                <h5>{{trans('file.list_of_account')}} </h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -96,17 +92,17 @@
                         <table class="table table-hover table-borderd table-striped">
                             <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                                <th>password</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Role</th>
-                                <th>Details</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                <th>{{trans('file.id')}}</th>
+                                <th>{{trans('file.first_name')}}</th>
+                                <th>{{trans('file.last_name')}}</th>
+                                <th>{{trans('file.user_name')}}</th>
+                                <th>{{trans('file.password')}}</th>
+                                <th>{{trans('file.email')}}</th>
+                                <th>{{trans('file.phone')}}</th>
+                                <th>{{trans('file.role')}}</th>
+                                <th>{{trans('file.details')}}</th>
+                                <th>{{trans('file.edit')}}</th>
+                                <th>{{trans('file.delete')}}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -122,17 +118,17 @@
                                     <td>{{ $user->department }}</td>
                                     <td>
                                         <button class="btn btn-xs btn-primary" data-toggle="modal"
-                                                data-target="#"><i class="fa fa-info"></i>&nbsp; Permission
+                                                data-target="#"><i class="fa fa-info"></i>&nbsp; {{trans('file.permission')}}
                                         </button>
                                     </td>
                                     <td>
                                         <button class="btn btn-xs btn-success" data-toggle="modal"
-                                                data-target="#"><i class="fa fa-edit"></i>&nbsp;Edit
+                                                data-target="#"><i class="fa fa-edit"></i>&nbsp;{{trans('file.edit')}}
                                         </button>
                                     </td>
                                     <td>
                                         <button class="btn btn-xs btn-danger demo3" data-toggle="modal"
-                                                data-target="#"><i class="fa fa-remove"></i>&nbsp;Delete
+                                                data-target="#"><i class="fa fa-remove"></i>&nbsp;{{trans('file.delete')}}
                                         </button>
                                     </td>
                                 </tr>

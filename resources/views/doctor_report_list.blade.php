@@ -1,13 +1,13 @@
 @extends('master')
 
 @section('style')
-    <link href="dashboard/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/dataTables/dataTables.bootstrap.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/dataTables/dataTables.responsive.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/dataTables/dataTables.tableTools.min.css')}}" rel="stylesheet">
 
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
+    <link href="{{asset('dashboard/css/animate.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/sweetalert/sweetalert.css')}}" rel="stylesheet"/>
     <style media="screen">
         .bts:hover {
             box-shadow: 4px 4px 4px 4px grey;
@@ -30,7 +30,7 @@
     <div class="col-lg-12" >
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>List of Doctors </h5>
+                <h5>{{trans('file.list_of_doctors')}}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -58,7 +58,7 @@
                             <div class="ibox-content">
                                 <div class="row">
                                     <div class="col">
-                                        <a type="button" class="btn btn-primary" href="/doctors2" style="margin-left: 16px;">Go To Doctor Salary <i class="fa fa-arrow-right"></i> </a>
+                                        <a type="button" class="btn btn-primary" href="/doctors2" style="margin-left: 16px;">{{trans('file.goto_ds')}} <i class="fa fa-arrow-right"></i> </a>
                                         <hr>
                                     </div>
                                 </div>
@@ -66,19 +66,19 @@
                                     <table class="table table-striped table-bordered table-hover dataTables-example" >
                                         <thead>
                                         <tr>
-                                            <th>Doctor-ID</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Father Name</th>
-                                            <th>Age</th>
-                                            <th colspan="2" class="text-center" >Working time</th>
-                                            <th>Phone</th>
-                                            <th>Departement</th>
-                                            <th>Gender</th>
-                                            <th>Max patient</th>
-                                            <th>Salary type</th>
-                                            <th>Salary amount</th>
-                                            <th>Report</th>
+                                            <th>{{trans('file.id')}}</th>
+                                            <th>{{trans('file.doctor_name')}}</th>
+                                            <th>{{trans('file.last_name')}}</th>
+                                            <th>{{trans('file.father_name')}}</th>
+                                            <th>{{trans('file.age')}}</th>
+                                            <th colspan="2" class="text-center" >{{trans('file.working_time')}}</th>
+                                            <th>{{trans('file.phone')}}</th>
+                                            <th>{{trans('file.department')}}</th>
+                                            <th>{{trans('file.gender')}}</th>
+                                            <th>{{trans('file.max_patient')}}</th>
+                                            <th>{{trans('file.salary_type')}}</th>
+                                            <th>{{trans('file.salary_amount')}}</th>
+                                            <th>{{trans('file.pay_salary')}}</th>
                                         </tr>
                                         </thead>
                                         @if(count($doctors)>0)
@@ -98,12 +98,12 @@
                                         <td>{{$doctor->max_patient}}</td>
                                         <td>{{$doctor->salary_type}}</td>
                                         <td class="center">{{$doctor->salary_amount}}</td>
-                                        <td class="center"><a class="btn btn-xs btn-info" href="/doctors/{{$doctor->id}}/edit">PaySalary &nbsp;<i class="fa fa-file-o"></i></a></td>
+                                        <td class="center"><a class="btn btn-xs btn-info" href="/doctors/{{$doctor->id}}/edit">{{trans('file.pay_salary')}}&nbsp;<i class="fa fa-file-o"></i></a></td>
                                         </tr>
                                         </tbody>
                                          @endforeach
                                         @else
-                                        <h1 class="text-center" style="color:red;">No doctor registred yet</h1>
+                                        <h1 class="text-center" style="color:red;">{{trans('file.ndry')}}</h1>
                                         @endif
                                     </table>
                                         {{$doctors->links()}}
@@ -116,8 +116,4 @@
         </div>
     </div>
     {{-- show all doctors --}}
-
-
 @endsection
-
-

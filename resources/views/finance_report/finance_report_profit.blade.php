@@ -1,15 +1,15 @@
 @extends('master')
 
 @section('style')
-    <link href="dashboard/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
-    <link href="css/dropdown_menu.css" rel="stylesheet">
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
-    <link href="css/hover/hover-min.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/dataTables/dataTables.bootstrap.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/dataTables/dataTables.responsive.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/dataTables/dataTables.tableTools.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/dropdown_menu.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/animate.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/sweetalert/sweetalert.css')}}" rel="stylesheet"/>
+    <link href="{{asset('css/hover/hover-min.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/datapicker/datepicker3.css')}}" rel="stylesheet">
 
     <style media="screen">
         .bts:hover {
@@ -34,7 +34,7 @@
 @section('content')
     <div class="row text-center">
         <div class="col-md-12">
-            <h1>Financial Report Profit&nbsp;&nbsp;<img src="img/profit.png" width="100px;"/></h1>
+            <h1>{{trans('file.pfr')}}&nbsp;&nbsp;<img src="img/profit.png" width="100px;"/></h1>
         </div>
     </div>
     <br/>
@@ -42,74 +42,63 @@
 
 
     {{-- financial report all report --}}
-    <div class="row page-wrapper border-bottom white-bg"
-         style=" margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
-        <div class="col-md-6">
+    <div class="row page-wrapper border-bottom white-bg" style=" margin-top:-20px;margin-left: 1px; margin-bottom: 20px; padding-bottom: 15px;">
+        <div class="col-md-5">
             <div class="row">
-                <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
-                    <h3> Report Profit </h3>
+                <div class="col-md-12" style="margin-top:15px; margin-left:20px;">
+                    <h3> {{trans('file.profit_report')}} </h3>
                 </div>
             </div>
             <form action="finance_report_profit1">
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                         <div class="form-group" style="margin-left:35px;">
-                            <label class="font-noraml">Select single day</label>
+                            <label class="font-noraml">{{trans('file.select_day')}}</label>
                             <div class="input-daterange input-group" id="">
-                                <span class="input-group-addon">&nbsp;  <i class="fa fa-calendar"></i> &nbsp;<i
-                                            class="fa fa-arrow-right"></i></span>
+                                <span class="input-group-addon">&nbsp;  <i class="fa fa-calendar"></i> &nbsp;<i class="fa fa-arrow-right"></i></span>
                                 <input type="date" class="input-sm form-control" name="single" required/>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="form-group" style="margin-left: 35pxph">
-
-                        <div class="col-md-2">
+                    <div class="col-md-6" style="margin-top:21px;">
+                    <div class="form-group">
                             <button class="btn btn-sm btn-primary " type="submit"><i
                                         class="fa fa-tag" style=" color:#ffe118 ;"></i>
-                                &nbsp;Report &nbsp;
+                                {{trans('file.report')}}&nbsp;
                             </button>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
             <div class="row">
-                <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
-                    <h3> Report Income range day</h3>
+                <div class="col-md-12" style="margin-top:15px; margin-left:20px;">
+                    <h3> {{trans('file.profit_report_range')}}</h3>
                 </div>
             </div>
             <form action="finance_report_profit2">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <div class="form-group" style="margin-left:35px;">
-                            <label class="font-noraml">Select Range</label>
+                            <label class="font-noraml">{{trans('file.select_range')}}</label>
                             <div class="input-daterange input-group" id="">
                                 <input type="date" class="input-sm form-control" name="start" required/>
-                                <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
+                                <span class="input-group-addon">{{trans('file.to')}} &nbsp;<i class="fa fa-arrow-right"></i></span>
                                 <input type="date" class="input-sm form-control" name="end" required/>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="form-group" style="margin-left: 35px">
-                        <div class="col-md-2">
-                            <button class="btn btn-sm btn-primary" type="submit"
-                            ><i class="fa fa-tag"
-                                style=" color:#ffe118 ;"></i>
-                                &nbsp;Report&nbsp;&nbsp;
+                    <div class="col-md-4" style="margin-top: 21px;">
+                    <div class="form-group" style="margin-left: 10px">
+                            <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
+                                &nbsp;{{trans('file.report')}}&nbsp;&nbsp;
                             </button>
 
                         </div>
                     </div>
                 </div>
             </form>
-
-
         </div>
     </div>
     {{-- end all report --}}
