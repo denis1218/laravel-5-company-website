@@ -9,7 +9,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Expense Category</h5>
+                <h5>{{trans('file.expense_category')}}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -35,12 +35,12 @@
                     <div class="col-md-6">
                         <form action="/expense-category" method="post">
                             <div class="form-group">
-                                <lable for="form-control">Category</lable>
+                                <lable for="form-control">{{trans('file.category')}}</lable>
                                 <input type="text" class="form-control" name="category"/>
                             </div>
-                            <div class="col-md-4">
-                                <button type="submit" class="btn btn-primary" name="submit"><i class="fa fa-save"></i>&nbsp;Save</button>
-                                <button type="reset" class="btn btn-white" name="reset"><i class="fa fa-spin"></i>&nbsp;reset</button>
+                            <div class="col-md-5">
+                                <button type="submit" class="btn btn-primary" name="submit"><i class="fa fa-save"></i>&nbsp;{{trans('file.save')}}</button>
+                                <button type="reset" class="btn btn-white" name="reset"><i class="fa fa-spin"></i>&nbsp;{{trans('file.reset')}}</button>
                             </div>
                         </form>
                     </div>
@@ -48,9 +48,9 @@
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Category</th>
-                                    <th>Delete</th>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.category')}}</th>
+                                    <th>{{trans('file.delete')}}</th>
                                 <tr>
                             </thead>
                             <tbody>
@@ -71,9 +71,9 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Category</th>
-                                    <th>Delete</th>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.category')}}</th>
+                                    <th>{{trans('file.delete')}}</th>
                                 </tr>
                             </tfoot>
                         </table>

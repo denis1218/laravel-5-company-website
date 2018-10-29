@@ -26,6 +26,9 @@ return[
     'backup_db'=>'Backup DB',
     'add_medicine'=>'Add Medicine',
     'expense_category'=>'Expense Category',
+    'dental_defect_list'=>'Dental Defect List',
+    'treatment_list'=>'Treatment List',
+    'doctor_department'=>'Doctor Department',
 //    end of side bar words
 
 //top nav
@@ -107,6 +110,7 @@ return[
 //X-ray page
 
     'Patient_xray_list'=>'Patient X-ray List',
+    'nprfx'=>'No Patient Has Been Registered For X-Ray ',
     'new_patient'=>'New Patient',
     'already_done'=>'Already Done',
     'number_of_patient'=>'Number Of Patient',
@@ -158,6 +162,7 @@ return[
 //Start of Doctor Registration
 
     'first_name'=>'First Name',
+    'sd'=>'Select Department',
     'father_name'=>'Father Name',
     'max_patient'=>'Max Patient Can Visit',
     'email'=>'Email',
@@ -187,6 +192,101 @@ return[
     'anesthetic_problem'=>'Anesthetic Problem',
     'o_problem'=>'Other Problem',
 //    End of patient registration
+
+
+//start of expense
+
+    'expense_table'=>'Expense Table',
+    'close'=>'Close',
+    'saejf'=>'Show All Expenses Just For',
+    'add_new_expense'=>'Add New Expense',
+    'total_expense'=>'Total Expense',
+    'exp_id'=>'Exp ID',
+    'to_whom'=>'To Whom',
+    'category'=>'Category',
+    'delete'=>'Delete',
+//    adding expense
+    'expenses'=>'Expenses',
+    'capital'=>'Capital',
+    'edit_content'=>'Edit Content',
+//end of expense
+
+//start of Income
+//patient income
+    'income_details'=>'Income Details',
+    'afg'=>'Afg',
+    'inb'=>'Income Navigation Buttons',
+    'from_patient'=>'From Patient',
+    'xray_income'=>'X-ray Income',
+    'other_income'=>'Other Income',
+    'total_income'=>'Total Income',
+    'amount'=>'Amount',
+    'patient_income'=>'Patient Income',
+    'show_completed_patient'=>'Show Completed Patient',
+    'p_name'=>'P_Name',
+    'estimated_fee'=>'Estimated Fee',
+    'remaining_fee'=>'Remaining Fee',
+    'p_details'=>'P_Details',
+    'search'=>'Search',
+    'show_loan_patient'=>'Show Loan Patient',
+    'print_bill'=>'Print Bill',
+    'fee_payment'=>'Fee Payment',
+    'fill_pa'=>'Enter Amount of Payment',
+
+//    X-ray Income
+    'show_completed_xray'=>'Show Completed X-Ray',
+    'show_uncompleted_xray'=>'Show Uncompleted X-Ray',
+//    Other Income
+    'add_new_income'=>'Add New Income',
+    'purpose'=>'Purpose',
+    'noiy'=>'NO Other Income Yet',
+    'from_whom'=>'From Whom',
+//    End of Income
+
+//Start Of Doctor Salary
+//Doctor List
+    'list_of_doctors'=>'List of Doctors',
+    'goto_ds'=>'Doctor Salary',
+    'ndry'=>'No Doctor Registered yet',
+    'salary_payment'=>'Salary Payment',
+//    payment page
+    'back_to_doctor'=>'Doctor List',
+    'lpd'=>'Last Payment Date',
+    'date_of_registration'=>'Date of Registration',
+    'treatment_fee'=>'Treatment Fee',
+    'total_fee'=>'Total Fee',
+    'doctor_salary'=>'Doctor Salary',
+    'past_remaining'=>'Past Remaining',
+    'total_doctor_salary'=>'Total Doctor Salary',
+    'payment_amount'=>'Payment Amount',
+    'pay_salary'=>'Pay Salary',
+//Doctor Salary page
+    'goto_dl'=>'Doctor List',
+    'time_period'=>'Time Period',
+//  End of Doctor Salary
+
+//  Start of Financial Report
+//  Income Report
+    'ifr'=>'Income Financial Report',
+    'atir_single_day'=>'All Type Income Report For Single Day',
+    'select_day'=>'Select Day',
+    'report'=>'Report',
+    'atir_range'=>'All Type Income Report Between Range',
+    'select_range'=>'Select Range',
+    'irs_type'=>'Single day income report of specific type',
+    'irr_type'=>'Income report of specific type in a range',
+    'select_income_type'=>'Select Income Type',
+//   Expense report
+    'efr'=>'Expense Financial Report',
+    'expr_single_day'=>'Expense report of single day',
+    'expr_range'=>'Expense report of given range',
+    'expr_single_category'=>'Single day expense report of specific category',
+    'expr_range_category'=>'Expense report of specific category in a range',
+//  Profit report
+    'pfr'=>'Profit Financial Report',
+    'profit_report'=>'Profit Report',
+    'profit_report_range'=>'Profit Report in a given range',
+//End of financial report
 
 //    list of patient
     'appointment_patient'=>'Appointment Patient',
@@ -223,6 +323,50 @@ return[
     'patient_report_table'=>'Patient Report Table',
 //    patient prescription
     'patient_prescription'=>'Patient Prescription',
+
+//  Start of Create Account
+//  List of account
+    'list_of_account'=>'List Of Account',
+    'owner'=>'Owner',
+    'create_account'=>'Create Account',
+    'user_name'=>'User Name',
+    'role'=>'Role',
+    'permission'=>'Permission',
+//    create account
+    'account_registration'=>'Account Registration',
+    'account_info'=>'Account Information',
+    'confirm_password'=>'Confirm Password',
+    'submit'=>'Submit',
+//    End of account
+
+//  Start of Backup page
+    'backup_list'=>'Backup List',
+    'database_backup'=>'Database Backup',
+    'restore_database'=>'Restore Database',
+    'backup_creation'=>'Backup Creation',
+    'db_name'=>'Database Name',
+    'enter_db_name'=>'Enter database name',
+    'backup_method'=>'Backup Method',
+    'drop_box'=>'Drop Box',
+    'path'=>'Path',
+    'local_network_drive'=>'Local Network Drive',
+    'create_backup'=>'Create Backup',
+//    End of backup creation
+
+//Start of Medicine
+    'medicine_name'=>'Medicine Name',
+    'medicine_unit'=>'Medicine Unit',
+    'unit'=>'Unit',
+    'name'=>'Name',
+//    End of medicine
+
+//Start of delete model
+    'are_you_sure'=>'Are you sure ',
+    'ywnba'=>'You will not be able to recover this content!',
+    'yes_delete'=>'Yes Delet It',
+    'rds'=>'Record Deleted Successfully',
+
+
 
 
 

@@ -1,26 +1,6 @@
 @extends('master')
 
 @section('style')
-    <!-- Data Tables -->
-    <link href="{{ asset('dashboard/css/plugins/dataTables/dataTables.bootstrap.css') }}" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
-
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
-
-    <link href="css/hover/hover-min.css" rel="stylesheet">
-
-    {{--toastr--}}
-    {{--<link href="dashboard/css/bootstrap.min.css" rel="stylesheet">--}}
-    {{--<link href="dashboard/font-awesome/css/font-awesome.css" rel="stylesheet">--}}
-
-    {{--<!-- Toastr style -->--}}
-    {{--<link href="dashboard/css/plugins/toastr/toastr.min.css" rel="stylesheet">--}}
-
-    {{--<link href="dashboard/css/animate.css" rel="stylesheet">--}}
-    {{--<link href="dashboard/css/style.css" rel="stylesheet">--}}
 @endsection
 
 
@@ -30,40 +10,7 @@
 
 
     <!-- Nav-buttons -->
-    <div class="row wrapper border-bottom white-bg page-heading"
-         style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
-        <h3 style="margin-left:43px;margin-top:10px;">Other income</h3>
-        <div class="col-md-2 ">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px;width:155px; margin-left:25px;"
-                   href="/income"><i class="fa fa-money" style="color:#ffc000; font-size: 30px;"></i> <br/>From Patient</a>
-            </h2>
-        </div>
-        <div class="col-md-2 ">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
-                   href="/xrey_income"><i class="fa fa-xing" style="color:#ffc000; font-size: 30px;"></i> <br/>X-Rey
-                    Income</a></h2>
-        </div>
-        <div class="col-md-2 ">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px;margin-left:15px;"
-
-                   href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>Other Income</a></h2>
-        </div>
-        <div class="col-sm-4" style="float:right;margin-top: 10px;">
-            <div class="widget style1 navy-bg">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h2>Total Income</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 text-left">
-                        <h2 class="font-bold"><span> Amount:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{{$Gtotal}}</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    @include('part.income_button_top')
     <!-- End of navButtons -->
 
 
@@ -74,7 +21,9 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Xrey income</h5>
+
+                    <h5>{{trans('file.other_income')}}</h5>
+
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
@@ -100,29 +49,29 @@
                     @include('layout.messages')
                     <div class="row">
                         <!--Search -->
+                        <!--Search -->
                         <div class="col-sm-9">
                             <div class="input-group" style="margin-top:25px;margin-left: 15px;">
                         <span class="input-group-btn">
-                        <button type="button" style="margin-left:17px;" class="btn btn-sm btn-primary"><i
-                                    class="fa fa-search"></i> Search</button></span>
-                                <input type="text" placeholder="Other Income" class="input-sm form-control">
+                        <button type="button" style="margin-left:17px;" disabled class="btn btn-sm btn-primary"><i class="fa fa-search"></i> </button></span>
+                                <input type="text" placeholder="{{trans('file.p_name')}}" class="input-sm form-control" id="search_otherIncome" onkeyup="search_otherIncome()">
                             </div>
                         </div>
                         <div class="col-sm-3">
-                            <a href="/other2" class="btn btn-primary text-right" style="margin-top: 20px;">Add New Income</a>
+                            <a href="/other-income/create" class="btn btn-primary text-right" style="margin-top: 20px;">{{trans('file.add_new_income')}}</a>
                         </div>
                         <div class="col-sm-12">
-                        <table class="table table-striped table-bordered table-hover" id="editable"
+                        <table class="table table-striped table-bordered table-hover" id="table_otherIncome"
                                style="margin-top:10px;margin-left:30px;width:95%;">
                             <thead>
                             <tr style="color:black;">
-                                <th>ID</th>
-                                <th>From Whom</th>
-                                <th>Amount</th>
-                                <th>Purpose</th>
-                                <th>Description</th>
-                                <th>Date</th>
-                                <th>Edit</th>
+                                <th>{{trans('file.id')}}</th>
+                                <th>{{trans('file.from_whom')}}</th>
+                                <th>{{trans('file.amount')}}</th>
+                                <th>{{trans('file.purpose')}}</th>
+                                <th>{{trans('file.description')}}</th>
+                                <th>{{trans('file.date')}}</th>
+                                <th>{{trans('file.edit')}}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -137,17 +86,17 @@
                                 <td>{{$other->created_at}}</td>
                                 <td>
                                     <button  class="btn btn-sm btn-primary fa fa-edit" data-toggle="modal"
-                                             data-target="#{{$other->id}}">&nbsp;Edit
+                                             data-target="#{{$other->id}}">&nbsp;{{trans('file.edit')}}
                                     </button>
                                 </td>
                             </tr>
                             @endforeach
                             <tr>
-                                <td colspan="2">Total Amount</td>
+                                <td colspan="2">{{trans('file.total')}}</td>
                                 <td>{{$total}}</td>
                             </tr>
                             @else
-                            <h2 class="text-center" style="color: red;">No other income yet</h2>
+                            <h2 class="text-center" style="color: red;">{{trans('file.noiy')}}</h2>
                             @endif
                             </tbody>
                         </table>
@@ -159,33 +108,34 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content animated fadeIn">
                                         <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                            <h4 class="modal-title">Edit Content</h4>
-                                            <small>Edit information</small>
+                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">{{trans('file.close')}}</span></button>
+                                            <h4 class="modal-title">{{trans('file.edit_content')}}</h4>
                                         </div>
                                         <div class="modal-body">
                                             <div class="row">
-                                                <form action="/other/{{$other->id}}" method="post">
-                                                    {{method_field('PUT')}}
+                                                <form action="/other-income/{{$other->id}}" method="post">
+
+                                                    {{method_field('patch')}}
+
                                                     <div class="form-group">
-                                                        <label for="p-name">From Whom</label>
+                                                        <label for="p-name">{{trans('file.from_whom')}}</label>
                                                         <input type="text" name="from_whom" class="form-control" value="{{$other->from_whom}}">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="doctor-name">Amount</label>
+                                                        <label for="doctor-name">{{trans('file.amount')}}</label>
                                                         <input type="text" name="amount" class="form-control"  value="{{$other->amount}}">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="estimated-fee">Purpose</label>
+                                                        <label for="estimated-fee">{{trans('file.purpose')}}</label>
                                                         <input type="text" name="purpose" class="form-control"  value="{{$other->purpose}}">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="p-amount">Description</label>
+                                                        <label for="p-amount">{{trans('file.description')}}</label>
                                                         <input type="text" name="description" class="form-control"  value="{{$other->description}}" style="resize: none">
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                        <button type="button" class="btn btn-white" data-dismiss="modal">{{trans('file.close')}}</button>
+                                                        <button type="submit" class="btn btn-primary">{{trans('file.save')}}</button>
 
                                                     </div>
                                                 </form>
@@ -205,3 +155,30 @@
     </div>
 
 @endsection
+@section('script')
+    {{-- javascript search on table --}}
+    <script>
+        {{-- filter search all patient table --}}
+        function search_otherIncome() {
+            // Declare variables
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("search_otherIncome");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("table_otherIncome");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[2];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+    </script>
+    @endsection

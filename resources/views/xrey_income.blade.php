@@ -1,54 +1,14 @@
 @extends('master')
 @section('content')
 
-    <div class="row wrapper border-bottom white-bg page-heading"
-         style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
-        <h3 style="margin-left:43px;margin-top:10px;">Income Details</h3>
-        <div class="col-md-2 ">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px;width:155px; margin-left:25px;"
-                   href="/income"><i class="fa fa-money" style="color:#ffc000; font-size: 30px;"></i> <br/>From Patient</a>
-            </h2>
-        </div>
-        <div class="col-md-2 ">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
-                   href="/xrey_income"><i class="fa fa-xing" style="color:#ffc000; font-size: 30px;"></i> <br/>X-Ray
-                    Income</a></h2>
-        </div>
-        <div class="col-md-2 ">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
-                   href="/other"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/> Other Income</a></h2>
-        </div>
-        <div class="col-sm-4" style="float:right;margin-top: 10px;">
-            <div class="widget style1 navy-bg">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h2>Total Income</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 text-left">
-                        <h2 class="font-bold"><span> Amount:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{{$Gtotal}}</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{--<div class="col-lg-4" style="float:right;">--}}
-            {{--<div class="ibox float-e-margins" style=" background-color: lightyellow;">--}}
-                {{--<div class="ibox-title" style=" background-color: lightyellow;">--}}
-                    {{--<h5>Capital</h5>--}}
-                {{--</div>--}}
-                {{--<div class="ibox-content" style=" background-color: lightyellow;">--}}
-                    {{--<h1 class="no-margins">40 886,200</h1>--}}
-                    {{--<div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>--}}
+    <!-- Nav-buttons -->
+    @include('part.income_button_top')
+    <!-- End of navButtons -->
 
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    </div>
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Xrey income</h5>
+                <h5>{{trans('file.xray_income')}}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -73,29 +33,31 @@
             <div class="ibox-content">
                 <div class="row">
 
+
                     <!--Search -->
                     <div class="col-sm-9">
                         <div class="input-group" style="margin-top:25px;">
                         <span class="input-group-btn">
-                        <button type="button" style="margin-left:17px;" class="btn btn-sm btn-primary"><i
-                                    class="fa fa-search"></i> Search</button></span>
-                            <input type="text" placeholder="Patient ID" class="input-sm form-control">
+                        <button type="button" style="margin-left:17px;" disabled class="btn btn-sm btn-primary"><i class="fa fa-search"></i> </button></span>
+                            <input type="text" placeholder="{{trans('file.p_name')}}" class="input-sm form-control" id="search_xray" onkeyup="search_xray()">
                         </div>
                     </div>
+                    {{-- End search --}}
+
                     <div class="col-sm-3" style="margin-top:25px;">
-                        <a href="xrey_income2" type="button" class="btn btn-sm btn-primary">Show completed Xray</a>
+                        <a href="xrey_income2" type="button" class="btn btn-sm btn-primary">{{trans('file.show_completed_xray')}}</a>
                     </div>
-                    <table class="table table-striped table-bordered table-hover" id="editable"
+                    <table class="table table-striped table-bordered table-hover" id="table_xray_income"
                            style="margin-top:80px;margin-left:30px;width:95%;">
                         <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>P-ID</th>
-                            <th>P-Name</th>
-                            <th>Doctor Name</th>
-                            <th>Paid Amount</th>
-                            <th>Paid</th>
-                            <th>P-Details</th>
+                            <th>{{trans('file.id')}}</th>
+                            <th>{{trans('file.p_id')}}</th>
+                            <th>{{trans('file.p_name')}}</th>
+                            <th>{{trans('file.doctor_name')}}</th>
+                            <th>{{trans('file.paid_amount')}}</th>
+                            <th>{{trans('file.paid')}}</th>
+                            <th>{{trans('file.p_details')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -108,12 +70,12 @@
                             <td>{{$xr->paid_amount}}</td>
                             <td>
                                 <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
-                                        data-target="#p{{$xr->id}}">&nbsp;Paid
+                                        data-target="#p{{$xr->id}}">&nbsp;{{trans('file.paid')}}
                                 </button>
                             </td>
                             <td>
                                 <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
-                                        data-target="#d{{$xr->id}}">&nbsp;P-Details
+                                        data-target="#d{{$xr->id}}">&nbsp;{{trans('file.p_details')}}
                                 </button>
                             </td>
                         </tr>
@@ -132,26 +94,25 @@
                             <div class="modal-content animated fadeIn">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                                class="sr-only">Close</span></button>
+                                                class="sr-only">{{trans('file.close')}}</span></button>
                                     <i class="fa fa-edit modal-icon text-primary"></i>
-                                    <h4 class="modal-title">Pay Amount</h4>
-                                    <small>Fill the Paid amount</small>
+                                    <small>{{trans('file.fill_pa')}}</small>
                                 </div>
                                 <div class="modal-body">
                                     <form action="/xrey_income/{{$xr->id}}" method="post">
                                         {{method_field('patch')}}
                                     <div class="row">
-                                        <div class="form-group"><label class="col-md-3 control-label">Paid Amount
+                                        <div class="form-group"><label class="col-md-3 control-label">{{trans('file.paid_amount')}}
                                                 :</label>
 
                                             <div class="col-sm-6"><input type="text" name="paid_amount" class="form-control"
-                                                                         placeholder="Paid Amount"></div>
+                                                                         placeholder="{{trans('file.paid_amount')}}"></div>
                                         </div>
                                     </div>
                                         <br><br>
-                                        <button type="submit" class="btn btn-primary pull-right" style="margin-right: 5px">Save changes</button>
+                                        <button type="submit" class="btn btn-primary pull-right" style="margin-right: 5px">{{trans('file.save')}}</button>
 
-                                        <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-right: 5px">Close</button>
+                                        <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-right: 5px">{{trans('file.close')}}</button>
                                         <br>
 
                                     </form>
@@ -165,55 +126,8 @@
                     </div>
                     <!-- end of model -->
                     @endforeach
-                    {{--Edit modal--}}
-                    {{--<div class="modal inmodal" id="edit" tabindex="-1" role="dialog" aria-hidden="true">--}}
-                        {{--<div class="modal-dialog">--}}
-                            {{--<div class="modal-content animated fadeIn">--}}
-                                {{--<div class="modal-header">--}}
-                                    {{--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span--}}
-                                                {{--class="sr-only">Close</span></button>--}}
-                                    {{--<i class="fa fa-edit modal-icon text-primary"></i>--}}
-                                    {{--<h4 class="modal-title">Edit Content</h4>--}}
-                                    {{--<small>Edit information</small>--}}
-                                {{--</div>--}}
-                                {{--<div class="modal-body">--}}
-                                    {{--<div class="row">--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="pid">PID</label>--}}
-                                        {{--<input type="text" name="pid" class="form-control" value="p-078678976" disabled>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="p-name">Patient Name</label>--}}
-                                            {{--<input type="text" name="p-name" class="form-control" placeholder="Patient Name" value="Ahmad">--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="doctor-name">Doctor Name</label>--}}
-                                            {{--<input type="text" name="doctor-name" class="form-control" placeholder="Doctor Name" value="Dr.Samim">--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="estimated-fee">Estimated Fee</label>--}}
-                                            {{--<input type="text" name="estimated-fee" class="form-control" placeholder="Estimated Fee" value="2000">--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="p-amount">Paid Amount</label>--}}
-                                            {{--<input type="text" name="p-amount" class="form-control" placeholder="Paid Amount" value="1500">--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="discount">Discount</label>--}}
-                                            {{--<input type="text" name="discount" class="form-control" placeholder="Discount" value="200">--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
+                    {{--show modal--}}
 
-                                {{--</div>--}}
-                                {{--<div class="modal-footer">--}}
-                                    {{--<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>--}}
-                                    {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
-
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--end of edit modal--}}
                     @foreach($xrey as $xr)
                     <!-- edit model -->
                     <div class="modal inmodal" id="d{{$xr->id}}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -221,37 +135,37 @@
                             <div class="modal-content animated fadeIn">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                                                class="sr-only">Close</span></button>
+                                                class="sr-only">{{trans('file.close')}}</span></button>
 
-                                    <h4 class="modal-title">Patient Informatino</h4>
+                                    <h4 class="modal-title">{{trans('file.patient_information')}}</h4>
                                 </div>
                                 <div class="modal-body">
                                     <table class="table table-hover table-responsive">
                                         <tr>
-                                            <td style="font-weight:bold;">Patient ID:</td>
+                                            <td style="font-weight:bold;">{{trans('file.p_id')}}:</td>
                                             <td>{{$xr->patient_id}}</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-weight:bold;">Patient Name:</td>
+                                            <td style="font-weight:bold;">{{trans('file.p_name')}}:</td>
                                             <td>{{$xr->patient_name}}</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-weight:bold;">Doctor Name:</td>
+                                            <td style="font-weight:bold;">{{trans('file.doctor_name')}}:</td>
                                             <td>{{$xr->doctor_name}}</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-weight:bold;">Tooth Number:</td>
+                                            <td style="font-weight:bold;">{{trans('file.teeth_number')}}:</td>
                                             <td>{{$xr->tooth_number}}</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-weight:bold;">Date :</td>
+                                            <td style="font-weight:bold;">{{trans('file.date')}} :</td>
                                             <td>{{$xr->created_at}}</td>
                                         </tr>
 
                                     </table>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-white" data-dismiss="modal">{{trans('file.close')}}</button>
 
                                 </div>
                             </div>
@@ -265,3 +179,33 @@
         </div>
     </div>
 @endsection
+
+@section('script')
+
+    {{-- javascript search on table --}}
+    <script>
+        {{-- filter search all patient table --}}
+        function search_xray() {
+            // Declare variables
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("search_xray");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("table_xray_income");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[2];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+    </script>
+
+    @endsection

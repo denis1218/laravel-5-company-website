@@ -2,14 +2,6 @@
 @extends('master')
 
 @section('style')
-    <!-- Data Tables -->
-    <link href="dashboard/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
-
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
 
 @endsection
 
@@ -22,7 +14,7 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Expense Table</h5>
+                        <h5>{{trans('file.expense_table')}}</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -48,32 +40,39 @@
                         <!-- Table -->
                         <div class="table-responsive">
                             <!-- Expenditure Table -->
+                            <div class="row">
                             <div class="col-md-8">
-                                <a href="/expense_form" class="btn btn-primary btn-lg fa fa-plus" style="margin-top: 70px;">Add New Expense</a>
+                                <a href="/expenditure/create" class="btn btn-primary btn-md" style=""><i class="fa fa-plus"></i>&nbsp;&nbsp;{{trans('file.add_new_expense')}}</a>
+                                <div><h4>{{trans('file.saejf')}} (this month {{ \Carbon\Carbon::now()->month }})</h4></div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="ibox float-e-margins" style=" background-color: lightyellow;">
-                                    <div class="ibox-title" style="background-color:  lightyellow;">
-                                        <h5 style="">Total Expenses</h5>
+
+                            <div class="col-md-4" style="margin-bottom: 30px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                <div class="ibox ">
+                                    <div class="ibox-title">
+                                        <span class="label label-info pull-right">{{trans('file.all')}}</span>
+                                        <h5>{{trans('file.total_expense')}}</h5>
                                     </div>
-                                        <div class="ibox-content"style=" background-color: lightyellow;">
-                                            <h1 class="no-margins">{{$totalExpense}}</h1>
-                                        </div>
+                                    <div class="ibox-content">
+
+                                        <h1 class="no-margins">{{$totalExpense}}&nbsp;&nbsp;Afg<img  src="{{ asset('img/expense_icon.png') }}" width="60px;"style="float: right;"/></h1>
+                                        <small>{{trans('file.total_expense')}}</small>
+
                                     </div>
                                 </div>
                             </div>
-                            <table class="table table-striped table-bordered table-hover " id="editable">
+                            </div>
+                            <table class="table table-striped table-bordered table-hover " >
 
                                 <thead>
                                 <tr>
-                                    <th>Exp ID</th>
-                                    <th>To Whom</th>
-                                    <th>Paid Amount</th>
-                                    <th>Category</th>
-                                    <th>Description</th>
-                                    <th>Date Of Payment</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th>{{trans('file.exp_id')}}</th>
+                                    <th>{{trans('file.to_whom')}}</th>
+                                    <th>{{trans('file.paid_amount')}}</th>
+                                    <th>{{trans('file.category')}}</th>
+                                    <th>{{trans('file.description')}}</th>
+                                    <th>{{trans('file.date')}}</th>
+                                    <th>{{trans('file.edit')}}</th>
+                                    <th>{{trans('file.delete')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -87,11 +86,11 @@
                                     <td>{{str_limit($ex->description,20)}}</td>
                                     <td>{{$ex->created_at}}</td>
                                     <td> <button class="btn btn-xs btn-success fa fa-edit" data-toggle="modal"
-                                                 data-target="#{{$ex->id}}">&nbsp;Edit
+                                                 data-target="#{{$ex->id}}">&nbsp;{{trans('file.edit')}}
                                         </button></td>
                                     <td>
                                         <form action="/expenditure2/{{$ex->id}}" id="myForm">
-                                            <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;Delete</button>
+                                            <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;{{trans('file.delete')}}</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -101,6 +100,7 @@
                                 </tbody>
                             </table>
                             <!-- End of the table -->
+                            {{ $expen->links() }}
                         </div>
 
                     </div>
@@ -119,25 +119,25 @@
                     <button type="button" class="close" data-dismiss="modal"><span
                                 aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <i class="fa fa-edit modal-icon text-primary"></i>
-                    <h4 class="modal-title">Edit Content</h4>
+                    <h4 class="modal-title">{{trans('file.edit_content')}}</h4>
                 </div>
                 <div class="modal-body">
                     <form action="/expenditure/{{$exs->id}}" method="post">
                         {{method_field('patch')}}
                     {{--<div class="form-group"><label>ID</label> <input type="text" placeholder="Id" value="" class="form-control"></div>--}}
-                        <div class="form-group"><label>To Whom</label> <input type="text" placeholder="Receiver of money"
+                        <div class="form-group"><label>{{trans('file.to_whom')}}</label> <input type="text" placeholder="{{trans('file.to_whom')}}"
                                                                           value="{{$exs->receiver}}" class="form-control" name="receiver"></div>
-                    <div class="form-group"><label>Paid_Amount</label> <input type="text" placeholder="Paid Amount"
+                    <div class="form-group"><label>{{trans('file.paid_amount')}}</label> <input type="text" placeholder="{{trans('file.paid_amount')}}"
                                                                               value="{{$exs->amount}}" class="form-control" name="amount"></div>
-                    <div class="form-group"><label>Category</label>
-                        <input type="text" placeholder="parpose"
+                    <div class="form-group"><label>{{trans('file.category')}}</label>
+                        <input type="text" placeholder="{{trans('file.purpose')}}"
                                value="{{$exs->category}}" class="form-control" name="category">
                     </div>
-                    <div class="form-group"><label>Description</label> <textarea placeholder="Enter more Information"
+                    <div class="form-group"><label>{{trans('file.description')}}</label> <textarea placeholder="{{trans('file.description')}}"
                                                                                  class="form-control"
                                                                                  style="resize: none;" name="description">{{$exs->description}}</textarea></div>
-                        <button type="submit" class="btn btn-primary pull-right" >Save changes</button>
-                        <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-right: 5px;">Close</button>
+                        <button type="submit" class="btn btn-primary pull-right" >{{trans('file.save')}}</button>
+                        <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-right: 5px;">{{trans('file.close')}}</button>
 
                     </form>
                     <br>
@@ -165,7 +165,7 @@
 @section('script')
     <!-- script -->
 
-    <script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
+
     <script>
         $(document).ready(function () {
 
@@ -223,56 +223,5 @@
 
 
         });
-    </script>
-
-
-
-    <!-- Data Tables -->
-    <script src="dashboard/js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.bootstrap.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.responsive.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
-
-    <!-- Custom and plugin javascript -->
-    <script src="dashboard/js/inspinia.js"></script>
-    <script src="dashboard/js/plugins/pace/pace.min.js"></script>
-
-    <style>
-    </style>
-
-    <!-- Page-Level Scripts -->
-    <script>
-        $(document).ready(function () {
-            $('.dataTables-example').DataTable({
-                "dom": 'lTfigt',
-                "tableTools": {
-                    "sSwfPath": "dashboard/js/plugins/dataTables/swf/copy_csv_xls_pdf.swf"
-                }
-            });
-
-            /* Init DataTables */
-            var oTable = $('#editable').DataTable();
-
-            /* Apply the jEditable handlers to the table */
-            oTable.$('td').editable('../example_ajax.html', {
-                "callback": function (sValue, y) {
-                    var aPos = oTable.fnGetPosition(this);
-                    oTable.fnUpdate(sValue, aPos[0], aPos[1]);
-                },
-                "submitdata": function (value, settings) {
-                    return {
-                        "row_id": this.parentNode.getAttribute('id'),
-                        "column": oTable.fnGetPosition(this)[2]
-                    };
-                },
-
-                "width": "90%",
-                "height": "100%"
-            });
-
-
-        });
-
-
     </script>
 @endsection

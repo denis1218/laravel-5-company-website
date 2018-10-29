@@ -2,24 +2,7 @@
 @extends('master')
 
 @section('style')
-    <link href="dashboard/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
 
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
-    <style media="screen">
-        .bts:hover {
-            box-shadow: 4px 4px 4px 4px grey;
-            transform: scale(1.1);
-        }
-
-        .bts {
-            height: 70px;
-            width: 155px;
-        }
-    </style>
 @endsection
 
 @section('content')
@@ -28,7 +11,7 @@
     <div class="col-lg-12" >
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Doctor</h5>
+                <h5>{{trans('file.doctors')}}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -51,8 +34,8 @@
                 <div class="row">
                     <div class="col-md-12 text-right">
                         <a class="btn btn-primary btn-lg" style="float: left;" href="/doctors">
-                            <i class="fa fa-arrow-left"></i> &nbsp; Back to Doctors</a>
-                        <button class="btn btn-primary btn-lg">Print &nbsp;<i class="fa fa-print"></i></button>
+                            <i class="fa fa-arrow-left"></i> &nbsp;{{trans('file.back_to_doctor')}}</a>
+                        <button class="btn btn-primary btn-lg">{{trans('file.print')}} &nbsp;<i class="fa fa-print"></i></button>
                     </div>
                 </div>
 
@@ -65,7 +48,6 @@
                             <div class="profile-info">
                                 <div class="">
                                     <div>
-
                                         <h2 class="no-margins font-b">
                                             {{ $doctor->first_name }}
                                         </h2>
@@ -85,26 +67,26 @@
                                 <tbody>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Gender:<b>&nbsp;{{$doctor->gender}}</b>&nbsp;<i class="fa fa-male"></i></span>
+                                        <span class="font-m">{{trans('file.gender')}}:<b>&nbsp;{{$doctor->gender}}</b>&nbsp;<i class="fa fa-male"></i></span>
                                     </td>
                                     <td>
-                                        <span class="font-m">Age:<b>&nbsp;{{$doctor->age}}</b>&nbsp;<i class=""></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-m">Salary Type:<b>&nbsp; {{$doctor->salary_type}}</b>&nbsp;<i class="fa fa-user-md"></i></span>
-                                    </td>
-                                    <td>
-                                        <span class="font-m">Salary :<b>&nbsp;{{$doctor->salary_amount}}</b>&nbsp;<i class=""></i></span>
+                                        <span class="font-m">{{trans('file.age')}}:<b>&nbsp;{{$doctor->age}}</b>&nbsp;<i class=""></i></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="font-m">Date Reg:<b>&nbsp;{{$doctor->created_at}}</b>&nbsp;<i class="fa fa-calendar"></i></span>
+                                        <span class="font-m">{{trans('file.salary_type')}}:<b>&nbsp; {{$doctor->salary_type}}</b>&nbsp;<i class="fa fa-user-md"></i></span>
                                     </td>
                                     <td>
-                                        <span class="font-m">Department:<b>&nbsp {{$doctor->department}}</b>&nbsp;<i class=""></i></span>
+                                        <span class="font-m">{{trans('file.salary_amount')}} :<b>&nbsp;{{$doctor->salary_amount}}</b>&nbsp;<i class=""></i></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="font-m">{{trans('file.date_of_registration')}}:<b>&nbsp;{{$doctor->created_at}}</b>&nbsp;<i class="fa fa-calendar"></i></span>
+                                    </td>
+                                    <td>
+                                        <span class="font-m">{{trans('file.department')}}:<b>&nbsp; {{$doctor->department}}</b>&nbsp;<i class=""></i></span>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -126,28 +108,25 @@
                         <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="font-noraml">Select Range</label>
+                                <label class="font-noraml">{{trans('file.select_range')}}</label>
                                 <div class="input-daterange input-group" id="" >
-                                    <span class="input-group-addon">From &nbsp;<i class="fa fa-arrow-right"></i></span>
+                                    <span class="input-group-addon">{{trans('file.from')}} &nbsp;<i class="fa fa-arrow-right"></i></span>
                                     <input type="date" class="input-sm form-control" name="start" required>
-                                    <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
+                                    <span class="input-group-addon">{{trans('file.to')}} &nbsp;<i class="fa fa-arrow-right"></i></span>
                                     <input type="date" class="input-sm form-control" name="end" required="">
 
                                 </div>
                             </div>
                         </div>
-                            <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary" style="margin-top: 23px;height: 30px;width: 90px;">Total</button>
-                            </div>
                         </div>
                         <table class="table table-hover table-bordered">
                             <thead>
                             <tr>
-                                <th>Patient ID</th>
-                                <th>Treatment</th>
-                                <th>Treatment Fee</th>
-                                <th>Date</th>
-                                <th>Status</th>
+                                <th>{{trans('file.p_id')}}</th>
+                                <th>{{trans('file.treatment')}}</th>
+                                <th>{{trans('file.treatment_fee')}}</th>
+                                <th>{{trans('file.date')}}</th>
+                                <th>{{trans('file.status')}}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -171,35 +150,41 @@
                                 <table class="table table-hover table-bordered">
 
                                     <tr>
-                                        <td class="text-bold"><h4>Total fee cash: </h4></td>
+                                        <td class="text-bold"><h4>{{trans('file.total_fee')}}: </h4></td>
                                         <td><input type="text" class="form-control" value="{{$total}}" readonly></td>
                                     </tr>
                                     <tr>
-                                        <td class="text-bold"><h4>Doctor Salary: </h4></td>
+                                        <td class="text-bold"><h4>{{trans('file.doctor_salary')}}: </h4></td>
                                         <td><input type="text" name="fee" class="form-control" value="{{$docfee}}" readonly></td>
 
                                     </tr>
                                     <tr>
-                                        <td class="text-bold"><h4>Past Remaining: </h4></td>
+                                        <td class="text-bold"><h4>{{trans('file.past_remaining')}}: </h4></td>
                                         <td><input type="text" class="form-control" value="{{$doctor->remaining}}" readonly=""></td>
 
                                     </tr>
 
                                     <tr>
 
-                                        <td class="text-bold"><h4>Total Doctor Salary: </h4></td>
+                                        <td class="text-bold"><h4>{{trans('file.total_doctor_salary')}}: </h4></td>
                                         <td>
                                             <input type="text" class="form-control" value="{{$docfee+$doctor->remaining}}" name="colection" readonly>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-bold"><h4>Payment amount: </h4></td>
+                                        <td class="text-bold"><h4>{{trans('file.lpd')}}: </h4></td>
+                                        <td>
+                                            <input type="text" class="form-control" value="{{$doctor->to}}" readonly>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bold"><h4>{{trans('file.payment_amount')}}: </h4></td>
                                         <td>
                                             <input type="number" min="1" max="{{$docfee+$doctor->remaining}}" class="form-control" placeholder="Enter the fee amount" name="salary" required>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" class="text-right"> <button class="btn btn-primary" type="submit">Pay Salary</button></td>
+                                        <td colspan="2" class="text-right"> <button class="btn btn-primary" type="submit">{{trans('file.pay_salary')}}</button></td>
                                     </tr>
                                 </table>
                             </div>
@@ -222,7 +207,6 @@
 @section('script')
     <!-- script -->
 
-    <script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
     <script>
         $(document).ready(function () {
 
@@ -280,15 +264,7 @@
         });
     </script>
 
-    <!-- Data Tables -->
-    <script src="dashboard/js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.bootstrap.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.responsive.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
 
-    <!-- Custom and plugin javascript -->
-    <script src="dashboard/js/inspinia.js"></script>
-    <script src="dashboard/js/plugins/pace/pace.min.js"></script>
 
 
 @endsection

@@ -9,7 +9,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Treatment List</h5>
+                <h5>{{trans('file.treatment_list')}}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -35,16 +35,16 @@
                     <div class="col-md-6">
                         <form action="/treatment-list" method="post">
                             <div class="form-group">
-                                <lable for="form-control">Treatment</lable>
+                                <lable for="form-control">{{trans('file.treatment')}}</lable>
                                 <input type="text" class="form-control" name="treatment" required/>
                             </div>
                             <div class="form-group">
-                                <lable for="form-control">Estimated Fee</lable>
+                                <lable for="form-control">{{trans('file.estimated_fee')}}</lable>
                                 <input type="text" class="form-control" name="estimated_fee" required/>
                             </div>
-                            <div class="col-md-4">
-                                <button type="submit" class="btn btn-primary" name="submit"><i class="fa fa-save"></i>&nbsp;Save</button>
-                                <button type="reset" class="btn btn-white" name="reset"><i class="fa fa-spin"></i>&nbsp;reset</button>
+                            <div class="col-md-5">
+                                <button type="submit" class="btn btn-primary" name="submit"><i class="fa fa-save"></i>&nbsp;{{trans('file.save')}}</button>
+                                <button type="reset" class="btn btn-white" name="reset"><i class="fa fa-spin"></i>&nbsp;{{trans('file.reset')}}</button>
                             </div>
                         </form>
                     </div>
@@ -52,10 +52,10 @@
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Treatment</th>
-                                    <th>Estimated fee</th>
-                                    <th>Delete</th>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.treatment')}}</th>
+                                    <th>{{trans('file.estimated_fee')}}</th>
+                                    <th>{{trans('file.delete')}}</th>
                                 <tr>
                             </thead>
                             <tbody>
@@ -65,10 +65,10 @@
                                         <td>{{ $treatments->treatment }}</td>
                                         <td>{{ $treatments->estimated_fee }}</td>
                                         <td>
-                                            <form action="/expense-category/{{ $treatments->id }}" method="post" id="formDelete">
+                                            <form action="/treatment-list/{{ $treatments->id }}" method="post" id="formDelete">
                                                 @method('delete')
                                                 <a  class="btn btn-xs btn-danger demoDelete"  name="delete" href="/expense-category/{{ $treatments->id }}">
-                                                    Delete &nbsp;<i class="fa fa-trash"></i>
+                                                    {{trans('file.delete')}} &nbsp;<i class="fa fa-trash"></i>
                                                 </a>
                                             </form>
                                         </td>
@@ -77,10 +77,10 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Treatment</th>
-                                    <th>Estimated fee</th>
-                                    <th>Delete</th>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.treatment')}}</th>
+                                    <th>{{trans('file.estimated_fee')}}</th>
+                                    <th>{{trans('file.delete')}}</th>
                                 </tr>
                             </tfoot>
                         </table>

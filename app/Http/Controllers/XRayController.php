@@ -96,8 +96,8 @@ class XrayController extends Controller
         $Edt->doctor_name=$request->doctor_name;
         $Edt->xray_status=$request->xray_status;
         $Edt->save();
-        return redirect('/xray')->with('success','X-ray is done for $request->patient_name');
-    //    return $request;
+        return redirect('/xray')->with('success','X-ray is done for specified patient');
+//        return $Edt;
     }
 
     /**

@@ -1,7 +1,12 @@
 @extends('master')
 
 @section('style')
-
+ <style>
+     .nopadding{
+         padding: 0px !important;
+         margin: 0px !important;
+     }
+ </style>
 @endsection
 
 @section('content')
@@ -32,67 +37,41 @@
                 @include('layout.messages')
                 {{--doctor's specific patients--}}
                 <div class="row">
-                    <div class="col-12">
-                        <div class="row">
                             <div class="col-md-3">
-                                <a href="/patient/create">
-                                    <button class="btn btn-primary" style="width:87%;">
-                                        <li class="fa fa-user-plus pull-left"></li>&nbsp; {{trans('file.add_new_patient')}}
-                                    </button>
-                                </a>
+                                    <a href="/patient/create">
+                                        <button class="btn btn-primary" style="width:87%;">
+                                            <img src="{{ asset('img/patient.png') }}" width="20px" class="pull-left"/>&nbsp; {{trans('file.add_new_patient')}}
+                                        </button>
+                                    </a>
+                             </div>
+                            <div class="col-md-3">
                                 <a href="/new-patient-today">
                                     <button class="btn btn-info" style="width:87%;">
-                                        <li class="fa fa-table pull-left"></li>&nbsp;{{trans('file.list_new_patient_today')}}
+                                        <img src="{{ asset('img/list_new_patient.png') }}" width="30px" class="pull-left"/>&nbsp;{{trans('file.list_new_patient_today')}}
                                     </button>
                                 </a>
-                                <a href="/next-appointment-patient">
-                                    <button class="btn btn-success" style="width:87%;">
-                                        <li class="fa fa-table pull-left"></li>{{trans('file.list_next_appointment_today')}}
-                                    </button>
-                                </a>
-                                <a href="/miss-next-appointment-patient">
-                                    <button class="btn btn-success" style="width:87%;">
-                                        <li class="fa fa-table pull-left"></li>&nbsp;{{trans('file.miss_list_next_appointment')}}
-                                    </button>
-                                </a>
-
                             </div>
+                    <div class="col-md-3">
+                                <a href="/next-appointment-patient">
+                                    <button class="btn" style="width:87%; background-color: #55ddff; color: #ffffff">
+                                        <img src="{{ asset('img/list_appointment.png') }}" width="30px" class="pull-left"/>{{trans('file.list_next_appointment_today')}}
+                                    </button>
+                                </a>
+                    </div>
+                    <div class="col-md-3">
+                                <a href="/miss-next-appointment-patient">
+                                    <button class="btn" style="width:87%; background-color: #12cdba; color: #ffffff">
+                                        <img src="{{ asset('img/miss_appointment.png') }}" width="30px" class="pull-left"/>&nbsp;{{trans('file.miss_list_next_appointment')}}
+                                    </button>
+                                </a>
+                    </div>
+
+                <br/>
+
 
                             <div class="col-md-9 pull-right">
-                                <h3>{{trans('file.note')}}</h3>
-                                <div class="row">
-                                    <div class="col-sm-2 no-padding no-margin">
+                                {{--<h3>{{trans('file.note')}}</h3>--}}
 
-                                        <form method="get" action="/patient">
-                                            <input type="hidden" name="date"
-                                                   value="{{ \Carbon\Carbon::yesterday()->toDateString() }}"/>
-                                            <button class="btn btn-white" type="submit"><i class="fa fa-arrow-left"></i>{{trans('file.previous')}}
-                                            </button>
-                                        </form>
-                                    </div>
-                                    <div class="col-sm-2 no-padding no-margin">
-                                        <a href="/patient" class="btn btn-primary" type="button">{{trans('file.today')}}
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-2 no-padding no-margin">
-                                        <form method="get" action="/patient">
-                                            <input type="hidden" name="date"
-                                                   value="{{ \Carbon\Carbon::tomorrow()->toDateString() }}"/>
-                                            <button class="btn btn-white" type="submit">{{trans('file.next')}}<i
-                                                        class="fa fa-arrow-right"></i></button>
-                                        </form>
-                                    </div>
-                                    <div class="col-sm-5">
-                                        <form action="/patient" method="get">
-                                            <div class="input-group">
-                                                        <span class="input-group-btn">
-                                                        <button type="submit"
-                                                                class="btn btn-primary"><i class="fa fa-calendar"></i> {{trans('file.set_date')}}</button> </span>
-                                                <input type="date" name="date"  class="form-control"/>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <br/>
@@ -113,14 +92,50 @@
                                 <div class="tab-content bg-success" style="">
                                     <div id="home" class="tab-pane active">
                                         <div class="panel-body">
-                                            <div class="col-md-8">
-                                                <div class="input-group">
-                                                        <span class="input-group-btn">
-                                                        <button type="button"
-                                                                class="btn btn-primary"><i class="fa fa-search"></i>{{trans('file.search')}}</button> </span>
-                                                    <input type="text" id="search_all_patient" onkeyup="search_all_patient()" placeholder="{{trans('file.search_patient_name')}}" class="input-md form-control">
+
+                                                <div class="col-md-1 " style="margin-right: 30px;">
+                                                    <form method="get" action="/patient">
+                                                        <input type="hidden" name="date"
+                                                               value="{{ \Carbon\Carbon::yesterday()->toDateString() }}"/>
+                                                        <button class="btn btn-white" type="submit"><i class="fa fa-arrow-left"></i>{{trans('file.previous')}}
+                                                        </button>
+                                                    </form>
                                                 </div>
-                                            </div>
+
+                                                <div class="col-md-1 nopadding">
+                                                    <a href="/patient" class="btn btn-primary" type="button">{{trans('file.today')}}
+                                                    </a>
+                                                </div>
+
+                                                <div class="col-md-1 nopadding">
+                                                    <form method="get" action="/patient">
+                                                        <input type="hidden" name="date"
+                                                               value="{{ \Carbon\Carbon::tomorrow()->toDateString() }}"/>
+                                                        <button class="btn btn-white" type="submit">{{trans('file.next')}}<i class="fa fa-arrow-right"></i></button>
+                                                    </form>
+                                                </div>
+
+
+                                                <div class="col-sm-5 pull-right">
+                                                    <form action="/patient" method="get">
+                                                        <div class="input-group">
+                                                        <span class="input-group-btn">
+                                                        <button type="submit"
+                                                                class="btn btn-primary"><i class="fa fa-calendar"></i> {{trans('file.set_date')}}</button> </span>
+                                                            <input type="date" name="date"  class="form-control"/>
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+
+                                                <div class="col-md-5 pull-right">
+                                                    <div class="input-group">
+                                                            <span class="input-group-btn">
+                                                            <button type="button"
+                                                                    class="btn btn-primary"><i class="fa fa-search"></i>{{trans('file.search')}}</button> </span>
+                                                        <input type="text" id="search_all_patient" onkeyup="search_all_patient()" placeholder="{{trans('file.search_patient_name')}}" class="input-md form-control">
+                                                    </div>
+                                                </div>
                                             {{-- tab all patient in queue with defirrent doctor --}}
                                             <div class="col-md-12">
                                                 <h5>{{trans('file.show_all_patient')}}</h5>

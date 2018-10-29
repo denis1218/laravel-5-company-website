@@ -17,15 +17,12 @@ class IncomeController extends Controller
      */
     public function index()
     {
-
         $income = Treatment::where('remaining_fee','>','0')->paginate(10);
         $ptotal=DB::table('treatments')->sum('paid_amount');
         $xtotal=DB::table('xrays')->sum('paid_amount');
         $ototal=DB::table('oincoms')->sum('amount');
         $Gtotal=$ptotal+$xtotal+$ototal;
             return view('income',compact('income','Gtotal'));
-
-
     }
 
     /**
@@ -63,7 +60,6 @@ class IncomeController extends Controller
         $xtotal=DB::table('xrays')->sum('paid_amount');
         $ototal=DB::table('oincoms')->sum('amount');
         $Gtotal=$ptotal+$xtotal+$ototal;
-
         return view('complete_income',compact('income','total','Gtotal'));
     }
 

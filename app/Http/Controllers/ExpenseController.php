@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Doctor;
 use App\Expense;
+use App\ExpenseCatagory;
 use App\Patient;
 
 use Carbon\Carbon;
@@ -21,12 +22,11 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-
-       $expen =  Expense::whereDate('created_at', Carbon::today())->get();
-       $totalExpense=$expen->sum('amount');
+        $dateNow = Carbon::now()->toDateString();
+        $start = new Carbon('first day of this month');
+        $expen =  Expense::whereBetween('created_at',[$start->toDateString(),$dateNow])->paginate(10);
+        $totalExpense = $expen->sum('amount');
         return view('expenditure',compact('expen','totalExpense'));
-
-
     }
 
     /**
@@ -36,9 +36,9 @@ class ExpenseController extends Controller
      */
     public function create()
     {
-        $capital=DB::table('expenses')->sum('amount');
-        return view('expense_form',compact('capital'));
-//        return $capital;
+        $expenseCategory = ExpenseCatagory::all();
+        $capital= Expense::sum('amount');
+        return view('expense_form',compact('capital','expenseCategory'));
     }
 
     /**
@@ -54,17 +54,24 @@ class ExpenseController extends Controller
         $expense->amount = $request->amount;
         $expense->category = $request->category;
         $expense->description = $request->description;
-
-        $expense->created_at = \Carbon\Carbon::now();
-
+        $expense->created_at = Carbon::now();
         $expense->save();
         return redirect('expenditure');
     }
+
+
+    /**
+     *Form store expense
+     * given request from /dash - quick expense
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function FromDash(Request $request){
         $expense = new Expense();
         $expense->receiver = $request->receiver;
         $expense->amount = $request->amount;
         $expense->category = $request->category;
+<<<<<<< HEAD
         $expense->description = $request->msg;
 
         $expense->created_at = Carbon::now();
@@ -77,6 +84,12 @@ class ExpenseController extends Controller
 //        return redirect()->back()->with('msg', 'Successfully Inserted Into Database');
         return redirect()->back()->with(compact('msg'));
 //        return view('dash',compact('patient','doctor','apatient','msg'));
+=======
+        $expense->description = $request->description;
+        $expense->created_at = Carbon\Carbon::now();
+        $expense->save();
+        return redirect()->back();
+>>>>>>> 9f64d30381acd5f1acd50d180a55686089bac5d4
     }
 
     /**
@@ -104,9 +117,10 @@ class ExpenseController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Expense  $expense
+     * @param  \Illuminate\Http\Request $request
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param Expense $expense
      */
     public function update(Request $request, $id)
     {
