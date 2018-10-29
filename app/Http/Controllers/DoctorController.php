@@ -27,10 +27,6 @@ class DoctorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-//    public  function  showdoctor(){
-//        $doc = Doctor::orderBy('id','desc')->paginate(10);
-//        return view('doctor_salary',compact('doc'));
-//    }
     public function create()
     {
         $doctor_department = DoctorDepartment::all();
@@ -86,8 +82,9 @@ class DoctorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Doctor  $doctor
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param Doctor $doctor
      */
     public function edit( $id)
     {
@@ -100,8 +97,6 @@ class DoctorController extends Controller
         }else{
             $total=$treatment->sum('paid_amount');
         }
-
-
         if($doctor->salary_type=='fix'){
             $docfee=$doctor->salary_amount;
         }else{
@@ -126,7 +121,6 @@ class DoctorController extends Controller
         $payment->to=$request->end;
         $payment->save();
         return redirect('/doctors2');
-//        return $payment;
     }
 
     /**
