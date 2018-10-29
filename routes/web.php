@@ -222,7 +222,7 @@ Route::middleware('auth','reception')->group(function () {
 //    backup route
     Route::get('/backup',function (){
         return view('create_backups');
-        return view('create_backups');
+
     });
 
 });

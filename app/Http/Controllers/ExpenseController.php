@@ -78,6 +78,7 @@ class ExpenseController extends Controller
         $expense->save();
         $msg  = 'Successfully Inserted Into Database';
         return redirect()->back()->with(compact('msg'));
+
     }
 
     /**
