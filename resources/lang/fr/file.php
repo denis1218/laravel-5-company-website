@@ -293,7 +293,8 @@ return[
     'show_all_patient'=>'نمایش تمام مریضان حال حاضر',
     'appointment_date'=>'تاریخ ملاقات',
     'add_to_queue'=>'اضافه کردن در قطار',
-    'there_is_no'=>'تا به حال مریض موجود نیست',
+    'there_is_no'=>'تا به حال مریض راجستر نشده است برای امروز',
+
 //    new patient today
     'list_patient_today'=>'لیست مریضان امروز',
     'back'=>'قبلی',
@@ -311,6 +312,7 @@ return[
     'patient_report_table'=>'جدول گزارشات مریضان',
 //    patient prescription
     'patient_prescription'=>'نسخه مریض',
+    'there_is_no_pres'=>'تا به حال هیچ نسخه وارد نشده',
 
 //    Start of Create Account
 

@@ -16,7 +16,7 @@ Auth::routes();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/dash', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 //Language Route
 Route::post('language',array(
@@ -76,7 +76,7 @@ Route::middleware('auth','reception')->group(function () {
         return view('/employee');
     });
 
-//    Route::get('/dash', 'HomeController@index')->name('home');
+    Route::get('/dash', 'HomeController@index')->name('home');
 // report doctors
     Route::get('/doctor_report', function () {
         return view('doctor_report');

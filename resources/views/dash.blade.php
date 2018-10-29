@@ -61,7 +61,8 @@
                         <div class="stat-percent font-bold text-danger"></div>
                         <small>{{trans('file.total_appointment')}}
                             <br>
-                            @if(isset($msg))
+                            @if(session('msg'))
+                               <h3>{{$msg}}</h3>
 
                             @endif
 
@@ -125,15 +126,16 @@
 
                             </div>
                             <div class="ibox-content">
-                                <form>
+                                <form action="/expenditure3" method="post">
+                                    {{csrf_field()}}
                                     <div class="row">
                                       <div class="col">
-                                        <input type="text" class="form-control" style="width:100%" placeholder="{{trans('file.money_receiver')}}"><br>
-                                        <input type="text" class="form-control" style="width:100%" placeholder="{{trans('file.paid_amount')}}"><br>
+                                        <input type="text" name="receiver" class="form-control" style="width:100%" placeholder="{{trans('file.money_receiver')}}"><br>
+                                        <input type="text" name="amount" class="form-control" style="width:100%" placeholder="{{trans('file.paid_amount')}}"><br>
                                         
-                                        <select class="form-control" style="width:100%">
+                                        <select class="form-control" name="category" style="width:100%">
                                             <option value="1" disabled selected>{{trans('file.select_category')}}</option>
-                                            <option value="1">Rent</option>
+                                            <optiartisanon value="1">Rent</optiartisan serveon>
                                             <option value="2">Office Supply</option>
                                             <option value="3">Personal</option>
                                             <option value="4">Taxes</option>
