@@ -143,7 +143,7 @@
 
                                         <textarea name="msg" id="" placeholder="{{trans('file.eym')}}"  class="form-control" style="resize: none;" required></textarea><br>
                                         <button type="submit"  value="Pay" class="btn btn-primary">{{trans('file.save')}}&nbsp;<i class="fa fa-save"></i></button>
-                                        <button  value="Pay" class="btn btn-warning" data-toggle="modal" data-target="#remaining">{{trans('file.remainder')}}<i class="fa fa-arrow-circle-down"></i></button>
+                                        <button  class="btn btn-default"  type="reset">{{trans('file.reset')}} &nbsp;<i class="fa fa-arrow-circle-down"></i></button>
 
                                         </div>
                                     </div>
@@ -263,7 +263,6 @@
         });
 
     </script>
-
     @endsection
 
 
