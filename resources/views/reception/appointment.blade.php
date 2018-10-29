@@ -139,7 +139,7 @@
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                        @if($patient_all != null)
+                                                        @if(count($patient_all)>0)
                                                             @foreach($patient_all as $patients)
                                                                 <tr>
                                                                     <td>{{ $patients->id }}</td>
@@ -152,7 +152,7 @@
                                                                 </tr>
                                                             @endforeach
                                                         @else
-                                                            <h3 class="text-danger">There is not patient</h3>
+                                                            <h3 class="text-danger">{{trans('file.there_is_no')}}</h3>
                                                         @endif
                                                         </tbody>
                                                     </table>
@@ -181,7 +181,7 @@
                                                                 </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                @if(!$list->isEmpty)
+                                                                @if(count($list->patient_for_today) > 0)
                                                                     @foreach($list->patient_for_today as $pati)
                                                                         <tr>
                                                                             <td>{{ $pati->id_patient }}</td>

@@ -16,7 +16,7 @@ Auth::routes();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/dash', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 //Language Route
 Route::post('language',array(
