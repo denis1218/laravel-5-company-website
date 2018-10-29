@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Doctor;
+use App\ExpenseCatagory;
 use App\Patient;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -26,10 +27,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $categories=ExpenseCatagory::all();
         $patient = Patient::count();
         $apatient = Patient::whereDate('next_appointment', Carbon::today())->get();
         $doctor = Doctor::count();
-        return view('dash',compact('patient','doctor','apatient'));
+        return view('dash',compact('patient','doctor','apatient','categories'));
     }
 
     public function doctor_dashboard(){
