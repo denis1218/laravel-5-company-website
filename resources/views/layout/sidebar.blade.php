@@ -119,13 +119,11 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="/contact"><i class="fa fa-phone"></i> <span
-                                    class="nav-label">{{trans('file.contact')}}</span><span
-                                    class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="/contact-us"><i class="fa fa-phone-square"></i>{{trans('file.contactUs')}}</a></li>
-                            <li><a href="/help"><i class="fa fa-question-circle"></i>{{trans('file.help')}}</a></li>
-                        </ul>
+                        <a href="/contact-us"><i class="fa fa-phone"></i> <span
+                                    class="nav-label">{{trans('file.contact')}}</span></a>
+                    </li>
+                    <li>
+                    <li><a href="/help"><i class="fa fa-question-circle"></i>{{trans('file.help')}}</a></li>
                     </li>
                     {{--end condition of super admin--}}
                 @endif
