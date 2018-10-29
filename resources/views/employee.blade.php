@@ -85,10 +85,9 @@
                                             <label class="control-label">{{trans('file.department')}}</label>
                                             <select class="select2_demo_1 form-control" id="dept" name="department"
                                                     required>
-                                                <option select="">Select Department</option>
-                                                @foreach($department as $departments)
-                                                <option value="0">{{trans('file.department')}}</option>
-                                                <option value="regular basis">regular basis</option>
+                                                <option selected disabled>{{trans('file.department')}}</option>
+                                                @foreach($doctor_department as $departments)
+                                                <option value="">{{ $departments->department }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
