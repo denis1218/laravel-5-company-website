@@ -1,15 +1,15 @@
 @extends('master')
 
 @section('style')
-    <link href="dashboard/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
-    <link href="css/dropdown_menu.css" rel="stylesheet">
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
-    <link href="css/hover/hover-min.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/dataTables/dataTables.bootstrap.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/dataTables/dataTables.responsive.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/dataTables/dataTables.tableTools.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/dropdown_menu.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/animate.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/sweetalert/sweetalert.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/hover/hover-min.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/plugins/datapicker/datepicker3.css')}}" rel="stylesheet">
 
     <style media="screen">
         .bts:hover {
@@ -35,7 +35,7 @@
 
     <div class="row text-center">
         <div class="col-md-12">
-            <h1>Financial Report Expenses &nbsp;&nbsp;<img src="img/expense_icon.png" width="100px;"/></h1>
+            <h1>{{trans('file.efr')}} &nbsp;&nbsp;<img src="img/expense_icon.png" width="100px;"/></h1>
         </div>
     </div>
 
@@ -50,13 +50,13 @@
             <form action="finance_report_expenses1">
                 <div class="row">
                     <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
-                        <h3> Report Expense single day </h3>
+                        <h3> {{trans('file.expr_single_day')}} </h3>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-5">
                         <div class="form-group" style="margin-left:35px;">
-                            <label class="font-noraml">Select single day</label>
+                            <label class="font-noraml">{{trans('file.select_day')}}</label>
                             <div class="input-daterange input-group" id="">
                                 <span class="input-group-addon">&nbsp;  <i class="fa fa-calendar"></i> &nbsp;<i
                                             class="fa fa-arrow-right"></i></span>
@@ -70,7 +70,7 @@
                         <div class="col-md-2">
                             <button class="btn btn-sm btn-primary " type="submit"
                             ><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
-                                &nbsp;Report &nbsp
+                                &nbsp;{{trans('file.report')}} &nbsp;
                             </button>
 
                         </div>
@@ -83,7 +83,7 @@
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-6" style="margin-top:15px;">
-                    <h3> Report Expense range day</h3>
+                    <h3> {{trans('file.expr_range')}}</h3>
                 </div>
             </div>
             {{--start form of range day report--}}
@@ -91,10 +91,10 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="form-group">
-                            <label class="font-noraml">Select Range</label>
+                            <label class="font-noraml">{{trans('file.select_range')}}</label>
                             <div class="input-daterange input-group" id="">
                                 <input type="date" class="input-sm form-control" name="start" required/>
-                                <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
+                                <span class="input-group-addon">{{trans('file.to')}} &nbsp;<i class="fa fa-arrow-right"></i></span>
                                 <input type="date" class="input-sm form-control" name="end" required/>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                             <button class="btn btn-sm btn-primary" type="submit"
                             ><i class="fa fa-tag"
                                 style=" color:#ffe118 ;"></i>
-                                &nbsp;Report&nbsp;&nbsp;</button>
+                                &nbsp;{{trans('file.report')}}&nbsp;&nbsp;</button>
 
                         </div>
                     </div>
@@ -130,7 +130,7 @@
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
-                    <h3> Report Expense single day</h3>
+                    <h3> {{trans('file.expr_single_category')}}</h3>
                 </div>
             </div>
             {{--start form of select type single day epense report--}}
@@ -138,7 +138,7 @@
                 <div class="row">
                     <div class="col-md-5">
                         <div class="form-group" style="margin-left:35px;">
-                            <label class="font-noraml">Select single day</label>
+                            <label class="font-noraml">{{trans('file.select_day')}}</label>
                             <div class="input-daterange input-group" id="">
                             <span class="input-group-addon">&nbsp;  <i class="fa fa-calendar"></i> &nbsp;<i
                                         class="fa fa-arrow-right"></i></span>
@@ -151,7 +151,7 @@
                 <div class="row">
                     <div class="col-md-5">
                         <div class="form-group" style="margin-left:35px;">
-                            <label class="font-noraml">Select Category Expense</label>
+                            <label class="font-noraml">{{trans('file.select_category')}}</label>
                             <div class="input-daterange input-group" id="">
                             <span class="input-group-addon">&nbsp;  <i class="fa fa-bars"></i> &nbsp;<i
                                         class="fa fa-arrow-right"></i></span>
@@ -175,7 +175,7 @@
                             <button class="btn btn-sm btn-primary" type="submit"
 
                             ><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
-                                &nbsp;Report&nbsp;&nbsp;</button>
+                                &nbsp;{{trans('file.report')}}&nbsp;&nbsp;</button>
                         </div>
                     </div>
                 </div>
@@ -185,17 +185,17 @@
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-6" style="margin-top:15px; margin-left:20px;">
-                    <h3> Report Expense range day</h3>
+                    <h3> {{trans('file.expr_range_category')}}</h3>
                 </div>
             </div>
             <form action="finance_report_expenses4">
                 <div class="row">
                     <div class="col-md-8">
                         <div class="form-group" style="margin-left:35px;">
-                            <label class="font-noraml">Select Range</label>
+                            <label class="font-noraml">{{trans('file.select_range')}}</label>
                             <div class="input-daterange input-group" id="">
                                 <input type="date" class="input-sm form-control" name="start" required/>
-                                <span class="input-group-addon">TO &nbsp;<i class="fa fa-arrow-right"></i></span>
+                                <span class="input-group-addon">{{trans('file.to')}}&nbsp;<i class="fa fa-arrow-right"></i></span>
                                 <input type="date" class="input-sm form-control" name="end" required/>
                             </div>
                         </div>
@@ -205,7 +205,7 @@
                 <div class="row">
                     <div class="col-md-5">
                         <div class="form-group" style="margin-left:35px;">
-                            <label class="font-noraml">Select Category Expense</label>
+                            <label class="font-noraml">{{trans('file.select_category')}}</label>
                             <div class="input-daterange input-group" id="">
                             <span class="input-group-addon">&nbsp;  <i class="fa fa-bars"></i> &nbsp;<i
                                         class="fa fa-arrow-right"></i></span>
@@ -228,7 +228,7 @@
                             <button class="btn btn-sm btn-primary" type="submit"
                             ><i class="fa fa-tag"
                                 style=" color:#ffe118 ;"></i>
-                                &nbsp;Report&nbsp;&nbsp;</button>
+                                &nbsp;{{trans('file.report')}}&nbsp;&nbsp;</button>
                         </div>
                     </div>
                 </div>

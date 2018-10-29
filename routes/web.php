@@ -16,7 +16,7 @@ Auth::routes();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/dash', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 //Language Route
 Route::post('language',array(
@@ -216,6 +216,14 @@ Route::middleware('auth','reception')->group(function () {
     Route::get('/patient/{id}','PatientController@index');
 
     Route::resource('/doctor-department','DoctorDepartmentController');
+
+//    User Route
+    Route::resource('/user','UserController');
+//    backup route
+    Route::get('/backup',function (){
+        return view('create_backups');
+        return view('create_backups');
+    });
 
 });
 // End Route Reception

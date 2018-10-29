@@ -16,7 +16,7 @@ class OincomController extends Controller
      */
     public function index()
     {
-        $others=Oincom::orderBy('created_at','desc')->paginate(10);
+        $others=Oincom::orderBy('id','asc')->paginate(10);
         $ptotal=DB::table('treatments')->sum('paid_amount');
         $xtotal=DB::table('xrays')->sum('paid_amount');
         $ototal=DB::table('oincoms')->sum('amount');
@@ -56,8 +56,10 @@ class OincomController extends Controller
         $other->purpose=$request->purpose;
         $other->description=$request->description;
         $other->save();
-//        $toast=$request->toast;
-        return redirect('/other-income')->with('toast',['successfully inserted'])->with('success','Inserted successfully');
+
+        return redirect('/other-income')->with('success','Inserted successfully');
+
+
     }
 
     /**
@@ -77,10 +79,9 @@ class OincomController extends Controller
      * @param  \App\Oincom  $oincom
      * @return \Illuminate\Http\Response
      */
-    public function edit(Oincom $oincom)
+    public function edit($id)
     {
-        $others=Oincom::find($oincom);
-        return view('ext_income',compact('others'));
+
     }
 
     /**
@@ -92,13 +93,15 @@ class OincomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $Edt=Oincom::find($id)->first();
+        $Edt=Oincom::find($id);
         $Edt->from_whom=$request->from_whom;
         $Edt->amount=$request->amount;
         $Edt->purpose=$request->purpose;
         $Edt->description=$request->description;
         $Edt->save();
-        return redirect('/other-income');
+
+        return redirect('/other-income')->with('success','Updated successfully');
+
     }
 
     /**
