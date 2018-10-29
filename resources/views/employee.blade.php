@@ -34,7 +34,7 @@
 
                     <div class="row">
                         <form method="post" class="form-horizontal" action="/doctors">
-                            <div class="col-md-12" style="margin-left: 40px;">
+                            <div class="col-md-12" style="margin-left: -15px;">
                                 {{-- <input type="hidden" name="_token" value="{{csrf_token()}}"> --}}
                                 <div class="col-sm-12">
                                     <div class="col-sm-5">

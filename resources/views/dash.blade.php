@@ -89,7 +89,7 @@
                                 <button class="btn btn-primary dim dim-large-dim" ><a href="/expenditure"><img src="img/expense_icon_dash.png" width="150px;" style="border-radius: 8px;"/></a></button>
                             </div>
                             <div class="col-md-2"  style="margin-left:30px;">
-                                <button class="btn btn-primary dim dim-large-dim" ><a href="/doctor_report"><img src="img/doctor_icon_dash.png" width="150px;" style="  border-radius: 8px;height: 60px;"/></a></button>
+                                <button class="btn btn-primary dim dim-large-dim" ><a href="/doctors"><img src="img/doctor_icon_dash.png" width="150px;" style="  border-radius: 8px;height: 60px;"/></a></button>
                             </div>
                             <div class="col-md-2"  style="margin-left:30px;">
                                 <button class="btn btn-primary dim dim-large-dim" ><a href="/finance_report_income"><img src="img/report_icon_dash.png" width="150px;" style="border-radius: 8px;height: 60px"/></a></button>
