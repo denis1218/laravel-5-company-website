@@ -41,7 +41,13 @@ class FinanceReportIncomeController extends Controller
         return view('finance_report.finance_report_income_print', compact('pinfo', 'xinfo', 'oinfo', 'total'));
     }
 
-    // function for range day report
+    /**
+     * show report Income by range day from
+     * patient , xray , other income
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function rangeDay(Request $request)
     {
         $start = $request->start;
@@ -55,7 +61,13 @@ class FinanceReportIncomeController extends Controller
 
     }
 
-    //function for select type single report
+    /**
+     * show report Income single day by grouped by
+     * patient , xray , otherIncome
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function selectType(Request $request)
     {
         $selectRange = $request->select_type;
@@ -63,23 +75,25 @@ class FinanceReportIncomeController extends Controller
         if ($selectRange == 'patient'){
             $pinfo = Treatment::where('created_at','=',$singleDate)->get();
             return view('finance_report.select_report_print',compact('pinfo'));
-
         }
         if ($selectRange == 'xray'){
             $xinfo = Xray::where('created_at','=',$singleDate)->get();
             return view('finance_report.select_report_print',compact('xinfo'));
-
         }
         if ($selectRange == 'other'){
             $oinfo = Oincom::where('created_at','=',$singleDate)->get();
             return view('finance_report.select_report_print',compact('oinfo'));
-
         }
-
-
     }
 
-    //function for select type and range
+
+    /**
+     * show report Income by range day
+     * grouped by (patient , xray , otherIncome)
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function selectRange(Request $request)
     {
         $start = $request->start;

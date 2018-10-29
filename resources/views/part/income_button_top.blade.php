@@ -2,30 +2,31 @@
      style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
     <h3 style="margin-left:43px;margin-top:10px;">Income Button Navigate</h3>
     <div class="col-md-2 ">
-        <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px;width:155px; margin-left:25px;"
-               href="/income"><i class="fa fa-money" style="color:#ffc000; font-size: 30px;"></i> <br/>Patient Income</a>
+        <h2><a class="btn btn-primary hvr-float-shadow " style="height:70px;width:155px; margin-left:25px;"
+               href="/income"><img src="{{ asset('img/patient_income.png') }}" width="55px"/> <br/>Patient Income</a>
         </h2>
     </div>
     <div class="col-md-2 ">
         <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
-               href="/xrey_income"><i class="fa fa-xing" style="color:#ffc000; font-size: 30px;"></i> <br/>X-Rey
-                Income</a></h2>
+               href="/xrey_income"><img src="{{ asset('img/xray_income.png') }}" width="55px"/> <br/>X-Rey Income</a></h2>
     </div>
     <div class="col-md-2 ">
         <h2><a class="btn btn-primary hvr-float-shadow" style="height:70px; width:155px; margin-left:15px;"
-               href="/other-income"><i class="fa fa-user" style="color:#ffc000; font-size: 30px;"></i> <br/>
-                Other Income</a></h2>
+               href="/other-income"><img src="{{ asset('img/other_income.png') }}" width="33px"/> <br/>Other Income</a></h2>
     </div>
     <div class="col-sm-4" style="float:right;margin-top: 10px;">
         <div class="widget style1 navy-bg">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2>Total Income</h2>
+                    <h3>Total Income</h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12 text-left">
-                    <h2 class="font-bold"><span> Amount:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{{$Gtotal}}</h2>
+                <div class="col-sm-8 text-left">
+                    <h3 class="font-bold"><span> Amount:&nbsp;&nbsp; </span>{{$Gtotal}} Afg</h3>
+                </div>
+                <div class="col-sm-4 pull-right" style="margin-top:-20px;">
+                    <img src="img/totalIncome.png" width="50px"/>
                 </div>
             </div>
         </div>

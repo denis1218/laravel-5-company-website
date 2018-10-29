@@ -1,16 +1,6 @@
 @extends('master')
 
 @section('style')
-    <!-- Data Tables -->
-    <link href="dashboard/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
-
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/sweetalert/sweetalert.css" rel="stylesheet"/>
-
-    <link href="css/hover/hover-min.css" rel="stylesheet">
 
 @endsection
 
@@ -55,7 +45,7 @@
 
                         <!-- form -->
 
-                        <form method="post" class="form-horizontal" action="/other">
+                        <form method="post" class="form-horizontal" action="/other-income">
                             {{csrf_field()}}
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">From Whome:</label>

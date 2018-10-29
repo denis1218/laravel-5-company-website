@@ -30,7 +30,7 @@ class ExpenseCatagoryController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     *return back to Form
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -79,8 +79,9 @@ class ExpenseCatagoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ExpenseCatagory  $expenseCatagory
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param ExpenseCatagory $expenseCatagory
      */
     public function destroy($id)
     {

@@ -7,6 +7,11 @@
             font-size: 1.5em;
         }
 
+        .title-button{
+            font-size: 50px;
+            font-weight: bold;
+        }
+
         .font-b {
             font-size: 1.7em;
         }
