@@ -124,7 +124,7 @@
 
                             </div>
                             <div class="ibox-content">
-                                <form action="/expenditure3" method="post">
+                                <form  action="/expenditure3" method="post" >
                                     {{csrf_field()}}
                                     <div class="row">
                                       <div class="col">
@@ -139,9 +139,9 @@
                                         </select><br>
 
 
-                                        <textarea name="msg" id="" placeholder="{{trans('file.eym')}}"  class="form-control" style="resize: none;" required></textarea><br>
-                                        <button type="submit"  value="Pay" class="btn btn-primary">{{trans('file.save')}}&nbsp;<i class="fa fa-save"></i></button>
-                                        <button  class="btn btn-default"  type="reset">{{trans('file.reset')}} &nbsp;<i class="fa fa-arrow-circle-down"></i></button>
+                                        <textarea name="msg"  id="" placeholder="{{trans('file.eym')}}"  class="form-control" style="resize: none;" required></textarea><br>
+                                        <button type="submit"   value="Pay" class="btn btn-primary">{{trans('file.save')}}&nbsp;<i class="fa fa-save"></i></button>
+                                        <button  class="btn btn-default"   type="reset">{{trans('file.reset')}} &nbsp;<i class="fa fa-arrow-circle-down"></i></button>
 
                                         </div>
                                     </div>
@@ -153,34 +153,6 @@
                 </div>
             </div>
             {{-- Graph area --}}
-
-            {{-- Modal Window for remaining cash --}}
-            <div class="modal inmodal" id="remaining" tabindex="-1" role="dialog"  aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content animated fadeIn">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            {{--<i class="fa fa-edit modal-icon text-primary"></i>--}}
-                            <h4 class="modal-title">Remaining cash</h4>
-                            <small>Give back money from expenses</small>
-                        </div>
-                        <div class="modal-body">
-                            {{--<div class="form-group"><label>ID</label> <input type="text" placeholder="Id" value="" class="form-control"></div>--}}
-                            <div class="form-group"><label>Remain :</label><input type="number" placeholder="Amount"  value="" class="form-control"></div>
-                            <div class="form-group"><label>From Whom :</label><input type="text" placeholder="Receiver" value="" class="form-control"></div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" >Save changes</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- Modal Window for remaining cash --}}
-
-
-
         @endsection
 
 

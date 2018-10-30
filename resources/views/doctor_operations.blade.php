@@ -73,6 +73,65 @@
                     </a>
                 </div>
             </div>
+            @if(Auth::user()->department='admin')
+            <div class="ibox-content">
+                <br/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group"><span class="input-group-btn">
+                        <button type="button" disabled class="btn btn-white"><i class="fa fa-search text-success"></i>
+                        </button> </span>
+                            <input  type="text" id="search" onkeyup="filter_search()" name="search_patient" placeholder="{{trans('file.search_patient_id')}}"
+                                    class=" form-control"></div>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h5>Show all patients just for today</h5>
+                        <div class="ibox float-e-margins">
+                            <table class="table table-hover no-margins" id="table_patient">
+                                <thead>
+                                <tr>
+                                    <th>{{trans('file.p_id')}}</th>
+                                    <th>{{trans('file.patient_name')}}</th>
+                                    <th>{{trans('file.last_name')}}</th>
+                                    <th>{{trans('file.status')}}</th>
+                                    <th>{{trans('file.date_appointment')}}</th>
+                                    <th>{{trans('file.health_problem')}}</th>
+                                    <th>{{trans('file.operation')}}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @if(count($operations)>0)
+                                    @foreach($operations as $opr)
+                                        <tr>
+                                            <td>{{ $opr->id_patient }}</td>
+                                            <td>{{ $opr->name }}</td>
+                                            <td>{{ $opr->lastname }}</td>
+                                            <td>{{ $opr->status }}</td>
+                                            <td>{{ $opr->next_appointment }}</td>
+                                            <td>{{ $opr->problem_health }}</td>
+
+                                            <td><a href="/operation/create/{{$opr->id}}" class="btn btn-sm btn-primary">{{trans('file.start_operation')}}</a>
+
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+
+                            </table>
+                            {{--{{$operation->links()}}--}}
+                            @else
+                                <h5 style="color:red;text-align: center;">NO PATIENT HAS BEEN REGISTERED YET</h5>
+                            @endif
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            @endif
+            @if(Auth::user()->department=='doctor')
             <div class="ibox-content">
                 <br/>
                 <div class="row">
@@ -129,6 +188,7 @@
 
                 </div>
             </div>
+            @endif
         </div>
     </div>
 @endsection
