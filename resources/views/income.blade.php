@@ -114,7 +114,7 @@
                                     <small>{{trans('file.fill_pa')}}</small>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="/income/{{$in->id}}" method="post">
+                                    <form id="form" action="/income/{{$in->id}}" method="post">
                                         {{method_field('patch')}}
                                     <div class="row">
                                         <div class="form-group"><label class="col-md-3 control-label">{{trans('file.estimated_fee')}}
@@ -171,7 +171,7 @@
                                         <h4 class="modal-title">{{trans('file.edit_content')}}</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="/income3/{{$in->id}}" method="post">
+                                        <form id="form" action="/income3/{{$in->id}}" method="post">
                                             {{method_field('patch')}}
                                             <div class="row">
                                                 <label class="control-label">{{trans('file.p_id')}}:</label>
@@ -188,7 +188,7 @@
                                                 </div>
                                                 <label class="control-label">{{trans('file.paid_amount')}}:</label>
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" name="paid_amount" value="{{$in->paid_amount}}">
+                                                    <input type="number" class="form-control" name="paid_amount" value="{{$in->paid_amount}}">
                                                 </div>
                                                 <label class="control-label">{{trans('file.discount')}}:</label>
                                                 <div class="form-group">
@@ -296,6 +296,18 @@
 @endsection
 
 @section('script')
+
+    <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#form').submit(function (){
+                // Display a success toast, with a title
+//                toastr.info('Successfully Inserted !');
+                toastr.info('Successfully Inserted !',{timeOut: 5000});
+            });
+        });
+    </script>
 
     {{-- javascript search on table --}}
     <script>

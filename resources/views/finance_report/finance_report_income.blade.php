@@ -49,54 +49,54 @@
                     <h3> {{trans('file.atir_single_day')}}</h3>
                 </div>
             </div>
+            <form action="/finance_report_income/create">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group" style="margin-left:35px;">
                         <label class="font-noraml">{{trans('file.select_day')}} </label>
                         <div class="input-daterange input-group" id="" >
                             <span class="input-group-addon">&nbsp;  <i class="fa fa-calendar"></i> &nbsp;<i class="fa fa-arrow-right"></i></span>
-                            <input type="date" class="input-sm form-control" name="end" />
+                            <input type="date" class="input-sm form-control" name="singleDay" required />
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <button class="btn btn-sm btn-primary dropdown-toggle" type="submit" data-toggle="dropdown" style="margin-top:23px;" href=""><i class="fa fa-tag" style=" color:#ffe118 ;"></i>&nbsp;{{trans('file.report')}} &nbsp;&nbsp;<span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">PDF<i class="fa fa-lg fa-file-pdf-o pull-right text-danger" style="margin-top:6px;"></i></a></li>
-                        <li><a href="#">Excel<i class="fa fa-lg fa-file-excel-o pull-right text-navy" style="margin-top:6px;"></i></a></li>
-                    </ul>
+                    <button class="btn btn-sm btn-primary" type="submit"style="margin-top:23px;"><i class="fa fa-tag" style=" color:#ffe118 ;"></i>&nbsp;{{trans('file.report')}}</button>
+
                 </div>
             </div>
+            </form>
 
         </div>
         {{--end of single day--}}
         {{--rnage--}}
+
         <div class="col-md-7">
             <div class="row">
                 <div class="col-md-12" style="margin-top:15px; margin-left:20px;">
                     <h3> {{trans('file.atir_range')}}</h3>
                 </div>
             </div>
+            <form action="finance_report_income2">
             <div class="row">
                 <div class="col-md-7">
                     <div class="form-group" style="margin-left:35px;">
                         <label class="font-noraml">{{trans('file.select_range')}}</label>
                         <div class="input-daterange input-group" id="" >
-                            <input type="date" class="input-sm form-control" name="start"/>
+                            <input type="date" class="input-sm form-control" name="start" required/>
                             <span class="input-group-addon">{{trans('file.to')}} &nbsp;<i class="fa fa-arrow-right"></i></span>
-                            <input type="date" class="input-sm form-control" name="end" />
+                            <input type="date" class="input-sm form-control" name="end"  required=""/>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <button class="btn btn-sm btn-primary" type="submit" data-toggle="dropdown" style="margin-top:23px; margin-left:10px;" href=""><i class="fa fa-tag" style=" color:#ffe118 ;"></i>&nbsp;{{trans('file.report')}}&nbsp;&nbsp;<span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">PDF<i class="fa fa-lg fa-file-pdf-o pull-right text-danger" style="margin-top:6px;"></i></a></li>
-                        <li><a href="#">Excel<i class="fa fa-lg fa-file-excel-o pull-right text-navy" style="margin-top:6px;"></i></a></li>
-                    </ul>
+                    <button class="btn btn-sm btn-primary" type="submit"  style="margin-top:23px; margin-left:10px;" ><i class="fa fa-tag" style=" color:#ffe118 ;"></i>&nbsp;{{trans('file.report')}}&nbsp;</button>
+
                 </div>
             </div>
+            </form>
         </div>
+
             {{--end of range--}}
 
     {{-- finance report select by type income --}}
@@ -107,64 +107,68 @@
                     <h3> {{trans('file.irs_type')}}</h3>
                 </div>
             </div>
+            <form action="finance_report_income3">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group" style="margin-left:35px;">
                         <label class="font-noraml">{{trans('file.select_day')}} </label>
                         <div class="input-daterange input-group" id="" >
                             <span class="input-group-addon">&nbsp;  <i class="fa fa-calendar"></i> &nbsp;<i class="fa fa-arrow-right"></i></span>
-                            <input type="date" class="input-sm form-control" name="end" />
+                            <input type="date" class="input-sm form-control" name="single" required />
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <button class="btn btn-sm btn-primary dropdown-toggle" type="submit" data-toggle="dropdown" style="margin-top:23px;" href=""><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
-                        &nbsp;{{trans('file.report')}} &nbsp;&nbsp;<span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">PDF<i class="fa fa-lg fa-file-pdf-o pull-right text-danger" style="margin-top:6px;"></i></a></li>
-                        <li><a href="#">Excel<i class="fa fa-lg fa-file-excel-o pull-right text-navy" style="margin-top:6px;"></i></a></li>
-                    </ul>
+                <div class="col-md-2">
+                    <button class="btn btn-sm btn-primary " type="submit" style="margin-top:23px;" ><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
+                        &nbsp;{{trans('file.report')}}</button>
+
                 </div>
+
             </div>
+
             <div class="row">
                 <div class="col-md-5">
                     <div class="form-group" style="margin-left:35px;">
                         <label class="font-noraml">{{trans('file.select_income_type')}}</label>
                         <div class="input-daterange input-group" id="" >
                             <span class="input-group-addon">&nbsp;  <i class="fa fa-bars"></i> &nbsp;<i class="fa fa-arrow-right"></i></span>
-                            <select type="text" class="input-sm form-control" name="end">
-                                <option class="item">{{trans('file.patient')}}</option>
-                                <option class="item">{{trans('file.other_income')}}</option>
+                            <select type="text" class="input-sm form-control" name="select_type" required>
+                                <option class="item">patient</option>
+                                <option class="item">xray</option>
+                                <option class="item">other</option>
+
+
                             </select>
                         </div>
                     </div>
                 </div>
+
             </div>
+            </form>
         </div>
+
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-12" style="margin-top:15px; margin-left:20px;">
                     <h3> {{trans('file.irr_type')}} </h3>
                 </div>
             </div>
+            <form action="finance_report_income4">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <div class="form-group" style="margin-left:35px;">
                         <label class="font-noraml">{{trans('file.select_range')}}</label>
                         <div class="input-daterange input-group" id="" >
-                            <input type="date" class="input-sm form-control" name="start"/>
+                            <input type="date" class="input-sm form-control" name="start" required/>
                             <span class="input-group-addon">{{trans('file.to')}}&nbsp;<i class="fa fa-arrow-right"></i></span>
-                            <input type="date" class="input-sm form-control" name="end" />
+                            <input type="date" class="input-sm form-control" name="end" required=""/>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <button class="btn btn-sm btn-primary" type="submit" data-toggle="dropdown" style="margin-top:23px; margin-left:10px;" href=""><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
-                        &nbsp;{{trans('file.report')}}&nbsp;&nbsp;<span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">PDF<i class="fa fa-lg fa-file-pdf-o pull-right text-danger" style="margin-top:6px;"></i></a></li>
-                        <li><a href="#">Excel<i class="fa fa-lg fa-file-excel-o pull-right text-navy" style="margin-top:6px;"></i></a></li>
-                    </ul>
+                <div class="col-md-5">
+                    <button class="btn btn-sm btn-primary" type="submit" style="margin-top:23px; margin-left: 70px;"><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
+                        &nbsp;{{trans('file.report')}}</button>
+
                 </div>
             </div>
             <div class="row">
@@ -173,14 +177,18 @@
                         <label class="font-noraml">{{trans('file.select_income_type')}}</label>
                         <div class="input-daterange input-group" id="" >
                             <span class="input-group-addon">&nbsp;  <i class="fa fa-bars"></i> &nbsp;<i class="fa fa-arrow-right"></i></span>
-                            <select type="text" class="input-sm form-control" name="end">
-                                <option class="item">{{trans('file.patient')}}</option>
-                                <option class="item">{{trans('file.other_income')}}</option>
+                            <select type="text" class="input-sm form-control" name="rangeSelect" required>
+                                <option class="item">patient</option>
+                                <option class="item">xray</option>
+                                <option class="item">other</option>
+
                             </select>
                         </div>
                     </div>
                 </div>
+
             </div>
+            </form>
 
         </div>
     </div>
