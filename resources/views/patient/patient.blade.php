@@ -292,12 +292,12 @@
             });
         });
     </script>
-    {{--<script type="text/javascript">--}}
-        {{--$(function () {--}}
-            {{--$('#form').submit(function (){--}}
-                {{--// Display a success toast, with a title--}}
-                {{--toastr.success('Without any options','Simple notification!')--}}
-            {{--});--}}
-        {{--});--}}
-        {{--</script>--}}
+    <script type="text/javascript">
+        $(function () {
+            $('#form').submit(function (){
+                // Display a success toast, with a title
+                toastr.info('Successfully Inserted !');
+            });
+        });
+        </script>
 @endsection

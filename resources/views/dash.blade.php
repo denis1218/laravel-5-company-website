@@ -2,7 +2,11 @@
 
 
 @section('style')
-
+    <link href="dashboard/css/bootstrap.min.css" rel="stylesheet">
+    <link href="dashboard/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="dashboard/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="dashboard/css/animate.css" rel="stylesheet">
+    <link href="dashboard/css/style.css" rel="stylesheet">
     @endsection
 
         @section('content')
@@ -126,7 +130,7 @@
 
                             </div>
                             <div class="ibox-content">
-                                <form action="/expenditure3" method="post">
+                                <form id="form" action="/expenditure3" method="post">
                                     {{csrf_field()}}
                                     <div class="row">
                                       <div class="col">
@@ -156,37 +160,13 @@
             </div>
             {{-- Graph area --}}
 
-            {{-- Modal Window for remaining cash --}}
-            <div class="modal inmodal" id="remaining" tabindex="-1" role="dialog"  aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content animated fadeIn">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            {{--<i class="fa fa-edit modal-icon text-primary"></i>--}}
-                            <h4 class="modal-title">Remaining cash</h4>
-                            <small>Give back money from expenses</small>
-                        </div>
-                        <div class="modal-body">
-                            {{--<div class="form-group"><label>ID</label> <input type="text" placeholder="Id" value="" class="form-control"></div>--}}
-                            <div class="form-group"><label>Remain :</label><input type="number" placeholder="Amount"  value="" class="form-control"></div>
-                            <div class="form-group"><label>From Whom :</label><input type="text" placeholder="Receiver" value="" class="form-control"></div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" >Save changes</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- Modal Window for remaining cash --}}
-
-
 
         @endsection
 
 
 @section('script')
+
+    <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
 
     <script src="{{asset('dashboard/js/plugins/chartJs/Chart.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/flot/jquery.flot.js')}}"></script>
@@ -263,7 +243,14 @@
         });
 
     </script>
-
+    <script type="text/javascript">
+        $(function () {
+            $('#form').submit(function (){
+                // Display a success toast, with a title
+                toastr.info('Successfully Inserted !');
+            });
+        });
+    </script>
     @endsection
 
 

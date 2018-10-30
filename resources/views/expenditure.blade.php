@@ -122,7 +122,7 @@
                     <h4 class="modal-title">{{trans('file.edit_content')}}</h4>
                 </div>
                 <div class="modal-body">
-                    <form action="/expenditure/{{$exs->id}}" method="post">
+                    <form id="form" action="/expenditure/{{$exs->id}}" method="post">
                         {{method_field('patch')}}
                     {{--<div class="form-group"><label>ID</label> <input type="text" placeholder="Id" value="" class="form-control"></div>--}}
                         <div class="form-group"><label>{{trans('file.to_whom')}}</label> <input type="text" placeholder="{{trans('file.to_whom')}}"
@@ -222,6 +222,17 @@
             });
 
 
+        });
+    </script>
+    <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#form').submit(function (){
+                // Display a success toast, with a title
+//                toastr.info('Successfully Inserted !');
+                toastr.info('Successfully Inserted !',{timeOut: 7000});
+            });
         });
     </script>
 @endsection
