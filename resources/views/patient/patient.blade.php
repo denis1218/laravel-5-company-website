@@ -1,12 +1,12 @@
 @extends('master')
 @section('style')
-    <link href="dashboard/css/bootstrap.min.css" rel="stylesheet">
-    <link href="dashboard/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="dashboard/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="dashboard/css/animate.css" rel="stylesheet">
-    <link href="dashboard/css/style.css" rel="stylesheet">
+    <link href="{{ asset('dashboard/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('dashboard/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('dashboard/css/plugins/iCheck/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('dashboard/css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('dashboard/css/style.css') }}" rel="stylesheet">
 
-    <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="{{ asset('css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css') }}" rel="stylesheet">
 
     <style rel="stylesheet">
         ul.list-group:after {

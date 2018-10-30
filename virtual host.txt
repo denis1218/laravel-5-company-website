@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+	DocumentRoot "C:/xampp/htdocs/DentalCare_new/public"
+	DirectoryIndex index.php
+	ServerName denta.test
+		<Directory "C:/xampp/htdocs/DentalCare_new/public">
+			Options All
+			AllowOverride All
+			Order Allow,Deny
+			Allow from all
+			Require all granted
+		</Directory>
+</VirtualHost>
