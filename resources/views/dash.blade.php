@@ -128,7 +128,9 @@
 
                             </div>
                             <div class="ibox-content">
+
                                 <form id="form" action="/expenditure3" method="post">
+
                                     {{csrf_field()}}
                                     <div class="row">
                                       <div class="col">
@@ -143,9 +145,9 @@
                                         </select><br>
 
 
-                                        <textarea name="msg" id="" placeholder="{{trans('file.eym')}}"  class="form-control" style="resize: none;" required></textarea><br>
-                                        <button type="submit"  value="Pay" class="btn btn-primary">{{trans('file.save')}}&nbsp;<i class="fa fa-save"></i></button>
-                                        <button  value="Pay" class="btn btn-warning" data-toggle="modal" data-target="#remaining">{{trans('file.remainder')}}<i class="fa fa-arrow-circle-down"></i></button>
+                                        <textarea name="msg"  id="" placeholder="{{trans('file.eym')}}"  class="form-control" style="resize: none;" required></textarea><br>
+                                        <button type="submit"   value="Pay" class="btn btn-primary">{{trans('file.save')}}&nbsp;<i class="fa fa-save"></i></button>
+                                        <button  class="btn btn-default"   type="reset">{{trans('file.reset')}} &nbsp;<i class="fa fa-arrow-circle-down"></i></button>
 
                                         </div>
                                     </div>
@@ -157,7 +159,6 @@
                 </div>
             </div>
             {{-- Graph area --}}
-
 
         @endsection
 
@@ -241,6 +242,7 @@
         });
 
     </script>
+
     <script type="text/javascript">
         $(function () {
             $('#form').submit(function (){
@@ -249,6 +251,7 @@
             });
         });
     </script>
+
     @endsection
 
 

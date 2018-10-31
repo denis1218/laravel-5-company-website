@@ -44,11 +44,7 @@
     </style>
 @endsection
 @section('content')
-
     @include('part.nav_doctor')
-
-    <br/>
-
     {{--personal information patient--}}
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
@@ -327,30 +323,7 @@
                                             <input type="number" class="form-control" name="discount"
                                                    value="{{ $last_treatment->discount }}">
                                         </div>
-                                        {{--<div class="form-group">--}}
-                                            {{--<label for="nex">Next Appointment :</label>--}}
-                                            {{--<input type="date" class="form-control" name="next_appointment"--}}
-                                                   {{--value="{{ $last_treatment->next_appointment }}">--}}
-                                        {{--</div>--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<div class="i-checks" for="nex">Set Meridiem :<label>&nbsp;&nbsp;--}}
-                                                    {{--@if($last_treatment->meridiem == 'morning')--}}
-                                                        {{--<input type="radio" value="morning" checked name="meridiem">--}}
-                                                        {{--<i></i> Morning--}}
-                                                        {{--<input type="radio" value="afternoon"--}}
-                                                               {{--name="meridiem">--}}
-                                                        {{--<i></i> Afternoon--}}
-                                                {{--</label>--}}
-                                                {{--@elseif($last_treatment->meridiem == 'afternoon')--}}
-                                                    {{--<input type="radio" value="morning" name="meridiem">--}}
-                                                    {{--<i></i> Morning--}}
-                                                    {{--&nbsp;&nbsp;&nbsp; <input type="radio" checked value="afternoon"--}}
-                                                                              {{--name="meridiem">--}}
-                                                    {{--<i></i> Afternoon--}}
-                                                {{--@endif--}}
 
-                                            {{--</div>--}}
-                                        {{--</div>--}}
                                         <div class="form-group">
                                             <label for="nex">Description :</label>
                                             <textarea rows="5" type="text" class="form-control" name="description"
