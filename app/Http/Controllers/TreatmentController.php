@@ -26,10 +26,13 @@ class TreatmentController extends Controller
      */
     public function index()
     {
+        if (Auth()->user()->department=='doctor'){
         $id = Auth()->user()->doctor_id;
         $operation = Doctor::find($id)->patient_for_today;
+        }
+        $operations=Patient::whereDate('next_appointment',Carbon::today())->get();
         $doctor = Doctor::all();
-        return view('doctor_operations',compact('operation','doctor'));
+        return view('doctor_operations',compact('operation','doctor','operations'));
     }
 
     public function next_appointment_list(Request $request)

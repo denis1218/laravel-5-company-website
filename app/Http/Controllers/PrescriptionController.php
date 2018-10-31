@@ -36,7 +36,6 @@ class PrescriptionController extends Controller
     public function store(Request $request)
     {
         $pres = new Prescription();
-        $pres->preset = $request->preset;
         $pres->pattern = $request->pattern;
         $pres->instruction = $request->instruction;
         $pres->medicine = $request->medicine;

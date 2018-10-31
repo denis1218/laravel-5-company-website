@@ -29,9 +29,11 @@ return[
     'dental_defect_list'=>'Dental Defect List',
     'treatment_list'=>'Treatment List',
     'doctor_department'=>'Doctor Department',
-    'contact'=>'Contact',
+    'support'=>'Support',
     'contactUs'=>'Contact Us',
     'help'=>'Help',
+    'update_software'=>'Update Software',
+    'about_us'=>'About us',
 //    end of side bar words
 
 //top nav
@@ -364,6 +366,8 @@ return[
     'unit'=>'Unit',
     'name'=>'Name',
 //    End of medicine
+//account
+    'admin'=>'Admin',
 
 //Start of delete model
     'are_you_sure'=>'Are you sure ',

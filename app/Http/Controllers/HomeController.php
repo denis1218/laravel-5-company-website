@@ -47,4 +47,20 @@ class HomeController extends Controller
         return view('reception.dash_reception',compact('patient'));
     }
 
+
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     * Update software using github
+     */
+    public function updateSystem()
+    {
+        shell_exec('c:\WINDOWS\system32\cmd.exe /c START  C:\xampp\htdocs\DentalCare_new\update_software.bat');
+       return redirect()->back();
+    }
+
+    public function about_us()
+    {
+        return view('about_us');
+    }
+
 }

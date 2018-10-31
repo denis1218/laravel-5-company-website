@@ -85,8 +85,8 @@
 
                                             <select class="select2_demo_1 form-control" id="dept" name="department" required>
                                                 <option>{{trans('file.sd')}}</option>
-                                                @foreach($doctor_department as $department)
-                                                <option value="{{$department->$department}}">{{$department->department}}</option>
+                                                @foreach($doctor_department as $departments)
+                                                <option value="{{$departments->department}}">{{$departments->department}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

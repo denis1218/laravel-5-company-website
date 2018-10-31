@@ -1,4 +1,4 @@
-@extends('master')
+
 
 @section('style')
     <link href="dashboard/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
