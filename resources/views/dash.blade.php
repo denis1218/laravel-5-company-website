@@ -2,7 +2,11 @@
 
 
 @section('style')
-
+    <link href="dashboard/css/bootstrap.min.css" rel="stylesheet">
+    <link href="dashboard/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="dashboard/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="dashboard/css/animate.css" rel="stylesheet">
+    <link href="dashboard/css/style.css" rel="stylesheet">
     @endsection
 
         @section('content')
@@ -124,7 +128,9 @@
 
                             </div>
                             <div class="ibox-content">
-                                <form  action="/expenditure3" method="post" >
+
+                                <form id="form" action="/expenditure3" method="post">
+
                                     {{csrf_field()}}
                                     <div class="row">
                                       <div class="col">
@@ -153,10 +159,13 @@
                 </div>
             </div>
             {{-- Graph area --}}
+
         @endsection
 
 
 @section('script')
+
+    <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
 
     <script src="{{asset('dashboard/js/plugins/chartJs/Chart.min.js')}}"></script>
     <script src="{{asset('dashboard/js/plugins/flot/jquery.flot.js')}}"></script>
@@ -233,6 +242,16 @@
         });
 
     </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#form').submit(function (){
+                // Display a success toast, with a title
+                toastr.info('Successfully Inserted !');
+            });
+        });
+    </script>
+
     @endsection
 
 

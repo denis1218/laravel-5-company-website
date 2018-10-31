@@ -109,6 +109,17 @@
 
 
 @section('script')
+    <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#form').submit(function (){
+                // Display a success toast, with a title
+//                toastr.info('Successfully Inserted !');
+                toastr.info('Successfully Inserted !',{timeOut: 7000});
+            });
+        });
+    </script>
 
     <script>
         var check = function () {

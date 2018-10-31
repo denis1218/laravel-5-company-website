@@ -47,4 +47,12 @@ class HomeController extends Controller
         return view('reception.dash_reception',compact('patient'));
     }
 
+    public function updateSystem()
+    {
+        $rootpath = base_path();
+        $root = $rootpath.'/'.'update_software.bat';
+        shell_exec('c:\WINDOWS\system32\cmd.exe /c START  C:\xampp\htdocs\DentalCare_new\update_software.bat');
+       return $root;
+    }
+
 }
