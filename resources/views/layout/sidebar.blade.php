@@ -122,7 +122,11 @@
                     </li>
                     <li>
                         <a href="/contact"><i class="fa fa-phone"></i> <span
-                                    class="nav-label">{{trans('file.contact')}}</span></a>
+                                    class="nav-label">{{trans('file.support')}}</span></a>
+                    </li>
+                    <li>
+                        <a href="/about-us"><i class="fa fa-info"></i> <span
+                                    class="nav-label">&nbsp;{{trans('file.about_us')}}</span></a>
                     </li>
                     {{--end condition of super admin--}}
                 @endif
@@ -210,24 +214,6 @@
     </nav>
 </div>
 @section('script')
-    <script src="{{ asset('dashboard/js/plugins/sweetalert/sweetalert.min.js') }}"></script>
-    <script>
-        $(document).ready(function () {
-            $('.demo_delete').click(function () {
-                swal({
-                    title: "Are you sure?",
-                    text: "You will not be able to recover this imaginary file!",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes, delete it!",
-                    closeOnConfirm: false
-                }, function () {
-                    swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                });
-            });
-        }
-    </script>
 
 @endsection
 
