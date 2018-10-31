@@ -94,7 +94,7 @@
                             <li><a href="/backup"><i class="fa fa-database"></i>{{trans('file.backup_db')}}</a>
                             </li>
 
-                            <li><a href="medicine"><i class="fa fa-pencil-square-o"></i>{{trans('file.add_medicine')}}</a></li>
+                            <li><a href="/medicine"><i class="fa fa-pencil-square-o"></i>{{trans('file.add_medicine')}}</a></li>
 
 
                             <li><a href="/expense-category"><i
@@ -115,12 +115,18 @@
                         </ul>
                     </li>
                     <li>
+
                         <a href="/contact"><i class="fa fa-phone"></i> <span
                                     class="nav-label">{{trans('file.support')}}</span></a>
                     </li>
                     <li>
                         <a href="/about-us"><i class="fa fa-info"></i> <span
                                     class="nav-label">&nbsp;{{trans('file.about_us')}}</span></a>
+
+                    </li>
+                    <li>
+                    <li><a href="/help"><i class="fa fa-question-circle"></i>{{trans('file.help')}}</a></li>
+
                     </li>
                     {{--end condition of super admin--}}
                 @endif

@@ -348,6 +348,8 @@ return[
     'unit'=>'واحد',
     'name'=>'اسم دوا',
 //    End of medicine
+// Account
+    'admin'=>'ادمین',
 //Start of dental defect list
     'ddl'=>'لیست امراض دندان',
 //Start of delete model
