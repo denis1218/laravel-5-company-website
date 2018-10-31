@@ -52,6 +52,12 @@ Route::middleware('auth','doctor')->group(function () {
     Route::get('medicine2/{id}','MedicineController@delete');
     //route for prescription
     Route::resource('prescription','PrescriptionController');
+    // show email forms
+    Route::get('/contact','EmailController@index');
+    // sending email
+    Route::post('/email-send','EmailController@email_send');
+
+    Route::get('/update-system','HomeController@updateSystem');
 });
 // End Route Doctor
 
