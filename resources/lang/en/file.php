@@ -32,6 +32,7 @@ return[
     'contact'=>'Contact',
     'contactUs'=>'Contact Us',
     'help'=>'Help',
+    'update_software'=>'Update Software',
 //    end of side bar words
 
 //top nav

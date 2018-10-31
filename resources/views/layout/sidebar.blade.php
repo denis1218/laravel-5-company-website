@@ -115,6 +115,8 @@
                             <li><a href="/doctor-department"><i
                                             class="fa fa-pencil-square-o"></i>{{trans('file.doctor_department')}}</a>
                             </li>
+                            <li><a  href="/update-system"><i class="fa fa-refresh"></i>{{trans('file.update_software')}}</a>
+                            </li>
 
                         </ul>
                     </li>
@@ -207,5 +209,25 @@
         </div>
     </nav>
 </div>
+@section('script')
+    <script src="{{ asset('dashboard/js/plugins/sweetalert/sweetalert.min.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $('.demo_delete').click(function () {
+                swal({
+                    title: "Are you sure?",
+                    text: "You will not be able to recover this imaginary file!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, delete it!",
+                    closeOnConfirm: false
+                }, function () {
+                    swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                });
+            });
+        }
+    </script>
 
+@endsection
 

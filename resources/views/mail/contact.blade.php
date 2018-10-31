@@ -5,9 +5,6 @@
 @endsection
 
 @section('content')
-
-
-
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
@@ -36,17 +33,18 @@
             <div class="ibox-content">
                 <div class="row">
                     <div class="col-md-6">
-                        @if($errors->any())
-                            <div class="alert alert-danger" role="alert">
-                                Error happing
-                            </div>
+                        @include('flash::message')
+                        @if(Session::has('success'))
+                                <div class="alert alert-danger" role="alert">
+                                    successfully send it
+                                </div>
                             @elseif(\Illuminate\Support\Facades\Session::has('success'))
-                            <div class="alert alert-success" role="alert">
-                                {{ $success }}
+                            <div class="alert alert-danger" role="alert">
+                                successfully send itasdfasd
                             </div>
-                            @endif
-                        <h3>Send Errors</h3>
-                        <h5>Send Any report or help we replay soon</h5>
+                        @endif
+                        <h3>Send Error Report to us</h3>
+                        <h5>Make sure you have internet connection</h5>
                         <form method="post" action="/email-send" enctype="multipart/form-data">
                             <div class="form-group">
                                 <lable>Subject</lable>
@@ -58,7 +56,7 @@
                             </div>
                             <div class="form-group">
                                 <lable>Upload Errors image</lable>
-                                <input type="file"  class="imagefile" name="imagefile" required/>
+                                <input type="file"  class="imagefile" name="imagefile" />
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Send</button>
@@ -72,10 +70,9 @@
         </div>
     </div>
 
+
 @endsection
 
 @section('script')
-
-
 
 @endsection
