@@ -75,9 +75,11 @@
                             <div class="form-group">
                                 <label>{{trans('file.department')}} *</label>
                                 <select class="form-control" required name="department">
+                                    <option value="admin">{{trans('file.admin')}}</option>
                                     <option value="doctor">{{trans('file.doctor')}}</option>
                                     <option value="reception">{{trans('file.reception')}}</option>
-                                    <option value="admin">{{trans('file.owner')}}</option>
+                                    <option value="x-ray">{{trans('file.xray')}}</option>
+
                                 </select>
                             </div>
                             <div class="form-group">

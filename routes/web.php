@@ -47,7 +47,7 @@ Route::middleware('auth','doctor')->group(function () {
 
     Route::get('/operation/{id}/edit/{patient_id}', 'TreatmentController@edit_treatment');
 
-    Route::resource('medicine','MedicineController');
+    Route::resource('/medicine','MedicineController');
     //route for delet medicine
     Route::get('medicine2/{id}','MedicineController@delete');
     //route for prescription

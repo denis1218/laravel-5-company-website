@@ -362,6 +362,8 @@ return[
     'unit'=>'Unit',
     'name'=>'Name',
 //    End of medicine
+//account
+    'admin'=>'Admin',
 
 //Start of delete model
     'are_you_sure'=>'Are you sure ',

@@ -100,7 +100,7 @@
                             <li><a href="/backup"><i class="fa fa-database"></i>{{trans('file.backup_db')}}</a>
                             </li>
 
-                            <li><a href="medicine"><i class="fa fa-pencil-square-o"></i>{{trans('file.add_medicine')}}</a></li>
+                            <li><a href="/medicine"><i class="fa fa-pencil-square-o"></i>{{trans('file.add_medicine')}}</a></li>
 
 
                             <li><a href="/expense-category"><i
