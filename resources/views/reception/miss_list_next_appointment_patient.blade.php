@@ -10,23 +10,7 @@
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>{{trans('file.miss_next_appointment_patient')}}</h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </div>
+
             </div>
             <div class="ibox-content">
 
@@ -41,6 +25,7 @@
                 {{-- row for table --}}
                 <div class="row">
                     <div class="col-md-12">
+                        <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
@@ -55,18 +40,22 @@
                                 <tr>
                             </thead>
                             <tbody>
+                            @if(count($allPatientMissNextAppointment) >0)
                                 @foreach($allPatientMissNextAppointment as $patient)
                                     <tr>
                                         <td>{{ $patient->id }}</td>
                                         <td>{{ $patient->name }}</td>
                                         <td>{{ $patient->lastname }}</td>
                                         <td>{{ $patient->status }}</td>
-                                        <td>{{ $patient->doctor->first_name }}</td>
+                                        <td>{{ $patient->doctor->first_name}}</td>
                                         <td>{{ $patient->created_at }}</td>
                                         <td>{{ $patient->next_appointment }}</td>
                                         <td>{{ $patient->phone }}</td>
                                     </tr>
                                 @endforeach
+                                @else
+                                    <h3 style="color:red" class="text-center">{{trans('file.there_is_no')}}</h3>
+                                @endif
                             </tbody>
                             <tfoot>
                                 <tr>
@@ -81,6 +70,7 @@
                                 <tr>
                             </tfoot>
                         </table>
+                        </div>
                     </div>
                 </div>
 

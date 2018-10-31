@@ -202,6 +202,8 @@ return[
 
 //start of Income
 //patient income
+    'user_info'=>'ویرایش معلومات کاربر',
+    'change_password'=>'تغیر رمز',
     'income_details'=>'حزوئیات عایدات',
     'from_patient'=>'عواید مریضان',
     'inb'=>'کلید های مرور بین صفحات عواید',

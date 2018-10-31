@@ -95,12 +95,9 @@
                                 <th>{{trans('file.id')}}</th>
                                 <th>{{trans('file.first_name')}}</th>
                                 <th>{{trans('file.last_name')}}</th>
-                                <th>{{trans('file.user_name')}}</th>
                                 <th>{{trans('file.password')}}</th>
                                 <th>{{trans('file.email')}}</th>
-                                <th>{{trans('file.phone')}}</th>
                                 <th>{{trans('file.role')}}</th>
-                                <th>{{trans('file.details')}}</th>
                                 <th>{{trans('file.edit')}}</th>
                                 <th>{{trans('file.delete')}}</th>
                             </tr>
@@ -111,25 +108,19 @@
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->firstname }}</td>
                                     <td>{{ $user->lastname }}</td>
-                                    <td>{{ $user->username }}</td>
                                     <td>{{ str_limit($user->password ,7)}}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td>{{ $user->phone }}</td>
                                     <td>{{ $user->department }}</td>
-                                    <td>
-                                        <button class="btn btn-xs btn-primary" data-toggle="modal"
-                                                data-target="#"><i class="fa fa-info"></i>&nbsp; {{trans('file.permission')}}
-                                        </button>
-                                    </td>
+
                                     <td>
                                         <button class="btn btn-xs btn-success" data-toggle="modal"
-                                                data-target="#"><i class="fa fa-edit"></i>&nbsp;{{trans('file.edit')}}
+                                                data-target="#e{{$user->id}}"><i class="fa fa-edit"></i>&nbsp;{{trans('file.edit')}}
                                         </button>
                                     </td>
                                     <td>
-                                        <button class="btn btn-xs btn-danger demo3" data-toggle="modal"
-                                                data-target="#"><i class="fa fa-remove"></i>&nbsp;{{trans('file.delete')}}
-                                        </button>
+                                        <form id="del" action="/user2/{{$user->id}}" id="myForm">
+                                            <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;{{trans('file.delete')}}</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
@@ -149,120 +140,72 @@
             </div>
         </div>
     </div>
-    {{--end of doctor info--}}
+    {{--end of user info--}}
 
-
-
-
-
-
-
-
-    <div class="modal inmodal" id="account_details" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content animated fadeIn">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span
-                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <img src="img/a4.jpg" class="img-circle circle-border m-b-md" alt="profile">
-
-                    <h4 class="modal-title">Dr.tamim</h4>
-                </div>
-                <div class="modal-body text-center">
-                    <fieldset>
-                        <h1>All information Dr.tamim</h1>
-                        <br/>
-                        <br/>
-                        <div class="col-lg-12">
-
-
-                            <table class="table table-bordered">
-                                <thead>
-                                <td><b>Info</b></td>
-                                <td><b>Details</b></td>
-                                </thead>
-                                <tr>
-                                    <td>P-ID:</td>
-                                    <td>P-223</td>
-                                </tr>
-                                <tr>
-                                    <td>Name:</td>
-                                    <td>Ahamd</td>
-                                </tr>
-                                <tr>
-                                    <td>Gender:</td>
-                                    <td>Male</td>
-                                </tr>
-                                <tr>
-                                    <td>Age:</td>
-                                    <td>25</td>
-                                </tr>
-                                <tr>
-                                    <td>Phone:</td>
-                                    <td>0780552233</td>
-                                </tr>
-                                <tr>
-                                    <td>Address:</td>
-                                    <td>Carte Char, Pole Sourkhe, Kabul, Afghanistan</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </fieldset>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{-- end of modal window --}}
-
-
+    @foreach($users as $usr)
     {{-- modal window to show editing detail of doctor--}}
-
-    <div class="modal inmodal" id="edit_account" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal inmodal" id="e{{$usr->id}}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content animated fadeIn">
                 <div class="modal-header">
 
                     <button type="button" class="close" data-dismiss="modal"><span
                                 aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <a href="#" id="get_file"><img src="img/a4.jpg" class="img-circle circle-border m-b-md"
-                                                   alt="profile"> </a>
                     <input type="file" id="my_file">
-                    <h4 class="modal-title">Edit Doctor Information</h4>
+                    <h4 class="modal-title">{{trans('file.user_info')}}</h4>
                 </div>
+                <form id="form" action="/user/{{$usr->id}}" method="post">
+                    {{method_field('patch')}}
                 <div class="modal-body">
 
-                    <div class="form-group"><label>First Name</label> <input type="text" placeholder="First Name"
-                                                                             value="tamim" class="form-control"></div>
-                    <div class="form-group"><label>Last Name</label> <input type="text" placeholder="Last Name"
-                                                                            value="ahmadi" class="form-control"></div>
-                    <div class="form-group"><label>Username</label> <input type="text" placeholder="Username"
-                                                                           value="tamimahmadi" class="form-control">
+
+                    <div class="form-group"><label>{{trans('file.first_name')}}</label> <input type="text" name="firstname" placeholder="{{trans('file.first_name')}}"
+                                                                             value="{{$usr->firstname}}" class="form-control"></div>
+                    <div class="form-group"><label>{{trans('file.last_name')}}</label> <input type="text" name="lastname" placeholder="{{trans('file.last_name')}}"
+                                                                            value="{{$usr->lastname}}" class="form-control"></div>
+                    <div class="form-group"><label>{{trans('file.change_password')}}</label> <input type="password" name="password" placeholder="{{trans('file.password')}}"
+
+                                                                           value="{{$usr->password}}" class="form-control">
                     </div>
-                    <div class="form-group"><label>Phonenumber</label> <input type="text" placeholder="phone number"
-                                                                              value="0780######" class="form-control">
-                    </div>
-                    <div class="form-group"><label>Email</label> <input type="email" placeholder="Email"
-                                                                        value="tamimahmadi@gmail.com"
+
+                    <div class="form-group"><label>{{trans('file.email')}}</label> <input type="email" name="email" placeholder="{{trans('file.email')}}"
+                                                                        value="{{$usr->email}}"
                                                                         class="form-control"></div>
-
-
+                    <div class="form-group"><label>{{trans('file.department')}}</label> <input type="text" name="department" placeholder="{{trans('file.department')}}"
+                                                                        value="{{$usr->department}}"
+                                                                        class="form-control"></div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-white" data-dismiss="modal">{{trans('file.close')}}</button>
+                    <button type="submit"   class="btn btn-primary">{{trans('file.save')}}</button>
 
                 </div>
+                </form>
             </div>
         </div>
     </div>
 
+    @endforeach
     {{-- end of modal window--}}
 @endsection
 @section('script')
+    <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#form').submit(function (){
+                // Display a success toast, with a title
+//                toastr.info('Successfully Inserted !');
+                toastr.info('Successfully Inserted !',{timeOut: 7000});
+            });
+            $('#del').submit(function (){
+                // Display a success toast, with a title
+//                toastr.info('Successfully Inserted !');
+                toastr.success('Successfully Deleted!',{timeOut: 7000});
+            });
+        });
+    </script>
     <script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
     <script>
 
@@ -384,7 +327,9 @@
                 });
             });
 
-            $('.demo3').click(function () {
+            $('.demo3').on('click',function(e){
+                e.preventDefault();
+                var form = $(this).parents('form');
                 swal({
                     title: "Are you sure?",
                     text: "You will not be able to recover this imaginary file!",
@@ -393,8 +338,8 @@
                     confirmButtonColor: "#DD6B55",
                     confirmButtonText: "Yes, delete it!",
                     closeOnConfirm: false
-                }, function () {
-                    swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                }, function(isConfirm){
+                    if (isConfirm) form.submit();
                 });
             });
 
