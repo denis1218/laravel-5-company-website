@@ -24,7 +24,10 @@ Route::post('language',array(
     'uses'=>'LanguageController@index'
 ));
 
+Route::get('test',function (){
+   return bcrypt(123456);
 
+});
 // Route Group & Middleware for doctor
 Route::middleware('auth','doctor')->group(function () {
 

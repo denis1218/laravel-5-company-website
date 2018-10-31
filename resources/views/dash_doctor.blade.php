@@ -101,6 +101,7 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @if(count($doctor) >0)
                         @foreach($doctor as $d)
                         <tr>
                             <td>{{$d->id_patient}}</td>
@@ -113,6 +114,9 @@
                             </td>
                         </tr>
                         @endforeach
+                        @else
+                            <h3 class="text-center" style="color:red">There is no patient registered for today</h3>
+                         @endif
                         </tbody>
                     </table>
                 </div>

@@ -101,7 +101,7 @@
                 <hr/>
                 {{-- table info patient --}}
                 <div class="row">
-                    <form action="/doctors/{{$doctor->id}}" method="post">
+                    <form id="form" action="/doctors/{{$doctor->id}}" method="post">
                         {{csrf_field()}}
                         {{method_field('PUT')}}
                     <div class="col-md-12">
@@ -206,6 +206,17 @@
 
 @section('script')
     <!-- script -->
+    <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#form').submit(function (){
+                // Display a success toast, with a title
+//                toastr.info('Successfully Inserted !');
+                toastr.info('Successfully Inserted !',{timeOut: 5000});
+            });
+        });
+    </script>
 
     <script>
         $(document).ready(function () {

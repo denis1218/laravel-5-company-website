@@ -23,35 +23,13 @@ class DatabaseSeeder extends Seeder
         if(\App\Doctor::count() == 0)$this->call(DoctorSeeder::class );
 
         DB::Table('users')->insert([
-            'firstname' => 'jawad',
-            'lastname' => 'mohammadi',
+            'firstname' => 'admin',
+            'lastname' => 'admin',
             'password' => Hash::make('123456'),
-            'email' => 'jawad@gmail.com',
-            'department' => 'doctor',
-        ]);
-
-        DB::Table('users')->insert([
-            'firstname' => 'mahdi',
-            'lastname' => 'safari',
-            'password' => Hash::make('123456'),
-            'email' => 'mahdi@gmail.com',
-            'department' => 'doctor',
-        ]);
-
-        DB::Table('users')->insert([
-            'firstname' => 'haidar',
-            'lastname' => 'alami',
-            'password' => Hash::make('123456'),
-            'email' => 'haidar@gmail.com',
+            'email' => 'admin@gmail.com',
             'department' => 'admin',
         ]);
-        DB::Table('users')->insert([
-            'firstname' => 'ahmad',
-            'lastname' => 'ahmadi',
-            'password' => Hash::make('123456'),
-            'email' => 'ahmad@gmail.com',
-            'department' => 'reception',
-        ]);
+
 
         if(Patient::count() == 0)$this->call(PatientTableSeeder::class );
         if(Treatment::count() == 0)$this->call(TreatmentTableSeeder::class );
