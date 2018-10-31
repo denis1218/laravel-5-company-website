@@ -8,7 +8,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>{{trans('file.contact')}}</h5>
+                <h5>{{trans('file.support')}}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -43,7 +43,7 @@
                                 successfully send itasdfasd
                             </div>
                         @endif
-                        <h3>Send Error Report to us</h3>
+                        <h3>Send Error Report</h3>
                         <h5>Make sure you have internet connection</h5>
                         <form method="post" action="/email-send" enctype="multipart/form-data">
                             <div class="form-group">

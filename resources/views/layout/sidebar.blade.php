@@ -8,21 +8,15 @@
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="" src="{{asset('img/dentaa3.png')}}" width="100px">
+                            <img alt="image" class="" src="{{asset('img/dentaa3.png')}}" width="120px">
+                            <p class="text-white">version 0.0.1v</p>
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong
                                             class="font-bold">{{trans('file.hk_dental_clinic')}}</strong>
-                             </span> <span class="text-muted text-xs block">{{trans('file.profile')}} <b class="caret"></b></span> </span>
-
+                             </span>  </span>
                         </a>
-                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            {{--<li><a href="#">Profile</a></li>--}}
-                            {{--<li><a href="#">Contacts</a></li>--}}
-                            {{--<li><a href="#">Mailbox</a></li>--}}
-                            <li class="divider"></li>
-                            <li><a href="/login">{{trans('file.logout')}}</a></li>
-                        </ul>
+
                     </div>
                     <div class="logo-element">
                         <img src="img/small_logo_denta.png" width="30px"/>
@@ -115,7 +109,7 @@
                             <li><a href="/doctor-department"><i
                                             class="fa fa-pencil-square-o"></i>{{trans('file.doctor_department')}}</a>
                             </li>
-                            <li><a  href="/update-system"><i class="fa fa-refresh"></i>{{trans('file.update_software')}}</a>
+                            <li><a  href="" onclick="updateSoftware()"><i class="fa fa-refresh"></i>{{trans('file.update_software')}}</a>
                             </li>
 
                         </ul>
@@ -206,14 +200,41 @@
                         </li>
                     </ul>
                 </li>
-
                 @endif
                 {{--end condition--}}
-
         </div>
     </nav>
 </div>
-@section('script')
 
-@endsection
+<div class="modal" tabindex="-1" id="updatesoftware" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Update Software</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4>Are you sure want to update software?</h4>
+                <p>Fix errors and update system.</p>
+                <p>This update does not effect on your database data.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="" id="updatesoftwareroute" type="button" class="btn btn-danger">Yes update it</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <script>
+        function updateSoftware() {
+            event.preventDefault();
+            $('#updatesoftware').modal('show');
+            $('#updatesoftwareroute').attr('href', '/update-system');
+        }
+    </script>
 
