@@ -5,23 +5,7 @@
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>{{trans('file.patient_prescription')}} <i class="fa fa-info"></i></h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link" style="margin-right:20px;">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </div>
+
             </div>
             <div class="ibox-content" id="divone">
                 <div class="container">
@@ -43,6 +27,7 @@
 
                         <div class="row" style="margin-top:30px;">
                             <div class="col-sm-11">
+                                <div class="table-responsive">
                                 <table class="table table-hover  no-margins">
                                     <thead>
                                     <tr class="bg-light">
@@ -72,11 +57,12 @@
                                         </tr>
                                     @endforeach
                                         @else
-                                    <h3 style="color: red;">{{trans('file.there_is_no_pres')}}</h3>
+                                    <h3 style="color: red;" class="text-center">{{trans('file.there_is_no_pres')}}</h3>
                                     @endif
                                     </tbody>
                                 </table>
-                            </div>
+                                </div>
+                                </div>
                         </div>
                     </div>
                 </div>

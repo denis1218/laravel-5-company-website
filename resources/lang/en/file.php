@@ -29,10 +29,11 @@ return[
     'dental_defect_list'=>'Dental Defect List',
     'treatment_list'=>'Treatment List',
     'doctor_department'=>'Doctor Department',
-    'contact'=>'Contact',
+    'support'=>'Support',
     'contactUs'=>'Contact Us',
     'help'=>'Help',
     'update_software'=>'Update Software',
+    'about_us'=>'About us',
 //    end of side bar words
 
 //top nav
@@ -209,6 +210,8 @@ return[
     'to_whom'=>'To Whom',
     'category'=>'Category',
     'delete'=>'Delete',
+    'user_info'=>'Edit User Information',
+    'change_password'=>'Change Password',
 //    adding expense
     'expenses'=>'Expenses',
     'capital'=>'Capital',

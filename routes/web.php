@@ -56,8 +56,10 @@ Route::middleware('auth','doctor')->group(function () {
     Route::get('/contact','EmailController@index');
     // sending email
     Route::post('/email-send','EmailController@email_send');
-
+    // update system and redirect -> back
     Route::get('/update-system','HomeController@updateSystem');
+    // about software company paypol and denta
+    Route::get('/about-us','HomeController@about_us');
 });
 // End Route Doctor
 
@@ -228,6 +230,7 @@ Route::middleware('auth','reception')->group(function () {
 
 //    User Route
     Route::resource('/user','UserController');
+    Route::get('/user2/{id}','UserController@delete');
 //    backup route
     Route::get('/backup',function (){
         return view('create_backups');

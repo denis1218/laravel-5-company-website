@@ -8,7 +8,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>{{trans('file.contact')}}</h5>
+                <h5>{{trans('file.support')}}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -43,7 +43,7 @@
                                 successfully send itasdfasd
                             </div>
                         @endif
-                        <h3>Send Error Report to us</h3>
+                        <h3>Send Error Report</h3>
                         <h5>Make sure you have internet connection</h5>
                         <form method="post" action="/email-send" enctype="multipart/form-data">
                             <div class="form-group">
@@ -63,6 +63,31 @@
                                 <input type="reset" class="btn btn-white"/>
                             </div>
                         </form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <img src="{{ asset('img/paypol_logo.png') }}" width="300px;"/>
+                        </div>
+                        <br/>
+                        <h2>Paypol Software Development Company</h2>
+                        <br/>
+                        <h3>Contact us</h3>
+                        <br/>
+                        <table class="table">
+                            <tr>
+                                <td><strong><i class="fa fa-phone"></i>&nbsp;Phone</strong></td>
+                                <td><strong>0731888814 | </strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong><i class="fa fa-envelope"></i>&nbsp;Email</strong></td>
+                                <td><strong>support@denta.af</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong><i class="fa fa-facebook"></i>&nbsp;facebook</strong></td>
+                                <td><strong><a href="https://www.facebook.com/paypolsoftwaredevelopment/?modal=admin_todo_tour">Paypol Software Development Co</a></strong></td>
+                            </tr>
+                        </table>
+
                     </div>
                 </div>
 

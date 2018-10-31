@@ -160,6 +160,7 @@ class PatientController extends Controller
     {
         $allPatientMissNextAppointment = Patient::whereDate('next_appointment','<',Carbon::today())->get();
         return view ('reception.miss_list_next_appointment_patient',compact('allPatientMissNextAppointment'));
+//    return $allPatientMissNextAppointment;
     }
 
 }

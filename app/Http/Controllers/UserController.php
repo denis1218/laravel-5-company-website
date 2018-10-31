@@ -81,9 +81,22 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request,$id)
     {
-        //
+        $user = User::find($id);
+         $user->firstname = $request->firstname;
+         $user->lastname = $request->lastname;
+         $user->password = Hash::make($request->password);
+         $user->email = $request->email;
+         $user->department = $request->department;
+         $user->save();
+         return back();
+    }
+    public function delete($id){
+        $user = User::find($id);
+        $user->delete();
+        return back();
+
     }
 
     /**
