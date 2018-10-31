@@ -254,9 +254,9 @@
                                         <h4 style="color:green">{{trans('file.is_xray')}}</h4>
                                         <div class="input-group">
                                             <input type="radio" onchange="activation()" value="not" name="xray_status"
-                                                   id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>{{trans('file.no')}}</b></strong>&nbsp;&nbsp;&nbsp;
+                                                   id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>{{trans('file.yes')}}</b></strong>&nbsp;&nbsp;&nbsp;
                                             <input type="radio" onchange="deactivation()" id="id" name="xray_status"
-                                                   checked="checked" style="height: 20px;width:20px;"> &nbsp;<strong><b>{{trans('file.yes')}}</b></strong>
+                                                   checked="checked" style="height: 20px;width:20px;"> &nbsp;<strong><b>{{trans('file.no')}}</b></strong>
                                         </div>
 
                                     </div>

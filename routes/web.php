@@ -47,11 +47,19 @@ Route::middleware('auth','doctor')->group(function () {
 
     Route::get('/operation/{id}/edit/{patient_id}', 'TreatmentController@edit_treatment');
 
-    Route::resource('medicine','MedicineController');
+    Route::resource('/medicine','MedicineController');
     //route for delet medicine
     Route::get('medicine2/{id}','MedicineController@delete');
     //route for prescription
     Route::resource('prescription','PrescriptionController');
+    // show email forms
+    Route::get('/contact','EmailController@index');
+    // sending email
+    Route::post('/email-send','EmailController@email_send');
+    // update system and redirect -> back
+    Route::get('/update-system','HomeController@updateSystem');
+    // about software company paypol and denta
+    Route::get('/about-us','HomeController@about_us');
 });
 // End Route Doctor
 
@@ -225,7 +233,11 @@ Route::middleware('auth','reception')->group(function () {
 //    backup route
     Route::get('/backup',function (){
         return view('create_backups');
+    });
 
+// Help Route
+    Route::get('/help',function (){
+       return view('help');
     });
 
 });
