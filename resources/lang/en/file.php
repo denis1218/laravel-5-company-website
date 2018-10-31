@@ -210,6 +210,8 @@ return[
     'to_whom'=>'To Whom',
     'category'=>'Category',
     'delete'=>'Delete',
+    'user_info'=>'Edit User Information',
+    'change_password'=>'Change Password',
 //    adding expense
     'expenses'=>'Expenses',
     'capital'=>'Capital',

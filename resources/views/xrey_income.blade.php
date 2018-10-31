@@ -9,25 +9,7 @@
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>{{trans('file.xray_income')}}</h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li>
-                            <a href="#">Config option 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </div>
+
             </div>
 
             <div class="ibox-content">
@@ -47,6 +29,7 @@
                     <div class="col-sm-3" style="margin-top:25px;">
                         <a href="xrey_income2" type="button" class="btn btn-sm btn-primary">{{trans('file.show_completed_xray')}}</a>
                     </div>
+
                     <table class="table table-striped table-bordered table-hover" id="table_xray_income"
                            style="margin-top:80px;margin-left:30px;width:95%;">
                         <thead>
