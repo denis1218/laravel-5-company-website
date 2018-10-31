@@ -230,6 +230,7 @@ Route::middleware('auth','reception')->group(function () {
 
 //    User Route
     Route::resource('/user','UserController');
+    Route::get('/user2/{id}','UserController@delete');
 //    backup route
     Route::get('/backup',function (){
         return view('create_backups');
