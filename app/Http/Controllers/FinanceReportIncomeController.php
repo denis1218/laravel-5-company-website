@@ -30,15 +30,15 @@ class FinanceReportIncomeController extends Controller
     //function for single day report
     public function create(Request $request)
     {
-        $req = $request->create_date;
+        $start = $request->create_date;
 
-        $pinfo = Treatment::with('patient')->where('created_at', '=', $req)->get();
-        $xinfo = Xray::with('patient')->where('created_at', '=', $req)->get();
+        $pinfo = Treatment::with('patient')->where('created_at', '=', $start)->get();
+        $xinfo = Xray::with('patient')->where('created_at', '=', $start)->get();
 
-        $oinfo = Oincom::where('created_at', '=', $req)->get();
+        $oinfo = Oincom::where('created_at', '=', $start)->get();
 
         $total = $pinfo->sum('paid_amount') + $xinfo->sum('paid_amount') + $oinfo->sum('amount');
-        return view('finance_report.finance_report_income_print', compact('pinfo', 'xinfo', 'oinfo', 'total'));
+        return view('finance_report.finance_report_income_print', compact('pinfo', 'xinfo', 'oinfo', 'total','start'));
     }
 
     /**
@@ -56,7 +56,7 @@ class FinanceReportIncomeController extends Controller
         $xinfo = Xray::whereBetween('created_at', [$start, $end])->get();
         $oinfo = Oincom::whereBetween('created_at', [$start, $end])->get();
         $total = $pinfo->sum('paid_amount') + $xinfo->sum('paid_amount') + $oinfo->sum('amount');
-        return view('finance_report.finance_report_income_print', compact('pinfo', 'xinfo', 'oinfo', 'total'));
+        return view('finance_report.finance_report_income_print', compact('pinfo', 'xinfo', 'oinfo', 'total','start'));
 
 
     }

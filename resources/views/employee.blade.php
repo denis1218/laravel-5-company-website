@@ -33,7 +33,7 @@
                 <div class="container">
 
                     <div class="row">
-                        <form method="post" class="form-horizontal" action="/doctors">
+                        <form id="form" method="post" class="form-horizontal" action="/doctors">
                             <div class="col-md-12" style="margin-left: -15px;">
                                 <div class="col-sm-12">
                                     <div class="col-sm-5">
@@ -66,7 +66,7 @@
                                         <div class="form-group">
                                             <label class="control-label">{{trans('file.age')}}</label>
                                             <input type="number" max="100" min="20" class="form-control" name="age"
-                                                   placeholder="{{trans('file.age')}}">
+                                                   placeholder="{{trans('file.age')}}" required>
                                         </div>
                                     </div>
                                 </div>
@@ -85,8 +85,8 @@
 
                                             <select class="select2_demo_1 form-control" id="dept" name="department" required>
                                                 <option>{{trans('file.sd')}}</option>
-                                                @foreach($doctor_department as $department)
-                                                <option value="{{$department->$department}}">{{$department->department}}</option>
+                                                @foreach($doctor_department as $departments)
+                                                <option value="{{$departments->department}}">{{$departments->department}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -186,6 +186,14 @@
             document.getElementById('sal').setAttribute('placeholder', 'Enter the amount  of salary');
             document.getElementById('sal').disabled=false;
         }
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $('#form').submit(function (){
+                // Display a success toast, with a title
+                toastr.info('Successfully Inserted !');
+            });
+        });
     </script>
 
 @endsection

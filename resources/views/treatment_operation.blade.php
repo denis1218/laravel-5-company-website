@@ -1,6 +1,10 @@
 @extends('master')
 @section('style')
-
+    <link href="dashboard/css/bootstrap.min.css" rel="stylesheet">
+    <link href="dashboard/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="dashboard/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="dashboard/css/animate.css" rel="stylesheet">
+    <link href="dashboard/css/style.css" rel="stylesheet">
 
     <style rel="stylesheet">
         .font-m {
@@ -242,7 +246,7 @@
 
                             {{--x-ray form--}}
 
-                            <form action="/xray" method="post">
+                            <form id="form" action="/xray" method="post">
                                 {{csrf_field()}}
 
                                 <div class="row">
@@ -250,9 +254,9 @@
                                         <h4 style="color:green">{{trans('file.is_xray')}}</h4>
                                         <div class="input-group">
                                             <input type="radio" onchange="activation()" value="not" name="xray_status"
-                                                   id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>{{trans('file.no')}}</b></strong>&nbsp;&nbsp;&nbsp;
+                                                   id="check" style="height: 20px;width:20px;">&nbsp; <strong><b>{{trans('file.yes')}}</b></strong>&nbsp;&nbsp;&nbsp;
                                             <input type="radio" onchange="deactivation()" id="id" name="xray_status"
-                                                   checked="checked" style="height: 20px;width:20px;"> &nbsp;<strong><b>{{trans('file.yes')}}</b></strong>
+                                                   checked="checked" style="height: 20px;width:20px;"> &nbsp;<strong><b>{{trans('file.no')}}</b></strong>
                                         </div>
 
                                     </div>
@@ -297,7 +301,7 @@
                             </form>
                             {{--end of x-ray form--}}
 
-                            <form action="/operation" method="POST">
+                            <form id="form" action="/operation" method="POST">
                                 @foreach($checkValue as $check)
                                     <input type="hidden" value="{{ $check->visits }}" name="visits">
                                 @endforeach
@@ -472,6 +476,7 @@
 @endsection
 
 @section('script')
+    <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
 
     <script src="{{ asset('js/tooths.js') }}" type="javascript"></script>
 
@@ -554,6 +559,16 @@
                 document.getElementById('next').checked = true;
             }
         }
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#form').submit(function (){
+                // Display a success toast, with a title
+//                toastr.info('Successfully Inserted !');
+                toastr.info('Successfully Inserted !',{timeOut: 5000});
+            });
+        });
     </script>
 
 @endsection

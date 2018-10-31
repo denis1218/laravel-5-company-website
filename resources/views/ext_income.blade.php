@@ -58,7 +58,7 @@
 
                         <!-- form -->
 
-                        <form method="post" class="form-horizontal" action="/other-income">
+                        <form id="form" method="post" class="form-horizontal" action="/other-income">
                             {{csrf_field()}}
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">{{trans('file.from_whom')}}:</label>
@@ -115,3 +115,17 @@
 
 @endsection
 
+@section('script')
+    <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#form').submit(function (){
+                // Display a success toast, with a title
+//                toastr.info('Successfully Inserted !');
+                toastr.info('Successfully Inserted !',{timeOut: 5000});
+            });
+        });
+    </script>
+
+@endsection

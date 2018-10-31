@@ -94,8 +94,9 @@ class MedicineController extends Controller
 //        $medicine->save();
         return redirect('medicine');
     }
-    public function destroy(Medicine $medicine)
+    public function destroy($id)
     {
-
+        $delete=Medicine::find($id);
+        $delete->delete();
     }
 }

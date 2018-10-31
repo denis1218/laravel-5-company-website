@@ -36,7 +36,7 @@
                         <form action="/doctor-department" method="post">
                             <div class="form-group">
                                 <lable for="form-control">{{trans('file.department')}}</lable>
-                                <input type="text" class="form-control" name="department"/>
+                                <input type="text" class="form-control" name="department"required="">
                             </div>
                             <div class="col-md-5">
                                 <button type="submit" class="btn btn-primary" name="submit"><i class="fa fa-save"></i>&nbsp;{{trans('file.save')}}</button>
