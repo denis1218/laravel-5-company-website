@@ -51,7 +51,7 @@
             </div>
             <form action="/finance_report_income/create">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <div class="form-group" style="margin-left:35px;">
                         <label class="font-noraml">{{trans('file.select_day')}} </label>
                         <div class="input-daterange input-group" id="" >
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <button class="btn btn-sm btn-primary" type="submit"style="margin-top:23px;"><i class="fa fa-tag" style=" color:#ffe118 ;"></i>&nbsp;{{trans('file.report')}}</button>
 
                 </div>
@@ -79,7 +79,7 @@
             </div>
             <form action="finance_report_income2">
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-8">
                     <div class="form-group" style="margin-left:35px;">
                         <label class="font-noraml">{{trans('file.select_range')}}</label>
                         <div class="input-daterange input-group" id="" >
@@ -89,7 +89,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <button class="btn btn-sm btn-primary" type="submit"  style="margin-top:23px; margin-left:10px;" ><i class="fa fa-tag" style=" color:#ffe118 ;"></i>&nbsp;{{trans('file.report')}}&nbsp;</button>
 
                 </div>
@@ -109,7 +109,7 @@
             </div>
             <form action="finance_report_income3">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <div class="form-group" style="margin-left:35px;">
                         <label class="font-noraml">{{trans('file.select_day')}} </label>
                         <div class="input-daterange input-group" id="" >
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-5">
                     <button class="btn btn-sm btn-primary " type="submit" style="margin-top:23px;" ><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
                         &nbsp;{{trans('file.report')}}</button>
 
@@ -155,7 +155,7 @@
             </div>
             <form action="finance_report_income4">
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-8">
                     <div class="form-group" style="margin-left:35px;">
                         <label class="font-noraml">{{trans('file.select_range')}}</label>
                         <div class="input-daterange input-group" id="" >
@@ -165,7 +165,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <button class="btn btn-sm btn-primary" type="submit" style="margin-top:23px; margin-left: 70px;"><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
                         &nbsp;{{trans('file.report')}}</button>
 

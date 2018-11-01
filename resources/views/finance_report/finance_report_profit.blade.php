@@ -51,7 +51,7 @@
             </div>
             <form action="finance_report_profit1">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-7">
                         <div class="form-group" style="margin-left:35px;">
                             <label class="font-noraml">{{trans('file.select_day')}}</label>
                             <div class="input-daterange input-group" id="">
@@ -60,7 +60,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6" style="margin-top:21px;">
+                    <div class="col-md-5" style="margin-top:21px;">
                     <div class="form-group">
                             <button class="btn btn-sm btn-primary " type="submit"><i
                                         class="fa fa-tag" style=" color:#ffe118 ;"></i>
@@ -79,7 +79,7 @@
             </div>
             <form action="finance_report_profit2">
                 <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-md-8">
                         <div class="form-group" style="margin-left:35px;">
                             <label class="font-noraml">{{trans('file.select_range')}}</label>
                             <div class="input-daterange input-group" id="">
