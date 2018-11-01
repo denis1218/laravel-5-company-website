@@ -33,10 +33,6 @@
             <div class="ibox-content">
                 <div class="row">
                     <div class="col-md-6">
-<<<<<<< HEAD
-
-=======
->>>>>>> aa6ff912f63b7bf519b20c73b3923433814115d4
                         <h3>Send Error Report</h3>
                         <h5>Make sure you have internet connection</h5>
                         <form method="post" action="/email-send" enctype="multipart/form-data">
