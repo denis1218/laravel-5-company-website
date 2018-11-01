@@ -78,7 +78,7 @@
                                     <option value="admin">{{trans('file.admin')}}</option>
                                     <option value="doctor">{{trans('file.doctor')}}</option>
                                     <option value="reception">{{trans('file.reception')}}</option>
-                                    <option value="x-ray">{{trans('file.xray')}}</option>
+                                    <option value="xray">{{trans('file.xray')}}</option>
 
                                 </select>
                             </div>

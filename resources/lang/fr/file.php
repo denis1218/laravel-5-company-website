@@ -29,6 +29,11 @@ return[
     'dental_defect_list'=>'لیست امراض دندان',
     'treatment_list'=>'لیست درمان های دندان',
     'doctor_department'=>'دیپارتمینت های داکتران',
+    'support'=>'پشتیبانی',
+    'contactUs'=>'تماس با ما',
+    'help'=>'کمک',
+    'update_software'=>'بروز رسانی نرم افزار',
+    'about_us'=>'در بارهء ما',
 //    end of side bar words
 //  top nav
     'welcome_to'=>'خوش آمدید به ',
