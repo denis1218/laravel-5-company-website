@@ -31,7 +31,7 @@ class HomeController extends Controller
         $patient = Patient::count();
         $apatient = Patient::whereDate('next_appointment', Carbon::today())->get();
         $doctor = Doctor::count();
-        return view('dash',compact('patient','doctor','apatient','categories'));
+        return view('/dash',compact('patient','doctor','apatient','categories'));
     }
 
     public function doctor_dashboard(){
