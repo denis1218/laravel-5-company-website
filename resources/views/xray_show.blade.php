@@ -71,7 +71,6 @@
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>{{trans('file.patient_xray_details')}} </h5>
-
             </div>
 
             <div class="ibox-content">

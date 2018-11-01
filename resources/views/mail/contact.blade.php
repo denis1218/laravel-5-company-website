@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('style')
-    <link href="{{asset('css/hover/hover-min.css')}}" rel="stylesheet">
+
 @endsection
 
 @section('content')
@@ -33,18 +33,8 @@
             <div class="ibox-content">
                 <div class="row">
                     <div class="col-md-6">
-                        @include('flash::message')
-                        @if(Session::has('success'))
-                                <div class="alert alert-danger" role="alert">
-                                    successfully send it
-                                </div>
-                            @elseif(\Illuminate\Support\Facades\Session::has('success'))
-                            <div class="alert alert-danger" role="alert">
-                                successfully send itasdfasd
-                            </div>
-                        @endif
                         <h3>Send Error Report</h3>
-                        <h5>Make sure you have internet connection</h5>
+                        <h5 class="text-danger">Make sure you have internet connection</h5>
                         <form method="post" action="/email-send" enctype="multipart/form-data">
                             <div class="form-group">
                                 <lable>Subject</lable>
@@ -76,14 +66,14 @@
                         <table class="table">
                             <tr>
                                 <td><strong><i class="fa fa-phone"></i>&nbsp;Phone</strong></td>
-                                <td><strong>0731888814 | </strong></td>
+                                <td><strong>0731888814</strong></td>
                             </tr>
                             <tr>
                                 <td><strong><i class="fa fa-envelope"></i>&nbsp;Email</strong></td>
-                                <td><strong>support@denta.af</strong></td>
+                                <td><strong>dentaclinic2018@gmail.com</strong></td>
                             </tr>
                             <tr>
-                                <td><strong><i class="fa fa-facebook"></i>&nbsp;facebook</strong></td>
+                                <td><strong><i class="fa fa-facebook-square"></i>&nbsp;facebook</strong></td>
                                 <td><strong><a href="https://www.facebook.com/paypolsoftwaredevelopment/?modal=admin_todo_tour">Paypol Software Development Co</a></strong></td>
                             </tr>
                         </table>

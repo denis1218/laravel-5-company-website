@@ -22,5 +22,11 @@
     <link href="{{ asset('dashboard/css/plugins/toastr/toastr.min.css') }}" rel="stylesheet">
     {{-- calender style link --}}
     @yield('style')
+    <style type="text/css">
+        body.fr{
+            font-family: "B Yekan";
+        }
+    </style>
+
 
 </head>

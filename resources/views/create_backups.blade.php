@@ -7,23 +7,7 @@
 
 
     {{-- buttons --}}
-    <div class="row wrapper border-bottom white-bg page-heading"
-         style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
 
-        <div class="col-md-2 ">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height: 65px; width:130px;"
-                   href="/backup"></i><img src="img/db.png" width="30px"/><br/>{{trans('file.backup_list')}}<br/></a></h2>
-        </div>
-        <div class="col-md-2" style="margin-left:-50px;">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height: 65px;" href="/create_backups"></i>
-                    <img src="img/db_plus.png" width="30px"/><br/>{{trans('file.database_backup')}}<br/></a></h2>
-        </div>
-        <div class="col-md-2" style="margin-left:-40px;">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height: 65px;" href="/restore">
-                    <img src="img/db_restor.png" width="30px"/>
-                    <br/>{{trans('file.restore_database')}}<br/></a></h2>
-        </div>
-    </div>
     {{-- buttons --}}
 
 
@@ -37,15 +21,6 @@
                     </a>
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
                     </a>
                 </div>
             </div>

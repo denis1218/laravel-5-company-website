@@ -1,4 +1,4 @@
-<body>
+<body class="{{ app()->getLocale() }}">
 
 <div id="wrapper">
 
