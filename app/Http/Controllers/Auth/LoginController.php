@@ -75,12 +75,14 @@ class LoginController extends Controller
                 return redirect()->intended('/dash_doctor');
             } elseif (Auth()->user()->department == 'admin') {
                 return redirect()->intended('/dash');
+            }elseif (Auth()->user()->department == 'xray'){
+                return redirect()->intended('/xray');
             }
         }else{
             $value = "incorrect Email or Password.";
             return view('/login',compact('value'));
         }
-        return redirect('/login');
+//        return redirect('/login');
 
     }
 
@@ -97,9 +99,5 @@ class LoginController extends Controller
         Auth::logout();
         return redirect('/login');
     }
-
-
-
-
 
 }

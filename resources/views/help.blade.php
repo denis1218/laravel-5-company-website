@@ -273,7 +273,7 @@
                                                     <li><a data-toggle="tab" href="#pregister"><img src="{{asset('img/patient.PNG')}}" style="width:40px;height: 40px;margin-left: 11px"><br><span style="margin-left: 15px;">Patient</span> <br>Registration</a></li>
                                                     <li><a data-toggle="tab" href="#plist"><img src="{{asset('img/patient_list.PNG')}}" style="width:60px;height: 50px;margin-left: -6px"><br>Patient<br><span style="margin-left: 10px;">Lsit</span></a></li>
                                                     <li><a data-toggle="tab" href="#preport"><img src="{{asset('img/patient_report.PNG')}}" style="width:60px;height: 50px;margin-left: -5px"><br><span style="margin-left: 10px;">Patient</span><br><span style="margin-left: 10px;">Report</span></a></li>
-                                                    <li><a data-toggle="tab" href="#prescriptoin"><img src="{{asset('img/prescription.PNG')}}" style="width:50px;height: 50px;margin-left: -5px"><br><span style="margin-left: -18px;">Prescription</span></a></li>
+                                                    <li><a data-toggle="tab" href="#presc"><img src="{{asset('img/prescription.PNG')}}" style="width:50px;height: 50px;margin-left: -5px"><br><span style="margin-left: -18px;">Prescription</span></a></li>
                                                 </ul>
                                                 <div class="tab-content">
                                                     {{--Doctor Registration--}}
@@ -369,57 +369,27 @@
                                                         </div>
                                                     </div>
                                                     {{--End of Patient Registration --}}
-                                                    {{--X-ray Department--}}
+                                                    {{--Patient List--}}
                                                     <div id="plist" class="tab-pane">
                                                         <div class="panel-body">
                                                             <div class="row">
-                                                                <h1 style="margin-left: 10px;">X-ray Page Information:</h1>
-                                                                <div class="col-sm-12"><p>From Department in sidebar by clicking on <b>X-Ray</b> X-ray page will appear.<br>
-                                                                        This page contains two parts namely .</p>
-                                                                    <ul>
-                                                                        <li>New Patient</li>
-                                                                        <li>Already Done</li>
-                                                                    </ul>
+                                                                <h1 style="margin-left: 10px;">Patient List Page Information:</h1>
+                                                                <div class="col-sm-12"><p>From Reception in sidebar by clicking on <b>List of Patient</b> Patient list will appear.<br></p>
                                                                 </div>
                                                                 <div class="col-sm-10">
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>1-New Patient:</h3>In this page all the patients who have to take X-ray and have not taken yet will be listed.<br>
-                                                                            Number of patients is displaied on top of the table , if there was not patient a text will appear to notify you.
-                                                                            By clicking on <b>Details</b> button in  the last column , if patient had not paid X-ray fee you will receive an alert otherwise another page will apper.<br>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row" style="margin-top: 50px;">
-                                                                        <div class="col-sm-12">
-                                                                            <h4>X-ray Should be done here:</h4>In this page , when patient mad his/her payment for x-ray by changing X-ray status from
-                                                                            <b><i>Not</i></b> to <b><i>Yes</i></b> Patient's details will disappear form <b><strong>New Patient</strong></b> list and will be added to <b><strong>Already Done</strong></b> list.<br>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row" style="margin-top: 50px;">
-                                                                        <div class="col-sm-12">
-                                                                            <h3>2-Already Done:</h3>In this page those patients whose X-ray is already taken and completed will be displayed.
+                                                                            <h3>List of Patient:</h3>In this page all the patients will be listed out in <strong>All Patient</strong> tab.<br>
+                                                                            By clicking on doctor's name patients of that specified doctor will be shown.<br>
+                                                                            Using top navigation bar you can register new patient, list new registered patient of the current day,previous patients having appointment for current day and those who had appointment for current day but had not come.
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-2">
                                                                     <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
                                                                         <div class="col-sm-12">
-                                                                            <button type="button" id="nxray" onclick="Nxray()" onblur="nXray()" style="width: 145px;height:50px;border: none">
-                                                                                <img src="{{asset('img/xray.JPG')}}" style="height: 108%;width: 100%;">
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
-                                                                        <div class="col-sm-12">
-                                                                            <button type="button" id="xstatus" onclick="Xstatus()" onblur="xStatus()" style="width: 145px;height:50px;border: none">
-                                                                                <img src="{{asset('img/xstatus.JPG')}}" style="height: 108%;width: 100%;">
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row" style="margin-top: 60px;" title="Click here on image to enlarge it">
-                                                                        <div class="col-sm-12">
-                                                                            <button type="button" id="donx" onclick="Donx()" onblur="donX()" style="width: 145px;height:50px;border: none">
-                                                                                <img src="{{asset('img/dpr.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            <button type="button" id="pl" onclick="Plist()" onblur="pList()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/plist.JPG')}}" style="height: 108%;width: 100%;">
                                                                             </button>
                                                                         </div>
                                                                     </div>
@@ -427,58 +397,26 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    {{--End of X-ray Department --}}
-                                                    {{--X-ray Department--}}
+                                                    {{--End of Patient List --}}
+                                                    {{--Patient Report--}}
                                                     <div id="preport" class="tab-pane">
                                                         <div class="panel-body">
                                                             <div class="row">
-                                                                <h1 style="margin-left: 10px;">X-ray Page Information:</h1>
-                                                                <div class="col-sm-12"><p>From Department in sidebar by clicking on <b>X-Ray</b> X-ray page will appear.<br>
-                                                                        This page contains two parts namely .</p>
-                                                                    <ul>
-                                                                        <li>New Patient</li>
-                                                                        <li>Already Done</li>
-                                                                    </ul>
+                                                                <h1 style="margin-left: 10px;">Patient Report Page Information:</h1>
+                                                                <div class="col-sm-12"><p>From Reception in sidebar by clicking on <b>Patient Report</b> Patient list will appear where you can get report of specific patient.<br></p>
                                                                 </div>
                                                                 <div class="col-sm-10">
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>1-New Patient:</h3>In this page all the patients who have to take X-ray and have not taken yet will be listed.<br>
-                                                                            Number of patients is displaied on top of the table , if there was not patient a text will appear to notify you.
-                                                                            By clicking on <b>Details</b> button in  the last column , if patient had not paid X-ray fee you will receive an alert otherwise another page will apper.<br>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row" style="margin-top: 50px;">
-                                                                        <div class="col-sm-12">
-                                                                            <h4>X-ray Should be done here:</h4>In this page , when patient mad his/her payment for x-ray by changing X-ray status from
-                                                                            <b><i>Not</i></b> to <b><i>Yes</i></b> Patient's details will disappear form <b><strong>New Patient</strong></b> list and will be added to <b><strong>Already Done</strong></b> list.<br>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row" style="margin-top: 50px;">
-                                                                        <div class="col-sm-12">
-                                                                            <h3>2-Already Done:</h3>In this page those patients whose X-ray is already taken and completed will be displayed.
+                                                                            <h3>Patient Report:</h3> From table by clicking on the <strong>Print</strong> button you can print the report of specified patient.
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-2">
                                                                     <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
                                                                         <div class="col-sm-12">
-                                                                            <button type="button" id="nxray" onclick="Nxray()" onblur="nXray()" style="width: 145px;height:50px;border: none">
-                                                                                <img src="{{asset('img/xray.JPG')}}" style="height: 108%;width: 100%;">
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
-                                                                        <div class="col-sm-12">
-                                                                            <button type="button" id="xstatus" onclick="Xstatus()" onblur="xStatus()" style="width: 145px;height:50px;border: none">
-                                                                                <img src="{{asset('img/xstatus.JPG')}}" style="height: 108%;width: 100%;">
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row" style="margin-top: 60px;" title="Click here on image to enlarge it">
-                                                                        <div class="col-sm-12">
-                                                                            <button type="button" id="donx" onclick="Donx()" onblur="donX()" style="width: 145px;height:50px;border: none">
-                                                                                <img src="{{asset('img/dpr.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            <button type="button" id="pr" onclick="Preport()" onblur="pReport()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/preport.JPG')}}" style="height: 108%;width: 100%;">
                                                                             </button>
                                                                         </div>
                                                                     </div>
@@ -486,58 +424,27 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    {{--End of X-ray Department --}}
-                                                    {{--X-ray Department--}}
-                                                    <div id="prescription" class="tab-pane">
+                                                    {{--End of Patient Report --}}
+                                                    {{--Prescription--}}
+                                                    <div id="presc" class="tab-pane">
                                                         <div class="panel-body">
                                                             <div class="row">
-                                                                <h1 style="margin-left: 10px;">X-ray Page Information:</h1>
-                                                                <div class="col-sm-12"><p>From Department in sidebar by clicking on <b>X-Ray</b> X-ray page will appear.<br>
-                                                                        This page contains two parts namely .</p>
-                                                                    <ul>
-                                                                        <li>New Patient</li>
-                                                                        <li>Already Done</li>
-                                                                    </ul>
+                                                                <h1 style="margin-left: 10px;">Prescription Page Information:</h1>
+                                                                <div class="col-sm-12"><p>From Reception in sidebar by clicking on <b>Prescription</b> list of prescription will appear.<br></p>
                                                                 </div>
                                                                 <div class="col-sm-10">
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>1-New Patient:</h3>In this page all the patients who have to take X-ray and have not taken yet will be listed.<br>
-                                                                            Number of patients is displaied on top of the table , if there was not patient a text will appear to notify you.
-                                                                            By clicking on <b>Details</b> button in  the last column , if patient had not paid X-ray fee you will receive an alert otherwise another page will apper.<br>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row" style="margin-top: 50px;">
-                                                                        <div class="col-sm-12">
-                                                                            <h4>X-ray Should be done here:</h4>In this page , when patient mad his/her payment for x-ray by changing X-ray status from
-                                                                            <b><i>Not</i></b> to <b><i>Yes</i></b> Patient's details will disappear form <b><strong>New Patient</strong></b> list and will be added to <b><strong>Already Done</strong></b> list.<br>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row" style="margin-top: 50px;">
-                                                                        <div class="col-sm-12">
-                                                                            <h3>2-Already Done:</h3>In this page those patients whose X-ray is already taken and completed will be displayed.
+                                                                            <h3>Prescription:</h3> This tabel containing patient name , medicine, pattern of usage,number of days etc.<br>
+                                                                            By clicking on <strong>Print</strong> button you can print the prescription of specified patient.
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-2">
                                                                     <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
                                                                         <div class="col-sm-12">
-                                                                            <button type="button" id="nxray" onclick="Nxray()" onblur="nXray()" style="width: 145px;height:50px;border: none">
-                                                                                <img src="{{asset('img/xray.JPG')}}" style="height: 108%;width: 100%;">
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
-                                                                        <div class="col-sm-12">
-                                                                            <button type="button" id="xstatus" onclick="Xstatus()" onblur="xStatus()" style="width: 145px;height:50px;border: none">
-                                                                                <img src="{{asset('img/xstatus.JPG')}}" style="height: 108%;width: 100%;">
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row" style="margin-top: 60px;" title="Click here on image to enlarge it">
-                                                                        <div class="col-sm-12">
-                                                                            <button type="button" id="donx" onclick="Donx()" onblur="donX()" style="width: 145px;height:50px;border: none">
-                                                                                <img src="{{asset('img/dpr.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            <button type="button" id="pres" onclick="Prescription()" onblur="pRescription()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/prescription.JPG')}}" style="height: 108%;width: 100%;">
                                                                             </button>
                                                                         </div>
                                                                     </div>
@@ -545,7 +452,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    {{--End of X-ray Department --}}
+                                                    {{--End of Prescription --}}
                                                 </div>
                                             </div>
                                         </div>
@@ -730,6 +637,39 @@
         function pRegister3() {
             document.getElementById('preg3').style.zIndex="0";
             document.getElementById('preg3').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    <script>
+        function Plist() {
+            document.getElementById('pl').style.position="relative";
+            document.getElementById('pl').style.zIndex="1";
+            document.getElementById('pl').style.transform="translate(-415px,-130px) scale(7.1,8.4)";
+        }
+        function pList() {
+            document.getElementById('pl').style.zIndex="0";
+            document.getElementById('pl').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    <script>
+        function Preport() {
+            document.getElementById('pr').style.position="relative";
+            document.getElementById('pr').style.zIndex="1";
+            document.getElementById('pr').style.transform="translate(-415px,-130px) scale(7.1,8.4)";
+        }
+        function pReport() {
+            document.getElementById('pr').style.zIndex="0";
+            document.getElementById('pr').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    <script>
+        function Prescription() {
+            document.getElementById('pres').style.position="relative";
+            document.getElementById('pres').style.zIndex="1";
+            document.getElementById('pres').style.transform="translate(-415px,-130px) scale(7.1,8.4)";
+        }
+        function pRescription() {
+            document.getElementById('pres').style.zIndex="0";
+            document.getElementById('pres').style.transform="translate(0px,0px) scale(1,1)";
         }
     </script>
     {{--End of Reception--}}

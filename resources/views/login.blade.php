@@ -48,7 +48,8 @@
                     </div>
                 @endif
                 <form class="m-t" role="form" method="POST" action="{{ route('login') }}">
-                    {{--@csrf--}}
+
+                    {{csrf_field()}}
 
                     <div class="form-group">
                         <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>

@@ -22,8 +22,6 @@
                         <img src="img/small_logo_denta.png" width="30px"/>
                     </div>
                 </li>
-                {{--condition for super admin--}}
-
 
                 {{--condition for super admin--}}
                 @if(Auth::user()->department == 'admin')
@@ -32,7 +30,6 @@
                         <a href="/dash"><i class="fa fa-home"></i> <span class="nav-label">{{trans('file.home')}}</span>
                         </a>
                     </li>
-
                     <li>
                         <a><i class="fa fa-sitemap"></i> <span
                                     class="nav-label">{{trans('file.department')}}</span><span class="fa arrow"></span></a>
@@ -42,8 +39,6 @@
                                                      width="13px"/>&nbsp;{{trans('file.xray')}}</a></li>
                         </ul>
                     </li>
-
-
                     <li>
                         <a><i class="fa fa-book"></i> <span class="nav-label">{{trans('file.reception')}}</span><span
 
@@ -62,7 +57,6 @@
                                 </a></li>
                         </ul>
                     </li>
-
                     <li>
                         <a><i class="fa fa-calculator"></i> <span
                                     class="nav-label">{{trans('file.finance')}}</span><span
@@ -139,30 +133,53 @@
                     </li>
                     {{--end condition of super admin--}}
                 @endif
+<<<<<<< HEAD
+=======
+                {{--End of Super Admin--}}
+>>>>>>> aa6ff912f63b7bf519b20c73b3923433814115d4
 
+                {{--Condition for Doctor --}}
                 @if(Auth::user()->department == 'doctor')
-
-
                     <li class="active">
                         <a href="/dash_doctor"><i class="fa fa-home"></i> <span
                                     class="nav-label">{{trans('file.home')}}</span> </a>
                     </li>
-
-
                     <li>
                         <a><i class="fa fa-sitemap"></i> <span
                                     class="nav-label">{{trans('file.department')}}</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-
                             <li><a href="/operation"><i class="fa fa-user-md"></i>{{trans('file.doctor')}}</a></li>
-                            <li><a href="/xray"><i class="fa fa-flash"></i>{{trans('file.xray')}}</a></li>
-
+                            {{--<li><a href="/xray"><i class="fa fa-flash"></i>{{trans('file.xray')}}</a></li>--}}
                         </ul>
                     </li>
 
+                </ul>
+            @endif
+                {{--end condition of doctor--}}
+
+                {{--Condition for X-ray --}}
+                @if(Auth::user()->department == 'xray')
+                    <li class="active">
+                        <a href="/xray"><i class="fa fa-home"></i> <span
+                                    class="nav-label">{{trans('file.home')}}</span> </a>
+                    </li>
+                    <li>
+                        <a><i class="fa fa-sitemap"></i> <span
+                                    class="nav-label">{{trans('file.department')}}</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            {{--<li><a href="/operation"><i class="fa fa-user-md"></i>{{trans('file.doctor')}}</a></li>--}}
+                            <li><a href="/xray"><i class="fa fa-flash"></i>{{trans('file.xray')}}</a></li>
+                        </ul>
+                    </li>
+
+<<<<<<< HEAD
                     {{--end condition of doctor--}}
 
                 @endif
+=======
+                @endif
+                {{--end condition of X-ray--}}
+>>>>>>> aa6ff912f63b7bf519b20c73b3923433814115d4
 
                 @if(Auth::user()->department == 'reception')
 
@@ -219,7 +236,11 @@
                         </ul>
                     </li>
                 @endif
+<<<<<<< HEAD
             </ul>
+=======
+                {{--end  of finance condition--}}
+>>>>>>> aa6ff912f63b7bf519b20c73b3923433814115d4
         </div>
     </nav>
 </div>
