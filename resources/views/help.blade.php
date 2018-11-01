@@ -463,7 +463,173 @@
                             {{--Finance Tab--}}
                             <div id="finance" class="tab-pane">
                                 <div class="panel-body">
-                                    <strong>This is finance tab</strong>
+                                    <div class="row">
+                                        <div class="col-sm-12 text-center"><h2>Finance Information</h2><hr></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="tabs-container">
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active"><a data-toggle="tab" href="#expenditure"><img src="{{asset('img/expense_icon.PNG')}}" style="width:60px;height: 60px;margin-left: 20px"><br><span style="margin-left: 15px;">Expenditure</span></a></li>
+                                                    <li><a data-toggle="tab" href="#income"><img src="{{asset('img/income_icon.PNG')}}" style="width:60px;height: 60px;margin-left: 11px"><br><span style="margin-left: 20px;">Income</span></a></li>
+                                                    <li><a data-toggle="tab" href="#doctor"><img src="{{asset('img/doctors.PNG')}}" style="width:60px;height: 60px;margin-left: -6px"><br>Doctors<br></a></li>
+                                                    <li><a data-toggle="tab" href="#freport"><img src="{{asset('img/report_finance.PNG')}}" style="width:60px;height: 60px;margin-left: 20px"><br>Financial Report<br></a></li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    {{--Expenditure--}}
+                                                    <div id="expenditure" class="tab-pane active">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <h1 style="margin-left: 10px;">Expenditure Page Information</h1>
+                                                                <div class="col-sm-12">
+                                                                    <p>From Sidebar by clicking on <strong><b>Expenditure</b></strong> a form will appear to you where you can register existing doctors or any new admited doctor.</p>
+                                                                </div>
+                                                                <div class="col-sm-10">
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>Expenditure:</h3> In this page all the expenses that have taken place in the clinic will be listed out.<br>
+                                                                            The categories are specified to whow for what purpose the money is expended.<br>
+                                                                            From edit column you can edit the content of each record and also you can delete it .<br><br>
+                                                                            <strong>Note:</strong> Using the topleft button you can add new expenses by filling out the form which will be appeared after clicking on the mentioned button.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="exp" onclick="Exp()" onblur="eXp()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/expenditure.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{--End of Expenditure--}}
+                                                    {{--Income--}}
+                                                    <div id="income" class="tab-pane">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <h1 style="margin-left: 10px;">Patient Registration Page Information</h1>
+                                                                <div class="col-sm-12"><p>From Sidebar by clicking on <strong><b>Patient Registration</b></strong> in the reception part a form will appear to you where you can register patient. <br>
+                                                                        This form consists of three parts or steps.</p>
+                                                                    <ul>
+                                                                        <li>Doctor Information</li>
+                                                                        <li>Patient Personal Information</li>
+                                                                        <li>Patient Health Problem</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-sm-10">
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>1-Doctor Information:</h3> In this form you can choose the doctor for the newcomer patients, the details of doctors in this form are as bellow.<br>
+                                                                            Doctor name,period of time in which doctor is present in the clinic , maximum patient he can visit per day, number of patients which have already been registered for that doctor etc.
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>2-Patient Personal Information:</h3> In here patient's personal information should be inserted like name,last name,gender,phone number address etc.
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>3-Patient Health Problem:</h3> In here three things must be spicified.<br>
+                                                                            <ul>
+                                                                                <li>Prior Treatment for same tooth: Means if the same tooth has already been treated so it's file will be there for ease of process.</li>
+                                                                                <li>Anesthetic Problem: Means whether the patient has allergy to anesthetic drugs or not.</li>
+                                                                                <li>Other Health Problems: like diabets ,HIV...etc</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="preg1" onclick="Pregister1()" onblur="pRegister1()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/prf1.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="preg2" onclick="Pregister2()" onblur="pRegister2()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/prf2.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="preg3" onclick="Pregister3()" onblur="pRegister3()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/prf3.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{--End of Income --}}
+                                                    {{--Doctor--}}
+                                                    <div id="doctor" class="tab-pane">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <h1 style="margin-left: 10px;">Patient List Page Information:</h1>
+                                                                <div class="col-sm-12"><p>From Reception in sidebar by clicking on <b>List of Patient</b> Patient list will appear.<br></p>
+                                                                </div>
+                                                                <div class="col-sm-10">
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>List of Patient:</h3>In this page all the patients will be listed out in <strong>All Patient</strong> tab.<br>
+                                                                            By clicking on doctor's name patients of that specified doctor will be shown.<br>
+                                                                            Using top navigation bar you can register new patient, list new registered patient of the current day,previous patients having appointment for current day and those who had appointment for current day but had not come.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="pl" onclick="Plist()" onblur="pList()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/plist.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{--End of Doctor --}}
+                                                    {{--Financial Report--}}
+                                                    <div id="freport" class="tab-pane">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <h1 style="margin-left: 10px;">Patient Report Page Information:</h1>
+                                                                <div class="col-sm-12"><p>From Reception in sidebar by clicking on <b>Patient Report</b> Patient list will appear where you can get report of specific patient.<br></p>
+                                                                </div>
+                                                                <div class="col-sm-10">
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>Patient Report:</h3> From table by clicking on the <strong>Print</strong> button you can print the report of specified patient.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="pr" onclick="Preport()" onblur="pReport()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/preport.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{--End of Financial Report --}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             {{--End of finance Tab--}}
@@ -673,6 +839,19 @@
         }
     </script>
     {{--End of Reception--}}
+    {{--Finance--}}
+    <script>
+        function Exp() {
+            document.getElementById('exp').style.position="relative";
+            document.getElementById('exp').style.zIndex="1";
+            document.getElementById('exp').style.transform="translate(-415px,-130px) scale(7.1,8.4)";
+        }
+        function eXp() {
+            document.getElementById('exp').style.zIndex="0";
+            document.getElementById('exp').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    {{--End of Finance--}}
 
 
 @stop
