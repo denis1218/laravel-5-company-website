@@ -133,10 +133,7 @@
                     </li>
                     {{--end condition of super admin--}}
                 @endif
-<<<<<<< HEAD
-=======
-                {{--End of Super Admin--}}
->>>>>>> aa6ff912f63b7bf519b20c73b3923433814115d4
+
 
                 {{--Condition for Doctor --}}
                 @if(Auth::user()->department == 'doctor')
@@ -152,9 +149,8 @@
                             {{--<li><a href="/xray"><i class="fa fa-flash"></i>{{trans('file.xray')}}</a></li>--}}
                         </ul>
                     </li>
+                @endif
 
-                </ul>
-            @endif
                 {{--end condition of doctor--}}
 
                 {{--Condition for X-ray --}}
@@ -172,14 +168,9 @@
                         </ul>
                     </li>
 
-<<<<<<< HEAD
-                    {{--end condition of doctor--}}
-
-                @endif
-=======
                 @endif
                 {{--end condition of X-ray--}}
->>>>>>> aa6ff912f63b7bf519b20c73b3923433814115d4
+
 
                 @if(Auth::user()->department == 'reception')
 
@@ -191,6 +182,9 @@
 
 
                     <li>
+                        <a><i class="fa fa-calculator"></i> <span
+                                    class="nav-label">{{trans('file.reception')}}</span><span
+                                    class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/doctors/create"><i
                                             class="fa fa-save"></i>{{trans('file.doctor_registration')}}
@@ -236,11 +230,8 @@
                         </ul>
                     </li>
                 @endif
-<<<<<<< HEAD
             </ul>
-=======
-                {{--end  of finance condition--}}
->>>>>>> aa6ff912f63b7bf519b20c73b3923433814115d4
+            {{--end  of finance condition--}}
         </div>
     </nav>
 </div>
