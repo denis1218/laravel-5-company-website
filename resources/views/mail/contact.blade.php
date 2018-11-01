@@ -33,16 +33,7 @@
             <div class="ibox-content">
                 <div class="row">
                     <div class="col-md-6">
-                        @include('flash::message')
-                        @if(Session::has('success'))
-                                <div class="alert alert-danger" role="alert">
-                                    successfully send it
-                                </div>
-                            @elseif(\Illuminate\Support\Facades\Session::has('success'))
-                            <div class="alert alert-danger" role="alert">
-                                successfully send itasdfasd
-                            </div>
-                        @endif
+
                         <h3>Send Error Report</h3>
                         <h5>Make sure you have internet connection</h5>
                         <form method="post" action="/email-send" enctype="multipart/form-data">

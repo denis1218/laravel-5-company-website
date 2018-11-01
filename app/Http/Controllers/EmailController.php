@@ -47,9 +47,9 @@ class EmailController extends Controller
             $fileName        = $request->imagefile->getClientOriginalName();
             $filepath        = $destinationPath.'/'.$fileName;
             try{
-//            Mail::to('mahdisafari.software.eng@gmail.com')->send(new SendEmail(
-//                $request->input('title'),$request->input('content'),$filepath
-//            ));
+            Mail::to('mahdisafari.software.eng@gmail.com')->send(new SendEmail(
+                $request->input('title'),$request->input('content'),$filepath
+            ));
 
             }catch (Exception $ex) {
                 return redirect('/contact')->withErrors('errors', 'error hapingaosjd');
@@ -57,9 +57,9 @@ class EmailController extends Controller
 
         }else{
             try{
-//            Mail::to('mahdisafari.software.eng@gmail.com')->send(new SendEmail(
-//                $request->input('title'),$request->input('content')
-//            ));
+            Mail::to('mahdisafari.software.eng@gmail.com')->send(new SendEmail(
+                $request->input('title'),$request->input('content'),null
+            ));
             }catch (Exception $ex){
                 return redirect('/contact');
             }
