@@ -51,7 +51,7 @@ class XrayController extends Controller
         $rey->xray_status=$request->input('xray_status');
         $rey->save();
 
-        return redirect('/xray')->with('success','Patient registered for x-ray successfully');
+        return redirect('/operation')->with('success','Patient registered for x-ray successfully');
 
 
     }

@@ -62,8 +62,10 @@ Route::middleware('auth','doctor')->group(function () {
     Route::get('/about-us','HomeController@about_us');
 });
 // End Route Doctor
+Route::middleware('auth','xray')->group(function (){
+    Route::resource('xray', 'XrayController');
 
-
+});
 // Route Group & Middleware for reception
 Route::middleware('auth','reception')->group(function () {
 
@@ -144,7 +146,7 @@ Route::middleware('auth','reception')->group(function () {
 // Doctor Registration
     Route::resource('/doctors', 'DoctorController');
 //Xray Controller
-    Route::resource('xray', 'XrayController');
+
 //Other Income Route
     Route::resource('other-income', 'OincomController');
 

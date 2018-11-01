@@ -68,5 +68,6 @@ class Kernel extends HttpKernel
         'doctor' => \App\Http\Middleware\DoctorRoute::class,
         'reception' => \App\Http\Middleware\ReceptionRoute::class,
         'admin' => \App\Http\Middleware\AdminRoute::class,
+        'xray' => \App\Http\Middleware\XrayRoute::class,
     ];
 }

@@ -47,7 +47,11 @@ class EmailController extends Controller
             $fileName        = $request->imagefile->getClientOriginalName();
             $filepath        = $destinationPath.'/'.$fileName;
             try{
+<<<<<<< HEAD
+            Mail::to('mahdisafari.software.eng@gmail.com')->send(new SendEmail(
+=======
             Mail::to('dentaclinic2018@gmail.com')->send(new SendEmail(
+>>>>>>> aa6ff912f63b7bf519b20c73b3923433814115d4
                 $request->input('title'),$request->input('content'),$filepath
             ));
 
@@ -57,7 +61,11 @@ class EmailController extends Controller
 
         }else{
             try{
+<<<<<<< HEAD
+            Mail::to('mahdisafari.software.eng@gmail.com')->send(new SendEmail(
+=======
             Mail::to('dentaclinic2018@gmail.com')->send(new SendEmail(
+>>>>>>> aa6ff912f63b7bf519b20c73b3923433814115d4
                 $request->input('title'),$request->input('content'),null
             ));
             }catch (Exception $ex){
