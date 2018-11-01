@@ -145,10 +145,11 @@
                         <a><i class="fa fa-sitemap"></i> <span
                                     class="nav-label">{{trans('file.department')}}</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/operation"><i class="fa fa-user-md"></i>{{trans('file.doctor')}}</a></li>
+                            <li><a href="/dash_doctor"><i class="fa fa-user-md"></i>{{trans('file.doctor')}}</a></li>
                             {{--<li><a href="/xray"><i class="fa fa-flash"></i>{{trans('file.xray')}}</a></li>--}}
                         </ul>
                     </li>
+
                 @endif
 
                 {{--end condition of doctor--}}
