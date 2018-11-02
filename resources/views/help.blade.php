@@ -41,7 +41,8 @@
                             <li><a data-toggle="tab" href="#reception"><i class="fa fa-user" style="font-size: 35px;margin-left: 15px"></i><br>Reception</a></li>
                             <li><a data-toggle="tab" href="#finance"><i class="fa fa-money" style="font-size: 35px;margin-left: 5px"></i><br>Finance</a></li>
                             <li><a data-toggle="tab" href="#setting"><i class="fa fa-cog" style="font-size: 35px;margin-left: 7px"></i><br>Setting</a></li>
-                            <li><a data-toggle="tab" href="#contact"><i class="fa fa-phone" style="font-size: 35px;margin-left: 7px"></i><br>Contact</a></li>
+                            <li><a data-toggle="tab" href="#contact"><i class="fa fa-phone" style="font-size: 35px;margin-left: 7px"></i><br>Support</a></li>
+                            <li><a data-toggle="tab" href="#about"><i class="fa fa-info" style="font-size: 35px;margin-left: 20px"></i><br>About Us</a></li>
                             {{--End of Mian NavTabs--}}
                         </ul>
                         <div class="tab-content">
@@ -623,7 +624,59 @@
                                                     {{--Financial Report--}}
                                                     <div id="freport" class="tab-pane">
                                                         <div class="panel-body">
-
+                                                            <div class="row">
+                                                                <h1 style="margin-left: 10px;">Financial Report Page Information:</h1>
+                                                                <div class="col-sm-12"><p>Under Finance in sidebar by clicking on <b>Financial Report</b> a submenu will be displayed containing three kind of report.<br></p>
+                                                                    <ul>
+                                                                        <li>Income Financial Report</li>
+                                                                        <li>Expense Financial Report</li>
+                                                                        <li>Profit Financial Report</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-sm-10">
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>Income Financial Report:</h3>In the first row you can see the report of all type of income like patient income,x-ray income or other income all together by choosing single day date or a period of time between two date.<br>
+                                                                            In the second row you can see the report of specific type of income for either one day or for a period of time.
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>Expense Financial Report:</h3>In the first row you can see the report of all categories of expense like rent,medical expense,doctor salary ...etc, all together by choosing single day date or a period of time between two date.<br>
+                                                                            In the second row you can see the report of specific category of expense for either one day or for a period of time.
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>Profit Financial Report:</h3>In this page you can see the report of your profit.<br>
+                                                                            By choosing the single day date or for a period of time you will see the difference between your income and expense which shows you the neat profit.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="ifrep" onclick="Ifrep()" onblur="iFrep()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/ifreport.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 100px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="xfrep" onclick="Xfrep()" onblur="xFrep()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/xfreport.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 100px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="pirep" onclick="Pirep()" onblur="pIrep()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/pireport.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     {{--End of Financial Report --}}
@@ -637,17 +690,52 @@
                             {{--Setting Tab--}}
                             <div id="setting" class="tab-pane">
                                 <div class="panel-body">
-                                    <strong>This is setting tab</strong>
+                                    <h3>SETTING INFORMATION</h3>
+                                    <P>In this part you can create or delete user account,take backup of your database,add medicine to your list of prescription,category of expense,dental defect,treatment,department of doctor and also you can update your app in case if you receive update message.<br>
+                                    <b><strong>Note</strong></b>: There is no doctor department option in creating account, but doctor account will be automatically created while doctor registration.
+                                    </P>
                                 </div>
                             </div>
                             {{--End of setting Tab--}}
                             {{--Contact Tab--}}
                             <div id="contact" class="tab-pane">
                                 <div class="panel-body">
-                                    <strong>This is contact tab</strong>
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <h1>Support Page Information:</h1>
+                                            <div class="row">
+                                                <div class="col-sm-12"><p>In this page you can send us message if you face any problem regarding to functionality of the software<br>
+                                                        Take screenshot of the page that has error, attach it to email and send to us.</p></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button type="button" id="co" onclick="Contact()" onblur="cOntact()" style="width: 145px;height:50px;border: none">
+                                                <img src="{{asset('img/cont.JPG')}}" style="height: 108%;width: 100%;">
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             {{--End of Contact Tab--}}
+                            {{--About Tab--}}
+                            <div id="about" class="tab-pane">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <h1>About Page Information:</h1>
+                                            <div class="row">
+                                                <div class="col-sm-12"><p>In this page there is few information about our company and our activities.</p></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button type="button" id="abou" onclick="Abou()" onblur="aBou()" style="width: 145px;height:50px;border: none">
+                                                <img src="{{asset('img/about.JPG')}}" style="height: 108%;width: 100%;">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{--End of About Tab--}}
                         </div>
                     </div>
                 </div>
@@ -907,7 +995,63 @@
             document.getElementById('spp').style.transform="translate(0px,0px) scale(1,1)";
         }
     </script>
+    <script>
+        function Ifrep() {
+            document.getElementById('ifrep').style.position="relative";
+            document.getElementById('ifrep').style.zIndex="1";
+            document.getElementById('ifrep').style.transform="translate(-415px,30px) scale(7,9.9)";
+        }
+        function iFrep() {
+            document.getElementById('ifrep').style.zIndex="0";
+            document.getElementById('ifrep').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    <script>
+        function Xfrep() {
+            document.getElementById('xfrep').style.position="relative";
+            document.getElementById('xfrep').style.zIndex="1";
+            document.getElementById('xfrep').style.transform="translate(-415px,-70px) scale(7,9.9)";
+        }
+        function xFrep() {
+            document.getElementById('xfrep').style.zIndex="0";
+            document.getElementById('xfrep').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    <script>
+        function Pirep() {
+            document.getElementById('pirep').style.position="relative";
+            document.getElementById('pirep').style.zIndex="1";
+            document.getElementById('pirep').style.transform="translate(-415px,-170px) scale(7,9.9)";
+        }
+        function pIrep() {
+            document.getElementById('pirep').style.zIndex="0";
+            document.getElementById('pirep').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
     {{--End of Finance--}}
+    {{--contact--}}
+    <script>
+        function Contact() {
+            document.getElementById('co').style.position="relative";
+            document.getElementById('co').style.zIndex="1";
+            document.getElementById('co').style.transform="translate(-440px,70px) scale(7,9.9)";
+        }
+        function cOntact() {
+            document.getElementById('co').style.zIndex="0";
+            document.getElementById('co').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    <script>
+        function Abou() {
+            document.getElementById('abou').style.position="relative";
+            document.getElementById('abou').style.zIndex="1";
+            document.getElementById('abou').style.transform="translate(-440px,70px) scale(7,9.9)";
+        }
+        function aBou() {
+            document.getElementById('abou').style.zIndex="0";
+            document.getElementById('abou').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
 
 
 @stop
