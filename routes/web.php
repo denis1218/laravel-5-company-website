@@ -12,6 +12,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Carbon\Carbon;
+
 Auth::routes();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
@@ -248,7 +251,9 @@ Route::middleware('auth','reception')->group(function () {
 
 
 
-
+Route::get('tes',function (){
+   return Carbon::now();
+});
 
 
 

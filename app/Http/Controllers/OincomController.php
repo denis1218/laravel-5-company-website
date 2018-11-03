@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Oincom;
+use Carbon\Carbon;
 use DB;
 use Illuminate\Http\Request;
 use function Sodium\compare;
@@ -22,6 +23,7 @@ class OincomController extends Controller
         $ototal=DB::table('oincoms')->sum('amount');
         $Gtotal=$ptotal+$xtotal+$ototal;
         $total=DB::table('oincoms')->sum('amount');
+
 
         return view('ext_table',compact('others','total','Gtotal'));
 
@@ -55,6 +57,7 @@ class OincomController extends Controller
         $other->amount=$request->amount;
         $other->purpose=$request->purpose;
         $other->description=$request->description;
+        $other->created_at = Carbon::now();
         $other->save();
 
         return redirect('/other-income')->with('success','Inserted successfully');

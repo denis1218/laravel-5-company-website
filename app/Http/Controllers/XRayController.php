@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Patient;
 use App\Xray;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class XrayController extends Controller
@@ -49,6 +50,7 @@ class XrayController extends Controller
         $rey->doctor_name=$request->doctor_name;
         $rey->paid_amount=0;
         $rey->xray_status=$request->input('xray_status');
+        $rey->created_at = Carbon::now();
         $rey->save();
 
         return redirect('/operation')->with('success','Patient registered for x-ray successfully');
