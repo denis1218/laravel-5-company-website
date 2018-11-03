@@ -122,9 +122,13 @@
                                                                             <td>{{$pat->patient_id}}</td>
                                                                             <td>{{$pat->patient_name}}</td>
                                                                             <td>{{$pat->doctor_name}}</td>
-                                                                            <td id="pay">{{$pat->paid_amount}}</td>
+                                                                            <td>{{$pat->paid_amount}}</td>
                                                                             <td>{{$pat->xray_status}}</td>
-                                                                            <td><a class="btn btn-xs btn-info" id="details" href="/xray/{{$pat->id}}/edit" onclick="takeXray()">{{trans('file.details')}} &nbsp;<i class="fa fa-file-o"></i></a></td></td>
+                                                                            <td>
+                                                                                <form id="del" action="/xray/{{$pat->id}}/edit" id="myForm">
+                                                                                    <button class="btn btn-xs btn-info demo3" >{{trans('file.details')}} &nbsp;<i class="fa fa-file-o"></i></button>
+                                                                                </form>
+                                                                            </td>
                                                                         </tr>
                                                                     @endif
                                                                     </tbody>
@@ -201,12 +205,24 @@
 @endsection
 
 @section('script')
+
     <script>
-        function takeXray() {
-            var pa=document.getElementById('pay').innerHTML;
-            if(pa==0){
-                alert('This patient has not paid the x-ray fee!');
-            }
-        }
+        $(document).ready(function () {
+            $('.demo3').on('click',function(e){
+            e.preventDefault();
+            var form = $(this).parents('form');
+            swal({
+            title: "Has the patient paid X-ray fee?",
+            text: "If not, Press cancel and send him/her to finance department!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, delete it!",
+            closeOnConfirm: false
+            }, function(isConfirm){
+            if (isConfirm) form.submit();
+            });
+            });
+        });
     </script>
 @endsection

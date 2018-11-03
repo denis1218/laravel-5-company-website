@@ -29,7 +29,8 @@
                             <li><a data-toggle="tab" href="#reception"><i class="fa fa-user" style="font-size: 35px;margin-left: 15px"></i><br>Reception</a></li>
                             <li><a data-toggle="tab" href="#finance"><i class="fa fa-money" style="font-size: 35px;margin-left: 5px"></i><br>Finance</a></li>
                             <li><a data-toggle="tab" href="#setting"><i class="fa fa-cog" style="font-size: 35px;margin-left: 7px"></i><br>Setting</a></li>
-                            <li><a data-toggle="tab" href="#contact"><i class="fa fa-phone" style="font-size: 35px;margin-left: 7px"></i><br>Contact</a></li>
+                            <li><a data-toggle="tab" href="#contact"><i class="fa fa-phone" style="font-size: 35px;margin-left: 7px"></i><br>Support</a></li>
+                            <li><a data-toggle="tab" href="#about"><i class="fa fa-info" style="font-size: 35px;margin-left: 20px"></i><br>About Us</a></li>
                             {{--End of Mian NavTabs--}}
                         </ul>
                         <div class="tab-content">
@@ -451,24 +452,278 @@
                             {{--Finance Tab--}}
                             <div id="finance" class="tab-pane">
                                 <div class="panel-body">
-                                    <strong>This is finance tab</strong>
+                                    <div class="row">
+                                        <div class="col-sm-12 text-center"><h2>Finance Information</h2><hr></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="tabs-container">
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active"><a data-toggle="tab" href="#expenditure"><img src="{{asset('img/expense_icon.PNG')}}" style="width:60px;height: 60px;margin-left: 20px"><br><span style="margin-left: 15px;">Expenditure</span></a></li>
+                                                    <li><a data-toggle="tab" href="#income"><img src="{{asset('img/income_icon.PNG')}}" style="width:60px;height: 60px;margin-left: 11px"><br><span style="margin-left: 20px;">Income</span></a></li>
+                                                    <li><a data-toggle="tab" href="#doctorha"><img src="{{asset('img/doctors.PNG')}}" style="width:60px;height: 60px;margin-left: -6px"><br>Doctors<br></a></li>
+                                                    <li><a data-toggle="tab" href="#freport"><img src="{{asset('img/report_finance.PNG')}}" style="width:60px;height: 60px;margin-left: 20px"><br>Financial Report<br></a></li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    {{--Expenditure--}}
+                                                    <div id="expenditure" class="tab-pane active">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <h1 style="margin-left: 10px;">Expenditure Page Information</h1>
+                                                                <div class="col-sm-12">
+                                                                    <p>From Sidebar by clicking on <strong><b>Expenditure</b></strong> submenu of Finance a page will appear to you where you can see all the expenses taken place in the clinic.</p>
+                                                                </div>
+                                                                <div class="col-sm-10">
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>Expenditure:</h3> In this page all the expenses that have taken place in the clinic will be listed out.<br>
+                                                                            The categories are specified to whow for what purpose the money is expended.<br>
+                                                                            From edit column you can edit the content of each record and also you can delete it .<br>
+                                                                            The box in the topright of the page shows total expenses of the clinic.<br><br>
+                                                                            <strong>Note:</strong> Using the topleft button you can add new expenses by filling out the form which will be appeared after clicking on the mentioned button.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="exp" onclick="Exp()" onblur="eXp()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/expenditure.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{--End of Expenditure--}}
+                                                    {{--Income--}}
+                                                    <div id="income" class="tab-pane">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <h1 style="margin-left: 10px;">Income Page Information</h1>
+                                                                <div class="col-sm-12"><p>From Sidebar by clicking on <strong><b>Income</b></strong> submenu of Finance income page will appear to you that contains three Categories that can be accessed through topnav buttons named as bellow. <br></p>
+                                                                    <ul>
+                                                                        <li>Patient Income</li>
+                                                                        <li>X-ray Income</li>
+                                                                        <li>Other Income</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-sm-10">
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>1-Patient Income:</h3> In this table all the patients will be listed which have been treated but not paid the treatment fee.<br>
+                                                                            By clicking on <i>paid</i> button under Paid column a form will pop up where you can insert the amount of money that the patient is paying.<br>
+                                                                            Under <i>P_Details</i> column you can see details of patient.<br>
+                                                                            On the topright next to NavButtons you can see the total income of all categories.<br>
+                                                                            In the topright of the table next to search box there is <i>Show Completed Patient</i> which take you to another table , containing those patients that have paid the treatment fee completely.<br>
+                                                                            At that table in the same position there is <i>Show Loan Patient</i> which take you back to the first page.
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>2-X-ray Income:</h3> In this table all the patients will be listed which have been sent for X-ray but not paid the x-ray fee.<br>
+                                                                            By clicking on <i>paid</i> button under Paid column a form will pop up where you can insert the amount of money that the patient is paying.<br>
+                                                                            Under <i>P_Details</i> column you can see details of patient.<br>
+                                                                            In the topright of the table next to search box there is <i>Show Completed X-ray</i> which take you to another table , containing those patients that have paid the X-ray fee completely.<br>
+                                                                            At that table in the same position there is <i>Show Incompleted X-ray</i> which take you back to the first page.
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>3-Other Income:</h3> In this table those income will be listed out which have been received from other than the patients and x-ray for example from some institute, bank, organization etc.<br>
+                                                                            If you wanted to insert new other expense press the button <i>Add New Income</i> on the topright of the table next to the search box.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="pin" onclick="Pin()" onblur="pIn()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/pincome.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 180px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="xin" onclick="Xin()" onblur="xIn()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/xincome.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 120px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="oin" onclick="Oin()" onblur="oIn()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/oincome.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{--End of Income --}}
+                                                    {{--Doctor--}}
+                                                    <div id="doctorha" class="tab-pane">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <h1 style="margin-left: 10px;">Doctor Page Information:</h1>
+                                                                <div class="col-sm-12"><p>Under Finance in sidebar by clicking on <b>Doctors</b> Doctors table will be displayed.<br></p>
+                                                                </div>
+                                                                <div class="col-sm-10">
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>Doctor List:</h3>By clicking on <b><i>Doctor Salary</i></b> button at the topleft of the page another table will appear
+                                                                            that shows doctor's salary that you can understand whos salary is paid and when it paid? how much is left?..etc.<br>
+                                                                            In doctor salary page at the topleft there is <i><b>Doctor List</b></i> button which take you back to doctor list.<br>
+                                                                            In the doctor list table there is <i><b>PaySalary</b></i> button at the last column of the table that take you where you cna pay doctor's Salary.<br>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>Salary Payment Page:</h3>By clicking on <b><i>PaySalary</i></b> button at the last column of the table another page will appear
+                                                                            that shows doctor's salary type,amount,past remaining...etc.<br>
+                                                                            Doctor salary whether it is fix or percentage, will be computed automatically and be displayed at the end of table in small form,based on that you can enter the amount of money that you want to pay to doctor.<br>
+                                                                            The last date, when doctor had received salary will be displayed on top of payment box.<br>
+                                                                            At the top of table there is date range where you can choose the range of time , between which you are going to pay doctor salary.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="dsp" onclick="Dsp()" onblur="dSp()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/dlist.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 100px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="spp" onclick="Spp()" onblur="sPp()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/scomput.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{--End of Doctor --}}
+                                                    {{--Financial Report--}}
+                                                    <div id="freport" class="tab-pane">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <h1 style="margin-left: 10px;">Financial Report Page Information:</h1>
+                                                                <div class="col-sm-12"><p>Under Finance in sidebar by clicking on <b>Financial Report</b> a submenu will be displayed containing three kind of report.<br></p>
+                                                                    <ul>
+                                                                        <li>Income Financial Report</li>
+                                                                        <li>Expense Financial Report</li>
+                                                                        <li>Profit Financial Report</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-sm-10">
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>Income Financial Report:</h3>In the first row you can see the report of all type of income like patient income,x-ray income or other income all together by choosing single day date or a period of time between two date.<br>
+                                                                            In the second row you can see the report of specific type of income for either one day or for a period of time.
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>Expense Financial Report:</h3>In the first row you can see the report of all categories of expense like rent,medical expense,doctor salary ...etc, all together by choosing single day date or a period of time between two date.<br>
+                                                                            In the second row you can see the report of specific category of expense for either one day or for a period of time.
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 50px;">
+                                                                        <div class="col-sm-12">
+                                                                            <h3>Profit Financial Report:</h3>In this page you can see the report of your profit.<br>
+                                                                            By choosing the single day date or for a period of time you will see the difference between your income and expense which shows you the neat profit.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="ifrep" onclick="Ifrep()" onblur="iFrep()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/ifreport.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 100px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="xfrep" onclick="Xfrep()" onblur="xFrep()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/xfreport.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row" style="margin-top: 100px;" title="Click here on image to enlarge it">
+                                                                        <div class="col-sm-12">
+                                                                            <button type="button" id="pirep" onclick="Pirep()" onblur="pIrep()" style="width: 145px;height:50px;border: none">
+                                                                                <img src="{{asset('img/pireport.JPG')}}" style="height: 108%;width: 100%;">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{--End of Financial Report --}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             {{--End of finance Tab--}}
                             {{--Setting Tab--}}
                             <div id="setting" class="tab-pane">
                                 <div class="panel-body">
-                                    <strong>This is setting tab</strong>
+                                    <h3>SETTING INFORMATION</h3>
+                                    <P>In this part you can create or delete user account,take backup of your database,add medicine to your list of prescription,category of expense,dental defect,treatment,department of doctor and also you can update your app in case if you receive update message.<br>
+                                    <b><strong>Note</strong></b>: There is no doctor department option in creating account, but doctor account will be automatically created while doctor registration.
+                                    </P>
                                 </div>
                             </div>
                             {{--End of setting Tab--}}
                             {{--Contact Tab--}}
                             <div id="contact" class="tab-pane">
                                 <div class="panel-body">
-                                    <strong>This is contact tab</strong>
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <h1>Support Page Information:</h1>
+                                            <div class="row">
+                                                <div class="col-sm-12"><p>In this page you can send us message if you face any problem regarding to functionality of the software<br>
+                                                        Take screenshot of the page that has error, attach it to email and send to us.</p></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button type="button" id="co" onclick="Contact()" onblur="cOntact()" style="width: 145px;height:50px;border: none">
+                                                <img src="{{asset('img/cont.JPG')}}" style="height: 108%;width: 100%;">
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             {{--End of Contact Tab--}}
+                            {{--About Tab--}}
+                            <div id="about" class="tab-pane">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <h1>About Page Information:</h1>
+                                            <div class="row">
+                                                <div class="col-sm-12"><p>In this page there is few information about our company and our activities.</p></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button type="button" id="abou" onclick="Abou()" onblur="aBou()" style="width: 145px;height:50px;border: none">
+                                                <img src="{{asset('img/about.JPG')}}" style="height: 108%;width: 100%;">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{--End of About Tab--}}
                         </div>
                     </div>
                 </div>
@@ -661,6 +916,130 @@
         }
     </script>
     {{--End of Reception--}}
+    {{--Finance--}}
+    <script>
+        function Exp() {
+            document.getElementById('exp').style.position="relative";
+            document.getElementById('exp').style.zIndex="1";
+            document.getElementById('exp').style.transform="translate(-415px,-130px) scale(7.1,8.4)";
+        }
+        function eXp() {
+            document.getElementById('exp').style.zIndex="0";
+            document.getElementById('exp').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    <script>
+        function Pin() {
+            document.getElementById('pin').style.position="relative";
+            document.getElementById('pin').style.zIndex="1";
+            document.getElementById('pin').style.transform="translate(-415px,20px) scale(7.1,8.4)";
+        }
+        function pIn() {
+            document.getElementById('pin').style.zIndex="0";
+            document.getElementById('pin').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    <script>
+        function Xin() {
+            document.getElementById('xin').style.position="relative";
+            document.getElementById('xin').style.zIndex="1";
+            document.getElementById('xin').style.transform="translate(-415px,-130px) scale(7.1,8.4)";
+        }
+        function xIn() {
+            document.getElementById('xin').style.zIndex="0";
+            document.getElementById('xin').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    <script>
+        function Oin() {
+            document.getElementById('oin').style.position="relative";
+            document.getElementById('oin').style.zIndex="1";
+            document.getElementById('oin').style.transform="translate(-415px,-130px) scale(7.1,8.4)";
+        }
+        function oIn() {
+            document.getElementById('oin').style.zIndex="0";
+            document.getElementById('oin').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    <script>
+        function Dsp() {
+            document.getElementById('dsp').style.position="relative";
+            document.getElementById('dsp').style.zIndex="1";
+            document.getElementById('dsp').style.transform="translate(-415px,30px) scale(7.1,8.4)";
+        }
+        function dSp() {
+            document.getElementById('dsp').style.zIndex="0";
+            document.getElementById('dsp').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    <script>
+        function Spp() {
+            document.getElementById('spp').style.position="relative";
+            document.getElementById('spp').style.zIndex="1";
+            document.getElementById('spp').style.transform="translate(-415px,-130px) scale(7,9.9)";
+        }
+        function sPp() {
+            document.getElementById('spp').style.zIndex="0";
+            document.getElementById('spp').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    <script>
+        function Ifrep() {
+            document.getElementById('ifrep').style.position="relative";
+            document.getElementById('ifrep').style.zIndex="1";
+            document.getElementById('ifrep').style.transform="translate(-415px,30px) scale(7,9.9)";
+        }
+        function iFrep() {
+            document.getElementById('ifrep').style.zIndex="0";
+            document.getElementById('ifrep').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    <script>
+        function Xfrep() {
+            document.getElementById('xfrep').style.position="relative";
+            document.getElementById('xfrep').style.zIndex="1";
+            document.getElementById('xfrep').style.transform="translate(-415px,-70px) scale(7,9.9)";
+        }
+        function xFrep() {
+            document.getElementById('xfrep').style.zIndex="0";
+            document.getElementById('xfrep').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    <script>
+        function Pirep() {
+            document.getElementById('pirep').style.position="relative";
+            document.getElementById('pirep').style.zIndex="1";
+            document.getElementById('pirep').style.transform="translate(-415px,-170px) scale(7,9.9)";
+        }
+        function pIrep() {
+            document.getElementById('pirep').style.zIndex="0";
+            document.getElementById('pirep').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    {{--End of Finance--}}
+    {{--contact--}}
+    <script>
+        function Contact() {
+            document.getElementById('co').style.position="relative";
+            document.getElementById('co').style.zIndex="1";
+            document.getElementById('co').style.transform="translate(-440px,70px) scale(7,9.9)";
+        }
+        function cOntact() {
+            document.getElementById('co').style.zIndex="0";
+            document.getElementById('co').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
+    <script>
+        function Abou() {
+            document.getElementById('abou').style.position="relative";
+            document.getElementById('abou').style.zIndex="1";
+            document.getElementById('abou').style.transform="translate(-440px,70px) scale(7,9.9)";
+        }
+        function aBou() {
+            document.getElementById('abou').style.zIndex="0";
+            document.getElementById('abou').style.transform="translate(0px,0px) scale(1,1)";
+        }
+    </script>
 
 
 @stop

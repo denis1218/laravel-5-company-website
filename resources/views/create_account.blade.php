@@ -64,7 +64,7 @@
                                 <label>{{trans('file.department')}} *</label>
                                 <select class="form-control" required name="department">
                                     <option value="admin">{{trans('file.admin')}}</option>
-                                    <option value="doctor">{{trans('file.doctor')}}</option>
+                                    {{--<option value="doctor">{{trans('file.doctor')}}</option>--}}
                                     <option value="reception">{{trans('file.reception')}}</option>
                                     <option value="xray">{{trans('file.xray')}}</option>
 
