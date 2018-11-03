@@ -66,7 +66,11 @@ class HomeController extends Controller
     }
 
 
-
+    /**
+     * @return bool
+     * check if internet connection have can send email
+     * if not cont't send email
+     */
     function is_connected()
     {
         try {
