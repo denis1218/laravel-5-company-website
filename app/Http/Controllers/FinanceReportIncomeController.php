@@ -30,7 +30,7 @@ class FinanceReportIncomeController extends Controller
     //function for single day report
     public function create(Request $request)
     {
-        $start = $request->create_date;
+        $start = $request->singleDay;
 
         $pinfo = Treatment::with('patient')->where('created_at', '=', $start)->get();
         $xinfo = Xray::with('patient')->where('created_at', '=', $start)->get();
@@ -111,7 +111,7 @@ class FinanceReportIncomeController extends Controller
 
         }
         if ($selectRange == 'other') {
-            $oinfo = Oincom::whereBetween('created_at', '=', [$start, $end])->get();
+            $oinfo = Oincom::whereBetween('created_at', [$start, $end])->get();
             return view('finance_report.select_report_print', compact('oinfo'));
 
         }

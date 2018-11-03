@@ -45,7 +45,8 @@ class HomeController extends Controller
 
     public function reception(){
         $patient = Patient::whereDate('next_appointment',Carbon::today())->get();
-        return view('reception.dash_reception',compact('patient'));
+        $doct = Doctor::count();
+        return view('reception.dash_reception',compact('patient','doct'));
     }
 
 
