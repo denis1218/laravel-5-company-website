@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Xray extends Model
 {
+    public $timestamps = false;
     public function treatment(){
         return $this->belongsTo(Treatment::class , 'FK_id_treatment', 'id');
     }

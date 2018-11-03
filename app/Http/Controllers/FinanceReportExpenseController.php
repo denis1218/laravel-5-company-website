@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Expense;
+use App\ExpenseCatagory;
 use Illuminate\Http\Request;
 
 class FinanceReportExpenseController extends Controller
@@ -12,7 +13,9 @@ class FinanceReportExpenseController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public  function show(){
-        return view('finance_report.finance_report_expenses');
+        $category = ExpenseCatagory::all();
+        return view('finance_report.finance_report_expenses',compact('category'));
+
     }
 
 

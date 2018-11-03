@@ -108,6 +108,7 @@ class TreatmentController extends Controller
         $treatment->dentaldefect = $request->input('dentaldefect');
         $treatment->status_pay = true;
         $treatment->have_xray = $request->have_xray;
+        $treatment->created_at = Carbon::now();
         if($treatment->have_xray==null){
             $treatment->have_xray='no';
         }

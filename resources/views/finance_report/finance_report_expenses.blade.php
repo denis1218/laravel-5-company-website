@@ -156,14 +156,9 @@
                             <span class="input-group-addon">&nbsp;  <i class="fa fa-bars"></i> &nbsp;<i
                                         class="fa fa-arrow-right"></i></span>
                                 <select type="text" class="input-sm form-control" name="selectTypeSingle" required>
-                                    <option class="item">Rent</option>
-                                    <option class="item">Office Supply</option>
-                                    <option class="item">Personal</option>
-                                    <option class="item">Taxes</option>
-                                    <option class="item">Employee Salary</option>
-                                    <option class="item">Clinical Instrument</option>
-                                    <option class="item">Miscellaneous</option>
-
+                                   @foreach($category as $cat)
+                                        <option value="{{$cat->category}}">{{$cat->category}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -210,13 +205,9 @@
                             <span class="input-group-addon">&nbsp;  <i class="fa fa-bars"></i> &nbsp;<i
                                         class="fa fa-arrow-right"></i></span>
                                 <select type="text" class="input-sm form-control" name="category" required>
-                                    <option class="item">Rent</option>
-                                    <option class="item">Office Supply</option>
-                                    <option class="item">Personal</option>
-                                    <option class="item">Taxes</option>
-                                    <option class="item">Employee Salary</option>
-                                    <option class="item">Clinical Instrument</option>
-                                    <option class="item">Miscellaneous</option>
+                                    @foreach($category as $cat)
+                                        <option value="{{$cat->category}}">{{$cat->category}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
