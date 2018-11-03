@@ -63,6 +63,7 @@
                                             <th>{{trans('file.salary_type')}}</th>
                                             <th>{{trans('file.salary_amount')}}</th>
                                             <th>{{trans('file.pay_salary')}}</th>
+                                            <th>{{trans('file.delete')}}</th>
                                         </tr>
                                         </thead>
                                         @if(count($doctors)>0)
@@ -83,6 +84,12 @@
                                         <td>{{$doctor->salary_type}}</td>
                                         <td class="center">{{$doctor->salary_amount}}</td>
                                         <td class="center"><a class="btn btn-xs btn-info" href="/doctors/{{$doctor->id}}/edit">{{trans('file.pay_salary')}}&nbsp;<i class="fa fa-file-o"></i></a></td>
+                                        <td>
+                                            <form id="del" action="/doctors/{{$doctor->id}}" method="post" id="myForm">
+                                                @method('delete')
+                                                <button class="btn btn-xs btn-danger demo3" >{{trans('file.details')}} &nbsp;<i class="fa fa-remove"></i></button>
+                                            </form>
+                                        </td>
                                         </tr>
                                         </tbody>
                                          @endforeach
@@ -100,4 +107,27 @@
         </div>
     </div>
     {{-- show all doctors --}}
+@endsection
+
+@section('script')
+
+    <script>
+        $(document).ready(function () {
+            $('.demo3').on('click',function(e){
+                e.preventDefault();
+                var form = $(this).parents('form');
+                swal({
+                    title: "Do you wnat to delete this doctor ?",
+                    text: "It will be deleted from database too!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, delete it!",
+                    closeOnConfirm: false
+                }, function(isConfirm){
+                    if (isConfirm) form.submit();
+                });
+            });
+        });
+    </script>
 @endsection

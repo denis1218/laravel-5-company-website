@@ -30,7 +30,7 @@ class FinanceReportIncomeController extends Controller
     //function for single day report
     public function create(Request $request)
     {
-        $start = $request->create_date;
+        $start = $request->singleDay;
 
         $pinfo = Treatment::with('patient')->where('created_at', '=', $start)->get();
         $xinfo = Xray::with('patient')->where('created_at', '=', $start)->get();
