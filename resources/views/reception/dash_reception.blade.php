@@ -39,7 +39,7 @@
                 <h5>Doctors</h5>
             </div>
             <div class="ibox-content">
-                <h1 class="no-margins">7<img  src="img/doctors.png" width="60px;"style="float: right;"/></h1>
+                <h1 class="no-margins">{{$doct}}<img  src="img/doctors.png" width="60px;"style="float: right;"/></h1>
                 <div class="stat-percent font-bold text-navy"></div>
                 <small>Total Doctors Available</small>
             </div>
