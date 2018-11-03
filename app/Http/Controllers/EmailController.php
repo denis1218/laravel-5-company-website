@@ -55,8 +55,7 @@ class EmailController extends Controller
      */
     public function email_send(Request $request)
     {
-
-        if($request->input('imagefile') != null)
+        if($request->hasFile('imagefile'))
         {
             $input           = Input::all();
             $file            = array_get($input, 'imagefile');
@@ -64,33 +63,22 @@ class EmailController extends Controller
             $fileName        = $request->imagefile->getClientOriginalName();
             $filepath        = $destinationPath.'/'.$fileName;
             try{
-
-
             Mail::to('dentaclinic2018@gmail.com')->send(new SendEmail(
-
-
                 $request->input('title'),$request->input('content'),$filepath
             ));
-
             }catch (Exception $ex) {
-                return redirect('/contact')->withErrors('errors', 'error hapingaosjd');
+                return redirect()->back();
             }
-
         }else{
             try{
-
-
             Mail::to('dentaclinic2018@gmail.com')->send(new SendEmail(
-
-
                 $request->input('title'),$request->input('content'),null
             ));
             }catch (Exception $ex){
                 return redirect('/contact');
             }
         }
-        flash('message')->success();
-        return redirect()->back()->with('message','Successfully Email Send to Paypol Company we will contact you soon');
+        return redirect()->back();
     }
 
 }

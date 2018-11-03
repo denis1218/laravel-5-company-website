@@ -30,6 +30,7 @@
                             </div>
                             @endif
 
+
                         <form method="post" action="/email-send" enctype="multipart/form-data">
                             <div class="form-group">
                                 <lable>Subject</lable>
@@ -41,7 +42,7 @@
                             </div>
                             <div class="form-group">
                                 <lable>Upload Errors image</lable>
-                                <input type="file"  class="imagefile" name="imagefile" />
+                                <input type="file"  class="file-control" name="imagefile" />
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Send</button>
