@@ -6,6 +6,7 @@ use App\Mail\SendEmail;
 
 use Exception;
 use Dompdf\FrameReflower\Image;
+use GuzzleHttp\Exception\ConnectException;
 use Illuminate\Contracts\Redis\LimiterTimeoutException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -28,8 +29,24 @@ class EmailController extends Controller
      */
     public function index()
     {
+        $net = $this->is_connected();
+        return view('mail.contact',compact('net'));
+    }
 
-        return view('mail.contact');
+    function is_connected()
+    {
+        try {
+            $connected = fopen("http://www.google.com:80/", "r");
+            if ($connected) {
+                return true;
+            } else {
+                return false;
+            }
+        }catch (Exception $ex)
+        {
+            return false;
+        }
+
     }
 
 
@@ -47,11 +64,9 @@ class EmailController extends Controller
             $fileName        = $request->imagefile->getClientOriginalName();
             $filepath        = $destinationPath.'/'.$fileName;
             try{
-<<<<<<< HEAD
-            Mail::to('mahdisafari.software.eng@gmail.com')->send(new SendEmail(
-=======
+
             Mail::to('dentaclinic2018@gmail.com')->send(new SendEmail(
->>>>>>> aa6ff912f63b7bf519b20c73b3923433814115d4
+
                 $request->input('title'),$request->input('content'),$filepath
             ));
 
@@ -61,11 +76,9 @@ class EmailController extends Controller
 
         }else{
             try{
-<<<<<<< HEAD
-            Mail::to('mahdisafari.software.eng@gmail.com')->send(new SendEmail(
-=======
+
             Mail::to('dentaclinic2018@gmail.com')->send(new SendEmail(
->>>>>>> aa6ff912f63b7bf519b20c73b3923433814115d4
+
                 $request->input('title'),$request->input('content'),null
             ));
             }catch (Exception $ex){

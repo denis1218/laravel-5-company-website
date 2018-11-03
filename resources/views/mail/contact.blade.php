@@ -20,7 +20,16 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h3>Send Error Report</h3>
-                        <h5 class="text-danger">Make sure you have internet connection</h5>
+                        @if($net)
+                            <div class="alert alert-success" role="alert">
+                                Your Connected to internet
+                            </div>
+                            @else
+                            <div class="alert alert-danger" role="alert">
+                                Internet connection fail. Please check your internet connection
+                            </div>
+                            @endif
+
                         <form method="post" action="/email-send" enctype="multipart/form-data">
                             <div class="form-group">
                                 <lable>Subject</lable>
@@ -63,10 +72,8 @@
                                 <td><strong><a target="_blank" href="https://www.facebook.com/paypolsoftwaredevelopment/?modal=admin_todo_tour">Paypol Software Development Co</a></strong></td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
