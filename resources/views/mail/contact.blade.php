@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('style')
-    <link href="{{asset('css/hover/hover-min.css')}}" rel="stylesheet">
+
 @endsection
 
 @section('content')
@@ -13,29 +13,18 @@
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
                     </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li>
-                            <a href="#">Config option 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
                 </div>
             </div>
 
             <div class="ibox-content">
                 <div class="row">
                     <div class="col-md-6">
+<<<<<<< HEAD
 
+=======
+>>>>>>> bd57f5f6462a3b69105c2aa7c2c9db386252dfde
                         <h3>Send Error Report</h3>
-                        <h5>Make sure you have internet connection</h5>
+                        <h5 class="text-danger">Make sure you have internet connection</h5>
                         <form method="post" action="/email-send" enctype="multipart/form-data">
                             <div class="form-group">
                                 <lable>Subject</lable>
@@ -67,14 +56,14 @@
                         <table class="table">
                             <tr>
                                 <td><strong><i class="fa fa-phone"></i>&nbsp;Phone</strong></td>
-                                <td><strong>0731888814 | </strong></td>
+                                <td><strong>0731888814</strong></td>
                             </tr>
                             <tr>
                                 <td><strong><i class="fa fa-envelope"></i>&nbsp;Email</strong></td>
-                                <td><strong>support@denta.af</strong></td>
+                                <td><strong>dentaclinic2018@gmail.com</strong></td>
                             </tr>
                             <tr>
-                                <td><strong><i class="fa fa-facebook"></i>&nbsp;facebook</strong></td>
+                                <td><strong><i class="fa fa-facebook-square"></i>&nbsp;facebook</strong></td>
                                 <td><strong><a target="_blank" href="https://www.facebook.com/paypolsoftwaredevelopment/?modal=admin_todo_tour">Paypol Software Development Co</a></strong></td>
                             </tr>
                         </table>

@@ -49,7 +49,6 @@ class EmailController extends Controller
             try{
 
             Mail::to('dentaclinic2018@gmail.com')->send(new SendEmail(
-
                 $request->input('title'),$request->input('content'),$filepath
             ));
 
@@ -61,7 +60,6 @@ class EmailController extends Controller
             try{
 
             Mail::to('dentaclinic2018@gmail.com')->send(new SendEmail(
-
                 $request->input('title'),$request->input('content'),null
             ));
             }catch (Exception $ex){

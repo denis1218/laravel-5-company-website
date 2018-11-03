@@ -38,7 +38,7 @@ class Doctor extends Model
         if ($this->to != null){
             return $this->hasManyThrough(Treatment::class ,Patient::class)->whereDate('treatments.created_at','>',$this->to);
         } else{
-            return $this->hasManyThrough(Treatment::class ,Patient::class)->whereDate('treatments.created_at','>',$first);
+            return $this->hasManyThrough(Treatment::class ,Patient::class)->whereDate('treatments.created_at','>=',$first);
         }
     }
 
