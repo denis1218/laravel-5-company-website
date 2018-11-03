@@ -39,7 +39,12 @@
 
                         <h2> Hakim Alikozay Dental Clinic</h2>
                         <h4>Profit And Loss</h4>
-                        <h5>Date : {{$single}}</h5>
+                        <h5>Date : {{$single}}&nbsp;&nbsp;TO &nbsp;&nbsp;
+                        @if(isset($end))
+                            {{$end}}
+                        @endif
+                        </h5>
+
 
 
                     </div>
@@ -100,56 +105,17 @@
                                 <td style="margin-left: 30px"><b>Category</b></td>
                                 <td style="float: right;margin-right: 30px"><b>Amount</b></td>
                             </tr>
+                                @foreach($expense as $exp)
                                 <tr>
-                                    <td style="margin-left: 30px">Rent</td>
-                                    <td style="float: right;margin-right: 30px">{{$rent_expense}}&nbsp;afg</td>
-
+                                    <td style="margin-left: 30px">{{$exp->category}}</td>
+                                    <td style="float: right;margin-right: 30px">{{$exp->amount}}&nbsp;afg</td>
 
                                 </tr>
-                            <tr>
-                                <td style="margin-left: 30px">Employee Salary</td>
-                                <td style="float: right;margin-right: 30px">{{$emp_expense}}&nbsp;afg</td>
-
-
-                            </tr>
-                            <tr>
-                                <td style="margin-left: 30px">Personal Expense</td>
-                                <td style="float: right;margin-right: 30px">{{$personal_expense}}&nbsp;afg</td>
-
-
-                            </tr>
-                            <tr>
-                                <td style="margin-left: 30px">Taxes</td>
-                                <td style="float: right;margin-right: 30px">{{$tax_expense}}&nbsp;afg</td>
-
-
-                            </tr>
-                            <tr>
-                                <td style="margin-left: 30px">Office Supply</td>
-                                <td style="float: right;margin-right: 30px">{{$office_expense}}&nbsp;afg</td>
-
-
-                            </tr>
-                            <tr>
-                                <td style="margin-left: 30px">Clinical Instrument</td>
-                                <td style="float: right;margin-right: 30px">{{$clinical_expense}}&nbsp;afg</td>
-
-
-                            </tr>
-                            <tr>
-                                <td style="margin-left: 30px">Miscellaneous</td>
-                                <td style="float: right;margin-right: 30px">{{$misc_expense}}&nbsp;afg</td>
-
-
-                            </tr>
+                                @endforeach
                             <tr>
                                 <td style="margin-left: 30px"><b>Total Expense</b></td>
-                                <td style="float: right;margin-right: 30px"><b>{{$total_expense}}</b>&nbsp;afg</td>
-
+                                <td style="float: right;margin-right: 30px"><b>{{$expense->sum('amount')}}</b></td>
                             </tr>
-
-
-
                             </tbody>
 
                         </table>

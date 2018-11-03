@@ -39,11 +39,7 @@
         <div class="ibox">
             <div class="ibox-title">
                 <h5>{{trans('file.account_registration')}}</h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                </div>
+
             </div>
             <div class="ibox-content">
 

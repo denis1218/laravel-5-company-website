@@ -111,7 +111,7 @@ class FinanceReportIncomeController extends Controller
 
         }
         if ($selectRange == 'other') {
-            $oinfo = Oincom::whereBetween('created_at', '=', [$start, $end])->get();
+            $oinfo = Oincom::whereBetween('created_at', [$start, $end])->get();
             return view('finance_report.select_report_print', compact('oinfo'));
 
         }
