@@ -31,7 +31,7 @@
                             @endif
 
 
-                        <form method="post" action="/email-send" enctype="multipart/form-data">
+                        <form method="post" action="/email-send" >
                             <div class="form-group">
                                 <lable>Subject</lable>
                                 <input type="text" class="form-control" name="title" placeholder="Subject" required/>
@@ -40,10 +40,10 @@
                                 <lable>Context</lable>
                                 <textarea name="content" rows="6" required placeholder="Write your context" class="form-control"></textarea>
                             </div>
-                            <div class="form-group">
-                                <lable>Upload Errors image</lable>
-                                <input type="file"  class="file-control" name="imagefile" />
-                            </div>
+                            {{--<div class="form-group">--}}
+                                {{--<lable>Upload Errors image</lable>--}}
+                                {{--<input type="file"  class="file-control" name="imagefile" />--}}
+                            {{--</div>--}}
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Send</button>
                                 <input type="reset" class="btn btn-white"/>
