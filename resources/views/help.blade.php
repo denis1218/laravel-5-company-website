@@ -11,7 +11,7 @@
     <div class="col-lg-12" >
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Using Guide</h5>
+                <h5>{{trans('file.u_guide')}}</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -36,13 +36,13 @@
                     <div class="tabs-container">
                         <ul class="nav nav-tabs">
                             {{--Main NavTabs--}}
-                            <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-home" style="font-size: 35px;"></i><br>Home</a></li>
-                            <li><a data-toggle="tab" href="#department"><i class="fa fa-building" style="font-size: 35px;margin-left: 20px"></i><br>Department</a></li>
-                            <li><a data-toggle="tab" href="#reception"><i class="fa fa-user" style="font-size: 35px;margin-left: 15px"></i><br>Reception</a></li>
-                            <li><a data-toggle="tab" href="#finance"><i class="fa fa-money" style="font-size: 35px;margin-left: 5px"></i><br>Finance</a></li>
-                            <li><a data-toggle="tab" href="#setting"><i class="fa fa-cog" style="font-size: 35px;margin-left: 7px"></i><br>Setting</a></li>
-                            <li><a data-toggle="tab" href="#contact"><i class="fa fa-phone" style="font-size: 35px;margin-left: 7px"></i><br>Support</a></li>
-                            <li><a data-toggle="tab" href="#about"><i class="fa fa-info" style="font-size: 35px;margin-left: 20px"></i><br>About Us</a></li>
+                            <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-home" style="font-size: 35px;"></i><br>{{trans('file.home')}}</a></li>
+                            <li><a data-toggle="tab" href="#department"><i class="fa fa-building" style="font-size: 35px;margin-left: 20px"></i><br>{{trans('file.department')}}</a></li>
+                            <li><a data-toggle="tab" href="#reception"><i class="fa fa-user" style="font-size: 35px;margin-left: 15px"></i><br>{{trans('file.reception')}}</a></li>
+                            <li><a data-toggle="tab" href="#finance"><i class="fa fa-money" style="font-size: 35px;margin-left: 5px"></i><br>{{trans('file.finance')}}</a></li>
+                            <li><a data-toggle="tab" href="#setting"><i class="fa fa-cog" style="font-size: 35px;margin-left: 7px"></i><br>{{trans('file.setting')}}</a></li>
+                            <li><a data-toggle="tab" href="#contact"><i class="fa fa-phone" style="font-size: 35px;margin-left: 7px"></i><br>{{trans('file.support')}}</a></li>
+                            <li><a data-toggle="tab" href="#about"><i class="fa fa-info" style="font-size: 35px;margin-left: 20px"></i><br>{{trans('file.about_us')}}</a></li>
                             {{--End of Mian NavTabs--}}
                         </ul>
                         <div class="tab-content">
@@ -51,37 +51,37 @@
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-sm-10">
-                                            <h1>Home Page Information:</h1>
+                                            <h1>{{trans('file.home_info')}}:</h1>
                                             <div class="row">
-                                                <div class="col-sm-12"><p>1-This dashboard is visible to admin of the application and only admin can access it.</p></div>
+                                                <div class="col-sm-12"><p>{{trans('file.hi1')}}</p></div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <p>2-In the left side of page there is a menu which list all different part of the application like departments,reception,finance,setting etc.</p>
+                                                    <p>{{trans('file.hi2')}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <p>3-In the top navigation bar there are name of the clinic that is using this app , date,option for choosing language either English or Dari adn logout button.</p>
+                                                    <p>{{trans('file.hi3')}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <p>4-Bellow the top navigation bar white boxes show the current user name,number of patients,doctors and those who have appointment for today</p>
+                                                    <p>{{trans('file.hi4')}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <p>5-In the middle of the page there are buttons for rapid access to different part of the application.</p>
+                                                    <p>{{trans('file.hi5')}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <p>6-The form is embedded for quick entery of daily expenses.</p>
+                                                    <p>{{trans('file.hi6')}}</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-2" title="{{trans('file.ctsi')}}">
                                             <button type="button" id="dash" onclick="fullSize()" onblur="backToSmall()" style="width: 140px;height:60px;border: none">
                                                 <img src="{{asset('img/dash.JPG')}}" style="height: auto;width: 100%;">
                                             </button>
@@ -94,95 +94,88 @@
                             <div id="department" class="tab-pane">
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="col-sm-12 text-center"><h2>Department Information</h2><hr></div>
+                                        <div class="col-sm-12 text-center"><h2>{{trans('file.dept_info')}}</h2><hr></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="tabs-container">
                                                 <ul class="nav nav-tabs">
-                                                    <li class="active"><a data-toggle="tab" href="#doctor"><img src="{{asset('img/doctors.PNG')}}" style="width:50px;height: 50px;margin-left: -5px"><br>Doctor</a></li>
-                                                    <li><a data-toggle="tab" href="#xray"><img src="{{asset('img/x-ray.PNG')}}" style="width:50px;height: 50px;margin-left: -5px"><br>X-Ray</a></li>
+                                                    <li class="active"><a data-toggle="tab" href="#doctor"><img src="{{asset('img/doctors.PNG')}}" style="width:50px;height: 50px;margin-left: -5px"><br>{{trans('file.doctor')}}</a></li>
+                                                    <li><a data-toggle="tab" href="#xray"><img src="{{asset('img/x-ray.PNG')}}" style="width:50px;height: 50px;margin-left: -5px"><br>{{trans('file.xray')}}</a></li>
                                                 </ul>
                                                 <div class="tab-content">
                                                         {{--Doctor Department--}}
                                                         <div id="doctor" class="tab-pane active">
                                                             <div class="panel-body">
                                                                 <div class="row">
-                                                                    <h1 style="margin-left: 10px;">Doctor Page Information:</h1>
-                                                                        <div class="col-sm-12"><p>From Department in sidebar by clicking on <b>Doctor</b> doctor page will appear.<br>
-                                                                            This page will take you to three different other pages namely .</p>
+                                                                    <h1 style="margin-left: 10px;">{{trans('file.d_page_info')}}:</h1>
+                                                                        <div class="col-sm-12"><p>{{trans('file.dpi_text')}}</p>
                                                                             <ul>
-                                                                                <li>Patient List</li>
-                                                                                <li>Next Appointment Lis</li>
-                                                                                <li>Patient Report</li>
+                                                                                <li>{{trans('file.patient_list')}}</li>
+                                                                                <li>{{trans('file.next_appointment_list')}}</li>
+                                                                                <li>{{trans('file.patient_report')}}</li>
                                                                             </ul>
                                                                         </div>
                                                                         <div class="col-sm-10">
                                                                             <div class="row" style="margin-top: 50px;">
                                                                             <div class="col-sm-12">
-                                                                                <h3>1-Patient List:</h3>In this page all the patients who are having appointment for the current day will be listed.<br>
-                                                                                By clicking on <b>Start Treatment</b> button at the last column doctor can start his/her work with the patient, the information about that page will come later.
+                                                                                <h3>1-{{trans('file.patient_list')}}:</h3>{{trans('file.pl_text')}}
                                                                             </div>
                                                                             </div>
                                                                             <div class="row" style="margin-top: 50px;">
                                                                             <div class="col-sm-12">
-                                                                                <h3>2- Next Appointment List:</h3>In this page all the patient who are having appointment for the upcoming days will be listed.<br>
-                                                                                You can also find the patient by searching his/her name or date of appointment.
+                                                                                <h3>2- {{trans('file.next_appointment_list')}}:</h3>{{trans('file.napl_text')}}
                                                                             </div>
                                                                             </div>
                                                                             <div class="row" style="margin-top: 50px;">
                                                                             <div class="col-sm-12">
-                                                                                <h3>3- Patient Report:</h3> In this page doctor can have report about his/her patient.
-                                                                                <br> The report is printable and can be printed.
+                                                                                <h3>3- {{trans('file.patient_report')}}:</h3>{{trans('file.pr_text')}}
                                                                             </div>
                                                                             </div>
                                                                             <div class="row" style="margin-top: 50px;">
-                                                                                <h2 style="margin-left: 12px;z-index:-1;">Doctor Operation Page Information</h2>
+                                                                                <h2 style="margin-left: 12px;z-index:-1;">{{trans('file.dop_info')}}</h2>
                                                                             <div class="col-sm-12">
-                                                                                <h3>Past History:</h3> If the current patient has already been treated by this doctor his/her previous history will be liste out here.<br>
-                                                                                If the problem is with same tooth the treatment can be continued ,otherwise another treatment can take place.
+                                                                                <h3>{{trans('file.past_history')}}:</h3> {{trans('file.prh_text')}}
                                                                             </div>
                                                                             </div>
                                                                             <div class="row" style="margin-top: 50px;">
-                                                                                <h2 style="margin-left: 12px;z-index:-1;">Doctor Operation Page Information</h2>
                                                                             <div class="col-sm-12">
-                                                                                    <h3>Present History:</h3>In this page doctor can record the new details of patient and send it to finance for making payment. <br>
-                                                                                    If Patient needed to x-ray his/her tooth doctor can send his/her tooth details to the x-ray department.
+                                                                                    <h3>{{trans('file.present_history')}}:</h3>{{trans('file.psh_text')}}
                                                                             </div>
-                                                                                <p >Note: In the prescription part doctor can give prescription to his/her patient</p>
+                                                                                <p style="margin-left: 15px;"><strong>{{trans('file.pnotet')}}:</strong> {{trans('file.pnote')}}</p>
 
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-sm-2">
-                                                                            <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                            <div class="row" style="margin-top: 80px;" title="{{trans('file.ctsi')}}">
                                                                                 <div class="col-sm-12">
                                                                                     <button type="button" id="dpl" onclick="dPl()" onblur="DpL()" style="width: 145px;height:50px;border: none">
                                                                                         <img src="{{asset('img/dpl.JPG')}}" style="height: auto;width: 100%;">
                                                                                     </button>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                            <div class="row" style="margin-top: 80px;" title="{{trans('file.ctsi')}}">
                                                                                 <div class="col-sm-12">
                                                                                     <button type="button" id="dnal" onclick="Dnal()" onblur="dNal()" style="width: 145px;height:50px;border: none">
                                                                                         <img src="{{asset('img/dnal.JPG')}}" style="height: auto;width: 100%;">
                                                                                     </button>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="row" style="margin-top: 60px;" title="Click here on image to enlarge it">
+                                                                            <div class="row" style="margin-top: 60px;" title="{{trans('file.ctsi')}}">
                                                                                 <div class="col-sm-12">
                                                                                     <button type="button" id="dpr" onclick="Dpr()" onblur="dPr()" style="width: 145px;height:50px;border: none">
                                                                                         <img src="{{asset('img/dpr.JPG')}}" style="height: 108%;width: 100%;">
                                                                                     </button>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="row" style="margin-top: 90px;" title="Click here on image to enlarge it">
+                                                                            <div class="row" style="margin-top: 90px;" title="{{trans('file.ctsi')}}">
                                                                                 <div class="col-sm-12">
                                                                                     <button type="button" id="pasth" onclick="Pasth()" onblur="pasTh()"  style="width: 145px;height:50px;border: none">
                                                                                         <img src="{{asset('img/pasth.JPG')}}" style="height: 108%;width: 100%;">
                                                                                     </button>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="row" style="margin-top: 110px;" title="Click here on image to enlarge it">
+                                                                            <div class="row" style="margin-top: 90px;" title="{{trans('file.ctsi')}}">
                                                                                 <div class="col-sm-12">
                                                                                     <button type="button" id="phistory" onclick="pHistory()" onblur="PHistory()" style="width: 145px;height:50px;border: none">
                                                                                         <img src="{{asset('img/phistory.JPG')}}" style="height: 108%;width: 100%;">
@@ -198,50 +191,46 @@
                                                         <div id="xray" class="tab-pane">
                                                             <div class="panel-body">
                                                                 <div class="row">
-                                                                    <h1 style="margin-left: 10px;">X-ray Page Information:</h1>
-                                                                    <div class="col-sm-12"><p>From Department in sidebar by clicking on <b>X-Ray</b> X-ray page will appear.<br>
-                                                                            This page contains two parts namely .</p>
+                                                                    <h1 style="margin-left: 10px;">{{trans('file.xp_info')}}:</h1>
+                                                                    <div class="col-sm-12"><p>{{trans('file.xpi_text')}}</p>
                                                                         <ul>
-                                                                            <li>New Patient</li>
-                                                                            <li>Already Done</li>
+                                                                            <li>{{trans('file.new_patient')}}</li>
+                                                                            <li>{{trans('file.already_done')}}</li>
                                                                         </ul>
                                                                     </div>
                                                                     <div class="col-sm-10">
                                                                         <div class="row" style="margin-top: 50px;">
                                                                             <div class="col-sm-12">
-                                                                                <h3>1-New Patient:</h3>In this page all the patients who have to take X-ray and have not taken yet will be listed.<br>
-                                                                                Number of patients is displaied on top of the table , if there was not patient a text will appear to notify you.
-                                                                                By clicking on <b>Details</b> button in  the last column , if patient had not paid X-ray fee you will receive an alert otherwise another page will apper.<br>
+                                                                                <h3>1-{{trans('file.new_patient')}}:</h3>{{trans('file.xnp_text')}}
                                                                             </div>
                                                                         </div>
                                                                         <div class="row" style="margin-top: 50px;">
                                                                             <div class="col-sm-12">
-                                                                                <h4>X-ray Should be done here:</h4>In this page , when patient mad his/her payment for x-ray by changing X-ray status from
-                                                                                <b><i>Not</i></b> to <b><i>Yes</i></b> Patient's details will disappear form <b><strong>New Patient</strong></b> list and will be added to <b><strong>Already Done</strong></b> list.<br>
+                                                                                <h4>{{trans('file.xsbdh')}}:</h4>{{trans('file.xpp_text')}}
                                                                             </div>
                                                                         </div>
                                                                         <div class="row" style="margin-top: 50px;">
                                                                             <div class="col-sm-12">
-                                                                                <h3>2-Already Done:</h3>In this page those patients whose X-ray is already taken and completed will be displayed.
+                                                                                <h3>2-{{trans('file.already_done')}}:</h3>{{trans('file.xdp_text')}}
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-sm-2">
-                                                                        <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                        <div class="row" style="margin-top: 80px;" title="{{trans('file.ctsi')}}">
                                                                             <div class="col-sm-12">
                                                                                 <button type="button" id="nxray" onclick="Nxray()" onblur="nXray()" style="width: 145px;height:50px;border: none">
                                                                                     <img src="{{asset('img/xray.JPG')}}" style="height: 108%;width: 100%;">
                                                                                 </button>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                        <div class="row" style="margin-top: 80px;" title="{{trans('file.ctsi')}}">
                                                                             <div class="col-sm-12">
                                                                                 <button type="button" id="xstatus" onclick="Xstatus()" onblur="xStatus()" style="width: 145px;height:50px;border: none">
                                                                                     <img src="{{asset('img/xstatus.JPG')}}" style="height: 108%;width: 100%;">
                                                                                 </button>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="row" style="margin-top: 60px;" title="Click here on image to enlarge it">
+                                                                        <div class="row" style="margin-top: 60px;" title="{{trans('file.ctsi')}}">
                                                                             <div class="col-sm-12">
                                                                                 <button type="button" id="donx" onclick="Donx()" onblur="donX()" style="width: 145px;height:50px;border: none">
                                                                                     <img src="{{asset('img/donx.JPG')}}" style="height: 108%;width: 100%;">
@@ -264,38 +253,36 @@
                             <div id="reception" class="tab-pane">
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="col-sm-12 text-center"><h2>Reception Information</h2><hr></div>
+                                        <div class="col-sm-12 text-center"><h2>{{trans('file.reception_info')}}</h2><hr></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="tabs-container">
                                                 <ul class="nav nav-tabs">
-                                                    <li class="active"><a data-toggle="tab" href="#dregister"><img src="{{asset('img/doctors.PNG')}}" style="width:40px;height: 40px;margin-left: 10px"><br><span style="margin-left: 15px;">Doctor</span> <br> Registration</a></li>
-                                                    <li><a data-toggle="tab" href="#pregister"><img src="{{asset('img/patient.PNG')}}" style="width:40px;height: 40px;margin-left: 11px"><br><span style="margin-left: 15px;">Patient</span> <br>Registration</a></li>
-                                                    <li><a data-toggle="tab" href="#plist"><img src="{{asset('img/patient_list.PNG')}}" style="width:60px;height: 50px;margin-left: -6px"><br>Patient<br><span style="margin-left: 10px;">Lsit</span></a></li>
-                                                    <li><a data-toggle="tab" href="#preport"><img src="{{asset('img/patient_report.PNG')}}" style="width:60px;height: 50px;margin-left: -5px"><br><span style="margin-left: 10px;">Patient</span><br><span style="margin-left: 10px;">Report</span></a></li>
-                                                    <li><a data-toggle="tab" href="#presc"><img src="{{asset('img/prescription.PNG')}}" style="width:50px;height: 50px;margin-left: -5px"><br><span style="margin-left: -18px;">Prescription</span></a></li>
+                                                    <li class="active"><a data-toggle="tab" href="#dregister"><img src="{{asset('img/doctors.PNG')}}" style="width:40px;height: 40px;margin-left: 10px"><br><span style="margin-left: 15px;">{{trans('file.doctor')}}</span> <br> {{trans('file.register')}}</a></li>
+                                                    <li><a data-toggle="tab" href="#pregister"><img src="{{asset('img/patient.PNG')}}" style="width:40px;height: 40px;margin-left: 11px"><br><span style="margin-left: 15px;">{{trans('file.patient')}}</span> <br>{{trans('file.register')}}</a></li>
+                                                    <li><a data-toggle="tab" href="#plist"><img src="{{asset('img/patient_list.PNG')}}" style="width:60px;height: 50px;margin-left: -6px"><br>{{trans('file.patient')}}<br><span style="margin-left: 10px;">{{trans('file.list')}}</span></a></li>
+                                                    <li><a data-toggle="tab" href="#preport"><img src="{{asset('img/patient_report.PNG')}}" style="width:60px;height: 50px;margin-left: -5px"><br><span style="margin-left: 10px;">{{trans('file.patient')}}</span><br><span style="margin-left: 10px;">{{trans('file.report')}}</span></a></li>
+                                                    <li><a data-toggle="tab" href="#presc"><img src="{{asset('img/prescription.PNG')}}" style="width:50px;height: 50px;margin-left: -5px"><br><span style="margin-left: -18px;">{{trans('file.prescription')}}</span></a></li>
                                                 </ul>
                                                 <div class="tab-content">
                                                     {{--Doctor Registration--}}
                                                     <div id="dregister" class="tab-pane active">
                                                         <div class="panel-body">
                                                             <div class="row">
-                                                                <h1 style="margin-left: 10px;">Doctor Registration Page Information</h1>
+                                                                <h1 style="margin-left: 10px;">{{trans('file.drp_info')}}</h1>
                                                                 <div class="col-sm-12">
-                                                                    <p>From Sidebar by clicking on <strong><b>Doctro Registration</b></strong> a form will appear to you where you can register existing doctors or any new admited doctor.</p>
+                                                                    <p>{{trans('file.drpi_text')}}</p>
                                                                 </div>
                                                                 <div class="col-sm-10">
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>Patient List:</h3> In this form you must insert doctor details like,Name,LastName,FatherName,Age,Department,
-                                                                            Time of working ,gender,maximum,email,password for creating account for doctor to be able to use the app, patient that he/she can visit each day,type of salary,amount of salary..etc.<br>
-                                                                            After saving it all details will be saved in the database.
+                                                                            <h3>{{trans('file.doctor_registration')}}:</h3> {{trans('file.dr_text')}}
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-2">
-                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                    <div class="row" style="margin-top: 80px;" title="{{trans('file.ctsi')}}">
                                                                         <div class="col-sm-12">
                                                                             <button type="button" id="dreg" onclick="Dregister()" onblur="dRegister()" style="width: 145px;height:50px;border: none">
                                                                                 <img src="{{asset('img/drf.JPG')}}" style="height: 108%;width: 100%;">
@@ -311,54 +298,52 @@
                                                     <div id="pregister" class="tab-pane">
                                                         <div class="panel-body">
                                                             <div class="row">
-                                                                <h1 style="margin-left: 10px;">Patient Registration Page Information</h1>
-                                                                <div class="col-sm-12"><p>From Sidebar by clicking on <strong><b>Patient Registration</b></strong> in the reception part a form will appear to you where you can register patient. <br>
-                                                                    This form consists of three parts or steps.</p>
+                                                                <h1 style="margin-left: 10px;">{{trans('file.prp_info')}}</h1>
+                                                                <div class="col-sm-12"><p>{{trans('file.prpi_text')}}</p>
                                                                     <ul>
-                                                                        <li>Doctor Information</li>
-                                                                        <li>Patient Personal Information</li>
-                                                                        <li>Patient Health Problem</li>
+                                                                        <li>{{trans('file.doctor_info')}}</li>
+                                                                        <li>{{trans('file.ppersonal_info')}}</li>
+                                                                        <li>{{trans('file.ph_problem')}}</li>
                                                                     </ul>
                                                                 </div>
                                                                 <div class="col-sm-10">
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>1-Doctor Information:</h3> In this form you can choose the doctor for the newcomer patients, the details of doctors in this form are as bellow.<br>
-                                                                            Doctor name,period of time in which doctor is present in the clinic , maximum patient he can visit per day, number of patients which have already been registered for that doctor etc.
+                                                                            <h3>1-{{trans('file.doctor_info')}}:</h3> {{trans('file.di_text')}}
                                                                         </div>
                                                                     </div>
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>2-Patient Personal Information:</h3> In here patient's personal information should be inserted like name,last name,gender,phone number address etc.
+                                                                            <h3>2-{{trans('file.ppersonal_info')}}:</h3> {{trans('file.ppi_text')}}
                                                                         </div>
                                                                     </div>
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>3-Patient Health Problem:</h3> In here three things must be spicified.<br>
+                                                                            <h3>3-{{trans('file.ph_problem')}}:</h3> {{trans('file.ph_text')}}<br>
                                                                             <ul>
-                                                                                <li>Prior Treatment for same tooth: Means if the same tooth has already been treated so it's file will be there for ease of process.</li>
-                                                                                <li>Anesthetic Problem: Means whether the patient has allergy to anesthetic drugs or not.</li>
-                                                                                <li>Other Health Problems: like diabets ,HIV...etc</li>
+                                                                                <li>{{trans('file.ph_text1')}}</li>
+                                                                                <li>{{trans('file.ph_text2')}}</li>
+                                                                                <li>{{trans('file.ph_text3')}}</li>
                                                                             </ul>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-2">
-                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                    <div class="row" style="margin-top: 80px;" title="{{trans('file.ctsi')}}">
                                                                         <div class="col-sm-12">
                                                                             <button type="button" id="preg1" onclick="Pregister1()" onblur="pRegister1()" style="width: 145px;height:50px;border: none">
                                                                                 <img src="{{asset('img/prf1.JPG')}}" style="height: 108%;width: 100%;">
                                                                             </button>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                    <div class="row" style="margin-top: 80px;" title="{{trans('file.ctsi')}}">
                                                                         <div class="col-sm-12">
                                                                             <button type="button" id="preg2" onclick="Pregister2()" onblur="pRegister2()" style="width: 145px;height:50px;border: none">
                                                                                 <img src="{{asset('img/prf2.JPG')}}" style="height: 108%;width: 100%;">
                                                                             </button>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                    <div class="row" style="margin-top: 80px;" title="{{trans('file.ctsi')}}">
                                                                         <div class="col-sm-12">
                                                                             <button type="button" id="preg3" onclick="Pregister3()" onblur="pRegister3()" style="width: 145px;height:50px;border: none">
                                                                                 <img src="{{asset('img/prf3.JPG')}}" style="height: 108%;width: 100%;">
@@ -374,20 +359,18 @@
                                                     <div id="plist" class="tab-pane">
                                                         <div class="panel-body">
                                                             <div class="row">
-                                                                <h1 style="margin-left: 10px;">Patient List Page Information:</h1>
-                                                                <div class="col-sm-12"><p>From Reception in sidebar by clicking on <b>List of Patient</b> Patient list will appear.<br></p>
+                                                                <h1 style="margin-left: 10px;">{{trans('file.plp_info')}}:</h1>
+                                                                <div class="col-sm-12"><p>{{trans('file.plpi_text')}}</p>
                                                                 </div>
                                                                 <div class="col-sm-10">
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>List of Patient:</h3>In this page all the patients will be listed out in <strong>All Patient</strong> tab.<br>
-                                                                            By clicking on doctor's name patients of that specified doctor will be shown.<br>
-                                                                            Using top navigation bar you can register new patient, list new registered patient of the current day,previous patients having appointment for current day and those who had appointment for current day but had not come.
+                                                                            <h3>{{trans('file.list_of_patient')}}:</h3>{{trans('file.lop_text')}}
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-2">
-                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                    <div class="row" style="margin-top: 80px;" title="{{trans('file.ctsi')}}">
                                                                         <div class="col-sm-12">
                                                                             <button type="button" id="pl" onclick="Plist()" onblur="pList()" style="width: 145px;height:50px;border: none">
                                                                                 <img src="{{asset('img/plist.JPG')}}" style="height: 108%;width: 100%;">
@@ -403,18 +386,18 @@
                                                     <div id="preport" class="tab-pane">
                                                         <div class="panel-body">
                                                             <div class="row">
-                                                                <h1 style="margin-left: 10px;">Patient Report Page Information:</h1>
-                                                                <div class="col-sm-12"><p>From Reception in sidebar by clicking on <b>Patient Report</b> Patient list will appear where you can get report of specific patient.<br></p>
+                                                                <h1 style="margin-left: 10px;">{{trans('file.prepp_info')}}:</h1>
+                                                                <div class="col-sm-12"><p>{{trans('file.preppi_text')}}</p>
                                                                 </div>
                                                                 <div class="col-sm-10">
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>Patient Report:</h3> From table by clicking on the <strong>Print</strong> button you can print the report of specified patient.
+                                                                            <h3>{{trans('file.patient_report')}}:</h3> {{trans('file.prep')}}
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-2">
-                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                    <div class="row" style="margin-top: 80px;" title="{{trans('file.ctsi')}}">
                                                                         <div class="col-sm-12">
                                                                             <button type="button" id="pr" onclick="Preport()" onblur="pReport()" style="width: 145px;height:50px;border: none">
                                                                                 <img src="{{asset('img/preport.JPG')}}" style="height: 108%;width: 100%;">
@@ -430,19 +413,18 @@
                                                     <div id="presc" class="tab-pane">
                                                         <div class="panel-body">
                                                             <div class="row">
-                                                                <h1 style="margin-left: 10px;">Prescription Page Information:</h1>
-                                                                <div class="col-sm-12"><p>From Reception in sidebar by clicking on <b>Prescription</b> list of prescription will appear.<br></p>
+                                                                <h1 style="margin-left: 10px;">{{trans('file.prsc_info')}}:</h1>
+                                                                <div class="col-sm-12"><p>{{trans('file.prsci_text')}}</p>
                                                                 </div>
                                                                 <div class="col-sm-10">
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>Prescription:</h3> This tabel containing patient name , medicine, pattern of usage,number of days etc.<br>
-                                                                            By clicking on <strong>Print</strong> button you can print the prescription of specified patient.
+                                                                            <h3>{{trans('file.prescription')}}:</h3> {{trans('file.prsc_text')}}
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-2">
-                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                    <div class="row" style="margin-top: 80px;" title="{{trans('file.ctsi')}}">
                                                                         <div class="col-sm-12">
                                                                             <button type="button" id="pres" onclick="Prescription()" onblur="pRescription()" style="width: 145px;height:50px;border: none">
                                                                                 <img src="{{asset('img/prescription.JPG')}}" style="height: 108%;width: 100%;">
@@ -465,34 +447,31 @@
                             <div id="finance" class="tab-pane">
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="col-sm-12 text-center"><h2>Finance Information</h2><hr></div>
+                                        <div class="col-sm-12 text-center"><h2>{{trans('file.finance_info')}}</h2><hr></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="tabs-container">
                                                 <ul class="nav nav-tabs">
-                                                    <li class="active"><a data-toggle="tab" href="#expenditure"><img src="{{asset('img/expense_icon.PNG')}}" style="width:60px;height: 60px;margin-left: 20px"><br><span style="margin-left: 15px;">Expenditure</span></a></li>
-                                                    <li><a data-toggle="tab" href="#income"><img src="{{asset('img/income_icon.PNG')}}" style="width:60px;height: 60px;margin-left: 11px"><br><span style="margin-left: 20px;">Income</span></a></li>
-                                                    <li><a data-toggle="tab" href="#doctorha"><img src="{{asset('img/doctors.PNG')}}" style="width:60px;height: 60px;margin-left: -6px"><br>Doctors<br></a></li>
-                                                    <li><a data-toggle="tab" href="#freport"><img src="{{asset('img/report_finance.PNG')}}" style="width:60px;height: 60px;margin-left: 20px"><br>Financial Report<br></a></li>
+                                                    <li class="active"><a data-toggle="tab" href="#expenditure"><img src="{{asset('img/expense_icon.PNG')}}" style="width:60px;height: 60px;margin-left: 20px"><br><span style="margin-left: 15px;">{{trans('file.expenditure')}}</span></a></li>
+                                                    <li><a data-toggle="tab" href="#income"><img src="{{asset('img/income_icon.PNG')}}" style="width:60px;height: 60px;margin-left: 11px"><br><span style="margin-left: 20px;">{{trans('file.income')}}</span></a></li>
+                                                    <li><a data-toggle="tab" href="#doctorha"><img src="{{asset('img/doctors.PNG')}}" style="width:60px;height: 60px;margin-left: -6px"><br>{{trans('file.doctors')}}<br></a></li>
+                                                    <li><a data-toggle="tab" href="#freport"><img src="{{asset('img/report_finance.PNG')}}" style="width:60px;height: 60px;margin-left: 20px"><br>{{trans('file.financial_report')}}<br></a></li>
                                                 </ul>
                                                 <div class="tab-content">
                                                     {{--Expenditure--}}
                                                     <div id="expenditure" class="tab-pane active">
                                                         <div class="panel-body">
                                                             <div class="row">
-                                                                <h1 style="margin-left: 10px;">Expenditure Page Information</h1>
+                                                                <h1 style="margin-left: 10px;">{{trans('file.exp_info')}}</h1>
                                                                 <div class="col-sm-12">
-                                                                    <p>From Sidebar by clicking on <strong><b>Expenditure</b></strong> submenu of Finance a page will appear to you where you can see all the expenses taken place in the clinic.</p>
+                                                                    <p>{{trans('file.expi_text')}}</p>
                                                                 </div>
                                                                 <div class="col-sm-10">
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>Expenditure:</h3> In this page all the expenses that have taken place in the clinic will be listed out.<br>
-                                                                            The categories are specified to whow for what purpose the money is expended.<br>
-                                                                            From edit column you can edit the content of each record and also you can delete it .<br>
-                                                                            The box in the topright of the page shows total expenses of the clinic.<br><br>
-                                                                            <strong>Note:</strong> Using the topleft button you can add new expenses by filling out the form which will be appeared after clicking on the mentioned button.
+                                                                            <h3>{{trans('file.expenditure')}}:</h3> {{trans('file.exp_text')}}<br><br>
+                                                                            <strong>{{trans('file.pnotet')}}:</strong>{{trans('file.exp_note')}}
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -513,57 +492,47 @@
                                                     <div id="income" class="tab-pane">
                                                         <div class="panel-body">
                                                             <div class="row">
-                                                                <h1 style="margin-left: 10px;">Income Page Information</h1>
-                                                                <div class="col-sm-12"><p>From Sidebar by clicking on <strong><b>Income</b></strong> submenu of Finance income page will appear to you that contains three Categories that can be accessed through topnav buttons named as bellow. <br></p>
+                                                                <h1 style="margin-left: 10px;">{{trans('file.incp_info')}}</h1>
+                                                                <div class="col-sm-12"><p>{{trans('file.incpi_text')}}<br></p>
                                                                     <ul>
-                                                                        <li>Patient Income</li>
-                                                                        <li>X-ray Income</li>
-                                                                        <li>Other Income</li>
+                                                                        <li>{{trans('file.patient_income')}}</li>
+                                                                        <li>{{trans('file.xray_income')}}</li>
+                                                                        <li>{{trans('file.other_income')}}</li>
                                                                     </ul>
                                                                 </div>
                                                                 <div class="col-sm-10">
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>1-Patient Income:</h3> In this table all the patients will be listed which have been treated but not paid the treatment fee.<br>
-                                                                            By clicking on <i>paid</i> button under Paid column a form will pop up where you can insert the amount of money that the patient is paying.<br>
-                                                                            Under <i>P_Details</i> column you can see details of patient.<br>
-                                                                            On the topright next to NavButtons you can see the total income of all categories.<br>
-                                                                            In the topright of the table next to search box there is <i>Show Completed Patient</i> which take you to another table , containing those patients that have paid the treatment fee completely.<br>
-                                                                            At that table in the same position there is <i>Show Loan Patient</i> which take you back to the first page.
+                                                                            <h3>1-{{trans('file.patient_income')}}:</h3> {{trans('file.pincome_text')}}
                                                                         </div>
                                                                     </div>
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>2-X-ray Income:</h3> In this table all the patients will be listed which have been sent for X-ray but not paid the x-ray fee.<br>
-                                                                            By clicking on <i>paid</i> button under Paid column a form will pop up where you can insert the amount of money that the patient is paying.<br>
-                                                                            Under <i>P_Details</i> column you can see details of patient.<br>
-                                                                            In the topright of the table next to search box there is <i>Show Completed X-ray</i> which take you to another table , containing those patients that have paid the X-ray fee completely.<br>
-                                                                            At that table in the same position there is <i>Show Incompleted X-ray</i> which take you back to the first page.
+                                                                            <h3>2-{{trans('file.xray_income')}}:</h3> {{trans('file.xincome_text')}}
                                                                         </div>
                                                                     </div>
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>3-Other Income:</h3> In this table those income will be listed out which have been received from other than the patients and x-ray for example from some institute, bank, organization etc.<br>
-                                                                            If you wanted to insert new other expense press the button <i>Add New Income</i> on the topright of the table next to the search box.
+                                                                            <h3>3-{{trans('file.other_income')}}:</h3> {{trans('file.oincome_text')}}
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-2">
-                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                    <div class="row" style="margin-top: 80px;" title="{{trans('file.ctsi')}}">
                                                                         <div class="col-sm-12">
                                                                             <button type="button" id="pin" onclick="Pin()" onblur="pIn()" style="width: 145px;height:50px;border: none">
                                                                                 <img src="{{asset('img/pincome.JPG')}}" style="height: 108%;width: 100%;">
                                                                             </button>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="row" style="margin-top: 180px;" title="Click here on image to enlarge it">
+                                                                    <div class="row" style="margin-top: 120px;" title="{{trans('file.ctsi')}}">
                                                                         <div class="col-sm-12">
                                                                             <button type="button" id="xin" onclick="Xin()" onblur="xIn()" style="width: 145px;height:50px;border: none">
                                                                                 <img src="{{asset('img/xincome.JPG')}}" style="height: 108%;width: 100%;">
                                                                             </button>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="row" style="margin-top: 120px;" title="Click here on image to enlarge it">
+                                                                    <div class="row" style="margin-top: 120px;" title="{{trans('file.ctsi')}}">
                                                                         <div class="col-sm-12">
                                                                             <button type="button" id="oin" onclick="Oin()" onblur="oIn()" style="width: 145px;height:50px;border: none">
                                                                                 <img src="{{asset('img/oincome.JPG')}}" style="height: 108%;width: 100%;">
@@ -579,37 +548,30 @@
                                                     <div id="doctorha" class="tab-pane">
                                                         <div class="panel-body">
                                                             <div class="row">
-                                                                <h1 style="margin-left: 10px;">Doctor Page Information:</h1>
-                                                                <div class="col-sm-12"><p>Under Finance in sidebar by clicking on <b>Doctors</b> Doctors table will be displayed.<br></p>
+                                                                <h1 style="margin-left: 10px;">{{trans('file.docp_info')}}:</h1>
+                                                                <div class="col-sm-12"><p>{{trans('file.docpi_text')}}<br></p>
                                                                 </div>
                                                                 <div class="col-sm-10">
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>Doctor List:</h3>By clicking on <b><i>Doctor Salary</i></b> button at the topleft of the page another table will appear
-                                                                            that shows doctor's salary that you can understand whos salary is paid and when it paid? how much is left?..etc.<br>
-                                                                            In doctor salary page at the topleft there is <i><b>Doctor List</b></i> button which take you back to doctor list.<br>
-                                                                            In the doctor list table there is <i><b>PaySalary</b></i> button at the last column of the table that take you where you cna pay doctor's Salary.<br>
+                                                                            <h3>{{trans('file.doctor_list')}}:</h3>{{trans('file.docl_text')}}<br>
                                                                         </div>
                                                                     </div>
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>Salary Payment Page:</h3>By clicking on <b><i>PaySalary</i></b> button at the last column of the table another page will appear
-                                                                            that shows doctor's salary type,amount,past remaining...etc.<br>
-                                                                            Doctor salary whether it is fix or percentage, will be computed automatically and be displayed at the end of table in small form,based on that you can enter the amount of money that you want to pay to doctor.<br>
-                                                                            The last date, when doctor had received salary will be displayed on top of payment box.<br>
-                                                                            At the top of table there is date range where you can choose the range of time , between which you are going to pay doctor salary.
+                                                                            <h3>{{trans('file.spp')}}:</h3>{{trans('file.spp_text')}}
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-2">
-                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                    <div class="row" style="margin-top: 80px;" title="{{trans('file.ctsi')}}">
                                                                         <div class="col-sm-12">
                                                                             <button type="button" id="dsp" onclick="Dsp()" onblur="dSp()" style="width: 145px;height:50px;border: none">
                                                                                 <img src="{{asset('img/dlist.JPG')}}" style="height: 108%;width: 100%;">
                                                                             </button>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="row" style="margin-top: 100px;" title="Click here on image to enlarge it">
+                                                                    <div class="row" style="margin-top: 100px;" title="{{trans('file.ctsi')}}">
                                                                         <div class="col-sm-12">
                                                                             <button type="button" id="spp" onclick="Spp()" onblur="sPp()" style="width: 145px;height:50px;border: none">
                                                                                 <img src="{{asset('img/scomput.JPG')}}" style="height: 108%;width: 100%;">
@@ -625,50 +587,47 @@
                                                     <div id="freport" class="tab-pane">
                                                         <div class="panel-body">
                                                             <div class="row">
-                                                                <h1 style="margin-left: 10px;">Financial Report Page Information:</h1>
-                                                                <div class="col-sm-12"><p>Under Finance in sidebar by clicking on <b>Financial Report</b> a submenu will be displayed containing three kind of report.<br></p>
+                                                                <h1 style="margin-left: 10px;">{{trans('file.frp_info')}}:</h1>
+                                                                <div class="col-sm-12"><p>{{trans('file.frpi_text')}}<br></p>
                                                                     <ul>
-                                                                        <li>Income Financial Report</li>
-                                                                        <li>Expense Financial Report</li>
-                                                                        <li>Profit Financial Report</li>
+                                                                        <li>{{trans('file.ifr')}}</li>
+                                                                        <li>{{trans('file.efr')}}</li>
+                                                                        <li>{{trans('file.pfr')}}</li>
                                                                     </ul>
                                                                 </div>
                                                                 <div class="col-sm-10">
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>Income Financial Report:</h3>In the first row you can see the report of all type of income like patient income,x-ray income or other income all together by choosing single day date or a period of time between two date.<br>
-                                                                            In the second row you can see the report of specific type of income for either one day or for a period of time.
+                                                                            <h3>{{trans('file.ifr')}}:</h3>{{trans('file.ifr_text')}}
                                                                         </div>
                                                                     </div>
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>Expense Financial Report:</h3>In the first row you can see the report of all categories of expense like rent,medical expense,doctor salary ...etc, all together by choosing single day date or a period of time between two date.<br>
-                                                                            In the second row you can see the report of specific category of expense for either one day or for a period of time.
+                                                                            <h3>{{trans('file.efr')}}:</h3>{{trans('file.efr_text')}}
                                                                         </div>
                                                                     </div>
                                                                     <div class="row" style="margin-top: 50px;">
                                                                         <div class="col-sm-12">
-                                                                            <h3>Profit Financial Report:</h3>In this page you can see the report of your profit.<br>
-                                                                            By choosing the single day date or for a period of time you will see the difference between your income and expense which shows you the neat profit.
+                                                                            <h3>{{trans('file.pfr')}}:</h3>{{trans('file.pfr_text')}}
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-2">
-                                                                    <div class="row" style="margin-top: 80px;" title="Click here on image to enlarge it">
+                                                                    <div class="row" style="margin-top: 80px;" title="{{trans('file.ctsi')}}">
                                                                         <div class="col-sm-12">
                                                                             <button type="button" id="ifrep" onclick="Ifrep()" onblur="iFrep()" style="width: 145px;height:50px;border: none">
                                                                                 <img src="{{asset('img/ifreport.JPG')}}" style="height: 108%;width: 100%;">
                                                                             </button>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="row" style="margin-top: 100px;" title="Click here on image to enlarge it">
+                                                                    <div class="row" style="margin-top: 80px;" title="{{trans('file.ctsi')}}">
                                                                         <div class="col-sm-12">
                                                                             <button type="button" id="xfrep" onclick="Xfrep()" onblur="xFrep()" style="width: 145px;height:50px;border: none">
                                                                                 <img src="{{asset('img/xfreport.JPG')}}" style="height: 108%;width: 100%;">
                                                                             </button>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="row" style="margin-top: 100px;" title="Click here on image to enlarge it">
+                                                                    <div class="row" style="margin-top: 50px;" title="{{trans('file.ctsi')}}">
                                                                         <div class="col-sm-12">
                                                                             <button type="button" id="pirep" onclick="Pirep()" onblur="pIrep()" style="width: 145px;height:50px;border: none">
                                                                                 <img src="{{asset('img/pireport.JPG')}}" style="height: 108%;width: 100%;">
@@ -690,9 +649,9 @@
                             {{--Setting Tab--}}
                             <div id="setting" class="tab-pane">
                                 <div class="panel-body">
-                                    <h3>SETTING INFORMATION</h3>
-                                    <P>In this part you can create or delete user account,take backup of your database,add medicine to your list of prescription,category of expense,dental defect,treatment,department of doctor and also you can update your app in case if you receive update message.<br>
-                                    <b><strong>Note</strong></b>: There is no doctor department option in creating account, but doctor account will be automatically created while doctor registration.
+                                    <h3>{{trans('file.set_info')}}</h3>
+                                    <P>{{trans('file.seti_text')}}<br><br>
+                                    <b><strong>{{trans('file.pnotet')}}</strong></b>:{{trans('file.set_note')}}
                                     </P>
                                 </div>
                             </div>
@@ -702,13 +661,12 @@
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-sm-10">
-                                            <h1>Support Page Information:</h1>
+                                            <h1>{{trans('file.supp_info')}}:</h1>
                                             <div class="row">
-                                                <div class="col-sm-12"><p>In this page you can send us message if you face any problem regarding to functionality of the software<br>
-                                                        Take screenshot of the page that has error, attach it to email and send to us.</p></div>
+                                                <div class="col-sm-12"><p>{{trans('file.suppi_text')}}</p></div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-2" title="{{trans('file.ctsi')}}">
                                             <button type="button" id="co" onclick="Contact()" onblur="cOntact()" style="width: 145px;height:50px;border: none">
                                                 <img src="{{asset('img/cont.JPG')}}" style="height: 108%;width: 100%;">
                                             </button>
@@ -722,12 +680,12 @@
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-sm-10">
-                                            <h1>About Page Information:</h1>
+                                            <h1>{{trans('file.about_info')}}:</h1>
                                             <div class="row">
-                                                <div class="col-sm-12"><p>In this page there is few information about our company and our activities.</p></div>
+                                                <div class="col-sm-12"><p>{{trans('file.abouti_text')}}</p></div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-2" title="{{trans('file.ctsi')}}">
                                             <button type="button" id="abou" onclick="Abou()" onblur="aBou()" style="width: 145px;height:50px;border: none">
                                                 <img src="{{asset('img/about.JPG')}}" style="height: 108%;width: 100%;">
                                             </button>
