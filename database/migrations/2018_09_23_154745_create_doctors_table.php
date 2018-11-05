@@ -28,6 +28,7 @@ class CreateDoctorsTable extends Migration
             $table->string('gender');
             $table->string('salary_type');
             $table->integer('salary_amount');
+            $table->integer('advance')->nullable();
             $table->integer('paid')->nullable();
             $table->integer('remaining')->nullable();
             $table->integer('max_patient');

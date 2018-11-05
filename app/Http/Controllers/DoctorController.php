@@ -79,6 +79,16 @@ class DoctorController extends Controller
         return view('doctor_salary',compact('doc'));
     }
 
+    public function PayAdvance(Request $request,$id)
+    {
+        $adv=Doctor::find($id);
+        $adv->advance=$request->advance;
+        $adv->save();
+        $msg  = 'Advance Successfully Added';
+        return redirect()->back()->with(compact('msg'));
+
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -148,6 +158,7 @@ class DoctorController extends Controller
         $payment=Doctor::find($doctor)->first();
         $payment->paid=$request->salary;
         $payment->remaining=$request->colection-$request->salary;
+        $payment->advance=$request->advance-$request->advance;
         $payment->from=$request->start;
         $payment->to=$request->end;
         $payment->save();
