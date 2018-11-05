@@ -19,10 +19,7 @@
             <div class="ibox-content">
                 <div class="row">
                     <div class="col-md-6">
-<<<<<<< HEAD
 
-=======
->>>>>>> bd57f5f6462a3b69105c2aa7c2c9db386252dfde
                         <h3>Send Error Report</h3>
                         <h5 class="text-danger">Make sure you have internet connection</h5>
                         <form method="post" action="/email-send" enctype="multipart/form-data">

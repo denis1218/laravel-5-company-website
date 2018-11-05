@@ -79,7 +79,7 @@ Route::middleware('auth','reception')->group(function () {
     Route::get('/new-patient-today','PatientController@show_new_patients');
 
     Route::get('/next-appointment-patient','PatientController@show_next_appointment_patient');
-
+    Route::patch('next-appointment-patient-edit/{id}','PatientController@updateNextappointmentPatient');
     Route::get('/miss-next-appointment-patient','PatientController@show_missing_next_appointment_patient');
 
 //    Route::get('/dash_reception', function () {
@@ -250,10 +250,6 @@ Route::middleware('auth','reception')->group(function () {
 // End Route Reception
 
 
-
-Route::get('tes',function (){
-   return Carbon::now();
-});
 
 
 
