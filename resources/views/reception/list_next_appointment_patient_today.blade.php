@@ -34,9 +34,9 @@
                                     <th>{{trans('file.last_name')}}</th>
                                     <th>{{trans('file.visits')}}</th>
                                     <th>{{trans('file.doctor')}}&nbsp;<i class="fa fa-stethoscope"></i></th>
-                                    <th>{{trans('file.date')}}&nbsp;<i class="fa fa-calendar"></i></th>
                                     <th>{{trans('file.next_appointment_date')}}&nbsp;<i class="fa fa-calendar"></i></th>
                                     <th>{{trans('file.phone')}}&nbsp;<i class="fa fa-phone"></i></th>
+                                    <th>{{trans('file.edit')}}</th>
                                 <tr>
                             </thead>
                             <tbody>
@@ -47,10 +47,13 @@
                                         <td>{{ $patient->lastname }}</td>
                                         <td>{{ $patient->status }}</td>
                                         <td>{{ $patient->doctor->first_name }}</td>
-                                        <td>{{ $patient->created_at }}</td>
                                         <td>{{ $patient->next_appointment }}</td>
                                         <td>{{ $patient->phone }}</td>
-                                    </tr>
+                                        <td>
+                                            <button class="btn btn-xs btn-success" data-toggle="modal"
+                                                    data-target="#e{{$patient->id}}"><i class="fa fa-edit"></i>&nbsp;{{trans('file.edit')}}
+                                            </button>
+                                        </td>                                    </tr>
                                 @endforeach
                             </tbody>
                             <tfoot>
@@ -60,9 +63,9 @@
                                     <th>{{trans('file.last_name')}}</th>
                                     <th>{{trans('file.visits')}}</th>
                                     <th>{{trans('file.doctor')}}&nbsp;<i class="fa fa-stethoscope"></i></th>
-                                    <th>{{trans('file.date')}}&nbsp;<i class="fa fa-calendar"></i></th>
                                     <th>{{trans('file.next_appointment_date')}}&nbsp;<i class="fa fa-calendar"></i></th>
                                     <th>{{trans('file.phone')}}&nbsp;<i class="fa fa-phone"></i></th>
+                                    <th>{{trans('file.edit')}}</th>
                                 <tr>
                             </tfoot>
                         </table>
@@ -74,6 +77,57 @@
         </div>
     </div>
     {{-- end of all box content --}}
+
+    @foreach($allPatientNextAppointment as $patient)
+        {{-- modal window to show editing detail of doctor--}}
+        <div class="modal inmodal" id="e{{$patient  ->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content animated fadeIn">
+                    <div class="modal-header">
+
+                        <button type="button" class="close" data-dismiss="modal"><span
+                                    aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">{{trans('file.patient_information')}}</h4>
+                    </div>
+                    <form id="form" action="/next-appointment-patient-edit/{{$patient->id}}" method="post">
+                        {{method_field('patch')}}
+                        <div class="modal-body">
+
+
+
+                            <div class="form-group"><label>{{trans('file.id')}}</label> <input type="text" name="id" placeholder="{{trans('file.id')}}"
+                                                                                                      value="{{$patient->id}}" class="form-control" disabled></div>
+                            <div class="form-group"><label>{{trans('file.first_name')}}</label> <input type="text" name="name" placeholder="{{trans('file.first_name')}}"
+                                                                                                       value="{{$patient->name}}" class="form-control"></div>
+
+
+                            <div class="form-group"><label>{{trans('file.last_name')}}</label> <input type="text" name="lastname" placeholder="{{trans('file.last_name')}}"
+                                                                                                       value="{{$patient->lastname}}" class="form-control"></div>
+
+
+                            <div class="form-group"><label>{{trans('file.visits')}}</label> <input type="text" name="visits" placeholder="{{trans('file.visits')}}"
+                                                                                                      value="{{$patient->status}}" class="form-control"></div>
+
+
+                            <div class="form-group"><label>{{trans('file.next_appointment_date')}}</label> <input type="date" name="next_appointment_date" placeholder="{{trans('file.next_appointment_date')}}"
+                                                                                                      value="{{$patient->next_appointment}}" class="form-control"></div>
+
+
+                            <div class="form-group"><label>{{trans('file.phone')}}</label> <input type="text" name="phone" placeholder="{{trans('file.phone')}}"
+                                                                                                                  value="{{$patient->phone}}" class="form-control"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-white" data-dismiss="modal">{{trans('file.close')}}</button>
+                            <button type="submit"   class="btn btn-primary">{{trans('file.save')}}</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    @endforeach
+    {{-- end of modal window--}}
 
 @endsection
 

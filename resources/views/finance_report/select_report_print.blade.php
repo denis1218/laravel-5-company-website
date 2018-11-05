@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="profile-image">
-                            <img src="{{asset('img/dentaa3.png')}}" class="" style="width: 200px;">
+                            <img src="{{asset('img/dentaa3.png')}}" class="img-responsive" style="width: 200px;">
                         </div>
                     </div>
                     <div class="col-md-6">

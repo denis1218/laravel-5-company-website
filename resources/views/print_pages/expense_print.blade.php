@@ -6,7 +6,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Income Statment <i class="fa fa-info"></i></h5>
+                <h5>Expense Statment <i class="fa fa-info"></i></h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -28,17 +28,23 @@
                 </div>
             </div>
             <div class="ibox-content" id="divone">
+
                 <div class="row">
                     <div class="col-md-3">
                         <div class="profile-image">
-                            <img src="{{asset('img/dentaa3.png')}}" class="img-responsive" style="width: 200px;">
+                            <img src="{{asset('img/dentaa3.png')}}" class="" style="width: 200px;">
                         </div>
                     </div>
+
                     <div class="col-md-6">
-
+                        <h1>Payment</h1>
                         <h2> Hakim Alikozay Dental Clinic</h2>
-                        <h4>Income History File</h4>
-
+                        <h4>Date: {{Carbon\Carbon::now()->timezone('Asia/Kabul')}}</h4>
+                        <h4>Receiver :
+                            @foreach($expense as $exp)
+                           {{$exp->receiver}}
+                            @endforeach
+                        </h4>
 
                     </div>
 
@@ -47,49 +53,52 @@
                 <br/>
                 {{--start condition of patient info--}}
                 {{--@if(isset($pinfo))--}}
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="row shadow p-3 mb-5 bg-white rounded"
-                                 style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                                <h3 style="font-weight: bold">Expense Report</h3>
-                            </div>
-                            <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Amount</th>
-                                    <th>Category</th>
-                                    <th>Description</th>
-                                    <th>Date</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($expense as $exp)
-                                    <tr>
-                                        <td>{{ $exp->id}}</td>
-                                        <td>{{ $exp->receiver }}</td>
-                                        <td>{{ $exp->amount}}</td>
-                                        <td>{{$exp->category}}</td>
-                                        <td>{{$exp->description}}</td>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row shadow p-3 mb-5 bg-white rounded"
+                             style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <h3 style="font-weight: bold">Payment Bill</h3>
+                        </div>
+                        <div class="col-md-6">
+                        <table class="table table-hover">
 
-                                        <td>{{ $exp->created_at }}</td>
-                                    </tr>
-                                @endforeach
-                                <tr>
-                                    <th>Total Expense Report : {{$expense->sum('amount')}}</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            </div>
+                            <tbody>
 
+                            @foreach($expense as $exp)
+                                <tr>
+                                    <td>Receiver </td>
+                                    <td>{{ $exp->receiver}}</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Amount</td>
+                                    <td>{{$exp->amount}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Category</td>
+                                    <td>{{$exp->category}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Description</td>
+                                    <td>{{$exp->description}}</td>
+                                </tr>
+
+                            @endforeach
+
+                            </tbody>
+                        </table>
+                            <br>
+                            <br>
+
+                            <div class="row">
+                                <h4  style="float: left;">Reception sign &nbsp;&nbsp; . . . . . . .</h4>
+                                <h4  style="float: right;">Receiver sign &nbsp;&nbsp; . . . . . . .</h4>
+
+                            </div>
                         </div>
                     </div>
-            {{--@endif--}}
+                </div>
+                {{--@endif--}}
             </div>
         </div>
     </div>

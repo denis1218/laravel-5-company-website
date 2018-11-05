@@ -60,6 +60,7 @@
                         <hr class="hr-line-dashed">
                         <div class="row">
                             <div class="col-lg-12">
+                                <div class="table-responsive">
                                 <table class="table table-hover table-borderd table-striped">
                                     <thead>
                                     <tr>
@@ -86,6 +87,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
                             <div class="col-lg-5">
                                 <img id="preview"  style="border-radius: 20px;"/>

@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="profile-image">
-                            <img src="{{asset('img/dentaa3.png')}}" class="" style="width: 200px;">
+                            <img src="{{asset('img/dentaa3.png')}}" class="img-responsive" style="width: 200px;">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -54,6 +54,7 @@
                             <h3 style="font-weight: bold">Income</h3>
                         </div>
                         <br>
+                        <div class="table-responsive">
                         <table class="table table-striped text-bold" style="margin-top:30px;">
 
                             <tbody>
@@ -84,6 +85,7 @@
                             </tr>
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
 

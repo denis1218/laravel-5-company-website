@@ -49,14 +49,17 @@ class ExpenseController extends Controller
      */
     public function store(Request $request)
     {
-        $expense = new Expense();
-        $expense->receiver = $request->receiver;
-        $expense->amount = $request->amount;
-        $expense->category = $request->category;
-        $expense->description = $request->description;
-        $expense->created_at = Carbon::now();
-        $expense->save();
-        return redirect('expenditure');
+        $expens = new Expense();
+        $expens->receiver = $request->receiver;
+        $expens->amount = $request->amount;
+        $expens->category = $request->category;
+        $expens->description = $request->description;
+        $expens->created_at = Carbon::now();
+        $expens->save();
+        $ex = Expense::max('id');
+        $expense = Expense::where('id','=',$ex)->get();
+
+        return view('print_pages.expense_print',compact('expense'));
     }
 
 
