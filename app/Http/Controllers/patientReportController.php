@@ -16,10 +16,7 @@ class patientReportController extends Controller
      */
     public function index()
     {
-//        $all_patient = Patient::find()->doctor;
-        $all_patient = Patient::with('doctor')->get();
-//        return $all_patient;
-
+        $all_patient = Patient::with('doctor')->paginate(10 );
         return view('patient.patient_report',compact('all_patient'));
     }
 
@@ -63,7 +60,6 @@ class patientReportController extends Controller
     public  function report($id){
         $treatment = Treatment::with('patient')->get()->find($id);
         $patient = Patient::with('doctor')->get()->find($id);
-
 
         return view('patient.patientPrint', compact('patient','treatment'));
 

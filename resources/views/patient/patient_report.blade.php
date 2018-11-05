@@ -20,10 +20,10 @@
                     {{--first doctor--}}
                             
                             <div class="row" style="">
-                                <div class="col-sm-5">
+                                <div class="col-sm-12">
                                     <div class="input-group">
                                         <span class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-primary" disabled="">{{trans('file.search')}}</button> </span>
+                                        <button type="button" class="btn btn-sm btn-primary"><i class="fa fa-search"></i>&nbsp;{{trans('file.search')}}</button> </span>
                                         <input type="text" placeholder="{{trans('file.search_patient_name')}}" id="search_all_patient" onkeyup="search_all_patient()"
                                                 class="input-sm form-control"> 
                                     </div>
@@ -32,34 +32,43 @@
                             </div>
 
                             <div class="row" style="margin-top:30px;">
-                                <div class="col-sm-11">
+                                <div class="col-sm-12">
                                         <table class="table table-hover  no-margins" id="table_all_patient">
                                             <thead>
                                             <tr class="bg-light">
+                                                <th>{{trans('file.id')}}</th>
                                                 <th>{{trans('file.p_id')}}</th>
                                                 <th>{{trans('file.patient_name')}}</th>
                                                 <th>{{trans('file.last_name')}}</th>
                                                 <th>{{trans('file.doctor_name')}}</th>
+                                                <th>{{trans('file.register')}}</th>
                                                 <th>{{trans('file.status')}}</th>
                                                 <th>{{trans('file.next_appointment_date')}}</th>
                                                 <th>{{trans('file.health_problem')}}</th>
-
-                                                <th>{{trans('file.print')}}</th>
+                                                <th>{{trans('file.report')}}</th>
+                                                <th>{{trans('file.edit')}}</th>
+                                                <th>{{trans('file.delete')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             @if(count($all_patient)>0)
                                             @foreach($all_patient as $patient)
                                             <tr>
-                                                <td>{{$patient->id_patient}}</td>
-                                                <td>{{$patient->name}}</td>
-                                                <td>{{$patient->lastname}}</td>
-                                                <td>{{$patient->doctor->first_name}}</td>
-                                                <td>{{$patient->status}}</td>
-                                                <td><i class="fa fa-calendar"></i>{{$patient->created_at}}</td>
+                                                <td>{{ $patient->id }}</td>
+                                                <td>{{ $patient->id_patient }}</td>
+                                                <td>{{ $patient->name }}</td>
+                                                <td>{{ $patient->lastname }}</td>
+                                                <td>{{ $patient->doctor->first_name }}</td>
+                                                <td>{{ $patient->created_at }}</td>
+                                                <td>{{ $patient->status }}</td>
+                                                <td>{{$patient->next_appointment}}</td>
                                                 <td class="">{{$patient->problem_health}}</td>
-                                                <td><a class="btn btn-xs btn-primary" href="/patient_report/{{$patient->id}}" ><i class="fa fa-info"></i>
+                                                <td><a class="btn btn-xs btn-primary" href="/patient_report/{{$patient->id}}" ><i class="fa fa-print"></i>
                                                         {{trans('file.print')}}</a></td>
+                                                <td><a class="btn btn-xs btn-success"><i class="fa fa-edit"></i>
+                                                        {{trans('file.edit')}}</a></td>
+                                                <td><a class="btn btn-xs btn-danger" ><i class="fa fa-remove"></i>
+                                                        {{trans('file.delete')}}</a></td>
 
                                             </tr>
                                                 @endforeach
@@ -68,6 +77,7 @@
                                             @endif
                                             </tbody>
                                         </table>
+                                    {{ $all_patient->links() }}
                                 </div>
                             </div>
                         </div>
