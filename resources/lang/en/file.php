@@ -325,6 +325,7 @@ return[
     'back'=>'Back',
     'total_new'=>'Total New Register Today',
     'visits'=>'Visits',
+    'date_register'=>'Date Register',
 //    list next appointment today
     'next_appointment'=>'List Next Appointment Today',
     'next_appointment_date'=>'Next Appointmentٔ',
@@ -333,6 +334,7 @@ return[
 
 //  patient report
     'patient_report_table'=>'Patient Report Table',
+    'info_patient'=>'Edit Patient information',
 //    patient prescription
     'patient_prescription'=>'Patient Prescription',
 
