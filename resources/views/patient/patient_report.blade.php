@@ -6,53 +6,57 @@
 
 @section('content')
 
-<div class="col-lg-12">
+    <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>{{trans('file.patient_report_table')}}<i class="fa fa-info"></i></h5>
 
             </div>
             <div class="ibox-content" id="divone">
-                
-                <div class="container">
-                <div class="row">
-                    
-                    {{--first doctor--}}
-                            
-                            <div class="row" style="">
-                                <div class="col-sm-12">
-                                    <div class="input-group">
-                                        <span class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-primary"><i class="fa fa-search"></i>&nbsp;{{trans('file.search')}}</button> </span>
-                                        <input type="text" placeholder="{{trans('file.search_patient_name')}}" id="search_all_patient" onkeyup="search_all_patient()"
-                                                class="input-sm form-control"> 
-                                    </div>
-                                </div>
 
+                <div class="container">
+                    <div class="row">
+
+                        {{--first doctor--}}
+
+                        <div class="row" style="">
+                            <div class="col-sm-12">
+                                <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <form action="/patient_report/show/{{ $patient->id }}" method="get">
+                                                <button type="button" class="btn btn-sm btn-primary"><i
+                                                            class="fa fa-search"></i>&nbsp;{{trans('file.search')}}</button> </span>
+                                                <input type="text" placeholder="{{trans('file.search_patient_name')}}"
+                                                       id="search_all_patient" onkeyup="search_all_patient()"
+                                                       class="input-sm form-control">
+                                        </form>
+                                </div>
                             </div>
 
-                            <div class="row" style="margin-top:30px;">
-                                <div class="col-sm-12">
-                                        <table class="table table-hover  no-margins" id="table_all_patient">
-                                            <thead>
-                                            <tr class="bg-light">
-                                                <th>{{trans('file.id')}}</th>
-                                                <th>{{trans('file.p_id')}}</th>
-                                                <th>{{trans('file.patient_name')}}</th>
-                                                <th>{{trans('file.last_name')}}</th>
-                                                <th>{{trans('file.doctor_name')}}</th>
-                                                <th>{{trans('file.register')}}</th>
-                                                <th>{{trans('file.status')}}</th>
-                                                <th>{{trans('file.next_appointment_date')}}</th>
-                                                <th>{{trans('file.health_problem')}}</th>
-                                                <th>{{trans('file.report')}}</th>
-                                                <th>{{trans('file.edit')}}</th>
-                                                <th>{{trans('file.delete')}}</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            @if(count($all_patient)>0)
-                                            @foreach($all_patient as $patient)
+                        </div>
+
+                        <div class="row" style="margin-top:30px;">
+                            <div class="col-sm-12">
+                                <table class="table table-hover  no-margins" id="table_all_patient">
+                                    <thead>
+                                    <tr class="bg-light">
+                                        <th>{{trans('file.id')}}</th>
+                                        <th>{{trans('file.p_id')}}</th>
+                                        <th>{{trans('file.patient_name')}}</th>
+                                        <th>{{trans('file.last_name')}}</th>
+                                        <th>{{trans('file.doctor_name')}}</th>
+                                        <th>{{trans('file.register')}}</th>
+                                        <th>{{trans('file.status')}}</th>
+                                        <th>{{trans('file.next_appointment_date')}}</th>
+                                        <th>{{trans('file.health_problem')}}</th>
+                                        <th>{{trans('file.report')}}</th>
+                                        <th>{{trans('file.edit')}}</th>
+                                        <th>{{trans('file.delete')}}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @if(count($all_patient)>0)
+                                        @foreach($all_patient as $patient)
                                             <tr>
                                                 <td>{{ $patient->id }}</td>
                                                 <td>{{ $patient->id_patient }}</td>
@@ -63,30 +67,94 @@
                                                 <td>{{ $patient->status }}</td>
                                                 <td>{{$patient->next_appointment}}</td>
                                                 <td class="">{{$patient->problem_health}}</td>
-                                                <td><a class="btn btn-xs btn-primary" href="/patient_report/{{$patient->id}}" ><i class="fa fa-print"></i>
+                                                <td><a class="btn btn-xs btn-primary"
+                                                       href="/patient_report/{{$patient->id}}"><i
+                                                                class="fa fa-print"></i>
                                                         {{trans('file.print')}}</a></td>
-                                                <td><a class="btn btn-xs btn-success"><i class="fa fa-edit"></i>
+                                                <td><a class="btn btn-xs btn-success" data-toggle="modal"
+                                                       data-target="#e{{$patient->id}}"><i class="fa fa-edit"></i>
                                                         {{trans('file.edit')}}</a></td>
-                                                <td><a class="btn btn-xs btn-danger" ><i class="fa fa-remove"></i>
-                                                        {{trans('file.delete')}}</a></td>
+                                                <td>
+                                                    <form action="/patient_report/{{ $patient->id }}" method="post" id="myForm">
+                                                        @method('delete')
+                                                        <button class="btn btn-xs btn-danger demo3"><i class="fa fa-remove"></i>
+                                                        {{trans('file.delete')}}</button>
+                                                    </form>
+                                                </td>
+
 
                                             </tr>
-                                                @endforeach
-                                            @else
-                                                <h3 style="color:red;">{{trans('file.there_is_no')}}</h3>
-                                            @endif
-                                            </tbody>
-                                        </table>
-                                    {{ $all_patient->links() }}
-                                </div>
+                                        @endforeach
+                                    @else
+                                        <h3 style="color:red;">{{trans('file.there_is_no')}}</h3>
+                                    @endif
+                                    </tbody>
+                                </table>
+                                {{ $all_patient->links() }}
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    @foreach($all_patient as $patient)
+        {{-- modal window to show editing detail of doctor--}}
+        <div class="modal inmodal" id="e{{$patient->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content animated fadeIn">
+                    <div class="modal-header">
+                        <h4 class="modal-title">{{trans('file.info_patient')}}</h4>
+                    </div>
+                    <form id="form" action="/patient_report/{{$patient->id}}" method="post">
+                        {{method_field('patch')}}
+                        <div class="modal-body">
+                            <input type="number" hidden name="id" value="{{ $patient->id }}">
 
+                            <div class="form-group"><label>{{trans('file.first_name')}}</label>
+                                <input type="text" name="name" placeholder="{{trans('file.first_name')}}"
+                                       value="{{$patient->name}}" class="form-control"></div>
+
+                            <div class="form-group"><label>{{trans('file.last_name')}}</label>
+                                <input type="text" name="lastname" placeholder="{{trans('file.last_name')}}"
+                                       value="{{$patient->lastname}}" class="form-control"></div>
+
+                            <div class="form-group"><label>{{trans('file.phone')}}</label>
+                                <input type="text" name="phone" placeholder="{{trans('file.phone')}}"
+                                       value="{{$patient->phone}}" class="form-control">
+                            </div>
+
+                            <div class="form-group"><label>{{trans('file.status')}}</label>
+                                <select name="status" class="form-control   ">
+                                    <option selected disabled>{{ $patient->status }}</option>
+                                    <option value="1">first</option>
+                                    <option value="2">second</option>
+                                    <option value="3">third</option>
+                                    <option value="4">fourth</option>
+                                    <option value="5">fifth</option>
+                                    <option value="6">sixth</option>
+                                    <option value="7">seventh</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group"><label>{{trans('file.next_appointment')}}</label>
+                                <input type="date" name="next_appointment" placeholder="{{trans('file.next_appointment')}}"
+                                       value="{{$patient->next_appointment}}"
+                                       class="form-control"></div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-white"
+                                    data-dismiss="modal">{{trans('file.close')}}</button>
+                            <button type="submit" class="btn btn-primary">{{trans('file.save')}}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    @endforeach
 
 
 
@@ -100,60 +168,23 @@
 @section('script')
     <!-- script -->
 
-    <script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
-    <script> $(document).ready(function () {
-
-            $('.demo1').click(function () {
+    <script>
+        $(document).ready(function () {
+            $('.demo3').on('click',function(e){
+                e.preventDefault();
+                var form = $(this).parents('form');
                 swal({
-                    title: "Welcome in Alerts",
-                    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-                });
-            });
-
-            $('.demo2').click(function () {
-                swal({
-                    title: "Successfully Send!",
-                    text: "X-Ray Document Successfully send to doctor!",
-                    type: "success"
-                });
-            });
-
-            $('.demo3').click(function () {
-                swal({
-                    title: "Are you sure?",
-                    text: "You will not be able to recover this imaginary file!",
+                    title: "Do you want to delete this doctor ?",
+                    text: "It will be deleted from database",
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#DD6B55",
                     confirmButtonText: "Yes, delete it!",
                     closeOnConfirm: false
-                }, function () {
-                    swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                }, function(isConfirm){
+                    if (isConfirm) form.submit();
                 });
             });
-
-            $('.demo4').click(function () {
-                swal({
-                        title: "Are you sure?",
-                        text: "Your will not be able to recover this imaginary file!",
-                        type: "warning",
-                        showCancelButton: true,
-                        confirmButtonColor: "#DD6B55",
-                        confirmButtonText: "Yes, delete it!",
-                        cancelButtonText: "No, cancel plx!",
-                        closeOnConfirm: false,
-                        closeOnCancel: false
-                    },
-                    function (isConfirm) {
-                        if (isConfirm) {
-                            swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                        } else {
-                            swal("Cancelled", "Your imaginary file is safe :)", "error");
-                        }
-                    });
-            });
-
-
         });
     </script>
 
@@ -183,15 +214,6 @@
     </script>
 
 
-    <!-- Data Tables -->
-    <script src="dashboard/js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.bootstrap.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.responsive.js"></script>
-    <script src="dashboard/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
-
-    <!-- Custom and plugin javascript -->
-    <script src="dashboard/js/inspinia.js"></script>
-    <script src="dashboard/js/plugins/pace/pace.min.js"></script>
 
 
 @endsection

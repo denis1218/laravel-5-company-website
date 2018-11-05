@@ -334,6 +334,7 @@ return[
 
 //  patient report
     'patient_report_table'=>'Patient Report Table',
+    'info_patient'=>'Edit Patient information',
 //    patient prescription
     'patient_prescription'=>'Patient Prescription',
 
