@@ -129,6 +129,8 @@ Route::middleware('auth','reception')->group(function () {
     Route::get('/pdf', 'PdfGenerator@PDF');
 //doctor salary
     Route::get('/doctors2', 'DoctorController@show');
+    Route::patch('/doctors3/{id}', 'DoctorController@PayAdvance');
+
 //    Patient Deletion
     Route::get('/patient/{id}/delete', 'PatientController@destroy');
 // Doctor Registrationexp

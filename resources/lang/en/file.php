@@ -252,6 +252,8 @@ return[
 
 //Start Of Doctor Salary
 //Doctor List
+    'advance'=>'Advance',
+    'giv_advance'=>'Giv Advance',
     'list_of_doctors'=>'List of Doctors',
     'goto_ds'=>'Doctor Salary',
     'ndry'=>'No Doctor Registered yet',

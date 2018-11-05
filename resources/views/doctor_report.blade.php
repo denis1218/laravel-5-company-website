@@ -163,12 +163,17 @@
                                         <td><input type="text" class="form-control" value="{{$doctor->remaining}}" readonly=""></td>
 
                                     </tr>
+                                    <tr>
+                                        <td class="text-bold"><h4>{{trans('file.advance')}}: </h4></td>
+                                        <td><input type="text" class="form-control" value="{{$doctor->advance}}" name="advance" readonly=""></td>
+
+                                    </tr>
 
                                     <tr>
 
                                         <td class="text-bold"><h4>{{trans('file.total_doctor_salary')}}: </h4></td>
                                         <td>
-                                            <input type="text" class="form-control" value="{{$docfee+$doctor->remaining}}" name="colection" readonly>
+                                            <input type="text" class="form-control" value="{{$docfee+$doctor->remaining-$doctor->advance}}" name="colection" readonly>
                                         </td>
                                     </tr>
                                     <tr>
@@ -180,7 +185,7 @@
                                     <tr>
                                         <td class="text-bold"><h4>{{trans('file.payment_amount')}}: </h4></td>
                                         <td>
-                                            <input type="number" min="1" max="{{$docfee+$doctor->remaining}}" class="form-control" placeholder="Enter the fee amount" name="salary" required>
+                                            <input type="number" min="1" max="{{$docfee+$doctor->remaining-$doctor->advance}}" class="form-control" placeholder="Enter the fee amount" name="salary" required>
                                         </td>
                                     </tr>
                                     <tr>
@@ -239,7 +244,7 @@
             $('.demo3').click(function () {
                 swal({
                     title: "Are you sure?",
-                    text: "You will not be able to recover this imaginary file!",
+                    text: "You will not be able to recover this record!",
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#DD6B55",
@@ -253,7 +258,7 @@
             $('.demo4').click(function () {
                 swal({
                         title: "Are you sure?",
-                        text: "Your will not be able to recover this imaginary file!",
+                        text: "Your will not be able to recover this file!",
                         type: "warning",
                         showCancelButton: true,
                         confirmButtonColor: "#DD6B55",
