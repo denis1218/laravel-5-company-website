@@ -157,7 +157,6 @@
                     <li class="active"><a data-toggle="tab" href="#tab-1"><i class="fa fa-history"></i>{{trans('file.past_history')}}</a></li>
                     <li class=""><a data-toggle="tab" id="test" href="#tab-2"><i class="fa fa-clock-o"></i>{{trans('file.present_history')}}</a></li>
                 </ul>
-
                 <div class="tab-content">
                     {{-- panel tab 1 past history --}}
                     <div id="tab-1" class="tab-pane active">
