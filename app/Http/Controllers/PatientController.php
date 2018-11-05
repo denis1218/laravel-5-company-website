@@ -151,6 +151,16 @@ class PatientController extends Controller
         $allPatientNextAppointment = Patient::whereDate('next_appointment','=',Carbon::today())->get();
         return view ('reception.list_next_appointment_patient_today',compact('allPatientNextAppointment'));
     }
+    public function updateNextappointmentPatient($id,Request $request){
+        $patient = Patient::find($id);
+        $patient->name = $request->name;
+        $patient->lastname = $request->lastname;
+        $patient->status = $request->visits;
+        $patient->next_appointment = $request->next_appointment_date;
+        $patient->phone = $request->phone;
+        $patient->save();
+        return back();
+    }
 
     // show all patient have next appointment have missing
     // this is comparable with who patient had next appointment last day
