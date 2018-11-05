@@ -246,6 +246,10 @@ Route::middleware('auth','reception')->group(function () {
        return view('help');
     });
 
+    Route::get('/doctors/doctor_edit/{id}','DoctorController@doctor_edit');
+
+    Route::post('/doctors/update/{id}','DoctorController@update_doctor');
+
 });
 // End Route Reception
 
