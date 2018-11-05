@@ -151,7 +151,6 @@
                 <ul class="nav nav-tabs" id="demoTabs">
                     <li class="active"><a data-toggle="tab" href="#tab-1">{{trans('file.past_history')}}</a></li>
                     <li class=""><a data-toggle="tab" id="test" href="#tab-2">{{trans('file.present_history')}}</a></li>
-                    <li class=""><a data-toggle="tab" id="test" href="#tab-3">{{trans('file.prescription')}}</a></li>
 
                 </ul>
 
@@ -371,92 +370,9 @@
 
                         </div>
                     </div>
-                    {{--prescription tab 3--}}
-
-                    <div id="tab-3" class="tab-pane">
-                        <div class="panel-body">
-                            <form action="/prescription" method="post">
-                                <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
-                                    <div class="col-md-6">
-
-                                        <input type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
-                                        <label>{{trans('file.pattern')}} :</label>
-
-                                        <div class="form-group">
-                                            <input type="number" name="pattern" class="form-control">
-                                        </div>
-                                        <label>{{trans('file.instruction')}} :</label>
-
-                                        <div class="form-group">
-                                            <textarea name="instruction" class="form-control"
-                                                      style="resize: none;"></textarea>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>{{trans('file.medicine')}} :</label>
-
-                                            <select class="form-control" name="medicine"
-                                                    required>
-                                                <option value="">{{trans('file.medicine')}}</option>
-                                                @foreach($medicine as $medice)
-                                                    <option value="{{ $medice->name }}">
-                                                        {{ $medice->name}} </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <label>{{trans('file.days')}}:</label>
-
-                                        <div class="form-group">
-                                            <input type="number" name="day" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> {{trans('file.add_prescription')}}
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </form>
-                            <br>
-                            <div class="hr-line-dashed"></div>
-                            <table class="table table-striped table-bordered table-hover" id="editable"
-                                   style="margin-left:30px;width:95%;">
-                                <thead>
-                                <tr>
-                                    <th>{{trans('file.medicine')}}</th>
-                                    <th>{{trans('file.pattern')}}</th>
-                                    <th>{{trans('file.days')}}</th>
-                                    <th>{{trans('file.instruction')}}</th>
-                                    <th>{{trans('file.edit')}}</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-
-                                @foreach($prescription as $pres)
-                                    <tr class="gradeX">
-                                        <td>{{$pres->medicine}}</td>
-                                        <td>{{$pres->pattern}}</td>
-                                        <td>{{$pres->day}}</td>
-                                        <td>{{$pres->instruction}}</td>
-                                        <td>
-                                            <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                                    data-target="#e{{$pres->id}}">{{trans('file.edit')}}
-                                            </button>
-                                            <a class="btn btn-xs btn-danger fa fa-remove"
-                                               href="/prescription/{{$pres->id}}">&nbsp;Delete
-                                            </a>
-                                        </td>
-
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
 
 
-                        </div>
-                    </div>
+
 
                 </div>
             </div>
