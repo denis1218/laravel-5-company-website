@@ -16,10 +16,7 @@ class patientReportController extends Controller
      */
     public function index()
     {
-//        $all_patient = Patient::find()->doctor;
-        $all_patient = Patient::with('doctor')->get();
-//        return $all_patient;
-
+        $all_patient = Patient::with('doctor')->paginate(10 );
         return view('patient.patient_report',compact('all_patient'));
     }
 
@@ -56,14 +53,26 @@ class patientReportController extends Controller
         $patient = Patient::with('doctor')->get()->find($id);
 
 
-        return view('patient.print', compact('patient','treatment'));
+        return view('patient.print_reception', compact('patient','treatment'));
+    }
+
+
+
+    public function show_patient()
+    {
 
     }
 
+
+
+
+    /*
+     * this method is for printing patient report
+     * in PDF file
+     */
     public  function report($id){
         $treatment = Treatment::with('patient')->get()->find($id);
         $patient = Patient::with('doctor')->get()->find($id);
-
 
         return view('patient.patientPrint', compact('patient','treatment'));
 
@@ -86,9 +95,17 @@ class patientReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+//        return $request;
+        $patient = Patient::find($request->id);
+        $patient->name = $request->name;
+        $patient->lastname = $request->lastname;
+        $patient->phone = $request->phone;
+        $patient->next_appointment = $request->next_appointment;
+        $patient->status = $request->status;
+        $patient->update();
+        return redirect()->back();
     }
 
     /**
@@ -99,6 +116,8 @@ class patientReportController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $patien = Patient::find($id);
+        $patien->delete();
+        return redirect()->back();
     }
 }

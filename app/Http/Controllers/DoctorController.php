@@ -142,7 +142,7 @@ class DoctorController extends Controller
         $doctor->salary_type=$request->input('salary_type');
         $doctor->salary_amount=$request->input('salary_amount');
         $doctor->max_patient=$request->input('max_patient');
-        $doctor->save();
+        $doctor->update();
         return redirect('/doctors');
     }
 
