@@ -63,13 +63,26 @@ class EmailController extends Controller
 //            $fileName        = $request->imagefile->getClientOriginalName();
 //            $filepath        = $destinationPath.'/'.$fileName;
             try{
+
             Mail::to('dentaclinic2018@gmail.com')->send(new SendEmail(
                 $request->input('title'),$request->input('content')
             ));
             }catch (Exception $ex) {
                 echo "Something wrong with ".$ex->getMessage();
             }
-        return redirect()->back();
+
+        }else{
+            try{
+
+            Mail::to('dentaclinic2018@gmail.com')->send(new SendEmail(
+                $request->input('title'),$request->input('content'),null
+            ));
+            }catch (Exception $ex){
+                return redirect('/contact');
+            }
+        }
+        flash('message')->success();
+        return redirect()->back()->with('message','Successfully Email Send to Paypol Company we will contact you soon');
     }
 
 }

@@ -64,7 +64,7 @@
 
                                     <div class="form-group">
                                         <div class="form-group">
-                                            <button class="btn btn-primary" type="submit">{{trans('file.save')}}</button>
+                                            <button class="btn btn-primary" type="submit">{{trans('file.save_and_print')}}</button>
                                             <button class="btn btn-white" type="reset">{{trans('file.reset')}}</button>
                                         </div>
                                     </div>

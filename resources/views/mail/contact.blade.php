@@ -19,6 +19,7 @@
             <div class="ibox-content">
                 <div class="row">
                     <div class="col-md-6">
+
                         <h3>Send Error Report</h3>
                         @if($net)
                             <div class="alert alert-success" role="alert">
