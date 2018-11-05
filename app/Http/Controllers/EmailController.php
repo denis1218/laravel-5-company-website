@@ -65,6 +65,7 @@ class EmailController extends Controller
                 echo "Something wrong with ".$ex->getMessage();
             }
 
+
         flash('message')->success();
         return redirect()->back()->with('message','Successfully Email Send to Paypol Company we will contact you soon');
     }
