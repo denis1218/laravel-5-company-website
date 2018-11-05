@@ -13,15 +13,15 @@
                 <div class="row">
 
                     <!--Search -->
-                    <div class="col-sm-9">
-                        <div class="input-group" style="margin-top:25px;">
+                    <div class="col-xs-8">
+                        <div class="input-group" style="margin-top:25px;margin-left: -5px;">
                         <span class="input-group-btn">
                         <button type="button" style="margin-left:17px;" class="btn btn-sm btn-primary"><i
                                     class="fa fa-search"></i>{{trans('file.search')}}</button></span>
                             <input type="text" placeholder="{{trans('file.p_id')}}" class="input-sm form-control">
                         </div>
                     </div>
-                    <div class="col-sm-3" style="margin-top:25px;">
+                    <div class="col-xs-3" style="margin-top:25px;">
                         <a href="xrey_income" type="button" class="btn btn-sm btn-primary">{{trans('file.show_uncompleted_xray')}}</a>
                     </div>
                     <table class="table table-striped table-bordered table-hover" id="editable"

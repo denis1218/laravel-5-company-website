@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="profile-image">
-                            <img src="{{asset('img/dentaa3.png')}}" class="" style="width: 200px;">
+                            <img src="{{asset('img/dentaa3.png')}}" class="img-responsive" style="width: 200px;">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -53,6 +53,7 @@
                                  style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                                 <h3 style="font-weight: bold">Expense Report</h3>
                             </div>
+                            <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
@@ -84,6 +85,7 @@
                                 </tr>
                                 </tbody>
                             </table>
+                            </div>
 
                         </div>
                     </div>
