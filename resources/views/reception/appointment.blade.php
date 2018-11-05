@@ -36,7 +36,7 @@
                             </div>
                     <div class="col-md-3">
                                 <a href="/next-appointment-patient">
-                                    <button class="btn" style="width:87%; background-color: #55ddff; color: #ffffff">
+                                    <button class="btn" style="width:87%; background-color: #62c694; color: #ffffff">
                                         <img src="{{ asset('img/list_appointment.png') }}" width="30px" class="pull-left"/>{{trans('file.list_next_appointment_today')}}
                                     </button>
                                 </a>
@@ -47,6 +47,13 @@
                                         <img src="{{ asset('img/miss_appointment.png') }}" width="30px" class="pull-left"/>&nbsp;{{trans('file.miss_list_next_appointment')}}
                                     </button>
                                 </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="/all-patient">
+                            <button class="btn" style="width:87%; background-color: #3989cd; color: #ffffff">
+                                <img src="{{ asset('img/miss_appointment.png') }}" width="30px" class="pull-left"/>&nbsp;{{trans('file.all_patient')}}
+                            </button>
+                        </a>
                     </div>
 
                 <br/>
@@ -101,6 +108,7 @@
 
                                                 <div class="col-sm-5 pull-right">
                                                     <form action="/patient" method="get">
+                                                        <lable>Select patients by date</lable>
                                                         <div class="input-group">
                                                         <span class="input-group-btn">
                                                         <button type="submit"
@@ -111,18 +119,18 @@
                                                 </div>
 
 
-                                                <div class="col-md-5 pull-right">
+                                                <div class="col-md-12 pull-right">
                                                     <div class="input-group">
                                                             <span class="input-group-btn">
-                                                            <button type="button"
-                                                                    class="btn btn-primary"><i class="fa fa-search"></i>{{trans('file.search')}}</button> </span>
+                                                                {{--<form action="/patient/{{ $patient-> }}"></form>--}}
+                                                            <button disabled
+                                                                    class="btn btn-primary"><i class="fa fa-search"></i></button> </span>
                                                         <input type="text" id="search_all_patient" onkeyup="search_all_patient()" placeholder="{{trans('file.search_patient_name')}}" class="input-md form-control">
                                                     </div>
                                                 </div>
                                             {{-- tab all patient in queue with defirrent doctor --}}
                                             <div class="col-md-12">
                                                 <h5>{{trans('file.show_all_patient')}}</h5>
-
                                                 <div class="table-responsive">
                                                     <table class="table table-hover  no-margins" id="table_all_patient">
                                                         <thead>
