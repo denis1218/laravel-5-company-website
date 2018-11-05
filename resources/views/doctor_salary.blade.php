@@ -56,7 +56,7 @@
                                         <td>{{$d->salary_amount}}</td>
                                         <td>{{$d->advance}}</td>
                                         <td>
-                                            <button class="btn btn-xs btn-primary fa fa-dollar" data-toggle="modal"
+                                            <button class="btn btn-xs btn-primary" data-toggle="modal"
                                                     data-target="#{{$d->id}}">&nbsp;{{trans('file.giv_advance')}}
                                             </button>
                                         </td>
@@ -80,19 +80,18 @@
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
                                                 class="sr-only">{{trans('file.close')}}</span></button>
-                                    <i class="fa fa-edit modal-icon text-primary"></i>
-                                    <small>{{trans('file.fill_pa')}}</small>
+                                    <strong>{{trans('file.advance_payment')}}</strong>
                                 </div>
                                 <div class="modal-body">
                                     <form action="/doctors3/{{$d->id}}" method="post">
                                         {{method_field('patch')}}
                                         {{csrf_field()}}
                                         <div class="row">
-                                            <div class="form-group"><label class="col-md-3 control-label">{{trans('file.paid_amount')}}
+                                            <div class="form-group"><label class="col-md-4 control-label text_right" style="margin-top: 40px">{{trans('file.advance_amount')}}
                                                     :</label>
 
                                                 <div class="col-sm-6"><input type="text" name="advance" class="form-control"
-                                                                             placeholder="{{trans('file.paid_amount')}}"></div>
+                                                                             placeholder="{{trans('file.advance_amount')}}" style="margin-top: 30px"></div>
                                             </div>
                                         </div>
                                         <br><br>

@@ -242,6 +242,8 @@ return[
 //Doctor List
     'advance'=>'پیش پرداخت',
     'giv_advance'=>'دادن پیش پرداخت',
+    'advance_amount'=>'مقدار پیش پرداخت',
+    'advance_payment'=>'دادن پیش پرداخت',
     'list_of_doctors'=>'لیست داکتران',
     'goto_ds'=>'معاش داکتران',
     'ndry'=>'هنوز هیچ داکتری راجستر نگردیده است',

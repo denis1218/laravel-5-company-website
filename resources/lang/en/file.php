@@ -254,6 +254,8 @@ return[
 //Doctor List
     'advance'=>'Advance',
     'giv_advance'=>'Giv Advance',
+    'advance_amount'=>'Advance Amount',
+    'advance_payment'=>'Advance Payment',
     'list_of_doctors'=>'List of Doctors',
     'goto_ds'=>'Doctor Salary',
     'ndry'=>'No Doctor Registered yet',
