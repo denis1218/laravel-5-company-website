@@ -74,11 +74,16 @@
             </div>
             <div class="ibox-content">
                 <div class="row">
-                    <div class="alert alert-danger alert-dismissable col-md-12">
+                    <div class="alert alert-danger alert-dismissable col-md-9">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                         Patient have {{ $patient_in_treatment->problem_health }} {{trans('file.health_problem')}} <a class="alert-link"
                                                                                                    href="#"></a>.
                     </div>
+                    {{--<div class="col-sm-3 pull-right">--}}
+                        {{--<h2><a class="btn btn-primary hvr-grow-shadow" style="font-size: 13px; width: 200px;"--}}
+                               {{--href="/patient_history_print"><img src="{{ asset('img/patient_report.png') }}" class="pull-left" width="40px"/>&nbsp;&nbsp;{{trans('file.report_patient')}}</a></h2>--}}
+
+                    {{--</div>--}}
                 </div>
                 <div class="row" style="margin-left:-100px;">
 
@@ -149,9 +154,8 @@
         <div class="col-lg-12">
             <div class="tabs-container">
                 <ul class="nav nav-tabs" id="demoTabs">
-                    <li class="active"><a data-toggle="tab" href="#tab-1">{{trans('file.past_history')}}</a></li>
-                    <li class=""><a data-toggle="tab" id="test" href="#tab-2">{{trans('file.present_history')}}</a></li>
-
+                    <li class="active"><a data-toggle="tab" href="#tab-1"><i class="fa fa-history"></i>{{trans('file.past_history')}}</a></li>
+                    <li class=""><a data-toggle="tab" id="test" href="#tab-2"><i class="fa fa-clock-o"></i>{{trans('file.present_history')}}</a></li>
                 </ul>
 
                 <div class="tab-content">
