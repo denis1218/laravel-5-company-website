@@ -80,7 +80,7 @@
                                                                                                    href="#"></a>.
                     </div>
                 </div>
-                <div class="row" style="margin-left:-100px;">
+                <div class="row">
 
                     <div class="row m-b-lg m-t-lg">
 
@@ -101,41 +101,42 @@
                             </div>
                         </div>
                         <div class="col-md-7">
+                            <div class="table-responsive">
                             <table class="table small m-b-xs">
                                 <tbody>
                                 <tr>
                                     <td>
-                                            <span class=""
-                                                  style="font-size: 12px;">{{trans('file.gender')}}:<b>&nbsp;{{ $patient_in_treatment->gender }}</b>&nbsp;<i
-                                                        class="fa fa-male"></i></span>
+                                            {{trans('file.gender')}}:<b>&nbsp;{{ $patient_in_treatment->gender }}</b>&nbsp;<i
+                                                        class="fa fa-male"></i>
                                     </td>
                                     <td>
-                                            <span style="font-size: 12px;">{{trans('file.age')}}:<b>&nbsp;{{ $patient_in_treatment->age }}</b>&nbsp;<i
-                                                        class=""></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span style="font-size: 12px;">{{trans('file.doctor')}}:<b>&nbsp;{{ $patient_in_treatment->doctor->first_name }}</b>&nbsp;<i
-                                                    class="fa fa-user-md"></i></span>
-                                    </td>
-                                    <td>
-                                        <span style="font-size: 12px;">{{trans('file.visited')}}:<b>&nbsp;{{ $patient_in_treatment->status }}</b>&nbsp;<i
-                                                    class=""></i></span>
+                                            {{trans('file.age')}}:<b>&nbsp;{{ $patient_in_treatment->age }}</b>&nbsp;<i
+                                                        class=""></i>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span style="font-size: 12px;">{{trans('file.date')}}:<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
-                                                    class="fa fa-calendar"></i></span>
+                                        {{trans('file.doctor')}}:<b>&nbsp;{{ $patient_in_treatment->doctor->first_name }}</b>&nbsp;<i
+                                                    class="fa fa-user-md"></i>
                                     </td>
                                     <td>
-                                              <span style="font-size: 12px;">{{trans('file.first_visited_date')}} :<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
-                                                          class="fa fa-calendar"></i></span>
+                                       {{trans('file.visited')}}:<b>&nbsp;{{ $patient_in_treatment->status }}</b>&nbsp;<i
+                                                    class=""></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       {{trans('file.date')}}:<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
+                                                    class="fa fa-calendar"></i>
+                                    </td>
+                                    <td>
+                                             {{trans('file.first_visited_date')}} :<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
+                                                          class="fa fa-calendar"></i>
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
+                            </div>
                         </div>
 
                     </div>
@@ -172,6 +173,7 @@
                                 <br>
                                 <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
                                     <div class="col-md-8">
+                                        <div class="table-responsive">
                                         <table class="table table-striped " style="font-weight: bold; ">
 
                                             <tr>
@@ -206,7 +208,8 @@
                                                 <td>{{ $treats->status_visits }}</td>
                                             </tr>
                                         </table>
-                                        <div>
+                                        </div>
+                                            <div>
                                             <div><p><strong>{{trans('file.description')}}:</strong>{{ $treats->description }}</p>
                                             </div>
                                         </div>

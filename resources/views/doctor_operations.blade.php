@@ -78,6 +78,7 @@
                     <div class="col-lg-12">
                         <h5>Show all patients just for today</h5>
                         <div class="ibox float-e-margins">
+                            <div class="table-responsive">
                             <table class="table table-hover no-margins" id="table_patient">
                                 <thead>
                                 <tr>
@@ -109,6 +110,7 @@
                                 </tbody>
 
                             </table>
+                            </div>
                             {{--{{$operation->links()}}--}}
                             @else
                                 <h5 style="color:red;text-align: center;">NO PATIENT HAS BEEN REGISTERED YET</h5>

@@ -86,7 +86,7 @@
                                         <td>
                                             <form id="del" action="/doctors/{{$doctor->id}}" method="post" id="myForm">
                                                 @method('delete')
-                                                <button class="btn btn-xs btn-danger demo3" >{{trans('file.details')}} &nbsp;<i class="fa fa-remove"></i></button>
+                                                <button class="btn btn-xs btn-danger demo3" >{{trans('file.delete')}} &nbsp;<i class="fa fa-remove"></i></button>
                                             </form>
                                         </td>
                                         </tr>
