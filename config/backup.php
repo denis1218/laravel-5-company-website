@@ -84,7 +84,7 @@ return [
         /*
          * The directory where the temporary files will be stored.
          */
-        'temporary_directory' =>  'E:\\Denta-C\\Backups\\',
+        'temporary_directory' =>  'C:\\xampp',
     ],
 
     /*

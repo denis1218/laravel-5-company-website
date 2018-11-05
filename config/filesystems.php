@@ -45,7 +45,7 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => 'E:\\Denta-C\\Backups\\',
+            'root' => 'C:\\xampp',
         ],
 
         'public' => [

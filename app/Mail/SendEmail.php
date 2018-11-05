@@ -17,7 +17,6 @@ class SendEmail extends Mailable
 
     public $title;
     public $content;
-    public $file;
     public $username;
     public $lastname;
     /**
@@ -25,11 +24,10 @@ class SendEmail extends Mailable
      *
      * @param Request $request
      */
-    public function __construct($title,$content,$file)
+    public function __construct($title,$content)
     {
         $this->title = $title;
         $this->content = $content;
-        $this->file = $file;
         $this->username = Auth()->user()->firstname;
         $this->lastname = Auth()->user()->lastname;
 
@@ -47,6 +45,6 @@ class SendEmail extends Mailable
             'content' => $this->content,
             'username' => $this->username,
             'lastname' => $this->lastname
-        ])->attach($this->file);
+        ]);
     }
 }
