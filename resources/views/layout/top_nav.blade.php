@@ -32,7 +32,7 @@
 
                 </li>
 
-                {{-- current exchange --}}
+
 
                 <li>
                     <a href="/logout">

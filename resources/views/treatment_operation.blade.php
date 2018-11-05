@@ -70,26 +70,22 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-wrench"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
                 </div>
             </div>
             <div class="ibox-content">
                 <div class="row">
-                    <div class="alert alert-danger alert-dismissable col-md-12">
+                    <div class="alert alert-danger alert-dismissable col-md-9">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                         Patient have {{ $patient_in_treatment->problem_health }} {{trans('file.health_problem')}} <a class="alert-link"
                                                                                                    href="#"></a>.
                     </div>
+                    {{--<div class="col-sm-3 pull-right">--}}
+                        {{--<h2><a class="btn btn-primary hvr-grow-shadow" style="font-size: 13px; width: 200px;"--}}
+                               {{--href="/patient_history_print"><img src="{{ asset('img/patient_report.png') }}" class="pull-left" width="40px"/>&nbsp;&nbsp;{{trans('file.report_patient')}}</a></h2>--}}
+
+                    {{--</div>--}}
                 </div>
-                <div class="row" style="margin-left:-100px;">
+                <div class="row">
 
                     <div class="row m-b-lg m-t-lg">
 
@@ -110,41 +106,42 @@
                             </div>
                         </div>
                         <div class="col-md-7">
+                            <div class="table-responsive">
                             <table class="table small m-b-xs">
                                 <tbody>
                                 <tr>
                                     <td>
-                                            <span class=""
-                                                  style="font-size: 12px;">{{trans('file.gender')}}:<b>&nbsp;{{ $patient_in_treatment->gender }}</b>&nbsp;<i
-                                                        class="fa fa-male"></i></span>
+                                            {{trans('file.gender')}}:<b>&nbsp;{{ $patient_in_treatment->gender }}</b>&nbsp;<i
+                                                        class="fa fa-male"></i>
                                     </td>
                                     <td>
-                                            <span style="font-size: 12px;">{{trans('file.age')}}:<b>&nbsp;{{ $patient_in_treatment->age }}</b>&nbsp;<i
-                                                        class=""></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span style="font-size: 12px;">{{trans('file.doctor')}}:<b>&nbsp;{{ $patient_in_treatment->doctor->first_name }}</b>&nbsp;<i
-                                                    class="fa fa-user-md"></i></span>
-                                    </td>
-                                    <td>
-                                        <span style="font-size: 12px;">{{trans('file.visited')}}:<b>&nbsp;{{ $patient_in_treatment->status }}</b>&nbsp;<i
-                                                    class=""></i></span>
+                                            {{trans('file.age')}}:<b>&nbsp;{{ $patient_in_treatment->age }}</b>&nbsp;<i
+                                                        class=""></i>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span style="font-size: 12px;">{{trans('file.date')}}:<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
-                                                    class="fa fa-calendar"></i></span>
+                                        {{trans('file.doctor')}}:<b>&nbsp;{{ $patient_in_treatment->doctor->first_name }}</b>&nbsp;<i
+                                                    class="fa fa-user-md"></i>
                                     </td>
                                     <td>
-                                              <span style="font-size: 12px;">{{trans('file.first_visited_date')}} :<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
-                                                          class="fa fa-calendar"></i></span>
+                                       {{trans('file.visited')}}:<b>&nbsp;{{ $patient_in_treatment->status }}</b>&nbsp;<i
+                                                    class=""></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       {{trans('file.date')}}:<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
+                                                    class="fa fa-calendar"></i>
+                                    </td>
+                                    <td>
+                                             {{trans('file.first_visited_date')}} :<b>&nbsp;{{ $patient_in_treatment->created_at }}</b>&nbsp;<i
+                                                          class="fa fa-calendar"></i>
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
+                            </div>
                         </div>
 
                     </div>
@@ -158,10 +155,8 @@
         <div class="col-lg-12">
             <div class="tabs-container">
                 <ul class="nav nav-tabs" id="demoTabs">
-                    <li class="active"><a data-toggle="tab" href="#tab-1">{{trans('file.past_history')}}</a></li>
-                    <li class=""><a data-toggle="tab" id="test" href="#tab-2">{{trans('file.present_history')}}</a></li>
-                    <li class=""><a data-toggle="tab" id="test" href="#tab-3">{{trans('file.prescription')}}</a></li>
-
+                    <li class="active"><a data-toggle="tab" href="#tab-1"><i class="fa fa-history"></i>{{trans('file.past_history')}}</a></li>
+                    <li class=""><a data-toggle="tab" id="test" href="#tab-2"><i class="fa fa-clock-o"></i>{{trans('file.present_history')}}</a></li>
                 </ul>
                 <div class="tab-content">
                     {{-- panel tab 1 past history --}}
@@ -180,6 +175,7 @@
                                 <br>
                                 <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
                                     <div class="col-md-8">
+                                        <div class="table-responsive">
                                         <table class="table table-striped " style="font-weight: bold; ">
 
                                             <tr>
@@ -214,7 +210,8 @@
                                                 <td>{{ $treats->status_visits }}</td>
                                             </tr>
                                         </table>
-                                        <div>
+                                        </div>
+                                            <div>
                                             <div><p><strong>{{trans('file.description')}}:</strong>{{ $treats->description }}</p>
                                             </div>
                                         </div>
@@ -379,92 +376,9 @@
 
                         </div>
                     </div>
-                    {{--prescription tab 3--}}
-
-                    <div id="tab-3" class="tab-pane">
-                        <div class="panel-body">
-                            <form action="/prescription" method="post">
-                                <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
-                                    <div class="col-md-6">
-
-                                        <input type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
-                                        <label>{{trans('file.pattern')}} :</label>
-
-                                        <div class="form-group">
-                                            <input type="number" name="pattern" class="form-control">
-                                        </div>
-                                        <label>{{trans('file.instruction')}} :</label>
-
-                                        <div class="form-group">
-                                            <textarea name="instruction" class="form-control"
-                                                      style="resize: none;"></textarea>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>{{trans('file.medicine')}} :</label>
-
-                                            <select class="form-control" name="medicine"
-                                                    required>
-                                                <option value="">{{trans('file.medicine')}}</option>
-                                                @foreach($medicine as $medice)
-                                                    <option value="{{ $medice->name }}">
-                                                        {{ $medice->name}} </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <label>{{trans('file.days')}}:</label>
-
-                                        <div class="form-group">
-                                            <input type="number" name="day" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> {{trans('file.add_prescription')}}
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </form>
-                            <br>
-                            <div class="hr-line-dashed"></div>
-                            <table class="table table-striped table-bordered table-hover" id="editable"
-                                   style="margin-left:30px;width:95%;">
-                                <thead>
-                                <tr>
-                                    <th>{{trans('file.medicine')}}</th>
-                                    <th>{{trans('file.pattern')}}</th>
-                                    <th>{{trans('file.days')}}</th>
-                                    <th>{{trans('file.instruction')}}</th>
-                                    <th>{{trans('file.edit')}}</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-
-                                @foreach($prescription as $pres)
-                                    <tr class="gradeX">
-                                        <td>{{$pres->medicine}}</td>
-                                        <td>{{$pres->pattern}}</td>
-                                        <td>{{$pres->day}}</td>
-                                        <td>{{$pres->instruction}}</td>
-                                        <td>
-                                            <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                                    data-target="#e{{$pres->id}}">{{trans('file.edit')}}
-                                            </button>
-                                            <a class="btn btn-xs btn-danger fa fa-remove"
-                                               href="/prescription/{{$pres->id}}">&nbsp;Delete
-                                            </a>
-                                        </td>
-
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
 
 
-                        </div>
-                    </div>
+
 
                 </div>
             </div>

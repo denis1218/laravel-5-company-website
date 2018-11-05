@@ -72,8 +72,8 @@
                 <div class="ibox-title">
                     <h5>{{trans('file.patient_xray_list')}}</h5>
 
-                </div>
-                <div class="ibox-content">
+                    <br>
+                    <br>
                     @include('layout.messages')
                     <div class="row" style="margin-right: 0px;margin-left:0PX;">
                         <div class="col-lg-12">
@@ -197,7 +197,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
         </div>
 @endsection
 
@@ -214,7 +214,7 @@
             type: "warning",
             showCancelButton: true,
             confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Yes, delete it!",
+            confirmButtonText: "Take Xray!",
             closeOnConfirm: false
             }, function(isConfirm){
             if (isConfirm) form.submit();

@@ -60,9 +60,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5" style="margin-top:21px;">
+                    <div class="col-md-3" style="margin-top:21px;">
                     <div class="form-group">
-                            <button class="btn btn-sm btn-primary " type="submit"><i
+                            <button class="btn btn-sm btn-primary form-control"  type="submit"><i
                                         class="fa fa-tag" style=" color:#ffe118 ;"></i>
                                 {{trans('file.report')}}&nbsp;
                             </button>
@@ -89,9 +89,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4" style="margin-top: 21px;">
+                    <div class="col-md-3" style="margin-top: 21px;">
                     <div class="form-group" style="margin-left: 10px">
-                            <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
+                            <button class="btn btn-sm btn-primary form-control" type="submit"><i class="fa fa-tag" style=" color:#ffe118 ;"></i>
                                 &nbsp;{{trans('file.report')}}&nbsp;&nbsp;
                             </button>
 

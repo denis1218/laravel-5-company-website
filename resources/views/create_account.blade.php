@@ -22,16 +22,20 @@
 @section('content')
 
     <div class="row wrapper border-bottom white-bg page-heading"
-         style="margin-left:1px;margin-top:-20px; margin-bottom: 10px;">
+         style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
         <div class="col-md-2">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left:30px;" href="/user"><i
-                            class="fa fa-users" style="font-size: 30px; color:#ffcf1c ;"></i><br>{{trans('file.list_of_account')}}</a>
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left: 30px; " href="/user">
+                    <img src="{{ asset('img/user_list.png') }}" width="30px"/>
+                    <br>{{trans('file.list_of_account')}}</a>
             </h2>
         </div>
         <div class="col-md-2">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px;" href="/user/create"><i
-                            class="fa fa-user" style="color:#ffcf1c; font-size: 30px;"></i> <br/>{{trans('file.create_account')}}</a></h2>
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left:0px;" href="/user/create">
+                    <img src="{{ asset('img/usre_icon.png') }}" width="30px"/>
+                    <br/>{{trans('file.create_account')}}</a></h2>
+
         </div>
+
     </div>
 
 
@@ -39,23 +43,7 @@
         <div class="ibox">
             <div class="ibox-title">
                 <h5>{{trans('file.account_registration')}}</h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </div>
+
             </div>
             <div class="ibox-content">
 
@@ -81,6 +69,7 @@
                                     <option value="xray">{{trans('file.xray')}}</option>
 
                                 </select>
+                                <span class="text-warning">Doctor cannt't create account here!. for Doctor account go to doctor registeration</span>
                             </div>
                             <div class="form-group">
                                 <label>{{trans('file.email')}} *</label>

@@ -18,7 +18,6 @@
     <style>
         .background-image {
             background: url("img/back.jpg");
-            background-repeat: no-repeat;
             background-size: cover;
         }
         .rememberme
@@ -40,7 +39,7 @@
                 <div>
                     <img src="/img/Dentaa3.png" width="650px" class="img-responsive" alt="">
                 </div>
-                <h3>Welcome to HK|Clinic</h3>
+                <h3>Welcome to HK Clinic</h3>
 
                 @if(isset($value))
                     <div class="alert alert-danger" role="alert">
@@ -52,7 +51,7 @@
                     {{csrf_field()}}
 
                     <div class="form-group">
-                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                        <input id="email" type="email" placeholder="Email address" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
                         {{--@if ($errors->any())--}}
                             {{--<span class="invalid-feedback" role="alert">--}}
                                         {{--<strong class="">{{ $errors->first('email') }}</strong>--}}
@@ -61,7 +60,7 @@
 
                     </div>
                     <div class="form-group">
-                        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                        <input id="password" placeholder="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                         {{--@if ($errors->has('password'))--}}
                             {{--<span class="invalid-feedback alert alert-danger" role="alert">--}}
                                         {{--<strong>{{ $errors->first('password') }}</strong>--}}
@@ -71,7 +70,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-block btn-success">
-                        {{ __('Login') }}
+                        {{ __('Login') }}&nbsp;<i class="fa fa-sign-in"></i>
                     </button>
 
                     {{--<div class="form-check pull-left rememberme">--}}

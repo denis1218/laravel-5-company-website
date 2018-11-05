@@ -10,7 +10,6 @@
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>{{trans('file.treatment_list')}}</h5>
-
             </div>
             <div class="ibox-content">
 

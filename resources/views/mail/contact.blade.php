@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('style')
-    <link href="{{asset('css/hover/hover-min.css')}}" rel="stylesheet">
+
 @endsection
 
 @section('content')
@@ -13,29 +13,26 @@
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
                     </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li>
-                            <a href="#">Config option 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
                 </div>
             </div>
 
             <div class="ibox-content">
                 <div class="row">
                     <div class="col-md-6">
+
                         <h3>Send Error Report</h3>
-                        <h5>Make sure you have internet connection</h5>
-                        <form method="post" action="/email-send" enctype="multipart/form-data">
+                        @if($net)
+                            <div class="alert alert-success" role="alert">
+                                Your Connected to internet
+                            </div>
+                            @else
+                            <div class="alert alert-danger" role="alert">
+                                Internet connection fail. Please check your internet connection
+                            </div>
+                            @endif
+
+
+                        <form method="post" action="/email-send" >
                             <div class="form-group">
                                 <lable>Subject</lable>
                                 <input type="text" class="form-control" name="title" placeholder="Subject" required/>
@@ -44,10 +41,10 @@
                                 <lable>Context</lable>
                                 <textarea name="content" rows="6" required placeholder="Write your context" class="form-control"></textarea>
                             </div>
-                            <div class="form-group">
-                                <lable>Upload Errors image</lable>
-                                <input type="file"  class="imagefile" name="imagefile" />
-                            </div>
+                            {{--<div class="form-group">--}}
+                                {{--<lable>Upload Errors image</lable>--}}
+                                {{--<input type="file"  class="file-control" name="imagefile" />--}}
+                            {{--</div>--}}
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Send</button>
                                 <input type="reset" class="btn btn-white"/>
@@ -66,21 +63,19 @@
                         <table class="table">
                             <tr>
                                 <td><strong><i class="fa fa-phone"></i>&nbsp;Phone</strong></td>
-                                <td><strong>0731888814 | </strong></td>
+                                <td><strong>0731888814</strong></td>
                             </tr>
                             <tr>
                                 <td><strong><i class="fa fa-envelope"></i>&nbsp;Email</strong></td>
-                                <td><strong>support@denta.af</strong></td>
+                                <td><strong>dentaclinic2018@gmail.com</strong></td>
                             </tr>
                             <tr>
-                                <td><strong><i class="fa fa-facebook"></i>&nbsp;facebook</strong></td>
+                                <td><strong><i class="fa fa-facebook-square"></i>&nbsp;facebook</strong></td>
                                 <td><strong><a target="_blank" href="https://www.facebook.com/paypolsoftwaredevelopment/?modal=admin_todo_tour">Paypol Software Development Co</a></strong></td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

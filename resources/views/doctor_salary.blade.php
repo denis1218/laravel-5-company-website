@@ -14,7 +14,6 @@
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>{{trans('file.doctor_salary')}}</h5>
-
             </div>
             <div class="ibox-content">
 

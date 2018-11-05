@@ -1,13 +1,15 @@
 @component('mail::message')
-    firname and lastname of user
-    {{ $username }} - {{ $lastname }}
+    FROM :
+    {{ $username }} , {{ $lastname }}
 
     TITLE
     {{ $title }}
 @component('mail::panel')
-    content of message
+    MESSAGE :
+
     {{ $content }}
     @endcomponent
+
 
 
     @endcomponent

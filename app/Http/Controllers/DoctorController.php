@@ -115,6 +115,37 @@ class DoctorController extends Controller
         return view('doctor_report',compact('doctor','patient','treatment','total','docfee'));
     }
 
+
+    /*
+     * edit doctor show form editing doctor
+     */
+    public function doctor_edit($id)
+    {
+        $doctor = Doctor::find($id);
+        $doctor_department = DoctorDepartment::all();
+        return view('doctor_edit',compact('doctor','doctor_department'));
+    }
+
+
+    public function update_doctor(Request $request,$id)
+    {
+        $doctor= Doctor::find($id);
+        $doctor->first_name=$request->input('first_name');
+        $doctor->last_name=$request->input('last_name');
+        $doctor->father_name=$request->input('father_name');
+        $doctor->age=$request->input('age');
+        $doctor->start_work_time=$request->input('start_work_time');
+        $doctor->end_work_time=$request->input('end_work_time');
+        $doctor->phone=$request->input('phone');
+        $doctor->department=$request->input('department');
+        $doctor->gender=$request->input('gender');
+        $doctor->salary_type=$request->input('salary_type');
+        $doctor->salary_amount=$request->input('salary_amount');
+        $doctor->max_patient=$request->input('max_patient');
+        $doctor->save();
+        return redirect('/doctors');
+    }
+
     /**
      * Update the specified resource in storage.
      *

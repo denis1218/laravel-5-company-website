@@ -1,4 +1,4 @@
-<body>
+<body class="{{ app()->getLocale() }}">
 
 <div id="wrapper">
 
@@ -87,6 +87,7 @@
                             </li>
                         </ul>
                     </li>
+                {{-- setting menu begin --}}
                     <li>
                         <a href="setting"><i class="fa fa-cog"></i> <span
                                     class="nav-label">{{trans('file.setting')}}</span><span
@@ -119,7 +120,6 @@
                         </ul>
                     </li>
                     <li>
-
                         <a href="/contact"><i class="fa fa-phone"></i> <span
                                     class="nav-label">{{trans('file.support')}}</span></a>
                     </li>
@@ -130,7 +130,7 @@
                     </li>
                     <li>
                     <li><a href="/help"><i class="fa fa-question-circle"></i>{{trans('file.help')}}</a></li>
-                    </li>
+
                     {{--end condition of super admin--}}
                 @endif
 
@@ -149,6 +149,18 @@
                             {{--<li><a href="/xray"><i class="fa fa-flash"></i>{{trans('file.xray')}}</a></li>--}}
                         </ul>
                     </li>
+                    <li>
+                        <a href="/contact"><i class="fa fa-phone"></i> <span
+                                    class="nav-label">{{trans('file.support')}}</span></a>
+                    </li>
+                    <li>
+                        <a href="/about-us"><i class="fa fa-info"></i> <span
+                                    class="nav-label">&nbsp;{{trans('file.about_us')}}</span></a>
+
+                    </li>
+                    <li>
+                    <li><a href="/help"><i class="fa fa-question-circle"></i>{{trans('file.help')}}</a></li>
+
 
                 @endif
 
@@ -168,6 +180,18 @@
                             <li><a href="/xray"><i class="fa fa-flash"></i>{{trans('file.xray')}}</a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="/contact"><i class="fa fa-phone"></i> <span
+                                    class="nav-label">{{trans('file.support')}}</span></a>
+                    </li>
+                    <li>
+                        <a href="/about-us"><i class="fa fa-info"></i> <span
+                                    class="nav-label">&nbsp;{{trans('file.about_us')}}</span></a>
+
+                    </li>
+                    <li>
+                    <li><a href="/help"><i class="fa fa-question-circle"></i>{{trans('file.help')}}</a></li>
+
 
                 @endif
                 {{--end condition of X-ray--}}
@@ -230,6 +254,44 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="/contact"><i class="fa fa-phone"></i> <span
+                                    class="nav-label">{{trans('file.support')}}</span></a>
+                    </li>
+                    <li>
+                        <a href="/about-us"><i class="fa fa-info"></i> <span
+                                    class="nav-label">&nbsp;{{trans('file.about_us')}}</span></a>
+
+                    </li>
+                    <li>
+                    <li><a href="/help"><i class="fa fa-question-circle"></i>{{trans('file.help')}}</a></li>
+                    <li>
+                        <a href="setting"><i class="fa fa-cog"></i> <span
+                                    class="nav-label">{{trans('file.setting')}}</span><span
+                                    class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="/backup"><i class="fa fa-database"></i>{{trans('file.backup_db')}}</a>
+                            </li>
+                            <li><a href="/medicine"><i class="fa fa-pencil-square-o"></i>{{trans('file.add_medicine')}}
+                                </a></li>
+                            <li><a href="/expense-category"><i
+                                            class="fa fa-pencil-square-o"></i>{{trans('file.expense_category')}}</a>
+                            </li>
+                            <li><a href="/dental-defect-list"><i
+                                            class="fa fa-pencil-square-o"></i>{{trans('file.dental_defect_list')}}</a>
+                            </li>
+                            <li><a href="/treatment-list"><i
+                                            class="fa fa-pencil-square-o"></i>{{trans('file.treatment_list')}}</a>
+                            </li>
+                            <li><a href="/doctor-department"><i
+                                            class="fa fa-pencil-square-o"></i>{{trans('file.doctor_department')}}</a>
+                            </li>
+                            <li><a href="" onclick="updateSoftware()"><i
+                                            class="fa fa-refresh"></i>{{trans('file.update_software')}}</a>
+                            </li>
+
+                        </ul>
+                    </li>
                 @endif
             </ul>
             {{--end  of finance condition--}}
@@ -250,7 +312,7 @@
             </div>
             <div class="modal-body">
                 <h4>Are you sure want to update software?</h4>
-                <p>Fix errors and update system.</p>
+                <p>This update fix errors or update software.</p>
                 <p>This update does not effect on your database data.</p>
             </div>
             <div class="modal-footer">

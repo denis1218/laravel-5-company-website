@@ -18,20 +18,6 @@
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
                             </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li>
-                                    <a href="#">Config option 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Config option 2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
                         </div>
                     </div>
                     <div class="ibox-content">
@@ -78,7 +64,7 @@
 
                                     <div class="form-group">
                                         <div class="form-group">
-                                            <button class="btn btn-primary" type="submit">{{trans('file.save')}}</button>
+                                            <button class="btn btn-primary" type="submit">{{trans('file.save_and_print')}}</button>
                                             <button class="btn btn-white" type="reset">{{trans('file.reset')}}</button>
                                         </div>
                                     </div>

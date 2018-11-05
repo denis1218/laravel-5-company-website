@@ -8,31 +8,13 @@
             <div class="ibox-title">
                 <h5>Profit Statement <i class="fa fa-info"></i></h5>
 
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link" style="margin-right:20px;">
-                        <i class="fa fa-times"></i>
-                    </a>
-                    <button class="btn btn-primary btn-lg" onclick="PrintElem();">Print &nbsp;<span
-                                class="fa fa-print"></span></button>
-                </div>
+
             </div>
             <div class="ibox-content" id="divone">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="profile-image">
-                            <img src="{{asset('img/dentaa3.png')}}" class="" style="width: 200px;">
+                            <img src="{{asset('img/dentaa3.png')}}" class="img-responsive" style="width: 200px;">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -61,23 +43,46 @@
                             @if(isset($pinfo))
 
                             <tr>
-                                <td style="margin-left: 30px">Patient Income</td>
-                                <td style="float: right;margin-right: 30px">{{$pinfo->sum('paid_amount')}}
-                                    &nbsp;afg
+                                <td style="margin-left: 30px"><b style="font-size: 20px">Patient Income Total</b></td>
+                                <td style="float: right;margin-right: 30px"><b style="font-size: 20px">{{$pinfo->sum('paid_amount')}}
+                                        &nbsp;afg</b>
                                 </td>
                             </tr>
+                            @foreach($pinfo as $p)
+                            <tr>
+
+                                <td style="margin-left: 30px">{{$p->patient->name}}</td>
+                                <td style="float: right;margin-right: 30px">{{$p->paid_amount}}
+                                        &nbsp;afg
+                                </td>
+                            </tr>
+                            @endforeach
                             @endif
                             @if(isset($xinfo))
                             <tr>
-                                <td style="margin-left: 30px">Xray Income</td>
-                                <td style="float: right;margin-right: 30px">{{$xinfo->sum('paid_amount')}}&nbsp;afg</td>
+                                <td style="margin-left: 30px"><b style="font-size: 20px">Xray Income Total</b></td>
+                                <td style="float: right;margin-right: 30px"><b  style="font-size: 20px">{{$xinfo->sum('paid_amount')}}&nbsp;afg </b></td>
                             </tr>
+                            @foreach($xinfo as $x)
+                            <tr>
+
+                                <td style="margin-left: 30px">{{$x->patient_name}}</td>
+                                <td style="float: right;margin-right: 30px">{{$x->paid_amount}}&nbsp;afg</td>
+                            </tr>
+                            @endforeach
                             @endif
                             @if(isset($oinfo))
                             <tr>
-                                <td style="margin-left: 30px">Other Income</td>
-                                <td style="float: right;margin-right: 30px">{{$oinfo->sum('amount')}}&nbsp;afg</td>
+                                <td style="margin-left: 30px"><b style="font-size: 20px">Other Income Total</b></td>
+                                <td style="float: right;margin-right: 30px"><b style="font-size: 20px">{{$oinfo->sum('amount')}}&nbsp;afg</b></td>
                             </tr>
+                            @foreach($oinfo as $on)
+                            <tr>
+                                <td style="margin-left: 30px">{{$on->from_whom}}</td>
+                                <td style="float: right;margin-right: 30px">{{$on->amount}}&nbsp;afg</td>
+                            </tr>
+                            @endforeach
+
                             @endif
                             {{--<tr>--}}
                                 {{--<td style="margin-left: 30px"><b>Total Income</b></td>--}}

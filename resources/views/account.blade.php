@@ -50,13 +50,15 @@
     <div class="row wrapper border-bottom white-bg page-heading"
          style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
         <div class="col-md-2">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left: 30px; " href="/user"><i
-                            class="fa fa-users" style="font-size: 30px; color:#ffac1b ;"></i><br>{{trans('file.list_of_account')}}</a>
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left: 30px; " href="/user">
+                    <img src="{{ asset('img/user_list.png') }}" width="30px"/>
+                    <br>{{trans('file.list_of_account')}}</a>
             </h2>
         </div>
         <div class="col-md-2">
-            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left:0px;"
-                   href="/user/create"><i class="fa fa-user" style="color:#ffac1b; font-size: 30px;"></i> <br/>{{trans('file.create_account')}}</a></h2>
+            <h2><a class="btn btn-primary hvr-float-shadow" style="height:65px; margin-left:0px;" href="/user/create">
+                    <img src="{{ asset('img/usre_icon.png') }}" width="30px"/>
+                    <br/>{{trans('file.create_account')}}</a></h2>
 
         </div>
 
@@ -67,23 +69,7 @@
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>{{trans('file.list_of_account')}} </h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </div>
+
             </div>
 
             <div class="ibox-content">

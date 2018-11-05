@@ -59,18 +59,6 @@
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
                     </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#">Config option 1</a>
-                        </li>
-                        <li><a href="#">Config option 2</a>
-                        </li>
-                    </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                    </a>
                 </div>
             </div>
             @if(Auth::user()->department='admin')
@@ -90,6 +78,7 @@
                     <div class="col-lg-12">
                         <h5>Show all patients just for today</h5>
                         <div class="ibox float-e-margins">
+                            <div class="table-responsive">
                             <table class="table table-hover no-margins" id="table_patient">
                                 <thead>
                                 <tr>
@@ -121,6 +110,7 @@
                                 </tbody>
 
                             </table>
+                            </div>
                             {{--{{$operation->links()}}--}}
                             @else
                                 <h5 style="color:red;text-align: center;">NO PATIENT HAS BEEN REGISTERED YET</h5>

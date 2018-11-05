@@ -95,6 +95,7 @@ return[
     'date'=>'Date',
     'print'=>'Print',
     'print_pdf'=>'Print PDF',
+    'save_and_print'=>'Save & Print',
     'patient_personal_info'=>'Patient Personal Information',
     'age'=>'Age',
     'gender'=>'Gender',

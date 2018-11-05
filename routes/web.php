@@ -12,6 +12,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Carbon\Carbon;
+
 Auth::routes();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
@@ -76,7 +79,7 @@ Route::middleware('auth','reception')->group(function () {
     Route::get('/new-patient-today','PatientController@show_new_patients');
 
     Route::get('/next-appointment-patient','PatientController@show_next_appointment_patient');
-
+    Route::patch('next-appointment-patient-edit/{id}','PatientController@updateNextappointmentPatient');
     Route::get('/miss-next-appointment-patient','PatientController@show_missing_next_appointment_patient');
 
 //    Route::get('/dash_reception', function () {
@@ -245,10 +248,12 @@ Route::middleware('auth','reception')->group(function () {
        return view('help');
     });
 
+    Route::get('/doctors/doctor_edit/{id}','DoctorController@doctor_edit');
+
+    Route::post('/doctors/update/{id}','DoctorController@update_doctor');
+
 });
 // End Route Reception
-
-
 
 
 

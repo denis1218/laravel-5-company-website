@@ -90,6 +90,7 @@ return[
     'date'=>'تاریخ',
     'print'=>'چاپ',
     'print_pdf'=>'چاپ پی دی اف',
+    'save_and_print'=>'ذخیره و چاپ',
     'patient_personal_info'=>'معلومات شخصی مریض',
     'age'=>'سن',
     'gender'=>'جنسیت',
