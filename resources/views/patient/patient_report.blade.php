@@ -20,22 +20,23 @@
                         {{--first doctor--}}
 
                         <div class="row" style="">
-                            <div class="col-sm-12">
+
+                            <div class="col-sm-5">
                                 <div class="input-group">
                                         <span class="input-group-btn">
-                                            <form action="/patient_report/show/{{ $patient->id }}" method="get">
-                                                <button type="button" class="btn btn-sm btn-primary"><i
-                                                            class="fa fa-search"></i>&nbsp;{{trans('file.search')}}</button> </span>
-                                                <input type="text" placeholder="{{trans('file.search_patient_name')}}"
-                                                       id="search_all_patient" onkeyup="search_all_patient()"
-                                                       class="input-sm form-control">
-                                        </form>
+                                        <button type="button" class="btn btn-sm btn-primary"
+                                                disabled="">{{trans('file.search')}}</button> </span>
+                                    <input type="text" placeholder="{{trans('file.search_patient_name')}}"
+                                           id="search_all_patient" onkeyup="search_all_patient()"
+                                           class="input-sm form-control">
+
                                 </div>
                             </div>
 
                         </div>
 
                         <div class="row" style="margin-top:30px;">
+
                             <div class="col-sm-12">
                                 <table class="table table-hover  no-margins" id="table_all_patient">
                                     <thead>
@@ -91,6 +92,7 @@
                                     </tbody>
                                 </table>
                                 {{ $all_patient->links() }}
+
                             </div>
                         </div>
                     </div>

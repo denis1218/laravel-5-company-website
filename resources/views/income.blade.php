@@ -21,10 +21,10 @@
                 <div class="row">
 
                     <!--Search -->
-                    <div class="col-sm-9">
-                        <div class="input-group" style="margin-top:25px;">
+                    <div class="col-xs-8">
+                        <div class="input-group" style="margin-top:25px;margin-left: -5px;">
                         <span class="input-group-btn">
-                        <button type="button" style="margin-left:17px;" disabled class="btn btn-sm btn-primary"><i class="fa fa-search"></i> </button></span>
+                        <button type="button"  disabled class="btn btn-sm btn-primary"><i class="fa fa-search"></i> </button></span>
                             <input type="text" placeholder="{{trans('file.p_name')}}" class="input-sm form-control" id="search_income" onkeyup="search_income()">
 
                         </div>
@@ -33,49 +33,55 @@
                     <div class="col-sm-3" style="margin-top:25px;">
                         <a href="income2" type="button" class="btn btn-sm btn-primary">{{trans('file.show_completed_patient')}}</a>
                     </div>
-                    <table class="table table-striped table-bordered table-hover" id="table_income"
-                           style="margin-top:80px;margin-left:30px;width:95%;">
-                        <thead>
-                        <tr>
-                            <th>{{trans('file.id')}}</th>
-                            <th>{{trans('file.p_id')}}</th>
-                            <th>{{trans('file.p_name')}}</th>
-                            <th>{{trans('file.estimated_fee')}}</th>
-                            <th>{{trans('file.paid_amount')}}</th>
-                            <th>{{trans('file.discount')}}</th>
-                            <th>{{trans('file.remaining_fee')}}</th>
-                            <th>{{trans('file.paid')}}</th>
-                            <th>{{trans('file.p_details')}}</th>
-                            {{--<th>Edit</th>--}}
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($income as $incom)
-                        <tr class="gradeX">
-                            <td>{{$incom->id}}</td>
-                            <td>{{$incom->patient->id_patient}}</td>
-                            <td>{{$incom->patient->name}}</td>
-                            <td>{{$incom->estimated_fee}}</td>
-                            <td>{{$incom->paid_amount}}</td>
-                            <td>{{$incom->discount}}</td>
-                            <td>{{$incom->remaining_fee}}</td>
-                            <td>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover " id="table_income"
+                                       style="margin-top:0px;margin-left: 10px;width:95%;">
+                                    <thead>
+                                    <tr>
+                                        <th>{{trans('file.id')}}</th>
+                                        <th>{{trans('file.p_id')}}</th>
+                                        <th>{{trans('file.p_name')}}</th>
+                                        <th>{{trans('file.estimated_fee')}}</th>
+                                        <th>{{trans('file.paid_amount')}}</th>
+                                        <th>{{trans('file.discount')}}</th>
+                                        <th>{{trans('file.remaining_fee')}}</th>
+                                        <th>{{trans('file.paid')}}</th>
+                                        <th>{{trans('file.p_details')}}</th>
+                                        {{--<th>Edit</th>--}}
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($income as $incom)
+                                        <tr class="gradeX">
+                                            <td>{{$incom->id}}</td>
+                                            <td>{{$incom->patient->id_patient}}</td>
+                                            <td>{{$incom->patient->name}}</td>
+                                            <td>{{$incom->estimated_fee}}</td>
+                                            <td>{{$incom->paid_amount}}</td>
+                                            <td>{{$incom->discount}}</td>
+                                            <td>{{$incom->remaining_fee}}</td>
+                                            <td>
 
 
-                                <button class="btn btn-xs btn-primary" data-toggle="modal"
-                                        data-target="#{{$incom->id}}"><img src="{{ asset('img/icon_paid.png') }}" width="20px"/>&nbsp;{{trans('file.paid')}}
+                                                <button class="btn btn-xs btn-primary" data-toggle="modal"
+                                                        data-target="#{{$incom->id}}"><img src="{{ asset('img/icon_paid.png') }}" width="20px"/>&nbsp;{{trans('file.paid')}}
 
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
-                                        data-target="#p{{$incom->id}}">&nbsp;{{trans('file.p_details')}}
-                                </button>
-                            </td>
-                        </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-xs btn-success fa fa-info" data-toggle="modal"
+                                                        data-target="#p{{$incom->id}}">&nbsp;{{trans('file.p_details')}}
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
 
 
 

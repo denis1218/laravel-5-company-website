@@ -60,10 +60,10 @@ class EmailController extends Controller
                 Mail::to('dentaclinic2018@gmail.com')->send(new SendEmail(
                     $request->input('title'),$request->input('content')
                 ));
+
             }catch (Exception $ex) {
                 echo "Something wrong with ".$ex->getMessage();
             }
-
 
         flash('message')->success();
         return redirect()->back()->with('message','Successfully Email Send to Paypol Company we will contact you soon');

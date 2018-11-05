@@ -13,8 +13,6 @@
                 <div class="ibox-tools">
                     <button class="btn btn-primary btn-lg" onclick="PrintElem();">{{trans('file.print')}}&nbsp;<span
                                 class="fa fa-print"></span></button>
-                    <button class="btn btn-primary btn-lg" onclick="PrintPDF();">{{trans('file.print_pdf')}}<span
-                                class="fa fa-print"></span></button>
 
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>

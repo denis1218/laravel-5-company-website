@@ -17,16 +17,16 @@
 
 
                     <!--Search -->
-                    <div class="col-sm-9">
-                        <div class="input-group" style="margin-top:25px;">
+                    <div class="col-xs-8">
+                        <div class="input-group" style="margin-top:25px;margin-left: -5px;">
                         <span class="input-group-btn">
-                        <button type="button" style="margin-left:17px;" disabled class="btn btn-sm btn-primary"><i class="fa fa-search"></i> </button></span>
+                        <button type="button" disabled class="btn btn-sm btn-primary"><i class="fa fa-search"></i> </button></span>
                             <input type="text" placeholder="{{trans('file.p_name')}}" class="input-sm form-control" id="search_xray" onkeyup="search_xray()">
                         </div>
                     </div>
                     {{-- End search --}}
 
-                    <div class="col-sm-3" style="margin-top:25px;">
+                    <div class="col-xs-3" style="margin-top:25px;">
                         <a href="xrey_income2" type="button" class="btn btn-sm btn-primary">{{trans('file.show_completed_xray')}}</a>
                     </div>
 
