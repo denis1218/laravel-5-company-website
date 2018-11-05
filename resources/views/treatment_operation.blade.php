@@ -163,7 +163,6 @@
                     <li class=""><a data-toggle="tab" id="test" href="#tab-3">{{trans('file.prescription')}}</a></li>
 
                 </ul>
-
                 <div class="tab-content">
                     {{-- panel tab 1 past history --}}
                     <div id="tab-1" class="tab-pane active">

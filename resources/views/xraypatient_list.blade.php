@@ -82,9 +82,7 @@
                                     <li class="active"><a data-toggle="tab" href="#tab-1">{{trans('file.new_patient')}}</a></li>
                                     <li class=""><a data-toggle="tab" href="#tab-2">{{trans('file.already_done')}}</a></li>
                                 </ul>
-
                                 <div class="tab-content">
-
                                     {{-- panel tab 1 past history --}}
                                     <div id="tab-1" class="tab-pane active">
                                         <div class="panel-body">
@@ -143,7 +141,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     {{-- panel tab 2 new history --}}
                                     <div id="tab-2" class="tab-pane">
                                         <div class="panel-body">

@@ -56,7 +56,7 @@
                                         <td>{{$d->salary_amount}}</td>
                                         <td>{{$d->advance}}</td>
                                         <td>
-                                            <button class="btn btn-xs btn-primary" data-toggle="modal"
+                                            <button class="btn btn-xs btn-primary " data-toggle="modal"
                                                     data-target="#{{$d->id}}">&nbsp;{{trans('file.giv_advance')}}
                                             </button>
                                         </td>
