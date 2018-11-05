@@ -6,6 +6,7 @@ use App\Mail\SendEmail;
 
 use Exception;
 use Dompdf\FrameReflower\Image;
+use GuzzleHttp\Exception\ConnectException;
 use Illuminate\Contracts\Redis\LimiterTimeoutException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -28,8 +29,24 @@ class EmailController extends Controller
      */
     public function index()
     {
+        $net = $this->is_connected();
+        return view('mail.contact',compact('net'));
+    }
 
-        return view('mail.contact');
+    function is_connected()
+    {
+        try {
+            $connected = fopen("http://www.google.com:80/", "r");
+            if ($connected) {
+                return true;
+            } else {
+                return false;
+            }
+        }catch (Exception $ex)
+        {
+            return false;
+        }
+
     }
 
 
@@ -38,22 +55,20 @@ class EmailController extends Controller
      */
     public function email_send(Request $request)
     {
-
-        if($request->input('imagefile') != null)
-        {
-            $input           = Input::all();
-            $file            = array_get($input, 'imagefile');
-            $destinationPath = public_path('img');
-            $fileName        = $request->imagefile->getClientOriginalName();
-            $filepath        = $destinationPath.'/'.$fileName;
+//        if($request->hasFile('imagefile'))
+//        {
+//            $input           = Input::all();
+//            $file            = array_get($input, 'imagefile');
+//            $destinationPath = public_path('img');
+//            $fileName        = $request->imagefile->getClientOriginalName();
+//            $filepath        = $destinationPath.'/'.$fileName;
             try{
 
             Mail::to('dentaclinic2018@gmail.com')->send(new SendEmail(
-                $request->input('title'),$request->input('content'),$filepath
+                $request->input('title'),$request->input('content')
             ));
-
             }catch (Exception $ex) {
-                return redirect('/contact')->withErrors('errors', 'error hapingaosjd');
+                echo "Something wrong with ".$ex->getMessage();
             }
 
         }else{

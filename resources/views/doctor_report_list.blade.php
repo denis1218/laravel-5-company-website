@@ -41,7 +41,7 @@
                             <div class="ibox-content">
                                 <div class="row">
                                     <div class="col">
-                                        <a type="button" class="btn btn-primary" href="/doctors2" style="margin-left: 16px;">{{trans('file.goto_ds')}} <i class="fa fa-arrow-right"></i> </a>
+                                        <a type="button" class="btn btn-primary" href="/doctors2" style="margin-left: 16px;"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;{{trans('file.goto_ds')}}  </a>
                                         <hr>
                                     </div>
                                 </div>
@@ -62,6 +62,7 @@
                                             <th>{{trans('file.salary_type')}}</th>
                                             <th>{{trans('file.salary_amount')}}</th>
                                             <th>{{trans('file.pay_salary')}}</th>
+                                            <th>{{trans('file.edit')}}</th>
                                             <th>{{trans('file.delete')}}</th>
                                         </tr>
                                         </thead>
@@ -82,8 +83,12 @@
                                         <td>{{$doctor->max_patient}}</td>
                                         <td>{{$doctor->salary_type}}</td>
                                         <td class="center">{{$doctor->salary_amount}}</td>
-                                        <td class="center"><a class="btn btn-xs btn-info" href="/doctors/{{$doctor->id}}/edit">{{trans('file.pay_salary')}}&nbsp;<i class="fa fa-file-o"></i></a></td>
-                                        <td>
+                                        <td class="center"><a class="btn btn-xs btn-info" href="/doctors/{{$doctor->id}}/edit">{{trans('file.pay_salary')}}&nbsp;<i class="fa fa-money"></i></a></td>
+                                            <td>
+                                                    <a class="btn btn-xs btn-success" href="/doctors/doctor_edit/{{ $doctor->id }}">{{trans('file.edit')}} &nbsp;
+                                                            <i class="fa fa-edit"></i></a>
+                                            </td>
+                                            <td>
                                             <form id="del" action="/doctors/{{$doctor->id}}" method="post" id="myForm">
                                                 @method('delete')
                                                 <button class="btn btn-xs btn-danger demo3" >{{trans('file.delete')}} &nbsp;<i class="fa fa-remove"></i></button>
@@ -105,6 +110,7 @@
             </div>
         </div>
     </div>
+
     {{-- show all doctors --}}
 @endsection
 
@@ -116,8 +122,8 @@
                 e.preventDefault();
                 var form = $(this).parents('form');
                 swal({
-                    title: "Do you wnat to delete this doctor ?",
-                    text: "It will be deleted from database too!",
+                    title: "Do you want to delete this doctor ?",
+                    text: "It will be deleted from database",
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#DD6B55",

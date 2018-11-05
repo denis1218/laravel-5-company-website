@@ -11,11 +11,7 @@
                href="/next_appointment_list"><img src="{{ asset('img/patient_appointment.png') }}" class="pull-left" width="40px"/>&nbsp;&nbsp;{{trans('file.next_appointment_list')}}</a></h1>
     </div>
 
-    <div class="col-sm-3">
-        <h2><a class="btn btn-primary hvr-grow-shadow" style="font-size: 13px; width: 200px;"
-               href="/patient_history_print"><img src="{{ asset('img/patient_report.png') }}" class="pull-left" width="40px"/>&nbsp;&nbsp;{{trans('file.report_patient')}}</a></h2>
 
-    </div>
 
 </br>
 </div>

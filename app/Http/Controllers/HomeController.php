@@ -6,6 +6,7 @@ use App\Doctor;
 use App\ExpenseCatagory;
 use App\Patient;
 use Carbon\Carbon;
+use http\Exception;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -62,6 +63,27 @@ class HomeController extends Controller
     public function about_us()
     {
         return view('about_us');
+    }
+
+
+    /**
+     * @return bool
+     * check if internet connection have can send email
+     * if not cont't send email
+     */
+    function is_connected()
+    {
+        try {
+            $connected = fopen("http://www.google.com:80/", "r");
+            if ($connected) {
+                return true;
+            } else {
+                return false;
+            }
+        }catch (Exception $ex)
+        {
+            return false;
+        }
     }
 
 }

@@ -132,6 +132,8 @@ Route::middleware('auth','reception')->group(function () {
     Route::get('/pdf', 'PdfGenerator@PDF');
 //doctor salary
     Route::get('/doctors2', 'DoctorController@show');
+    Route::patch('/doctors3/{id}', 'DoctorController@PayAdvance');
+
 //    Patient Deletion
     Route::get('/patient/{id}/delete', 'PatientController@destroy');
 // Doctor Registrationexp
@@ -245,6 +247,10 @@ Route::middleware('auth','reception')->group(function () {
     Route::get('/help',function (){
        return view('help');
     });
+
+    Route::get('/doctors/doctor_edit/{id}','DoctorController@doctor_edit');
+
+    Route::post('/doctors/update/{id}','DoctorController@update_doctor');
 
 });
 // End Route Reception
