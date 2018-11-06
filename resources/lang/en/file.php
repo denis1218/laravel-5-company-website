@@ -312,7 +312,7 @@ return[
     'Today'=>'Today',
     'next'=>'Next',
     'set_date'=>'Set Date',
-    'all_patient'=>'All Patient',
+    'all_patient'=>'All Patient and search',
     'search'=>'Search',
     'search_patient_name'=>'Search Patient Name',
     'search_patient_name_id'=>'Search Patient Name or ID',
@@ -333,6 +333,8 @@ return[
     'next_appointment_date'=>'Next Appointmentٔ',
 //    miss list next appointment
     'miss_next_appointment_patient'=>'Miss Next Appointment Patient',
+    'change_appointment'=>'Change appointment',
+    'appointment_date'=>'Date appointment',
 
 //  patient report
     'patient_report_table'=>'Patient Report Table',
