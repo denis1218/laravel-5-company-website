@@ -61,6 +61,12 @@ return[
     'eym'=>'Enter Your Message',
     'save'=>'Save',
     'remainder'=>'Remainder',
+    'this_month'=>'this month',
+    'total_expenses'=>'Total Expenses',
+    'total_incomes'=>'Total Incomes',
+    'capital'=>'Capital',
+    'total_profit'=>'Total Profit',
+    'now'=>'Now',
 //End of dashboard page
 
 //doctor operation page

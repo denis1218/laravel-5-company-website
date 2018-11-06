@@ -28,13 +28,14 @@
                         </form>
                     </div>
                     <div class="col-md-6">
+                        <h4>Note : You Can not delete or edit Expense Category</h4>
                         <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th>{{trans('file.id')}}</th>
                                     <th>{{trans('file.category')}}</th>
-                                    <th>{{trans('file.delete')}}</th>
+                                    {{--<th>{{trans('file.delete')}}</th>--}}
                                 <tr>
                             </thead>
                             <tbody>
@@ -42,14 +43,14 @@
                                     <tr>
                                         <td>{{ $categories->id }}</td>
                                         <td>{{ $categories->category }}</td>
-                                        <td>
-                                            <form action="/expense-category/{{ $categories->id }}" method="post" id="formDelete">
-                                                @method('delete')
-                                                <a  class="btn btn-xs btn-danger demoDelete"  name="delete" href="/expense-category/{{ $categories->id }}">
-                                                    delete
-                                                </a>
-                                            </form>
-                                        </td>
+                                        {{--<td>--}}
+                                            {{--<form action="/expense-category/{{ $categories->id }}" method="post" id="formDelete">--}}
+                                                {{--@method('delete')--}}
+                                                {{--<a  class="btn btn-xs btn-danger demoDelete"  name="delete" href="/expense-category/{{ $categories->id }}">--}}
+                                                    {{--delete--}}
+                                                {{--</a>--}}
+                                            {{--</form>--}}
+                                        {{--</td>--}}
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -57,7 +58,7 @@
                                 <tr>
                                     <th>{{trans('file.id')}}</th>
                                     <th>{{trans('file.category')}}</th>
-                                    <th>{{trans('file.delete')}}</th>
+{{--                                    <th>{{trans('file.delete')}}</th>--}}
                                 </tr>
                             </tfoot>
                         </table>
