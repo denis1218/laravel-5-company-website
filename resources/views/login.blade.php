@@ -18,7 +18,6 @@
     <style>
         .background-image {
             background: url("img/back.jpg");
-            background-repeat: no-repeat;
             background-size: cover;
         }
         .rememberme

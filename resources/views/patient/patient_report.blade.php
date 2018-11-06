@@ -21,6 +21,7 @@
                         {{--first doctor--}}
 
                         <div class="row" style="">
+
                             <div class="col-sm-12">
                               <form action="/patient_report/search" method="post">
                                 <div class="input-group">
@@ -30,6 +31,7 @@
                                                 <input type="text" placeholder="{{trans('file.search_patient_name_id')}}"
                                                        id="search" name="search"
                                                        class="input-sm form-control">
+
                                 </div>
                               </form>
                             </div>
@@ -37,6 +39,7 @@
                         </div>
 
                         <div class="row" style="margin-top:30px;">
+
                             <div class="col-sm-12">
                                 <table class="table table-hover  no-margins" id="table_all_patient">
                                     <thead>
@@ -92,6 +95,7 @@
                                     </tbody>
                                 </table>
                                 {{ $all_patient->links() }}
+
                             </div>
                         </div>
                     </div>

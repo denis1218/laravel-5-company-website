@@ -252,6 +252,7 @@ Route::middleware('auth','reception')->group(function () {
 
     Route::post('/doctors/update/{id}','DoctorController@update_doctor');
 
+
     Route::post('/patient_report/search','patientReportController@search_patient');
 
     Route::resource('/medicine','MedicineController');
@@ -271,6 +272,7 @@ Route::middleware('auth','reception')->group(function () {
     Route::resource('/dental-defect-list','DentalDefectListController');
 
     Route::resource('/treatment-list','TreatmentListController');
+
 
 });
 // End Route Reception
