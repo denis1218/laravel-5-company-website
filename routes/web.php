@@ -252,6 +252,8 @@ Route::middleware('auth','reception')->group(function () {
 
     Route::post('/doctors/update/{id}','DoctorController@update_doctor');
 
+    Route::post('/patient_report/search','patientReportController@search_patient');
+
 
 });
 // End Route Reception

@@ -10,7 +10,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>{{trans('file.patient_report_table')}}&nbsp;<i class="fa fa-info"></i></h5>
+                <h5>{{trans('file.patient_report_table')}}<i class="fa fa-info"></i></h5>
 
             </div>
             <div class="ibox-content" id="divone">
@@ -20,24 +20,13 @@
 
                         {{--first doctor--}}
 
-                        <div class="row" style="">
-                            <div class="col-sm-12">
-                              <form action="/patient_report/search" method="post">
-                                <div class="input-group">
-                                        <span class="input-group-btn">
-                                                <button type="submit" class="btn btn-sm btn-primary" ><i
-                                                            class="fa fa-search"></i>&nbsp;{{trans('file.search')}}</button> </span>
-                                                <input type="text" placeholder="{{trans('file.search_patient_name_id')}}"
-                                                       id="search" name="search"
-                                                       class="input-sm form-control">
-                                </div>
-                              </form>
-                            </div>
-
+                        <div class="">
+                            <a class="btn btn-primary" href="/patient_report"><i class="fa fa-arrow-left"></i>&nbsp;Back</a>
                         </div>
 
                         <div class="row" style="margin-top:30px;">
                             <div class="col-sm-12">
+
                                 <table class="table table-hover  no-margins" id="table_all_patient">
                                     <thead>
                                     <tr class="bg-light">
@@ -45,7 +34,7 @@
                                         <th>{{trans('file.p_id')}}</th>
                                         <th>{{trans('file.patient_name')}}</th>
                                         <th>{{trans('file.last_name')}}</th>
-                                        <th>{{trans('file.doctor_name')}}</th>
+{{--                                        <th>{{trans('file.doctor_name')}}</th>--}}
                                         <th>{{trans('file.register')}}</th>
                                         <th>{{trans('file.status')}}</th>
                                         <th>{{trans('file.next_appointment_date')}}</th>
@@ -56,14 +45,14 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @if(count($all_patient)>0)
-                                        @foreach($all_patient as $patient)
+                                    @if(count($data)>0)
+                                        @foreach($data as $patient)
                                             <tr>
                                                 <td>{{ $patient->id }}</td>
                                                 <td>{{ $patient->id_patient }}</td>
                                                 <td>{{ $patient->name }}</td>
                                                 <td>{{ $patient->lastname }}</td>
-                                                <td>{{ $patient->doctor->first_name }}</td>
+{{--                                                <td>{{ $patient->doctor->first_name }}</td>--}}
                                                 <td>{{ $patient->created_at }}</td>
                                                 <td>{{ $patient->status }}</td>
                                                 <td>{{$patient->next_appointment}}</td>
@@ -87,11 +76,12 @@
                                             </tr>
                                         @endforeach
                                     @else
-                                        <h3 style="color:red;">{{trans('file.there_is_no')}}</h3>
+                                        <div class="alert alert-warning">
+                                            <h4 style="color:#275bc6;">{{trans('file.there_is_not_patient')}}</h4>
+                                        </div>
                                     @endif
                                     </tbody>
                                 </table>
-                                {{ $all_patient->links() }}
                             </div>
                         </div>
                     </div>
@@ -100,7 +90,7 @@
         </div>
     </div>
 
-    @foreach($all_patient as $patient)
+    @foreach($data as $patient)
         {{-- modal window to show editing detail of doctor--}}
         <div class="modal inmodal" id="e{{$patient->id}}" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
