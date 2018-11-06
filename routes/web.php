@@ -273,6 +273,7 @@ Route::middleware('auth','reception')->group(function () {
 
     Route::resource('/treatment-list','TreatmentListController');
 
+    Route::get('/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
 });
 // End Route Reception
