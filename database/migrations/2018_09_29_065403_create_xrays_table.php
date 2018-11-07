@@ -23,6 +23,7 @@ class CreateXraysTable extends Migration
             $table->integer('paid_amount')->nullable();
             $table->string('xray_status');
             $table->date('created_at');
+            $table->softDeletes();
         });
     }
 

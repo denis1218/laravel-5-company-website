@@ -153,12 +153,8 @@ class PatientController extends Controller
     }
     public function updateNextappointmentPatient($id,Request $request){
         $patient = Patient::find($id);
-        $patient->name = $request->name;
-        $patient->lastname = $request->lastname;
-        $patient->status = $request->visits;
         $patient->next_appointment = $request->next_appointment_date;
-        $patient->phone = $request->phone;
-        $patient->save();
+        $patient->update();
         return back();
     }
 

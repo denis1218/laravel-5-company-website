@@ -34,9 +34,9 @@
                                     <th>{{trans('file.last_name')}}</th>
                                     <th>{{trans('file.visits')}}</th>
                                     <th>{{trans('file.doctor')}}<i class="fa fa-stethoscope"></i></th>
-                                    <th>{{trans('file.next_appointment')}}&nbsp;<i class="fa fa-calendar"></i></th>
+                                    <th>{{trans('file.appointment_date')}}&nbsp;<i class="fa fa-calendar"></i></th>
                                     <th>{{trans('file.phone')}}<i class="fa fa-phone"></i></th>
-                                    <th>{{trans('file.edit')}}</th>
+                                    <th>{{trans('file.change_appointment')}}</th>
                                 <tr>
                             </thead>
                             <tbody>
@@ -52,7 +52,7 @@
                                         <td>{{ $patient->phone }}</td>
                                         <td>
                                             <button class="btn btn-xs btn-success" data-toggle="modal"
-                                                    data-target="#e{{$patient->id}}"><i class="fa fa-edit"></i>&nbsp;{{trans('file.edit')}}
+                                                    data-target="#e{{$patient->id}}"><i class="fa fa-edit"></i>&nbsp;{{trans('file.change')}}
                                             </button>
                                         </td>
                                     </tr>
@@ -68,9 +68,9 @@
                                     <th>{{trans('file.last_name')}}</th>
                                     <th>{{trans('file.visits')}}</th>
                                     <th>{{trans('file.doctor')}}&nbsp;<i class="fa fa-stethoscope"></i></th>
-                                    <th>{{trans('file.next_appointment')}}<i class="fa fa-calendar"></i></th>
+                                    <th>{{trans('file.appointment_date')}}&nbsp;<i class="fa fa-calendar"></i></th>
                                     <th>{{trans('file.phone')}}&nbsp;<i class="fa fa-phone"></i></th>
-                                <th>{{trans('file.edit')}}</th>
+                                <th>{{trans('file.change_appointment')}}</th>
                                 <tr>
                             </tfoot>
                         </table>
@@ -91,34 +91,14 @@
 
                         <button type="button" class="close" data-dismiss="modal"><span
                                     aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title">{{trans('file.patient_information')}}</h4>
+                        <h4 class="modal-title"><i class="fa fa-history"></i>&nbsp;&nbsp;{{trans('file.change_appointment')}}</h4>
                     </div>
                     <form id="form" action="/next-appointment-patient-edit/{{$patient->id}}" method="post">
                         {{method_field('patch')}}
                         <div class="modal-body">
 
-
-
-                            <div class="form-group"><label>{{trans('file.id')}}</label> <input type="text" name="id" placeholder="{{trans('file.id')}}"
-                                                                                               value="{{$patient->id}}" class="form-control" disabled></div>
-                            <div class="form-group"><label>{{trans('file.first_name')}}</label> <input type="text" name="name" placeholder="{{trans('file.first_name')}}"
-                                                                                                       value="{{$patient->name}}" class="form-control"></div>
-
-
-                            <div class="form-group"><label>{{trans('file.last_name')}}</label> <input type="text" name="lastname" placeholder="{{trans('file.last_name')}}"
-                                                                                                      value="{{$patient->lastname}}" class="form-control"></div>
-
-
-                            <div class="form-group"><label>{{trans('file.visits')}}</label> <input type="text" name="visits" placeholder="{{trans('file.visits')}}"
-                                                                                                   value="{{$patient->status}}" class="form-control"></div>
-
-
-                            <div class="form-group"><label>{{trans('file.next_appointment_date')}}</label> <input type="date" name="next_appointment_date" placeholder="{{trans('file.next_appointment_date')}}"
+                            <div class="form-group"><label>{{trans('file.change_appointment')}}</label> <input type="date" name="next_appointment_date" placeholder="{{trans('file.next_appointment_date')}}"
                                                                                                                   value="{{$patient->next_appointment}}" class="form-control"></div>
-
-
-                            <div class="form-group"><label>{{trans('file.phone')}}</label> <input type="text" name="phone" placeholder="{{trans('file.phone')}}"
-                                                                                                  value="{{$patient->phone}}" class="form-control"></div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-white" data-dismiss="modal">{{trans('file.close')}}</button>

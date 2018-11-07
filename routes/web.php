@@ -27,10 +27,19 @@ Route::post('language',array(
     'uses'=>'LanguageController@index'
 ));
 
-Route::get('test',function (){
-   return bcrypt(123456);
+Route::middleware('admin')->group(function (){
+
+    Route::get('/patient-deleted','DeletedRecordsController@patient');
+    Route::get('/doctor-deleted','DeletedRecordsController@doctor');
+    Route::get('/expense-deleted','DeletedRecordsController@expense');
+    Route::get('/user-deleted','DeletedRecordsController@user');
+    Route::get('/patient-deleted/{id}','DeletedRecordsController@restorePatient');
+    Route::get('/doctor-deleted/{id}','DeletedRecordsController@restoreDoctor');
+    Route::get('/expense-deleted/{id}','DeletedRecordsController@restoreExpense');
+    Route::get('/user-deleted/{id}','DeletedRecordsController@restoreUser');
 
 });
+
 // Route Group & Middleware for doctor
 Route::middleware('auth','doctor')->group(function () {
 
@@ -253,6 +262,30 @@ Route::middleware('auth','reception')->group(function () {
     Route::get('/doctors/doctor_edit/{id}','DoctorController@doctor_edit');
 
     Route::post('/doctors/update/{id}','DoctorController@update_doctor');
+
+
+    Route::post('/patient_report/search','patientReportController@search_patient');
+
+    Route::resource('/medicine','MedicineController');
+    //route for delet medicine
+    Route::get('medicine2/{id}','MedicineController@delete');
+    //route for prescription
+    Route::resource('prescription','PrescriptionController');
+    // show email forms
+    Route::get('/contact','EmailController@index');
+    // sending email
+    Route::post('/email-send','EmailController@email_send');
+    // update system and redirect -> back
+    Route::get('/update-system','HomeController@updateSystem');
+    // about software company paypol and denta
+    Route::get('/about-us','HomeController@about_us');
+
+    Route::resource('/dental-defect-list','DentalDefectListController');
+
+    Route::resource('/treatment-list','TreatmentListController');
+
+    Route::get('/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+
 
 });
 // End Route Reception

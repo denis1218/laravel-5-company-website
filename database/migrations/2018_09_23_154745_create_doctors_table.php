@@ -33,6 +33,7 @@ class CreateDoctorsTable extends Migration
             $table->integer('remaining')->nullable();
             $table->integer('max_patient');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

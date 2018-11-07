@@ -6,6 +6,7 @@ use App\Treatment;
 use App\TreatmentList;
 use Illuminate\Http\Request;
 use App\Patient;
+use Illuminate\Support\Facades\DB;
 
 class patientReportController extends Controller
 {
@@ -16,7 +17,7 @@ class patientReportController extends Controller
      */
     public function index()
     {
-        $all_patient = Patient::with('doctor')->paginate(10 );
+        $all_patient = Patient::with('doctor')->paginate(15);
         return view('patient.patient_report',compact('all_patient'));
     }
 
@@ -56,15 +57,17 @@ class patientReportController extends Controller
         return view('patient.print_reception', compact('patient','treatment'));
     }
 
-
-
-    public function show_patient()
+    public function search_patient(Request $request)
     {
+        $query = $request->search;
+        $data = DB::table('patients')->where('id_patient','like','%'.$query.'%')
+            ->orWhere('name','like','%'.$query.'%')
+            ->orWhere('lastname','like','%'.$query.'%')
+            ->orWhere('phone','like','%'.$query.'%')->get();
+
+        return view('patient.patient_report_search', compact('data'));
 
     }
-
-
-
 
     /*
      * this method is for printing patient report
