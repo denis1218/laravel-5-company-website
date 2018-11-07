@@ -35,9 +35,10 @@
 
                         </div>
 
-                        <div class="row" style="margin-top:30px;">
+                        <div class="row" style="margin-top:30px;margin-right: 90px">
 
-                            <div class="col-sm-12">
+                            <div class="col-md-12 ">
+                                <div class="table-responsive">
                                 <table class="table table-hover  no-margins" id="table_all_patient">
                                     <thead>
                                     <tr class="bg-light">
@@ -92,7 +93,7 @@
                                     </tbody>
                                 </table>
                                 {{ $all_patient->links() }}
-
+                                </div>
                             </div>
                         </div>
                     </div>

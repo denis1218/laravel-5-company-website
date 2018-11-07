@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Medicine;
+use App\Patient;
 use App\Prescription;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PrescriptionController extends Controller
@@ -14,8 +17,9 @@ class PrescriptionController extends Controller
      */
     public function index()
     {
-        $prescription = Prescription::all();
-        return view('reception.prescription',compact('prescription'));
+        $patient = Patient::where('status', '=', 'first')
+            ->whereDate('next_appointment', '=', Carbon::today())->get();
+        return view('reception.prescription', compact('patient'));
     }
 
     /**
@@ -30,53 +34,70 @@ class PrescriptionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $pres = new Prescription();
-        $pres->pattern = $request->pattern;
-        $pres->instruction = $request->instruction;
-        $pres->medicine = $request->medicine;
-        $pres->day = $request->day;
-        $pres->patient_id = $request->FK_id_patient;
-        $pres->save();
+
+//        $med = Medicine::all();
+        $med = $request->medicine;
+        $patient_unit = $request->unit_for_patient;
+        foreach ($med as $index => $meds) {
+
+            $medic = Medicine::find($meds);
+            $medic->unit = $medic->unit - $patient_unit[$index];
+            $medic->save();
+//
+//        $medicine->unit =  $medicine->unit - $request->unit_for_patient[1];
+//
+//        $medicine->save();
+//                echo $medic;
+
+        }
         return back();
+
+
+//       $med =  Medicine::find($request->unit_for_patient);
+//        return back();
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Prescription  $prescription
+     * @param  \App\Prescription $prescription
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public
+    function show($id)
     {
-        $prescription = Prescription::find($id);
-
-        return view('reception.prescription_print',compact('prescription'));
-
+        $patient = Patient::find($id);
+        $medicine = Medicine::paginate(5);
+        return view('reception.add_medicine', compact('patient', 'medicine'));
+//
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Prescription  $prescription
+     * @param  \App\Prescription $prescription
      * @return \Illuminate\Http\Response
      */
-    public function edit(Prescription $prescription)
+    public
+    function edit(Prescription $prescription)
     {
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Prescription  $prescription
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Prescription $prescription
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Prescription $prescription)
+    public
+    function update(Request $request, Prescription $prescription)
     {
 
     }
@@ -84,10 +105,11 @@ class PrescriptionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Prescription  $prescription
+     * @param  \App\Prescription $prescription
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Prescription $prescription)
+    public
+    function destroy(Prescription $prescription)
     {
         //
     }
