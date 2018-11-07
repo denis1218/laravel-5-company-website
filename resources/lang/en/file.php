@@ -67,6 +67,13 @@ return[
     'capital'=>'Capital',
     'total_profit'=>'Total Profit',
     'now'=>'Now',
+    'next_appointments'=>'Next appointment',
+    'deleted_at'=>'Deleted at',
+    'restore'=>'Restore',
+    'deleted_records'=>'Deleted Records',
+    'receiver'=>'Receiver',
+    'firstname'=>'Firstname',
+    'lastname'=>'Lastname',
 //End of dashboard page
 
 //doctor operation page

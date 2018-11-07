@@ -17,6 +17,7 @@ class CreateExpenseCatagoriesTable extends Migration
             $table->increments('id');
             $table->string('category');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

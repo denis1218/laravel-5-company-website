@@ -27,10 +27,19 @@ Route::post('language',array(
     'uses'=>'LanguageController@index'
 ));
 
-Route::get('test',function (){
-   return bcrypt(123456);
+Route::middleware('admin')->group(function (){
+
+    Route::get('/patient-deleted','DeletedRecordsController@patient');
+    Route::get('/doctor-deleted','DeletedRecordsController@doctor');
+    Route::get('/expense-deleted','DeletedRecordsController@expense');
+    Route::get('/user-deleted','DeletedRecordsController@user');
+    Route::get('/patient-deleted/{id}','DeletedRecordsController@restorePatient');
+    Route::get('/doctor-deleted/{id}','DeletedRecordsController@restoreDoctor');
+    Route::get('/expense-deleted/{id}','DeletedRecordsController@restoreExpense');
+    Route::get('/user-deleted/{id}','DeletedRecordsController@restoreUser');
 
 });
+
 // Route Group & Middleware for doctor
 Route::middleware('auth','doctor')->group(function () {
 
@@ -274,6 +283,7 @@ Route::middleware('auth','reception')->group(function () {
     Route::resource('/treatment-list','TreatmentListController');
 
     Route::get('/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+
 
 });
 // End Route Reception

@@ -6,6 +6,7 @@ use App\ExpenseCatagory;
 use App\Patient;
 use App\Treatment;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -19,7 +20,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-//        if(UserTableSeeder::countt() == 0)$this->call(UserTableSeeder::class );
+//        if(UserTableSeeder::count() == 0)$this->call(UserTableSeeder::class );
         if(\App\Doctor::count() == 0)$this->call(DoctorSeeder::class );
 
         DB::Table('users')->insert([

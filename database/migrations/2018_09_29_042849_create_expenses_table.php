@@ -20,6 +20,7 @@ class CreateExpensesTable extends Migration
             $table->string('category');
             $table->longText('description');
             $table->date('created_at');
+            $table->softDeletes();
         });
     }
 

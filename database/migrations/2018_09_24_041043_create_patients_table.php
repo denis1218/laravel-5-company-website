@@ -31,6 +31,7 @@ class CreatePatientsTable extends Migration
                 ->references('id')->on('doctors')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+            $table->softDeletes();
         });
     }
 

@@ -120,6 +120,29 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="setting"><i class="fa fa-trash"></i> <span
+                                    class="nav-label">Restore Deleted</span><span
+                                    class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="/user-deleted"><i class="fa fa-user"></i> <span
+                                            class="nav-label">Users</span></a>
+                            </li>
+                            <li>
+                                <a href="/patient-deleted"><i class="fa fa-user-secret"></i> <span
+                                            class="nav-label">Patients</span></a>
+                            </li>
+                            <li>
+                                <a href="/doctor-deleted"><i class="fa fa-user-md"></i> <span
+                                            class="nav-label">Doctors</span></a>
+                            </li>
+                            <li>
+                                <a href="/expense-deleted"><i class="fa fa-shopping-cart"></i> <span
+                                            class="nav-label">Expense</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="/contact"><i class="fa fa-phone"></i> <span
                                     class="nav-label">{{trans('file.support')}}</span></a>
                     </li>
