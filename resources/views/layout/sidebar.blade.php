@@ -120,6 +120,29 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="setting"><i class="fa fa-trash"></i> <span
+                                    class="nav-label">Restore Deleted</span><span
+                                    class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="/user-deleted"><i class="fa fa-user"></i> <span
+                                            class="nav-label">Users</span></a>
+                            </li>
+                            <li>
+                                <a href="/patient-deleted"><i class="fa fa-user-secret"></i> <span
+                                            class="nav-label">Patients</span></a>
+                            </li>
+                            <li>
+                                <a href="/doctor-deleted"><i class="fa fa-user-md"></i> <span
+                                            class="nav-label">Doctors</span></a>
+                            </li>
+                            <li>
+                                <a href="/expense-deleted"><i class="fa fa-shopping-cart"></i> <span
+                                            class="nav-label">Expense</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="/contact"><i class="fa fa-phone"></i> <span
                                     class="nav-label">{{trans('file.support')}}</span></a>
                     </li>
@@ -201,7 +224,7 @@
 
 
                     <li class="active">
-                        <a href="/dash_reception"><i class="fa fa-home"></i> <span
+                        <a href="/dash"><i class="fa fa-home"></i> <span
                                     class="nav-label">{{trans('file.home')}}</span> </a>
                     </li>
 
@@ -255,17 +278,6 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="/contact"><i class="fa fa-phone"></i> <span
-                                    class="nav-label">{{trans('file.support')}}</span></a>
-                    </li>
-                    <li>
-                        <a href="/about-us"><i class="fa fa-info"></i> <span
-                                    class="nav-label">&nbsp;{{trans('file.about_us')}}</span></a>
-
-                    </li>
-                    <li>
-                    <li><a href="/help"><i class="fa fa-question-circle"></i>{{trans('file.help')}}</a></li>
-                    <li>
                         <a href="setting"><i class="fa fa-cog"></i> <span
                                     class="nav-label">{{trans('file.setting')}}</span><span
                                     class="fa arrow"></span></a>
@@ -292,6 +304,18 @@
 
                         </ul>
                     </li>
+                    <li>
+                        <a href="/contact"><i class="fa fa-phone"></i> <span
+                                    class="nav-label">{{trans('file.support')}}</span></a>
+                    </li>
+                    <li>
+                        <a href="/about-us"><i class="fa fa-info"></i> <span
+                                    class="nav-label">&nbsp;{{trans('file.about_us')}}</span></a>
+
+                    </li>
+                    <li>
+                    <li><a href="/help"><i class="fa fa-question-circle"></i>{{trans('file.help')}}</a></li>
+
                 @endif
             </ul>
             {{--end  of finance condition--}}

@@ -149,11 +149,12 @@ return [
         Spatie\Backup\BackupServiceProvider::class,
 
 
+
         /*
          * Package Service Providers...
          */
         Spatie\Permission\PermissionServiceProvider::class,
-
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         // Barryvdh\DomPDF\ServiceProvider::class,
 
 

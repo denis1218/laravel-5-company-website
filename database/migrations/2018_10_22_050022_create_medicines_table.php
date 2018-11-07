@@ -18,6 +18,7 @@ class CreateMedicinesTable extends Migration
             $table->string('name');
             $table->integer('unit');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
