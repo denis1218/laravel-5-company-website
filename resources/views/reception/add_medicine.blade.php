@@ -78,7 +78,7 @@
                                             <td><input type="text" name="sale" class="form-control" value="{{ $medice->sale }}" readonly></td>
                                             <td><input type="text" name="unit" class="form-control" value="{{ $medice->unit }}" readonly></td>
 
-                                            <td><input type="number" name="unit_for_patient[]" class="form-control"></td>
+                                            <td><input type="number" name="unit_for_patient[]" value="{{$medice}}" class="form-control"></td>
                                             <td>
                                                 <div class="i-checks"><input type="checkbox"  value="{{ $medice->id }}" name="medicine[]" id="medicine" ></div>
                                             </td>

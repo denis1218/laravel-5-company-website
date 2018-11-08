@@ -43,24 +43,25 @@ class PrescriptionController extends Controller
 //        $med = Medicine::all();
         $med = $request->medicine;
         $patient_unit = $request->unit_for_patient;
-        foreach ($med as $index => $meds) {
 
-            $medic = Medicine::find($meds);
-            $medic->unit = $medic->unit - $patient_unit[$index];
-            $medic->save();
+        $maxLength = count($med) > count($patient_unit) ? count($med) : count($patient_unit);
+
+        for ($i = 0; $i < $maxLength; $i++) {
+
+            if (array_key_exists($i, $med) && array_key_exists($i,$patient_unit)) {
+                foreach ( $med as $index => $medic) {
+//                    print $medic . 'is your Id code and '  . $patient_unit[$index] . 'is your name';
+                    $medi = Medicine::find($medic[$i]);
+                $medi->unit = $medi->unit +3;
+                $medi->save();
+                return back();
+
+                }
 //
-//        $medicine->unit =  $medicine->unit - $request->unit_for_patient[1];
-//
-//        $medicine->save();
-//                echo $medic;
+            }
+
 
         }
-        return back();
-
-
-//       $med =  Medicine::find($request->unit_for_patient);
-//        return back();
-
     }
 
     /**
@@ -69,8 +70,8 @@ class PrescriptionController extends Controller
      * @param  \App\Prescription $prescription
      * @return \Illuminate\Http\Response
      */
-    public
-    function show($id)
+
+    public function show($id)
     {
         $patient = Patient::find($id);
         $medicine = Medicine::paginate(5);
@@ -84,8 +85,7 @@ class PrescriptionController extends Controller
      * @param  \App\Prescription $prescription
      * @return \Illuminate\Http\Response
      */
-    public
-    function edit(Prescription $prescription)
+    public function edit(Prescription $prescription)
     {
     }
 
@@ -96,8 +96,7 @@ class PrescriptionController extends Controller
      * @param  \App\Prescription $prescription
      * @return \Illuminate\Http\Response
      */
-    public
-    function update(Request $request, Prescription $prescription)
+    public function update(Request $request, Prescription $prescription)
     {
 
     }
@@ -108,8 +107,7 @@ class PrescriptionController extends Controller
      * @param  \App\Prescription $prescription
      * @return \Illuminate\Http\Response
      */
-    public
-    function destroy(Prescription $prescription)
+    public  function destroy(Prescription $prescription)
     {
         //
     }

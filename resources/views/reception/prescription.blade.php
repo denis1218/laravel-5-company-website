@@ -55,7 +55,7 @@
                                         </tr>
                                     @endforeach
                                         @else
-                                    <h3 style="color: red;" class="text-center">{{trans('file.there_is_no_pres')}}</h3>
+                                    <h3 style="color: red;" class="text-center">{{trans('file.there_is_no')}}</h3>
                                     @endif
                                     </tbody>
                                 </table>
