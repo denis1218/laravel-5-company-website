@@ -62,6 +62,7 @@ return[
 
 //doctor operation page
     'patient_list'=>'لیست مریضان',
+    'fnaud'=>'جستجوی ملاقات های بعدی با استفاده از تاریخ',
     'next_appointment_list'=>'لیست مریضان بعدی',
     'report_patient'=>'گزارش مریض',
     'patient_appointment_list'=>'لیست مریضان به ملاقات',
@@ -128,6 +129,7 @@ return[
 
 //start of treatment operation
     'visted'=>'ملاقات شده',
+    'sapftd'=>'نمایش همه مریضان امروز',
     'first_visited_date'=>'تاریخ اولین ملاقات',
     'past_history'=>'یاداشت گذشته',
     'present_history'=>'یاداشت حال',
@@ -174,7 +176,7 @@ return[
     'salary_amount'=>'مقدار معاش',
     'male'=>'مرد',
     'female'=>'زن',
-    'reset'=>'پاک کردن همه',
+    'reset'=>'لغو',
 //end of doctor registration
 //    start of patient registration
     'pr_form'=>'فورم راجستر مریضان',
@@ -301,11 +303,11 @@ return[
     'set_date'=>'تعین تاریخ',
     'all_patient'=>'تمام مریضان',
     'search'=>'جستجو',
-    'search_patient_name'=>'جستجو نام مریض',
+    'search_patient_name'=>'جستجوی نام مریض',
     'show_all_patient'=>'نمایش تمام مریضان حال حاضر',
     'appointment_date'=>'تاریخ ملاقات',
     'add_to_queue'=>'اضافه کردن در قطار',
-    'there_is_no'=>'تا به حال مریض راجستر نشده است برای امروز',
+    'there_is_no'=>'تا حالا برای امروز مریضی راجستر نشده است ',
 
 //    new patient today
     'list_patient_today'=>'لیست مریضان امروز',
@@ -468,6 +470,22 @@ return[
 //    About
     'about_info'=>'معلومات صفحه دربارهء ما',
     'abouti_text'=>'در این صفحه بعضی معلومات درمورد شرکت PayPol و فعالیت های آن میباشد.',
+
+
+    //    MISSED TRANSES
+    'spbd'=>'انتخاب مریض براساس تاریخ',
+
+//    Support Page
+    'ser'=>'ارسال گذارش درصورت خطا در نرم افزار',
+    'subject'=>'مضمون',
+    'context'=>'متن',
+    'send'=>'ارسال',
+    'psdc'=>' Paypol شرکت نرم افزار سازی  ',
+    'cu'=>'تماس باما',
+    'facebook'=>'فیسبوک',
+    'yacti'=>'شما به انترنیت وصل هستید',
+    'yanc'=>'اتصال انترنیتی موجود نیست، لطفاً اتصال انتر نیتی خور را چک کنید!',
+    'wyc'=>'متن تان را بنویسید',
 
 ];
 

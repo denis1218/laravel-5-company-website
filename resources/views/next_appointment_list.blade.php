@@ -20,17 +20,17 @@
                 <div class="row">
 
                     <div class="col-md-6">
-                        <lable>Search patient name</lable>
+                        <label>{{trans('file.search_patient_name')}}</label>
                         <div class="input-group">
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-white"><i class="fa fa-search text-success"></i> </button> </span>
-                            <input type="text" id="search_nextappoinment" onkeyup="search_appointment()" placeholder="Search patient name" class="input-md form-control">
+                            <input type="text" id="search_nextappoinment" onkeyup="search_appointment()" placeholder="{{trans('file.search_patient_name')}}" class="input-md form-control">
                         </div>
                     </div>
 
                     <div class="col-sm-4">
                         <form action="/next_appointment_list" method="get">
-                            <lable>Find next appointment by date</lable>
+                            <label>{{trans('file.fnaud')}}</label>
                             <div class="input-group">
                                 <span class="input-group-btn">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-calendar"></i> Set Date</button> </span>
@@ -50,7 +50,7 @@
                                     <th>{{trans('file.patient_name')}}</th>
                                     <th>{{trans('file.status')}}</th>
                                     <th>{{trans('file.date_appointment')}}</th>
-                                    <th>{{trans('file.problem_health')}}</th>
+                                    <th>{{trans('file.health_problem')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -71,7 +71,7 @@
                                     <th>{{trans('file.patient_name')}}</th>
                                     <th>{{trans('file.status')}}</th>
                                     <th>{{trans('file.date_appointment')}}</th>
-                                    <th>{{trans('file.problem_health')}}</th>
+                                    <th>{{trans('file.health_problem')}}</th>
                                 </tr>
                                 </tfoot>
                             </table>

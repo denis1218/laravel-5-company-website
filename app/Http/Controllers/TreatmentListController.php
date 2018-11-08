@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\TreatmentList;
 use Illuminate\Http\Request;
-
+use Session;
 class TreatmentListController extends Controller
 {
     /**
@@ -40,6 +40,7 @@ class TreatmentListController extends Controller
         $treatment->treatment = $request->treatment;
         $treatment->estimated_fee = $request->estimated_fee;
         $treatment->save();
+        Session::flash('success','inserted successfully');
         return redirect()->back();
     }
 

@@ -9,35 +9,24 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>{{trans('file.patient_report_table')}}<i class="fa fa-info"></i></h5>
-
+                <h5>{{trans('file.patient_report_table')}}</h5>
             </div>
             <div class="ibox-content" id="divone">
-
                 <div class="container">
-                    <div class="row">
-
+                  <div class="row">
                         {{--first doctor--}}
-
                         <div class="row" style="">
-
                             <div class="col-sm-5">
                                 <div class="input-group">
                                         <span class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-primary"
-                                                disabled="">{{trans('file.search')}}</button> </span>
-                                    <input type="text" placeholder="{{trans('file.search_patient_name')}}"
-                                           id="search_all_patient" onkeyup="search_all_patient()"
-                                           class="input-sm form-control">
-
+                                        <button type="button" class="btn btn-sm btn-primary" disabled="">{{trans('file.search')}}</button> </span>
+                                        <input type="text" placeholder="{{trans('file.search_patient_name')}}" id="search_all_patient" onkeyup="search_all_patient()" class="input-sm form-control">
                                 </div>
                             </div>
-
                         </div>
-
                         <div class="row" style="margin-top:30px;">
-
                             <div class="col-sm-12">
+                              <div class="table-responsive">
                                 <table class="table table-hover  no-margins" id="table_all_patient">
                                     <thead>
                                     <tr class="bg-light">
@@ -91,16 +80,16 @@
                                     @endif
                                     </tbody>
                                 </table>
-                                {{ $all_patient->links() }}
 
+                                {{ $all_patient->links() }}
+                              </div>
                             </div>
                         </div>
-                    </div>
+                  </div>
                 </div>
             </div>
         </div>
     </div>
-
     @foreach($all_patient as $patient)
         {{-- modal window to show editing detail of doctor--}}
         <div class="modal inmodal" id="e{{$patient->id}}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -158,17 +147,10 @@
 
     @endforeach
 
-
-
-
-
-
-
 @endsection
 
 
 @section('script')
-    <!-- script -->
 
     <script>
         $(document).ready(function () {
@@ -214,8 +196,4 @@
         }
 
     </script>
-
-
-
-
 @endsection

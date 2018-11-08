@@ -65,6 +65,7 @@ return[
 //doctor operation page
 
     'patient_list'=>'Patient List',
+    'fnaud'=>'Find Next Appointment Using Date',
     'next_appointment_list'=>'Next Appointment List',
     'report_patient'=>'Patient Report',
     'patient_appointment_list'=>'Patient Appointment List',
@@ -134,6 +135,7 @@ return[
 
 // start of treatment operation
     'visited'=>'Visited',
+    'sapftd'=>'Show All Patient For Today',
     'first_visited_date'=>'First Visited Date',
     'past_history'=>'Past History',
     'present_history'=>'Present History',
@@ -518,7 +520,21 @@ return[
     'abouti_text'=>'In this page there is few information about our company and our activities.',
 
 
+//    MISSED TRANSES
+    'spbd'=>'Select Patient By Date',
 
+
+    //    Support Page
+    'ser'=>'Send Error Report',
+    'subject'=>'Subject',
+    'context'=>'Context',
+    'send'=>'Send',
+    'psdc'=>'Paypol Software Development Company',
+    'cu'=>'Contact Us',
+    'facebook'=>'Contact Us',
+    'yacti'=>'You are connected to the internet',
+    'yanc'=>'Your internet connection is down, please check your connectivity!',
+    'wyc'=>'Write Your Context',
 
 
 ];
