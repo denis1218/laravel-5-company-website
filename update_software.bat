@@ -15,7 +15,7 @@ echo.
 :: this is update comming from original repository
 git pull https://github.com/mahdi2013safari/Denta-App.git
 
-timestamp=$(date +"%D %T")
+
 git add .
 git commit -m "new update"
 
