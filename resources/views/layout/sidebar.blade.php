@@ -68,6 +68,22 @@
                             </li>
                             <li><a href="/doctors"><i class="fa fa-user-md"></i>{{trans('file.doctors')}}</a></li>
 
+                            {{--traders--}}
+                            <li>
+                                <a href="">&nbsp;Traders
+                                    <span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level collapse">
+                                    <li><a href="/trader"><i
+                                                    class="fa fa-arrow-down"></i>&nbsp;&nbsp;traders
+                                        </a>
+                                    </li>
+                                    <li><a href="/item"><i
+                                                    class="fa fa-shopping-cart"></i>Items</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            {{--end of traders--}}
+
                             <li><a href="/finance_report"><img src="{{ asset('img/report_finance.png') }}"
                                                                width="13px"/>&nbsp;{{trans('file.financial_report')}}
                                     <span class="fa arrow"></span></a>

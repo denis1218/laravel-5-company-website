@@ -17,13 +17,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h1>About Paypol Software Company</h1>
+                                    <h1>{{trans('file.apsc')}}</h1>
                                     <p style="font-size: 20px; text-align: justify">
-                                        PayPolSoftware provides leading-edge capabilities in software as a service, a platform that develop digital infrastructure as a service, and creating data for small, medium and large enterprises.
-                                        PayPolSoftware, a provider of enterprise digitalization computing system, is empowering businesses of all sizes on their journey of digital transformation.
-
-                                        ACCELERATING DIGITAL TRANSFORMATION IN AFGHAN’S  MARKET
-                                        With PayPolSoftware, enterprises can innovate faster, improve customer engagement, drive business-process efficiency and accelerate digital transformation with us.
+                                        {{trans('file.apsc_text')}}
                                     </p>
 
                                 </div>

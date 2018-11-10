@@ -252,6 +252,11 @@ Route::middleware('auth','reception')->group(function () {
 
     Route::post('/doctors/update/{id}','DoctorController@update_doctor');
 
+//    Traders Route
+    Route::resource('/trader','TraderController');
+//    Item Route
+    Route::resource('/item','ItemController');
+
 });
 // End Route Reception
 

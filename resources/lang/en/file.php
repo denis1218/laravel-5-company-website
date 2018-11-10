@@ -536,6 +536,10 @@ return[
     'yanc'=>'Your internet connection is down, please check your connectivity!',
     'wyc'=>'Write Your Context',
 
+    //    ABOUT US
+    'apsc'=>'About Paypol Software Company',
+    'apsc_text'=>'PayPolSoftwareCompany provides leading-edge capabilities in software as a service, a platform that develop digital infrastructure as a service, and creating data for small, medium and large enterprises. PayPolSoftwareCompany, a provider of enterprise digitalization computing system, is empowering businesses of all sizes on their journey of digital transformation. ACCELERATING DIGITAL TRANSFORMATION IN AFGHAN’S MARKET With PayPolSoftware, enterprises can innovate faster, improve customer engagement, drive business-process efficiency and accelerate digital transformation with us.',
+
 
 ];
 
