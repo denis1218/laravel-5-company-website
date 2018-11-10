@@ -309,7 +309,7 @@ return[
 
 //    new patient today
     'list_patient_today'=>'لیست مریضان امروز',
-    'back'=>'قبلی',
+    'back'=>'برگشت',
     'total_new'=>'مجموع مریضان راجستر شده امروز',
     'visits'=>'ملاقات',
 //    list next appointment today
@@ -357,8 +357,22 @@ return[
 //Start of Medicine
     'medicine_name'=>'نام دوا',
     'medicine_unit'=>'واحد دوا',
+    'medicine_buy'=>'خرید دوا',
+    'medicine_sale'=>'فروش دوا',
+
     'unit'=>'واحد',
     'name'=>'اسم دوا',
+    'buy'=>'خرید',
+    'sale'=>'فروش',
+    'for_whom'=>'شخص',
+    'adult'=>'بزرگ سال',
+    'child'=>'اطفال',
+    'medicine_category'=>'کتگوری دوا',
+    'choose_medicine'=>'دوا را انتخاب کنید',
+    'unit_stock'=>' تعداد موجود',
+    'unit_patient'=>'تعداد برای مریض',
+
+
 //    End of medicine
 // Account
     'admin'=>'ادمین',

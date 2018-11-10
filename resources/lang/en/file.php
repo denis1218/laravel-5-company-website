@@ -387,8 +387,22 @@ return[
 //Start of Medicine
     'medicine_name'=>'Medicine Name',
     'medicine_unit'=>'Medicine Unit',
+    'medicine_buy'=>'Medicine Buy ',
+    'medicine_sale'=>'Medicine Sale ',
     'unit'=>'Unit',
     'name'=>'Name',
+    'buy'=>'Buy',
+    'sale'=>'Sale',
+    'for_whom'=>'Person',
+    'adult'=>'Adult',
+    'child'=>'Child',
+    'medicine_category'=>'Medicine Category',
+    'choose_medicine'=>'Choose Medicine',
+    'unit_stock'=>'Unit have in stock',
+    'unit_patient'=>'Unit For Patient',
+
+
+
 //    End of medicine
 //account
     'admin'=>'Admin',

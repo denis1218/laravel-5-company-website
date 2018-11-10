@@ -1,4 +1,4 @@
-<body class="{{ app()->getLocale() }}">
+<body class="{{ app()->getLocale()}}">
 
 <div id="wrapper">
 
@@ -98,6 +98,8 @@
                             </li>
 
                             <li><a href="/medicine"><i class="fa fa-pencil-square-o"></i>{{trans('file.add_medicine')}}
+                                </a></li>
+                            <li><a href="/medicine_category"><i class="fa fa-pencil-square-o"></i>{{trans('file.medicine_category')}}
                                 </a></li>
 
 
