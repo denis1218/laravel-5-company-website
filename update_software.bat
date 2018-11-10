@@ -10,8 +10,11 @@ echo.
 call :ColorText 0C "Software will be update"
 echo.
 
+
+
 :: this is update comming from original repository
 git pull https://github.com/mahdi2013safari/Denta-App.git
+
 
 :: this is update comming from development mode repository
 ::git pull https://github.com/mahdi2013safari/Denta-C.git
