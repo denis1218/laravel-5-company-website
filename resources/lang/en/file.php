@@ -15,6 +15,7 @@ return[
     'patient_registration'=>'Patient Registration',
     'list_of_patient'=>'List Of Patient',
     'patient_report'=>'Patient Report',
+    'there_is_not_patient'=>'No Patients was found with these specifications',
     'prescription'=>'Prescription',
     'expenditure'=>'Expenditure',
     'income'=>'Income',
@@ -60,6 +61,19 @@ return[
     'eym'=>'Enter Your Message',
     'save'=>'Save',
     'remainder'=>'Remainder',
+    'this_month'=>'this month',
+    'total_expenses'=>'Total Expenses',
+    'total_incomes'=>'Total Incomes',
+    'capital'=>'Capital',
+    'total_profit'=>'Total Profit',
+    'now'=>'Now',
+    'next_appointments'=>'Next appointment',
+    'deleted_at'=>'Deleted at',
+    'restore'=>'Restore',
+    'deleted_records'=>'Deleted Records',
+    'receiver'=>'Receiver',
+    'firstname'=>'Firstname',
+    'lastname'=>'Lastname',
 //End of dashboard page
 
 //doctor operation page
@@ -311,9 +325,10 @@ return[
     'Today'=>'Today',
     'next'=>'Next',
     'set_date'=>'Set Date',
-    'all_patient'=>'All Patient',
+    'all_patient'=>'All Patient and search',
     'search'=>'Search',
     'search_patient_name'=>'Search Patient Name',
+    'search_patient_name_id'=>'Search Patient Name or ID',
     'show_all_patient'=>'Show All Patients Presents Now',
     'patient_name'=>'Patient Name',
     'appointment_date'=>'Appointment Date',
@@ -331,6 +346,8 @@ return[
     'next_appointment_date'=>'Next Appointmentٔ',
 //    miss list next appointment
     'miss_next_appointment_patient'=>'Miss Next Appointment Patient',
+    'change_appointment'=>'Change appointment',
+    'appointment_date'=>'Date appointment',
 
 //  patient report
     'patient_report_table'=>'Patient Report Table',
@@ -370,8 +387,22 @@ return[
 //Start of Medicine
     'medicine_name'=>'Medicine Name',
     'medicine_unit'=>'Medicine Unit',
+    'medicine_buy'=>'Medicine Buy ',
+    'medicine_sale'=>'Medicine Sale ',
     'unit'=>'Unit',
     'name'=>'Name',
+    'buy'=>'Buy',
+    'sale'=>'Sale',
+    'for_whom'=>'Person',
+    'adult'=>'Adult',
+    'child'=>'Child',
+    'medicine_category'=>'Medicine Category',
+    'choose_medicine'=>'Choose Medicine',
+    'unit_stock'=>'Unit have in stock',
+    'unit_patient'=>'Unit For Patient',
+
+
+
 //    End of medicine
 //account
     'admin'=>'Admin',

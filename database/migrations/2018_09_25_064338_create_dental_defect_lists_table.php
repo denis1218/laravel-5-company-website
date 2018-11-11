@@ -17,6 +17,7 @@ class CreateDentalDefectListsTable extends Migration
             $table->increments('id');
             $table->string('dental_defect');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
