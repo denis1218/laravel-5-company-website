@@ -48,9 +48,9 @@
                                 </a>
                     </div>
                     <div class="col-md-3">
-                        <a href="/all-patient">
+                        <a href="/patient_report">
                             <button class="btn" style="width:87%; background-color: #3989cd; color: #ffffff">
-                                <img src="{{ asset('img/miss_appointment.png') }}" width="30px" class="pull-left"/>&nbsp;{{trans('file.all_patient')}}
+                                <img src="{{ asset('img/patient_list.png') }}" width="30px" class="pull-left"/>&nbsp;{{trans('file.all_patient')}}
                             </button>
                         </a>
                     </div>

@@ -20,6 +20,7 @@ class CreateOincomsTable extends Migration
             $table->string('purpose');
             $table->longText('description');
             $table->date('created_at');
+            $table->softDeletes();
         });
     }
 

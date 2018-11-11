@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Medicine;
+use App\Patient;
 use App\Prescription;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PrescriptionController extends Controller
@@ -14,8 +17,9 @@ class PrescriptionController extends Controller
      */
     public function index()
     {
-        $prescription = Prescription::all();
-        return view('reception.prescription',compact('prescription'));
+        $patient = Patient::where('status', '=', 'first')
+            ->whereDate('next_appointment', '=', Carbon::today())->get();
+        return view('reception.prescription', compact('patient'));
     }
 
     /**
@@ -30,39 +34,55 @@ class PrescriptionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $pres = new Prescription();
-        $pres->pattern = $request->pattern;
-        $pres->instruction = $request->instruction;
-        $pres->medicine = $request->medicine;
-        $pres->day = $request->day;
-        $pres->patient_id = $request->FK_id_patient;
-        $pres->save();
-        return back();
+
+//        $med = Medicine::all();
+        $med = $request->medicine;
+        $patient_unit = $request->unit_for_patient;
+
+        $maxLength = count($med) > count($patient_unit) ? count($med) : count($patient_unit);
+
+        for ($i = 0; $i < $maxLength; $i++) {
+
+            if (array_key_exists($i, $med) && array_key_exists($i,$patient_unit)) {
+                foreach ( $med as $index => $medic) {
+//                    print $medic . 'is your Id code and '  . $patient_unit[$index] . 'is your name';
+                    $medi = Medicine::find($medic[$i]);
+                $medi->unit = $medi->unit +3;
+                $medi->save();
+                return back();
+
+                }
+//
+            }
+
+
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Prescription  $prescription
+     * @param  \App\Prescription $prescription
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
-        $prescription = Prescription::find($id);
-
-        return view('reception.prescription_print',compact('prescription'));
-
+        $patient = Patient::find($id);
+        $medicine = Medicine::paginate(5);
+        return view('reception.add_medicine', compact('patient', 'medicine'));
+//
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Prescription  $prescription
+     * @param  \App\Prescription $prescription
      * @return \Illuminate\Http\Response
      */
     public function edit(Prescription $prescription)
@@ -72,8 +92,8 @@ class PrescriptionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Prescription  $prescription
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Prescription $prescription
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Prescription $prescription)
@@ -84,10 +104,10 @@ class PrescriptionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Prescription  $prescription
+     * @param  \App\Prescription $prescription
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Prescription $prescription)
+    public  function destroy(Prescription $prescription)
     {
         //
     }

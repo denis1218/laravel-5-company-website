@@ -37,8 +37,8 @@
 
                         <h2> Hakim Alikozay Dental Clinic</h2>
                         <h4>Patient History File</h4>
-                        <h4>Patient Name :{{$prescription->patient->name}}</h4>
-                        <h4>Date : {{$prescription->created_at}}</h4>
+                        <h4>Patient Name :{{$patient->name}}</h4>
+                        <h4>Date : {{\Carbon\Carbon::today()}}</h4>
 
                     </div>
 

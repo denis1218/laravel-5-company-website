@@ -15,10 +15,10 @@ class CreatePrescriptionsTable extends Migration
     {
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('pattern');
-            $table->string('instruction');
-            $table->string('medicine');
-            $table->integer('day');
+            $table->string('medicine_name');
+            $table->string('unit');
+            $table->string('sale');
+            $table->integer('total_fee');
             $table->unsignedInteger('patient_id')->nullable();
             $table->timestamps();
 
@@ -26,6 +26,7 @@ class CreatePrescriptionsTable extends Migration
                 ->references('id')->on('patients')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+            $table->softDeletes();
         });
     }
 

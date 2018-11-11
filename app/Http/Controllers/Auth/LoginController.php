@@ -70,7 +70,7 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             if (Auth()->user()->department == 'reception') {
-                return redirect()->intended('/dash_reception');
+                return redirect()->intended('/dash');
             } elseif (Auth()->user()->department == 'doctor') {
                 return redirect()->intended('/dash_doctor');
             } elseif (Auth()->user()->department == 'admin') {

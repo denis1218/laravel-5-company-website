@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Medicine;
+use App\MedicineCategory;
 use Illuminate\Http\Request;
 
 class MedicineController extends Controller
@@ -15,7 +16,8 @@ class MedicineController extends Controller
     public function index()
     {
         $medicine = Medicine::all();
-        return view('medicine',compact('medicine'));
+        $category = MedicineCategory::all();
+        return view('medicine',compact('medicine','category'));
     }
 
     /**
@@ -39,8 +41,12 @@ class MedicineController extends Controller
         $medicine = new Medicine();
         $medicine->name = $request->name;
         $medicine->unit = $request->unit;
+        $medicine->category = $request->category;
+        $medicine->person = $request->person;
+        $medicine->buy = $request->buy;
+        $medicine->sale = $request->sale;
         $medicine->save();
-        return redirect('medicine');
+        return redirect('medicine2');
     }
 
     /**
@@ -51,7 +57,8 @@ class MedicineController extends Controller
      */
     public function show(Medicine $medicine)
     {
-        //
+        $medicine = Medicine::all();
+        return view('medicine_list',compact('medicine'));
     }
 
     /**
@@ -77,8 +84,12 @@ class MedicineController extends Controller
         $medicine = Medicine::find($id);
         $medicine->name = $request->name;
         $medicine->unit = $request->unit;
+        $medicine->category = $request->category;
+        $medicine->person  = $request->person;
+        $medicine->buy = $request->buy;
+        $medicine->sale = $request->sale;
         $medicine->save();
-        return redirect('medicine');
+        return redirect('medicine2');
     }
 
     /**
