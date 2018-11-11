@@ -92,10 +92,10 @@ class TreatmentController extends Controller
     public
     function store(Request $request)
     {
+
         $treatment = new Treatment();
 
         $treatment->teeth_number = $request->teeth_number;
-
         $treatment->description = $request->description;
         $treatment->estimated_fee = $request->estimated_fee;
         $treatment->discount = $request->discount;
@@ -112,7 +112,6 @@ class TreatmentController extends Controller
         if($treatment->have_xray==null){
             $treatment->have_xray='no';
         }
-
         if ($request->status_visits == null) {
             $treatment->status_visits = 'not complete';
         } else {

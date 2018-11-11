@@ -42,7 +42,11 @@ class XrayController extends Controller
      */
     public function store(Request $request)
     {
+
         $rey=new Xray();
+        if($request->tooth_number == null){
+            return redirect()->back();
+        }
         $rey->tooth_number=$request->tooth_number;
         $rey->tooth_position=$request->tooth_position;
         $rey->patient_id=$request->patient_id;
