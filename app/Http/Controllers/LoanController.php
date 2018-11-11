@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
+use App\Loan;
 use App\Trader;
 use Illuminate\Http\Request;
 
-class TraderController extends Controller
+class LoanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,14 +15,9 @@ class TraderController extends Controller
      */
     public function index()
     {
-        $traders=Trader::orderBy('id','asc')->paginate(10);
-        return view('trader',compact('traders'));
-    }
-
-
-    public function itemTrader(){
-        $traders=Trader::orderBy('id','asc')->paginate(10);
-        return view('item_trade',compact('traders'));
+        $items=Loan::orderBy('id','asc')->paginate(10);
+        $ptotal=DB::table('loans')->sum('paid');
+        return view('cpaid',compact('items','ptotal'));
     }
 
     /**
@@ -29,9 +25,16 @@ class TraderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('trader_form');
+        $loan=Trader::find($id);
+        $ln=$loan->id;
+        $items=Trader::find($id)->item;
+        $loans=Trader::find($id)->loan;
+        $itotal=$items->sum('total_price');
+        $ltotal=$loans->sum('paid');
+        $rem=$itotal-$ltotal;
+        return view('loan_form',compact('ln','rem'));
     }
 
     /**
@@ -42,24 +45,21 @@ class TraderController extends Controller
      */
     public function store(Request $request)
     {
-        $trader=new Trader();
-        $trader->name=$request->name;
-        $trader->last_name=$request->last_name;
-        $trader->phone=$request->phone;
-        $trader->organization=$request->organization;
-        $trader->address=$request->address;
-        $trader->payment_process=$request->payment_process;
-        $trader->save();
-        return redirect('/trader');
+        $Lon=new Loan();
+        $Lon->paid=$request->paid;
+        $Lon->receiver=$request->receiver;
+        $Lon->trader_id=$request->trader_id;
+        $Lon->save();
+        return redirect('/item');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Trader  $trader
+     * @param  \App\Loan  $loan
      * @return \Illuminate\Http\Response
      */
-    public function show(Trader $trader)
+    public function show(Loan $loan)
     {
         //
     }
@@ -67,10 +67,10 @@ class TraderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Trader  $trader
+     * @param  \App\Loan  $loan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Trader $trader)
+    public function edit(Loan $loan)
     {
         //
     }
@@ -79,10 +79,10 @@ class TraderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Trader  $trader
+     * @param  \App\Loan  $loan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Trader $trader)
+    public function update(Request $request, Loan $loan)
     {
         //
     }
@@ -90,10 +90,10 @@ class TraderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Trader  $trader
+     * @param  \App\Loan  $loan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Trader $trader)
+    public function destroy(Loan $loan)
     {
         //
     }

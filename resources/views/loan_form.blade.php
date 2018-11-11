@@ -13,7 +13,7 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Supplier Registration</h5>
+                        <h5>Loan Payment</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -23,40 +23,18 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-lg-5">
-                                <form id="form" method="post" action="/trader">
+                                <form id="form" method="post" action="/loan">
                                     {{csrf_field()}}
-
                                     <div class="form-group">
-                                        <label>Name</label>
-                                        <div><input type="text" name="name" class="form-control" placeholder="Enter the name here" required></div>
+                                        <label>Payment Amount</label>
+                                        <div><input type="number" max="{{$rem}}" name="paid" class="form-control" placeholder="Loan payment amount" required></div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>LastName</label>
-                                        <div><input type="text" name="last_name" class="form-control" placeholder="Enter LastName" required></div>
+                                        <label>Receiver</label>
+                                        <div><input type="text" name="receiver" class="form-control" placeholder="To whom the money is paid" required></div>
                                     </div>
-
-                                    <div class="form-group">
-                                        <label>Phone Number</label>
-                                        <div><input type="number" name="phone" class="form-control" placeholder="Enter Phone#" required></div>
-
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Name of Organization</label>
-                                        <div><input type="text" name="organization" class="form-control" placeholder="Organization" required></div>
-
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Address</label>
-                                        <div><input type="text" name="address" class="form-control" placeholder="Trader Address" required></div>
-
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Payment Process</label>
-                                        <div><input type="text" name="payment_process" class="form-control" placeholder="The process of payment" required></div>
-
-                                    </div>
-
+                                        <div><input type="hidden" name="trader_id" value="{{$ln}}"></div>
                                     <div class="form-group">
                                         <div class="form-group">
                                             <button class="btn btn-primary" type="submit">Save</button>
@@ -77,7 +55,6 @@
 
 @endsection
 @section('script')
-
     <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
 
     <script type="text/javascript">

@@ -12,9 +12,10 @@
 
     <div class="row">
         <div class="col-lg-12">
+            @include('part.trade_nav')
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Traders Table</h5>
+                    <h5>Suppliers Table</h5>
 
                 </div>
                 <div class="ibox-content">
@@ -22,8 +23,8 @@
                     <div class="table-responsive">
                         <!-- Expenditure Table -->
                         <div class="row">
-                            <div class="col-md-12 text-right">
-                                <a href="/trader/create" class="btn btn-primary btn-md" style=""><i class="fa fa-plus"></i>&nbsp;&nbsp;Trader Registration</a>
+                            <div class="col-md-12">
+                                <a href="/trader/create" class="btn btn-primary btn-md" style=""><i class="fa fa-plus"></i>&nbsp;&nbsp;Supplier Registration</a>
                             </div>
                         </div>
                         <div class="table-responsive">
@@ -31,7 +32,7 @@
 
                                 <thead>
                                 <tr>
-                                    <th>Trader_id</th>
+                                    <th>Supplier_id</th>
                                     <th>Name</th>
                                     <th>LastName</th>
                                     <th>Pone</th>

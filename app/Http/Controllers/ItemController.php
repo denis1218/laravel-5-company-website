@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Item;
+use App\Loan;
 use App\Trader;
 use Illuminate\Http\Request;
+use DB;
 
 class ItemController extends Controller
 {
@@ -16,7 +18,8 @@ class ItemController extends Controller
     public function index()
     {
         $items=Item::orderBy('id','asc')->paginate(10);
-        return view('item',compact('items'));
+        $total=DB::table('items')->sum('total_price');
+        return view('item',compact('items','total'));
     }
 
     /**
@@ -24,9 +27,9 @@ class ItemController extends Controller
      *
      * @return Trader[]|\Illuminate\Database\Eloquent\Collection
      */
-    public function create()
+    public function create($id)
     {
-        $trader=Trader::all();
+        $trader=Trader::find($id);
         return view('item_form',compact('trader'));
 //        return $trader;
     }
@@ -57,9 +60,16 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function show(Item $item)
+    public function show($id)
     {
-        //
+        $items=Trader::find($id)->item;
+        $loans=Trader::find($id)->loan;
+        $tid=Trader::find($id);
+        $t_id=$tid->id;
+        $itotal=$items->sum('total_price');
+        $ltotal=$loans->sum('paid');
+        $remaining=$itotal-$ltotal;
+        return view('loan_pay',compact('itotal','ltotal','items','loans','remaining','t_id'));
     }
 
     /**

@@ -15,10 +15,11 @@
             @include('part.trade_nav')
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Items Table</h5>
+                    <h5>Traders Table</h5>
 
                 </div>
                 <div class="ibox-content">
+
                     <!-- Table -->
                     <div class="table-responsive">
                         <div class="table-responsive">
@@ -26,40 +27,30 @@
 
                                 <thead>
                                 <tr>
-                                    <th>Item_id</th>
-                                    <th>Kind of Item</th>
-                                    <th>Quantity</th>
-                                    <th>Unit Price</th>
-                                    <th>Total Price</th>
-                                    <th>Item Supplier</th>
-                                    <th>Description</th>
-                                    {{--<th>Date</th>--}}
-                                    <th>Bill Number</th>
+                                    <th>Name</th>
+                                    <th>LastName</th>
+                                    <th>Pone</th>
+                                    <th>Name of Organization</th>
+                                    <th>Buying</th>
+                                    <th>LoanPayment</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($items as $item)
+                                @foreach($traders as $trader)
                                     <tr class="gradeX">
-                                        <td>{{$item->id}}</td>
-                                        <td>{{$item->kind}}</td>
-                                        <td>{{$item->quantity}}</td>
-                                        <td>{{$item->unit_price}}</td>
-                                        <td>{{$item->total_price}}</td>
-                                        <td>{{$item->trader->name}}</td>
-                                        <td>{{$item->description}}</td>
-{{--                                        <td>{{$item->created_at}}</td>--}}
-                                        <td>{{$item->bill_number}}</td>
+                                        <td>{{$trader->name}}</td>
+                                        <td>{{$trader->last_name}}</td>
+                                        <td>{{$trader->phone}}</td>
+                                        <td>{{$trader->organization}}</td>
+                                        <td><a href="/item2/{{$trader->id}}" class="btn btn-primary btn-xs">Buying</a></td>
+                                        <td><a href="/item/{{$trader->id}}" class="btn btn-primary btn-xs">LoanPaymetn</a></td>
                                     </tr>
                                 @endforeach
-                                    <tr>
-                                        <td colspan="4" class="text-center">Total</td>
-                                        <td >{{$total}}</td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
                         <!-- End of the table -->
-                        {{ $items->links() }}
+                        {{ $traders->links() }}
                     </div>
 
                 </div>

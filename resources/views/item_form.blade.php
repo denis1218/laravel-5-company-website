@@ -25,7 +25,6 @@
                             <div class="col-lg-5">
                                 <form id="form" method="post" action="/item">
                                     {{csrf_field()}}
-
                                     <div class="form-group">
                                         <label>kind</label>
                                         <div><input type="text" name="kind" class="form-control" placeholder="kind of item" required></div>
@@ -55,7 +54,7 @@
                                         <label>Bill Number</label>
                                         <div><input type="text" name="bill_number" class="form-control" placeholder="Enter Bill Numebr" ></div>
                                         @foreach($trader as $trd)
-                                        <div><input type="hidden" name="trader_id" value="{{$trd->id}}" ></div>
+                                        <div><input type="hidden" name="trader_id" value="{{$trader->id}}" ></div>
                                         @endforeach
                                     </div>
 

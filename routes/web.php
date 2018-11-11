@@ -254,8 +254,14 @@ Route::middleware('auth','reception')->group(function () {
 
 //    Traders Route
     Route::resource('/trader','TraderController');
+    Route::get('/common','TraderController@itemTrader');
 //    Item Route
     Route::resource('/item','ItemController');
+    Route::get('/item2/{id}','ItemController@create');
+
+//    Loan Routes
+    Route::resource('/loan','LoanController');
+    Route::get('/loan1/{id}','LoanController@create');
 
 });
 // End Route Reception
