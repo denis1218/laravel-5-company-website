@@ -90,7 +90,7 @@ class xrayincomeController extends Controller
         $xry = XRay::find($id);
         $xry->paid_amount = $request->paid_amount;
         $xry->save();
-        return redirect('xrey_income');
+        return view('print_pages.xincome_print',compact('xry'));
     }
 
     /**

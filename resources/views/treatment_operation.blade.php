@@ -175,6 +175,13 @@
                                 <br>
                                 <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
                                     <div class="col-md-8">
+                                        <div class="row" style="margin-top: -20px;">
+                                            <div class="col-xs-12">
+                                                @if($treats->paid_amount==0)
+                                                    <h2 style="color: red">This patient has not paid the treatment fee</h2>
+                                                @endif
+                                            </div>
+                                        </div>
                                         <div class="table-responsive">
                                         <table class="table table-striped " style="font-weight: bold; ">
 
@@ -188,7 +195,7 @@
                                                 <td>{{trans('file.treatment')}} :</td>
                                                 <td>{{ $treats->treatment }}</td>
                                                 <td>{{trans('file.paid')}} :</td>
-                                                <td>null</td>
+                                                <td>{{$treats->paid_amount}}</td>
                                             </tr>
                                             <tr>
                                                 <td>{{trans('file.teeth_number')}} :</td>
@@ -199,7 +206,7 @@
                                             </tr>
                                             <tr>
                                                 <td>{{trans('file.remaining')}} :</td>
-                                                <td>null</td>
+                                                <td>{{$treats->remaining_fee}}</td>
                                                 <td>Have Xray :</td>
                                                 <td>{{ $treats->have_xray }}</td>
                                             </tr>

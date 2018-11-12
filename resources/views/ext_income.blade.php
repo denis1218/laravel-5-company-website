@@ -95,7 +95,7 @@
                                 <label class="col-sm-1 control-label"></label>
                                 <div class="col-sm-10">
                                     <input type="hidden" name="toast" value="toast">
-                                    <button type="submit" class="btn btn-primary btn-md" style="margin-left:110px;">{{trans('file.save')}}
+                                    <button type="submit" class="btn btn-primary btn-md" style="margin-left:110px;">{{trans('file.save_and_print')}}
                                         &nbsp;<i class="fa fa-save"></i></button>
                                     <button type="reset" class="btn btn-white btn-md" value="Reset">{{trans('file.reset')}}</button>
                                 </div>

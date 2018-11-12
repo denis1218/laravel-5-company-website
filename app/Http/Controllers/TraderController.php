@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\TreatmentList;
+use App\Trader;
 use Illuminate\Http\Request;
-use Session;
-class TreatmentListController extends Controller
+
+class TraderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,14 @@ class TreatmentListController extends Controller
      */
     public function index()
     {
-        $treatment = TreatmentList::all();
-        return view('treatment_list',compact('treatment'));
+        $traders=Trader::orderBy('id','asc')->paginate(10);
+        return view('trader',compact('traders'));
+    }
+
+
+    public function itemTrader(){
+        $traders=Trader::orderBy('id','asc')->paginate(10);
+        return view('item_trade',compact('traders'));
     }
 
     /**
@@ -25,7 +31,7 @@ class TreatmentListController extends Controller
      */
     public function create()
     {
-        //
+        return view('trader_form');
     }
 
     /**
@@ -36,21 +42,24 @@ class TreatmentListController extends Controller
      */
     public function store(Request $request)
     {
-        $treatment = new TreatmentList();
-        $treatment->treatment = $request->treatment;
-        $treatment->estimated_fee = $request->estimated_fee;
-        $treatment->save();
-        Session::flash('success','inserted successfully');
-        return redirect()->back();
+        $trader=new Trader();
+        $trader->name=$request->name;
+        $trader->last_name=$request->last_name;
+        $trader->phone=$request->phone;
+        $trader->organization=$request->organization;
+        $trader->address=$request->address;
+        $trader->payment_process=$request->payment_process;
+        $trader->save();
+        return redirect('/trader');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\TreatmentList  $treatmentList
+     * @param  \App\Trader  $trader
      * @return \Illuminate\Http\Response
      */
-    public function show(TreatmentList $treatmentList)
+    public function show(Trader $trader)
     {
         //
     }
@@ -58,10 +67,10 @@ class TreatmentListController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\TreatmentList  $treatmentList
+     * @param  \App\Trader  $trader
      * @return \Illuminate\Http\Response
      */
-    public function edit(TreatmentList $treatmentList)
+    public function edit(Trader $trader)
     {
         //
     }
@@ -70,10 +79,10 @@ class TreatmentListController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\TreatmentList  $treatmentList
+     * @param  \App\Trader  $trader
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TreatmentList $treatmentList)
+    public function update(Request $request, Trader $trader)
     {
         //
     }
@@ -81,13 +90,11 @@ class TreatmentListController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\TreatmentList  $treatmentList
+     * @param  \App\Trader  $trader
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Trader $trader)
     {
-        $delete=TreatmentList::find($id);
-        $delete->delete();
-        return back();
+        //
     }
 }

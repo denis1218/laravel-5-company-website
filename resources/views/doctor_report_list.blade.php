@@ -33,7 +33,6 @@
                 <h5>{{trans('file.list_of_doctors')}}</h5>
             </div>
             <div class="ibox-content">
-                @include('layout.messages')
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="ibox float-e-margins">
