@@ -26,38 +26,36 @@
                         </div>
 
                         <div class="row" style="margin-top:30px;">
-                            <div class="col-sm-11">
+                            <div class="col-sm-10">
                                 <div class="table-responsive">
                                 <table class="table table-hover  no-margins">
                                     <thead>
                                     <tr class="bg-light">
+                                        <th>{{trans('file.id')}}</th>
                                         <th>{{trans('file.p_id')}}</th>
-                                        <th>{{trans('file.patient_name')}}</th>
-                                        <th>{{trans('file.medicine')}}</th>
-                                        <th>{{trans('file.pattern')}}</th>
-                                        <th>{{trans('file.days')}}</th>
-                                        <th>{{trans('file.print')}}</th>
+                                        <th>{{trans('file.name')}}</th>
+                                        <th>{{trans('file.last_name')}}</th>
+                                        <th>{{trans('file.add_prescription')}}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @if(count($prescription)>0)
+                                    @if(count($patient)>0)
 
-                                    @foreach($prescription as $pres)
+                                    @foreach($patient as $pat)
                                         <tr>
-                                            <td>{{$pres->patient->id_patient}}</td>
-                                            <td>{{$pres->patient->name}}</td>
-                                            <td>{{$pres->medicine}}</td>
-                                            <td>{{$pres->pattern}}</td>
-                                            <td>{{$pres->day}}</td>
+                                            <td>{{$pat->id}}</td>
+                                            <td>{{$pat->id_patient}}</td>
+                                            <td>{{$pat->name}}</td>
+                                            <td>{{$pat->lastname}}</td>
 
-                                            <td><a class="btn btn-xs btn-primary" href="prescription/{{$pres->id}}"><i
-                                                            class="fa fa-print"></i>
-                                                    {{trans('file.print')}}</a></td>
+                                            <td><a class="btn btn-xs btn-primary" href="/prescription/{{$pat->id}}"><i
+                                                            class="fa fa-plus"></i>
+                                                    {{trans('file.add_prescription')}}</a></td>
 
                                         </tr>
                                     @endforeach
                                         @else
-                                    <h3 style="color: red;" class="text-center">{{trans('file.there_is_no_pres')}}</h3>
+                                    <h3 style="color: red;" class="text-center">{{trans('file.there_is_no')}}</h3>
                                     @endif
                                     </tbody>
                                 </table>

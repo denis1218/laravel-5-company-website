@@ -10,17 +10,17 @@
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>{{trans('file.ddl')}}</h5>
+
             </div>
             <div class="ibox-content">
-
 
                 {{-- row for table --}}
                 <div class="row">
                     <div class="col-md-6">
-                        <form action="/dental-defect-list" method="post">
+                        <form action="/medicine_category" method="post">
                             <div class="form-group">
-                                <lable for="form-control">{{trans('file.dental_defect')}}</lable>
-                                <input type="text" class="form-control" name="dental_defect"/>
+                                <lable for="form-control">{{trans('file.medicine_category')}}</lable>
+                                <input type="text" class="form-control" name="name"/>
                             </div>
                             <div class="col-md-5">
                                 <button type="submit" class="btn btn-primary" name="submit"><i class="fa fa-save"></i>&nbsp;{{trans('file.save')}}</button>
@@ -30,40 +30,33 @@
                     </div>
                     <div class="col-md-6">
                         <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead>
+                            <table class="table table-striped table-bordered table-hover">
+                                <thead>
                                 <tr>
                                     <th>{{trans('file.id')}}</th>
-                                    <th>{{trans('file.dental_defect')}}</th>
-                                    <th>{{trans('file.delete')}}</th>
+                                    <th>{{trans('file.category')}}</th>
+
                                 <tr>
-                            </thead>
-                            <tbody>
-                                @foreach($dental as $dentals)
+                                </thead>
+                                <tbody>
+                                @foreach($category as $cat)
                                     <tr>
-                                        <td>{{ $dentals->id }}</td>
-                                        <td>{{ $dentals->dental_defect }}</td>
-                                        <td>
-                                            <form action="/dental-defect-list/{{ $dentals->id }}" method="post" id="formDelete">
-                                                @method('delete')
-                                                <a  class="btn btn-xs btn-danger demoDelete"  name="delete" href="/dental-defect-list/{{ $dentals->id }}">
-                                                    {{trans('file.delete')}}&nbsp;<i class="fa fa-trash"></i>
-                                                </a>
-                                            </form>
-                                        </td>
+                                        <td>{{ $cat->id }}</td>
+                                        <td>{{ $cat->name }}</td>
+
                                     </tr>
                                 @endforeach
-                            </tbody>
-                            <tfoot>
+                                </tbody>
+                                <tfoot>
                                 <tr>
                                     <th>{{trans('file.id')}}</th>
-                                    <th>{{trans('file.dental_defect')}}</th>
-                                    <th>{{trans('file.delete')}}</th>
+                                    <th>{{trans('file.category')}}</th>
+
                                 </tr>
-                            </tfoot>
-                        </table>
+                                </tfoot>
+                            </table>
                         </div>
-                        </div>
+                    </div>
                 </div>
 
             </div>

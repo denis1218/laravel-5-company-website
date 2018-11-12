@@ -17,7 +17,6 @@
                 <h5>{{trans('file.appointment_patient')}}</h5>
             </div>
             <div class="ibox-content">
-                @include('layout.messages')
                 {{--doctor's specific patients--}}
                 <div class="row">
                             <div class="col-md-3">
@@ -107,7 +106,7 @@
 
                                                 <div class="col-sm-5 pull-right">
                                                     <form action="/patient" method="get">
-                                                        <lable>Select patients by date</lable>
+                                                        <label>{{trans('file.spbd')}}</label>
                                                         <div class="input-group">
                                                         <span class="input-group-btn">
                                                         <button type="submit"

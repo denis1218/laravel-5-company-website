@@ -60,6 +60,8 @@ Route::middleware('auth','doctor')->group(function () {
     Route::get('/operation/{id}/edit/{patient_id}', 'TreatmentController@edit_treatment');
 
     Route::resource('/medicine','MedicineController');
+    Route::get('/medicine2','MedicineController@show');
+    Route::resource('medicine_category','MedicineCategoryController');
     //route for delet medicine
     Route::get('medicine2/{id}','MedicineController@delete');
     //route for prescription
@@ -260,6 +262,17 @@ Route::middleware('auth','reception')->group(function () {
     Route::get('/doctors/doctor_edit/{id}','DoctorController@doctor_edit');
 
     Route::post('/doctors/update/{id}','DoctorController@update_doctor');
+
+//    Traders Route
+    Route::resource('/trader','TraderController');
+    Route::get('/common','TraderController@itemTrader');
+//    Item Route
+    Route::resource('/item','ItemController');
+    Route::get('/item2/{id}','ItemController@create');
+
+//    Loan Routes
+    Route::resource('/loan','LoanController');
+    Route::get('/loan1/{id}','LoanController@create');
 
 
     Route::post('/patient_report/search','patientReportController@search_patient');

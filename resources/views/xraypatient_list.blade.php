@@ -74,7 +74,6 @@
 
                     <br>
                     <br>
-                    @include('layout.messages')
                     <div class="row" style="margin-right: 0px;margin-left:0PX;">
                         <div class="col-lg-12">
                             <div class="tabs-container">

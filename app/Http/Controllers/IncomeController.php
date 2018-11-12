@@ -87,7 +87,7 @@ class IncomeController extends Controller
         $incom->paid_amount = $incom->paid_amount + $request->paid_amount;
         $incom->remaining_fee = $incom->remaining_fee - $request->paid_amount;
         $incom->save();
-        return redirect('income');
+        return view('print_pages.pincome_print',compact('incom'));
     }
 
     /**

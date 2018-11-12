@@ -39,7 +39,7 @@ class DentalDefectListController extends Controller
         $dental = new DentalDefectList();
         $dental->dental_defect = $request->dental_defect;
         $dental->save();
-        return redirect()->back();
+        return redirect()->back()->with('success','inserted');
     }
 
     /**

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\TreatmentList;
+use App\MedicineCategory;
 use Illuminate\Http\Request;
-use Session;
-class TreatmentListController extends Controller
+
+class MedicineCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class TreatmentListController extends Controller
      */
     public function index()
     {
-        $treatment = TreatmentList::all();
-        return view('treatment_list',compact('treatment'));
+        $category = MedicineCategory::all();
+        return view('medicine_category',compact('category'));
     }
 
     /**
@@ -36,21 +36,19 @@ class TreatmentListController extends Controller
      */
     public function store(Request $request)
     {
-        $treatment = new TreatmentList();
-        $treatment->treatment = $request->treatment;
-        $treatment->estimated_fee = $request->estimated_fee;
-        $treatment->save();
-        Session::flash('success','inserted successfully');
-        return redirect()->back();
+        $category = new MedicineCategory();
+        $category->name = $request->name;
+        $category->save();
+        return redirect('medicine_category');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\TreatmentList  $treatmentList
+     * @param  \App\MedicineCategory  $medicineCategory
      * @return \Illuminate\Http\Response
      */
-    public function show(TreatmentList $treatmentList)
+    public function show(MedicineCategory $medicineCategory)
     {
         //
     }
@@ -58,10 +56,10 @@ class TreatmentListController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\TreatmentList  $treatmentList
+     * @param  \App\MedicineCategory  $medicineCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(TreatmentList $treatmentList)
+    public function edit(MedicineCategory $medicineCategory)
     {
         //
     }
@@ -70,10 +68,10 @@ class TreatmentListController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\TreatmentList  $treatmentList
+     * @param  \App\MedicineCategory  $medicineCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TreatmentList $treatmentList)
+    public function update(Request $request, MedicineCategory $medicineCategory)
     {
         //
     }
@@ -81,13 +79,11 @@ class TreatmentListController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\TreatmentList  $treatmentList
+     * @param  \App\MedicineCategory  $medicineCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(MedicineCategory $medicineCategory)
     {
-        $delete=TreatmentList::find($id);
-        $delete->delete();
-        return back();
+        //
     }
 }

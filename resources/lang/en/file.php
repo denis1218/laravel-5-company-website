@@ -79,6 +79,7 @@ return[
 //doctor operation page
 
     'patient_list'=>'Patient List',
+    'fnaud'=>'Find Next Appointment Using Date',
     'next_appointment_list'=>'Next Appointment List',
     'report_patient'=>'Patient Report',
     'patient_appointment_list'=>'Patient Appointment List',
@@ -148,6 +149,7 @@ return[
 
 // start of treatment operation
     'visited'=>'Visited',
+    'sapftd'=>'Show All Patient For Today',
     'first_visited_date'=>'First Visited Date',
     'past_history'=>'Past History',
     'present_history'=>'Present History',
@@ -387,8 +389,22 @@ return[
 //Start of Medicine
     'medicine_name'=>'Medicine Name',
     'medicine_unit'=>'Medicine Unit',
+    'medicine_buy'=>'Medicine Buy ',
+    'medicine_sale'=>'Medicine Sale ',
     'unit'=>'Unit',
     'name'=>'Name',
+    'buy'=>'Buy',
+    'sale'=>'Sale',
+    'for_whom'=>'Person',
+    'adult'=>'Adult',
+    'child'=>'Child',
+    'medicine_category'=>'Medicine Category',
+    'choose_medicine'=>'Choose Medicine',
+    'unit_stock'=>'Unit have in stock',
+    'unit_patient'=>'Unit For Patient',
+
+
+
 //    End of medicine
 //account
     'admin'=>'Admin',
@@ -535,7 +551,25 @@ return[
     'abouti_text'=>'In this page there is few information about our company and our activities.',
 
 
+//    MISSED TRANSES
+    'spbd'=>'Select Patient By Date',
 
+
+    //    Support Page
+    'ser'=>'Send Error Report',
+    'subject'=>'Subject',
+    'context'=>'Context',
+    'send'=>'Send',
+    'psdc'=>'Paypol Software Development Company',
+    'cu'=>'Contact Us',
+    'facebook'=>'Contact Us',
+    'yacti'=>'You are connected to the internet',
+    'yanc'=>'Your internet connection is down, please check your connectivity!',
+    'wyc'=>'Write Your Context',
+
+    //    ABOUT US
+    'apsc'=>'About Paypol Software Company',
+    'apsc_text'=>'PayPolSoftwareCompany provides leading-edge capabilities in software as a service, a platform that develop digital infrastructure as a service, and creating data for small, medium and large enterprises. PayPolSoftwareCompany, a provider of enterprise digitalization computing system, is empowering businesses of all sizes on their journey of digital transformation. ACCELERATING DIGITAL TRANSFORMATION IN AFGHAN’S MARKET With PayPolSoftware, enterprises can innovate faster, improve customer engagement, drive business-process efficiency and accelerate digital transformation with us.',
 
 
 ];

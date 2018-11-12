@@ -225,41 +225,49 @@
 
                                 <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
                                     <div class="col-md-8">
+                                        <div class="row" style="margin-top: -20px;">
+                                            <div class="col-xs-12">
+                                                @if($treats->paid_amount==0)
+                                                    <h2 style="color: red">This patient has not paid the treatment fee</h2>
+                                                @endif
+                                            </div>
+                                        </div>
                                         <div class="table-responsive">
-                                            <table class="table table-striped " style="font-weight: bold; ">
+                                        <table class="table table-striped " style="font-weight: bold; ">
 
-                                                <tr>
-                                                    <td>{{trans('file.dental_defect')}} :</td>
-                                                    <td>{{ $treats->dentaldefect }}</td>
-                                                    <td>{{trans('file.treatment_cost')}}:</td>
-                                                    <td>{{ $treats->estimated_fee }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>{{trans('file.treatment')}} :</td>
-                                                    <td>{{ $treats->treatment }}</td>
-                                                    <td>{{trans('file.paid')}} :</td>
-                                                    <td>null</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>{{trans('file.teeth_number')}} :</td>
-                                                    <td>{{ $treats->teeth_number }}</td>
-                                                    <td>{{trans('file.tooth_position')}} :</td>
-                                                    <td>{{ $treats->tooth_position }}</td>
+                                            <tr>
+                                                <td>{{trans('file.dental_defect')}} :</td>
+                                                <td>{{ $treats->dentaldefect }}</td>
+                                                <td>{{trans('file.treatment_cost')}}:</td>
+                                                <td>{{ $treats->estimated_fee }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>{{trans('file.treatment')}} :</td>
+                                                <td>{{ $treats->treatment }}</td>
+                                                <td>{{trans('file.paid')}} :</td>
+                                                <td>{{$treats->paid_amount}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>{{trans('file.teeth_number')}} :</td>
+                                                <td>{{ $treats->teeth_number }}</td>
+                                                <td>{{trans('file.tooth_position')}} :</td>
+                                                <td>{{ $treats->tooth_position }}</td>
 
-                                                </tr>
-                                                <tr>
-                                                    <td>{{trans('file.remaining')}} :</td>
-                                                    <td>null</td>
-                                                    <td>Have Xray :</td>
-                                                    <td>{{ $treats->have_xray }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>{{trans('file.date')}} :</td>
-                                                    <td>{{ $treats->created_at }}</td>
-                                                    <td> {{trans('file.treatment')}}</td>
-                                                    <td>{{ $treats->status_visits }}</td>
-                                                </tr>
-                                            </table>
+                                            </tr>
+                                            <tr>
+                                                <td>{{trans('file.remaining')}} :</td>
+                                                <td>{{$treats->remaining_fee}}</td>
+                                                <td>Have Xray :</td>
+                                                <td>{{ $treats->have_xray }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>{{trans('file.date')}} :</td>
+                                                <td>{{ $treats->created_at }}</td>
+                                                <td> {{trans('file.treatment')}}</td>
+                                                <td>{{ $treats->status_visits }}</td>
+                                            </tr>
+                                        </table>
+
                                         </div>
                                         <div>
                                             <div><p><strong>{{trans('file.description')}}
