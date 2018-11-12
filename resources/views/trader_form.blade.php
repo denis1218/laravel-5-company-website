@@ -13,7 +13,7 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Supplier Registration</h5>
+                        <h5>{{trans('file.sr')}}</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -27,40 +27,40 @@
                                     {{csrf_field()}}
 
                                     <div class="form-group">
-                                        <label>Name</label>
-                                        <div><input type="text" name="name" class="form-control" placeholder="Enter the name here" required></div>
+                                        <label>{{trans('file.first_name')}}</label>
+                                        <div><input type="text" name="name" class="form-control" placeholder="{{trans('file.first_name')}}" required></div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>LastName</label>
-                                        <div><input type="text" name="last_name" class="form-control" placeholder="Enter LastName" required></div>
+                                        <label>{{trans('file.last_name')}}</label>
+                                        <div><input type="text" name="last_name" class="form-control" placeholder="{{trans('file.last_name')}}" required></div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Phone Number</label>
-                                        <div><input type="number" name="phone" class="form-control" placeholder="Enter Phone#" required></div>
+                                        <label>{{trans('file.phone')}}</label>
+                                        <div><input type="number" name="phone" class="form-control" placeholder="{{trans('file.phone')}}" required></div>
 
                                     </div>
                                     <div class="form-group">
-                                        <label>Name of Organization</label>
-                                        <div><input type="text" name="organization" class="form-control" placeholder="Organization" required></div>
+                                        <label>{{trans('file.org')}}</label>
+                                        <div><input type="text" name="organization" class="form-control" placeholder="{{trans('file.org')}}" required></div>
 
                                     </div>
                                     <div class="form-group">
-                                        <label>Address</label>
-                                        <div><input type="text" name="address" class="form-control" placeholder="Trader Address" required></div>
+                                        <label>{{trans('file.address')}}</label>
+                                        <div><input type="text" name="address" class="form-control" placeholder="{{trans('file.address')}}" required></div>
 
                                     </div>
                                     <div class="form-group">
-                                        <label>Payment Process</label>
-                                        <div><input type="text" name="payment_process" class="form-control" placeholder="The process of payment" required></div>
+                                        <label>{{trans('file.pp')}}</label>
+                                        <div><input type="text" name="payment_process" class="form-control" placeholder="{{trans('file.pp')}}" required></div>
 
                                     </div>
 
                                     <div class="form-group">
                                         <div class="form-group">
-                                            <button class="btn btn-primary" type="submit">Save</button>
-                                            <button class="btn btn-white" type="reset">Reset</button>
+                                            <button class="btn btn-primary" type="submit">{{trans('file.save')}}</button>
+                                            <button class="btn btn-white" type="reset">{{trans('file.reset')}}</button>
                                         </div>
                                     </div>
                                 </form>

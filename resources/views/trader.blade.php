@@ -15,7 +15,7 @@
             @include('part.trade_nav')
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Suppliers Table</h5>
+                    <h5>{{trans('file.st')}}</h5>
 
                 </div>
                 <div class="ibox-content">
@@ -24,7 +24,7 @@
                         <!-- Expenditure Table -->
                         <div class="row">
                             <div class="col-md-12">
-                                <a href="/trader/create" class="btn btn-primary btn-md" style=""><i class="fa fa-plus"></i>&nbsp;&nbsp;Supplier Registration</a>
+                                <a href="/trader/create" class="btn btn-primary btn-md" style=""><i class="fa fa-plus"></i>&nbsp;&nbsp;{{trans('file.sr')}}</a>
                             </div>
                         </div>
                         <div class="table-responsive">
@@ -32,13 +32,13 @@
 
                                 <thead>
                                 <tr>
-                                    <th>Supplier_id</th>
-                                    <th>Name</th>
-                                    <th>LastName</th>
-                                    <th>Pone</th>
-                                    <th>Organization</th>
-                                    <th>Address</th>
-                                    <th>Payment Process</th>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.first_name')}}</th>
+                                    <th>{{trans('file.last_name')}}</th>
+                                    <th>{{trans('file.phone')}}</th>
+                                    <th>{{trans('file.org')}}</th>
+                                    <th>{{trans('file.address')}}</th>
+                                    <th>{{trans('file.pp')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>

@@ -15,7 +15,7 @@
             @include('part.trade_nav')
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Items Table</h5>
+                    <h5>{{trans('file.it')}}</h5>
 
                 </div>
                 <div class="ibox-content">
@@ -26,15 +26,15 @@
 
                                 <thead>
                                 <tr>
-                                    <th>Item_id</th>
-                                    <th>Kind of Item</th>
-                                    <th>Quantity</th>
-                                    <th>Unit Price</th>
-                                    <th>Total Price</th>
-                                    <th>Item Supplier</th>
-                                    <th>Description</th>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.item')}}</th>
+                                    <th>{{trans('file.quantity')}}</th>
+                                    <th>{{trans('file.unit_price')}}</th>
+                                    <th>{{trans('file.total_price')}}</th>
+                                    <th>{{trans('file.supplier')}}</th>
+                                    <th>{{trans('file.description')}}</th>
                                     {{--<th>Date</th>--}}
-                                    <th>Bill Number</th>
+                                    <th>{{trans('file.bnumber')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -52,7 +52,7 @@
                                     </tr>
                                 @endforeach
                                     <tr>
-                                        <td colspan="4" class="text-center">Total</td>
+                                        <td colspan="4" class="text-center">{{trans('file.total')}}</td>
                                         <td >{{$total}}</td>
                                     </tr>
                                 </tbody>

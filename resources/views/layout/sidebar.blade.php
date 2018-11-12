@@ -59,18 +59,18 @@
                     </li>
                     {{--traders--}}
                     <li>
-                        <a href=""> <i class="fa fa-truck"></i>Suppliers
+                        <a href=""> <i class="fa fa-truck"></i>{{trans('file.supplier')}}
                             <span class="fa fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/trader"><i
-                                            class="fa fa-truck"></i>&nbsp;&nbsp;Supplier
+                                            class="fa fa-truck"></i>&nbsp;&nbsp;{{trans('file.supplier')}}
                                 </a>
                             </li>
                             <li><a href="/item"><i
-                                            class="fa fa-gift"></i>Items</a>
+                                            class="fa fa-gift"></i>{{trans('file.item')}}</a>
                             </li>
                             <li><a href="/common"><i
-                                            class="fa fa-shopping-cart"></i>Buying</a>
+                                            class="fa fa-shopping-cart"></i>{{trans('file.purchase')}}</a>
                             </li>
                         </ul>
                     </li>
@@ -143,24 +143,24 @@
                     </li>
                     <li>
                         <a href="setting"><i class="fa fa-trash"></i> <span
-                                    class="nav-label">Restore Deleted</span><span
+                                    class="nav-label">{{trans('file.rd')}}</span><span
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li>
                                 <a href="/user-deleted"><i class="fa fa-user"></i> <span
-                                            class="nav-label">Users</span></a>
+                                            class="nav-label">{{trans('file.users')}}</span></a>
                             </li>
                             <li>
                                 <a href="/patient-deleted"><i class="fa fa-user-secret"></i> <span
-                                            class="nav-label">Patients</span></a>
+                                            class="nav-label">{{trans('file.patients')}}</span></a>
                             </li>
                             <li>
                                 <a href="/doctor-deleted"><i class="fa fa-user-md"></i> <span
-                                            class="nav-label">Doctors</span></a>
+                                            class="nav-label">{{trans('file.doctors')}}</span></a>
                             </li>
                             <li>
                                 <a href="/expense-deleted"><i class="fa fa-shopping-cart"></i> <span
-                                            class="nav-label">Expense</span></a>
+                                            class="nav-label">{{trans('file.expenses')}}</span></a>
                             </li>
                         </ul>
                     </li>

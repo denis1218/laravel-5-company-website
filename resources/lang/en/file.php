@@ -35,12 +35,19 @@ return[
     'help'=>'Help',
     'update_software'=>'Update Software',
     'about_us'=>'About us',
+    'supplier'=>'Suppliers',
+    'item'=>'Items',
+    'purchase'=>'Purchase',
+    'rd'=>'Restore Delete',
+    'users'=>'Users',
+    'patients'=>'Patients',
 //    end of side bar words
 
 //top nav
     'welcome_to'=>'Welcome To',
     'todayDate'=> Carbon\Carbon::now()->format('l d F Y'),
     'change'=>'change',
+    'pl'=>'Paid Loan',
 
 
 //dashboard page
@@ -74,6 +81,7 @@ return[
     'receiver'=>'Receiver',
     'firstname'=>'Firstname',
     'lastname'=>'Lastname',
+
 //End of dashboard page
 
 //doctor operation page
@@ -570,6 +578,21 @@ return[
     //    ABOUT US
     'apsc'=>'About Paypol Software Company',
     'apsc_text'=>'PayPolSoftwareCompany provides leading-edge capabilities in software as a service, a platform that develop digital infrastructure as a service, and creating data for small, medium and large enterprises. PayPolSoftwareCompany, a provider of enterprise digitalization computing system, is empowering businesses of all sizes on their journey of digital transformation. ACCELERATING DIGITAL TRANSFORMATION IN AFGHAN’S MARKET With PayPolSoftware, enterprises can innovate faster, improve customer engagement, drive business-process efficiency and accelerate digital transformation with us.',
+
+//    SUPPLIER
+    'st'=>'Supplier Table',
+    'it'=>'Item Table',
+    'org'=>'Organization',
+    'pp'=>'PaymentProcess',
+    'sr'=>'Supplier Registration',
+    'lp'=>'Loan Payment',
+    'quantity'=>'Quantity',
+    'total_price'=>'Total Price',
+    'bnumber'=>'Bill Number',
+    'slp'=>'Supplier Loan Payment',
+    'ticost'=>'Total Item Cost',
+    'tpamount'=>'Total Paid Amount',
+    ''=>'',
 
 
 ];
