@@ -18,6 +18,7 @@ class CreateTreatmentListsTable extends Migration
             $table->string('treatment');
             $table->integer('estimated_fee');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -10,10 +10,15 @@
 
                     </div>
                     <div class="ibox-content">
-
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <a href="/medicine2" class="btn btn-primary" style="margin-left: 30px"><i class="fa fa-list">&nbsp;&nbsp;Medicine List</i></a>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
                         <!-- form -->
                         <div class="row">
-                            <div class="col-lg-5">
+                            <div class="col-lg-5" style="margin-left: 30px">
                                 <form method="post" action="/medicine">
                                     {{csrf_field()}}
 
@@ -26,14 +31,49 @@
                                     <div class="form-group">
                                         <label>{{trans('file.medicine_name')}}</label>
                                         <div><input type="text" name="name" class="form-control"
-                                                    placeholder="{{trans('file.medicine_name')}}"></div>
+                                                    placeholder="{{trans('file.medicine_name')}}" required></div>
                                     </div>
 
                                     <div class="form-group">
                                         <label>{{trans('file.unit')}}</label>
                                         <div>
-                                            <input type="number" name="unit" class="form-control"
+                                            <input type="number" name="unit" class="form-control" required
                                                    placeholder="{{trans('file.medicine_unit')}}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>{{trans('file.category')}}</label>
+                                        <div>
+                                            <select name="category" id="" class="form-control" required>
+                                                <option value="">Select Category</option>
+                                                @foreach($category as $cat)
+                                                <option value="{{$cat->name}}">{{$cat->name}}</option>
+                                                @endforeach
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>{{trans('file.for_whom')}}</label>
+                                        <div>
+                                            <select name="person" id="" class="form-control" required="">
+                                                <option value="Adult">Adult</option>
+                                                <option value="Child">Child</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>{{trans('file.buy')}}</label>
+                                        <div>
+                                            <input type="number" name="buy" class="form-control"
+                                                   placeholder="{{trans('file.medicine_buy')}}" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>{{trans('file.sale')}}</label>
+                                        <div>
+                                            <input type="number" name="sale" class="form-control"
+                                                   placeholder="{{trans('file.medicine_sale')}}" required="">
                                         </div>
                                     </div>
 
@@ -48,40 +88,7 @@
 
                         </div>
 
-                        <div class="hr-line-dashed"></div>
-                        <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover" id="editable"
-                               style="margin-left:30px;width:95%;">
-                            <thead>
-                            <tr>
-                                <th>{{trans('file.id')}}</th>
-                                <th>{{trans('file.name')}}</th>
-                                <th>{{trans('file.unit')}}</th>
-                                <th>{{trans('file.edit')}}</th>
-                                <th>{{trans('file.delete')}}</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($medicine as $medice)
-                                <tr class="gradeX">
-                                    <td>{{$medice->id}}</td>
-                                    <td>{{$medice->name}}</td>
-                                    <td>{{$medice->unit}}</td>
-                                    <td>
-                                        <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                                data-target="#e{{$medice->id}}">&nbsp;{{trans('file.edit')}}
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-xs btn-danger fa fa-remove" href="/medicine2/{{$medice->id}}">&nbsp;{{trans('file.delete')}}
-                                        </a>
-                                    </td>
 
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                        </div>
 
                     </div>
 

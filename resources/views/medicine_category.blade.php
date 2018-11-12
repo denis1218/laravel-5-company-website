@@ -9,17 +9,18 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>{{trans('file.expense_category')}}</h5>
+                <h5>{{trans('file.ddl')}}</h5>
+
             </div>
             <div class="ibox-content">
 
                 {{-- row for table --}}
                 <div class="row">
                     <div class="col-md-6">
-                        <form action="/expense-category" method="post">
+                        <form action="/medicine_category" method="post">
                             <div class="form-group">
-                                <lable for="form-control">{{trans('file.category')}}</lable>
-                                <input type="text" class="form-control" name="category"/>
+                                <lable for="form-control">{{trans('file.medicine_category')}}</lable>
+                                <input type="text" class="form-control" name="name"/>
                             </div>
                             <div class="col-md-5">
                                 <button type="submit" class="btn btn-primary" name="submit"><i class="fa fa-save"></i>&nbsp;{{trans('file.save')}}</button>
@@ -28,42 +29,34 @@
                         </form>
                     </div>
                     <div class="col-md-6">
-                        <h4>Note : You Can not delete or edit Expense Category</h4>
                         <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead>
+                            <table class="table table-striped table-bordered table-hover">
+                                <thead>
                                 <tr>
                                     <th>{{trans('file.id')}}</th>
                                     <th>{{trans('file.category')}}</th>
-                                    {{--<th>{{trans('file.delete')}}</th>--}}
+
                                 <tr>
-                            </thead>
-                            <tbody>
-                                @foreach($category as $categories)
+                                </thead>
+                                <tbody>
+                                @foreach($category as $cat)
                                     <tr>
-                                        <td>{{ $categories->id }}</td>
-                                        <td>{{ $categories->category }}</td>
-                                        {{--<td>--}}
-                                            {{--<form action="/expense-category/{{ $categories->id }}" method="post" id="formDelete">--}}
-                                                {{--@method('delete')--}}
-                                                {{--<a  class="btn btn-xs btn-danger demoDelete"  name="delete" href="/expense-category/{{ $categories->id }}">--}}
-                                                    {{--delete--}}
-                                                {{--</a>--}}
-                                            {{--</form>--}}
-                                        {{--</td>--}}
+                                        <td>{{ $cat->id }}</td>
+                                        <td>{{ $cat->name }}</td>
+
                                     </tr>
                                 @endforeach
-                            </tbody>
-                            <tfoot>
+                                </tbody>
+                                <tfoot>
                                 <tr>
                                     <th>{{trans('file.id')}}</th>
                                     <th>{{trans('file.category')}}</th>
-{{--                                    <th>{{trans('file.delete')}}</th>--}}
+
                                 </tr>
-                            </tfoot>
-                        </table>
+                                </tfoot>
+                            </table>
                         </div>
-                        </div>
+                    </div>
                 </div>
 
             </div>

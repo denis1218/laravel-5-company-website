@@ -17,6 +17,7 @@ class CreateDoctorDepartmentsTable extends Migration
             $table->increments('id');
             $table->string('department');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
