@@ -39,6 +39,8 @@
                                     <th>{{trans('file.org')}}</th>
                                     <th>{{trans('file.address')}}</th>
                                     <th>{{trans('file.pp')}}</th>
+                                    <th>{{trans('file.edit')}}</th>
+                                    <th>{{trans('file.delete')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -51,6 +53,16 @@
                                             <td>{{$trader->organization}}</td>
                                             <td>{{$trader->address}}</td>
                                             <td>{{$trader->payment_process}}</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-success" href="/trader/{{ $trader->id }}/edit">{{trans('file.edit')}} &nbsp;
+                                                    <i class="fa fa-edit"></i></a>
+                                            </td>
+                                            <td>
+                                                <form id="del" action="/trader/{{$trader->id}}" method="post" id="myForm">
+                                                    @method('delete')
+                                                    <button class="btn btn-xs btn-danger demo3" >{{trans('file.delete')}} &nbsp;<i class="fa fa-remove"></i></button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

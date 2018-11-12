@@ -273,10 +273,7 @@ Route::middleware('auth','reception')->group(function () {
 //    Loan Routes
     Route::resource('/loan','LoanController');
     Route::get('/loan1/{id}','LoanController@create');
-<<<<<<< HEAD
-=======
 
->>>>>>> 03a9b396024cfaaca87473e04ec83be824cc9c3b
 
     Route::post('/patient_report/search','patientReportController@search_patient');
 

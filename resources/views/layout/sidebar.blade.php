@@ -63,7 +63,7 @@
                             <span class="fa fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/trader"><i
-                                            class="fa fa-truck"></i>&nbsp;&nbsp;{{trans('file.supplier')}}
+                                            class="fa fa-truck"></i>{{trans('file.supplier')}}
                                 </a>
                             </li>
                             <li><a href="/item"><i
@@ -268,6 +268,23 @@
                                 </a>
                             </li>
 
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href=""> <i class="fa fa-truck"></i>{{trans('file.supplier')}}
+                            <span class="fa fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="/trader"><i
+                                            class="fa fa-truck"></i>{{trans('file.supplier')}}
+                                </a>
+                            </li>
+                            <li><a href="/item"><i
+                                            class="fa fa-gift"></i>{{trans('file.item')}}</a>
+                            </li>
+                            <li><a href="/common"><i
+                                            class="fa fa-shopping-cart"></i>{{trans('file.purchase')}}</a>
+                            </li>
                         </ul>
                     </li>
 

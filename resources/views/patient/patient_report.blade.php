@@ -10,25 +10,13 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-<<<<<<< HEAD
                 <h5>{{trans('file.patient_report_table')}}&nbsp;<i class="fa fa-info"></i></h5>
-=======
-
-                <h5>{{trans('file.patient_report_table')}}&nbsp;<i class="fa fa-info"></i></h5>
-
-
->>>>>>> 03a9b396024cfaaca87473e04ec83be824cc9c3b
             </div>
             <div class="ibox-content" id="divone">
                 <div class="container">
                   <div class="row">
                         {{--first doctor--}}
                         <div class="row" style="">
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 03a9b396024cfaaca87473e04ec83be824cc9c3b
                             <div class="col-sm-12">
                               <form action="/patient_report/search" method="post">
                                 <div class="input-group">
@@ -39,27 +27,14 @@
                                                        id="search" name="search"
                                                        class="input-sm form-control">
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 03a9b396024cfaaca87473e04ec83be824cc9c3b
                                 </div>
                               </form>
                             </div>
                         </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 03a9b396024cfaaca87473e04ec83be824cc9c3b
-
                         <div class="row" style="margin-top:30px;margin-right: 90px">
 
                             <div class="col-md-12 ">
                                 <div class="table-responsive">
-<<<<<<< HEAD
-=======
-
->>>>>>> 03a9b396024cfaaca87473e04ec83be824cc9c3b
                                 <table class="table table-hover  no-margins" id="table_all_patient">
                                     <thead>
                                     <tr class="bg-light">
@@ -117,10 +92,6 @@
                                     @endif
                                     </tbody>
                                 </table>
-<<<<<<< HEAD
-=======
-
->>>>>>> 03a9b396024cfaaca87473e04ec83be824cc9c3b
                                 {{ $all_patient->links() }}
                                 </div>
                             </div>

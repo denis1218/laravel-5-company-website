@@ -33,8 +33,9 @@
                                     <th>{{trans('file.total_price')}}</th>
                                     <th>{{trans('file.supplier')}}</th>
                                     <th>{{trans('file.description')}}</th>
-                                    {{--<th>Date</th>--}}
                                     <th>{{trans('file.bnumber')}}</th>
+                                    <th>{{trans('file.edit')}}</th>
+                                    <th>{{trans('file.delete')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -47,8 +48,17 @@
                                         <td>{{$item->total_price}}</td>
                                         <td>{{$item->trader->name}}</td>
                                         <td>{{$item->description}}</td>
-{{--                                        <td>{{$item->created_at}}</td>--}}
                                         <td>{{$item->bill_number}}</td>
+                                        <td>
+                                            <a class="btn btn-xs btn-success" href="/item/{{ $item->id }}/edit">{{trans('file.edit')}} &nbsp;
+                                                <i class="fa fa-edit"></i></a>
+                                        </td>
+                                        <td>
+                                            <form id="del" action="/item/{{$item->id}}" method="post" id="myForm">
+                                                @method('delete')
+                                                <button class="btn btn-xs btn-danger demo3" >{{trans('file.delete')}} &nbsp;<i class="fa fa-remove"></i></button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                                     <tr>
