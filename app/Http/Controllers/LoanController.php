@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\TreatmentList;
+use DB;
+use App\Loan;
+use App\Trader;
 use Illuminate\Http\Request;
-use Session;
-class TreatmentListController extends Controller
+
+class LoanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,9 @@ class TreatmentListController extends Controller
      */
     public function index()
     {
-        $treatment = TreatmentList::all();
-        return view('treatment_list',compact('treatment'));
+        $items=Loan::orderBy('id','asc')->paginate(10);
+        $ptotal=DB::table('loans')->sum('paid');
+        return view('cpaid',compact('items','ptotal'));
     }
 
     /**
@@ -23,9 +25,16 @@ class TreatmentListController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $loan=Trader::find($id);
+        $ln=$loan->id;
+        $items=Trader::find($id)->item;
+        $loans=Trader::find($id)->loan;
+        $itotal=$items->sum('total_price');
+        $ltotal=$loans->sum('paid');
+        $rem=$itotal-$ltotal;
+        return view('loan_form',compact('ln','rem'));
     }
 
     /**
@@ -36,21 +45,21 @@ class TreatmentListController extends Controller
      */
     public function store(Request $request)
     {
-        $treatment = new TreatmentList();
-        $treatment->treatment = $request->treatment;
-        $treatment->estimated_fee = $request->estimated_fee;
-        $treatment->save();
-        Session::flash('success','inserted successfully');
-        return redirect()->back();
+        $Lon=new Loan();
+        $Lon->paid=$request->paid;
+        $Lon->receiver=$request->receiver;
+        $Lon->trader_id=$request->trader_id;
+        $Lon->save();
+        return redirect('/item');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\TreatmentList  $treatmentList
+     * @param  \App\Loan  $loan
      * @return \Illuminate\Http\Response
      */
-    public function show(TreatmentList $treatmentList)
+    public function show(Loan $loan)
     {
         //
     }
@@ -58,10 +67,10 @@ class TreatmentListController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\TreatmentList  $treatmentList
+     * @param  \App\Loan  $loan
      * @return \Illuminate\Http\Response
      */
-    public function edit(TreatmentList $treatmentList)
+    public function edit(Loan $loan)
     {
         //
     }
@@ -70,10 +79,10 @@ class TreatmentListController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\TreatmentList  $treatmentList
+     * @param  \App\Loan  $loan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TreatmentList $treatmentList)
+    public function update(Request $request, Loan $loan)
     {
         //
     }
@@ -81,13 +90,11 @@ class TreatmentListController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\TreatmentList  $treatmentList
+     * @param  \App\Loan  $loan
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Loan $loan)
     {
-        $delete=TreatmentList::find($id);
-        $delete->delete();
-        return back();
+        //
     }
 }
