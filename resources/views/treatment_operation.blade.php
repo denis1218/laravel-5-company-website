@@ -15,7 +15,7 @@
         }
 
         /*image gallery*/
-        .image-checkbox {
+        .image-radio {
             cursor: pointer;
             box-sizing: border-box;
             -moz-box-sizing: border-box;
@@ -25,12 +25,13 @@
             outline: 0;
         }
 
-        .image-checkbox input[type="checkbox"] {
+        .image-radio input[type="radio"] {
             display: none;
         }
 
-        .image-checkbox-checked {
+        .image-radio-checked {
             background-color: #ff4542;
+            border-radius: 15px;
         }
 
         ul > li {
@@ -218,55 +219,51 @@
                                     <h3 style="font-weight: bold"></h3>
                                 </div>
                                 <br>
-
-
-
-
-
                                 <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
                                     <div class="col-md-8">
                                         <div class="row" style="margin-top: -20px;">
                                             <div class="col-xs-12">
                                                 @if($treats->paid_amount==0)
-                                                    <h2 style="color: red">This patient has not paid the treatment fee</h2>
+                                                    <h2 style="color: red">This patient has not paid the treatment
+                                                        fee</h2>
                                                 @endif
                                             </div>
                                         </div>
                                         <div class="table-responsive">
-                                        <table class="table table-striped " style="font-weight: bold; ">
+                                            <table class="table table-striped " style="font-weight: bold; ">
 
-                                            <tr>
-                                                <td>{{trans('file.dental_defect')}} :</td>
-                                                <td>{{ $treats->dentaldefect }}</td>
-                                                <td>{{trans('file.treatment_cost')}}:</td>
-                                                <td>{{ $treats->estimated_fee }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>{{trans('file.treatment')}} :</td>
-                                                <td>{{ $treats->treatment }}</td>
-                                                <td>{{trans('file.paid')}} :</td>
-                                                <td>{{$treats->paid_amount}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>{{trans('file.teeth_number')}} :</td>
-                                                <td>{{ $treats->teeth_number }}</td>
-                                                <td>{{trans('file.tooth_position')}} :</td>
-                                                <td>{{ $treats->tooth_position }}</td>
+                                                <tr>
+                                                    <td>{{trans('file.dental_defect')}} :</td>
+                                                    <td>{{ $treats->dentaldefect }}</td>
+                                                    <td>{{trans('file.treatment_cost')}}:</td>
+                                                    <td>{{ $treats->estimated_fee }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{trans('file.treatment')}} :</td>
+                                                    <td>{{ $treats->treatment }}</td>
+                                                    <td>{{trans('file.paid')}} :</td>
+                                                    <td>{{$treats->paid_amount}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{trans('file.teeth_number')}} :</td>
+                                                    <td>{{ $treats->teeth_number }}</td>
+                                                    <td>{{trans('file.tooth_position')}} :</td>
+                                                    <td>{{ $treats->tooth_position }}</td>
 
-                                            </tr>
-                                            <tr>
-                                                <td>{{trans('file.remaining')}} :</td>
-                                                <td>{{$treats->remaining_fee}}</td>
-                                                <td>Have Xray :</td>
-                                                <td>{{ $treats->have_xray }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>{{trans('file.date')}} :</td>
-                                                <td>{{ $treats->created_at }}</td>
-                                                <td> {{trans('file.treatment')}}</td>
-                                                <td>{{ $treats->status_visits }}</td>
-                                            </tr>
-                                        </table>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{trans('file.remaining')}} :</td>
+                                                    <td>{{$treats->remaining_fee}}</td>
+                                                    <td>Have Xray :</td>
+                                                    <td>{{ $treats->have_xray }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{trans('file.date')}} :</td>
+                                                    <td>{{ $treats->created_at }}</td>
+                                                    <td> {{trans('file.treatment')}}</td>
+                                                    <td>{{ $treats->status_visits }}</td>
+                                                </tr>
+                                            </table>
 
                                         </div>
                                         <div>
@@ -297,142 +294,73 @@
                                  style=" padding-left:20px; border-radius: 5px;margin-left:0px;margin-right: 10px;">
                                 <h3 style="font-weight: bold;">{{trans('file.present_history')}}</h3>
                             </div>
-                            <br>
 
 
+                            {{-- Image Tooths --}}
                             <div class="row">
                                 <div class="col-md-6 col-xs-6">
                                     <ul>
                                         <li>
-                                            <label class="image-checkbox">
+                                            <label class="image-radio">
                                                 <img class="img-responsive"
                                                      src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="1"/>
+                                                <input type="radio" name="image" value="1"/>
                                                 <i class="fa fa-check hidden"></i>
                                             </label>
                                         </li>
                                         <li>
-                                            <label class="image-checkbox">
+                                            <label class="image-radio">
                                                 <img class="img-responsive"
                                                      src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="2"/>
+                                                <input type="radio" name="image" value="2"/>
                                                 <i class="fa fa-check hidden"></i>
                                             </label>
                                         </li>
                                         <li>
-                                            <label class="image-checkbox">
+                                            <label class="image-radio">
                                                 <img class="img-responsive"
                                                      src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="3"/>
+                                                <input type="radio" name="image" value="3"/>
                                                 <i class="fa fa-check hidden"></i>
                                             </label>
                                         </li>
                                         <li>
-                                            <label class="image-checkbox">
+                                            <label class="image-radio">
                                                 <img class="img-responsive"
                                                      src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="4"/>
+                                                <input type="radio" name="image" value="4"/>
                                                 <i class="fa fa-check hidden"></i>
                                             </label>
                                         </li>
                                         <li>
-                                            <label class="image-checkbox">
+                                            <label class="image-radio">
                                                 <img class="img-responsive"
                                                      src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="5"/>
+                                                <input type="radio" name="image" value="5"/>
                                                 <i class="fa fa-check hidden"></i>
                                             </label>
                                         </li>
                                         <li>
-                                            <label class="image-checkbox">
+                                            <label class="image-radio">
                                                 <img class="img-responsive"
                                                      src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="6"/>
+                                                <input type="radio" name="image" value="6"/>
                                                 <i class="fa fa-check hidden"></i>
                                             </label>
                                         </li>
                                         <li>
-                                            <label class="image-checkbox">
+                                            <label class="image-radio">
                                                 <img class="img-responsive"
                                                      src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="7"/>
+                                                <input type="radio" name="image" value="7"/>
                                                 <i class="fa fa-check hidden"></i>
                                             </label>
                                         </li>
                                         <li>
-                                            <label class="image-checkbox">
+                                            <label class="image-radio">
                                                 <img class="img-responsive"
                                                      src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="8"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-xs-6">
-                                    <ul>
-
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="9"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="10"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="11"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="12"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="13"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="14"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="15"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="16"/>
+                                                <input type="radio" name="image" value="8"/>
                                                 <i class="fa fa-check hidden"></i>
                                             </label>
                                         </li>
@@ -440,150 +368,32 @@
                                 </div>
                             </div>
 
+                            {{-- Radio button tooth position --}}
                             <div class="row">
-                                <div class="col-md-6 col-xs-6">
-                                    <ul>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="17"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="18"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="19"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="20"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="21"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="22"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="23"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="24"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-xs-6">
-                                    <ul>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="25"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="26"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="27"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="28"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="29"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="30"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="31"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="image-checkbox">
-                                                <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
-                                                <input type="checkbox" name="image[]" value="32"/>
-                                                <i class="fa fa-check hidden"></i>
-                                            </label>
-                                        </li>
-                                    </ul>
+                                <div class="col-md-3">
+                                    <table class="table ">
+                                        <tr>
+                                            <td><label>Upper left &nbsp;<input type="radio" name="tooth_position" class="tooth_position"
+                                                                               value="Upper left"/></label></td>
+                                            <td> <label>Upper right &nbsp;<input type="radio" name="tooth_position" class="tooth_position"
+                                                                                value="Upper right"/></label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Lower left &nbsp;<input type="radio" name="tooth_position" class="tooth_position"
+                                                                                                     value="Lower left"/></label></td>
+                                            <td><label>Lower right &nbsp;<input type="radio" name="tooth_position" class="tooth_position"
+                                                                                                      value="Lower right"/></label></td>
+                                        </tr>
+                                    </table>
                                 </div>
                             </div>
+
 
                             <a class="btn btn-primary" data-toggle="modal" id="xray_btn">XRay</a>
 
 
                             <form id="form" action="/operation" method="POST">
-                                <div class="row">
+                                <div class="row" style="margin-top: 15px">
                                     <input type="checkbox" id="next" name="have_xray" value="yes"
                                            style="visibility:hidden;">
                                     <input type="text" value="" id="tooth_number_3" hidden name="teeth_number"/>
@@ -673,14 +483,19 @@
                     </div>
                     <div class="modal-body">
                         <form id="form" action="/xray" method="post">
-                            <input type="text" name="doctor_name" value="{{ $patient_in_treatment->doctor->first_name }}" style="visibility: hidden;">
-                            <input type="text" name="patient_name" value="{{ $patient_in_treatment->name }}" style="visibility: hidden;">
-                            <input type="text" name="patient_id" value="{{ $patient_in_treatment->id_patient }}" style="visibility: hidden;">
+                            <input type="text" name="doctor_name"
+                                   value="{{ $patient_in_treatment->doctor->first_name }}" style="visibility: hidden;">
+                            <input type="text" name="patient_name" value="{{ $patient_in_treatment->name }}"
+                                   style="visibility: hidden;">
+                            <input type="text" name="patient_id" value="{{ $patient_in_treatment->id_patient }}"
+                                   style="visibility: hidden;">
                             <input type="text" value="not" id="tooth" hidden name="xray_status"/>
-                            <input type="text" value="upper_left" id="tooth" hidden name="tooth_position"/>
 
+                            <label>Tooth Position</label>
+                            <input type="text" value="" id="tooth_position" class="form-control" name="tooth_position"/>
+                            <br/>
                             {{-- pass value tooth number using jquery --}}
-                            <label class="control-label">{{trans('file.tooth_number')}}:</label>
+                            <label class="control-label">Tooth Number</label>
                             <input type="text" class="form-control" value="" id="tooth_number_3" name="tooth_number"/>
 
                             <br>
@@ -709,7 +524,7 @@
         @section('script')
             <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
 
-            <script src="{{ asset('js/tooths.js') }}" type="javascript"></script>
+{{--            <script src="{{ asset('js/tooths.js') }}" type="javascript"></script>--}}
 
             <script>
                 function getFeeTreatment(e) {
@@ -819,49 +634,41 @@
                     });
                 });
 
-                function gettooth(oFld) {
-                    alert(oFld.checked);
-                }
 
-                $(".image-checkbox").each(function () {
-                    if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
-                        $(this).addClass('image-checkbox-checked');
+                $(".image-radio").each(function () {
+                    if ($(this).find('input[type="radio"]').first().attr("checked")) {
+                        $(this).addClass('image-radio-checked');
                     }
                     else {
-                        $(this).removeClass('image-checkbox-checked');
+                        $(this).removeClass('image-radio-checked');
                     }
                 });
 
+
                 // sync the state to the input
                 var tooth_num;
-                $(".image-checkbox").on("click", function (e) {
-                    $(this).toggleClass('image-checkbox-checked');
-                    var $checkbox = $(this).find('input[type="checkbox"]');
+                var tooth_pos = null;
+
+                $(".image-radio").on("click", function (e) {
+                    $(".image-radio").removeClass('image-radio-checked');
+                    $(this).addClass('image-radio-checked');
+                    var $checkbox = $(this).find('input[type="radio"]');
                     $checkbox.prop("checked", !$checkbox.prop("checked"));
                     tooth_num = $checkbox.val();
                     $('#tooth_number_3').val($checkbox.val());
-                    var tooth_pos;
-                    if(tooth_num <= 8 && tooth_num >= 1)
-                    {
-                        tooth_pos = 'Upper Right';
-                    }else if(tooth_num <= 16 && tooth_num >= 9)
-                    {
-                        tooth_pos = 'Upper Left';
-                    }else if( tooth_num <= 24 && tooth_num >= 14)
-                    {
-                        tooth_pos = 'Lower Left';
-                    }else
-                    {
-                        tooth_pos = 'Lower Right';
-                    }
-                    $('#tooth_position').val(tooth_pos);
-
                     e.preventDefault();
                 });
 
                 $(document).on("click", "#xray_btn", function () {
                     $(".modal-body #tooth_number_3").val(tooth_num);
+                    $(".modal-body #tooth_position").val(tooth_pos);
                     $('#xray').modal('show');
+                    tooth_pos = null;
+                });
+
+                $(".tooth_position").on("click" , function(){
+                    tooth_pos = $(this).val();
+                   $("#tooth_position").val(tooth_pos);
                 });
 
             </script>
