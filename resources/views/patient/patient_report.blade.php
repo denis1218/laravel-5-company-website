@@ -11,17 +11,12 @@
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>{{trans('file.patient_report_table')}}&nbsp;<i class="fa fa-info"></i></h5>
-
             </div>
             <div class="ibox-content" id="divone">
-
                 <div class="container">
-                    <div class="row">
-
+                  <div class="row">
                         {{--first doctor--}}
-
                         <div class="row" style="">
-
                             <div class="col-sm-12">
                               <form action="/patient_report/search" method="post">
                                 <div class="input-group">
@@ -35,9 +30,7 @@
                                 </div>
                               </form>
                             </div>
-
                         </div>
-
                         <div class="row" style="margin-top:30px;margin-right: 90px">
 
                             <div class="col-md-12 ">
@@ -103,12 +96,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                  </div>
                 </div>
             </div>
         </div>
     </div>
-
     @foreach($all_patient as $patient)
         {{-- modal window to show editing detail of doctor--}}
         <div class="modal inmodal" id="e{{$patient->id}}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -166,17 +158,10 @@
 
     @endforeach
 
-
-
-
-
-
-
 @endsection
 
 
 @section('script')
-    <!-- script -->
 
 
 
@@ -227,8 +212,4 @@
         }
 
     </script>
-
-
-
-
 @endsection

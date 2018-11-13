@@ -59,8 +59,10 @@ class OincomController extends Controller
         $other->description=$request->description;
         $other->created_at = Carbon::now();
         $other->save();
+        $print_id=Oincom::max('id');
+        $print=Oincom::where('id','=',$print_id)->get();
 
-        return redirect('/other-income')->with('success','Inserted successfully');
+        return view('print_pages.oincome_print',compact('print'));
 
 
     }
