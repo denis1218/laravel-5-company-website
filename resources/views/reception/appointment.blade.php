@@ -81,7 +81,6 @@
                                 <div class="tab-content bg-success" style="">
                                     <div id="home" class="tab-pane active">
                                         <div class="panel-body">
-
                                                 <div class="col-md-1 " style="margin-right: 30px;">
                                                     <form method="get" action="/patient">
                                                         <input type="hidden" name="date"
