@@ -65,10 +65,12 @@ class PatientController extends Controller
             foreach ($checkbox as $value){
                 $string .=  $value.',';
             }
-            $phonenumber = $request->phone;
 
+        $phonenumber = $request->phone;
         $patient->doctor_id = $request->input('FK_id_Doctor');
-        $patient->next_appointment = Carbon::now();
+        $patient->next_appointment = $request->appointment;
+        $patient->job = $request->job;
+        $patient->education = $request->education;
         $patient->status = 'first';
         $patient->created_at = Carbon::today();
         $patient->problem_health = $string;

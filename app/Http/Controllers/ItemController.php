@@ -51,7 +51,7 @@ class ItemController extends Controller
         $item->bill_number=$request->bill_number;
         $item->trader_id=$request->trader_id;
         $item->save();
-        return redirect('/item');
+        return redirect()->back();
     }
 
     /**

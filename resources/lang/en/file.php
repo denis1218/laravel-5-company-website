@@ -66,6 +66,8 @@ return[
     'paid_amount'=>'Paid Amount',
     'select_category'=>'Select Category',
     'eym'=>'Enter Your Message',
+    'salary'=>'Salary',
+    'others'=>'Others',
     'save'=>'Save',
     'remainder'=>'Remainder',
     'this_month'=>'this month',

@@ -25,7 +25,6 @@
                 </div>
 
                 <div class="ibox-content">
-
                     <div class="row">
                         <!--Search -->
                         <!--Search -->
