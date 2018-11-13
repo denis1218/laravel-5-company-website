@@ -23,39 +23,40 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-lg-5">
-                                <form id="form" method="post" action="/item">
+                                <form id="form" method="post" action="/item/{{$item->id}}">
+                                    {{method_field('PUT')}}
                                     {{csrf_field()}}
                                     <div class="form-group">
                                         <label>{{trans('file.item')}}</label>
-                                        <div><input type="text" name="kind" class="form-control" placeholder="{{trans('file.item')}}" required></div>
+                                        <div><input type="text" name="kind" class="form-control" value="{{$item->kind}}" required></div>
                                     </div>
 
                                     <div class="form-group">
                                         <label>{{trans('file.quantity')}}</label>
-                                        <div><input type="number" name="quantity" id="q" class="form-control" placeholder="{{trans('file.quantity')}}" required></div>
+                                        <div><input type="number" name="quantity" id="q" onkeyup="Ecompute()" class="form-control" value="{{$item->quantity}}" required></div>
                                     </div>
 
                                     <div class="form-group">
                                         <label>{{trans('file.unit_price')}}</label>
-                                        <div><input type="number" name="unit_price" id="p" onkeyup="compute()" class="form-control" placeholder="{{trans('file.unit_price')}}" required></div>
+                                        <div><input type="number" name="unit_price" id="p" onkeyup="compute()" class="form-control" value="{{$item->unit_price}}" required></div>
 
                                     </div>
                                     <div class="form-group">
                                         <label>{{trans('file.total_price')}}</label>
-                                        <div><input type="number" name="total_price" id="t" class="form-control" readonly required></div>
+                                        <div><input type="number" name="total_price" id="t" class="form-control" value="{{$item->total_price}}" readonly required></div>
 
                                     </div>
                                     <div class="form-group">
                                         <label>{{trans('file.description')}}</label>
-                                        <div><input type="text" name="description" class="form-control" placeholder="{{trans('file.description')}}" required></div>
+                                        <div><input type="text" name="description" class="form-control" value="{{$item->description}}" required></div>
 
                                     </div>
                                     <div class="form-group">
                                         <label>{{trans('file.bnumber')}}</label>
-                                        <div><input type="text" name="bill_number" class="form-control" placeholder="{{trans('file.bnumber')}}" ></div>
-
-                                        <div><input type="hidden" name="trader_id" value="{{$trader->id}}" ></div>
-
+                                        <div><input type="text" name="bill_number" class="form-control" value="{{$item->bill_number}}" ></div>
+                                        {{--@foreach($trader as $trd)--}}
+                                            {{--<div><input type="hidden" name="trader_id" value="{{$trader->id}}" ></div>--}}
+                                        {{--@endforeach--}}
                                     </div>
 
                                     <div class="form-group">
@@ -81,6 +82,14 @@
 
     <script>
         function compute() {
+            var q=document.getElementById('q').value;
+            var p=document.getElementById('p').value;
+            var t=p*q;
+            document.getElementById('t').value=t;
+        }
+    </script>
+    <script>
+        function Ecompute() {
             var q=document.getElementById('q').value;
             var p=document.getElementById('p').value;
             var t=p*q;

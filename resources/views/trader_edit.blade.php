@@ -13,7 +13,7 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>{{trans('file.it')}}</h5>
+                        <h5>{{trans('file.edit')}}</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -23,39 +23,38 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-lg-5">
-                                <form id="form" method="post" action="/item">
+                                <form id="form" method="post" action="/trader/{{$trader->id}}">
+                                    {{method_field('PUT')}}
                                     {{csrf_field()}}
+
                                     <div class="form-group">
-                                        <label>{{trans('file.item')}}</label>
-                                        <div><input type="text" name="kind" class="form-control" placeholder="{{trans('file.item')}}" required></div>
+                                        <label>{{trans('file.first_name')}}</label>
+                                        <div><input type="text" name="name" class="form-control"  value="{{$trader->name}}" required></div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>{{trans('file.quantity')}}</label>
-                                        <div><input type="number" name="quantity" id="q" class="form-control" placeholder="{{trans('file.quantity')}}" required></div>
+                                        <label>{{trans('file.last_name')}}</label>
+                                        <div><input type="text" name="last_name" class="form-control" value="{{$trader->last_name}}"  required></div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>{{trans('file.unit_price')}}</label>
-                                        <div><input type="number" name="unit_price" id="p" onkeyup="compute()" class="form-control" placeholder="{{trans('file.unit_price')}}" required></div>
+                                        <label>{{trans('file.phone')}}</label>
+                                        <div><input type="number" name="phone" class="form-control" value="{{$trader->phone}}" required></div>
 
                                     </div>
                                     <div class="form-group">
-                                        <label>{{trans('file.total_price')}}</label>
-                                        <div><input type="number" name="total_price" id="t" class="form-control" readonly required></div>
+                                        <label>{{trans('file.org')}}</label>
+                                        <div><input type="text" name="organization" class="form-control" value="{{$trader->organization}}" required></div>
 
                                     </div>
                                     <div class="form-group">
-                                        <label>{{trans('file.description')}}</label>
-                                        <div><input type="text" name="description" class="form-control" placeholder="{{trans('file.description')}}" required></div>
+                                        <label>{{trans('file.address')}}</label>
+                                        <div><input type="text" name="address" class="form-control" value="{{$trader->address}}"  required></div>
 
                                     </div>
                                     <div class="form-group">
-                                        <label>{{trans('file.bnumber')}}</label>
-                                        <div><input type="text" name="bill_number" class="form-control" placeholder="{{trans('file.bnumber')}}" ></div>
-
-                                        <div><input type="hidden" name="trader_id" value="{{$trader->id}}" ></div>
-
+                                        <label>{{trans('file.pp')}}</label>
+                                        <div><input type="text" name="payment_process" class="form-control" value="{{$trader->payment_process}}" required></div>
                                     </div>
 
                                     <div class="form-group">
@@ -78,15 +77,6 @@
 
 @endsection
 @section('script')
-
-    <script>
-        function compute() {
-            var q=document.getElementById('q').value;
-            var p=document.getElementById('p').value;
-            var t=p*q;
-            document.getElementById('t').value=t;
-        }
-    </script>
 
     <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
 

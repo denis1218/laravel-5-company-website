@@ -92,7 +92,6 @@ class TreatmentController extends Controller
     public
     function store(Request $request)
     {
-
         $treatment = new Treatment();
 
         $treatment->teeth_number = $request->teeth_number;

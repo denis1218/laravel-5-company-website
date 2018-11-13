@@ -1,6 +1,7 @@
 
 <div class="row" style="margin-left:2px;margin-right: 20px;">
 
+
     <div class="col-sm-1">
         <h1 class="title-button"><a class="btn btn-primary hvr-grow-shadow" style="font-size: 13px; width: 100px;"
                                     href="/item">&nbsp;&nbsp;<strong>Items</strong> &nbsp;<img src="{{ asset('img/listitem.png') }}" width="20px"/></a>

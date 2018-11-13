@@ -70,21 +70,32 @@ class TraderController extends Controller
      * @param  \App\Trader  $trader
      * @return \Illuminate\Http\Response
      */
-    public function edit(Trader $trader)
+    public function edit($id)
     {
-        //
+        $trader=Trader::find($id);
+        return view('trader_edit',compact('trader'));
+//        return $trader;
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Trader  $trader
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request $request
+     * @return Request
+     * @internal param $id
+     * @internal param Trader $trader
      */
-    public function update(Request $request, Trader $trader)
+    public function update(Request $request,$id)
     {
-        //
+        $trader=Trader::find($id);
+        $trader->name=$request->name;
+        $trader->last_name=$request->last_name;
+        $trader->phone=$request->phone;
+        $trader->organization=$request->organization;
+        $trader->address=$request->address;
+        $trader->payment_process=$request->payment_process;
+        $trader->save();
+        return redirect('/trader');
     }
 
     /**
@@ -93,8 +104,10 @@ class TraderController extends Controller
      * @param  \App\Trader  $trader
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Trader $trader)
+    public function destroy($id)
     {
-        //
+        $delete=Trader::find($id);
+        $delete->delete();
+        return back();
     }
 }

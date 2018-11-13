@@ -15,7 +15,7 @@
             @include('part.trade_nav')
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Suppliers Table</h5>
+                    <h5>{{trans('file.st')}}</h5>
 
                 </div>
                 <div class="ibox-content">
@@ -33,13 +33,15 @@
 
                                 <thead>
                                 <tr>
-                                    <th>Supplier_id</th>
-                                    <th>Name</th>
-                                    <th>LastName</th>
-                                    <th>Pone</th>
-                                    <th>Organization</th>
-                                    <th>Address</th>
-                                    <th>Payment Process</th>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.first_name')}}</th>
+                                    <th>{{trans('file.last_name')}}</th>
+                                    <th>{{trans('file.phone')}}</th>
+                                    <th>{{trans('file.org')}}</th>
+                                    <th>{{trans('file.address')}}</th>
+                                    <th>{{trans('file.pp')}}</th>
+                                    <th>{{trans('file.edit')}}</th>
+                                    <th>{{trans('file.delete')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -52,6 +54,16 @@
                                             <td>{{$trader->organization}}</td>
                                             <td>{{$trader->address}}</td>
                                             <td>{{$trader->payment_process}}</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-success" href="/trader/{{ $trader->id }}/edit">{{trans('file.edit')}} &nbsp;
+                                                    <i class="fa fa-edit"></i></a>
+                                            </td>
+                                            <td>
+                                                <form id="del" action="/trader/{{$trader->id}}" method="post" id="myForm">
+                                                    @method('delete')
+                                                    <button class="btn btn-xs btn-danger demo3" >{{trans('file.delete')}} &nbsp;<i class="fa fa-remove"></i></button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

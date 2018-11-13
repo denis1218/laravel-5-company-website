@@ -295,15 +295,18 @@
                                 <h3 style="font-weight: bold;">{{trans('file.present_history')}}</h3>
                             </div>
 
+                            <br/>
 
                             {{-- Image Tooths --}}
                             <div class="row">
+
                                 <div class="col-md-6 col-xs-6">
+                                    <h4>Choose one Tooth</h4>
                                     <ul>
                                         <li>
                                             <label class="image-radio">
                                                 <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
+                                                     src="{{ asset('img/tooth/1.png') }}" width="100%" height="auto"/>
                                                 <input type="radio" name="image" value="1"/>
                                                 <i class="fa fa-check hidden"></i>
                                             </label>
@@ -311,7 +314,7 @@
                                         <li>
                                             <label class="image-radio">
                                                 <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
+                                                     src="{{ asset('img/tooth/2.png') }}" width="100%" height="auto"/>
                                                 <input type="radio" name="image" value="2"/>
                                                 <i class="fa fa-check hidden"></i>
                                             </label>
@@ -319,7 +322,7 @@
                                         <li>
                                             <label class="image-radio">
                                                 <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
+                                                     src="{{ asset('img/tooth/3.png') }}" width="100%" height="auto"/>
                                                 <input type="radio" name="image" value="3"/>
                                                 <i class="fa fa-check hidden"></i>
                                             </label>
@@ -327,7 +330,7 @@
                                         <li>
                                             <label class="image-radio">
                                                 <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
+                                                     src="{{ asset('img/tooth/4.png') }}" width="100%" height="auto"/>
                                                 <input type="radio" name="image" value="4"/>
                                                 <i class="fa fa-check hidden"></i>
                                             </label>
@@ -335,7 +338,7 @@
                                         <li>
                                             <label class="image-radio">
                                                 <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
+                                                     src="{{ asset('img/tooth/5.png') }}" width="100%" height="auto"/>
                                                 <input type="radio" name="image" value="5"/>
                                                 <i class="fa fa-check hidden"></i>
                                             </label>
@@ -343,7 +346,7 @@
                                         <li>
                                             <label class="image-radio">
                                                 <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
+                                                     src="{{ asset('img/tooth/6.png') }}" width="100%" height="auto"/>
                                                 <input type="radio" name="image" value="6"/>
                                                 <i class="fa fa-check hidden"></i>
                                             </label>
@@ -351,7 +354,7 @@
                                         <li>
                                             <label class="image-radio">
                                                 <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
+                                                     src="{{ asset('img/tooth/7.png') }}" width="100%" height="auto"/>
                                                 <input type="radio" name="image" value="7"/>
                                                 <i class="fa fa-check hidden"></i>
                                             </label>
@@ -359,7 +362,7 @@
                                         <li>
                                             <label class="image-radio">
                                                 <img class="img-responsive"
-                                                     src="{{ asset('img/tho.png') }}" width="100%" height="auto"/>
+                                                     src="{{ asset('img/tooth/8.png') }}" width="100%" height="auto"/>
                                                 <input type="radio" name="image" value="8"/>
                                                 <i class="fa fa-check hidden"></i>
                                             </label>
