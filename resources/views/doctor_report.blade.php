@@ -92,7 +92,8 @@
                     <form id="form" action="/doctors/{{$doctor->id}}" method="post">
                         {{csrf_field()}}
                         {{method_field('PUT')}}
-                    <div class="col-md-12">
+                        @if($doctor->salary_type == "percentage")
+                            <div class="col-md-12">
                         <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -133,14 +134,60 @@
                             @endforeach
                             </tbody>
                         </table>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <table class="table table-hover table-bordered">
+
+                                            <tr>
+                                                <td class="text-bold"><h4>{{trans('file.total_fee')}}: </h4></td>
+                                                <td><input type="text" class="form-control" value="{{$total}}" readonly></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-bold"><h4>{{trans('file.doctor_salary')}}: </h4></td>
+                                                <td><input type="text" name="fee" class="form-control" value="{{$docfee}}" readonly></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="text-bold"><h4>{{trans('file.past_remaining')}}: </h4></td>
+                                                <td><input type="text" class="form-control" value="{{$doctor->remaining}}" readonly=""></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="text-bold"><h4>{{trans('file.advance')}}: </h4></td>
+                                                <td><input type="text" class="form-control" value="{{$doctor->advance}}" name="advance" readonly=""></td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td class="text-bold"><h4>{{trans('file.total_doctor_salary')}}: </h4></td>
+                                                <td>
+                                                    <input type="text" class="form-control" value="{{$docfee+$doctor->remaining-$doctor->advance}}" name="colection" readonly>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-bold"><h4>{{trans('file.lpd')}}: </h4></td>
+                                                <td>
+                                                    <input type="text" class="form-control" value="{{$doctor->to}}" readonly>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-bold"><h4>{{trans('file.payment_amount')}}: </h4></td>
+                                                <td>
+                                                    <input type="number" min="1" max="{{$docfee+$doctor->remaining-$doctor->advance}}" class="form-control" placeholder="Enter the fee amount" name="salary" required>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" class="text-right"> <button class="btn btn-primary" type="submit">{{trans('file.pay_salary')}}</button></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                        @else
                         <div class="row">
                             <div class="col-md-5">
                                 <table class="table table-hover table-bordered">
 
-                                    <tr>
-                                        <td class="text-bold"><h4>{{trans('file.total_fee')}}: </h4></td>
-                                        <td><input type="text" class="form-control" value="{{$total}}" readonly></td>
-                                    </tr>
                                     <tr>
                                         <td class="text-bold"><h4>{{trans('file.doctor_salary')}}: </h4></td>
                                         <td><input type="text" name="fee" class="form-control" value="{{$docfee}}" readonly></td>
@@ -149,7 +196,6 @@
                                     <tr>
                                         <td class="text-bold"><h4>{{trans('file.past_remaining')}}: </h4></td>
                                         <td><input type="text" class="form-control" value="{{$doctor->remaining}}" readonly=""></td>
-
                                     </tr>
                                     <tr>
                                         <td class="text-bold"><h4>{{trans('file.advance')}}: </h4></td>
@@ -182,6 +228,7 @@
                                 </table>
                             </div>
                           </div>
+                            @endif
                        </div>
                     </form>
                 </div>

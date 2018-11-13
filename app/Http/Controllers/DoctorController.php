@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\DoctorDepartment;
+use App\Expense;
 use App\User;
+use Carbon\Carbon;
 use DB;
 use App\Treatment;
 use App\Doctor;
@@ -152,6 +154,7 @@ class DoctorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Doctor  $doctor
      * @return \Illuminate\Http\Response
+     *
      */
     public function update(Request $request, Doctor $doctor)
     {
@@ -162,6 +165,13 @@ class DoctorController extends Controller
         $payment->from=$request->start;
         $payment->to=$request->end;
         $payment->save();
+        $expenseSalary = new Expense();
+        $expenseSalary->receiver = $doctor->first_name;
+        $expenseSalary->amount = $request->salary;
+        $expenseSalary->category = "salary";
+        $expenseSalary->description = "Paid salary :".$request->salary." at date : ".Carbon::now()." ";
+        $expenseSalary->created_at = Carbon::now();
+        $expenseSalary->save();
         return redirect('/doctors2');
     }
 

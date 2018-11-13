@@ -23,6 +23,8 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-lg-5">
+                                <a href="/common" class="btn btn-primary"><i class="fa fa-arrow-left"></i>&nbsp; Back</a>
+                                <br/>
                                 <form id="form" method="post" action="/item">
                                     {{csrf_field()}}
                                     <div class="form-group">
@@ -52,7 +54,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>{{trans('file.bnumber')}}</label>
-                                        <div><input type="text" name="bill_number" class="form-control" placeholder="{{trans('file.bnumber')}}" ></div>
+                                        <div><input type="text" name="bill_number" class="form-control" placeholder="{{trans('file.bnumber')}}" value="{{ old('bill_number') }}" ></div>
 
                                         <div><input type="hidden" name="trader_id" value="{{$trader->id}}" ></div>
 

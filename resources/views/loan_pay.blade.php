@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12">
-                            <a href="/loan1/{{$t_id}}" class="btn btn-primary ">{{trans('file.pl')}}</a>
+                            <a href="/loan1/{{$t_id}}" class="btn btn-primary ">{{trans('file.pl')}}&nbsp;<img src="{{ asset('img/icon_paid.png') }}" width="25px"/></a>
                         </div>
                     </div>
                     <div class="row">
@@ -84,6 +84,7 @@
                                     <th>{{trans('file.quantity')}}</th>
                                     <th>{{trans('file.unit_price')}}</th>
                                     <th>{{trans('file.total_price')}}</th>
+                                    <th>Bill number</th>
                                     <th>{{trans('file.date')}}</th>
                                 </tr>
                                 </thead>
@@ -95,13 +96,13 @@
                                             <td>{{$item->quantity}}</td>
                                             <td>{{$item->unit_price}}</td>
                                             <td>{{$item->total_price}}</td>
+                                            <td>{{$item->bill_number}}</td>
                                             <td>{{$item->created_at}}</td>
-
                                         </tr>
                                 @endforeach
                                     <tr>
-                                        <td colspan="4" class="text-center">{{trans('file.total')}}</td>
-                                        <td>{{$itotal}}</td>
+                                        <td colspan="4" class="text-center"><strong>{{trans('file.total')}}</strong></td>
+                                        <td><strong>{{$itotal}}</strong></td>
                                     </tr>
                                 </tbody>
                             </table>

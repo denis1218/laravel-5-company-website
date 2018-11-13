@@ -60,7 +60,7 @@ class LoanController extends Controller
         $expens = new Expense();
         $expens->receiver = $request->receiver;
         $expens->amount = $request->paid;
-        $expens->category = "Paid Loan";
+        $expens->category = "paid loan";
         $expens->description = "Paid Loan for receiver :`".$request->receiver."` at date : ". Carbon::now() ." ";
         $expens->created_at = Carbon::now();
         $expens->save();
