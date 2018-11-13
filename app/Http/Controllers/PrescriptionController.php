@@ -43,14 +43,33 @@ class PrescriptionController extends Controller
         $med = $request->medicine;
         $patient_unit = $request->patient;
         $patient_id = $request->patient_id;
+        $patient = Patient::find($patient_id);
 
         foreach ($med as $index => $me){
 
             $medic = Medicine::find($me);
             $medic->unit = $medic->unit - $patient_unit[$index];
             $medic->save();
+        }
+
+        foreach ($med as $index => $medicin){
+            $prescription = new Prescription();
+            $medice = Medicine::find($medicin);
+            $prescription->medicine_name = $medice->name;
+            $prescription->unit = $patient_unit[$index];
+            $prescription->sale = $medice->sale;
+            $prescription->patient_id = $patient_id;
+            $prescription->total_fee = $medice->sale * $patient_unit[$index];
+            $prescription->created_at = Carbon::now();
+            $prescription->save();
 
         }
+        $presc = Prescription::where('patient_id','=',$patient_id)->get();
+//        return $presc;
+        $num = 1;
+        return view('print_pages.prescription_print',compact('presc','patient','num'));
+
+
 
 
     }

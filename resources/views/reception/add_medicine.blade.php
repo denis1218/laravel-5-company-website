@@ -46,7 +46,7 @@
                 <br/>
                 <form action="/prescription" method="post">
                     {{csrf_field()}}
-                    <input type="hidden" name="patient_id" value="{{$patient->id_patient}}">
+                    <input type="hidden" name="patient_id" value="{{$patient->id}}">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="table-responsive">
@@ -78,7 +78,7 @@
                                             <td><input type="text" name="sale" class="form-control" value="{{ $medice->sale }}" readonly></td>
                                             <td><input type="text" name="unit" class="form-control" value="{{ $medice->unit }}" readonly></td>
 
-                                            <td><input type="number" name="patient[]" class="form-control"></td>
+                                            <td><input type="number" name="patient[]" class="form-control" max="{{$medice->unit}}"></td>
                                             <td>
                                                 <div class="i-checks"><input type="checkbox"  value="{{ $medice->id }}" name="medicine[]" id="medicine" ></div>
                                             </td>
