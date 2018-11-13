@@ -40,28 +40,19 @@ class PrescriptionController extends Controller
     public function store(Request $request)
     {
 
-//        $med = Medicine::all();
         $med = $request->medicine;
-        $patient_unit = $request->unit_for_patient;
+        $patient_unit = $request->patient;
+        $patient_id = $request->patient_id;
 
-        $maxLength = count($med) > count($patient_unit) ? count($med) : count($patient_unit);
+        foreach ($med as $index => $me){
 
-        for ($i = 0; $i < $maxLength; $i++) {
-
-            if (array_key_exists($i, $med) && array_key_exists($i,$patient_unit)) {
-                foreach ( $med as $index => $medic) {
-//                    print $medic . 'is your Id code and '  . $patient_unit[$index] . 'is your name';
-                    $medi = Medicine::find($medic[$i]);
-                $medi->unit = $medi->unit +3;
-                $medi->save();
-                return back();
-
-                }
-//
-            }
-
+            $medic = Medicine::find($me);
+            $medic->unit = $medic->unit - $patient_unit[$index];
+            $medic->save();
 
         }
+
+
     }
 
     /**
