@@ -76,7 +76,7 @@
                 <br/>
                 <div class="row">
                     <div class="col-lg-12">
-                        <h5>Show all patients just for today</h5>
+                        <h5>{{trans('file.sapftd')}}</h5>
                         <div class="ibox float-e-margins">
                             <div class="table-responsive">
                             <table class="table table-hover no-margins" id="table_patient">
@@ -113,7 +113,7 @@
                             </div>
                             {{--{{$operation->links()}}--}}
                             @else
-                                <h5 style="color:red;text-align: center;">NO PATIENT HAS BEEN REGISTERED YET</h5>
+                                <h3 style="color:red;text-align: center;">{{trans('file.there_is_no')}}</h3>
                             @endif
                         </div>
                     </div>
@@ -136,7 +136,7 @@
                 <br/>
                 <div class="row">
                     <div class="col-lg-12">
-                        <h5>Show all patients just for today</h5>
+                        <h5>{{trans('file.sapftd')}}</h5>
                         <div class="ibox float-e-margins">
                             <table class="table table-hover no-margins" id="table_patient">
                                 <thead>
@@ -171,7 +171,7 @@
                             </table>
                             {{--{{$operation->links()}}--}}
                             @else
-                                <h5 style="color:red;text-align: center;">NO PATIENT HAS BEEN REGISTERED YET</h5>
+                                <h5 style="color:red;text-align: center;">{{trans('file.there_is_no')}}</h5>
                             @endif
                         </div>
                     </div>

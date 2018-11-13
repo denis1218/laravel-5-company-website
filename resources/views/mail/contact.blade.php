@@ -20,33 +20,33 @@
                 <div class="row">
                     <div class="col-md-6">
 
-                        <h3>Send Error Report</h3>
+                        <h3>{{trans('file.ser')}}</h3>
                         @if($net)
                             <div class="alert alert-success" role="alert">
-                                Your Connected to internet
+                                {{trans('file.yacti')}}
                             </div>
                             @else
                             <div class="alert alert-danger" role="alert">
-                                Internet connection fail. Please check your internet connection
+                                {{trans('file.yanc')}}
                             </div>
                             @endif
 
 
                         <form method="post" action="/email-send" >
                             <div class="form-group">
-                                <lable>Subject</lable>
-                                <input type="text" class="form-control" name="title" placeholder="Subject" required/>
+                                <label>{{trans('file.subject')}}</label>
+                                <input type="text" class="form-control" name="title" placeholder="{{trans('file.subject')}}" required/>
                             </div>
                             <div class="form-group">
-                                <lable>Context</lable>
-                                <textarea name="content" rows="6" required placeholder="Write your context" class="form-control"></textarea>
+                                <label>{{trans('file.context')}}</label>
+                                <textarea name="content" rows="6" required placeholder="{{trans('file.wyc')}}" class="form-control"></textarea>
                             </div>
                             {{--<div class="form-group">--}}
                                 {{--<lable>Upload Errors image</lable>--}}
                                 {{--<input type="file"  class="file-control" name="imagefile" />--}}
                             {{--</div>--}}
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Send</button>
+                                <button type="submit" class="btn btn-primary">{{trans('file.send')}}</button>
                                 <input type="reset" class="btn btn-white"/>
                             </div>
                         </form>
@@ -56,21 +56,21 @@
                             <img src="{{ asset('img/paypol_logo.png') }}" width="300px;"/>
                         </div>
                         <br/>
-                        <h2>Paypol Software Development Company</h2>
+                        <h2>{{trans('file.psdc')}}</h2>
                         <br/>
-                        <h3>Contact us</h3>
+                        <h3>{{trans('file.cu')}}</h3>
                         <br/>
                         <table class="table">
                             <tr>
-                                <td><strong><i class="fa fa-phone"></i>&nbsp;Phone</strong></td>
+                                <td><strong><i class="fa fa-phone"></i>&nbsp;{{trans('file.phone')}}</strong></td>
                                 <td><strong>0731888814</strong></td>
                             </tr>
                             <tr>
-                                <td><strong><i class="fa fa-envelope"></i>&nbsp;Email</strong></td>
+                                <td><strong><i class="fa fa-envelope"></i>&nbsp;{{trans('file.email')}}</strong></td>
                                 <td><strong>dentaclinic2018@gmail.com</strong></td>
                             </tr>
                             <tr>
-                                <td><strong><i class="fa fa-facebook-square"></i>&nbsp;facebook</strong></td>
+                                <td><strong><i class="fa fa-facebook-square"></i>&nbsp;{{trans('file.facebook')}}</strong></td>
                                 <td><strong><a target="_blank" href="https://www.facebook.com/paypolsoftwaredevelopment/?modal=admin_todo_tour">Paypol Software Development Co</a></strong></td>
                             </tr>
                         </table>

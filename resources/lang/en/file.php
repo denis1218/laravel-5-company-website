@@ -35,12 +35,19 @@ return[
     'help'=>'Help',
     'update_software'=>'Update Software',
     'about_us'=>'About us',
+    'supplier'=>'Suppliers',
+    'item'=>'Items',
+    'purchase'=>'Purchase',
+    'rd'=>'Restore Delete',
+    'users'=>'Users',
+    'patients'=>'Patients',
 //    end of side bar words
 
 //top nav
     'welcome_to'=>'Welcome To',
     'todayDate'=> Carbon\Carbon::now()->format('l d F Y'),
     'change'=>'change',
+    'pl'=>'Paid Loan',
 
 
 //dashboard page
@@ -74,11 +81,13 @@ return[
     'receiver'=>'Receiver',
     'firstname'=>'Firstname',
     'lastname'=>'Lastname',
+
 //End of dashboard page
 
 //doctor operation page
 
     'patient_list'=>'Patient List',
+    'fnaud'=>'Find Next Appointment Using Date',
     'next_appointment_list'=>'Next Appointment List',
     'report_patient'=>'Patient Report',
     'patient_appointment_list'=>'Patient Appointment List',
@@ -148,6 +157,7 @@ return[
 
 // start of treatment operation
     'visited'=>'Visited',
+    'sapftd'=>'Show All Patient For Today',
     'first_visited_date'=>'First Visited Date',
     'past_history'=>'Past History',
     'present_history'=>'Present History',
@@ -549,7 +559,40 @@ return[
     'abouti_text'=>'In this page there is few information about our company and our activities.',
 
 
+//    MISSED TRANSES
+    'spbd'=>'Select Patient By Date',
 
+
+    //    Support Page
+    'ser'=>'Send Error Report',
+    'subject'=>'Subject',
+    'context'=>'Context',
+    'send'=>'Send',
+    'psdc'=>'Paypol Software Development Company',
+    'cu'=>'Contact Us',
+    'facebook'=>'Contact Us',
+    'yacti'=>'You are connected to the internet',
+    'yanc'=>'Your internet connection is down, please check your connectivity!',
+    'wyc'=>'Write Your Context',
+
+    //    ABOUT US
+    'apsc'=>'About Paypol Software Company',
+    'apsc_text'=>'PayPolSoftwareCompany provides leading-edge capabilities in software as a service, a platform that develop digital infrastructure as a service, and creating data for small, medium and large enterprises. PayPolSoftwareCompany, a provider of enterprise digitalization computing system, is empowering businesses of all sizes on their journey of digital transformation. ACCELERATING DIGITAL TRANSFORMATION IN AFGHAN’S MARKET With PayPolSoftware, enterprises can innovate faster, improve customer engagement, drive business-process efficiency and accelerate digital transformation with us.',
+
+//    SUPPLIER
+    'st'=>'Supplier Table',
+    'it'=>'Item Table',
+    'org'=>'Organization',
+    'pp'=>'PaymentProcess',
+    'sr'=>'Supplier Registration',
+    'lp'=>'Loan Payment',
+    'quantity'=>'Quantity',
+    'total_price'=>'Total Price',
+    'bnumber'=>'Bill Number',
+    'slp'=>'Supplier Loan Payment',
+    'ticost'=>'Total Item Cost',
+    'tpamount'=>'Total Paid Amount',
+    ''=>'',
 
 
 ];

@@ -10,9 +10,9 @@
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>{{trans('file.ddl')}}</h5>
-
             </div>
             <div class="ibox-content">
+
 
                 {{-- row for table --}}
                 <div class="row">
