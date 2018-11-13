@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="ibox-content">
-                    @include('layout.messages')
+
                     <div class="row">
                         <!--Search -->
                         <!--Search -->
