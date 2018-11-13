@@ -6,7 +6,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Profit Statement <i class="fa fa-info"></i></h5>
+                <h5>Income Statement <i class="fa fa-info"></i></h5>
 
 
             </div>
@@ -20,7 +20,7 @@
                     <div class="col-md-6">
 
                         <h2> Hakim Alikozay Dental Clinic</h2>
-                        <h4>Profit And Loss</h4>
+                        <h4>Income Statement</h4>
                         <h5>Date : {{\Carbon\Carbon::today()}}</h5>
 
 
@@ -82,6 +82,19 @@
                                 <td style="float: right;margin-right: 30px">{{$on->amount}}&nbsp;afg</td>
                             </tr>
                             @endforeach
+
+                            @endif
+                            @if(isset($medicine))
+                                <tr>
+                                    <td style="margin-left: 30px"><b style="font-size: 20px">Medicine Income Total</b></td>
+                                    <td style="float: right;margin-right: 30px"><b style="font-size: 20px">{{$medicine->sum('total_fee')}}&nbsp;afg</b></td>
+                                </tr>
+                                @foreach($medicine as $medice)
+                                    <tr>
+                                        <td style="margin-left: 30px">{{$medice->medicine_name}}</td>
+                                        <td style="float: right;margin-right: 30px">{{$medice->sale}}&nbsp;afg</td>
+                                    </tr>
+                                @endforeach
 
                             @endif
                             {{--<tr>--}}

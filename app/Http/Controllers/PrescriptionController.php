@@ -40,28 +40,38 @@ class PrescriptionController extends Controller
     public function store(Request $request)
     {
 
-//        $med = Medicine::all();
         $med = $request->medicine;
-        $patient_unit = $request->unit_for_patient;
+        $patient_unit = $request->patient;
+        $patient_id = $request->patient_id;
+        $patient = Patient::find($patient_id);
 
-        $maxLength = count($med) > count($patient_unit) ? count($med) : count($patient_unit);
+        foreach ($med as $index => $me){
 
-        for ($i = 0; $i < $maxLength; $i++) {
+            $medic = Medicine::find($me);
+            $medic->unit = $medic->unit - $patient_unit[$index];
+            $medic->save();
+        }
 
-            if (array_key_exists($i, $med) && array_key_exists($i,$patient_unit)) {
-                foreach ( $med as $index => $medic) {
-//                    print $medic . 'is your Id code and '  . $patient_unit[$index] . 'is your name';
-                    $medi = Medicine::find($medic[$i]);
-                $medi->unit = $medi->unit +3;
-                $medi->save();
-                return back();
-
-                }
-//
-            }
-
+        foreach ($med as $index => $medicin){
+            $prescription = new Prescription();
+            $medice = Medicine::find($medicin);
+            $prescription->medicine_name = $medice->name;
+            $prescription->unit = $patient_unit[$index];
+            $prescription->sale = $medice->sale;
+            $prescription->patient_id = $patient_id;
+            $prescription->total_fee = $medice->sale * $patient_unit[$index];
+            $prescription->created_at = Carbon::now();
+            $prescription->save();
 
         }
+        $presc = Prescription::where('patient_id','=',$patient_id)->get();
+//        return $presc;
+        $num = 1;
+        return view('print_pages.prescription_print',compact('presc','patient','num'));
+
+
+
+
     }
 
     /**
