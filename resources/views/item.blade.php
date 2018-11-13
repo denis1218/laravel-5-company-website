@@ -15,7 +15,7 @@
             @include('part.trade_nav')
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Items Table</h5>
+                    <h5>{{trans('file.it')}}</h5>
 
                 </div>
                 <div class="ibox-content">
@@ -26,15 +26,16 @@
 
                                 <thead>
                                 <tr>
-                                    <th>Item_id</th>
-                                    <th>Kind of Item</th>
-                                    <th>Quantity</th>
-                                    <th>Unit Price</th>
-                                    <th>Total Price</th>
-                                    <th>Item Supplier</th>
-                                    <th>Description</th>
-                                    {{--<th>Date</th>--}}
-                                    <th>Bill Number</th>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.item')}}</th>
+                                    <th>{{trans('file.quantity')}}</th>
+                                    <th>{{trans('file.unit_price')}}</th>
+                                    <th>{{trans('file.total_price')}}</th>
+                                    <th>{{trans('file.supplier')}}</th>
+                                    <th>{{trans('file.description')}}</th>
+                                    <th>{{trans('file.bnumber')}}</th>
+                                    <th>{{trans('file.edit')}}</th>
+                                    <th>{{trans('file.delete')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -47,12 +48,21 @@
                                         <td>{{$item->total_price}}</td>
                                         <td>{{$item->trader->name}}</td>
                                         <td>{{$item->description}}</td>
-{{--                                        <td>{{$item->created_at}}</td>--}}
                                         <td>{{$item->bill_number}}</td>
+                                        <td>
+                                            <a class="btn btn-xs btn-success" href="/item/{{ $item->id }}/edit">{{trans('file.edit')}} &nbsp;
+                                                <i class="fa fa-edit"></i></a>
+                                        </td>
+                                        <td>
+                                            <form id="del" action="/item/{{$item->id}}" method="post" id="myForm">
+                                                @method('delete')
+                                                <button class="btn btn-xs btn-danger demo3" >{{trans('file.delete')}} &nbsp;<i class="fa fa-remove"></i></button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                                     <tr>
-                                        <td colspan="4" class="text-center">Total</td>
+                                        <td colspan="4" class="text-center">{{trans('file.total')}}</td>
                                         <td >{{$total}}</td>
                                     </tr>
                                 </tbody>

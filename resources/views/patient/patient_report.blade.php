@@ -10,18 +10,13 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-
                 <h5>{{trans('file.patient_report_table')}}&nbsp;<i class="fa fa-info"></i></h5>
-
-
             </div>
             <div class="ibox-content" id="divone">
                 <div class="container">
                   <div class="row">
                         {{--first doctor--}}
                         <div class="row" style="">
-
-
                             <div class="col-sm-12">
                               <form action="/patient_report/search" method="post">
                                 <div class="input-group">
@@ -32,18 +27,14 @@
                                                        id="search" name="search"
                                                        class="input-sm form-control">
 
-
                                 </div>
                               </form>
                             </div>
                         </div>
-
-
                         <div class="row" style="margin-top:30px;margin-right: 90px">
 
                             <div class="col-md-12 ">
                                 <div class="table-responsive">
-
                                 <table class="table table-hover  no-margins" id="table_all_patient">
                                     <thead>
                                     <tr class="bg-light">
@@ -101,7 +92,6 @@
                                     @endif
                                     </tbody>
                                 </table>
-
                                 {{ $all_patient->links() }}
                                 </div>
                             </div>

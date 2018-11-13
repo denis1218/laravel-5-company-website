@@ -14,7 +14,7 @@
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
 
-                    <h5>Supplier Loan Payment</h5>
+                    <h5>{{trans('file.slp')}}</h5>
 
                     <div class="ibox-tools">
                         <a class="collapse-link">
@@ -29,13 +29,13 @@
                             <div class="col-md-3" style="margin-bottom: 30px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);height: 130px;">
                                 <div class="ibox ">
                                     <div class="ibox-title" style="height: 30px">
-                                        <span class="label label-info pull-right">All</span>
-                                        <h5>Totoal Item Cost</h5>
+                                        <span class="label label-info pull-right">{{trans('file.all')}}</span>
+                                        <h5>{{trans('file.ticost')}}</h5>
                                     </div>
                                     <div class="ibox-content" style="height: 20px">
 
-                                        <h1 class="no-margins">{{$itotal}}&nbsp;&nbsp;Afg</h1>
-                                        <small>Total Cost</small>
+                                        <h1 class="no-margins">{{$itotal}}&nbsp;&nbsp;{{trans('file.afg')}}</h1>
+                                        <small>{{trans('file.total_price')}}</small>
 
                                     </div>
                                 </div>
@@ -43,13 +43,13 @@
                             <div class="col-md-3" style="margin-bottom: 30px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);height: 130px;margin-left: 20px">
                                 <div class="ibox ">
                                     <div class="ibox-title" style="height: 30px">
-                                        <span class="label label-info pull-right">All</span>
-                                        <h5>Totoal Paid Amount</h5>
+                                        <span class="label label-info pull-right">{{trans('file.all')}}</span>
+                                        <h5>{{trans('file.tpamount')}}</h5>
                                     </div>
                                     <div class="ibox-content" style="height: 20px">
 
-                                        <h1 class="no-margins">{{$ltotal}}&nbsp;&nbsp;Afg</h1>
-                                        <small>Total Paid</small>
+                                        <h1 class="no-margins">{{$ltotal}}&nbsp;&nbsp;{{trans('file.afg')}}</h1>
+                                        <small>{{trans('file.tpamount')}}</small>
 
                                     </div>
                                 </div>
@@ -57,20 +57,20 @@
                             <div class="col-md-3" style="margin-bottom: 30px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);height: 130px;margin-left: 20px;">
                                 <div class="ibox ">
                                     <div class="ibox-title" style="height: 30px">
-                                        <span class="label label-info pull-right">All</span>
-                                        <h5>Remaining</h5>
+                                        <span class="label label-info pull-right">{{trans('file.all')}}</span>
+                                        <h5>{{trans('file.remaining')}}</h5>
                                     </div>
                                     <div class="ibox-content" style="height: 20px;">
 
-                                        <h1 class="no-margins">{{$remaining}}&nbsp;&nbsp;Afg</h1>
-                                        <small>Total Total</small>
+                                        <h1 class="no-margins">{{$remaining}}&nbsp;&nbsp;{{trans('file.afg')}}</h1>
+                                        <small>{{trans('file.total')}}</small>
 
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xs-12">
-                            <a href="/loan1/{{$t_id}}" class="btn btn-primary ">PayLoan</a>
+                            <a href="/loan1/{{$t_id}}" class="btn btn-primary ">{{trans('file.pl')}}</a>
                         </div>
                     </div>
                     <div class="row">
@@ -79,12 +79,12 @@
                                <table class="table table-striped table-bordered table-hover" id="table_otherIncome" style="margin-top:10px;">
                                 <thead>
                                 <tr style="color:black;">
-                                    <th>Supplier Name</th>
-                                    <th>Item</th>
-                                    <th>Quantity</th>
-                                    <th>Unit Price</th>
-                                    <th>Total Price</th>
-                                    <th>Date</th>
+                                    <th>{{trans('file.supplier')}}</th>
+                                    <th>{{trans('file.item')}}</th>
+                                    <th>{{trans('file.quantity')}}</th>
+                                    <th>{{trans('file.unit_price')}}</th>
+                                    <th>{{trans('file.total_price')}}</th>
+                                    <th>{{trans('file.date')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -100,7 +100,7 @@
                                         </tr>
                                 @endforeach
                                     <tr>
-                                        <td colspan="4" class="text-center">Total</td>
+                                        <td colspan="4" class="text-center">{{trans('file.total')}}</td>
                                         <td>{{$itotal}}</td>
                                     </tr>
                                 </tbody>

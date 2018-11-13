@@ -30,10 +30,10 @@
                             <table class="table table-striped table-bordered table-hover" id="table_otherIncome" style="margin-top:10px;">
                                 <thead>
                                 <tr style="color:black;">
-                                    <th>Supplier Name</th>
-                                    <th>Receiver</th>
-                                    <th>Paid Amount</th>
-                                    <th>Date</th>
+                                    <th>{{trans('file.supplier')}}</th>
+                                    <th>{{trans('file.receiver')}}</th>
+                                    <th>{{trans('file.paid_amount')}}</th>
+                                    <th>{{trans('file.date')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -46,7 +46,7 @@
                                     </tr>
                                 @endforeach
                                 <tr>
-                                    <td colspan="2" class="text-center">Total</td>
+                                    <td colspan="2" class="text-center">{{trans('file.total')}}</td>
                                     <td>{{$ptotal}}</td>
                                 </tr>
                                 </tbody>

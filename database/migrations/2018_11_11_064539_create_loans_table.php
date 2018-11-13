@@ -21,7 +21,8 @@ class CreateLoansTable extends Migration
             $table->timestamps();
             $table->foreign('trader_id')
                   ->references('id')->on('traders')
-                  ->onUpdate('cascade');
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
         });
     }
 
