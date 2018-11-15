@@ -44,8 +44,7 @@
 
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/doctors/create"><i
-                                            class="fa fa-user-md"></i>{{trans('file.doctor_registration')}}</a></li>
+
                             <li><a href="/patient/create"><i
                                             class="fa fa-user"></i>{{trans('file.patient_registration')}}</a></li>
                             <li><a href="/patient"><i class="fa fa-list-ol"></i>{{trans('file.list_of_patient')}}</a>
@@ -55,11 +54,15 @@
                             </li>
                             <li><a href="/prescription"><img src="{{ asset('img/prescription.png') }}" width="15px"/>&nbsp;{{trans('file.prescription')}}
                                 </a></li>
+                            <li><a href="/doctors/create"><i
+                                            class="fa fa-user-md"></i>{{trans('file.doctor_registration')}}</a></li>
+                            <li><a href="/employee/create"><i
+                                            class="fa fa-user"></i>Employee Reg</a></li>
                         </ul>
                     </li>
                     {{--traders--}}
                     <li>
-                        <a href=""> <i class="fa fa-truck"></i>{{trans('file.supplier')}}
+                        <a href=""> <i class="fa fa-truck"></i><span class="nav-label">{{trans('file.supplier')}}</span>
                             <span class="fa fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/trader"><i
@@ -103,7 +106,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href=""><i class="fa fa-money"></i>{{trans('file.salary')}}
+                    <li><a href=""><i class="fa fa-money"></i><span class="nav-lable">{{trans('file.salary')}}</span>
                             <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/doctors"><i class="fa fa-user-md"></i>{{ trans('file.doctors') }}</a>
@@ -179,7 +182,7 @@
 
                     </li>
                     <li>
-                    <li><a href="/help"><i class="fa fa-question-circle"></i>{{trans('file.help')}}</a></li>
+                    <li><a href="/help"><i class="fa fa-question-circle"></i><span class="nav-lable">{{trans('file.help')}}</span></a></li>
 
                     {{--end condition of super admin--}}
                 @endif
