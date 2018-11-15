@@ -44,8 +44,7 @@
 
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/doctors/create"><i
-                                            class="fa fa-user-md"></i>{{trans('file.doctor_registration')}}</a></li>
+
                             <li><a href="/patient/create"><i
                                             class="fa fa-user"></i>{{trans('file.patient_registration')}}</a></li>
                             <li><a href="/patient"><i class="fa fa-list-ol"></i>{{trans('file.list_of_patient')}}</a>
@@ -55,6 +54,10 @@
                             </li>
                             <li><a href="/prescription"><img src="{{ asset('img/prescription.png') }}" width="15px"/>&nbsp;{{trans('file.prescription')}}
                                 </a></li>
+                            <li><a href="/doctors/create"><i
+                                            class="fa fa-user-md"></i>{{trans('file.doctor_registration')}}</a></li>
+                            <li><a href="/employee/create"><i
+                                            class="fa fa-user"></i>Employee Reg</a></li>
                         </ul>
                     </li>
                     {{--traders--}}
