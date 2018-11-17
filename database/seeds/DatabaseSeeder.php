@@ -34,11 +34,11 @@ class DatabaseSeeder extends Seeder
 
         if(Patient::count() == 0)$this->call(PatientTableSeeder::class );
         if(Treatment::count() == 0)$this->call(TreatmentTableSeeder::class );
-        if(Permission::count() == 0)$this->call(PermissionTableSeeder::class );
+//        if(Permission::count() == 0)$this->call(PermissionTableSeeder::class );
         if(Expense::count() == 0)$this->call(ExpenseTableSeeder::class );
-        if(Role::count() == 0)$this->call(RoleTableSeeder::class );
+//        if(Role::count() == 0)$this->call(RoleTableSeeder::class );
         if(ExpenseCatagory::count() == 0)$this->call(TreatmentListTableSeeder::class );
-        $this->call(UserRoleTableSeeder::class);
+//        $this->call(UserRoleTableSeeder::class);
 
 
 
