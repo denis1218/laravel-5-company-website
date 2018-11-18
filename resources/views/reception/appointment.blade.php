@@ -22,50 +22,47 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2 text-center">
             <a href="/patient/create">
-                <button class="btn btn-primary" style="width:87%;">
-                    <img src="{{ asset('img/patient.png') }}" width="20px"
-                         class="pull-left"/>&nbsp; {{trans('file.add_new_patient')}}
+                <button class="btn btn-primary" >
+                    <img src="{{ asset('img/patient.png') }}" width="30px"
+                         class=""/>&nbsp;<br/> {{trans('file.add_new_patient')}}
                 </button>
             </a>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2 text-center">
             <a href="/new-patient-today">
-                <button class="btn btn-info" style="width:87%;">
-                    <img src="{{ asset('img/list_new_patient.png') }}" width="30px"
-                         class="pull-left"/>&nbsp;{{trans('file.list_new_patient_today')}}
+                <button class="btn btn-info">
+                    <img src="{{ asset('img/list_new_patient.png') }}" width="50px"
+                         class=""/><br/>{{trans('file.list_new_patient_today')}}
                 </button>
             </a>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2 text-center">
             <a href="/next-appointment-patient">
-                <button class="btn" style="width:87%; background-color: #62c694; color: #ffffff">
-                    <img src="{{ asset('img/list_appointment.png') }}" width="30px"
-                         class="pull-left"/>{{trans('file.list_next_appointment_today')}}
+                <button class="btn" style=" background-color: #62c694; color: #ffffff">
+                    <img src="{{ asset('img/list_appointment.png') }}" width="50px"
+                         class=""/><br/>{{trans('file.list_next_appointment_today')}}
                 </button>
             </a>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2 text-center">
             <a href="/miss-next-appointment-patient">
-                <button class="btn" style="width:87%; background-color: #12cdba; color: #ffffff">
-                    <img src="{{ asset('img/miss_appointment.png') }}" width="30px"
-                         class="pull-left"/>&nbsp;{{trans('file.miss_list_next_appointment')}}
+                <button class="btn" style=" background-color: #12cdba; color: #ffffff">
+                    <img src="{{ asset('img/miss_appointment.png') }}" width="50px"
+                         class=""/><br/>{{trans('file.miss_list_next_appointment')}}
+                </button>
+            </a>
+        </div>
+        <div class="col-md-2 text-center">
+            <a href="/patient_report">
+                <button class="btn" style=" background-color: #3989cd; color: #ffffff">
+                    <img src="{{ asset('img/patient_list.png') }}" width="50px"
+                    /><br/>{{trans('file.all_patient')}}
                 </button>
             </a>
         </div>
         <br/>
-    </div>
-    <br/>
-    <div class="row">
-        <div class="col-md-3">
-            <a href="/patient_report">
-                <button class="btn" style="width:87%; background-color: #3989cd; color: #ffffff">
-                    <img src="{{ asset('img/patient_list.png') }}" width="30px"
-                         class="pull-left"/>&nbsp;{{trans('file.all_patient')}}
-                </button>
-            </a>
-        </div>
     </div>
     <br/>
     <div class="col-lg-12">
