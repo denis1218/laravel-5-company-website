@@ -84,7 +84,7 @@ class PrescriptionController extends Controller
     public function show($id)
     {
         $patient = Patient::find($id);
-        $medicine = Medicine::paginate(5);
+        $medicine = Medicine::all();
         return view('reception.add_medicine', compact('patient', 'medicine'));
 //
     }
