@@ -6,6 +6,17 @@
             padding: 0px !important;
             margin: 0px !important;
         }
+
+        .list-meridiem{
+            list-style-type: none;
+            margin: 10px;
+            padding: 10px;
+            overflow: hidden;
+        }
+        .list-meridiem li{
+            float: left;
+        }
+
     </style>
 @endsection
 
@@ -81,9 +92,17 @@
                     <div class="col-md-12 pull-right">
                         <div class="input-group">
                             <span class="input-group-btn">
-                                <button  class="btn btn-primary">Search &nbsp;<i class="fa fa-search"></i></button> </span>
-                            <input type="text" id="search_all_patient" onkeyup="search_all_patient()"
-                                   placeholder="{{trans('file.search_patient_name')}}" class="input-md form-control">
+                                <form action="/patient_report/search" method="post">
+                                <div class="input-group col-md-12">
+                                        <span class="input-group-btn">
+                                                <button type="submit" class="btn btn-primary" ><i
+                                                            class="fa fa-search"></i>&nbsp;{{trans('file.search')}}</button> </span>
+                                                <input type="text" placeholder="{{trans('file.search_patient_name_id')}}"
+                                                       id="search" name="search"
+                                                       class=" form-control">
+
+                                </div>
+                              </form>
                         </div>
                     </div>
 
@@ -115,13 +134,23 @@
                                                 <td>{{ $patients->id_patient }}</td>
                                                 <td>{{ str_limit($patients->name ,8)}}</td>
                                                 <td>{{ $patients->lastname }}</td>
-                                                <td>{{ str_limit($patients->doctor->first_name ,7)}}</td>
+                                                @if($patients->doctor != null )
+                                                    <td>{{ str_limit($patients->doctor->first_name ,7)}} </td>
+                                                @else
+                                                    <td>Null</td>
+                                                @endif
                                                 <td>{{ $patients->status }}</td>
-                                                <td>{{ str_limit($patients->next_appointment,16 )}}</td>
-                                                <td><a class="btn btn-xs btn-primary">Set appointment &nbsp;<i class="fa fa-history"></i></a></td>
-                                                <td><a class="btn btn-xs btn-success">History &nbsp; <i class="fa fa-file-pdf-o"></i></a></td>
-                                                <td><a class="btn btn-xs btn-info">Edit &nbsp;<i class="fa fa-edit"></i></a></td>
-                                                <td><a class="btn btn-xs btn-danger">Delete &nbsp;<i class="fa fa-remove"></i></a></td>
+                                                <td>{{ str_limit($patients->next_appointment,16 )}}, {{ $patients->time }} {{ $patients->meridiem }}</td>
+                                                <td><a class="btn btn-xs btn-primary" data-toggle="modal" data-target="#e{{$patients->id}}">Set appointment &nbsp;<i class="fa fa-history"></i></a></td>
+                                                <td><a class="btn btn-xs btn-success" href="/patient_report/{{ $patients->id }}">History &nbsp; <i class="fa fa-file-pdf-o"></i></a></td>
+                                                <td><a class="btn btn-xs btn-info" href="/patient/{{ $patients->id }}/edit">Edit &nbsp;<i class="fa fa-edit"></i></a></td>
+
+                                                <td>
+                                                    <form action="/patient/{{ $patients->id }}" method="post">
+                                                        @method('delete')
+                                                        <button class="btn btn-xs btn-danger demo4" type="submit">Delete &nbsp;<i class="fa fa-remove"></i></button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                         @endforeach
                                     @else
@@ -141,7 +170,79 @@
 
     {{-- end of all box content --}}
 
+    @foreach($patient_all as $patient)
+        {{--modal window to show editing detail of doctor--}}
+        <div class="modal inmodal" id="e{{$patient ->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content animated fadeIn">
+                    <div class="modal-header">
+
+                        <button type="button" class="close" data-dismiss="modal"><span
+                                    aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title"><i class="fa fa-history"></i>&nbsp;&nbsp;{{trans('file.change_appointment')}}</h4>
+                    </div>
+                    <form id="form" action="/next-appointment-patient-edit/{{$patient->id}}" method="post">
+                        {{method_field('patch')}}
+                        <div class="modal-body">
+
+                            <div class="form-group"><label>{{trans('file.change_appointment')}}</label>
+                                <input type="date" name="next_appointment_date" placeholder="{{trans('file.next_appointment_date')}}"
+                                       value="{{$patient->next_appointment}}" class="form-control"></div>
+
+                            <div class="form-group"><label>Time</label>
+                                <input type="number" name="time" placeholder="Time" max="12" min="1"
+                                       value="{{$patient->time}}" class="form-control"></div>
+
+                            <div class="form-group"><label>Meridien</label>
+                                    @if($patient->meridiem == "AM")
+                                        <ul class="list-meridiem">
+                                            <li><div class="i-checks"><label>AM
+                                                        <input type="radio" name="meridiem" checked
+                                                               value="AM" class="form-control"></label></div></li>
+                                            <li><div class="i-checks"><label>
+                                                        PM <input type="radio" name="meridiem"
+                                                                  value="PM" class="form-control"></label></div></li>
+                                        </ul>
+                                        @elseif($patient->meridiem == "PM")
+                                            <ul class="list-meridiem">
+                                                <li><div class="i-checks"><label>AM
+                                                            <input type="radio" name="meridiem"
+                                                                   value="AM" class="form-control"></label></div></li>
+                                                <li><div class="i-checks"><label>
+                                                            PM <input type="radio" name="meridiem" checked
+                                                                      value="PM" class="form-control"></label></div></li>
+                                            </ul>
+                                        @else
+                                            <ul class="list-meridiem">
+                                                <li><div class="i-checks"><label>AM
+                                                            <input type="radio" name="meridiem"
+                                                                   value="AM" class="form-control"></label></div></li>
+                                                <li><div class="i-checks"><label>
+                                                            PM <input type="radio" name="meridiem"
+                                                                      value="PM" class="form-control"></label></div></li>
+                                            </ul>
+                                        @endif
+
+
+                            </div>
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-white" data-dismiss="modal">{{trans('file.close')}}</button>
+                                <button type="submit"   class="btn btn-primary">{{trans('file.save')}}</button>
+
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    @endforeach
 @endsection
+
+
+
 
 @section('script')
     <script>
@@ -196,6 +297,24 @@
                     closeOnConfirm: false
                 }, function (isConfirm) {
                     if (isConfirm) form.submit();
+                });
+            });
+
+            $(document).ready(function () {
+                $('.demo4').on('click',function(e){
+                    e.preventDefault();
+                    var form = $(this).parents('form');
+                    swal({
+                        title: "Are you Sure ?",
+                        text: "To delete this patient",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Yes, delete it!",
+                        closeOnConfirm: false
+                    }, function(isConfirm){
+                        if (isConfirm) form.submit();
+                    });
                 });
             });
 
