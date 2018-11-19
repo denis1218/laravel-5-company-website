@@ -25,8 +25,7 @@ class CreateItemsTable extends Migration
             $table->timestamps();
             $table->foreign('trader_id')
                   ->references('id')->on('traders')
-                  ->onUpdate('cascade')
-                  ->onDelete('cascade');
+                  ->onUpdate('cascade');
         });
     }
 
