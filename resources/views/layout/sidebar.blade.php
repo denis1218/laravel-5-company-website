@@ -111,7 +111,7 @@
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/doctors"><i class="fa fa-user-md"></i>{{ trans('file.doctors') }}</a>
                             </li>
-                            <li><a href="/salary-others"><i class="fa fa-users"></i>{{ trans('file.others') }}</a>
+                            <li><a href="/employee"><i class="fa fa-users"></i>{{ trans('file.others') }}</a>
                             </li>
                         </ul>
                     </li>

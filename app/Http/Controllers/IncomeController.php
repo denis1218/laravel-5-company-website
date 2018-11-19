@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Income;
 use App\Xray;
 use App\Treatment;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DB;
 
@@ -17,12 +18,15 @@ class IncomeController extends Controller
      */
     public function index()
     {
+        $start = new Carbon('first day of this month');
+        $end = new Carbon('last day of this month');
         $income = Treatment::where('remaining_fee','>','0')->paginate(10);
-        $ptotal=DB::table('treatments')->sum('paid_amount');
-        $xtotal=DB::table('xrays')->sum('paid_amount');
-        $ototal=DB::table('oincoms')->sum('amount');
+        $ptotal=DB::table('treatments')->whereBetween('created_at',[$start,$end])->sum('paid_amount');
+        $xtotal=DB::table('xrays')->whereBetween('created_at',[$start,$end])->sum('paid_amount');
+        $ototal=DB::table('oincoms')->whereBetween('created_at',[$start,$end])->sum('amount');
         $Gtotal=$ptotal+$xtotal+$ototal;
             return view('income',compact('income','Gtotal'));
+
     }
 
     /**

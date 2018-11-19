@@ -21,7 +21,6 @@ class CreateMedicinesTable extends Migration
             $table->integer('buy');
             $table->integer('sale');
             $table->integer('unit');
-			$table->string('mahdi')->nullable;
             $table->timestamps();
             $table->softDeletes();
         });

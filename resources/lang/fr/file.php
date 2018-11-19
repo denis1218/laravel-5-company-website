@@ -302,6 +302,12 @@ return[
 //End of financial report
 
 //    list of patient
+    'employee_salary_this_month'=>'معاش مجموعی کارمند در این ماه',
+    'paid_amount_this_month'=>'پول پرداخت شده در این ماه',
+
+    'no_paid'=>'تا حال پول پرداخت نشده است',
+    'employee_salary'=>'معاش کارمندان',
+    'position'=>'مقام',
     'appointment_patient'=>'ملاقات مریض',
     'add_new_patient'=>'اضافه کردن مریض جدید',
     'list_new_patient_today'=>'لیست مریضان جدید امروز',

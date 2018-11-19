@@ -14,7 +14,9 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
+        $employee = Employee::all();
+        return view('employee_list',compact('employee'));
+
     }
 
     /**
@@ -24,7 +26,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        return view('employee_others');
     }
 
     /**
@@ -35,7 +37,18 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $employee = new Employee();
+        $employee->firstname = $request->firstname;
+        $employee->lastname = $request->lastname;
+        $employee->gender = $request->gender;
+        $employee->age = $request->age;
+        $employee->phone = $request->phone;
+        $employee->salary = $request->salary;
+        $employee->address  = $request->address;
+        $employee->position  = $request->position;
+        $employee->save();
+        return redirect('employee');
+
     }
 
     /**
@@ -67,9 +80,19 @@ class EmployeeController extends Controller
      * @param  \App\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Employee $employee)
+    public function update(Request $request, $id)
     {
-        //
+        $employee = Employee::find($id);
+        $employee->firstname = $request->firstname;
+        $employee->lastname = $request->lastname;
+        $employee->gender = $request->gender;
+        $employee->age = $request->age;
+        $employee->phone = $request->phone;
+        $employee->salary = $request->salary;
+        $employee->address  = $request->address;
+        $employee->position  = $request->position;
+        $employee->save();
+        return redirect('employee');
     }
 
     /**
@@ -78,8 +101,10 @@ class EmployeeController extends Controller
      * @param  \App\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Employee $employee)
+    public function destroy($id)
     {
-        //
+        $employee = Employee::find($id);
+        $employee->delete();
+        return back();
     }
 }
