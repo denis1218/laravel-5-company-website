@@ -48,7 +48,6 @@ class XrayController extends Controller
             return redirect()->back();
         }
         $rey->tooth_number=$request->tooth_number;
-        $rey->tooth_position=$request->tooth_position;
         $rey->patient_id=$request->patient_id;
         $rey->patient_name=$request->patient_name;
         $rey->doctor_name=$request->doctor_name;

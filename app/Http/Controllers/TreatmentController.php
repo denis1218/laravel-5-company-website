@@ -8,6 +8,7 @@ use App\Income;
 use App\Medicine;
 use App\Patient;
 use App\Prescription;
+use App\Teeth;
 use App\Treatment;
 use App\TreatmentList;
 use App\XRay;
@@ -93,14 +94,11 @@ class TreatmentController extends Controller
     function store(Request $request)
     {
         $treatment = new Treatment();
-
-        $treatment->teeth_number = $request->teeth_number;
         $treatment->description = $request->description;
         $treatment->estimated_fee = $request->estimated_fee;
         $treatment->discount = $request->discount;
         $treatment->remaining_fee = $treatment->estimated_fee - $treatment->discount;
         $treatment->paid_amount = 0;
-        $treatment->tooth_position=$request->tooth_position;
         $treatment->visits = $request->input('visits');
         $treatment->patient_id = $request->input('FK_id_patient');
         $treatment->treatment = $request->input('treatment');
@@ -117,8 +115,23 @@ class TreatmentController extends Controller
             $treatment->status_visits = $request->status_visits;
         }
 
-//            return $treatment;
         $treatment->save();
+
+        $last_treatment = Treatment::all();
+        $max_treat = $last_treatment->max();
+
+        foreach($request->teeth_number as $tooth)
+        {
+            $teeth = new Teeth();
+            $teeth->tooth_number = $tooth;
+            $teeth->treatment_id = $max_treat->id;
+            $teeth->save();
+        }
+
+
+
+
+
         return redirect('/operation');
 
     }

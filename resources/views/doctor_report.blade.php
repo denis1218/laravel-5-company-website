@@ -184,6 +184,20 @@
                                     </div>
                                 </div>
                         @else
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="font-noraml">{{trans('file.select_range')}}</label>
+                                                <div class="input-daterange input-group" id="" >
+                                                    <span class="input-group-addon">{{trans('file.from')}} &nbsp;<i class="fa fa-arrow-right"></i></span>
+                                                    <input type="date" class="input-sm form-control" name="start" required>
+                                                    <span class="input-group-addon">{{trans('file.to')}} &nbsp;<i class="fa fa-arrow-right"></i></span>
+                                                    <input type="date" class="input-sm form-control" name="end" required="">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                         <div class="row">
                             <div class="col-md-5">
                                 <table class="table table-hover table-bordered">
@@ -206,9 +220,15 @@
                                     <tr>
 
                                         <td class="text-bold"><h4>{{trans('file.total_doctor_salary')}}: </h4></td>
+                                        @if($doctor->to < $tod)
                                         <td>
                                             <input type="text" class="form-control" value="{{$docfee+$doctor->remaining-$doctor->advance}}" name="colection" readonly>
                                         </td>
+                                        @else
+                                            <td>
+                                                <input type="text" class="form-control" value="{{$doctor->remaining-$doctor->advance}}" name="colection" readonly>
+                                            </td>
+                                        @endif
                                     </tr>
                                     <tr>
                                         <td class="text-bold"><h4>{{trans('file.lpd')}}: </h4></td>
