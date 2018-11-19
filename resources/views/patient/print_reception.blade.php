@@ -4,7 +4,9 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>{{trans('file.patient_information')}} <i class="fa fa-info"></i></h5>
+                <a class="btn btn-md btn-primary" href="{{ URL::previous() }}"><i class="fa fa-arrow-left"></i>&nbsp;Back</a>
+                <strong>&nbsp;&nbsp;{{trans('file.patient_information')}} <i class="fa fa-info"></i>
+                <strong/>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>

@@ -27,6 +27,8 @@ class CreatePatientsTable extends Migration
             $table->longText('education')->nullable();
             $table->string('status');
             $table->date('next_appointment');
+            $table->integer('time');
+            $table->string('meridiem');
             $table->unsignedInteger('doctor_id');
             $table->timestamps();
             $table->foreign('doctor_id')

@@ -184,6 +184,20 @@
                                     </div>
                                 </div>
                         @else
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="font-noraml">{{trans('file.select_range')}}</label>
+                                                <div class="input-daterange input-group" id="" >
+                                                    <span class="input-group-addon">{{trans('file.from')}} &nbsp;<i class="fa fa-arrow-right"></i></span>
+                                                    <input type="date" class="input-sm form-control" name="start" required>
+                                                    <span class="input-group-addon">{{trans('file.to')}} &nbsp;<i class="fa fa-arrow-right"></i></span>
+                                                    <input type="date" class="input-sm form-control" name="end" required="">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                         <div class="row">
                             <div class="col-md-5">
                                 <table class="table table-hover table-bordered">
