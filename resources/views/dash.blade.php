@@ -219,6 +219,54 @@
                         </div>
                     </div>
                 </div>
+
+                {{--quick appointment--}}
+                <div class="col-lg-4">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>{{trans('file.quick_appointment')}}</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+
+                            <form id="form" action="/patient/storeFromDash" method="post">
+
+                                {{csrf_field()}}
+                                <div class="row">
+                                    <div class="col">
+                                        <select name="doctor_id" id="" required class="form-control">
+                                            <option value="">Select Doctor</option>
+                                            @foreach($doct as $d)
+                                                <option value="{{$d->id}}">{{$d->first_name}}</option>
+                                            @endforeach
+                                        </select>
+                                        <br>
+                                        <input type="text" name="firstname" class="form-control" maxlength="20"
+                                               style="width:100%" placeholder="{{trans('file.first_name')}}"
+                                               required=""><br>
+                                        <input type="text" name="lastname" class="form-control" style="width:100%"
+                                               placeholder="{{trans('file.last_name')}}" required=""><br>
+                                        <input type="number" name="phone" class="form-control" style="width:100%"
+                                               placeholder="{{trans('file.phone')}}" required=""><br>
+                                        <input type="date" name="date" class="form-control" style="width:100%"
+                                               placeholder="{{trans('file.date')}}" required=""><br>
+
+
+                                        <button type="submit" value="Pay" class="btn btn-primary">{{trans('file.save')}}
+                                            &nbsp;<i class="fa fa-save"></i></button>
+                                        <button class="btn btn-default" type="reset">{{trans('file.reset')}} &nbsp;<i
+                                                    class="fa fa-arrow-circle-down"></i></button>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
