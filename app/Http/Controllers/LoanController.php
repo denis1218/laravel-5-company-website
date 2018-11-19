@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Expense;
+use Carbon\Carbon;
 use DB;
 use App\Loan;
 use App\Trader;
@@ -42,6 +44,11 @@ class LoanController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     *  $expens->receiver = $request->receiver;
+    $expens->amount = $request->amount;
+    $expens->category = $request->category;
+    $expens->description = $request->description;
+    $expens->created_at = Carbon::now();
      */
     public function store(Request $request)
     {
@@ -50,6 +57,13 @@ class LoanController extends Controller
         $Lon->receiver=$request->receiver;
         $Lon->trader_id=$request->trader_id;
         $Lon->save();
+        $expens = new Expense();
+        $expens->receiver = $request->receiver;
+        $expens->amount = $request->paid;
+        $expens->category = "paid loan";
+        $expens->description = "Paid Loan for receiver :`".$request->receiver."` at date : ". Carbon::now() ." ";
+        $expens->created_at = Carbon::now();
+        $expens->save();
         return redirect('/item');
     }
 

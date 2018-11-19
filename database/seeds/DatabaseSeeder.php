@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
     {
 
 //        if(UserTableSeeder::count() == 0)$this->call(UserTableSeeder::class );
-        if(\App\Doctor::count() == 0)$this->call(DoctorSeeder::class );
+//        if(\App\Doctor::count() == 0)$this->call(DoctorSeeder::class );
 
         DB::Table('users')->insert([
             'firstname' => 'admin',
@@ -32,47 +32,47 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        if(Patient::count() == 0)$this->call(PatientTableSeeder::class );
-        if(Treatment::count() == 0)$this->call(TreatmentTableSeeder::class );
-        if(Permission::count() == 0)$this->call(PermissionTableSeeder::class );
-        if(Expense::count() == 0)$this->call(ExpenseTableSeeder::class );
-        if(Role::count() == 0)$this->call(RoleTableSeeder::class );
-        if(ExpenseCatagory::count() == 0)$this->call(TreatmentListTableSeeder::class );
-        $this->call(UserRoleTableSeeder::class);
+//        if(Patient::count() == 0)$this->call(PatientTableSeeder::class );
+//        if(Treatment::count() == 0)$this->call(TreatmentTableSeeder::class );
+////        if(Permission::count() == 0)$this->call(PermissionTableSeeder::class );
+//        if(Expense::count() == 0)$this->call(ExpenseTableSeeder::class );
+////        if(Role::count() == 0)$this->call(RoleTableSeeder::class );
+//        if(ExpenseCatagory::count() == 0)$this->call(TreatmentListTableSeeder::class );
+////        $this->call(UserRoleTableSeeder::class);
 
 
-
-        DB::table('treatment_lists')->insert([
-            'treatment' => 'PF Parmanent Filling',
-            'estimated_fee' => 15000,
-        ]);
-
-        DB::table('treatment_lists')->insert([
-            'treatment' => 'RCT Root Canal',
-            'estimated_fee' => 1200,
-        ]);
-
-        DB::table('treatment_lists')->insert([
-            'treatment' => 'Extraction',
-            'estimated_fee' => 1300,
-        ]);
-
-        DB::table('treatment_lists')->insert([
-            'treatment' => 'Pulpotomy',
-            'estimated_fee' => 1300,
-        ]);
-
-        DB::table('dental_defect_lists')->insert([
-            'dental_defect' => 'BDR',
-        ]);
-
-        DB::table('dental_defect_lists')->insert([
-            'dental_defect' => 'G-Carios',
-        ]);
-
-        DB::table('dental_defect_lists')->insert([
-            'dental_defect' => 'Atrision',
-        ]);
+//
+//        DB::table('treatment_lists')->insert([
+//            'treatment' => 'PF Parmanent Filling',
+//            'estimated_fee' => 15000,
+//        ]);
+//
+//        DB::table('treatment_lists')->insert([
+//            'treatment' => 'RCT Root Canal',
+//            'estimated_fee' => 1200,
+//        ]);
+//
+//        DB::table('treatment_lists')->insert([
+//            'treatment' => 'Extraction',
+//            'estimated_fee' => 1300,
+//        ]);
+//
+//        DB::table('treatment_lists')->insert([
+//            'treatment' => 'Pulpotomy',
+//            'estimated_fee' => 1300,
+//        ]);
+//
+//        DB::table('dental_defect_lists')->insert([
+//            'dental_defect' => 'BDR',
+//        ]);
+//
+//        DB::table('dental_defect_lists')->insert([
+//            'dental_defect' => 'G-Carios',
+//        ]);
+//
+//        DB::table('dental_defect_lists')->insert([
+//            'dental_defect' => 'Atrision',
+//        ]);
 
     }
 }
@@ -117,6 +117,11 @@ class TreatmentListTableSeeder extends Seeder
         DB::table('expense_catagories')->insert([
             'category' => 'tax',
         ]);
+        DB::table('expense_catagories')->insert([
+            'category' => 'paid loan',
+        ]);
+
+
     }
 }
 

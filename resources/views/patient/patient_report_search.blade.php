@@ -21,7 +21,7 @@
                         {{--first doctor--}}
 
                         <div class="">
-                            <a class="btn btn-primary" href="/patient_report"><i class="fa fa-arrow-left"></i>&nbsp;Back</a>
+                            <a class="btn btn-primary" href="{{ URL::previous() }}"><i class="fa fa-arrow-left"></i>&nbsp;Back</a>
                         </div>
 
                         <div class="row" style="margin-top:30px;">
@@ -35,10 +35,10 @@
                                         <th>{{trans('file.patient_name')}}</th>
                                         <th>{{trans('file.last_name')}}</th>
 {{--                                        <th>{{trans('file.doctor_name')}}</th>--}}
-                                        <th>{{trans('file.register')}}</th>
                                         <th>{{trans('file.status')}}</th>
                                         <th>{{trans('file.next_appointment_date')}}</th>
                                         <th>{{trans('file.health_problem')}}</th>
+                                        <th>Set Appointment</th>
                                         <th>{{trans('file.report')}}</th>
                                         <th>{{trans('file.edit')}}</th>
                                         <th>{{trans('file.delete')}}</th>
@@ -52,20 +52,17 @@
                                                 <td>{{ $patient->id_patient }}</td>
                                                 <td>{{ $patient->name }}</td>
                                                 <td>{{ $patient->lastname }}</td>
-{{--                                                <td>{{ $patient->doctor->first_name }}</td>--}}
-                                                <td>{{ $patient->created_at }}</td>
                                                 <td>{{ $patient->status }}</td>
                                                 <td>{{$patient->next_appointment}}</td>
                                                 <td class="">{{$patient->problem_health}}</td>
+                                                <td><a class="btn btn-xs btn-primary" data-toggle="modal" data-target="#e{{$patient->id}}">Set appointment &nbsp;<i class="fa fa-history"></i></a></td>
                                                 <td><a class="btn btn-xs btn-primary"
                                                        href="/patient_report/{{$patient->id}}"><i
                                                                 class="fa fa-print"></i>
-                                                        {{trans('file.print')}}</a></td>
-                                                <td><a class="btn btn-xs btn-success" data-toggle="modal"
-                                                       data-target="#e{{$patient->id}}"><i class="fa fa-edit"></i>
-                                                        {{trans('file.edit')}}</a></td>
+                                                        History</a></td>
+                                                <td><a class="btn btn-xs btn-info" href="/patient/{{ $patient->id }}/edit">Edit &nbsp;<i class="fa fa-edit"></i></a></td>
                                                 <td>
-                                                    <form action="/patient_report/{{ $patient->id }}" method="post" id="myForm">
+                                                <form action="/patient_report/{{ $patient->id }}" method="post" id="myForm">
                                                         @method('delete')
                                                         <button class="btn btn-xs btn-danger demo3"><i class="fa fa-remove"></i>
                                                             {{trans('file.delete')}}</button>
@@ -91,54 +88,67 @@
     </div>
 
     @foreach($data as $patient)
-        {{-- modal window to show editing detail of doctor--}}
-        <div class="modal inmodal" id="e{{$patient->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+        {{--modal window to show editing detail of doctor--}}
+        <div class="modal inmodal" id="e{{$patient ->id}}" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content animated fadeIn">
                     <div class="modal-header">
-                        <h4 class="modal-title">{{trans('file.info_patient')}}</h4>
+
+                        <button type="button" class="close" data-dismiss="modal"><span
+                                    aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title"><i class="fa fa-history"></i>&nbsp;&nbsp;{{trans('file.change_appointment')}}</h4>
                     </div>
-                    <form id="form" action="/patient_report/{{$patient->id}}" method="post">
+                    <form id="form" action="/next-appointment-patient-edit/{{$patient->id}}" method="post">
                         {{method_field('patch')}}
                         <div class="modal-body">
-                            <input type="number" hidden name="id" value="{{ $patient->id }}">
 
-                            <div class="form-group"><label>{{trans('file.first_name')}}</label>
-                                <input type="text" name="name" placeholder="{{trans('file.first_name')}}"
-                                       value="{{$patient->name}}" class="form-control"></div>
+                            <div class="form-group"><label>{{trans('file.change_appointment')}}</label>
+                                <input type="date" name="next_appointment_date" placeholder="{{trans('file.next_appointment_date')}}"
+                                       value="{{$patient->next_appointment}}" class="form-control"></div>
 
-                            <div class="form-group"><label>{{trans('file.last_name')}}</label>
-                                <input type="text" name="lastname" placeholder="{{trans('file.last_name')}}"
-                                       value="{{$patient->lastname}}" class="form-control"></div>
+                            <div class="form-group"><label>Time</label>
+                                <input type="number" name="time" placeholder="Time" max="12" min="1"
+                                       value="{{$patient->time}}" class="form-control"></div>
 
-                            <div class="form-group"><label>{{trans('file.phone')}}</label>
-                                <input type="text" name="phone" placeholder="{{trans('file.phone')}}"
-                                       value="{{$patient->phone}}" class="form-control">
+                            <div class="form-group"><label>Meridien</label>
+                                @if($patient->meridiem == "AM")
+                                    <ul class="list-meridiem">
+                                        <li><div class="i-checks"><label>AM
+                                                    <input type="radio" name="meridiem" checked
+                                                           value="AM" class="form-control"></label></div></li>
+                                        <li><div class="i-checks"><label>
+                                                    PM <input type="radio" name="meridiem"
+                                                              value="PM" class="form-control"></label></div></li>
+                                    </ul>
+                                @elseif($patient->meridiem == "PM")
+                                    <ul class="list-meridiem">
+                                        <li><div class="i-checks"><label>AM
+                                                    <input type="radio" name="meridiem"
+                                                           value="AM" class="form-control"></label></div></li>
+                                        <li><div class="i-checks"><label>
+                                                    PM <input type="radio" name="meridiem" checked
+                                                              value="PM" class="form-control"></label></div></li>
+                                    </ul>
+                                @else
+                                    <ul class="list-meridiem">
+                                        <li><div class="i-checks"><label>AM
+                                                    <input type="radio" name="meridiem"
+                                                           value="AM" class="form-control"></label></div></li>
+                                        <li><div class="i-checks"><label>
+                                                    PM <input type="radio" name="meridiem"
+                                                              value="PM" class="form-control"></label></div></li>
+                                    </ul>
+                                @endif
+
+
                             </div>
 
-                            <div class="form-group"><label>{{trans('file.status')}}</label>
-                                <select name="status" class="form-control   ">
-                                    <option selected disabled>{{ $patient->status }}</option>
-                                    <option value="1">first</option>
-                                    <option value="2">second</option>
-                                    <option value="3">third</option>
-                                    <option value="4">fourth</option>
-                                    <option value="5">fifth</option>
-                                    <option value="6">sixth</option>
-                                    <option value="7">seventh</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group"><label>{{trans('file.next_appointment')}}</label>
-                                <input type="date" name="next_appointment" placeholder="{{trans('file.next_appointment')}}"
-                                       value="{{$patient->next_appointment}}"
-                                       class="form-control"></div>
 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-white"
-                                    data-dismiss="modal">{{trans('file.close')}}</button>
-                            <button type="submit" class="btn btn-primary">{{trans('file.save')}}</button>
+                            <button type="button" class="btn btn-white" data-dismiss="modal">{{trans('file.close')}}</button>
+                            <button type="submit"   class="btn btn-primary">{{trans('file.save')}}</button>
+
                         </div>
                     </form>
                 </div>

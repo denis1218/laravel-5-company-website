@@ -66,6 +66,8 @@ return[
     'paid_amount'=>'Paid Amount',
     'select_category'=>'Select Category',
     'eym'=>'Enter Your Message',
+    'salary'=>'Salary',
+    'others'=>'Others',
     'save'=>'Save',
     'remainder'=>'Remainder',
     'this_month'=>'this month',
@@ -367,6 +369,11 @@ return[
 
 //  Start of Create Account
 //  List of account
+    'employee_salary'=>'Employee Salary',
+    'employee_salary_this_month'=>'Total Employee Salary In This Month',
+    'paid_amount_this_month'=>'Total Paid In This Month',
+    'no_paid'=>'No Paid Yet',
+    'position'=>'Position',
     'list_of_account'=>'List Of Account',
     'owner'=>'Owner',
     'create_account'=>'Create Account',

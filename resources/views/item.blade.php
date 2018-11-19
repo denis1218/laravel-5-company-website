@@ -62,8 +62,8 @@
                                     </tr>
                                 @endforeach
                                     <tr>
-                                        <td colspan="4" class="text-center">{{trans('file.total')}}</td>
-                                        <td >{{$total}}</td>
+                                        <td colspan="4" class="text-center"><strong>Total</strong></td>
+                                        <td ><strong>{{$total}}</strong></td>
                                     </tr>
                                 </tbody>
                             </table>

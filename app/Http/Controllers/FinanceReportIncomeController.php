@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Prescription;
 use App\Xray;
 use Illuminate\Http\Request;
 use App\Treatment;
@@ -36,9 +37,10 @@ class FinanceReportIncomeController extends Controller
         $xinfo = Xray::with('patient')->where('created_at', '=', $start)->get();
 
         $oinfo = Oincom::where('created_at', '=', $start)->get();
+        $medicine = Prescription::where('created_at','=',$start)->get();
 
-        $total = $pinfo->sum('paid_amount') + $xinfo->sum('paid_amount') + $oinfo->sum('amount');
-        return view('finance_report.finance_report_income_print', compact('pinfo', 'xinfo', 'oinfo', 'total','start'));
+        $total = $pinfo->sum('paid_amount') + $xinfo->sum('paid_amount') + $oinfo->sum('amount') + $medicine->sum('total_fee');
+        return view('finance_report.finance_report_income_print', compact('pinfo', 'xinfo', 'oinfo', 'total','start','medicine'));
     }
 
     /**
@@ -55,8 +57,10 @@ class FinanceReportIncomeController extends Controller
         $pinfo = Treatment::whereBetween('created_at', [$start, $end])->get();
         $xinfo = Xray::whereBetween('created_at', [$start, $end])->get();
         $oinfo = Oincom::whereBetween('created_at', [$start, $end])->get();
-        $total = $pinfo->sum('paid_amount') + $xinfo->sum('paid_amount') + $oinfo->sum('amount');
-        return view('finance_report.finance_report_income_print', compact('pinfo', 'xinfo', 'oinfo', 'total','start'));
+        $medicine = Prescription::whereBetween('created_at', [$start, $end])->get();
+
+        $total = $pinfo->sum('paid_amount') + $xinfo->sum('paid_amount') + $oinfo->sum('amount') + $medicine->sum('total_fee');
+        return view('finance_report.finance_report_income_print', compact('pinfo', 'xinfo', 'oinfo', 'total','start','medicine'));
 
 
     }
@@ -83,6 +87,10 @@ class FinanceReportIncomeController extends Controller
         if ($selectRange == 'other'){
             $oinfo = Oincom::where('created_at','=',$singleDate)->get();
             return view('finance_report.select_report_print',compact('oinfo'));
+        }
+        if ($selectRange == 'medicine'){
+            $medicine = Prescription::where('created_at','=',$singleDate)->get();
+            return view('finance_report.select_report_print',compact('medicine'));
         }
     }
 
@@ -113,6 +121,11 @@ class FinanceReportIncomeController extends Controller
         if ($selectRange == 'other') {
             $oinfo = Oincom::whereBetween('created_at', [$start, $end])->get();
             return view('finance_report.select_report_print', compact('oinfo'));
+
+        }
+        if ($selectRange == 'medicine') {
+            $medicine = Prescription::whereBetween('created_at', [$start, $end])->get();
+            return view('finance_report.select_report_print', compact('medicine'));
 
         }
     }

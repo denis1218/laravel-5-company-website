@@ -42,7 +42,7 @@
                                         <td>{{$trader->last_name}}</td>
                                         <td>{{$trader->phone}}</td>
                                         <td>{{$trader->organization}}</td>
-                                        <td><a href="/item2/{{$trader->id}}" class="btn btn-primary btn-xs">{{trans('file.purchase')}}</a></td>
+                                        <td><a href="/item2/{{$trader->id}}" class="btn btn-success btn-xs">{{trans('file.purchase')}}</a></td>
                                         <td><a href="/item/{{$trader->id}}" class="btn btn-primary btn-xs">{{trans('file.lp')}}</a></td>
                                     </tr>
                                 @endforeach

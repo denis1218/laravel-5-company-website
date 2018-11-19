@@ -83,44 +83,70 @@
                     <fieldset>
                         <h2>{{trans('file.patient_information')}}</h2>
                         <div class="row">
-                            <div class="col-lg-8">
+                            <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>{{trans('file.first_name')}} *</label>
-                                    <input id="name" name="name" type="text" class="form-control required">
+                                    <input id="name" name="name" type="text" class="form-control required" placeholder="firstname">
                                 </div>
 
                                 <div class="form-group">
                                     <label>{{trans('file.last_name')}} *</label>
-                                    <input id="lastname" name="lastname" type="text" class="form-control required">
+                                    <input id="lastname" name="lastname" type="text" class="form-control required" placeholder="last name">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Date Appointment *</label>
+                                   <input id="appointment" name="appointment" type="date" class="form-control required">
+                                </div>
+
+                                <div class="form-group">
+
+                                    <table cellspacing="20px"><tr>
+                                            <label>Time Appointment *</label>
+                                    <td><input id="Time" name="time" placeholder="Time Appointment O'Clock" type="number" class="form-control required" max="12" min="1"></td>
+                                        <td><label>AM</label><div class="i-checks"><label class="checkbox-inline"><input id="meridiem" value="AM" name="meridiem" type="radio" class="form-control required"></td>
+                                        <td><label>PM</label><div class="i-checks"><label class="checkbox-inline"><input id="meridiem" value="PM" name="meridiem" type="radio" class="form-control required"></td>
+                                        </tr></table>
                                 </div>
 
                                 <div class="form-group">
                                     <label>{{trans('file.gender')}}&nbsp;&nbsp;&nbsp;</label>
                                     <label>  <div class="i-checks"><input type="radio"  value="male" name="gender"></div></i> {{trans('file.male')}} </label>&nbsp;&nbsp;
                                     <label>  <div class="i-checks"><input type="radio"  value="female" name="gender"></div></i> {{trans('file.female')}} </label>
-
-
                                 </div>
+
                                 <div class="form-group">
                                     <label>{{trans('file.age')}} *</label>
-                                    <input id="age" name="age" type="number" class="form-control required">
+                                    <input id="age" name="age" type="number" class="form-control" placeholder="Age">
+                                </div>
+
+                            </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>{{trans('file.phone')}} *</label>
+                                        <input id="phone" name="phone" type="phone" class="form-control required" placeholder="Phone">
+                                    </div>
+                                <div class="form-group">
+                                    <label>Job *</label>
+                                    <input id="job" name="job" type="text" class="form-control" placeholder="Job">
                                 </div>
                                 <div class="form-group">
-                                    <label>{{trans('file.phone')}} *</label>
-                                    <input id="phone" name="phone" type="phone" class="form-control required">
+                                    <label>Education level *</label>
+                                    <select name="education" class="form-control">
+                                        <option selected disabled >Select Education Level</option>
+                                        <option>Illiterate</option>
+                                        <option>School Student</option>
+                                        <option>Graduated</option>
+                                        <option>Diploma</option>
+                                        <option>Master</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label>{{trans('file.address')}} *</label>
-                                    <textarea rows="5" id="address" name="address" type="text" class="form-control required"></textarea>
+                                    <textarea rows="5" id="address" name="address" type="text" class="form-control required" placeholder="Address"></textarea>
                                 </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="text-center">
-                                    <div style="margin-top: 20px">
-                                        <i class="fa fa-sign-in  text-success" style="font-size: 180px;color: #e5e5e5 "></i>
-                                    </div>
                                 </div>
-                            </div>
                         </div>
 
                     </fieldset>

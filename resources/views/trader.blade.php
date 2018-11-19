@@ -24,11 +24,12 @@
                         <!-- Expenditure Table -->
                         <div class="row">
                             <div class="col-md-12">
-                                <a href="/trader/create" class="btn btn-primary btn-md" style=""><i class="fa fa-plus"></i>&nbsp;&nbsp;{{trans('file.sr')}}</a>
+                                <a href="/trader/create" class="btn btn-primary btn-md" style=""><i class="fa fa-user-plus text-warning"></i>&nbsp;&nbsp;Supplier Registration</a>
                             </div>
                         </div>
+
                         <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover " >
+                            <table class="table table-striped table-bordered table-hover " style="margin-top: 10px;" >
 
                                 <thead>
                                 <tr>
