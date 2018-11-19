@@ -56,8 +56,13 @@
                                     @foreach($income as $incom)
                                         <tr class="gradeX">
                                             <td>{{$incom->id}}</td>
+                                            @if($incom->patient != null)
                                             <td>{{$incom->patient->id_patient}}</td>
                                             <td>{{$incom->patient->name}}</td>
+                                            @else
+                                                <td>Null</td>
+                                                <td>Null</td>
+                                            @endif
                                             <td>{{$incom->estimated_fee}}</td>
                                             <td>{{$incom->paid_amount}}</td>
                                             <td>{{$incom->discount}}</td>
