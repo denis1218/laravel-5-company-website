@@ -141,7 +141,6 @@
                                                 <td><a class="btn btn-xs btn-primary" data-toggle="modal" data-target="#e{{$patients->id}}">Set appointment &nbsp;<i class="fa fa-history"></i></a></td>
                                                 <td><a class="btn btn-xs btn-success" href="/patient_report/{{ $patients->id }}">History &nbsp; <i class="fa fa-file-pdf-o"></i></a></td>
                                                 <td><a class="btn btn-xs btn-info" href="/patient/{{ $patients->id }}/edit">Edit &nbsp;<i class="fa fa-edit"></i></a></td>
-
                                                 <td>
                                                     <form action="/patient/{{ $patients->id }}" method="post">
                                                         @method('delete')

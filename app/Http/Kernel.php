@@ -69,5 +69,6 @@ class Kernel extends HttpKernel
         'reception' => \App\Http\Middleware\ReceptionRoute::class,
         'admin' => \App\Http\Middleware\AdminRoute::class,
         'xray' => \App\Http\Middleware\XrayRoute::class,
+
     ];
 }

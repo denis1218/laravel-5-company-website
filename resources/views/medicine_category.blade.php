@@ -20,7 +20,7 @@
                         <form action="/medicine_category" method="post">
                             <div class="form-group">
                                 <lable for="form-control">{{trans('file.medicine_category')}}</lable>
-                                <input type="text" class="form-control" name="name"/>
+                                <input type="text" class="form-control" name="name" required/>
                             </div>
                             <div class="col-md-5">
                                 <button type="submit" class="btn btn-primary" name="submit"><i class="fa fa-save"></i>&nbsp;{{trans('file.save')}}</button>
@@ -30,12 +30,13 @@
                     </div>
                     <div class="col-md-6">
                         <div class="table-responsive">
+                            <h4 class="text-danger">Note : Recommended : Do not delete records</h4>
                             <table class="table table-striped table-bordered table-hover">
                                 <thead>
                                 <tr>
                                     <th>{{trans('file.id')}}</th>
                                     <th>{{trans('file.category')}}</th>
-
+                                    <th>{{trans('file.delete')}}</th>
                                 <tr>
                                 </thead>
                                 <tbody>
@@ -43,7 +44,14 @@
                                     <tr>
                                         <td>{{ $cat->id }}</td>
                                         <td>{{ $cat->name }}</td>
-
+                                        <td>
+                                            <form action="/medicine_category/{{ $cat->id }}" method="post" id="formDelete">
+                                                @method('delete')
+                                                <a  class="btn btn-xs btn-danger demoDelete"  name="delete" href="/medicine_category/{{ $cat->id }}">
+                                                    {{trans('file.delete')}} &nbsp;<i class="fa fa-trash"></i>
+                                                </a>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -51,7 +59,7 @@
                                 <tr>
                                     <th>{{trans('file.id')}}</th>
                                     <th>{{trans('file.category')}}</th>
-
+                                    <th>{{trans('file.delete')}}</th>
                                 </tr>
                                 </tfoot>
                             </table>

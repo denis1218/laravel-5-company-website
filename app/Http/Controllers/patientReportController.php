@@ -51,7 +51,7 @@ class patientReportController extends Controller
      */
     public function show($id)
     {
-        $treatment = Treatment::with('patient')->get()->find($id);
+//        $treatment = Treatment::with('patient')->get()->find($id);
         $patient = Patient::with('doctor')->get()->find($id);
         $patient_income = Treatment::where('patient_id','=',$id)->get();
 //return $patient_income;
