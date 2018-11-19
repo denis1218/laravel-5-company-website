@@ -220,9 +220,15 @@
                                     <tr>
 
                                         <td class="text-bold"><h4>{{trans('file.total_doctor_salary')}}: </h4></td>
+                                        @if($doctor->to < $tod)
                                         <td>
                                             <input type="text" class="form-control" value="{{$docfee+$doctor->remaining-$doctor->advance}}" name="colection" readonly>
                                         </td>
+                                        @else
+                                            <td>
+                                                <input type="text" class="form-control" value="{{$doctor->remaining-$doctor->advance}}" name="colection" readonly>
+                                            </td>
+                                        @endif
                                     </tr>
                                     <tr>
                                         <td class="text-bold"><h4>{{trans('file.lpd')}}: </h4></td>

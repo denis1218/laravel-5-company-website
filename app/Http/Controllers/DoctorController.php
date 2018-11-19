@@ -83,11 +83,20 @@ class DoctorController extends Controller
 
     public function PayAdvance(Request $request,$id)
     {
+        $day=Carbon::now();
+        $advance=$request->advance;
         $adv=Doctor::find($id);
-        $adv->advance=$request->advance;
+        $padv=$adv->advance;
+        $adv->advance=$adv->advance+$request->advance;
         $adv->save();
-        $msg  = 'Advance Successfully Added';
-        return redirect()->back()->with(compact('msg'));
+        $expenseSalary = new Expense();
+        $expenseSalary->receiver = $adv->first_name;
+        $expenseSalary->amount = $request->advance;
+        $expenseSalary->category = "advance";
+        $expenseSalary->description = "Paid advance :".$request->advance." at date : ".Carbon::now()." ";
+        $expenseSalary->created_at = Carbon::now();
+        $expenseSalary->save();
+        return view('print_pages.AdvPrint',compact('adv','advance','padv','day'));
 
     }
 
@@ -103,7 +112,7 @@ class DoctorController extends Controller
         $doctor=Doctor::find($id);
         $patient=Doctor::find($id)->patient;
         $treatment=Doctor::find($id)->treatment;
-
+        $tod=Carbon::now();
         if($doctor->to==null){
             $total=$treatment->sum('paid_amount');
         }else{
@@ -114,7 +123,7 @@ class DoctorController extends Controller
         }else{
             $docfee=($total*$doctor->salary_amount)/100;
         }
-        return view('doctor_report',compact('doctor','patient','treatment','total','docfee'));
+        return view('doctor_report',compact('doctor','patient','treatment','total','docfee','tod'));
     }
 
 
@@ -158,6 +167,7 @@ class DoctorController extends Controller
      */
     public function update(Request $request, Doctor $doctor)
     {
+        $day=Carbon::now();
         $payment=Doctor::find($doctor)->first();
         $payment->paid=$request->salary;
         $payment->remaining=$request->colection-$request->salary;
@@ -172,7 +182,7 @@ class DoctorController extends Controller
         $expenseSalary->description = "Paid salary :".$request->salary." at date : ".Carbon::now()." ";
         $expenseSalary->created_at = Carbon::now();
         $expenseSalary->save();
-        return redirect('/doctors2');
+        return view('print_pages.drSalaryPrint',compact('payment','day'));
     }
 
     /**
