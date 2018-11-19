@@ -18,7 +18,7 @@ class CreatePatientsTable extends Migration
             $table->string('id_patient');
             $table->string('name');
             $table->string('lastname');
-            $table->string('gender');
+            $table->string('gender')->nullable();
             $table->integer('age')->nullable();
             $table->string('phone');
             $table->longText('address')->nullable();
@@ -27,8 +27,8 @@ class CreatePatientsTable extends Migration
             $table->longText('education')->nullable();
             $table->string('status');
             $table->date('next_appointment');
-            $table->integer('time');
-            $table->string('meridiem');
+            $table->integer('time')->nullable();
+            $table->string('meridiem')->nullable();
             $table->unsignedInteger('doctor_id');
             $table->timestamps();
             $table->foreign('doctor_id')

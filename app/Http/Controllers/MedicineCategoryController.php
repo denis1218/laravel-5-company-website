@@ -82,8 +82,10 @@ class MedicineCategoryController extends Controller
      * @param  \App\MedicineCategory  $medicineCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MedicineCategory $medicineCategory)
+    public function destroy($id)
     {
-        //
+        $medicine = MedicineCategory::find($id);
+        $medicine->delete();
+        return redirect()->back();
     }
 }
