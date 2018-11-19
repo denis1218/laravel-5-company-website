@@ -86,7 +86,6 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            <h3 class="text-center">{{$medicine->links()}}</h3>
                         </div>
                         <div class="row">
                             <div class="col-md-2">

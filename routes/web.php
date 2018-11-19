@@ -99,9 +99,9 @@ Route::middleware('auth','reception')->group(function () {
 
     Route::resource('/expense-category','ExpenseCatagoryController');
 
-    Route::get('/employee', function () {
-        return view('/employee');
-    });
+//    Route::get('/employee', function () {
+//        return view('/employee');
+//    });
 
     Route::get('/dash', 'HomeController@index')->name('home');
 // report doctors
@@ -297,7 +297,18 @@ Route::middleware('auth','reception')->group(function () {
 
     Route::get('/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
+    Route::resource('employee','EmployeeController');
 
+    Route::get('/pay_salary','PaySalaryController@index');
+
+    Route::post('/pay_salary2','PaySalaryController@showPayment');
+    Route::post('/pay_salary3','PaySalaryController@PaySalary3');
+
+
+    Route::resource('/pay_salary1','PaySalaryController');
+});
+Route::get('/showexpair',function (){
+    return view('showexpair');
 });
 // End Route Reception
 

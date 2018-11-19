@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Income;
 use App\Treatment;
 use App\TreatmentList;
 use Illuminate\Http\Request;
@@ -52,9 +53,9 @@ class patientReportController extends Controller
     {
         $treatment = Treatment::with('patient')->get()->find($id);
         $patient = Patient::with('doctor')->get()->find($id);
-
-
-        return view('patient.print_reception', compact('patient','treatment'));
+        $patient_income = Treatment::where('patient_id','=',$id)->get();
+//return $patient_income;
+        return view('patient.print_reception', compact('patient','treatment','patient_income'));
     }
 
     public function search_patient(Request $request)

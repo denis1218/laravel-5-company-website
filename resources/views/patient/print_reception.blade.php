@@ -155,22 +155,9 @@
                                     <tbody>
                                     <tr>
                                         <td>{{trans('file.total')}} :</td>
-                                        <td>500</td>
+                                        <td>{{$patient_income->sum('remaining_fee')}}</td>
 
 
-                                    </tr>
-                                    <tr>
-                                        <td>{{trans('file.paid_amount')}} :</td>
-                                        <td>50</td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>{{trans('file.discount')}}:</td>
-                                        <td>1000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{{trans('file.remaining')}}:</td>
-                                        <td>1000</td>
                                     </tr>
 
                                     </tbody>
