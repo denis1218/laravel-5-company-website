@@ -13,7 +13,7 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Item Registration</h5>
+                        <h5>{{trans('file.it')}}</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -23,45 +23,47 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-lg-5">
+                                <a href="/common" class="btn btn-primary"><i class="fa fa-arrow-left"></i>&nbsp; Back</a>
+                                <br/>
                                 <form id="form" method="post" action="/item">
                                     {{csrf_field()}}
                                     <div class="form-group">
-                                        <label>kind</label>
-                                        <div><input type="text" name="kind" class="form-control" placeholder="kind of item" required></div>
+                                        <label>{{trans('file.item')}}</label>
+                                        <div><input type="text" name="kind" class="form-control" placeholder="{{trans('file.item')}}" required></div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Quantity</label>
-                                        <div><input type="number" name="quantity" id="q" class="form-control" placeholder="Quantity" required></div>
+                                        <label>{{trans('file.quantity')}}</label>
+                                        <div><input type="number" name="quantity" id="q" class="form-control" placeholder="{{trans('file.quantity')}}" required></div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Unit Pirce</label>
-                                        <div><input type="number" name="unit_price" id="p" onkeyup="compute()" class="form-control" placeholder="Enter price of each unit" required></div>
+                                        <label>{{trans('file.unit_price')}}</label>
+                                        <div><input type="number" name="unit_price" id="p" onkeyup="compute()" class="form-control" placeholder="{{trans('file.unit_price')}}" required></div>
 
                                     </div>
                                     <div class="form-group">
-                                        <label>Total Price</label>
+                                        <label>{{trans('file.total_price')}}</label>
                                         <div><input type="number" name="total_price" id="t" class="form-control" readonly required></div>
 
                                     </div>
                                     <div class="form-group">
-                                        <label>Description</label>
-                                        <div><input type="text" name="description" class="form-control" placeholder="Description" required></div>
+                                        <label>{{trans('file.description')}}</label>
+                                        <div><input type="text" name="description" class="form-control" placeholder="{{trans('file.description')}}" required></div>
 
                                     </div>
                                     <div class="form-group">
-                                        <label>Bill Number</label>
-                                        <div><input type="text" name="bill_number" class="form-control" placeholder="Enter Bill Numebr" ></div>
-                                        @foreach($trader as $trd)
+                                        <label>{{trans('file.bnumber')}}</label>
+                                        <div><input type="text" name="bill_number" class="form-control" placeholder="{{trans('file.bnumber')}}" value="{{ old('bill_number') }}" ></div>
+
                                         <div><input type="hidden" name="trader_id" value="{{$trader->id}}" ></div>
-                                        @endforeach
+
                                     </div>
 
                                     <div class="form-group">
                                         <div class="form-group">
-                                            <button class="btn btn-primary" type="submit">Save</button>
-                                            <button class="btn btn-white" type="reset">Reset</button>
+                                            <button class="btn btn-primary" type="submit">{{trans('file.save')}}</button>
+                                            <button class="btn btn-white" type="reset">{{trans('file.reset')}}</button>
                                         </div>
                                     </div>
                                 </form>

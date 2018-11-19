@@ -44,8 +44,7 @@
 
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/doctors/create"><i
-                                            class="fa fa-user-md"></i>{{trans('file.doctor_registration')}}</a></li>
+
                             <li><a href="/patient/create"><i
                                             class="fa fa-user"></i>{{trans('file.patient_registration')}}</a></li>
                             <li><a href="/patient"><i class="fa fa-list-ol"></i>{{trans('file.list_of_patient')}}</a>
@@ -55,22 +54,26 @@
                             </li>
                             <li><a href="/prescription"><img src="{{ asset('img/prescription.png') }}" width="15px"/>&nbsp;{{trans('file.prescription')}}
                                 </a></li>
+                            <li><a href="/doctors/create"><i
+                                            class="fa fa-user-md"></i>{{trans('file.doctor_registration')}}</a></li>
+                            <li><a href="/employee/create"><i
+                                            class="fa fa-user"></i>Employee Reg</a></li>
                         </ul>
                     </li>
                     {{--traders--}}
                     <li>
-                        <a href=""> <i class="fa fa-truck"></i>Suppliers
+                        <a href=""> <i class="fa fa-truck"></i><span class="nav-label">{{trans('file.supplier')}}</span>
                             <span class="fa fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/trader"><i
-                                            class="fa fa-truck"></i>&nbsp;&nbsp;Supplier
+                                            class="fa fa-truck"></i>{{trans('file.supplier')}}
                                 </a>
                             </li>
                             <li><a href="/item"><i
-                                            class="fa fa-gift"></i>Items</a>
+                                            class="fa fa-gift"></i>{{trans('file.item')}}</a>
                             </li>
                             <li><a href="/common"><i
-                                            class="fa fa-shopping-cart"></i>Buying</a>
+                                            class="fa fa-shopping-cart"></i>{{trans('file.purchase')}}</a>
                             </li>
                         </ul>
                     </li>
@@ -84,10 +87,6 @@
                                 </a></li>
                             <li><a href="/income"><i class="fa fa-arrow-circle-o-down"></i>{{trans('file.income')}}</a>
                             </li>
-                            <li><a href="/doctors"><i class="fa fa-user-md"></i>{{trans('file.doctors')}}</a></li>
-
-
-
                             <li><a href="/finance_report"><img src="{{ asset('img/report_finance.png') }}"
                                                                width="13px"/>&nbsp;{{trans('file.financial_report')}}
                                     <span class="fa arrow"></span></a>
@@ -104,6 +103,15 @@
                                             &nbsp;&nbsp;{{trans('file.profit')}}</a>
                                     </li>
                                 </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href=""><i class="fa fa-money"></i><span class="nav-lable">{{trans('file.salary')}}</span>
+                            <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="/doctors"><i class="fa fa-user-md"></i>{{ trans('file.doctors') }}</a>
+                            </li>
+                            <li><a href="/employee"><i class="fa fa-users"></i>{{ trans('file.others') }}</a>
                             </li>
                         </ul>
                     </li>
@@ -143,24 +151,24 @@
                     </li>
                     <li>
                         <a href="setting"><i class="fa fa-trash"></i> <span
-                                    class="nav-label">Restore Deleted</span><span
+                                    class="nav-label">{{trans('file.rd')}}</span><span
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li>
                                 <a href="/user-deleted"><i class="fa fa-user"></i> <span
-                                            class="nav-label">Users</span></a>
+                                            class="nav-label">{{trans('file.users')}}</span></a>
                             </li>
                             <li>
                                 <a href="/patient-deleted"><i class="fa fa-user-secret"></i> <span
-                                            class="nav-label">Patients</span></a>
+                                            class="nav-label">{{trans('file.patients')}}</span></a>
                             </li>
                             <li>
                                 <a href="/doctor-deleted"><i class="fa fa-user-md"></i> <span
-                                            class="nav-label">Doctors</span></a>
+                                            class="nav-label">{{trans('file.doctors')}}</span></a>
                             </li>
                             <li>
                                 <a href="/expense-deleted"><i class="fa fa-shopping-cart"></i> <span
-                                            class="nav-label">Expense</span></a>
+                                            class="nav-label">{{trans('file.expenses')}}</span></a>
                             </li>
                         </ul>
                     </li>
@@ -174,7 +182,7 @@
 
                     </li>
                     <li>
-                    <li><a href="/help"><i class="fa fa-question-circle"></i>{{trans('file.help')}}</a></li>
+                    <li><a href="/help"><i class="fa fa-question-circle"></i><span class="nav-lable">{{trans('file.help')}}</span></a></li>
 
                     {{--end condition of super admin--}}
                 @endif
@@ -272,6 +280,23 @@
                     </li>
 
                     <li>
+                        <a href=""> <i class="fa fa-truck"></i>{{trans('file.supplier')}}
+                            <span class="fa fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="/trader"><i
+                                            class="fa fa-truck"></i>{{trans('file.supplier')}}
+                                </a>
+                            </li>
+                            <li><a href="/item"><i
+                                            class="fa fa-gift"></i>{{trans('file.item')}}</a>
+                            </li>
+                            <li><a href="/common"><i
+                                            class="fa fa-shopping-cart"></i>{{trans('file.purchase')}}</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
                         <a><i class="fa fa-calculator"></i> <span
                                     class="nav-label">{{trans('file.finance')}}</span><span
                                     class="fa arrow"></span></a>
@@ -282,6 +307,7 @@
                             <li><a href="/income"><i class="fa fa-arrow-circle-o-down"></i>{{trans('file.income')}}</a>
                             </li>
                             <li><a href="/doctors"><i class="fa fa-user-md"></i>{{trans('file.doctors')}}</a></li>
+
                             <li><a href="/finance_report"><i class="fa fa-file-o"></i>{{trans('file.financial_report')}}
                                     <span
                                             class="fa arrow"></span></a>
@@ -326,6 +352,24 @@
 
                         </ul>
                     </li>
+                    {{--traders--}}
+                    <li>
+                        <a href=""> <i class="fa fa-truck"></i>{{trans('file.supplier')}}
+                            <span class="fa fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="/trader"><i
+                                            class="fa fa-truck"></i>{{trans('file.supplier')}}
+                                </a>
+                            </li>
+                            <li><a href="/item"><i
+                                            class="fa fa-gift"></i>{{trans('file.item')}}</a>
+                            </li>
+                            <li><a href="/common"><i
+                                            class="fa fa-shopping-cart"></i>{{trans('file.purchase')}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                    {{--end of traders--}}
                     <li>
                         <a href="/contact"><i class="fa fa-phone"></i> <span
                                     class="nav-label">{{trans('file.support')}}</span></a>

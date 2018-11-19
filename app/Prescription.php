@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Prescription extends Model
 {
     use SoftDeletes;
+    public $timestamps= false;
+
 
     public function patient()
     {

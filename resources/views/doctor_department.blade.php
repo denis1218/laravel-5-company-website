@@ -28,7 +28,6 @@
                             </div>
                         </form>
                     </div>
-                    @include('layout.messages')
                     <div class="col-md-6">
                         <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">

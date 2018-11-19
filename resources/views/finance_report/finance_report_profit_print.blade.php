@@ -82,6 +82,10 @@
                                 <td style="float: right;margin-right: 30px">{{$oincome->sum('amount')}}&nbsp;afg</td>
                             </tr>
                             <tr>
+                                <td style="margin-left: 30px">Medicine Income</td>
+                                <td style="float: right;margin-right: 30px">{{$medicine->sum('total_fee')}}&nbsp;afg</td>
+                            </tr>
+                            <tr>
                                 <td style="margin-left: 30px"><b>Total Income</b></td>
                                 <td style="float: right;margin-right: 30px"><b>{{$total_income}}&nbsp;afg</b></td>
 

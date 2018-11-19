@@ -51,7 +51,7 @@ class ItemController extends Controller
         $item->bill_number=$request->bill_number;
         $item->trader_id=$request->trader_id;
         $item->save();
-        return redirect('/item');
+        return redirect()->back();
     }
 
     /**
@@ -78,9 +78,10 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function edit(Item $item)
+    public function edit($id)
     {
-        //
+        $item=Item::find($id);
+        return view('item_edit',compact('item'));
     }
 
     /**
@@ -90,9 +91,17 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Item $item)
+    public function update(Request $request, $id)
     {
-        //
+        $item=Item::find($id);
+        $item->kind=$request->kind;
+        $item->quantity=$request->quantity;
+        $item->unit_price=$request->unit_price;
+        $item->total_price=$request->total_price;
+        $item->description=$request->description;
+        $item->bill_number=$request->bill_number;
+        $item->save();
+        return redirect('/item');
     }
 
     /**
@@ -101,8 +110,10 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Item $item)
+    public function destroy($id)
     {
-        //
+        $delete=Item::find($id);
+        $delete->delete();
+        return back();
     }
 }

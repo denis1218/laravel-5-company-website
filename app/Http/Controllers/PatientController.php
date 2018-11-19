@@ -65,10 +65,14 @@ class PatientController extends Controller
             foreach ($checkbox as $value){
                 $string .=  $value.',';
             }
-            $phonenumber = $request->phone;
 
+        $phonenumber = $request->phone;
         $patient->doctor_id = $request->input('FK_id_Doctor');
-        $patient->next_appointment = Carbon::now();
+        $patient->next_appointment = $request->appointment;
+        $patient->time = $request->time;
+        $patient->meridiem = $request->meridiem;
+        $patient->job = $request->job;
+        $patient->education = $request->education;
         $patient->status = 'first';
         $patient->created_at = Carbon::today();
         $patient->problem_health = $string;
@@ -84,7 +88,7 @@ class PatientController extends Controller
      * @return \Illuminate\Http\Response
      * @internal param Patient $patient
      */
-    public function show($id)
+    public function show(Request $request)
     {
 
     }
@@ -98,7 +102,9 @@ class PatientController extends Controller
      */
     public function edit($id)
     {
-//        return $id;
+        $doctors = Doctor::all();
+        $patient = Patient::find($id);
+        return view('patient.patient_edit',compact('patient','doctors'));
     }
 
     /**
@@ -112,9 +118,24 @@ class PatientController extends Controller
     public function update(Request $request,$id)
     {
         $patient = Patient::find($id);
-        $patient->next_appointment = Carbon::now();
+        $patient->id_patient = $request->id_patient;
+        $patient->name = $request->name;
+        $patient->lastname = $request->lastname;
+        $patient->gender = $request->gender;
+        $patient->age = $request->age;
+        $patient->phone = $request->phone;
+        $patient->address = $request->address;
+        $patient->phone = $request->phone;
+        $patient->doctor_id = $request->doctor_id;
+        $patient->next_appointment = $request->next_appointment;
+        $patient->time = $request->time;
+        $patient->meridiem = $request->meridiem;
+        $patient->job = $request->job;
+        $patient->education = $request->education;
+        $patient->status = $request->status;
+        $patient->problem_health = $request->problem_health;
         $patient->update();
-        return redirect()->back()->with('success','Patient information updated successfully');
+        return redirect('/patient');
     }
 
 
@@ -144,6 +165,8 @@ class PatientController extends Controller
         return view ('reception.list_new_patient_today',compact('allNewPatientToday','countNewPatient'));
     }
 
+
+
     // show all patient have next appointment
     // show all patient which (status != first)
     public function show_next_appointment_patient()
@@ -151,12 +174,21 @@ class PatientController extends Controller
         $allPatientNextAppointment = Patient::whereDate('next_appointment','=',Carbon::today())->get();
         return view ('reception.list_next_appointment_patient_today',compact('allPatientNextAppointment'));
     }
+
+
+
+
     public function updateNextappointmentPatient($id,Request $request){
         $patient = Patient::find($id);
         $patient->next_appointment = $request->next_appointment_date;
+        $patient->time = $request->time;
+        $patient->meridiem = $request->meridiem;
         $patient->update();
         return back();
     }
+
+
+
 
     // show all patient have next appointment have missing
     // this is comparable with who patient had next appointment last day

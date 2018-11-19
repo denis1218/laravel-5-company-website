@@ -79,6 +79,10 @@
                                 <td style="float: right;margin-right: 30px">{{$oinfo->sum('amount')}}&nbsp;afg</td>
                             </tr>
                             <tr>
+                                <td style="margin-left: 30px">Medicine Income</td>
+                                <td style="float: right;margin-right: 30px">{{$medicine->sum('total_fee')}}&nbsp;afg</td>
+                            </tr>
+                            <tr>
                                 <td style="margin-left: 30px"><b>Total Income</b></td>
                                 <td style="float: right;margin-right: 30px"><b>{{$total}}&nbsp;afg</b></td>
 
@@ -97,13 +101,21 @@
 
     {{--end of header--}}
 
-
-
-
-
-
-
-
-
-
+@endsection
+@section('script')
+    <script src="dashboard/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <script type="text/javascript">
+        function PrintElem() {
+            var mywindow = window.open('', 'PRINT', 'height=1024,width=1468');
+            mywindow.document.write('<html><head><title>' + 'Patient information' + '</title>');
+            mywindow.document.write('</head><body >');
+            mywindow.document.write(document.getElementById('divone').innerHTML);
+            mywindow.document.write('</body></html>');
+            mywindow.document.close(); // necessary for IE >= 10
+            mywindow.focus(); // necessary for IE >= 10*/
+            mywindow.print();
+            mywindow.close();
+            return true;
+        }
+    </script>
 @endsection

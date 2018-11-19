@@ -15,7 +15,7 @@
             @include('part.trade_nav')
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Suppliers Table</h5>
+                    <h5>{{trans('file.st')}}</h5>
 
                 </div>
                 <div class="ibox-content">
@@ -24,21 +24,24 @@
                         <!-- Expenditure Table -->
                         <div class="row">
                             <div class="col-md-12">
-                                <a href="/trader/create" class="btn btn-primary btn-md" style=""><i class="fa fa-plus"></i>&nbsp;&nbsp;Supplier Registration</a>
+                                <a href="/trader/create" class="btn btn-primary btn-md" style=""><i class="fa fa-user-plus text-warning"></i>&nbsp;&nbsp;Supplier Registration</a>
                             </div>
                         </div>
+
                         <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover " >
+                            <table class="table table-striped table-bordered table-hover " style="margin-top: 10px;" >
 
                                 <thead>
                                 <tr>
-                                    <th>Supplier_id</th>
-                                    <th>Name</th>
-                                    <th>LastName</th>
-                                    <th>Pone</th>
-                                    <th>Organization</th>
-                                    <th>Address</th>
-                                    <th>Payment Process</th>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.first_name')}}</th>
+                                    <th>{{trans('file.last_name')}}</th>
+                                    <th>{{trans('file.phone')}}</th>
+                                    <th>{{trans('file.org')}}</th>
+                                    <th>{{trans('file.address')}}</th>
+                                    <th>{{trans('file.pp')}}</th>
+                                    <th>{{trans('file.edit')}}</th>
+                                    <th>{{trans('file.delete')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -51,6 +54,16 @@
                                             <td>{{$trader->organization}}</td>
                                             <td>{{$trader->address}}</td>
                                             <td>{{$trader->payment_process}}</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-success" href="/trader/{{ $trader->id }}/edit">{{trans('file.edit')}} &nbsp;
+                                                    <i class="fa fa-edit"></i></a>
+                                            </td>
+                                            <td>
+                                                <form id="del" action="/trader/{{$trader->id}}" method="post" id="myForm">
+                                                    @method('delete')
+                                                    <button class="btn btn-xs btn-danger demo3" >{{trans('file.delete')}} &nbsp;<i class="fa fa-remove"></i></button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

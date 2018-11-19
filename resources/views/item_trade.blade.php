@@ -15,7 +15,7 @@
             @include('part.trade_nav')
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Traders Table</h5>
+                    <h5>{{trans('file.st')}}</h5>
 
                 </div>
                 <div class="ibox-content">
@@ -27,12 +27,12 @@
 
                                 <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>LastName</th>
-                                    <th>Pone</th>
-                                    <th>Name of Organization</th>
-                                    <th>Buying</th>
-                                    <th>LoanPayment</th>
+                                    <th>{{trans('file.first_name')}}</th>
+                                    <th>{{trans('file.last_name')}}</th>
+                                    <th>{{trans('file.phone')}}</th>
+                                    <th>{{trans('file.org')}}</th>
+                                    <th>{{trans('file.purchase')}}</th>
+                                    <th>{{trans('file.lp')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -42,8 +42,8 @@
                                         <td>{{$trader->last_name}}</td>
                                         <td>{{$trader->phone}}</td>
                                         <td>{{$trader->organization}}</td>
-                                        <td><a href="/item2/{{$trader->id}}" class="btn btn-primary btn-xs">Buying</a></td>
-                                        <td><a href="/item/{{$trader->id}}" class="btn btn-primary btn-xs">LoanPaymetn</a></td>
+                                        <td><a href="/item2/{{$trader->id}}" class="btn btn-success btn-xs">{{trans('file.purchase')}}</a></td>
+                                        <td><a href="/item/{{$trader->id}}" class="btn btn-primary btn-xs">{{trans('file.lp')}}</a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

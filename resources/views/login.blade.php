@@ -52,34 +52,18 @@
 
                     <div class="form-group">
                         <input id="email" type="email" placeholder="Email address" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-                        {{--@if ($errors->any())--}}
-                            {{--<span class="invalid-feedback" role="alert">--}}
-                                        {{--<strong class="">{{ $errors->first('email') }}</strong>--}}
-                                    {{--</span>--}}
-                        {{--@endif--}}
+
 
                     </div>
                     <div class="form-group">
                         <input id="password" placeholder="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                        {{--@if ($errors->has('password'))--}}
-                            {{--<span class="invalid-feedback alert alert-danger" role="alert">--}}
-                                        {{--<strong>{{ $errors->first('password') }}</strong>--}}
-                                    {{--</span>--}}
-                        {{--@endif--}}
+
 
                     </div>
 
                     <button type="submit" class="btn btn-block btn-success">
                         {{ __('Login') }}&nbsp;<i class="fa fa-sign-in"></i>
                     </button>
-
-                    {{--<div class="form-check pull-left rememberme">--}}
-                        {{--<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>--}}
-
-                        {{--<label class="form-check-label" for="remember">--}}
-                            {{--{{ __('Remember Me') }}--}}
-                        {{--</label>--}}
-                    {{--</div>--}}
 
                 </form>
             </div>

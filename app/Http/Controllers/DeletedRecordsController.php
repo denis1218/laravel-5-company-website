@@ -37,7 +37,7 @@ class DeletedRecordsController extends Controller
 
     public function restoreDoctor($id)
     {
-        Doctor::withTrashed()->find($id)->restore();
+        Doctor::withTrashed(    )->find($id)->restore();
         return redirect()->back();
     }
 

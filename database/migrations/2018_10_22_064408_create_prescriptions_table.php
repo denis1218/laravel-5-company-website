@@ -20,7 +20,7 @@ class CreatePrescriptionsTable extends Migration
             $table->string('sale');
             $table->integer('total_fee');
             $table->unsignedInteger('patient_id')->nullable();
-            $table->timestamps();
+            $table->date('created_at');
 
             $table->foreign('patient_id')
                 ->references('id')->on('patients')
