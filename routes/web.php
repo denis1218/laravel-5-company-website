@@ -274,6 +274,12 @@ Route::middleware('auth','reception')->group(function () {
     Route::resource('/loan','LoanController');
     Route::get('/loan1/{id}','LoanController@create');
 
+//    Teeth Shade Route
+    Route::resource('/teeth-shade','TeethShadeController');
+
+    //    Teeth cover Route
+    Route::resource('/teeth-cover','TeethCoverTypeController');
+
 
     Route::post('/patient_report/search','patientReportController@search_patient');
 
