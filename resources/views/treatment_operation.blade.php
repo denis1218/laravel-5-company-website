@@ -201,9 +201,9 @@
                     <li class=""><a data-toggle="tab" href="#tab-1"><i
                                     class="fa fa-history"></i>{{trans('file.past_history')}}</a></li>
                     <li class="active"><a data-toggle="tab" id="test" href="#tab-2"><i
-                                    class="fa fa-clock-o"></i>{{trans('file.present_history')}}</a></li>
+                                    class="fa fa-clock-o"></i>General Treatment</a></li>
                     <li class=""><a data-toggle="tab" id="test" href="#tab-3"><i
-                                    class="fa fa-clock-o"></i>Orthodintist</a></li>
+                                    class="fa fa-clock-o"></i>Orthodintist Treatment</a></li>
                 </ul>
                 <div class="tab-content">
 
@@ -251,8 +251,6 @@
                                                 <tr>
                                                     <td>{{trans('file.teeth_number')}} :</td>
                                                     <td>{{ $treats->teeth_number }}</td>
-                                                    <td>{{trans('file.tooth_position')}} :</td>
-                                                    <td>{{ $treats->tooth_position }}</td>
 
                                                 </tr>
                                                 <tr>
@@ -297,13 +295,13 @@
                             {{-- Header of title --}}
                             <div class="row  bg-info"
                                  style=" padding-left:20px; border-radius: 5px;margin-left:0px;margin-right: 10px;">
-                                <h3 style="font-weight: bold;">{{trans('file.present_history')}}</h3>
+                                <h3 style="font-weight: bold;">General Treatment</h3>
                             </div>
 
                             <br/>
 
                             {{-- Image Tooths --}}
-                            <form id="form" action="/operation" method="POST">
+
                                 {{-- Upper Tooths --}}
                                 <div class="container-fluid">
                                     <div class="row" style="margin-left:-50px;">
@@ -643,6 +641,10 @@
                                 <a class="btn btn-primary" data-toggle="modal" id="xray_btn">XRay Teeth &nbsp;<img
                                             src="{{ asset('img/xray.png') }}" width="20px"/></a>
 
+                            <form id="form" action="/operation" method="POST">
+
+                                <input type="text" hidden name="teeth_number_all" id="tooth_number_3"/>
+
                                 <div class="row" style="margin-top: 15px">
                                     <input type="checkbox" id="next" name="have_xray" value="yes"
                                            style="visibility:hidden;">
@@ -705,7 +707,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <button type="submit" class="btn btn-primary">{{trans('file.save')}}&nbsp;<i
+                                        <button type="submit" id="submitform" class="btn btn-primary">{{trans('file.save')}}&nbsp;<i
                                                     class="fa fa-save"></i>
                                         </button>
                                         <button type="reset" class="btn btn-white"> {{trans('file.cancel')}}&nbsp;
@@ -724,13 +726,13 @@
                             {{-- Header of title --}}
                             <div class="row  bg-info"
                                  style=" padding-left:20px; border-radius: 5px;margin-left:0px;margin-right: 10px;">
-                                <h3 style="font-weight: bold;">{{trans('file.present_history')}}</h3>
+                                <h3 style="font-weight: bold;">Orthodontist treatment</h3>
                             </div>
 
                             <br/>
 
                             {{-- Image Tooths --}}
-                            <form id="form" action="/operation" method="POST">
+
                                 {{-- Upper Tooths --}}
                                 <div class="container-fluid">
                                     <div class="row" style="margin-left:-50px;">
@@ -1070,6 +1072,12 @@
                                 <a class="btn btn-primary" data-toggle="modal" id="xray_btn">XRay Teeth &nbsp;<img
                                             src="{{ asset('img/xray.png') }}" width="20px"/></a>
 
+
+                            <form id="form" action="/operation" method="POST">
+
+
+                                <input type="text" name="teeth_number_all" hidden id="tooth_number_ortho"/>
+
                                 <div class="row" style="margin-top: 15px">
                                     <input type="checkbox" id="next" name="have_xray" value="yes"
                                            style="visibility:hidden;">
@@ -1078,34 +1086,37 @@
                                     @foreach($checkValue as $check)
                                         <input type="hidden" value="{{ $check->visits }}" name="visits">
                                     @endforeach
+
                                     <input type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
                                     <div class="col-md-6">
 
                                         <div class="form-group">
-                                            <label>{{trans('file.select_dental_defect')}} :</label>
-                                            <select class="form-control" name="dentaldefect" required>
+                                            <label>Select shade teeth</label>
+                                            <select class="form-control" name="shade" required>
                                                 <option disabled
-                                                        selected>{{trans('file.select_dental_defect')}}</option>
-                                                @foreach($dentalDefectList as $list)
-                                                    <option value="{{ $list->dental_defect }}">{{ $list->dental_defect }}</option>
+                                                        selected>Select shade</option>
+                                                @foreach($teethShades as $teethshade)
+                                                    <option value="{{ $teethshade->shade }}">{{ $teethshade->shade }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
+
                                         <div class="form-group">
-                                            <label>{{trans('file.treatment')}} :</label>
-                                            <select class="form-control" name="treatment"
+                                            <label>Select Cover :</label>
+                                            <select class="form-control" name="type_cover"
                                                     onchange="getFeeTreatment(this);" required>
-                                                <option disabled>{{trans('file.treatment')}}</option>
-                                                @foreach($treatementList as $listTreatement)
-                                                    <option value="{{ $listTreatement->treatment }}"
-                                                            id="{{ $listTreatement->estimated_fee }}">
-                                                        {{ $listTreatement->treatment }} </option>
+                                                <option disabled selected>Select Color</option>
+                                                @foreach($teethTypeCovers as $cover)
+                                                    <option value="{{ $cover->type }}"
+                                                            id="{{ $cover->price }}">
+                                                        {{ $cover->type }} </option>
                                                 @endforeach
                                             </select>
                                         </div>
+
                                         {{--<input type="hidden" class="form-control" name="id_treatment" id="id_treatment">--}}
                                         <div class="form-group">
-                                            <label for="nex">{{trans('file.treatment_cost')}} :</label>
+                                            <label for="nex">Cost :</label>
                                             <input type="number" class="form-control" id="cost_treatment"
                                                    name="estimated_fee" value="" required>
                                         </div>
@@ -1132,7 +1143,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <button type="submit" class="btn btn-primary">{{trans('file.save')}}&nbsp;<i
+                                        <button type="submit" id="submitformortho" class="btn btn-primary">{{trans('file.save')}}&nbsp;<i
                                                     class="fa fa-save"></i>
                                         </button>
                                         <button type="reset" class="btn btn-white"> {{trans('file.cancel')}}&nbsp;
@@ -1360,6 +1371,25 @@
                     $('#xray').modal('show');
                     tooth_pos = null;
                 });
+
+                $(document).on("click", "#submitform", function () {
+
+                    var valuesArray = $('input:checkbox:checked').map(function () {
+                        return $(this).val();
+                    }).get().join();
+
+                    $("#tooth_number_3").val(valuesArray);
+                });
+
+                $(document).on("click", "#submitformortho", function () {
+
+                    var valuesArray = $('input:checkbox:checked').map(function () {
+                        return $(this).val();
+                    }).get().join();
+
+                    $("#tooth_number_ortho").val(valuesArray);
+                });
+
 
                 $(".tooth_position").on("click", function () {
                     tooth_pos = $(this).val();

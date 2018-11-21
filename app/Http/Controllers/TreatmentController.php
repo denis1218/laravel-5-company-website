@@ -9,6 +9,8 @@ use App\Medicine;
 use App\Patient;
 use App\Prescription;
 use App\Teeth;
+use App\TeethCoverType;
+use App\TeethShade;
 use App\Treatment;
 use App\TreatmentList;
 use App\XRay;
@@ -75,10 +77,16 @@ class TreatmentController extends Controller
 
                 $dentalDefectList = DentalDefectList::all();
 
+                $teethShades = TeethShade::all();
+
+                $teethTypeCovers = TeethCoverType::all();
+
                 $patient_id = $patient_in_treatment->id;
 
 
-                return view('treatment_operation', compact('patient_in_treatment', 'patient_id', 'checkValue', 'treatementList', 'dentalDefectList', 'treatments','medicine','prescription'));
+                return view('treatment_operation', compact('patient_in_treatment', 'patient_id', 'checkValue',
+                    'treatementList', 'dentalDefectList', 'treatments','medicine','prescription' , 'teethShades',
+                    'teethTypeCovers'));
 
     }
 
@@ -94,6 +102,8 @@ class TreatmentController extends Controller
     function store(Request $request)
     {
         $treatment = new Treatment();
+
+        $treatment->teeth_number = $request->teeth_number_all;
         $treatment->description = $request->description;
         $treatment->estimated_fee = $request->estimated_fee;
         $treatment->discount = $request->discount;
@@ -117,23 +127,17 @@ class TreatmentController extends Controller
 
         $treatment->save();
 
-        $last_treatment = Treatment::all();
-        $max_treat = $last_treatment->max();
+//        $last_treatment = Treatment::all();
+//        $max_treat = $last_treatment->max();
 
-        foreach($request->teeth_number as $tooth)
-        {
-            $teeth = new Teeth();
-            $teeth->tooth_number = $tooth;
-            $teeth->treatment_id = $max_treat->id;
-            $teeth->save();
-        }
-
-
-
-
-
+//        foreach($request->teeth_number as $tooth)
+//        {
+//            $teeth = new Teeth();
+//            $teeth->tooth_number = $tooth;
+//            $teeth->treatment_id = $max_treat->id;
+//            $teeth->save();
+//        }
         return redirect('/operation');
-
     }
 
 

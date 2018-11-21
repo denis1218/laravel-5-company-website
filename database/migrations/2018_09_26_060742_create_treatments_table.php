@@ -17,6 +17,7 @@ class CreateTreatmentsTable extends Migration
 
             $table->increments('id');
             $table->string('treatment')->nullable();
+            $table->string('teeth_number')->nullable();
             $table->string('dentaldefect')->nullable();
             $table->string('shade')->nullable();
             $table->string('type_cover')->nullable();

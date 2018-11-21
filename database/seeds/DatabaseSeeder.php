@@ -70,6 +70,29 @@ class DentalDefectListTableSeeder extends Seeder
 }
 
 
+class TeethCoverTableSeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('teeth_cover_types')->insert([
+            'type' => 'Porcelain',
+        ]);
+
+        DB::table('teeth_cover_types')->insert([
+            'dental_defect' => 'G-Carios',
+        ]);
+
+        DB::table('teeth_cover_types')->insert([
+            'dental_defect' => 'Atrision',
+        ]);
+
+        DB::table('teeth_cover_types')->insert([
+            'dental_defect' => 'Calculus',
+        ]);
+    }
+}
+
+
 class ExpenseTableSeeder extends Seeder
 {
     public function run()
