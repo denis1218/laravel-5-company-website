@@ -600,7 +600,9 @@ return[
     'slp'=>'Supplier Loan Payment',
     'ticost'=>'Total Item Cost',
     'tpamount'=>'Total Paid Amount',
-    ''=>'',
+    'teethshade'=>'TeethShade',
+    'teethcover'=>'TeethCoverType',
+    'price'=>'Price',
 
 
 ];
