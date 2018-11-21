@@ -15,7 +15,7 @@ class CreateXraysTable extends Migration
     {
         Schema::create('xrays', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('tooth_number');
+            $table->longText('tooth_number');
             $table->string('patient_id');
             $table->string('patient_name');
             $table->string('doctor_name');

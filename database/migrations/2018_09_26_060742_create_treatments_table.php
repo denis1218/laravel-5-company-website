@@ -16,8 +16,10 @@ class CreateTreatmentsTable extends Migration
         Schema::create('treatments', function (Blueprint $table) {
 
             $table->increments('id');
-            $table->string('treatment');
-            $table->string('dentaldefect');
+            $table->string('treatment')->nullable();
+            $table->string('dentaldefect')->nullable();
+            $table->string('shade')->nullable();
+            $table->string('type_cover')->nullable();
             $table->integer('visits')->nullable();
             $table->string('status_visits');
             $table->boolean('status_pay');
