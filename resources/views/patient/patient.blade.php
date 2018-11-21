@@ -133,7 +133,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Education level *</label>
-                                    <select name="education" class="form-control">
+                                    <select name="education" class="form-control" required>
                                         <option selected disabled >Select Education Level</option>
                                         <option>Illiterate</option>
                                         <option>School Student</option>

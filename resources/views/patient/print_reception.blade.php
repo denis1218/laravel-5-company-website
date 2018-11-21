@@ -126,16 +126,32 @@
                                     <tbody>
                                     <tr>
                                         <td>{{trans('file.dental_defect')}}:</td>
-                                        <td>{{$treatment->dentaldefect}}</td>
+                                        @if($patient_income != null)
+                                        @foreach($patient_income as $patient)
+                                        <td>{{$patient->dentaldefect}}</td>
+                                            @endforeach
+
+                                         @endif
+
+
                                     </tr>
                                     <tr>
                                         <td>{{trans('file.dental_treatment')}}:</td>
-                                        <td>{{$treatment->treatment}}</td>
-                                    </tr>
+
+                                        @if($patient_income != null)
+                                            @foreach($patient_income as $patient)
+                                                <td>{{$patient->treatment}}</td>
+                                            @endforeach
+
+                                        @endif                                    </tr>
                                     <tr>
                                         <td>{{trans('file.teeth_number')}}:</td>
-                                        <td>{{$treatment->teeth_number}}</td>
-                                    </tr>
+                                        @if($patient_income != null)
+                                            @foreach($patient_income as $patient)
+                                                <td>{{$patient->teeth_number}}</td>
+                                            @endforeach
+
+                                        @endif                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
