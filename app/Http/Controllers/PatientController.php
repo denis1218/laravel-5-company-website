@@ -81,6 +81,20 @@ class PatientController extends Controller
         return redirect('/patient')->with('success','patient registered successfully');
     }
 
+    public function storeFromDash(Request $request){
+        $patient = new Patient();
+        $patient->name = $request->firstname;
+        $patient->lastname = $request->lastname;
+        $patient->phone = $request->phone;
+        $phonenumber = $request->phone;
+        $patient->doctor_id = $request->doctor_id;
+        $patient->next_appointment = $request->date;
+         $patient->status = 'first';
+        $patient->created_at = Carbon::today();
+        $patient->id_patient = 'P-'.$phonenumber;
+        $patient->save();
+        return back();
+    }
     /**
      * Display the specified resource.
      *

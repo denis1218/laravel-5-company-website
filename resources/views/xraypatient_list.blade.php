@@ -98,8 +98,8 @@
                                                             <thead>
                                                             <tr>
                                                                 <th>{{trans('file.xray_id')}}</th>
-                                                                <th>{{trans('file.teeth_number')}}</th>
-                                                                <th>{{trans('file.tooth_position')}}</th>
+                                                                <th colspan="2">{{trans('file.teeth_number')}}</th>
+{{--                                                                <th>{{trans('file.tooth_position')}}</th>--}}
                                                                 <th>{{trans('file.patient_id')}}</th>
                                                                 <th>{{trans('file.patient_name')}}</th>
                                                                 <th>{{trans('file.doctor_name')}}</th>
@@ -114,8 +114,8 @@
                                                                     @if($pat->xray_status=='not')
                                                                         <tr>
                                                                             <td>{{$pat->id}}</td>
-                                                                            <td>{{$pat->tooth_number}}</td>
-                                                                            <td>{{$pat->tooth_position}}</td>
+                                                                            <td colspan="2">{{$pat->tooth_number}}</td>
+{{--                                                                            <td>{{$pat->tooth_position}}</td>--}}
                                                                             <td>{{$pat->patient_id}}</td>
                                                                             <td>{{$pat->patient_name}}</td>
                                                                             <td>{{$pat->doctor_name}}</td>
@@ -155,8 +155,8 @@
                                                             <thead>
                                                             <tr>
                                                                 <th>{{trans('file.id')}}</th>
-                                                                <th>{{trans('file.teeth_number')}}</th>
-                                                                <th>{{trans('file.tooth_position')}}</th>
+                                                                <th colspan="2">{{trans('file.teeth_number')}}</th>
+{{--                                                                <th>{{trans('file.tooth_position')}}</th>--}}
                                                                 <th>{{trans('file.p_id')}}</th>
                                                                 <th>{{trans('file.p_name')}}</th>
                                                                 <th>{{trans('file.doctor_name')}}</th>
@@ -170,8 +170,8 @@
                                                                     @if($pat->xray_status=='yes')
                                                                         <tr>
                                                                             <td>{{$pat->id}}</td>
-                                                                            <td>{{$pat->tooth_number}}</td>
-                                                                            <td>{{$pat->tooth_position}}</td>
+                                                                            <td colspan="2">{{$pat->tooth_number}}</td>
+{{--                                                                            <td>{{$pat->tooth_position}}</td>--}}
                                                                             <td>{{$pat->patient_id}}</td>
                                                                             <td>{{$pat->patient_name}}</td>
                                                                             <td>{{$pat->doctor_name}}</td>
