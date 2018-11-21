@@ -7,6 +7,7 @@ return[
     'home'=>'خانه',
     'department'=>'دیپارتمنت',
     'reception'=>'پذیرش',
+    'quick_appointment'=>'ملاقات سریع',
     'finance'=>'مالی',
     'setting'=>'تنظیمات',
     'doctor'=>'داکتر',
