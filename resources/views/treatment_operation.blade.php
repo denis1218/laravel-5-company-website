@@ -119,11 +119,6 @@
                                 class="alert-link"
                                 href="#"></a>.
                     </div>
-                    {{--<div class="col-sm-3 pull-right">--}}
-                    {{--<h2><a class="btn btn-primary hvr-grow-shadow" style="font-size: 13px; width: 200px;"--}}
-                    {{--href="/patient_history_print"><img src="{{ asset('img/patient_report.png') }}" class="pull-left" width="40px"/>&nbsp;&nbsp;{{trans('file.report_patient')}}</a></h2>--}}
-
-                    {{--</div>--}}
                 </div>
                 <div class="row">
 
@@ -272,14 +267,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        @if($treats->status_visits == 'not complete')
-                                            <a href="/operation/{{ $treats->id }}/edit/{{ $patient_id }}"
-                                               class="btn btn-md btn-primary">{{trans('file.continue_treatment')}}</a>
-                                        @else
-                                            <h4 class="text-info"> This treatment has been done !</h4>
-                                        @endif
-                                    </div>
+                                    {{--<div class="col-md-3">--}}
+                                        {{--@if($treats->status_visits == 'not complete')--}}
+                                            {{--<a href="/operation/{{ $treats->id }}/edit/{{ $patient_id }}"--}}
+                                               {{--class="btn btn-md btn-primary">{{trans('file.continue_treatment')}}</a>--}}
+                                        {{--@else--}}
+                                            {{--<h4 class="text-info"> This treatment has been done !</h4>--}}
+                                        {{--@endif--}}
+                                    {{--</div>--}}
                                 </div>
                             @endforeach
                         </div>
@@ -483,7 +478,8 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="1 Lower Left"/>
+                                                        <input type="checkbox" name="teeth_number[]"
+                                                               value="8 Lower Left"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -492,7 +488,8 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/2.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="2 Lower Left"/>
+                                                        <input type="checkbox" name="teeth_number[]"
+                                                               value="7 Lower Left"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -501,7 +498,8 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/3.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="3 Lower left"/>
+                                                        <input type="checkbox" name="teeth_number[]"
+                                                               value="6 Lower left"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -510,7 +508,8 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/4.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="4 Lower Left"/>
+                                                        <input type="checkbox" name="teeth_number[]"
+                                                               value="5 Lower Left"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -519,7 +518,8 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/5.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="5 Lower Left"/>
+                                                        <input type="checkbox" name="teeth_number[]"
+                                                               value="4 Lower Left"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -528,7 +528,8 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/6.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="6 Lower Left"/>
+                                                        <input type="checkbox" name="teeth_number[]"
+                                                               value="3 Lower Left"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -537,7 +538,8 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/7.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="7 lower Left"/>
+                                                        <input type="checkbox" name="teeth_number[]"
+                                                               value="2 lower Left"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -546,7 +548,8 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/8.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="8 lower Left"/>
+                                                        <input type="checkbox" name="teeth_number[]"
+                                                               value="1 lower Left"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -560,7 +563,7 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/8.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="8 Lower Right"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="1 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -569,7 +572,7 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/7.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="7 Lower Right"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="2 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -578,7 +581,7 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/6.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="6 Lower Right"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="3 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -587,7 +590,7 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/5.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="5 Lower Right"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="4 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -596,7 +599,7 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/4.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="4 Lower Right"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="5 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -605,7 +608,7 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/3.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="3 Lower Right"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="6 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -614,7 +617,7 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/2.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="2 Lower Right"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="7 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -623,7 +626,7 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="1 Lower Right"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="8 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -740,12 +743,12 @@
                             <br/>
                             {{-- pass value tooth number using jquery --}}
                             <label class="control-label">Tooth Number</label>
-                            <input type="text" class="form-control" value="" id="tooth_number_3" name="tooth_number"/>
+                            <input type="text" class="form-control" value="" id="tooth_number_3" name="tooth_number" required>
 
                             <br>
                             <button type="button" class="btn btn-white pull-right" data-dismiss="modal"
                                     style="margin-bottom: 10px;">{{trans('file.close')}}</button>
-                            <button type="submit" class="btn btn-primary pull-right"
+                            <button type="submit" class="btn btn-primary pull-right" id="save" onclick=""
                                     style="margin-bottom: 10px;margin-right: 20px;">{{trans('file.save')}}</button>
 
                         </form>
@@ -776,80 +779,6 @@
                 }
             </script>
 
-            {{-- Copying input from tooth number --}}
-            <script type="text/javascript">
-                function copyvalue() {
-                    var teeth = document.getElementById('teeth').value;
-                    document.getElementById('copyteeth').value = teeth;
-                    if (teeth > 8) {
-                        alert('Tooth number must be less than or equal to 8');
-                    }
-                }
-            </script>
-            {{--copy radio buttons values to another radio buttons--}}
-            <script type="text/javascript">
-                function upperLeft() {
-                    document.getElementById('ul').click();
-                }
-            </script>
-            <script type="text/javascript">
-                function upperRight() {
-                    document.getElementById('ur').click();
-                }
-            </script>
-            <script type="text/javascript">
-                function lowerLeft() {
-                    document.getElementById('ll').click();
-                }
-            </script>
-            <script type="text/javascript">
-                function lowerRight() {
-                    document.getElementById('lr').click();
-                }
-            </script>
-
-            {{-- disabling send to xray button --}}
-
-
-            <script>
-                $(document).ready(function () {
-                    $('#check').change(function () {
-                        var ch = this.checked;
-                        if (!ch) {
-                            $('#but').prop('disabled', true);
-                        } else {
-                            $('#but').prop('disabled', false);
-                        }
-                    });
-                });
-            </script>
-
-
-            <script type="text/javascript">
-                function activation() {
-                    var ch = document.getElementById('check').value;
-                    if (ch == 'not') {
-                        document.getElementById('but').disabled = false;
-                        document.getElementById('next').checked = true;
-                    } else {
-                        document.getElementById('but').disabled = true;
-                        document.getElementById('next').checked = false;
-                    }
-                }
-            </script>
-
-            <script type="text/javascript">
-                function deactivation() {
-                    var deac = document.getElementById('id').value;
-                    if (deac == 'on') {
-                        document.getElementById('but').disabled = true;
-                        document.getElementById('next').checked = false;
-                    } else {
-                        document.getElementById('but').disabled = false;
-                        document.getElementById('next').checked = true;
-                    }
-                }
-            </script>
 
             <script type="text/javascript">
                 $(function () {
