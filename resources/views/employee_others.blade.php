@@ -1,4 +1,4 @@
-@extends('master')
+    @extends('master')
 
 @section('style')
     <!-- Data Tables -->

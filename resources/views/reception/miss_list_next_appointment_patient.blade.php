@@ -58,7 +58,11 @@
                                         <td>{{ $patient->name }}</td>
                                         <td>{{ $patient->lastname }}</td>
                                         <td>{{ $patient->status }}</td>
+                                        @if($patient->doctor != null)
                                         <td>{{ $patient->doctor->first_name}}</td>
+                                        @else
+                                         <td>Null</td>
+                                        @endif
                                         <td>{{ $patient->next_appointment }}</td>
                                         <td>{{ $patient->phone }}</td>
                                         <td>
