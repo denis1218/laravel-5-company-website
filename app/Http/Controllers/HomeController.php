@@ -34,10 +34,11 @@ class HomeController extends Controller
         $patient = Patient::count();
         $apatient = Patient::whereDate('next_appointment', Carbon::today())->get();
         $doctor = Doctor::count();
+        $doct = Doctor::all();
         $total_income = $this->total_income();
         $total_expense = $this->total_expense();
         $profit = $this->profit();
-        return view('/dash',compact('patient','doctor','apatient','categories','total_income','total_expense','profit'));
+        return view('/dash',compact('patient','doctor','apatient','categories','total_income','total_expense','profit','doct'));
     }
 
     public function doctor_dashboard(){

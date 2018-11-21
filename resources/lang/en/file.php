@@ -5,6 +5,7 @@ return[
     'profile'=>'profile',
     'logout'=>'Logout',
     'home'=>'Home',
+    'quick_appointment'=>'Quick Appointment',
     'department'=>'Department',
     'reception'=>'Reception',
     'finance'=>'Finance',
@@ -599,7 +600,9 @@ return[
     'slp'=>'Supplier Loan Payment',
     'ticost'=>'Total Item Cost',
     'tpamount'=>'Total Paid Amount',
-    ''=>'',
+    'teethshade'=>'TeethShade',
+    'teethcover'=>'TeethCoverType',
+    'price'=>'Price',
 
 
 ];

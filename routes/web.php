@@ -86,7 +86,7 @@ Route::middleware('auth','reception')->group(function () {
     Route::get('/dash_reception', 'HomeController@reception');
 
     Route::resource('/patient', 'PatientController');
-
+    Route::post('/patient/storeFromDash','PatientController@storeFromDash');
     Route::get('/new-patient-today','PatientController@show_new_patients');
 
     Route::get('/next-appointment-patient','PatientController@show_next_appointment_patient');
@@ -274,6 +274,12 @@ Route::middleware('auth','reception')->group(function () {
     Route::resource('/loan','LoanController');
     Route::get('/loan1/{id}','LoanController@create');
 
+//    Teeth Shade Route
+    Route::resource('/teeth-shade','TeethShadeController');
+
+    //    Teeth cover Route
+    Route::resource('/teeth-cover','TeethCoverTypeController');
+
 
     Route::post('/patient_report/search','patientReportController@search_patient');
 
@@ -306,6 +312,7 @@ Route::middleware('auth','reception')->group(function () {
 
 
     Route::resource('/pay_salary1','PaySalaryController');
+
 });
 Route::get('/showexpair',function (){
     return view('showexpair');

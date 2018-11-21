@@ -7,6 +7,7 @@ return[
     'home'=>'خانه',
     'department'=>'دیپارتمنت',
     'reception'=>'پذیرش',
+    'quick_appointment'=>'ملاقات سریع',
     'finance'=>'مالی',
     'setting'=>'تنظیمات',
     'doctor'=>'داکتر',
@@ -537,7 +538,9 @@ return[
     'ticost'=>'قیمت مجموعی جنس',
     'tpamount'=>'مجموع مبلغ پرداخت شده',
     'receiver'=>'دریافت کننده پول',
-
+    'teethshade'=>'پوش دندان',
+    'teethcover'=>' نوع پوش دندان',
+    'price'=>' قیمت',
 
 ];
 
