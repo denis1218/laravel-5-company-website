@@ -127,6 +127,14 @@
                                 </a></li>
                             <li><a href="/medicine_category"><i class="fa fa-pencil-square-o"></i>{{trans('file.medicine_category')}}
                                 </a></li>
+
+                            <li><a href="/teeth-shade"><i
+                                            class="fa fa-pencil-square-o"></i>{{trans('file.teethshade')}}</a>
+                            </li>
+                            <li><a href="/teeth-cover"><i
+                                            class="fa fa-pencil-square-o"></i>{{trans('file.teethcover')}}</a>
+                            </li>
+
                             <li><a href="/expense-category"><i
                                             class="fa fa-pencil-square-o"></i>{{trans('file.expense_category')}}</a>
                             </li>

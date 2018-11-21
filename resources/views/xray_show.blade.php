@@ -63,8 +63,6 @@
     </style>
 @endsection
 
-
-
 @section('content')
 
     <div class="col-lg-12">
@@ -77,80 +75,57 @@
             <form method="post" action="/xray/{{ $spats->id }}">
                     {{csrf_field()}}
                     {{method_field('PUT')}}
-                <div class="row" style="margin-bottom: -30px;">
-                    <div class="row m-b-lg m-t-lg">
+                {{--<div class="row" style="margin-bottom: -30px;">--}}
+                    <div class="row ">
                         <div class="col-md-6">
-                            <div class="profile-info">
-                                <div class="">
-                                    <div>
-                                        <h2 class="no-margins font-b"><label>{{trans('file.patient_name')}}:&nbsp;</label>
-                                            <h3><input type="text" name="patient_name" value="{{$spats->patient_name}}" class="form-control" readonly></h3>
-                                        </h2>
-                                        <h2 class="no-margins font-b"><label>{{trans('file.patient_id')}}:&nbsp;</label>
-                                            <input type="text" name="patient_id" value="{{$spats->patient_id}}" class="form-control" readonly>
-                                        </h2>
-                                    </div>
+                            <h4 class="no-margins"><label>{{trans('file.patient_name')}}:&nbsp;</label>
+                                <h3><input type="text" name="patient_name" value="{{$spats->patient_name}}" class="form-control" readonly></h3>
+                            </h4>
+                            <h4 style="margin-top: 10px;"><label>{{trans('file.patient_id')}}:&nbsp;</label>
+                                <input type="text" name="patient_id" value="{{$spats->patient_id}}" class="form-control" readonly>
+                            </h4>
+                            <h4 style="margin-top: 10px;"><label>{{trans('file.xray_id')}}:&nbsp;</label>
+                                <input type="text" name="id" class="form-control" value="{{$spats->id}}" readonly>
+                            </h4>
+                            <h4 style="margin-top: 10px;"><label>{{trans('file.doctor')}}:&nbsp;</label>
+                                <input type="text" name="doctor_name" class="form-control" value="{{$spats->doctor_name}}" readonly>
+                            </h4>
+                            <h4 style="margin-top: 10px;"><label>{{trans('file.date')}} <i class='fa fa-calendar'></i>:&nbsp;</label>
+                                <input type="text" name="date" class="form-control" value="{{$spats->created_at}}" readonly>
+                            </h4>
+                        </div>
+                        <div class="col-md-6" style="margin-top: 10px;">
+                            <img src="{{asset('img/all_tooth.jpg')}}" class="img-responsive" id="img_all_tooth">
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12" style="width: 97%;margin-left: 17px;">
+                                <h4 style="margin-top: 10px;"><label>{{trans('file.teeth_number')}} :</label>
+                                    <input type="text" name="tooth_number" class="form-control" value="{{$spats->tooth_number}}" readonly>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div style="margin-top: 10px;margin-left: 17px;">
+                                    <button type="button" style="width: 49%" class="btn btn-primary btn-md" onclick="changeStatus()" id="change">{{trans('file.change_xray_status')}}</button>
+                                    <input type="text" id="status" style="font-size:15px; width: 49%;float:right;" name="xray_status" class="form-control" value="{{$spats->xray_status}}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <div style="margin-top: 10px;margin-right: 17px;">
+                                    <button class="btn btn-primary xray" type="submit" value="save">{{trans('file.save')}} &nbsp;<i class="fa fa-save"></i></button>&nbsp;&nbsp;
+                                    <a class="btn btn-white" href="/xray">{{trans('file.cancel')}}</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-5">
-                            <table class="table small m-b-xs table-striped table-hover" >
-                                <tbody>
-                                   <tr>
-                                        <td>
-                                            <span class="font-m">{{trans('file.date')}}:&nbsp;<i class="fa fa-calendar"></i></span>
-                                        </td>
-                                        <td>
-                                            <h3><b>&nbsp;{{$spats->created_at}}</b></h3>
-                                        </td>
-                                    </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-m">{{trans('file.doctor')}}:&nbsp; <i class="fa fa-user-md"></i><input type="text" name="doctor_name" class="form-control" value="{{$spats->doctor_name}}" readonly> </span>
-                                    </td>
-                                    <td>
-                                        <span class="font-m">{{trans('file.xray_id')}}:&nbsp;<input type="text" name="id" class="form-control" value="{{$spats->id}}" readonly> </span>
-                                    </td>
-                                </tr>
+                        <div class="row">
 
-                                <tr>
-                                    <td>
-                                     <h3>{{trans('file.tooth_position')}}:&nbsp;</h3></td>
-                                    <td>
-                                        <input type="text" name="tooth_position" class="form-control" value="{{$spats->tooth_position}}" readonly>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                           <button type="button" class="btn btn-primary btn-md" onclick="changeStatus()" id="change">{{trans('file.change_xray_status')}}</button>
-                                    </td>
-                                    <td>
-                                        <input type="text" id="status" style="font-size:15px;" name="xray_status" class="form-control" value="{{$spats->xray_status}}" readonly>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
                         </div>
+
                     </div>
-                </div>
-                <hr class="bg-primary"/>
-                <div class="row">
-                    <div class="col-md-6">
-                        <table class="table table-condensed table-bordered text-center">
-                            <tr>
-                                <td><strong>{{trans('file.teeth_number')}} :</strong></td>
-                                <td><input type="text" name="tooth_number" class="form-control" value="{{$spats->tooth_number}}" readonly></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="{{asset('img/all_tooth.jpg')}}" class="img-responsive" id="img_all_tooth">
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-lg-3" style="margin-top:30px;">
-                    <button class="btn btn-primary xray" type="submit" value="save">{{trans('file.save')}} &nbsp;<i class="fa fa-save"></i></button>&nbsp;&nbsp;
-                        <a class="btn btn-white" href="/xray">{{trans('file.cancel')}}</a>
+
                     </div>
                 </div>
                 </form>
