@@ -150,6 +150,9 @@
                             <li><a href="/doctor-department"><i
                                             class="fa fa-pencil-square-o"></i>{{trans('file.doctor_department')}}</a>
                             </li>
+                            <li><a href="/outdated_patient"><i
+                                            class="fa fa-user"></i>OutDated Patients</a>
+                            </li>
                             <li><a href="" onclick="updateSoftware()"><i
                                             class="fa fa-refresh"></i>{{trans('file.update_software')}}</a>
                             </li>
@@ -367,12 +370,16 @@
                             <li><a href="/doctor-department"><i
                                             class="fa fa-pencil-square-o"></i>{{trans('file.doctor_department')}}</a>
                             </li>
+                            <li><a href="/outdated_patient"><i
+                                            class="fa fa-user"></i>OutDated Patients</a>
+                            </li>
                             <li><a href="" onclick="updateSoftware()"><i
                                             class="fa fa-refresh"></i>{{trans('file.update_software')}}</a>
                             </li>
 
                         </ul>
                     </li>
+
                     {{--traders--}}
                     <li><a href=""><i class="fa fa-money"></i><span class="nav-lable">{{trans('file.salary')}}</span>
                             <span class="fa arrow"></span></a>

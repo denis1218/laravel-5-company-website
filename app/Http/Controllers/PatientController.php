@@ -90,6 +90,8 @@ class PatientController extends Controller
         $patient->doctor_id = $request->doctor_id;
         $patient->next_appointment = $request->date;
          $patient->status = 'first';
+         $patient->time = $request->time;
+         $patient->meridiem = $request->meridiem;
         $patient->created_at = Carbon::today();
         $patient->id_patient = 'P-'.$phonenumber;
         $patient->save();

@@ -1,8 +1,10 @@
 @extends('master')
 
 @section('style')
-
+    <link href="{{ asset('dashboard/css/plugins/iCheck/custom.css') }}" rel="stylesheet">
     <style>
+
+
         .list-ul {
             list-style-type: none;
             margin: 10px;

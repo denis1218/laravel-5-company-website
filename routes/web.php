@@ -313,6 +313,9 @@ Route::middleware('auth','reception')->group(function () {
 
     Route::resource('/pay_salary1','PaySalaryController');
 
+    Route::resource('/outdated_patient','OutdatedPatientController');
+    Route::post('/outdated_patient/search_user','OutdatedPatientController@search');
+
 });
 Route::get('/showexpair',function (){
     return view('showexpair');

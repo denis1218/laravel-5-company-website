@@ -3,6 +3,20 @@
 
 @section('style')
 
+    <style>
+        .list-ul {
+            list-style-type: none;
+            margin: 10px;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        .list-ul li {
+            float: left;
+            margin-left: 15px;
+        }
+    </style>
+
 @endsection
 
 @section('content')
@@ -254,6 +268,23 @@
                                                placeholder="{{trans('file.phone')}}" required=""><br>
                                         <input type="date" name="date" class="form-control" style="width:100%"
                                                placeholder="{{trans('file.date')}}" required=""><br>
+                                        <input type="number" name="time" class="form-control" style="width:100%"
+                                               placeholder="{{trans('file.clock')}}" required=""><br>
+                                        <ul class="list-ul">
+                                            <li><label>Meridiem : </label></li>
+                                            <li>
+                                                <div class="i-checks"><label>AM: <input name="meridiem" type="radio" checked
+                                                                                          value="AM" checked
+                                                                                          class="form-control required"></label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="i-checks"><label>PM :<input name="meridiem" type="radio"
+                                                                                            value="PM"
+                                                                                            class="form-control required"></label>
+                                                </div>
+                                            </li>
+                                        </ul>
 
 
                                         <button type="submit" value="Pay" class="btn btn-primary">{{trans('file.save')}}
@@ -277,16 +308,8 @@
 
 @section('script')
 
+    <script src="{{ asset('dashboard/js/plugins/iCheck/icheck.min.js') }}"></script>
     <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
-
-    <script src="{{asset('dashboard/js/plugins/chartJs/Chart.min.js')}}"></script>
-    <script src="{{asset('dashboard/js/plugins/flot/jquery.flot.js')}}"></script>
-    <script src="{{asset('dashboard/js/plugins/flot/jquery.flot.tooltip.min.js')}}"></script>
-    <script src="{{asset('dashboard/js/plugins/flot/jquery.flot.resize.js')}}"></script>
-    <!-- Peity -->
-    <script src="{{asset('dashboard/js/plugins/peity/jquery.peity.min.js')}}"></script>
-    <!-- Peity demo -->
-    <script src="{{asset('dashboard/js/demo/peity-demo.js')}}"></script>
 
     <script>
 
@@ -304,54 +327,9 @@
                         tr.hide();
                     });
             });
-
-
-            var lineData = {
-                labels: ["January", "February", "March", "April", "May", "June", "July"],
-                datasets: [
-                    {
-                        label: "Example dataset",
-                        fillColor: "rgba(220,220,220,0.5)",
-                        strokeColor: "rgba(220,220,220,1)",
-                        pointColor: "rgba(220,220,220,1)",
-                        pointStrokeColor: "#fff",
-                        pointHighlightFill: "#fff",
-                        pointHighlightStroke: "rgba(220,220,220,1)",
-                        data: [65, 59, 80, 81, 56, 55, 40]
-                    },
-                    {
-                        label: "Example dataset",
-                        fillColor: "rgba(26,179,148,0.5)",
-                        strokeColor: "rgba(26,179,148,0.7)",
-                        pointColor: "rgba(26,179,148,1)",
-                        pointStrokeColor: "#fff",
-                        pointHighlightFill: "#fff",
-                        pointHighlightStroke: "rgba(26,179,148,1)",
-                        data: [28, 48, 40, 19, 86, 27, 90]
-                    }
-                ]
-            };
-
-            var lineOptions = {
-                scaleShowGridLines: true,
-                scaleGridLineColor: "rgba(0,0,0,.05)",
-                scaleGridLineWidth: 1,
-                bezierCurve: true,
-                bezierCurveTension: 0.4,
-                pointDot: true,
-                pointDotRadius: 4,
-                pointDotStrokeWidth: 1,
-                pointHitDetectionRadius: 20,
-                datasetStroke: true,
-                datasetStrokeWidth: 2,
-                datasetFill: true,
-                responsive: true,
-            };
-
-            var ctx = document.getElementById("lineChart").getContext("2d");
-            var myNewChart = new Chart(ctx).Line(lineData, lineOptions);
-
         });
+
+
 
     </script>
 
