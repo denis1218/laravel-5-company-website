@@ -121,7 +121,7 @@
                             <h3 style="font-weight: bold">{{trans('file.kind_of_prosthesis')}}</h3>
                         </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div style="width: 100%;">
                                 <table class="table table-striped text-bold" style="margin-top:30px;">
                                     <tbody>
                                     <tr>
@@ -171,7 +171,7 @@
                                     <tbody>
                                     <tr>
                                         <td>{{trans('file.total')}} :</td>
-                                        <td>{{$patient_income->sum('remaining_fee')}}</td>
+                                        <td>{{$patient_income->sum('paid_amount')}}</td>
 
 
                                     </tr>
