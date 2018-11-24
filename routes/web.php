@@ -20,7 +20,6 @@ Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('activity','ActivityController@index');
 //Language Route
 Route::post('language',array(
    'Middleware' => 'LanguageSwitcher',
