@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
         if(\App\DentalDefectList::count() == 0)$this->call(DentalDefectListTableSeeder::class );
         if(\App\DoctorDepartment::count() == 0)$this->call(DoctorDepartmentTableSeeder::class );
         if(\App\ExpenseCatagory::count() == 0)$this->call(ExpenseCategoryTableSeeder::class );
+        if(\App\TeethCoverType::count() == 0)$this->call(TeethCoverTableSeeder::class );
 
 
         DB::Table('users')->insert([
@@ -76,18 +77,22 @@ class TeethCoverTableSeeder extends Seeder
     {
         DB::table('teeth_cover_types')->insert([
             'type' => 'Porcelain',
+            'price' => '1500',
         ]);
 
         DB::table('teeth_cover_types')->insert([
-            'dental_defect' => 'G-Carios',
+            'type' => 'Metal',
+            'price' => '2000',
         ]);
 
         DB::table('teeth_cover_types')->insert([
-            'dental_defect' => 'Atrision',
+            'type' => 'Progold',
+            'price' => '2500',
         ]);
 
         DB::table('teeth_cover_types')->insert([
-            'dental_defect' => 'Calculus',
+            'type' => 'Zarqonia',
+            'price' => '3500',
         ]);
     }
 }
