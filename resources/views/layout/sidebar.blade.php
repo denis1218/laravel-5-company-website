@@ -127,11 +127,7 @@
                                 </a></li>
                             <li><a href="/medicine_category"><i class="fa fa-pencil-square-o"></i>{{trans('file.medicine_category')}}
                                 </a></li>
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 360eeb2c8a513bed0cfb4cef01a79eba115b921c
 
 
                             <li><a href="/teeth-shade"><i
