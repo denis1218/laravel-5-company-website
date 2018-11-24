@@ -27,7 +27,7 @@ Route::post('language',array(
     'uses'=>'LanguageController@index'
 ));
 
-Route::middleware('admin')->group(function (){
+Route::middleware('auth','admin')->group(function (){
 
     Route::get('/patient-deleted','DeletedRecordsController@patient');
     Route::get('/doctor-deleted','DeletedRecordsController@doctor');

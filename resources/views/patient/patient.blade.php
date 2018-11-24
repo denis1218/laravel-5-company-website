@@ -118,14 +118,14 @@
 
                                 <div class="form-group">
                                     <label>{{trans('file.age')}} *</label>
-                                    <input id="age" name="age" type="number" class="form-control" placeholder="Age">
+                                    <input id="age" name="age" type="number" max="120" class="form-control" placeholder="Age">
                                 </div>
 
                             </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label>{{trans('file.phone')}} *</label>
-                                        <input id="phone" name="phone" type="phone" class="form-control required" placeholder="Phone">
+                                        <input id="phone" name="phone" type="phone" maxlength="10" class="form-control required" placeholder="Phone">
                                     </div>
                                 <div class="form-group">
                                     <label>Job *</label>
@@ -183,7 +183,7 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-sm-6">
-                                            <div class="i-checks"><label> <input type="checkbox" value="no" name="problem_health[]"> <i></i> No Problem</label></div>
+                                            <div class="i-checks"><label> <input type="checkbox" value="no" name="problem_health[]" checked> <i></i> No Problem</label></div>
                                             <div class="i-checks"><label> <input type="checkbox" value="Blood_Pressure" name="problem_health[]"> <i></i> Blood Pressure</label></div>
                                             <div class="i-checks"><label> <input type="checkbox" value="Diabetics" name="problem_health[]"> <i></i>Diabetics</label></div>
                                             <div class="i-checks"><label> <input type="checkbox"  value="Hepatitics" name="problem_health[]"> <i></i>Hepatitics</label></div>
