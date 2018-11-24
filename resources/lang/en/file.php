@@ -353,7 +353,7 @@ return[
     'back'=>'Back',
     'total_new'=>'Total New Register Today',
     'visits'=>'Visits',
-    'date_register'=>'Date Register',
+    'date_register'=>'Registration Date',
 //    list next appointment today
     'next_appointment'=>'List Next Appointment Today',
     'next_appointment_date'=>'Next Appointmentٔ',
@@ -603,6 +603,18 @@ return[
     'teethshade'=>'TeethShade',
     'teethcover'=>'TeethCoverType',
     'price'=>'Price',
+    'other_staff'=>'Other Staff',
+    'emp_reg'=>'Employee Registration',
+    'odp'=>'OutDated Patient',
+    'employee'=>'Employee',
+    'add_emp'=>'AddNewEmployee',
+    'erf'=>'Employee Registration Form',
+    'show_payment'=>'Show Payment',
+    'total_paid_amount'=>'Total Paid Amount',
+    'this_month_paid'=>'This Month Paid Amount',
+    'epinfo'=>'Edit Patient Information',
+    'fee'=>'Fee',
+    'iopi'=>'Insert OutDated Patient Info',
 
 
 ];

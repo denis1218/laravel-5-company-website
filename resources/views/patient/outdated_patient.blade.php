@@ -26,7 +26,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Edit Patient Info&nbsp;<i class="fa fa-info"></i></h5>
+                <h5>{{trans('file.odp')}}&nbsp;<i class="fa fa-info"></i></h5>
             </div>
 
             <div class="ibox-content" id="divone">
@@ -35,7 +35,7 @@
                     {{-- Search patient --}}
                     <div class="row">
                         <div class="col-md-2">
-                            <a class="btn btn-success" href="/outdated_patient/create">New Patient &nbsp;<i class="fa fa-user-plus"></i></a>
+                            <a class="btn btn-success" href="/outdated_patient/create">{{trans('file.new_patient')}} &nbsp;<i class="fa fa-user-plus"></i></a>
                         </div>
                         <div class="col-sm-10">
                             <form action="/outdated_patient/search_user" method="post">
@@ -57,16 +57,16 @@
                            <table class="table table-stripped">
                                <thead>
                                     <tr>
-                                        <th>Bill Number</th>
-                                        <th>Firstname</th>
-                                        <th>Lastname</th>
-                                        <th>Phone</th>
-                                        <th>Date Reg</th>
-                                        <th>Fee</th>
-                                        <th>Paid</th>
-                                        <th>Remaining</th>
-                                        <th>Edit</th>
-                                        <th>Delete</th>
+                                        <th>{{trans('file.bnumber')}}</th>
+                                        <th>{{trans('file.firstname')}}</th>
+                                        <th>{{trans('file.last_name')}}</th>
+                                        <th>{{trans('file.phone')}}</th>
+                                        <th>{{trans('file.date_register')}}</th>
+                                        <th>{{trans('file.fee')}}</th>
+                                        <th>{{trans('file.paid')}}</th>
+                                        <th>{{trans('file.remaining')}}</th>
+                                        <th>{{trans('file.edit')}}</th>
+                                        <th>{{trans('file.delete')}}</th>
                                     </tr>
                                </thead>
                                <tbody>
@@ -81,12 +81,12 @@
                                        <td>{{ $patient->paid }}</td>
                                        <td>{{ $patient->remaining }}</td>
 
-                                       <td><a class="btn btn-xs btn-info" href="/outdated_patient/{{ $patient->id }}/edit">Edit &nbsp;<i class="fa fa-edit"></i></a></td>
+                                       <td><a class="btn btn-xs btn-info" href="/outdated_patient/{{ $patient->id }}/edit">{{trans('file.edit')}} &nbsp;<i class="fa fa-edit"></i></a></td>
 
                                        <td>
                                            <form action="/outdated_patient/{{ $patient->id }}" method="post">
                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-xs btn-danger demo3">Delete &nbsp;<i class="fa fa-remove"></i></button>
+                                                <button type="submit" class="btn btn-xs btn-danger demo3">{{trans('file.delete')}} &nbsp;<i class="fa fa-remove"></i></button>
                                            </form>
                                        </td>
                                    </tr>
