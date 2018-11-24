@@ -213,10 +213,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <a href="/operation/{{ $treats->id }}/edit/{{ $patient_id }}" class="btn btn-md btn-primary">Continue
-                                            Treatment</a>
-                                    </div>
+                                    {{--<div class="col-md-3">--}}
+                                        {{--<a href="/operation/{{ $treats->id }}/edit/{{ $patient_id }}" class="btn btn-md btn-primary">Continue--}}
+                                            {{--Treatment</a>--}}
+                                    {{--</div>--}}
                                 </div>
                             @endforeach
                         </div>

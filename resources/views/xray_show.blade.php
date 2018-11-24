@@ -91,7 +91,7 @@
                                 <input type="text" name="doctor_name" class="form-control" value="{{$spats->doctor_name}}" readonly>
                             </h4>
                             <h4 style="margin-top: 10px;"><label>{{trans('file.date')}} <i class='fa fa-calendar'></i>:&nbsp;</label>
-                                <input type="text" name="doctor_name" class="form-control" value="{{$spats->created_at}}" readonly>
+                                <input type="text" name="date" class="form-control" value="{{$spats->created_at}}" readonly>
                             </h4>
                         </div>
                         <div class="col-md-6" style="margin-top: 10px;">
