@@ -30,6 +30,9 @@ class User extends Authenticatable
     {
         return Auth::user()->firsname;
     }
+    public function activity(){
+        return $this->hasMany(Activity_log::class,'user_id','id');
+    }
 
 
 }
