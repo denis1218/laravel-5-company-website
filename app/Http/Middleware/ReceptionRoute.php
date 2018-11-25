@@ -16,7 +16,7 @@ class ReceptionRoute
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check() && Auth::user()->department == 'reception' || Auth::user()->department == 'admin')
+        if(Auth::check() && Auth::user()->department == 'reception' || Auth::user()->department == 'doctor' || Auth::user()->department == 'admin')
         {
             return $next($request);
         }

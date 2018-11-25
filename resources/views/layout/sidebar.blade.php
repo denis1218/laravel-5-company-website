@@ -57,7 +57,7 @@
                             <li><a href="/doctors/create"><i
                                             class="fa fa-user-md"></i>{{trans('file.doctor_registration')}}</a></li>
                             <li><a href="/employee/create"><i
-                                            class="fa fa-user"></i>Employee Reg</a></li>
+                                            class="fa fa-user"></i>{{trans('file.emp_reg')}}</a></li>
                         </ul>
                     </li>
                     {{--traders--}}
@@ -111,7 +111,7 @@
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/doctors"><i class="fa fa-user-md"></i>{{ trans('file.doctors') }}</a>
                             </li>
-                            <li><a href="/employee"><i class="fa fa-users"></i>{{ trans('file.others') }}</a>
+                            <li><a href="/employee"><i class="fa fa-users"></i>{{ trans('file.other_staff') }}</a>
                             </li>
                         </ul>
                     </li>
@@ -127,7 +127,6 @@
                                 </a></li>
                             <li><a href="/medicine_category"><i class="fa fa-pencil-square-o"></i>{{trans('file.medicine_category')}}
                                 </a></li>
-
 
 
                             <li><a href="/teeth-shade"><i
@@ -151,7 +150,7 @@
                                             class="fa fa-pencil-square-o"></i>{{trans('file.doctor_department')}}</a>
                             </li>
                             <li><a href="/outdated_patient"><i
-                                            class="fa fa-user"></i>OutDated Patients</a>
+                                            class="fa fa-user"></i>{{trans('file.odp')}}</a>
                             </li>
                             <li><a href="" onclick="updateSoftware()"><i
                                             class="fa fa-refresh"></i>{{trans('file.update_software')}}</a>
@@ -287,7 +286,7 @@
                             <li><a href="/doctors/create"><i
                                             class="fa fa-user-md"></i>{{trans('file.doctor_registration')}}</a></li>
                             <li><a href="/employee/create"><i
-                                            class="fa fa-user"></i>Employee Reg</a></li>
+                                            class="fa fa-user"></i>{{trans('file.emp_reg')}}</a></li>
                         </ul>
                     </li>
 
@@ -371,7 +370,7 @@
                                             class="fa fa-pencil-square-o"></i>{{trans('file.doctor_department')}}</a>
                             </li>
                             <li><a href="/outdated_patient"><i
-                                            class="fa fa-user"></i>OutDated Patients</a>
+                                            class="fa fa-user"></i>{{trans('file.odp')}}</a>
                             </li>
                             <li><a href="" onclick="updateSoftware()"><i
                                             class="fa fa-refresh"></i>{{trans('file.update_software')}}</a>
@@ -386,7 +385,7 @@
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/doctors"><i class="fa fa-user-md"></i>{{ trans('file.doctors') }}</a>
                             </li>
-                            <li><a href="/employee"><i class="fa fa-users"></i>{{ trans('file.others') }}</a>
+                            <li><a href="/employee"><i class="fa fa-users"></i>{{ trans('file.other_staff') }}</a>
                             </li>
                         </ul>
                     </li>

@@ -7,7 +7,7 @@
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
 
-                        <h5>Total Paid Amount</h5>
+                        <h5>{{trans('file.total_paid_amount')}}</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins">{{$total_paid->sum('paid_amount')}}</h1>
@@ -18,7 +18,7 @@
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
 
-                        <h5>Paid Amount This Month</h5>
+                        <h5>{{trans('file.this_month_paid')}}</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins">
@@ -36,7 +36,7 @@
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
 
-                        <h5>Remaining</h5>
+                        <h5>{{trans('file.remaining')}}</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins">
@@ -100,7 +100,7 @@
                                     <button class="btn btn-sm btn-primary" type="submit"
                                             style="margin-top:23px; margin-left: 10px;"><i class="fa fa-tag"
                                                                                            style=" color:#ffe118 ;"></i>
-                                        &nbsp;Show Payment
+                                        &nbsp;{{trans('file.show_payment')}}
                                     </button>
 
                                 </div>
