@@ -17,7 +17,7 @@ class OincomController extends Controller
      */
     public function index()
     {
-        $others=Oincom::orderBy('id','asc')->paginate(10);
+        $others=Oincom::orderBy('id','desc')->paginate(10);
         $ptotal=DB::table('treatments')->sum('paid_amount');
         $xtotal=DB::table('xrays')->sum('paid_amount');
         $ototal=DB::table('oincoms')->sum('amount');
