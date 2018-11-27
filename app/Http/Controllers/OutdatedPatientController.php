@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\OutdatedPatient;
+use App\OutdatedReceive;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -60,6 +61,20 @@ class OutdatedPatientController extends Controller
     public function show($id)
     {
 
+    }
+
+    public function receive_fee(Request $request,$id)
+    {
+
+        $patient = OutdatedPatient::find($id);
+        $receive_fee =  $request->receive;
+        $patient->remaining = $patient->remaining - $receive_fee;
+        $patient->update();
+        $receive = new OutdatedReceive();
+        $receive->paid = $receive_fee;
+        $receive->outdated_id = $id;
+        $receive->save();
+        return redirect()->back();
     }
 
     public function search(Request $request)

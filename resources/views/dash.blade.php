@@ -90,7 +90,7 @@
                     <h5>{{trans('file.total_expenses')}}</h5>
                 </div>
                 <div class="ibox-content">
-                    <h1 class="no-margins">{{ $total_expense }}&nbsp;Afg<img src="img/expense_icon.png" width="80px;"
+                    <h1 class="no-margins">{{ $total_expense }}<img src="img/expense_icon.png" width="60px;"
                                                                     style="float: right;"/></h1>
                     <div class="stat-percent font-bold text-danger"></div>
                     <small>{{trans('file.total_expenses')}}
@@ -106,7 +106,7 @@
                     <h5>{{trans('file.total_incomes')}}</h5>
                 </div>
                 <div class="ibox-content">
-                    <h1 class="no-margins">{{ $total_income }}&nbsp;Afg<img src="img/income_icon.png" width="80px;"
+                    <h1 class="no-margins">{{ $total_income }}<img src="img/income_icon.png" width="60px;"
                                                                     style="float: right;"/></h1>
                     <div class="stat-percent font-bold text-danger"></div>
                     <small>{{trans('file.total_incomes')}}
