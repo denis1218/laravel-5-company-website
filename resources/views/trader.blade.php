@@ -72,7 +72,9 @@
                         <!-- End of the table -->
                         {{ $traders->links() }}
                     </div>
-
+</div>
+</div>
+</div>
                 </div>
             </div>
         </div>

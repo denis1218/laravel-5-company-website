@@ -32,7 +32,6 @@
                 <div class="row" style="padding-left:30px; font-size: 20px;">
                     <div class="row m-b-lg m-t-lg">
                         <div class="col-md-5">
-{{--                            @foreach($doctor as $d)--}}
                             <div class="profile-info">
                                 <div class="">
                                     <div>
@@ -47,10 +46,8 @@
                                     </div>
                                 </div>
                             </div>
-                            {{--@endforeach--}}
                         </div>
                         <div class="col-md-7">
-{{--                            @foreach($doctor as $do)--}}
                             <table class="table small m-b-xs">
                                 <tbody>
                                 <tr>
@@ -79,8 +76,6 @@
                                 </tr>
                                 </tbody>
                             </table>
-
-                            {{--@endforeach--}}
                         </div>
                     </div>
                 </div>
@@ -92,7 +87,7 @@
                     <form id="form" action="/doctors/{{$doctor->id}}" method="post">
                         {{csrf_field()}}
                         {{method_field('PUT')}}
-                        @if($doctor->salary_type == "percentage")
+                        @if($doctor->salary_type == "per")
                             <div class="col-md-12">
                         <div class="row">
                         <div class="col-md-6">
@@ -120,8 +115,6 @@
                             </thead>
                             <tbody>
                             @foreach($treatment as $treat)
-                                @if($treat->created_at>$doctor->to)
-{{--                                @if($treat->status_visits=='complete')--}}
                             <tr>
                                 <td>{{$treat->patient->id_patient}}</td>
                                 <td>{{$treat->treatment}}</td>
@@ -129,8 +122,6 @@
                                 <td>{{$treat->created_at}}</td>
                                 <td><span class="label label-info">{{$treat->status_visits}}</span></td>
                             </tr>
-                                @endif
-                                {{--@endif--}}
                             @endforeach
                             </tbody>
                         </table>

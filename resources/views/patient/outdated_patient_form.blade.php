@@ -66,15 +66,15 @@
                                 <div class="form-group">
 
                                     <label>{{trans('file.fee')}} *</label>
-                                    <input name="fee" type="number" class="form-control" onkeypress="subtractfee()">
+                                    <input name="fee" type="number" class="form-control" id="fee" onchange="subtractfee()">
                                 </div>
                                 <div class="form-group">
                                     <label>{{trans('file.paid')}} *</label>
-                                    <input name="paid" type="number" class="form-control" onkeypress="subtractfee">
+                                    <input name="paid" type="number" class="form-control" id="paid" onchange="subtractfee()">
                                 </div>
                                 <div class="form-group">
                                     <label>{{trans('file.remaining')}} *</label>
-                                    <input name="remaining" type="number" class="form-control" >
+                                    <input name="remaining" type="number" class="form-control" id="remaining">
                                 </div>
                                 <div>
                                     <button class="btn btn-primary pull-right" style="width: 200px" type="submit"><i class="fa fa-save"></i>&nbsp;&nbsp;{{trans('file.save')}}</button>

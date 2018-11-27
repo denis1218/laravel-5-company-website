@@ -17,8 +17,6 @@ class OincomController extends Controller
      */
     public function index()
     {
-        $others=Oincom::orderBy('id','asc')->paginate(10);
-        $total=DB::table('oincoms')->sum('amount');
 
         $start = new Carbon('first day of this month');
         $end = new Carbon('last day of this month');
