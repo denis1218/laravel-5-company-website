@@ -24,7 +24,7 @@ class ExpenseController extends Controller
     {
         $dateNow = Carbon::now()->toDateString();
         $start = new Carbon('first day of this month');
-        $expen =  Expense::whereBetween('created_at',[$start->toDateString(),$dateNow])->paginate(10);
+        $expen =  Expense::whereBetween('created_at',[$start->toDateString(),$dateNow])->orderBy('id','desc')->paginate(10);
         $totalExpense = $expen->sum('amount');
         return view('expenditure',compact('expen','totalExpense'));
     }

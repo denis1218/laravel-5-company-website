@@ -57,7 +57,7 @@
                             <li><a href="/doctors/create"><i
                                             class="fa fa-user-md"></i>{{trans('file.doctor_registration')}}</a></li>
                             <li><a href="/employee/create"><i
-                                            class="fa fa-user"></i>Employee Reg</a></li>
+                                            class="fa fa-user"></i>{{trans('file.emp_reg')}}</a></li>
                         </ul>
                     </li>
                     {{--traders--}}
@@ -111,7 +111,7 @@
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/doctors"><i class="fa fa-user-md"></i>{{ trans('file.doctors') }}</a>
                             </li>
-                            <li><a href="/employee"><i class="fa fa-users"></i>{{ trans('file.others') }}</a>
+                            <li><a href="/employee"><i class="fa fa-users"></i>{{ trans('file.other_staff') }}</a>
                             </li>
                         </ul>
                     </li>
@@ -127,7 +127,6 @@
                                 </a></li>
                             <li><a href="/medicine_category"><i class="fa fa-pencil-square-o"></i>{{trans('file.medicine_category')}}
                                 </a></li>
-
 
 
                             <li><a href="/teeth-shade"><i
@@ -149,6 +148,9 @@
                             </li>
                             <li><a href="/doctor-department"><i
                                             class="fa fa-pencil-square-o"></i>{{trans('file.doctor_department')}}</a>
+                            </li>
+                            <li><a href="/outdated_patient"><i
+                                            class="fa fa-user"></i>{{trans('file.odp')}}</a>
                             </li>
                             <li><a href="" onclick="updateSoftware()"><i
                                             class="fa fa-refresh"></i>{{trans('file.update_software')}}</a>
@@ -267,22 +269,24 @@
 
 
                     <li>
-                        <a><i class="fa fa-calculator"></i> <span
-                                    class="nav-label">{{trans('file.reception')}}</span><span
+                        <a><i class="fa fa-book"></i> <span class="nav-label">{{trans('file.reception')}}</span><span
+
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/doctors/create"><i
-                                            class="fa fa-save"></i>{{trans('file.doctor_registration')}}
-                                </a></li>
-                            <li><a href="/patient/create"><i
-                                            class="fa fa-user-md"></i>{{trans('file.patient_registration')}}</a></li>
-                            <li><a href="/patient"><i class="fa fa-flash"></i>{{trans('file.list_of_patient')}}</a></li>
-                            <li><a href="/patient_report"><i class="fa fa-file-o"></i>{{trans('file.patient_report')}}
-                                </a></li>
-                            <li><a href="/prescription"><i class="fa fa-file-pdf-o"></i>{{trans('file.prescription')}}
-                                </a>
-                            </li>
 
+                            <li><a href="/patient/create"><i
+                                            class="fa fa-user"></i>{{trans('file.patient_registration')}}</a></li>
+                            <li><a href="/patient"><i class="fa fa-list-ol"></i>{{trans('file.list_of_patient')}}</a>
+                            </li>
+                            <li><a href="/patient_report"><img src="{{ asset('img/report_patient.png') }}"
+                                                               width="14px"/>&nbsp;{{trans('file.patient_report')}}</a>
+                            </li>
+                            <li><a href="/prescription"><img src="{{ asset('img/prescription.png') }}" width="15px"/>&nbsp;{{trans('file.prescription')}}
+                                </a></li>
+                            <li><a href="/doctors/create"><i
+                                            class="fa fa-user-md"></i>{{trans('file.doctor_registration')}}</a></li>
+                            <li><a href="/employee/create"><i
+                                            class="fa fa-user"></i>{{trans('file.emp_reg')}}</a></li>
                         </ul>
                     </li>
 
@@ -309,24 +313,23 @@
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/expenditure"><i class="fa fa-shopping-cart"></i>{{trans('file.expenditure')}}
-                                </a>
-                            </li>
+                                </a></li>
                             <li><a href="/income"><i class="fa fa-arrow-circle-o-down"></i>{{trans('file.income')}}</a>
                             </li>
-                            <li><a href="/doctors"><i class="fa fa-user-md"></i>{{trans('file.doctors')}}</a></li>
-
-                            <li><a href="/finance_report"><i class="fa fa-file-o"></i>{{trans('file.financial_report')}}
-                                    <span
-                                            class="fa arrow"></span></a>
+                            <li><a href="/finance_report"><img src="{{ asset('img/report_finance.png') }}"
+                                                               width="13px"/>&nbsp;{{trans('file.financial_report')}}
+                                    <span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level collapse">
                                     <li><a href="/finance_report_income"><i
-                                                    class="fa fa-tag"></i>&nbsp;&nbsp;{{trans('file.income')}}</a>
+                                                    class="fa fa-arrow-down"></i>&nbsp;&nbsp;{{trans('file.income')}}
+                                        </a>
                                     </li>
                                     <li><a href="/finance_report_expenses"><i
-                                                    class="fa fa-tag"></i>{{trans('file.expense')}}</a>
+                                                    class="fa fa-shopping-cart"></i>{{trans('file.expense')}}</a>
                                     </li>
-                                    <li><a href="/finance_report_profit"><i
-                                                    class="fa fa-tag"></i>&nbsp;&nbsp;{{trans('file.profit')}}</a>
+                                    <li><a href="/finance_report_profit"><img src="{{ asset('img/profite.png') }}"
+                                                                              width="15px"/>
+                                            &nbsp;&nbsp;{{trans('file.profit')}}</a>
                                     </li>
                                 </ul>
                             </li>
@@ -337,10 +340,23 @@
                                     class="nav-label">{{trans('file.setting')}}</span><span
                                     class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/backup"><i class="fa fa-database"></i>{{trans('file.backup_db')}}</a>
-                            </li>
+                            <li><a href="/user"><i class="fa fa-user-plus"></i>{{trans('file.account')}}</a></li>
+
                             <li><a href="/medicine"><i class="fa fa-pencil-square-o"></i>{{trans('file.add_medicine')}}
                                 </a></li>
+                            <li><a href="/medicine_category"><i class="fa fa-pencil-square-o"></i>{{trans('file.medicine_category')}}
+                                </a></li>
+
+
+
+                            <li><a href="/teeth-shade"><i
+                                            class="fa fa-pencil-square-o"></i>{{trans('file.teethshade')}}</a>
+                            </li>
+                            <li><a href="/teeth-cover"><i
+                                            class="fa fa-pencil-square-o"></i>{{trans('file.teethcover')}}</a>
+                            </li>
+
+
                             <li><a href="/expense-category"><i
                                             class="fa fa-pencil-square-o"></i>{{trans('file.expense_category')}}</a>
                             </li>
@@ -353,26 +369,23 @@
                             <li><a href="/doctor-department"><i
                                             class="fa fa-pencil-square-o"></i>{{trans('file.doctor_department')}}</a>
                             </li>
+                            <li><a href="/outdated_patient"><i
+                                            class="fa fa-user"></i>{{trans('file.odp')}}</a>
+                            </li>
                             <li><a href="" onclick="updateSoftware()"><i
                                             class="fa fa-refresh"></i>{{trans('file.update_software')}}</a>
                             </li>
 
                         </ul>
                     </li>
+
                     {{--traders--}}
-                    <li>
-                        <a href=""> <i class="fa fa-truck"></i>{{trans('file.supplier')}}
-                            <span class="fa fa arrow"></span></a>
+                    <li><a href=""><i class="fa fa-money"></i><span class="nav-lable">{{trans('file.salary')}}</span>
+                            <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/trader"><i
-                                            class="fa fa-truck"></i>{{trans('file.supplier')}}
-                                </a>
+                            <li><a href="/doctors"><i class="fa fa-user-md"></i>{{ trans('file.doctors') }}</a>
                             </li>
-                            <li><a href="/item"><i
-                                            class="fa fa-gift"></i>{{trans('file.item')}}</a>
-                            </li>
-                            <li><a href="/common"><i
-                                            class="fa fa-shopping-cart"></i>{{trans('file.purchase')}}</a>
+                            <li><a href="/employee"><i class="fa fa-users"></i>{{ trans('file.other_staff') }}</a>
                             </li>
                         </ul>
                     </li>

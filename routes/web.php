@@ -20,14 +20,13 @@ Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('activity','ActivityController@index');
 //Language Route
 Route::post('language',array(
    'Middleware' => 'LanguageSwitcher',
     'uses'=>'LanguageController@index'
 ));
 
-Route::middleware('admin')->group(function (){
+Route::middleware('auth','admin')->group(function (){
 
     Route::get('/patient-deleted','DeletedRecordsController@patient');
     Route::get('/doctor-deleted','DeletedRecordsController@doctor');
@@ -312,6 +311,9 @@ Route::middleware('auth','reception')->group(function () {
 
 
     Route::resource('/pay_salary1','PaySalaryController');
+
+    Route::resource('/outdated_patient','OutdatedPatientController');
+    Route::post('/outdated_patient/search_user','OutdatedPatientController@search');
 
 });
 Route::get('/showexpair',function (){

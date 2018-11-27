@@ -1,8 +1,10 @@
 @extends('master')
 
 @section('style')
-
+    <link href="{{ asset('dashboard/css/plugins/iCheck/custom.css') }}" rel="stylesheet">
     <style>
+
+
         .list-ul {
             list-style-type: none;
             margin: 10px;
@@ -23,7 +25,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Edit Patient Info&nbsp;<i class="fa fa-info"></i></h5>
+                <h5>{{trans('file.epinfo')}}&nbsp;<i class="fa fa-info"></i></h5>
             </div>
             <div class="ibox-content" id="divone">
                 <div class="container">

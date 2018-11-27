@@ -13,7 +13,7 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>{{trans('file.it')}}</h5>
+                        <h5>{{trans('file.erf')}}</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -24,7 +24,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <a href="/employee" class="btn btn-primary"><i class="fa fa-arrow-left"></i>&nbsp;
-                                    Back</a>
+                                    {{trans('file.back')}}</a>
                                 <br/>
                                 <br>
                                 <form id="form" method="post" action="/employee">
@@ -44,7 +44,8 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>{{trans('file.age')}}</label>
-                                                <div><input type="number" name="age" class="form-control"
+                                                <div><input type="number" name="age" class="form-control" maxlength="2"
+                                                            oninput="javscript:if(this.value.length>this.maxLength) this.value=this.value.slice(0,this.maxLength);"
                                                             placeholder="{{trans('file.age')}}" required></div>
                                             </div>
                                             <br>
@@ -71,8 +72,10 @@
                                             <br>
                                             <div class="form-group">
                                                 <label>{{trans('file.phone')}}</label>
-                                                <div><input type="number" name="phone" class="form-control"
-                                                            placeholder="{{trans('file.phone')}}" required></div>
+                                                <div><input type="number" name="phone" class="form-control" maxlength="10"
+                                                            placeholder="{{trans('file.phone')}}"
+                                                            oninput="javascript: if(this.value.length > this.maxLength) this.value=this.value.slice(0, this.maxLength);"
+                                                            required></div>
                                             </div>
                                         </div>
                                         <div class="col-md-1"></div>
@@ -80,7 +83,9 @@
 
                                             <div class="form-group">
                                                 <label>{{trans('file.salary')}}</label>
-                                                <div><input type="number" name="salary" class="form-control" placeholder="{{trans('file.salary')}}" required></div>
+                                                <div><input type="number" name="salary" class="form-control" placeholder="{{trans('file.salary')}}" maxlength="7"
+                                                            oninput="javascript: if(this.value.length>this.maxLength) this.value=this.value.slice(0,this.maxLength);"
+                                                            required></div>
                                             </div>
                                             <div class="form-group">
                                                 <label>{{trans('file.address')}}</label>
