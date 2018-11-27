@@ -125,7 +125,7 @@
                         <form id="form" action="/outdated_patient/receive/{{ $patient->id }}" method="post">
                             {{--{{method_field('patch')}}--}}
 
-
+                            <input type="hidden" value="{{ $patient->remaining }}" id="remaining" />
                             <div class="row">
                                 <div class="col-md-8">
                                     <table class="table table-stripped">
@@ -143,7 +143,7 @@
                                         </tr>
                                         <tr>
                                             <td><strong>Receive : </strong></td>
-                                            <td><input type="text" class="form-control" placeholder="Receive Remaining fee" name="receive"/></td>
+                                            <td><input type="text" class="form-control" placeholder="Receive Remaining fee" name="receive"  min="{{ $patient->remaining }}"/></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -151,7 +151,7 @@
 
                             <br>
                             <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-bottom: 10px;">{{trans('file.close')}}</button>
-                            <button type="submit" class="btn btn-primary pull-right" style="margin-bottom: 10px;margin-right: 20px;">Receive</button>
+                            <button type="submit" onclick="btnReceive()" class="btn btn-primary pull-right" id="receive" style="margin-bottom: 10px;margin-right: 20px;">Receive</button>
 
                         </form>
                         <br>
@@ -192,6 +192,19 @@
                 });
             });
         });
+
+
+         function btnReceive()
+        {
+            var remaining = $('#remaining').val();
+            var receive = $('#receive').val();
+            if(remaining < receive)
+            {
+                alert('hi');
+            }
+        }
+
+
     </script>
 
 
