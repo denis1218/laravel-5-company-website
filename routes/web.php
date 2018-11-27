@@ -20,14 +20,13 @@ Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/', 'HomeController@index')->name('home');
-
 //Language Route
 Route::post('language',array(
    'Middleware' => 'LanguageSwitcher',
     'uses'=>'LanguageController@index'
 ));
 
-Route::middleware('admin')->group(function (){
+Route::middleware('auth','admin')->group(function (){
 
     Route::get('/patient-deleted','DeletedRecordsController@patient');
     Route::get('/doctor-deleted','DeletedRecordsController@doctor');

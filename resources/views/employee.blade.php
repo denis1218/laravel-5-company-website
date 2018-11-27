@@ -53,7 +53,7 @@
                                     <div class="col-sm-5">
                                         <div class="form-group">
                                             <label class="control-label">{{trans('file.age')}}</label>
-                                            <input type="number" max="100" min="20" class="form-control" name="age"
+                                            <input type="number" max="120" min="20" class="form-control" name="age"
                                                    placeholder="{{trans('file.age')}}" required>
                                         </div>
                                     </div>
@@ -95,7 +95,7 @@
                                     </div>
                                     <div class="form-group" style="margin-left:1px;">
                                         <label class=" control-label">{{trans('file.password')}}</label>
-                                        <input type="password" class="form-control" name="password"
+                                        <input type="password" minlength="5" maxlength="20" class="form-control" name="password"
                                                placeholder="{{trans('file.password')}}" required>
                                     </div>
                                 </div>

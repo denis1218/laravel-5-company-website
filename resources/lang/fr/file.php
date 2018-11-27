@@ -173,7 +173,7 @@ return[
 //end of treatment operation
 
 //start of doctor registration
-    'first_name'=>'نام',
+    'firstname'=>'نام',
     'sd'=>'دیپارتمینت را انتخاب کنید',
     'father_name'=>'نام پدر',
     'max_patient'=>'حداکثر تعداد مریض',
@@ -332,6 +332,7 @@ return[
     'back'=>'برگشت',
     'total_new'=>'مجموع مریضان راجستر شده امروز',
     'visits'=>'ملاقات',
+    'date_register'=>'تاریخ ثبت',
 //    list next appointment today
     'next_appointment'=>'لیست مریضان بار دوم امروز',
     'next_appointment_date'=>'تاریخ بار بعدی',
@@ -541,6 +542,21 @@ return[
     'teethshade'=>'پوش دندان',
     'teethcover'=>' نوع پوش دندان',
     'price'=>' قیمت',
+    'other_staff'=>' سایر کارمندان',
+    'salary'=>' معاش',
+    'emp_reg'=>' ثبت نام کارمندان',
+    'odp'=>' مریضان سابقه',
+    'add_emp'=>' اضافه کردن کارمند جدید',
+    'erf'=>' فورم ثبت کارمند',
+    'show_payment'=>'پرداخت شده ها',
+    'total_paid_amount'=>'مجموع پرداخت شده ها',
+    'this_month_paid'=>'پرداخت شده برای این ماه',
+    'epinfo'=>'ویرایش معمومات مریض',
+    'fee'=>'پول تداوی',
+    'iopi'=>'جزئیات مریضان سابقه را وارد کنید',
+
+
+
 
 ];
 

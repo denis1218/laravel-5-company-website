@@ -6,13 +6,13 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>{{trans('file.medicine')}}</h5>
+                        <h5>{{trans('file.employee')}}</h5>
 
                     </div>
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-sm-6">
-                                <a href="/employee/create" class="btn btn-primary" style="margin-left:30px"><i class="fa fa-list">Add New Employee</i></a>
+                                <a href="/employee/create" class="btn btn-primary" style="margin-left:30px"><i class="fa fa-list">{{trans('file.add_emp')}}</i></a>
                             </div>
                         </div>
 
