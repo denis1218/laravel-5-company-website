@@ -315,6 +315,7 @@ Route::middleware('auth','reception')->group(function () {
 
     Route::resource('/outdated_patient','OutdatedPatientController');
     Route::post('/outdated_patient/search_user','OutdatedPatientController@search');
+    Route::post('/outdated_patient/receive/{id}','OutdatedPatientController@receive_fee');
 
 });
 Route::get('/showexpair',function (){

@@ -28,7 +28,7 @@
             <div class="ibox-title">
                 <h5>Insert Outdated Patient Info&nbsp;<i class="fa fa-info"></i></h5>
             </div>
-            <div class="ibox-content" id="divone" style="background-color: #ddd6dc">
+            <div class="ibox-content" id="divone" style="background-color: #eee7ed">
                 <div class="container" >
                     <div class="row">
                         <a class="btn btn-info" href="/outdated_patient" type="reset"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Back</a>
@@ -65,15 +65,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Fee *</label>
-                                    <input name="fee" type="number" class="form-control ">
+                                    <input name="fee" type="number" id="fee" onchange="subtractfee()" class="form-control ">
                                 </div>
                                 <div class="form-group">
                                     <label>Paid *</label>
-                                    <input name="paid" type="number" class="form-control ">
+                                    <input name="paid" type="number" id="paid" onchange="subtractfee()" class="form-control ">
                                 </div>
                                 <div class="form-group">
                                     <label>Remaining *</label>
-                                    <input name="remaining" type="number" class="form-control ">
+                                    <input name="remaining"  type="number" id="remaining" class="form-control ">
                                 </div>
                                 <div>
                                     <button class="btn btn-primary pull-right" style="width: 200px" type="submit"><i class="fa fa-save"></i>&nbsp;&nbsp;Save</button>
@@ -92,6 +92,17 @@
 
 @section('script')
 
+    <script>
+        function subtractfee()
+        {
+            var fee = parseInt(document.getElementById("fee").value);
+            var paid = parseInt(document.getElementById("paid").value);
+            if (!fee) { fee = 0; }
+            if (!paid) { paid = 0; }
+            var remaining = document.getElementById("remaining");
+            remaining.value = fee - paid;
+        }
+    </script>
 
 
 @endsection

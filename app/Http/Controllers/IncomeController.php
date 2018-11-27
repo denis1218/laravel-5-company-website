@@ -104,6 +104,7 @@ class IncomeController extends Controller
     {
         //
     }
+
     public  function editPaid(Request $request,$id){
          $treat = Treatment::find($id);
          $treat->paid_amount = $request->paid_amount;

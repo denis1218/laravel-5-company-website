@@ -65,6 +65,7 @@
                                         <th>Fee</th>
                                         <th>Paid</th>
                                         <th>Remaining</th>
+                                        <th>Receive fee</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
@@ -80,6 +81,9 @@
                                        <td>{{ $patient->fee }}</td>
                                        <td>{{ $patient->paid }}</td>
                                        <td>{{ $patient->remaining }}</td>
+
+                                       <td><button class="btn btn-xs btn-primary" data-toggle="modal"
+                                                   data-target="#{{ $patient->id }}">Receive &nbsp;<i class="fa fa-money"></i></button></td>
 
                                        <td><a class="btn btn-xs btn-info" href="/outdated_patient/{{ $patient->id }}/edit">Edit &nbsp;<i class="fa fa-edit"></i></a></td>
 
@@ -100,6 +104,68 @@
         </div>
     </div>
 
+
+@foreach($patients as $patient)
+
+        <div class="modal inmodal" id="{{ $patient->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content animated fadeIn">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                                    class="sr-only">{{trans('file.close')}}</span></button>
+                        {{--<i class="fa fa-edit-o modal-icon text-primary"></i>--}}
+
+                        <h4 class="modal-title">{{trans('file.fee_payment')}}</h4>
+
+                        <small>{{trans('file.fill_pa')}}</small>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form" action="/outdated_patient/receive/{{ $patient->id }}" method="post">
+                            {{--{{method_field('patch')}}--}}
+
+
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <table class="table table-stripped">
+                                        <tr>
+                                            <td><strong>Fee : </strong></td>
+                                            <td><label>{{ $patient->fee }}</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Paid : </strong></td>
+                                            <td><label>{{ $patient->paid }}</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Remaining : </strong></td>
+                                            <td><label>{{ $patient->remaining }}</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Receive : </strong></td>
+                                            <td><input type="text" class="form-control" placeholder="Receive Remaining fee" name="receive"/></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <br>
+                            <button type="button" class="btn btn-white pull-right" data-dismiss="modal" style="margin-bottom: 10px;">{{trans('file.close')}}</button>
+                            <button type="submit" class="btn btn-primary pull-right" style="margin-bottom: 10px;margin-right: 20px;">Receive</button>
+
+                        </form>
+                        <br>
+
+
+                    </div>
+
+                    <div class="modal-footer">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+@endforeach
 
 @endsection
 

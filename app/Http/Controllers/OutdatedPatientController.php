@@ -62,6 +62,17 @@ class OutdatedPatientController extends Controller
 
     }
 
+    public function receive_fee(Request $request,$id)
+    {
+
+        $patient = OutdatedPatient::find($id);
+        $receive_fee =  $request->receive;
+        $patient->remaining = $patient->remaining - $receive_fee;
+        $patient->paid = $patient->paid + $receive_fee;
+        $patient->update();
+        return redirect()->back();
+    }
+
     public function search(Request $request)
     {
         $query = $request->search;
