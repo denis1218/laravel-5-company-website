@@ -75,6 +75,7 @@
                                 <div class="form-group">
                                     <label>{{trans('file.remaining')}} *</label>
                                     <input name="remaining" type="number" class="form-control ">
+
                                 </div>
                                 <div>
                                     <button class="btn btn-primary pull-right" style="width: 200px" type="submit"><i class="fa fa-save"></i>&nbsp;&nbsp;{{trans('file.save')}}</button>
