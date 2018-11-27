@@ -117,6 +117,8 @@
                                             <td>{{$patient->dentaldefect}}</td>
                                         @endforeach
                                     @endif
+                                </tr>
+                                <tr>
                                     <td>{{trans('file.dental_treatment')}}:</strong> </td>
                                     @if($patient_income != null)
                                         @foreach($patient_income as $patient)
