@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Last Name *</label>
-                                    <input name="lastname" type="text" value="{{ $patient->lastname }}" class="form-control ">
+                                    <input name="lastname" type="text" value="{{ $patient->lastname }}" class="form-control required">
                                 </div>
                                 <div class="form-group">
                                     <label>Phone *</label>
@@ -54,26 +54,26 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Date Register *</label>
-                                    <input name="date_register" type="date" value="{{ $patient->date_register }}" class="form-control ">
+                                    <input name="date_register" type="date" value="{{ $patient->date_register }}" class="form-control required">
                                 </div>
 
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Treatment *</label>
-                                    <input name="treatment" type="text" value="{{ $patient->treatment }}" class="form-control ">
+                                    <input name="treatment" type="text" value="{{ $patient->treatment }}" class="form-control required">
                                 </div>
                                 <div class="form-group">
                                     <label>Fee *</label>
-                                    <input name="fee" type="number" value="{{ $patient->fee }}" class="form-control ">
+                                    <input name="fee" type="number" value="{{ $patient->fee }}" class="form-control required">
                                 </div>
                                 <div class="form-group">
                                     <label>Paid *</label>
-                                    <input name="paid" type="number" value="{{ $patient->paid }}" class="form-control ">
+                                    <input name="paid" type="number" value="{{ $patient->paid }}" class="form-control required">
                                 </div>
                                 <div class="form-group">
                                     <label>Remaining *</label>
-                                    <input name="remaining" type="number" value="{{ $patient->remaining }}" class="form-control ">
+                                    <input name="remaining" type="number" value="{{ $patient->remaining }}" class="form-control required">
                                 </div>
                                 <div>
                                     <button class="btn btn-primary pull-right" style="width: 200px" type="submit"><i class="fa fa-save"></i>&nbsp;&nbsp;Save</button>

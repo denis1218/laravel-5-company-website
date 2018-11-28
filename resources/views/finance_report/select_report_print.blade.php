@@ -97,6 +97,19 @@
                                 @endforeach
 
                             @endif
+                            @if(isset($outdate))
+                                <tr>
+                                    <td style="margin-left: 30px"><b style="font-size: 20px">Out Date Patient Total Income</b></td>
+                                    <td style="float: right;margin-right: 30px"><b style="font-size: 20px">{{$outdate->sum('paid')}}&nbsp;afg</b></td>
+                                </tr>
+                                @foreach($outdate as $out)
+                                    <tr>
+                                        <td style="margin-left: 30px">{{$out->outdatepatient->firstname}}</td>
+                                        <td style="float: right;margin-right: 30px">{{$out->paid}}&nbsp;afg</td>
+                                    </tr>
+                                @endforeach
+
+                            @endif
                             {{--<tr>--}}
                                 {{--<td style="margin-left: 30px"><b>Total Income</b></td>--}}
                                 {{--<td style="float: right;margin-right: 30px"><b>{{$total_income}}&nbsp;afg</b></td>--}}
