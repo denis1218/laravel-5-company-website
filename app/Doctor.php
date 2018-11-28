@@ -36,13 +36,8 @@ class Doctor extends Model
         return $this->hasMany(Xray::class);
     }
 
-    public function treatment(){
-        $first = Carbon::now()->startOfMonth()->toDateString();
-        if ($this->to != null){
-            return $this->hasManyThrough(Treatment::class ,Patient::class)->whereDate('treatments.created_at','>',$this->to);
-        } else{
-            return $this->hasManyThrough(Treatment::class ,Patient::class)->whereDate('treatments.created_at','>=',$first);
-        }
+    public function dsalary(){
+        return $this->hasMany(DSalary::class,'doc_id','id');
     }
 
 
