@@ -142,12 +142,16 @@ Route::middleware('auth','reception')->group(function () {
     Route::get('/pdf', 'PdfGenerator@PDF');
 //doctor salary
     Route::get('/doctors2', 'DoctorController@show');
-    Route::patch('/doctors3/{id}', 'DoctorController@PayAdvance');
+//    Route::patch('/doctors3/{id}', 'DoctorController@PayAdvance');
 
 //    Patient Deletion
     Route::get('/patient/{id}/delete', 'PatientController@destroy');
 // Doctor Registrationexp
-    Route::resource('doctors', 'DoctorController');
+    Route::resource('/doctors', 'DoctorController');
+    Route::resource('/dr_salary','DSalaryController');
+    Route::post('/dr_salary1','DSalaryController@show');
+    Route::post('/dr_salary2','DSalaryController@store');
+    Route::post('/dr_salary3','DSalaryController@PaySalary3');
 
     Route::resource('/expenditure', 'ExpenseController');
 
@@ -258,9 +262,9 @@ Route::middleware('auth','reception')->group(function () {
        return view('help');
     });
 
-    Route::get('/doctors/doctor_edit/{id}','DoctorController@doctor_edit');
+    Route::get('/doctors/{id}','DoctorController@edit');
 
-    Route::post('/doctors/update/{id}','DoctorController@update_doctor');
+    Route::post('/doctors7/{id}','DoctorController@update');
 
 //    Traders Route
     Route::resource('/trader','TraderController');
@@ -307,6 +311,7 @@ Route::middleware('auth','reception')->group(function () {
     Route::get('/pay_salary','PaySalaryController@index');
 
     Route::post('/pay_salary2','PaySalaryController@showPayment');
+//    Route::post('/pay_salary2','PaySalaryController@showPayment');
     Route::post('/pay_salary3','PaySalaryController@PaySalary3');
 
 
