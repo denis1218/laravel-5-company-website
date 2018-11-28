@@ -27,10 +27,10 @@ class HomeController extends Controller
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
-     */     
+     */
     public function index()
     {
-        $categories=ExpenseCatagory::all();
+        $categories = ExpenseCatagory::all();
         $patient = Patient::count();
         $apatient = Patient::whereDate('next_appointment', Carbon::today())->get();
         $doctor = Doctor::count();
@@ -38,21 +38,23 @@ class HomeController extends Controller
         $total_income = $this->total_income();
         $total_expense = $this->total_expense();
         $profit = $this->profit();
-        return view('/dash',compact('patient','doctor','apatient','categories','total_income','total_expense','profit','doct'));
+        return view('/dash', compact('patient', 'doctor', 'apatient', 'categories', 'total_income', 'total_expense', 'profit', 'doct'));
     }
 
-    public function doctor_dashboard(){
+    public function doctor_dashboard()
+    {
         $id = Auth()->user()->doctor_id;
         $doctor = Doctor::find($id)->patient_for_today;
         $doct = Doctor::count();
-        $patient = Patient::where('doctor_id','=',$id)->get();
-        return view('dash_doctor',compact('doctor','doct','patient'));
+        $patient = Patient::where('doctor_id', '=', $id)->get();
+        return view('dash_doctor', compact('doctor', 'doct', 'patient'));
     }
 
-    public function reception(){
-        $patient = Patient::whereDate('next_appointment',Carbon::today())->get();
+    public function reception()
+    {
+        $patient = Patient::whereDate('next_appointment', Carbon::today())->get();
         $doct = Doctor::count();
-        return view('reception.dash_reception',compact('patient','doct'));
+        return view('reception.dash_reception', compact('patient', 'doct'));
     }
 
 
@@ -63,7 +65,7 @@ class HomeController extends Controller
     public function updateSystem()
     {
         shell_exec('c:\WINDOWS\system32\cmd.exe /c START  C:\xampp\htdocs\DentalCare_new\update_software.bat');
-       return redirect()->back();
+        return redirect()->back();
     }
 
     public function about_us()
@@ -74,11 +76,12 @@ class HomeController extends Controller
     public function total_income()
     {
         $start = new Carbon('first day of this month');
-        $today = new Carbon('today');
-        $ptotal=DB::table('treatments')->whereBetween('created_at',[$start,$today])->sum('paid_amount');
-        $xtotal=DB::table('xrays')->whereBetween('created_at',[$start,$today])->sum('paid_amount');
-        $ototal=DB::table('oincoms')->whereBetween('created_at',[$start,$today])->sum('amount');
-        $total_income = $ptotal+$xtotal+$ototal;
+        $today = new Carbon('last day of this month');
+        $ptotal = DB::table('treatments')->whereBetween('created_at', [$start, $today])->sum('paid_amount');
+        $xtotal = DB::table('xrays')->whereBetween('created_at', [$start, $today])->sum('paid_amount');
+        $ototal = DB::table('oincoms')->whereBetween('created_at', [$start, $today])->sum('amount');
+        $optotal = DB::table('outdated_receives')->whereBetween('created_at', [$start, $today])->sum('paid');
+        $total_income = $ptotal + $xtotal + $ototal + $optotal;
         return $total_income;
     }
 
@@ -86,7 +89,7 @@ class HomeController extends Controller
     {
         $start = new Carbon('first day of this month');
         $today = new Carbon('today');
-        $expense = Expense::whereBetween('created_at',[$start,$today]);
+        $expense = Expense::whereBetween('created_at', [$start, $today]);
         $totalExpense = $expense->sum('amount');
         return $totalExpense;
     }
@@ -112,12 +115,10 @@ class HomeController extends Controller
             } else {
                 return false;
             }
-        }catch (Exception $ex)
-        {
+        } catch (Exception $ex) {
             return false;
         }
     }
-
 
 
 }
