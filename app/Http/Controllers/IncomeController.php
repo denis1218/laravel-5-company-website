@@ -18,13 +18,15 @@ class IncomeController extends Controller
      */
     public function index()
     {
+        $income = Treatment::where('remaining_fee','>','0')->paginate(10);
+
         $start = new Carbon('first day of this month');
         $end = new Carbon('last day of this month');
-        $income = Treatment::where('remaining_fee','>','0')->paginate(10);
         $ptotal=DB::table('treatments')->whereBetween('created_at',[$start,$end])->sum('paid_amount');
         $xtotal=DB::table('xrays')->whereBetween('created_at',[$start,$end])->sum('paid_amount');
         $ototal=DB::table('oincoms')->whereBetween('created_at',[$start,$end])->sum('amount');
-        $Gtotal=$ptotal+$xtotal+$ototal;
+        $optotal=DB::table('outdated_receives')->whereBetween('created_at',[$start,$end])->sum('paid');
+        $Gtotal=$ptotal+$xtotal+$ototal+$optotal;
             return view('income',compact('income','Gtotal'));
 
     }
@@ -104,6 +106,7 @@ class IncomeController extends Controller
     {
         //
     }
+
     public  function editPaid(Request $request,$id){
          $treat = Treatment::find($id);
          $treat->paid_amount = $request->paid_amount;

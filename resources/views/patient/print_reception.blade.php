@@ -44,7 +44,7 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-6 text-left"><h3 style="margin-left: 20px;">
-                                    <strong>{{trans('file.doctor_name')}} : {{$patient->doctor->first_name}}</strong>
+                                    <strong>{{trans('file.doctor_name')}} : Dr.Zabihullah-Hakim Alkozay (DMD)</strong>
                                 </h3></div>
                             <div class="col-xs-6 text-right"><h4>{{trans('file.date')}} : {{$patient->created_at}}</h4>
                             </div>
@@ -101,47 +101,50 @@
 
                 </div>
                 <div class="row">
-                <div class="col-md-12">
-                    <div class="row shadow p-3 mb-5 bg-white rounded"
-                         style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width: 99%;margin-left: 7px;">
-                        <h3 style="font-weight: bold">{{trans('file.kind_of_prosthesis')}}</h3>
-                    </div>
-                    <div class="col-xs-12" style="margin-top: 20px;">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <tbody>
-                                <tr>
-                                    <td><strong>{{trans('file.dental_defect')}}:</strong></td>
-                                    @if($patient_income != null)
-                                        @foreach($patient_income as $patient)
-                                            <td>{{$patient->dentaldefect}}</td>
-                                        @endforeach
-                                    @endif
-                                </tr>
-                                <tr>
-                                    <td>{{trans('file.dental_treatment')}}:</strong> </td>
-                                    @if($patient_income != null)
-                                        @foreach($patient_income as $patient)
-                                            <td>{{$patient->treatment}}</td>
-                                        @endforeach
-                                    @endif
-                                </tr>
-                                <tr>
-                                    <td><strong>{{trans('file.teeth_number')}}:</strong></td>
-                                    @if($patient_income != null)
-                                        @foreach($patient_income as $patient)
-                                            <td>{{$patient->teeth_number}}</td>
-                                        @endforeach
-                                    @endif
-                                </tr>
 
-                                </tbody>
-                            </table>
+                    <div class="col-md-12">
+                        <div class="row shadow p-3 mb-5 bg-white rounded"
+                             style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width: 99%;margin-left: 7px;">
+                            <h3 style="font-weight: bold">{{trans('file.kind_of_prosthesis')}}</h3>
+                        </div>
+                        <div class="col-xs-12" style="margin-top: 20px;">
+                            <div class="table-responsive">
+                                <table class="table table-stripped">
+                                    <tbody>
+                                    <tr>
+                                        <td><b>{{trans('file.dental_defect')}}:</b></td>
+                                        @if($patient_income != null)
+                                            @foreach($patient_income as $patient)
+                                                <td>{{$patient->dentaldefect}}</td>
+                                            @endforeach
+                                        @endif
+                                    </tr>
+                                    <tr>
+                                        <td><strong>{{trans('file.dental_treatment')}}:</strong></td>
+                                        @if($patient_income != null)
+                                            @foreach($patient_income as $patient)
+                                                <td>{{$patient->treatment}}</td>
+                                            @endforeach
+                                        @endif
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>{{trans('file.teeth_number')}}:</strong></td>
+                                        @if($patient_income != null)
+                                            @foreach($patient_income as $patient)
+                                                <td>{{$patient->teeth_number}}</td>
+                                            @endforeach
+                                        @endif
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
                 <div class="row">
+<<<<<<< HEAD
                 <div class="col-md-12">
                     <div class="row shadow p-3 mb-5 bg-white rounded"
                          style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width: 99%;margin-left: 7px;">
@@ -167,20 +170,19 @@
                             </table>
                         </div>
                     </div>
-                </div>
-                <br/>
-                <br/>
+                    <br/>
+                    <br/>
 
-                <div class="row" style="margin-left: 40px;margin-top: 90px;">
-                    <h3>{{trans('file.doctor_signature')}}: </h3>
+                    <div class="row" style="margin-left: 40px;margin-top: 90px;">
+                        <h3>{{trans('file.doctor_signature')}}: </h3>
 
-                </div>
-                <div class="row" style="margin-top: 160px;">
-                    <div class="col-xs-12">
-                        <h4><strong>Powered By : PaypolSoftware.com</strong></h4>
+                    </div>
+                    <div class="row" style="margin-top: 160px;">
+                        <div class="col-xs-12">
+                            <h4><strong>Powered By : PaypolSoftware.com</strong></h4>
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>

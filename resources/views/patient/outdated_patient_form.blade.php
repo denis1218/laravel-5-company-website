@@ -28,7 +28,7 @@
             <div class="ibox-title">
                 <h5>{{trans('file.iopi')}}<i class="fa fa-info"></i></h5>
             </div>
-            <div class="ibox-content" id="divone" style="background-color: #ddd6dc">
+            <div class="ibox-content" id="divone" style="background-color: #eee7ed">
                 <div class="container" >
                     <div class="row">
                         <a class="btn btn-info" href="/outdated_patient" type="reset"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;{{trans('file.back')}}</a>
@@ -64,16 +64,17 @@
                                     <input name="treatment" type="text" value="teeth problem" class="form-control">
                                 </div>
                                 <div class="form-group">
+
                                     <label>{{trans('file.fee')}} *</label>
-                                    <input name="fee" type="number" class="form-control ">
+                                    <input name="fee" type="number" class="form-control" id="fee" onchange="subtractfee()">
                                 </div>
                                 <div class="form-group">
                                     <label>{{trans('file.paid')}} *</label>
-                                    <input name="paid" type="number" class="form-control ">
+                                    <input name="paid" type="number" class="form-control" id="paid" onchange="subtractfee()">
                                 </div>
                                 <div class="form-group">
                                     <label>{{trans('file.remaining')}} *</label>
-                                    <input name="remaining" type="number" class="form-control ">
+                                    <input name="remaining" type="number" class="form-control" id="remaining">
                                 </div>
                                 <div>
                                     <button class="btn btn-primary pull-right" style="width: 200px" type="submit"><i class="fa fa-save"></i>&nbsp;&nbsp;{{trans('file.save')}}</button>
@@ -92,6 +93,17 @@
 
 @section('script')
 
+    <script>
+        function subtractfee()
+        {
+            var fee = parseInt(document.getElementById("fee").value);
+            var paid = parseInt(document.getElementById("paid").value);
+            if (!fee) { fee = 0; }
+            if (!paid) { paid = 0; }
+            var remaining = document.getElementById("remaining");
+            remaining.value = fee - paid;
+        }
+    </script>
 
 
 @endsection

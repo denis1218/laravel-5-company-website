@@ -123,32 +123,36 @@
                         <ul class="nav nav-second-level collapse">
                             <li><a href="/user"><i class="fa fa-user-plus"></i>{{trans('file.account')}}</a></li>
 
-                            <li><a href="/medicine"><i class="fa fa-pencil-square-o"></i>{{trans('file.add_medicine')}}
-                                </a></li>
-                            <li><a href="/medicine_category"><i class="fa fa-pencil-square-o"></i>{{trans('file.medicine_category')}}
-                                </a></li>
+                            <li><a><i class="fa fa-plus-square"></i>&nbsp;Add ..
+                                    <span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level collapse">
+                                    <li><a href="/medicine"><i class="fa fa-pencil-square-o"></i>{{trans('file.add_medicine')}}
+                                        </a></li>
+                                    <li><a href="/medicine_category"><i class="fa fa-pencil-square-o"></i>{{trans('file.medicine_category')}}
+                                        </a></li>
+                                    <li><a href="/teeth-shade"><i
+                                                    class="fa fa-pencil-square-o"></i>{{trans('file.teethshade')}}</a>
+                                    </li>
+                                    <li><a href="/teeth-cover"><i
+                                                    class="fa fa-pencil-square-o"></i>{{trans('file.teethcover')}}</a>
+                                    </li>
 
 
-                            <li><a href="/teeth-shade"><i
-                                            class="fa fa-pencil-square-o"></i>{{trans('file.teethshade')}}</a>
-                            </li>
-                            <li><a href="/teeth-cover"><i
-                                            class="fa fa-pencil-square-o"></i>{{trans('file.teethcover')}}</a>
-                            </li>
+                                    <li><a href="/expense-category"><i
+                                                    class="fa fa-pencil-square-o"></i>{{trans('file.expense_category')}}</a>
+                                    </li>
+                                    <li><a href="/dental-defect-list"><i
+                                                    class="fa fa-pencil-square-o"></i>{{trans('file.dental_defect_list')}}</a>
+                                    </li>
+                                    <li><a href="/treatment-list"><i
+                                                    class="fa fa-pencil-square-o"></i>{{trans('file.treatment_list')}}</a>
+                                    </li>
+                                    <li><a href="/doctor-department"><i
+                                                    class="fa fa-pencil-square-o"></i>{{trans('file.doctor_department')}}</a>
+                                    </li>
+                                </ul>
+                                    </li>
 
-
-                            <li><a href="/expense-category"><i
-                                            class="fa fa-pencil-square-o"></i>{{trans('file.expense_category')}}</a>
-                            </li>
-                            <li><a href="/dental-defect-list"><i
-                                            class="fa fa-pencil-square-o"></i>{{trans('file.dental_defect_list')}}</a>
-                            </li>
-                            <li><a href="/treatment-list"><i
-                                            class="fa fa-pencil-square-o"></i>{{trans('file.treatment_list')}}</a>
-                            </li>
-                            <li><a href="/doctor-department"><i
-                                            class="fa fa-pencil-square-o"></i>{{trans('file.doctor_department')}}</a>
-                            </li>
                             <li><a href="/outdated_patient"><i
                                             class="fa fa-user"></i>{{trans('file.odp')}}</a>
                             </li>

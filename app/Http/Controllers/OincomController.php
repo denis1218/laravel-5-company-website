@@ -17,12 +17,15 @@ class OincomController extends Controller
      */
     public function index()
     {
-        $others=Oincom::orderBy('id','desc')->paginate(10);
-        $ptotal=DB::table('treatments')->sum('paid_amount');
-        $xtotal=DB::table('xrays')->sum('paid_amount');
-        $ototal=DB::table('oincoms')->sum('amount');
-        $Gtotal=$ptotal+$xtotal+$ototal;
-        $total=DB::table('oincoms')->sum('amount');
+
+        $start = new Carbon('first day of this month');
+        $end = new Carbon('last day of this month');
+        $ptotal=DB::table('treatments')->whereBetween('created_at',[$start,$end])->sum('paid_amount');
+        $xtotal=DB::table('xrays')->whereBetween('created_at',[$start,$end])->sum('paid_amount');
+        $ototal=DB::table('oincoms')->whereBetween('created_at',[$start,$end])->sum('amount');
+        $optotal=DB::table('outdated_receives')->whereBetween('created_at',[$start,$end])->sum('paid');
+        $Gtotal=$ptotal+$xtotal+$ototal+$optotal;
+
 
 
         return view('ext_table',compact('others','total','Gtotal'));
