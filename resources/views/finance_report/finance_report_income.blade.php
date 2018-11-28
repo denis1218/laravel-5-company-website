@@ -150,6 +150,7 @@
                                     <option class="item">xray</option>
                                     <option class="item">other</option>
                                     <option class="item">medicine</option>
+                                    <option class="item">out date patient</option>
 
                                 </select>
                             </div>
@@ -199,6 +200,7 @@
                                     <option class="item">xray</option>
                                     <option class="item">other</option>
                                     <option class="item">medicine</option>
+                                    <option class="item">out date patient</option>
 
                                 </select>
                             </div>

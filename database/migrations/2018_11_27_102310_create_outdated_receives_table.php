@@ -22,7 +22,7 @@ class CreateOutdatedReceivesTable extends Migration
                 ->references('id')->on('outdated_patients')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->timestamps();
+            $table->date('created_at');
         });
     }
 

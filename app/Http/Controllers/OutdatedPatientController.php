@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\OutdatedPatient;
 use App\OutdatedReceive;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -73,6 +74,7 @@ class OutdatedPatientController extends Controller
         $receive = new OutdatedReceive();
         $receive->paid = $receive_fee;
         $receive->outdated_id = $id;
+        $receive->created_at = Carbon::now();
         $receive->save();
         return redirect()->back();
     }
