@@ -98,6 +98,14 @@
                                         <input type="password" minlength="5" maxlength="20" class="form-control" name="password"
                                                placeholder="{{trans('file.password')}}" required>
                                     </div>
+                                    <div class="form-group" style="margin-left:1px;">
+                                        <label class=" control-label">{{trans('file.sur')}}</label>
+                                        <select class="form-control" name="role" required>
+                                            <option value="Select User Role" disabled selected>{{trans('file.sur')}}</option>
+                                            <option value="admin">{{trans('file.admin')}}</option>
+                                            <option value="doctor">{{trans('file.doctor')}}</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-5 text-left" >
@@ -128,18 +136,18 @@
                                     </div>
                                     {{--</div>--}}
                                 </div>
-                                <div class="col-sm-12" style="margin-top: 20px;">
-                                    <div class="col-sm-5 text-center" style="margin-top: 22px;margin-left: -30px;">
+                                <div class="col-sm-6" style="margin-top: 20px;">
+                                    <div class="col-sm-5 text-center" style="margin-top: px;margin-left: 55px;">
                                         <div class="form-group">
-                                            <div class="col-sm-3"><label class="control-label">{{trans('file.gender')}}
+                                            <div class="col-sm-5"><label class="control-label">{{trans('file.gender')}}
                                                     :</label></div>
-                                            <div class="col-sm-4" style="margin-left: 15px;">
+                                            <div class="col-sm-3" style="margin-left: 15px;">
                                                 <div class="i-checks"><label><input type="radio" value="male"
                                                                                     name="gender" class="form-control"
                                                                                     required>&nbsp;&nbsp;{{trans('file.male')}}
                                                     </label></div>
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-3">
                                                 <div class="i-checks"><label> <input type="radio" value="female"
                                                                                      name="gender" class="form-control"
                                                                                      required>&nbsp;&nbsp; {{trans('file.female')}}
@@ -156,9 +164,8 @@
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-12 text-right">
                                         <div class="form-group">
-                                            <button class="btn btn-white" type='reset'>{{trans('file.reset')}}</button>&nbsp;
-                                            <button class="btn btn-primary " type="submit" name="submit" value="Save"
-                                                    style="margin-right: 93px">{{trans('file.save')}}
+                                            <button class="btn btn-white" type='reset' style="width: 70px;">{{trans('file.reset')}}</button>&nbsp;
+                                            <button class="btn btn-primary " type="submit" name="submit" value="Save" style="margin-right: 93px;width: 70px;">{{trans('file.save')}}
                                             </button>
                                         </div>
                                     </div>

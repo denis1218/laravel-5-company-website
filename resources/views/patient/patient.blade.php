@@ -97,17 +97,18 @@
 
                                 <div class="form-group">
                                     <label>Date Appointment *</label>
-                                   <input id="appointment" name="appointment" type="date" class="form-control required">
+                                    <input id="appointment" name="appointment"  type="date" class="form-control" required style="width: 80%">
+                                    <input type="button" class="btn btn-primary" id="today" style="float:right;margin-top: -33px;" value="Today">
                                 </div>
 
                                 <div class="form-group">
-
-                                    <table cellspacing="20px"><tr>
-                                            <label>Time Appointment *</label>
-                                    <td><input id="Time" name="time" placeholder="Time Appointment O'Clock" type="number" class="form-control required" max="12" min="1"></td>
-                                        <td><label>AM</label><div class="i-checks"><label class="checkbox-inline"><input id="meridiem" value="AM" name="meridiem" type="radio" class="form-control required"></td>
-                                        <td><label>PM</label><div class="i-checks"><label class="checkbox-inline"><input id="meridiem" value="PM" name="meridiem" type="radio" class="form-control required"></td>
-                                        </tr></table>
+                                    <div class="col-xs-12"><label style="margin-left: -14px;">Time Appointment *</label></div>
+                                    <div class="col-xs-12">
+                                        <div class="col-xs-2" style="margin-left: -30px;"><input type="button" class="btn btn-primary" id="now"  value="Now"></div>
+                                        <div class="col-xs-4"><label for="cur"><input id="cur" name="time" type="number" class="form-control" max="24" min="1" required></label></div>
+                                        <div class="col-xs-2" style="margin-top: -10px;"><label style="margin-left: 20px;">AM</label><div class="i-checks"><label class="checkbox-inline"><input id="meridiem" value="AM" name="meridiem" type="radio" class="form-control required"></label></div></div>
+                                        <div class="col-xs-2" style="margin-top: -10px;"><label style="margin-left: 20px;">PM</label><div class="i-checks"><label class="checkbox-inline"><input id="meridiem" value="PM" name="meridiem" type="radio" class="form-control required"></label></div></div>
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
@@ -312,4 +313,24 @@
             });
         });
         </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#today').click(function(){
+                var d = new Date();
+                var dt=d.toISOString().format('yyyy-mm-dd').slice(0,10);
+                $('#appointment').val(dt);
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#now').click(function(){
+                var t = new Date();
+                var td=t.getHours();
+                var ft=td%12;
+                $('#cur').val(ft);
+            });
+        });
+    </script>
 @endsection

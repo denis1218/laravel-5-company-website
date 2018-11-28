@@ -62,7 +62,7 @@ class DoctorController extends Controller
         $user->lastname = $request->last_name;
         $user->password = Hash::make($request->password);
         $user->email = $request->email;
-        $user->department = 'doctor';
+        $user->department = $request->role;
         $user->doctor_id = $doct;
         $user->save();
         return redirect('/doctors')->with('success','Doctor registered successfully');

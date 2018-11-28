@@ -152,8 +152,16 @@
                             <table class="table table-hover">
                                 <tbody>
                                 <tr>
-                                    <td>{{trans('file.total')}} :</td>
+                                    <td>{{trans('file.estimated_fee')}} :</td>
+                                    <td>{{$patient_income->sum('estimated_fee')}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{trans('file.paid')}} :</td>
                                     <td>{{$patient_income->sum('paid_amount')}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{trans('file.remaining')}} :</td>
+                                    <td>{{$patient_income->sum('remaining_fee')}}</td>
                                 </tr>
                                 </tbody>
                             </table>

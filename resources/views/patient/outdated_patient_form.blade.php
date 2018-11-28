@@ -37,31 +37,31 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>{{trans('file.bnumber')}} *</label>
-                                    <input name="bill_number" type="text" value="0" class="form-control" required>
+                                    <input name="bill_number" type="text" value="0" class="form-control" >
                                 </div>
                                 <div class="form-group">
                                     <label>{{trans('file.firstname')}} *</label>
-                                    <input name="firstname" type="text" class="form-control" required>
+                                    <input name="firstname" type="text" class="form-control" >
                                 </div>
                                 <div class="form-group">
                                     <label>{{trans('file.last_name')}} *</label>
-                                    <input name="lastname" type="text" class="form-control ">
+                                    <input name="lastname" type="text" class="form-control" >
                                 </div>
 
                                 <div class="form-group">
                                     <label>{{trans('file.phone')}} *</label>
-                                    <input name="phone" type="phone" class="form-control required">
+                                    <input name="phone" type="phone" class="form-control" >
                                 </div>
                                 <div class="form-group">
                                     <label>{{trans('file.date_register')}} *</label>
-                                    <input name="date_register" type="date" class="form-control ">
+                                    <input name="date_register" type="date" class="form-control" >
                                 </div>
 
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>{{trans('file.treatment')}} *</label>
-                                    <input name="treatment" type="text" value="teeth problem" class="form-control ">
+                                    <input name="treatment" type="text" value="teeth problem" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label>{{trans('file.fee')}} *</label>
