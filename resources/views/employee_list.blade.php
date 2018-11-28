@@ -12,7 +12,7 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-sm-6">
-                                <a href="/employee/create" class="btn btn-primary" style="margin-left:30px"><i class="fa fa-list">{{trans('file.add_emp')}}</i></a>
+                                <a href="/employee/create" class="btn btn-primary" style="margin-left:30px"><i class="fa fa-user-plus">&nbsp;{{trans('file.add_emp')}}</i></a>
                             </div>
                         </div>
 
