@@ -85,9 +85,7 @@
                                     <th>{{trans('file.p_id')}}</th>
                                     <th>{{trans('file.patient_name')}}</th>
                                     <th>{{trans('file.last_name')}}</th>
-                                    <th>{{trans('file.status')}}</th>
                                     <th>{{trans('file.date_appointment')}}</th>
-                                    <th>{{trans('file.health_problem')}}</th>
                                     <th>{{trans('file.operation')}}</th>
                                 </tr>
                                 </thead>
@@ -98,12 +96,8 @@
                                             <td>{{ $opr->id_patient }}</td>
                                             <td>{{ $opr->name }}</td>
                                             <td>{{ $opr->lastname }}</td>
-                                            <td>{{ $opr->status }}</td>
                                             <td>{{ $opr->next_appointment }}</td>
-                                            <td>{{ $opr->problem_health }}</td>
-
                                             <td><a href="/operation/create/{{$opr->id}}" class="btn btn-sm btn-primary">{{trans('file.start_operation')}}</a>
-
                                             </td>
                                         </tr>
                                     @endforeach
