@@ -24,7 +24,7 @@ class PaySalaryController extends Controller
         $start = new Carbon('first day of this month');
         $end = new Carbon('last day of this month');
         $emp = PaySalary::whereBetween('created_at',[$start,$end])->where('emp_id','=',$id)->get();
-       $total_paid = PaySalary::where('emp_id','=',$id)->get();
+        $total_paid = PaySalary::where('emp_id','=',$id)->get();
         $employee = Employee::find($id);
 
         return view('emp_salary',compact('emp','employee','total_paid'));

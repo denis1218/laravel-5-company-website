@@ -119,6 +119,7 @@ return[
     'dc'=>'Dental Clinic',
     'phf'=>'Patient History File',
     'date'=>'Date',
+    'pdate'=>'Date Of Payment',
     'print'=>'Print',
     'print_pdf'=>'Print PDF',
     'save_and_print'=>'Save & Print',
@@ -295,6 +296,7 @@ return[
     'treatment_fee'=>'Treatment Fee',
     'total_fee'=>'Total Fee',
     'doctor_salary'=>'Doctor Salary',
+    'betweendate'=>'BetweenDates',
     'past_remaining'=>'Past Remaining',
     'total_doctor_salary'=>'Total Doctor Salary',
     'payment_amount'=>'Payment Amount',
@@ -609,13 +611,15 @@ return[
     'employee'=>'Employee',
     'add_emp'=>'Add New Employee',
     'erf'=>'Employee Registration Form',
-    'show_payment'=>'Show Payment',
+    'show_payment_indaterange'=>'Show Payments Between Dates',
     'total_paid_amount'=>'Total Paid Amount',
     'this_month_paid'=>'This Month Paid Amount',
     'epinfo'=>'Edit Patient Information',
     'fee'=>'Fee',
     'iopi'=>'Insert OutDated Patient Info',
-
+    'cash'=>'Cash',
+    'weekly'=>'Weekly',
+    'monthly'=>'Monthly',
 
 ];
 
