@@ -53,7 +53,6 @@ class DoctorController extends Controller
         $doctor->phone=$request->input('phone');
         $doctor->department=$request->input('department');
         $doctor->gender=$request->input('gender');
-        $doctor->salary_type=$request->input('salary_type');
         $doctor->salary_amount=$request->input('salary_amount');
         $doctor->max_patient=$request->input('max_patient');
         $doctor->save();
@@ -63,7 +62,7 @@ class DoctorController extends Controller
         $user->lastname = $request->last_name;
         $user->password = Hash::make($request->password);
         $user->email = $request->email;
-        $user->department = 'doctor';
+        $user->department = $request->role;
         $user->doctor_id = $doct;
         $user->save();
         return redirect('/doctors')->with('success','Doctor registered successfully');
@@ -77,28 +76,28 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        $doc = Doctor::orderBy('id','desc')->paginate(10);
-        return view('doctor_salary',compact('doc'));
+//        $doc = Doctor::orderBy('id','desc')->paginate(10);
+//        return view('doctor_salary',compact('doc'));
     }
 
-    public function PayAdvance(Request $request,$id)
-    {
-        $day=Carbon::now();
-        $advance=$request->advance;
-        $adv=Doctor::find($id);
-        $padv=$adv->advance;
-        $adv->advance=$adv->advance+$request->advance;
-        $adv->save();
-        $expenseSalary = new Expense();
-        $expenseSalary->receiver = $adv->first_name;
-        $expenseSalary->amount = $request->advance;
-        $expenseSalary->category = "advance";
-        $expenseSalary->description = "Paid advance :".$request->advance." at date : ".Carbon::now()." ";
-        $expenseSalary->created_at = Carbon::now();
-        $expenseSalary->save();
-        return view('print_pages.AdvPrint',compact('adv','advance','padv','day'));
-
-    }
+//    public function PayAdvance(Request $request,$id)
+//    {
+//        $day=Carbon::now();
+//        $advance=$request->advance;
+//        $adv=Doctor::find($id);
+//        $padv=$adv->advance;
+//        $adv->advance=$adv->advance+$request->advance;
+//        $adv->save();
+//        $expenseSalary = new Expense();
+//        $expenseSalary->receiver = $adv->first_name;
+//        $expenseSalary->amount = $request->advance;
+//        $expenseSalary->category = "advance";
+//        $expenseSalary->description = "Paid advance :".$request->advance." at date : ".Carbon::now()." ";
+//        $expenseSalary->created_at = Carbon::now();
+//        $expenseSalary->save();
+//        return view('print_pages.AdvPrint',compact('adv','advance','padv','day'));
+//
+//    }
 
     /**
      * Show the form for editing the specified resource.
@@ -109,36 +108,27 @@ class DoctorController extends Controller
      */
     public function edit( $id)
     {
-        $doctor=Doctor::find($id);
-        $patient=Doctor::find($id)->patient;
-        $treatment=Doctor::find($id)->treatment;
-        $tod=Carbon::now();
-        if($doctor->to==null){
-            $total=$treatment->sum('paid_amount');
-        }else{
-            $total=$treatment->sum('paid_amount');
-        }
-        if($doctor->salary_type=='fix'){
-            $docfee=$doctor->salary_amount;
-        }else{
-            $docfee=($total*$doctor->salary_amount)/100;
-        }
-        return view('doctor_report',compact('doctor','patient','treatment','total','docfee','tod'));
-    }
-
-
-    /*
-     * edit doctor show form editing doctor
-     */
-    public function doctor_edit($id)
-    {
         $doctor = Doctor::find($id);
         $doctor_department = DoctorDepartment::all();
         return view('doctor_edit',compact('doctor','doctor_department'));
     }
 
 
+
     public function update_doctor(Request $request,$id)
+    {
+
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Doctor  $doctor
+     * @return \Illuminate\Http\Response
+     *
+     */
+    public function update(Request $request, $id)
     {
         $doctor= Doctor::find($id);
         $doctor->first_name=$request->input('first_name');
@@ -150,39 +140,10 @@ class DoctorController extends Controller
         $doctor->phone=$request->input('phone');
         $doctor->department=$request->input('department');
         $doctor->gender=$request->input('gender');
-        $doctor->salary_type=$request->input('salary_type');
         $doctor->salary_amount=$request->input('salary_amount');
         $doctor->max_patient=$request->input('max_patient');
         $doctor->update();
         return redirect('/doctors');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Doctor  $doctor
-     * @return \Illuminate\Http\Response
-     *
-     */
-    public function update(Request $request, Doctor $doctor)
-    {
-        $day=Carbon::now();
-        $payment=Doctor::find($doctor)->first();
-        $payment->paid=$request->salary;
-        $payment->remaining=$request->colection-$request->salary;
-        $payment->advance=$request->advance-$request->advance;
-        $payment->from=$request->start;
-        $payment->to=$request->end;
-        $payment->save();
-        $expenseSalary = new Expense();
-        $expenseSalary->receiver = $doctor->first_name;
-        $expenseSalary->amount = $request->salary;
-        $expenseSalary->category = "salary";
-        $expenseSalary->description = "Paid salary :".$request->salary." at date : ".Carbon::now()." ";
-        $expenseSalary->created_at = Carbon::now();
-        $expenseSalary->save();
-        return view('print_pages.drSalaryPrint',compact('payment','day'));
     }
 
     /**

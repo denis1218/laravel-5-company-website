@@ -98,58 +98,56 @@
                                         <input type="password" minlength="5" maxlength="20" class="form-control" name="password"
                                                placeholder="{{trans('file.password')}}" required>
                                     </div>
+                                    <div class="form-group" style="margin-left:1px;">
+                                        <label class=" control-label">{{trans('file.sur')}}</label>
+                                        <select class="form-control" name="role" required>
+                                            <option value="Select User Role" disabled selected>{{trans('file.sur')}}</option>
+                                            <option value="admin">{{trans('file.admin')}}</option>
+                                            <option value="doctor">{{trans('file.doctor')}}</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-sm-1"></div>
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 text-left" >
+                                    <div class="form-group" style="margin-left: px;">
+                                        <label class="control-label"
+                                               id="label">{{trans('file.salary_amount')}}</label>
+                                        <input type="number" class="form-control" name="salary_amount" id="sal" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5" style="margin-left: 80px;margin-top: 25px;">
                                     <div class="form-group">
-                                        <div class="col-sm-5" style="margin-top: 22px;margin-left: 10px;">
+                                        <div class="col-sm-5" style="margin-bottom: -5px;">
                                             <label class=" control-label"
                                                    style="letter-spacing: 2px;line-height: 12px;font-size: 18px">{{trans('file.working_time')}}
                                                 :</label>
                                         </div>
                                     </div>
                                     {{--<div class="col-sm-12" style="">--}}
-                                        <div class="form-group">
-                                            <div class="col-sm-6">
-                                                <label style="line-height: 35px;">{{trans('file.from')}} </label>
-                                                <input type="time" class="form-control" name="start_work_time" required>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <label style="line-height: 35px;">{{trans('file.to')}}</label>
-                                                <input type="time" class="form-control" name="end_work_time" required>
-                                            </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <label style="line-height: 35px;">{{trans('file.from')}} </label>
+                                            <input type="time" class="form-control" name="start_work_time" required>
                                         </div>
+                                        <div class="col-sm-6">
+                                            <label style="line-height: 35px;">{{trans('file.to')}}</label>
+                                            <input type="time" class="form-control" name="end_work_time" required>
+                                        </div>
+                                    </div>
                                     {{--</div>--}}
                                 </div>
-                                <div class="col-sm-5" style="margin-left: 100px;margin-top: 30px">
-                                    <div class="form-group">
-                                        <div class="col-sm-3" style="margin-left: -17px;"><label
-                                                    class=" control-label">{{trans('file.salary_type')}}:</label></div>
-                                        <div class="col-sm-3"><label><input type="radio" class="form-control"
-                                                                            name="salary_type" value="per" id="per"
-                                                                            onclick="perSal()"
-                                                                            style="height: 22px;width:22px;"
-                                                                            required><i></i>{{trans('file.per')}}
-                                                %</label></div>
-                                        <div class="col-sm-3"><label><input type="radio" class="form-control"
-                                                                            name="salary_type" onclick="fixSal()"
-                                                                            id="fix" value="fix"
-                                                                            style="height: 22px;width:22px;">
-                                                <i></i>{{trans('file.fix')}}</label></div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12" style="margin-top: 20px;">
-                                    <div class="col-sm-5 text-center" style="margin-top: 22px;margin-left: -30px;">
+                                <div class="col-sm-6" style="margin-top: 20px;">
+                                    <div class="col-sm-5 text-center" style="margin-top: px;margin-left: 55px;">
                                         <div class="form-group">
-                                            <div class="col-sm-3"><label class="control-label">{{trans('file.gender')}}
+                                            <div class="col-sm-5"><label class="control-label">{{trans('file.gender')}}
                                                     :</label></div>
-                                            <div class="col-sm-4" style="margin-left: 15px;">
+                                            <div class="col-sm-3" style="margin-left: 15px;">
                                                 <div class="i-checks"><label><input type="radio" value="male"
                                                                                     name="gender" class="form-control"
                                                                                     required>&nbsp;&nbsp;{{trans('file.male')}}
                                                     </label></div>
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-3">
                                                 <div class="i-checks"><label> <input type="radio" value="female"
                                                                                      name="gender" class="form-control"
                                                                                      required>&nbsp;&nbsp; {{trans('file.female')}}
@@ -158,23 +156,16 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-1"></div>
-                                    <div class="col-sm-5 text-left" >
-                                        <div class="form-group" style="margin-left: 20px;">
-                                            <label class="control-label"
-                                                   id="label">{{trans('file.salary_amount')}}</label>
-                                            <input type="number" class="form-control" name="salary_amount" id="sal"
-                                                   disabled required>
-                                        </div>
-                                    </div>
+
+
                                 </div>
                                 <div class="col-sm-12" style="margin-top: 25px;">
 
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-12 text-right">
                                         <div class="form-group">
-                                            <button class="btn btn-white" type='reset'>{{trans('file.reset')}}</button>&nbsp;
-                                            <button class="btn btn-primary " type="submit" name="submit" value="Save"
-                                                    style="margin-right: 93px">{{trans('file.save')}}
+                                            <button class="btn btn-white" type='reset' style="width: 70px;">{{trans('file.reset')}}</button>&nbsp;
+                                            <button class="btn btn-primary " type="submit" name="submit" value="Save" style="margin-right: 93px;width: 70px;">{{trans('file.save')}}
                                             </button>
                                         </div>
                                     </div>
@@ -192,21 +183,21 @@
 @endsection
 
 @section('script')
-    <script>
-        function perSal() {
-            document.getElementById('label').innerHTML = 'Salary Percentage';
-            document.getElementById('sal').setAttribute('max', 100);
-            document.getElementById('sal').setAttribute('placeholder', 'Enter the percentage of salary');
-            document.getElementById('sal').disabled = false;
-        }
+    {{--<script>--}}
+        {{--function perSal() {--}}
+            {{--document.getElementById('label').innerHTML = 'Salary Percentage';--}}
+            {{--document.getElementById('sal').setAttribute('max', 100);--}}
+            {{--document.getElementById('sal').setAttribute('placeholder', 'Enter the percentage of salary');--}}
+            {{--document.getElementById('sal').disabled = false;--}}
+        {{--}--}}
 
-        function fixSal() {
-            document.getElementById('label').innerHTML = 'Salary amount';
-            document.getElementById('sal').setAttribute('max', 10000000);
-            document.getElementById('sal').setAttribute('placeholder', 'Enter the amount  of salary');
-            document.getElementById('sal').disabled = false;
-        }
-    </script>
+        {{--function fixSal() {--}}
+            {{--document.getElementById('label').innerHTML = 'Salary amount';--}}
+            {{--document.getElementById('sal').setAttribute('max', 10000000);--}}
+            {{--document.getElementById('sal').setAttribute('placeholder', 'Enter the amount  of salary');--}}
+            {{--document.getElementById('sal').disabled = false;--}}
+        {{--}--}}
+    {{--</script>--}}
     <script type="text/javascript">
         $(function () {
             $('#form').submit(function () {

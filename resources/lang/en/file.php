@@ -295,6 +295,10 @@ return[
     'treatment_fee'=>'Treatment Fee',
     'total_fee'=>'Total Fee',
     'doctor_salary'=>'Doctor Salary',
+    'pdate'=>'Date of Payment',
+    'bdate'=>'BetweenDates',
+    'sur'=>'Select User Role',
+    'show_payment_indaterange'=>'Show Payment Between Dates',
     'past_remaining'=>'Past Remaining',
     'total_doctor_salary'=>'Total Doctor Salary',
     'payment_amount'=>'Payment Amount',
@@ -604,10 +608,10 @@ return[
     'teethcover'=>'TeethCoverType',
     'price'=>'Price',
     'other_staff'=>'Other Staff',
-    'emp_reg'=>'Employee Registration',
+    'emp_reg'=>'Employee Reg',
     'odp'=>'OutDated Patient',
     'employee'=>'Employee',
-    'add_emp'=>'AddNewEmployee',
+    'add_emp'=>'Add New Employee',
     'erf'=>'Employee Registration Form',
     'show_payment'=>'Show Payment',
     'total_paid_amount'=>'Total Paid Amount',
@@ -615,7 +619,9 @@ return[
     'epinfo'=>'Edit Patient Information',
     'fee'=>'Fee',
     'iopi'=>'Insert OutDated Patient Info',
-
+    'cash'=>'Cash',
+    'weekly'=>'Weekly',
+    'monthly'=>'Monthly',
 
 ];
 

@@ -101,6 +101,7 @@
 
                 </div>
                 <div class="row">
+
                     <div class="col-md-12">
                         <div class="row shadow p-3 mb-5 bg-white rounded"
                              style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width: 99%;margin-left: 7px;">
@@ -143,18 +144,30 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="row shadow p-3 mb-5 bg-white rounded"
-                             style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width: 99%;margin-left: 7px;">
-                            <h3 style="font-weight: bold">{{trans('file.payment_info')}}</h3>
-                        </div>
-                        <div class="col-xs-2" style="margin-top: 20px;">
-                                <table class="table table-hover">
-                                    <tr>
-                                        <td>{{trans('file.total')}} :</td>
-                                        <td>{{$patient_income->sum('paid_amount')}}</td>
-                                    </tr>
-                                </table>
+<<<<<<< HEAD
+                <div class="col-md-12">
+                    <div class="row shadow p-3 mb-5 bg-white rounded"
+                         style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width: 99%;margin-left: 7px;">
+                        <h3 style="font-weight: bold">{{trans('file.payment_info')}}</h3>
+                    </div>
+                    <div class="col-xs-12" style="margin-top: 20px;">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <tbody>
+                                <tr>
+                                    <td>{{trans('file.estimated_fee')}} :</td>
+                                    <td>{{$patient_income->sum('estimated_fee')}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{trans('file.paid')}} :</td>
+                                    <td>{{$patient_income->sum('paid_amount')}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{trans('file.remaining')}} :</td>
+                                    <td>{{$patient_income->sum('remaining_fee')}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <br/>
