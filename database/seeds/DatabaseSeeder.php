@@ -20,14 +20,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
-//        if(UserTableSeeder::count() == 0)$this->call(UserTableSeeder::class );
+//        if(Underscore\.::count() == 0)$this->call(UserTableSeeder::class );
 //        if(\App\Doctor::count() == 0)$this->call(DoctorSeeder::class );
-        if(TreatmentList::count() == 0)$this->call(TreatmentListTableSeeder::class );
-        if(\App\DentalDefectList::count() == 0)$this->call(DentalDefectListTableSeeder::class );
-        if(\App\DoctorDepartment::count() == 0)$this->call(DoctorDepartmentTableSeeder::class );
-        if(\App\ExpenseCatagory::count() == 0)$this->call(ExpenseCategoryTableSeeder::class );
-        if(\App\TeethCoverType::count() == 0)$this->call(TeethCoverTableSeeder::class );
+//        if(TreatmentList::count() == 0)$this->call(TreatmentListTableSeeder::class );
+//        if(\App\DentalDefectList::count() == 0)$this->call(DentalDefectListTableSeeder::class );
+//        if(\App\DoctorDepartment::count() == 0)$this->call(DoctorDepartmentTableSeeder::class );
+//        if(\App\ExpenseCatagory::count() == 0)$this->call(ExpenseCategoryTableSeeder::class );
+//        if(\App\TeethCoverType::count() == 0)$this->call(TeethCoverTableSeeder::class );
 
 
         DB::Table('users')->insert([
@@ -43,8 +42,8 @@ class DatabaseSeeder extends Seeder
 //        if(Treatment::count() == 0)$this->call(TreatmentTableSeeder::class );
 ////        if(Permission::count() == 0)$this->call(PermissionTableSeeder::class );
 //        if(Expense::count() == 0)$this->call(ExpenseTableSeeder::class );
-////        if(Role::count() == 0)$this->call(RoleTableSeeder::class );
-////        $this->call(UserRoleTableSeeder::class);
+//        if(Role::count() == 0)$this->call(RoleTableSeeder::class );
+//        $this->call(UserRoleTableSeeder::class);
     }
 }
 

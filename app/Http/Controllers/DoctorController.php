@@ -76,28 +76,10 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-//        $doc = Doctor::orderBy('id','desc')->paginate(10);
-//        return view('doctor_salary',compact('doc'));
+
     }
 
-//    public function PayAdvance(Request $request,$id)
-//    {
-//        $day=Carbon::now();
-//        $advance=$request->advance;
-//        $adv=Doctor::find($id);
-//        $padv=$adv->advance;
-//        $adv->advance=$adv->advance+$request->advance;
-//        $adv->save();
-//        $expenseSalary = new Expense();
-//        $expenseSalary->receiver = $adv->first_name;
-//        $expenseSalary->amount = $request->advance;
-//        $expenseSalary->category = "advance";
-//        $expenseSalary->description = "Paid advance :".$request->advance." at date : ".Carbon::now()." ";
-//        $expenseSalary->created_at = Carbon::now();
-//        $expenseSalary->save();
-//        return view('print_pages.AdvPrint',compact('adv','advance','padv','day'));
-//
-//    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -113,12 +95,6 @@ class DoctorController extends Controller
         return view('doctor_edit',compact('doctor','doctor_department'));
     }
 
-
-
-    public function update_doctor(Request $request,$id)
-    {
-
-    }
 
     /**
      * Update the specified resource in storage.

@@ -22,7 +22,7 @@
 @section('content')
     {{-- Top Card area --}}
     <div class="row">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-xs-6">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <span class="label label-info pull-right">{{trans('file.logged_in')}}</span>
@@ -38,7 +38,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-xs-6">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <span class="label label-info pull-right">{{trans('file.all')}}</span>
@@ -51,7 +51,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-xs-6">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <span class="label label-primary pull-right">{{trans('file.all')}}</span>
@@ -65,7 +65,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-xs-6">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <span class="label label-danger pull-right">{{trans('file.today')}}</span>
@@ -83,7 +83,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-xs-6">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <span class="label pull-right" style="background-color: #c39200; color: #ffffff">{{trans('file.this_month')}}</span>
@@ -99,7 +99,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-xs-6">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <span class="label pull-right" style="background-color: #077700; color: #ffffff;">{{trans('file.this_month')}}</span>
@@ -115,7 +115,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-xs-6">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <span class="label pull-right" style="background-color: #080077;color: #fff3cd">{{trans('file.this_month')}}</span>
@@ -131,7 +131,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-xs-6">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <span class="label  pull-right" style="background-color: #0b8600;color: #ffffff">{{trans('file.now')}}</span>
@@ -161,27 +161,28 @@
 
             <div class="row">
                 {{-- Graph Area --}}
-                <div class="col-md-2">
+                <div class="col-md-2 col-xs-3">
                     <button class="btn btn-primary dim dim-large-dim"><a href="/income"><img
                                     src="img/income_icon_dash.png" width="150px;" style="border-radius: 8px;"/></a>
                     </button>
                 </div>
-                <div class="col-md-2" style="margin-left:30px;">
+                <div class="col-md-2 col-xs-3" style="margin-left:30px;">
                     <button class="btn btn-primary dim dim-large-dim"><a href="/expenditure"><img
                                     src="img/expense_icon_dash.png" width="150px;" style="border-radius: 8px;"/></a>
                     </button>
                 </div>
-                <div class="col-md-2" style="margin-left:30px;">
+                <div class="col-md-2 col-xs-3" style="margin-left:30px;">
                     <button class="btn btn-primary dim dim-large-dim"><a href="/doctors"><img
                                     src="img/doctor_icon_dash.png" width="150px;"
                                     style="  border-radius: 8px;height: 60px;"/></a></button>
                 </div>
-                <div class="col-md-2" style="margin-left:30px;">
+
+                <div class="col-md-2 col-xs-3" style="margin-left:30px;">
                     <button class="btn btn-primary dim dim-large-dim"><a href="/finance_report_income"><img
                                     src="img/report_icon_dash.png" width="150px;"
                                     style="border-radius: 8px;height: 60px"/></a></button>
                 </div>
-                <div class="col-md-2" style="margin-left:30px;">
+                <div class="col-md-2 col-xs-3" style="margin-left:30px;">
                     <button class="btn btn-primary dim dim-large-dim"><a href="/patient"><img
                                     src="img/patientBigIcon.png" width="150px;"
                                     style="border-radius: 8px;height: 60px"/></a></button>

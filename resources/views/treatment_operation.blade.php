@@ -34,13 +34,27 @@
             border-radius: 15px;
         }
 
-        ul > li {
-            display: inline-block;
-            /* You can also add some margins here to make it look prettier */
-            zoom: 1;
-            *display: inline;
-            /* this fix is needed for IE7- */
+        .ullist{
+            display:table;
+            width:100%;
+            box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            -webkit-box-sizing:border-box;
         }
+
+        .ullist li{
+            display:table-cell;
+        }
+
+
+
+        /*ul > li {*/
+            /*display: inline-block;*/
+            /*!* You can also add some margins here to make it look prettier *!*/
+            /*zoom: 1;*/
+            /**display: inline;*/
+            /*!* this fix is needed for IE7- *!*/
+        /*}*/
 
         .check {
             background-color: #ff0000;
@@ -198,7 +212,7 @@
                     <li class="active"><a data-toggle="tab" id="test" href="#tab-2"><i
                                     class="fa fa-clock-o"></i>General Treatment</a></li>
                     <li class=""><a data-toggle="tab" id="test" href="#tab-3"><i
-                                    class="fa fa-clock-o"></i>Orthodintist Treatment</a></li>
+                                    class="fa fa-clock-o"></i>Prosthesis Treatment</a></li>
                 </ul>
                 <div class="tab-content">
 
@@ -221,16 +235,20 @@
                                 <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
                                     <div class="col-md-8">
                                         <div class="row" style="margin-top: -20px;">
-                                            <div class="col-xs-12">
                                                 @if($treats->paid_amount==0)
-                                                    <h2 style="color: red">This patient has not paid the treatment
-                                                        fee</h2>
+                                                    <div class="col-xs-12 alert alert-danger">
+                                                        <h4 style="color: #850f36">This patient has not paid the treatment
+                                                            fee</h4>
+                                                    </div>
                                                 @endif
-                                            </div>
                                         </div>
                                         <div class="table-responsive">
                                             <table class="table table-striped " style="font-weight: bold; ">
 
+                                                <tr>
+                                                    <td>Tooth number : </td>
+                                                    <td colspan="3">{{ $treats->teeth_number }}</td>
+                                                </tr>
                                                 <tr>
                                                     <td>{{trans('file.dental_defect')}} :</td>
                                                     <td>{{ $treats->dentaldefect }}</td>
@@ -244,21 +262,26 @@
                                                     <td>{{$treats->paid_amount}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>{{trans('file.teeth_number')}} :</td>
-                                                    <td>{{ $treats->teeth_number }}</td>
+                                                    <td>Have Xray :</td>
+                                                    @if($treats->have_xray == '0')
+                                                        <td><label>No</label></td>
+                                                        @else
+                                                        <td><label>Yes</label></td>
+                                                        @endif
 
-                                                </tr>
-                                                <tr>
                                                     <td>{{trans('file.remaining')}} :</td>
                                                     <td>{{$treats->remaining_fee}}</td>
-                                                    <td>Have Xray :</td>
-                                                    <td>{{ $treats->have_xray }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td>{{trans('file.date')}} :</td>
                                                     <td>{{ $treats->created_at }}</td>
                                                     <td> {{trans('file.treatment')}}</td>
-                                                    <td>{{ $treats->status_visits }}</td>
+                                                    @if($treats->status_visits == 'complete')
+                                                        <td><label class="label-success" style="padding: 3px">{{ $treats->status_visits }}</label></td>
+                                                        @else
+                                                        <td><label class="label-warning" style="padding: 3px">{{ $treats->status_visits }}</label></td>
+                                                    @endif
+
                                                 </tr>
                                             </table>
 
@@ -269,14 +292,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    {{--<div class="col-md-3">--}}
-                                        {{--@if($treats->status_visits == 'not complete')--}}
-                                            {{--<a href="/operation/{{ $treats->id }}/edit/{{ $patient_id }}"--}}
-                                               {{--class="btn btn-md btn-primary">{{trans('file.continue_treatment')}}</a>--}}
-                                        {{--@else--}}
-                                            {{--<h4 class="text-info"> This treatment has been done !</h4>--}}
-                                        {{--@endif--}}
-                                    {{--</div>--}}
                                 </div>
                             @endforeach
                         </div>
@@ -299,16 +314,15 @@
 
                                 {{-- Upper Tooths --}}
                                 <div class="container-fluid">
+
                                     <div class="row" style="margin-left:-50px;">
-                                        <div class="col-md-6 col-xs-5">
-                                            <ul>
+                                        <div class="col-md-6 col-xs-6">
+                                            <ul class="ullist">
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooths/8.png') }}" width="100%"
-                                                             height="auto" style="border-bottom: 1px"/>
-                                                        <input type="checkbox" name="teeth_number[]"
-                                                               value="8 Upper Left"/>
+                                                             src="{{ asset('img/tooths/8.png') }}" width="100%" height="auto" style="border-bottom: 1px"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="8 Upper Left"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -385,8 +399,8 @@
 
                                             </ul>
                                         </div>
-                                        <div class="col-md-6 col-xs-5">
-                                            <ul>
+                                        <div class="col-md-6 col-xs-6">
+                                            <ul class="ullist">
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
@@ -471,15 +485,14 @@
                                             </ul>
                                         </div>
                                     </div>
-
                                     {{-- Lower Tooths--}}
                                     <div class="row" style="margin-left:-50px;">
-                                        <div class="col-md-6 col-xs-5">
-                                            <ul>
+                                        <div class="col-md-6 col-xs-6">
+                                            <ul class="ullist">
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/8.png') }}" width="100%"
                                                              height="auto"/>
                                                         <input type="checkbox" name="teeth_number[]"
                                                                value="8 Lower Left"/>
@@ -489,7 +502,7 @@
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/2.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/7.png') }}" width="100%"
                                                              height="auto"/>
                                                         <input type="checkbox" name="teeth_number[]"
                                                                value="7 Lower Left"/>
@@ -499,7 +512,7 @@
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/3.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/6.png') }}" width="100%"
                                                              height="auto"/>
                                                         <input type="checkbox" name="teeth_number[]"
                                                                value="6 Lower left"/>
@@ -509,7 +522,7 @@
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/4.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/5.png') }}" width="100%"
                                                              height="auto"/>
                                                         <input type="checkbox" name="teeth_number[]"
                                                                value="5 Lower Left"/>
@@ -519,7 +532,7 @@
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/5.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/4.png') }}" width="100%"
                                                              height="auto"/>
                                                         <input type="checkbox" name="teeth_number[]"
                                                                value="4 Lower Left"/>
@@ -529,7 +542,7 @@
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/6.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/3.png') }}" width="100%"
                                                              height="auto"/>
                                                         <input type="checkbox" name="teeth_number[]"
                                                                value="3 Lower Left"/>
@@ -539,7 +552,7 @@
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/7.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/2.png') }}" width="100%"
                                                              height="auto"/>
                                                         <input type="checkbox" name="teeth_number[]"
                                                                value="2 lower Left"/>
@@ -549,7 +562,7 @@
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/8.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
                                                              height="auto"/>
                                                         <input type="checkbox" name="teeth_number[]"
                                                                value="1 lower Left"/>
@@ -559,12 +572,12 @@
 
                                             </ul>
                                         </div>
-                                        <div class="col-md-6 col-xs-5">
-                                            <ul>
+                                        <div class="col-md-6 col-xs-6">
+                                            <ul class="ullist">
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/8.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
                                                              height="auto"/>
                                                         <input type="checkbox" name="teeth_number[]" value="1 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
@@ -573,7 +586,7 @@
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/7.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/2.png') }}" width="100%"
                                                              height="auto"/>
                                                         <input type="checkbox" name="teeth_number[]" value="2 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
@@ -582,7 +595,7 @@
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/6.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/3.png') }}" width="100%"
                                                              height="auto"/>
                                                         <input type="checkbox" name="teeth_number[]" value="3 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
@@ -591,7 +604,7 @@
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/5.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/4.png') }}" width="100%"
                                                              height="auto"/>
                                                         <input type="checkbox" name="teeth_number[]" value="4 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
@@ -600,7 +613,7 @@
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/4.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/5.png') }}" width="100%"
                                                              height="auto"/>
                                                         <input type="checkbox" name="teeth_number[]" value="5 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
@@ -609,7 +622,7 @@
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/3.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/6.png') }}" width="100%"
                                                              height="auto"/>
                                                         <input type="checkbox" name="teeth_number[]" value="6 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
@@ -618,7 +631,7 @@
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/2.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/7.png') }}" width="100%"
                                                              height="auto"/>
                                                         <input type="checkbox" name="teeth_number[]" value="7 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
@@ -627,7 +640,7 @@
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/8.png') }}" width="100%"
                                                              height="auto"/>
                                                         <input type="checkbox" name="teeth_number[]" value="8 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
@@ -637,6 +650,7 @@
                                             </ul>
                                         </div>
                                     </div>
+
                                 </div>
                                 {{-- End of image Tooth--}}
 
@@ -729,15 +743,13 @@
                             {{-- Header of title --}}
                             <div class="row  bg-info"
                                  style=" padding-left:20px; border-radius: 5px;margin-left:0px;margin-right: 10px;">
-                                <h3 style="font-weight: bold;">Orthodontist treatment</h3>
+                                <h3 style="font-weight: bold;">Prosthesis treatment</h3>
                             </div>
 
                             <br/>
 
-                            {{-- Image Tooths --}}
-
-                                {{-- Upper Tooths --}}
                                 <div class="container-fluid">
+
                                     <div class="row" style="margin-left:-50px;">
                                         <div class="col-md-6 col-xs-5">
                                             <ul>
@@ -910,7 +922,6 @@
                                             </ul>
                                         </div>
                                     </div>
-
                                     {{-- Lower Tooths--}}
                                     <div class="row" style="margin-left:-50px;">
                                         <div class="col-md-6 col-xs-5">
@@ -1068,9 +1079,8 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
-                                {{-- End of image Tooth--}}
 
+                                </div>
 
                                 <a class="btn btn-primary" data-toggle="modal" id="xray_btn">XRay Teeth &nbsp;<img
                                             src="{{ asset('img/xray.png') }}" width="20px"/></a>
@@ -1324,6 +1334,19 @@
                     tooth_pos = $(this).val();
                     $("#tooth_position").val(tooth_pos);
                 });
+
+//                $("img-responsive").responsiveImg({
+//                    breakpoints : {
+//                        "_small":10,
+//                        "_medium":780,
+//                        "_large":900
+//                    },
+//                    srcAttribute : "src",
+//                    pathToPHP : "js",
+//                    createNewImages : true,
+//                    jpegQuality : 90,
+//                    callback:false
+//                });
 
 
             </script>
