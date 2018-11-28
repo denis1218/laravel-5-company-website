@@ -73,6 +73,9 @@
                                 <button data-toggle="modal" data-target="#edit" class="btn btn-primary fa fa-dollar"
                                         style="margin-left:30px">&nbsp;&nbsp;{{trans('file.pay_salary')}}</button>
                             </div>
+                            <div class="col-xs-6 text-right">
+                                <a href="/doctors" class="btn btn-primary fa fa-arrow-circle-left">&nbsp;&nbsp;{{trans('file.back')}}</a>
+                            </div>
                         </div>
 
 
@@ -117,7 +120,7 @@
                                     <th>{{trans('file.department')}}</th>
                                     <th>{{trans('file.salary')}}</th>
                                     <th>{{trans('file.paid_amount')}}</th>
-                                    <th colspan="2" style="text-align: center">{{trans('file.betweendate')}}</th>
+                                    <th colspan="2" style="text-align: center">{{trans('file.bdate')}}</th>
                                     <th>{{trans('file.pdate')}}</th>
 
                                 </tr>

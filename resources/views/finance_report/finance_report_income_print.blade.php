@@ -83,6 +83,10 @@
                                 <td style="float: right;margin-right: 30px">{{$medicine->sum('total_fee')}}&nbsp;afg</td>
                             </tr>
                             <tr>
+                                <td style="margin-left: 30px">Out Date Patient</td>
+                                <td style="float: right;margin-right: 30px">{{$outdate->sum('paid')}}&nbsp;afg</td>
+                            </tr>
+                            <tr>
                                 <td style="margin-left: 30px"><b>Total Income</b></td>
                                 <td style="float: right;margin-right: 30px"><b>{{$total}}&nbsp;afg</b></td>
 
