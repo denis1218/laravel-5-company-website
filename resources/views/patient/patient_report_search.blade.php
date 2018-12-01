@@ -34,7 +34,6 @@
                                         <th>{{trans('file.p_id')}}</th>
                                         <th>{{trans('file.patient_name')}}</th>
                                         <th>{{trans('file.last_name')}}</th>
-{{--                                        <th>{{trans('file.doctor_name')}}</th>--}}
                                         <th>{{trans('file.status')}}</th>
                                         <th>{{trans('file.next_appointment_date')}}</th>
                                         <th>{{trans('file.health_problem')}}</th>

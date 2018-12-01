@@ -21,6 +21,7 @@ class CreateTreatmentsTable extends Migration
             $table->string('dentaldefect')->nullable();
             $table->string('shade')->nullable();
             $table->string('type_cover')->nullable();
+            $table->string('type_prosthesis')->nullable();
             $table->integer('visits')->nullable();
             $table->string('status_visits');
             $table->boolean('status_pay');

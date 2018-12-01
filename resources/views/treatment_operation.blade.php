@@ -48,13 +48,15 @@
 
 
 
-        /*ul > li {*/
-            /*display: inline-block;*/
-            /*!* You can also add some margins here to make it look prettier *!*/
-            /*zoom: 1;*/
-            /**display: inline;*/
-            /*!* this fix is needed for IE7- *!*/
-        /*}*/
+        .prothisis li {
+            display: inline-block;
+            /* You can also add some margins here to make it look prettier */
+            zoom: 1;
+            *display: inline;
+            margin-left:20px;
+            /* this fix is needed for IE7- */
+        }
+
 
         .check {
             background-color: #ff0000;
@@ -751,8 +753,8 @@
                                 <div class="container-fluid">
 
                                     <div class="row" style="margin-left:-50px;">
-                                        <div class="col-md-6 col-xs-5">
-                                            <ul>
+                                        <div class="col-md-6 col-xs-6">
+                                            <ul class="ullist">
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
@@ -836,8 +838,8 @@
 
                                             </ul>
                                         </div>
-                                        <div class="col-md-6 col-xs-5">
-                                            <ul>
+                                        <div class="col-md-6 col-xs-6">
+                                            <ul class="ullist">
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
@@ -924,41 +926,32 @@
                                     </div>
                                     {{-- Lower Tooths--}}
                                     <div class="row" style="margin-left:-50px;">
-                                        <div class="col-md-6 col-xs-5">
-                                            <ul>
+                                        <div class="col-md-6 col-xs-6">
+                                            <ul class="ullist">
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/8.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="1 Lower Left"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="8 Lower Left"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/2.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/7.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="2 Lower Left"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="7 Lower Left"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/3.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/6.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="3 Lower left"/>
-                                                        <i class="fa fa-check hidden"></i>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label class="image-check">
-                                                        <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/4.png') }}" width="100%"
-                                                             height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="4 Lower Left"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="6 Lower left"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -974,77 +967,9 @@
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/6.png') }}" width="100%"
-                                                             height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="6 Lower Left"/>
-                                                        <i class="fa fa-check hidden"></i>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label class="image-check">
-                                                        <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/7.png') }}" width="100%"
-                                                             height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="7 lower Left"/>
-                                                        <i class="fa fa-check hidden"></i>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label class="image-check">
-                                                        <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/8.png') }}" width="100%"
-                                                             height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="8 lower Left"/>
-                                                        <i class="fa fa-check hidden"></i>
-                                                    </label>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6 col-xs-5">
-                                            <ul>
-                                                <li>
-                                                    <label class="image-check">
-                                                        <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/8.png') }}" width="100%"
-                                                             height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="8 Lower Right"/>
-                                                        <i class="fa fa-check hidden"></i>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label class="image-check">
-                                                        <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/7.png') }}" width="100%"
-                                                             height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="7 Lower Right"/>
-                                                        <i class="fa fa-check hidden"></i>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label class="image-check">
-                                                        <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/6.png') }}" width="100%"
-                                                             height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="6 Lower Right"/>
-                                                        <i class="fa fa-check hidden"></i>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label class="image-check">
-                                                        <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/5.png') }}" width="100%"
-                                                             height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="5 Lower Right"/>
-                                                        <i class="fa fa-check hidden"></i>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label class="image-check">
-                                                        <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/4.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="4 Lower Right"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="4 Lower Left"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -1053,7 +978,39 @@
                                                         <img class="img-responsive"
                                                              src="{{ asset('img/tooth_lower/3.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="3 Lower Right"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="3 Lower Left"/>
+                                                        <i class="fa fa-check hidden"></i>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="image-check">
+                                                        <img class="img-responsive"
+                                                             src="{{ asset('img/tooth_lower/2.png') }}" width="100%"
+                                                             height="auto"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="2 lower Left"/>
+                                                        <i class="fa fa-check hidden"></i>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="image-check">
+                                                        <img class="img-responsive"
+                                                             src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
+                                                             height="auto"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="1 lower Left"/>
+                                                        <i class="fa fa-check hidden"></i>
+                                                    </label>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-xs-6">
+                                            <ul class="ullist">
+                                                <li>
+                                                    <label class="image-check">
+                                                        <img class="img-responsive"
+                                                             src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
+                                                             height="auto"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="1 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -1069,9 +1026,54 @@
                                                 <li>
                                                     <label class="image-check">
                                                         <img class="img-responsive"
-                                                             src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
+                                                             src="{{ asset('img/tooth_lower/3.png') }}" width="100%"
                                                              height="auto"/>
-                                                        <input type="checkbox" name="teeth_number[]" value="1 Lower Right"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="3 Lower Right"/>
+                                                        <i class="fa fa-check hidden"></i>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="image-check">
+                                                        <img class="img-responsive"
+                                                             src="{{ asset('img/tooth_lower/4.png') }}" width="100%"
+                                                             height="auto"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="4 Lower Right"/>
+                                                        <i class="fa fa-check hidden"></i>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="image-check">
+                                                        <img class="img-responsive"
+                                                             src="{{ asset('img/tooth_lower/5.png') }}" width="100%"
+                                                             height="auto"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="5 Lower Right"/>
+                                                        <i class="fa fa-check hidden"></i>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="image-check">
+                                                        <img class="img-responsive"
+                                                             src="{{ asset('img/tooth_lower/6.png') }}" width="100%"
+                                                             height="auto"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="6 Lower Right"/>
+                                                        <i class="fa fa-check hidden"></i>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="image-check">
+                                                        <img class="img-responsive"
+                                                             src="{{ asset('img/tooth_lower/7.png') }}" width="100%"
+                                                             height="auto"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="7 Lower Right"/>
+                                                        <i class="fa fa-check hidden"></i>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label class="image-check">
+                                                        <img class="img-responsive"
+                                                             src="{{ asset('img/tooth_lower/8.png') }}" width="100%"
+                                                             height="auto"/>
+                                                        <input type="checkbox" name="teeth_number[]" value="8 Lower Right"/>
                                                         <i class="fa fa-check hidden"></i>
                                                     </label>
                                                 </li>
@@ -1102,6 +1104,13 @@
 
                                     <input type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
                                     <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Type of Prosthesis</label>
+                                            <ul class="prothisis">
+                                                <li><div class="i-checks"><label>Static &nbsp;<input type="radio"  name="type_prosthesis" value="static" checked/></label></div></li>
+                                                <li><div class="i-checks"><label>Dynamic &nbsp;<input type="radio" name="type_prosthesis" value="dynamic"/></label></div></li>
+                                            </ul>
+                                        </div>
 
                                         <div class="form-group">
                                             <label>Select shade teeth</label>
@@ -1118,7 +1127,7 @@
                                             <label>Select Cover :</label>
                                             <select class="form-control" name="type_cover"
                                                     onchange="getFeeTreatment(this);" required>
-                                                <option disabled selected>Select Color</option>
+                                                <option disabled selected>Select Cover</option>
                                                 @foreach($teethTypeCovers as $cover)
                                                     <option value="{{ $cover->type }}"
                                                             id="{{ $cover->price }}">

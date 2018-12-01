@@ -22,7 +22,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-2 text-center">
+        <div class="col-md-2 col-xs-3 text-center" style="margin-top:5px;">
             <a href="/patient/create">
                 <button class="btn btn-primary" >
                     <img src="{{ asset('img/patient.png') }}" width="30px"
@@ -30,7 +30,7 @@
                 </button>
             </a>
         </div>
-        <div class="col-md-2 text-center">
+        <div class="col-md-2 text-center col-xs-4" style="margin-top:5px;">
             <a href="/new-patient-today">
                 <button class="btn btn-info">
                     <img src="{{ asset('img/list_new_patient.png') }}" width="50px"
@@ -38,7 +38,7 @@
                 </button>
             </a>
         </div>
-        <div class="col-md-2 text-center">
+        <div class="col-md-2 text-center col-xs-4" style="margin-top:5px;">
             <a href="/next-appointment-patient">
                 <button class="btn" style=" background-color: #62c694; color: #ffffff">
                     <img src="{{ asset('img/list_appointment.png') }}" width="50px"
@@ -46,7 +46,7 @@
                 </button>
             </a>
         </div>
-        <div class="col-md-2 text-center">
+        <div class="col-md-2 text-center col-xs-4" style="margin-top:5px;">
             <a href="/miss-next-appointment-patient">
                 <button class="btn" style=" background-color: #12cdba; color: #ffffff">
                     <img src="{{ asset('img/miss_appointment.png') }}" width="50px"
@@ -54,7 +54,7 @@
                 </button>
             </a>
         </div>
-        <div class="col-md-2 text-center">
+        <div class="col-md-2 text-center col-xs-3" style="margin-top:5px;">
             <a href="/patient_report">
                 <button class="btn" style=" background-color: #3989cd; color: #ffffff">
                     <img src="{{ asset('img/patient_list.png') }}" width="50px"
@@ -86,11 +86,11 @@
                         </form>
                     </div>
 
-                    <div class="col-md-12 pull-right">
+                    <div class="col-md-12 pull-right col-xs-12">
                         <div class="input-group">
                             <span class="input-group-btn">
                                 <form action="/patient_report/search" method="post">
-                                <div class="input-group col-md-12">
+                                <div class="input-group col-md-12 col-xs-12">
                                         <span class="input-group-btn">
                                                 <button type="submit" class="btn btn-primary" ><i
                                                             class="fa fa-search"></i>&nbsp;{{trans('file.search')}}</button> </span>
