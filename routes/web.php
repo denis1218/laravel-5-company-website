@@ -172,6 +172,8 @@ Route::middleware('auth','reception')->group(function () {
 
     Route::resource('income', 'IncomeController');
 
+    Route::post('/income/search', 'IncomeController@search');
+
     Route::get('income2', "incomeController@show");
 
     Route::patch('income3/{id}', 'incomeController@editPaid');

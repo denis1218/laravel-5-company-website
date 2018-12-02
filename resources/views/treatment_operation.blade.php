@@ -236,7 +236,7 @@
                                     <div class="col-md-4">
                                         <form action="/xray" method="post">
                                             <input type="hidden" name="tooth_number" value="{{ $treats->teeth_number }}"/>
-                                            <input type="hidden" name="patient_id" value="{{ $treats->patient_id }}"/>
+                                            <input type="hidden" name="patient_id" value="{{ $patient_in_treatment->id }}"/>
                                             <input type="hidden" name="patient_name" value="{{ $patient_in_treatment->name }}"/>
                                             <input type="hidden" name="xray_status" value="not"/>
                                             <input type="hidden" name="doctor_name" value="{{ $patient_in_treatment->doctor->first_name }}"/>
@@ -1229,7 +1229,7 @@
                                    value="{{ $patient_in_treatment->doctor->first_name }}" style="visibility: hidden;">
                             <input type="text" name="patient_name" value="{{ $patient_in_treatment->name }}"
                                    style="visibility: hidden;">
-                            <input type="text" name="patient_id" value="{{ $patient_in_treatment->id_patient }}"
+                            <input type="text" name="patient_id" value="{{ $patient_in_treatment->id }}"
                                    style="visibility: hidden;">
                             <input type="text" value="not" id="tooth" hidden name="xray_status"/>
 

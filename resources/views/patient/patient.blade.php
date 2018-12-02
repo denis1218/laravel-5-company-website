@@ -106,7 +106,7 @@
                                     <div class="col-xs-12">
                                         <div class="col-xs-2" style="margin-left: -30px;"><input type="button" class="btn btn-primary" id="now"  value="Now"></div>
                                         <div class="col-xs-4"><label for="cur"><input id="cur" name="time" type="number" class="form-control" max="24" min="1" required></label></div>
-                                        <div class="col-xs-2" style="margin-top: -10px;"><label style="margin-left: 20px;">AM</label><div class="i-checks"><label class="checkbox-inline"><input id="meridiem" value="AM" name="meridiem" type="radio" class="form-control required"></label></div></div>
+                                        <div class="col-xs-2" style="margin-top: -10px;"><label style="margin-left: 20px;">AM</label><div class="i-checks"><label class="checkbox-inline"><input id="meridiem" checked value="AM" name="meridiem" type="radio" class="form-control required"></label></div></div>
                                         <div class="col-xs-2" style="margin-top: -10px;"><label style="margin-left: 20px;">PM</label><div class="i-checks"><label class="checkbox-inline"><input id="meridiem" value="PM" name="meridiem" type="radio" class="form-control required"></label></div></div>
                                     </div>
                                 </div>

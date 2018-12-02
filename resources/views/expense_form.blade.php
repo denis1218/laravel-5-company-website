@@ -70,24 +70,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-md-3"></div>
-                            <div class="col-lg-4" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                                <div class="ibox float-e-margins">
-                                    <div class="ibox-title">
-                                        <span class="label label-info pull-right">{{trans('file.all')}}</span>
-                                        <h5>{{trans('file.total_expense')}}</h5>
-                                    </div>
-                                    <div class="ibox-content">
-
-                                        <h1 class="no-margins">{{$capital}}&nbsp;&nbsp;{{trans('file.afg')}}<img  src="{{ asset('img/expense_icon.png') }}" width="80px;"style="float: right;"/></h1>
-                                        <small>{{trans('file.expenses')}}</small>
-
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>

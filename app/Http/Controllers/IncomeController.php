@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Income;
+use App\Patient;
 use App\Xray;
 use App\Treatment;
 use Carbon\Carbon;
@@ -18,7 +19,7 @@ class IncomeController extends Controller
      */
     public function index()
     {
-        $income = Treatment::where('remaining_fee','>','0')->paginate(10);
+        $income = Treatment::where('remaining_fee','>','0')->orderBy('id','DESC')->get();
 
         $start = new Carbon('first day of this month');
         $end = new Carbon('last day of this month');
@@ -28,7 +29,28 @@ class IncomeController extends Controller
         $optotal=DB::table('outdated_receives')->whereBetween('created_at',[$start,$end])->sum('paid');
         $Gtotal=$ptotal+$xtotal+$ototal+$optotal;
             return view('income',compact('income','Gtotal'));
+    }
 
+    public function search(Request $request)
+    {
+
+        $start = new Carbon('first day of this month');
+        $end = new Carbon('last day of this month');
+        $ptotal=DB::table('treatments')->whereBetween('created_at',[$start,$end])->sum('paid_amount');
+        $xtotal=DB::table('xrays')->whereBetween('created_at',[$start,$end])->sum('paid_amount');
+        $ototal=DB::table('oincoms')->whereBetween('created_at',[$start,$end])->sum('amount');
+        $optotal=DB::table('outdated_receives')->whereBetween('created_at',[$start,$end])->sum('paid');
+        $Gtotal=$ptotal+$xtotal+$ototal+$optotal;
+
+        $income = Patient::findOrFail($request->patient);
+
+//        $query = $request->patient;
+//        $income = DB::table('patients')->where('id_patient','like','%'.$query.'%')
+//            ->orWhere('name','like','%'.$query.'%')
+//            ->orWhere('lastname','like','%'.$query.'%')
+//            ->orWhere('phone','like','%'.$query.'%')->get();
+
+        return view('income_search_patient',compact('income','Gtotal'));
     }
 
     /**
