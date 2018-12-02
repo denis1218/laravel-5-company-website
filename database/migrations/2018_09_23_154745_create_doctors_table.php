@@ -21,12 +21,9 @@ class CreateDoctorsTable extends Migration
             $table->integer('age');
             $table->time('start_work_time')->nullable();
             $table->time('end_work_time')->nullable();
-            $table->date('from')->nullable();
-            $table->date('to')->nullable();
             $table->string('phone');
             $table->string('department');
             $table->string('gender');
-            $table->string('salary_type')->nullable();
             $table->integer('salary_amount');
             $table->integer('max_patient');
             $table->timestamps();

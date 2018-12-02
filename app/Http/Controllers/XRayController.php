@@ -16,7 +16,7 @@ class XrayController extends Controller
      */
     public function index()
     {
-        $patient=Xray::orderBy('created_at','desc')->paginate(12);
+        $patient=Xray::orderBy('created_at','desc')->get();
         $count=Xray::where('xray_status','=','not')->get();
         $not=Xray::where('xray_status','=','not')->get();
         $yes=Xray::where('xray_status','=','yes')->get();
@@ -91,17 +91,16 @@ class XrayController extends Controller
      * @param  \App\Xray  $xray
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Xray $xray)
+    public function update(Request $request)
     {
-        $Edt=Xray::find($xray)->first();
+        $Edt=Xray::find($request->id);
         $Edt->tooth_number=$request->tooth_number;
-//        $Edt->tooth_position=$request->tooth_position;
         $Edt->patient_id=$request->patient_id;
         $Edt->patient_name=$request->patient_name;
         $Edt->doctor_name=$request->doctor_name;
         $Edt->xray_status=$request->xray_status;
         $Edt->save();
-        return redirect('/xray')->with('success','X-ray is done for specified patient');
+        return redirect('/xray');
 //        return $Edt;
     }
 

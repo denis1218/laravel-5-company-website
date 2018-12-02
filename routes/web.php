@@ -57,6 +57,7 @@ Route::middleware('auth','doctor')->group(function () {
     Route::get('/operation/create/{id}', 'TreatmentController@create');
 
     Route::get('/operation/{id}/edit/{patient_id}', 'TreatmentController@edit_treatment');
+    Route::get('/operation/take_xray_again/{id}', 'TreatmentController@take_xray_again');
 
     Route::resource('/medicine','MedicineController');
     Route::get('/medicine2','MedicineController@show');

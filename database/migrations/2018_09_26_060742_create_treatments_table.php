@@ -17,7 +17,7 @@ class CreateTreatmentsTable extends Migration
 
             $table->increments('id');
             $table->string('treatment')->nullable();
-            $table->string('teeth_number')->nullable();
+            $table->longText('teeth_number')->nullable();
             $table->string('dentaldefect')->nullable();
             $table->string('shade')->nullable();
             $table->string('type_cover')->nullable();
@@ -26,6 +26,7 @@ class CreateTreatmentsTable extends Migration
             $table->string('status_visits');
             $table->boolean('status_pay');
             $table->longText('description')->nullable();
+            $table->string('type_treatment')->nullable();
             $table->string('have_xray')->nullable();
             $table->integer('estimated_fee');
             $table->integer('paid_amount')->nullable();

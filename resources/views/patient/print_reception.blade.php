@@ -63,7 +63,7 @@
                     <div class="col-md-12">
                         <div class="row shadow p-3 mb-5 bg-white rounded"
                              style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width: 99%;margin-left: 7px;">
-                            <h3 style="font-weight: bold">{{trans('file.patient_personal_info')}}</h3>
+                            <h3 style="font-weight: bold;">PATIENT PERSONAL INFORMATION</h3>
                         </div>
                         <div class="col-xs-12" style="margin-top: 20px;">
                             <div class="table-responsive">
@@ -105,97 +105,89 @@
                     <div class="col-md-12">
                         <div class="row shadow p-3 mb-5 bg-white rounded"
                              style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width: 99%;margin-left: 7px;">
-                            <h3 style="font-weight: bold">{{trans('file.kind_of_prosthesis')}}</h3>
+                            <h3 style="font-weight: bold">TYPE OF TREATMENT</h3>
                         </div>
                         <div class="col-xs-12" style="margin-top: 20px;">
                             <div class="table-responsive">
-                                <table class="table table-stripped">
+                                <table class="table table-stripped table-border">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Tooth number</th>
+                                        <th>Dental Defect</th>
+                                        <th>Treatment</th>
+                                        <th>Estimated Fee</th>
+                                        <th>Discount Fee</th>
+                                        <th>Paid Fee</th>
+                                    </tr>
+                                    </thead>
                                     <tbody>
-                                    <tr>
-                                        <td><b>{{trans('file.dental_defect')}}:</b></td>
-                                        @if($patient_income != null)
-                                            @foreach($patient_income as $patient)
-                                                <td>{{$patient->dentaldefect}}</td>
-                                            @endforeach
-                                        @endif
-                                    </tr>
-                                    <tr>
-                                        <td><strong>{{trans('file.dental_treatment')}}:</strong></td>
-                                        @if($patient_income != null)
-                                            @foreach($patient_income as $patient)
-                                                <td>{{$patient->treatment}}</td>
-                                            @endforeach
-                                        @endif
-                                    </tr>
-
-                                    <tr>
-                                        <td><strong>{{trans('file.teeth_number')}}:</strong></td>
-                                        @if($patient_income != null)
-                                            @foreach($patient_income as $patient)
-                                                <td>{{$patient->teeth_number}}</td>
-                                            @endforeach
-                                        @endif
-                                    </tr>
-
+                                    @if($patient_income != null)
+                                        <?php $i = 1 ;?>
+                                        @foreach($patient_income as $patient)
+                                            <tr>
+                                                <td>{{ $i }}</td>
+                                                <td>{{ $patient->teeth_number }}</td>
+                                                <td>{{ $patient->dentaldefect }}</td>
+                                                <td>{{ $patient->treatment }}</td>
+                                                <td>{{ $patient->estimated_fee }}</td>
+                                                <td>{{ $patient->discount }}</td>
+                                                <td>{{ $patient->paid_amount }}</td>
+                                            </tr>
+                                            <?php $i++;?>
+                                        @endforeach
+                                        <tr><td colspan="7"></td></tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Total Estimated Fee</td>
+                                            <td>{{$totalFee = $patient_income->sum('estimated_fee')}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Total Discount Fee</td>
+                                            <td>{{$totalDiscount = $patient_income->sum('discount')}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Total Paid Fee</td>
+                                            <td>{{$totalPaid = $patient_income->sum('paid_amount')}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Total Remaining Fee</td>
+                                            <td style="background-color: #ff958f">{{ $totalFee - $totalDiscount - $totalPaid }}</td>
+                                        </tr>
+                                    @endif
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-<<<<<<< HEAD
-                <div class="col-md-12">
-                    <div class="row shadow p-3 mb-5 bg-white rounded"
-                         style="background: rgba(145,224,255,0.42); padding-left:20px; border-radius: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width: 99%;margin-left: 7px;">
-                        <h3 style="font-weight: bold">{{trans('file.payment_info')}}</h3>
-                    </div>
-                    <div class="col-xs-12" style="margin-top: 20px;">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <tbody>
-                                <tr>
-                                    <td>{{trans('file.estimated_fee')}} :</td>
-                                    <td>{{$patient_income->sum('estimated_fee')}}</td>
-                                </tr>
-                                <tr>
-                                    <td>{{trans('file.paid')}} :</td>
-                                    <td>{{$patient_income->sum('paid_amount')}}</td>
-                                </tr>
-                                <tr>
-                                    <td>{{trans('file.remaining')}} :</td>
-                                    <td>{{$patient_income->sum('remaining_fee')}}</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <br/>
-                    <br/>
-
-                    <div class="row" style="margin-left: 40px;margin-top: 90px;">
-                        <h3>{{trans('file.doctor_signature')}}: </h3>
-
-                    </div>
-                    <div class="row" style="margin-top: 160px;">
-                        <div class="col-xs-12">
-                            <h4><strong>Powered By : PaypolSoftware.com</strong></h4>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
-@endsection
+        @endsection
 
-@section('script')
-    <script type="text/javascript">
-        function PrintElem(el) {
-            var page = document.body.innerHTML;
-            var content = document.getElementById(el).innerHTML;
-            document.body.innerHTML = content;
-            window.print();
-            document.body.innerHTML = page;
-        }
-    </script>
+        @section('script')
+            <script type="text/javascript">
+                function PrintElem(el) {
+                    var page = document.body.innerHTML;
+                    var content = document.getElementById(el).innerHTML;
+                    document.body.innerHTML = content;
+                    window.print();
+                    document.body.innerHTML = page;
+                }
+            </script>
 @endsection

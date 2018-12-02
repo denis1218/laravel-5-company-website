@@ -212,9 +212,9 @@
                     <li class=""><a data-toggle="tab" href="#tab-1"><i
                                     class="fa fa-history"></i>{{trans('file.past_history')}}</a></li>
                     <li class="active"><a data-toggle="tab" id="test" href="#tab-2"><i
-                                    class="fa fa-clock-o"></i>General Treatment</a></li>
+                                    class="fa fa-clock-o"></i>{{ trans('file.general_treatment') }}</a></li>
                     <li class=""><a data-toggle="tab" id="test" href="#tab-3"><i
-                                    class="fa fa-clock-o"></i>Prosthesis Treatment</a></li>
+                                    class="fa fa-clock-o"></i>{{ trans('file.prosthesis_treatment') }}</a></li>
                 </ul>
                 <div class="tab-content">
 
@@ -225,13 +225,31 @@
                             <br>
                             @foreach($patient_in_treatment->treatment->sortByDesc('id') as $treats)
                                 {{-- start for each here --}}
-                                <div class="row shadow p-3 mb-5 rounded bg-info"
-                                     style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px; font-size: 17px;">
-                                    <strong>{{ $treats->visits }} \ &nbsp;&nbsp; <i class="fa fa-calendar"></i>&nbsp;
-                                        {{trans('file.date')}}
-                                        : {{ \Carbon\Carbon::parse($treats->created_at)->diffForHumans() }}
-                                    </strong>
-                                    <h3 style="font-weight: bold"></h3>
+                                <div class="row  rounded bg-info"
+                                     style=" padding-left:20px; border-radius: 5px;margin-left:10px;margin-right: 10px; font-size: 17px; padding: 7px;">
+                                    <div class="col-md-8">
+                                        <strong> &nbsp;&nbsp; <i class="fa fa-calendar"></i>&nbsp;
+                                            {{trans('file.date')}}
+                                            : {{ \Carbon\Carbon::parse($treats->created_at)->diffForHumans() }}
+                                        </strong>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <form action="/xray" method="post">
+                                            <input type="hidden" name="tooth_number" value="{{ $treats->teeth_number }}"/>
+                                            <input type="hidden" name="patient_id" value="{{ $treats->patient_id }}"/>
+                                            <input type="hidden" name="patient_name" value="{{ $patient_in_treatment->name }}"/>
+                                            <input type="hidden" name="xray_status" value="not"/>
+                                            <input type="hidden" name="doctor_name" value="{{ $patient_in_treatment->doctor->first_name }}"/>
+                                            <a class="btn btn-md btn-success pull-right demo_xray" type="submit" style="margin-left: 15px;"><img src="{{ asset('img/xray.png') }}" width="20px"/> &nbsp;Take X-Ray Again</a>
+                                        </form>
+                                        <a class="btn btn-md btn-info pull-right" href="/operation/{{ $treats->id }}/edit" style="margin-left: 15px;"><i class="fa fa-edit pull-left" style="font-size: 20px"></i>{{ trans('file.edit') }}</a>
+                                        <form action="/operation/{{ $treats->id }}" method="POST">
+                                            @method('delete')
+                                            <a class="btn btn-md btn-danger pull-right demo3" type="submit"><i class="fa fa-trash pull-left" style="font-size: 20px"></i>{{ trans('file.delete') }}</a>
+                                        </form>
+                                    </div>
+
+
                                 </div>
                                 <br>
                                 <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
@@ -244,22 +262,32 @@
                                                     </div>
                                                 @endif
                                         </div>
+                                        <h3 class="text-navy">{{ $treats->type_treatment }}</h3>
                                         <div class="table-responsive">
                                             <table class="table table-striped " style="font-weight: bold; ">
-
                                                 <tr>
-                                                    <td>Tooth number : </td>
-                                                    <td colspan="3">{{ $treats->teeth_number }}</td>
+                                                    <td>{{ trans('file.teeth_number') }} : </td>
+                                                    <td colspan="3">{{ $treats->teeth_number }} <a class="btn btn-xs btn-success pull-right">Show Teeth position</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>{{trans('file.dental_defect')}} :</td>
-                                                    <td>{{ $treats->dentaldefect }}</td>
+                                                    @if($treats->type_treatment == 'Prosthesis Treatment')
+                                                            <td>{{trans('file.shade')}} :</td>
+                                                            <td>{{ $treats->shade }}</td>
+                                                        @else
+                                                            <td>{{trans('file.dental_defect')}} :</td>
+                                                            <td>{{ $treats->dentaldefect }}</td>
+                                                        @endif
                                                     <td>{{trans('file.treatment_cost')}}:</td>
                                                     <td>{{ $treats->estimated_fee }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>{{trans('file.treatment')}} :</td>
-                                                    <td>{{ $treats->treatment }}</td>
+                                                    @if($treats->type_treatment == 'Prosthesis Treatment')
+                                                            <td>{{trans('file.type_cover')}} :</td>
+                                                            <td>{{ $treats->type_cover }}</td>
+                                                        @else
+                                                            <td>{{trans('file.treatment')}} :</td>
+                                                            <td>{{ $treats->treatment }}</td>
+                                                        @endif
                                                     <td>{{trans('file.paid')}} :</td>
                                                     <td>{{$treats->paid_amount}}</td>
                                                 </tr>
@@ -285,16 +313,19 @@
                                                     @endif
 
                                                 </tr>
+                                                <tr>
+                                                    <td><strong>{{trans('file.description')}}:</strong></td>
+                                                    <td colspan="3">{{ $treats->description }}</td>
+                                                </tr>
                                             </table>
 
                                         </div>
-                                        <div>
-                                            <div><p><strong>{{trans('file.description')}}
-                                                        :</strong>{{ $treats->description }}</p>
-                                            </div>
-                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+
                                     </div>
                                 </div>
+                                <hr/>
                             @endforeach
                         </div>
                     </div>
@@ -307,7 +338,7 @@
                             {{-- Header of title --}}
                             <div class="row  bg-info"
                                  style=" padding-left:20px; border-radius: 5px;margin-left:0px;margin-right: 10px;">
-                                <h3 style="font-weight: bold;">General Treatment</h3>
+                                <h3 style="font-weight: bold;">{{ trans('file.general_treatment') }}</h3>
                             </div>
 
                             <br/>
@@ -661,6 +692,7 @@
                                             src="{{ asset('img/xray.png') }}" width="20px"/></a>
 
                             <form id="form" action="/operation" method="POST">
+                                <input type="hidden" name="type_treatment" value="General Treatment" />
 
                                 <input type="text" hidden name="teeth_number_all" id="tooth_number_3"/>
 
@@ -745,7 +777,7 @@
                             {{-- Header of title --}}
                             <div class="row  bg-info"
                                  style=" padding-left:20px; border-radius: 5px;margin-left:0px;margin-right: 10px;">
-                                <h3 style="font-weight: bold;">Prosthesis treatment</h3>
+                                <h3 style="font-weight: bold;">{{ trans('file.prosthesis_treatment') }}</h3>
                             </div>
 
                             <br/>
@@ -1087,16 +1119,13 @@
                                 <a class="btn btn-primary" data-toggle="modal" id="xray_btn">XRay Teeth &nbsp;<img
                                             src="{{ asset('img/xray.png') }}" width="20px"/></a>
 
-
                             <form id="form" action="/operation" method="POST">
-
-
+                                <input type="hidden" name="type_treatment" value="Prosthesis Treatment"/>
                                 <input type="text" name="teeth_number_all" hidden id="tooth_number_ortho"/>
 
                                 <div class="row" style="margin-top: 15px">
                                     <input type="checkbox" id="next" name="have_xray" value="yes"
                                            style="visibility:hidden;">
-
 
                                     @foreach($checkValue as $check)
                                         <input type="hidden" value="{{ $check->visits }}" name="visits">
@@ -1309,11 +1338,9 @@
 
 
                 $(document).on("click", "#xray_btn", function () {
-
                     var valuesArray = $('input:checkbox:checked').map(function () {
                         return $(this).val();
                     }).get().join();
-
                     $(".modal-body #tooth_number_3").val(valuesArray);
                     $(".modal-body #tooth_position").val(tooth_pos);
                     $('#xray').modal('show');
@@ -1327,6 +1354,42 @@
                     }).get().join();
 
                     $("#tooth_number_3").val(valuesArray);
+                });
+
+                $(document).ready(function () {
+                    $('.demo3').on('click',function(e){
+                        e.preventDefault();
+                        var form = $(this).parents('form');
+                        swal({
+                            title: "Are you sure?",
+                            text: "It will be deleted from database",
+                            type: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "Yes, delete it!",
+                            closeOnConfirm: false
+                        }, function(isConfirm){
+                            if (isConfirm) form.submit();
+                        });
+                    });
+                });
+
+                $(document).ready(function () {
+                    $('.demo_xray').on('click',function(e){
+                        e.preventDefault();
+                        var form = $(this).parents('form');
+                        swal({
+                            title: "Are you sure?",
+                            text: "Take again X-Ray again from these teeth",
+                            type: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#5178dd",
+                            confirmButtonText: "Yes, X-Ray it!",
+                            closeOnConfirm: false
+                        }, function(isConfirm){
+                            if (isConfirm) form.submit();
+                        });
+                    });
                 });
 
                 $(document).on("click", "#submitformortho", function () {
@@ -1344,18 +1407,6 @@
                     $("#tooth_position").val(tooth_pos);
                 });
 
-//                $("img-responsive").responsiveImg({
-//                    breakpoints : {
-//                        "_small":10,
-//                        "_medium":780,
-//                        "_large":900
-//                    },
-//                    srcAttribute : "src",
-//                    pathToPHP : "js",
-//                    createNewImages : true,
-//                    jpegQuality : 90,
-//                    callback:false
-//                });
 
 
             </script>

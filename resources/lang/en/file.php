@@ -351,6 +351,10 @@ return[
     'appointment_date'=>'Appointment Date',
     'add_to_queue'=>'Add To Queue',
     'there_is_no'=>'There Is No Patient Registered Yet',
+    'shade'=>'shade',
+    'type_cover'=>'type cover',
+    'general_treatment'=>'General Treatment',
+    'prosthesis_treatment'=>'Prosthesis Treatment',
     'there_is_no_pres'=>'There Is No prescription Yet',
 //    new patient today
     'list_patient_today'=>'List Patient Today',
