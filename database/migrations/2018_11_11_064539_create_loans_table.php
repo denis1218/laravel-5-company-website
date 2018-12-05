@@ -18,6 +18,7 @@ class CreateLoansTable extends Migration
             $table->integer('paid')->nullable();
             $table->string('receiver')->nullable();
             $table->integer('trader_id')->unsigned();
+
             $table->timestamps();
             $table->foreign('trader_id')
                   ->references('id')->on('traders')

@@ -18,6 +18,7 @@ class CreatePaySalariesTable extends Migration
             $table->integer('paid_amount');
             $table->unsignedInteger('emp_id');
             $table->date('created_at');
+
             $table->foreign('emp_id')
                 ->references('id')->on('employees')
                 ->onDelete('cascade')

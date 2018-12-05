@@ -20,7 +20,7 @@ class CreateMedicinesTable extends Migration
             $table->string('person');
             $table->integer('buy');
             $table->integer('sale');
-            $table->integer('unit');
+            $table->integer('unit')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

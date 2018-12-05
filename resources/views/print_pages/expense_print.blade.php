@@ -14,7 +14,7 @@
                 <h5>Expense Statment <i class="fa fa-info"></i></h5>
 
                 <div class="ibox-tools">
-                    <a href="/expenditure" class="btn btn-primary btn-lg">Back &nbsp;<span
+                    <a href="{{ URL::previous() }}" class="btn btn-primary btn-lg">Back &nbsp;<span
                                 class="fa fa-chavrone-left"></span></a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#">Config option 1</a>

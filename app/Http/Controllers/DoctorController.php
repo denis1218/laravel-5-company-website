@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\DoctorDepartment;
+use App\DSalary;
 use App\Expense;
 use App\User;
 use Carbon\Carbon;
@@ -125,13 +126,16 @@ class DoctorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Doctor  $doctor
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param Doctor $doctor
      */
     public function destroy($id)
     {
-        $delete=Doctor::find($id);
-        $delete->delete();
-        return back();
+        $doctor = Doctor::find($id);
+        $doctor_salary = DSalary::where('doctor_id',$id)->get(['id']);
+        DSalary::destroy($doctor_salary->toArray());
+        $doctor->delete();
+        return redirect()->back();
     }
 }

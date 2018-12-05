@@ -54,9 +54,9 @@ class FinanceReportExpenseController extends Controller
      */
     public function singleDaySelect(Request $request){
         $single = $request->singDay;
-        $selectType = $request->selectTypeSingle;
-        $expense = Expense::where('created_at','=',$single)->where('category','=',$selectType)->get();
-        return view('finance_report.expense_report_print',compact('expense'));
+        $category = $request->selectTypeSingle;
+        $expense = Expense::where('created_at','=',$single)->where('category','=',$category)->get();
+        return view('finance_report.expense_report_print',compact('expense','category'));
     }
 
     /**
@@ -71,6 +71,6 @@ class FinanceReportExpenseController extends Controller
         $end = $request->end;
         $category = $request->category;
         $expense = Expense::whereBetween('created_at',[$start,$end])->where('category','=',$category)->get();
-        return view('finance_report.expense_report_print',compact('expense'));
+        return view('finance_report.expense_report_print',compact('expense','category'));
     }
 }

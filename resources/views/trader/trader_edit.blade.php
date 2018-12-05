@@ -2,7 +2,17 @@
 
 @section('style')
     <!-- Data Tables -->
-
+    <style>
+        .buttonList li
+        {
+            display: inline-block;
+            /* You can also add some margins here to make it look prettier */
+            zoom: 1;
+            *display: inline;
+            margin-left:20px;
+            /* this fix is needed for IE7- */
+        }
+    </style>
 
 @endsection
 

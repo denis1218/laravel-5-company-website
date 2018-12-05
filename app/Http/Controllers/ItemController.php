@@ -19,7 +19,7 @@ class ItemController extends Controller
     {
         $items=Item::orderBy('id','asc')->paginate(10);
         $total=DB::table('items')->sum('total_price');
-        return view('item',compact('items','total'));
+        return view('trader.item',compact('items','total'));
     }
 
     /**
@@ -30,7 +30,7 @@ class ItemController extends Controller
     public function create($id)
     {
         $trader=Trader::find($id);
-        return view('item_form',compact('trader'));
+        return view('trader.item_form',compact('trader'));
 //        return $trader;
     }
 
@@ -64,12 +64,11 @@ class ItemController extends Controller
     {
         $items=Trader::find($id)->item;
         $loans=Trader::find($id)->loan;
-        $tid=Trader::find($id);
-        $t_id=$tid->id;
+        $trader=Trader::find($id);
         $itotal=$items->sum('total_price');
         $ltotal=$loans->sum('paid');
         $remaining=$itotal-$ltotal;
-        return view('loan_pay',compact('itotal','ltotal','items','loans','remaining','t_id'));
+        return view('trader.loan_pay',compact('itotal','ltotal','items','loans','remaining','trader'));
     }
 
     /**
@@ -81,7 +80,7 @@ class ItemController extends Controller
     public function edit($id)
     {
         $item=Item::find($id);
-        return view('item_edit',compact('item'));
+        return view('trader.item_edit',compact('item'));
     }
 
     /**

@@ -54,19 +54,19 @@
                                         <form action="/pay_salary">
                                             <input type="hidden" name="id" value="{{$emp->id}}">
                                         <td>
-                                            <button type="submit" class="btn btn-xs btn-primary fa fa-dollar">&nbsp;{{trans('file.pay_salary')}}</button>
+                                            <button type="submit" class="btn btn-xs btn-primary "><i class="fa fa-dollar"></i>&nbsp;{{trans('file.pay_salary')}}</button>
                                         </td>
                                         </form>
                                         <td>
-                                            <button class="btn btn-xs btn-primary fa fa-edit" data-toggle="modal"
-                                                    data-target="#e{{$emp->id}}">&nbsp;{{trans('file.edit')}}
+                                            <button class="btn btn-xs btn-primary " data-toggle="modal"
+                                                    data-target="#e{{$emp->id}}"><i class="fa fa-edit"></i>&nbsp;{{trans('file.edit')}}
                                             </button>
                                         </td>
                                         <td>
                                             <form action="/employee/{{$emp->id}}" method="post">
                                                 {{csrf_field()}}
                                                 {{method_field('DELETE')}}
-                                            <button class="btn btn-xs btn-danger fa fa-remove" type="submit" >&nbsp;{{trans('file.delete')}}
+                                                <button class="btn btn-xs btn-danger" type="submit" ><i class="fa fa-remove"></i>&nbsp;{{trans('file.delete')}}
                                             </button>
                                             </form>
                                         </td>

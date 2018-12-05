@@ -1,4 +1,4 @@
-<div class="row wrapper border-bottom white-bg page-heading"
+<div class="row wrapper border-bottom white-bg page-heading "
      style="margin-top:-20px; margin-bottom: 10px; margin-left:1px;">
     <h3 style="margin-left:43px;margin-top:10px;">{{trans('file.inb')}}</h3>
     <div class="col-md-2 ">

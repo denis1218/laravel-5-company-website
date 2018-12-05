@@ -22,7 +22,7 @@
 
 @section('content')
 
-    <div class="col-lg-12">
+    <div class="col-lg-12 ">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>{{trans('file.epinfo')}}&nbsp;<i class="fa fa-info"></i></h5>

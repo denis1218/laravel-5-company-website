@@ -382,6 +382,29 @@
 
                         </ul>
                     </li>
+                    <li>
+                        <a href="setting"><i class="fa fa-trash"></i> <span
+                                    class="nav-label">{{trans('file.rd')}}</span><span
+                                    class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="/user-deleted"><i class="fa fa-user"></i> <span
+                                            class="nav-label">{{trans('file.users')}}</span></a>
+                            </li>
+                            <li>
+                                <a href="/patient-deleted"><i class="fa fa-user-secret"></i> <span
+                                            class="nav-label">{{trans('file.patients')}}</span></a>
+                            </li>
+                            <li>
+                                <a href="/doctor-deleted"><i class="fa fa-user-md"></i> <span
+                                            class="nav-label">{{trans('file.doctors')}}</span></a>
+                            </li>
+                            <li>
+                                <a href="/expense-deleted"><i class="fa fa-shopping-cart"></i> <span
+                                            class="nav-label">{{trans('file.expenses')}}</span></a>
+                            </li>
+                        </ul>
+                    </li>
 
                     {{--traders--}}
                     <li><a href=""><i class="fa fa-money"></i><span class="nav-lable">{{trans('file.salary')}}</span>

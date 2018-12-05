@@ -164,7 +164,7 @@
                         </div>
                         <!-- end of model -->
                     @endforeach
-                    Edit Modal
+                    {{--Edit Modal--}}
                     @foreach($income as $in)
                         <div class="modal inmodal" id="e{{$in->id}}" tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="modal-dialog">
@@ -234,7 +234,7 @@
                         <!-- end of model -->
                     @endforeach
 
-                    End Edit modal
+                    {{--End Edit modal--}}
                     <!-- detaills model -->
                     @foreach($income as $in)
                         <div class="modal inmodal" id="p{{$in->id}}" tabindex="-1" role="dialog" aria-hidden="true">

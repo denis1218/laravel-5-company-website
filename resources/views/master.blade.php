@@ -10,7 +10,7 @@
 @include('layout.sidebar')
 @include('layout.top_nav')
 
-    <div class="wrapper wrapper-content">
+    <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
               @yield('content')
         </div>

@@ -37,5 +37,14 @@ class Patient extends Model
         return $this->hasMany(XRay::class,'patient_id','id');
     }
 
+    public static function boot() {
+        parent::boot();
+
+        static::deleting(function($patient) { // before delete() method call this
+            $patient->treatment()->delete();
+            // do the rest of the cleanup...
+        });
+    }
+
 
 }

@@ -3,6 +3,17 @@
 
 @section('style')
 
+    <style>
+        .buttonList li
+        {
+            display: inline-block;
+            /* You can also add some margins here to make it look prettier */
+            zoom: 1;
+            *display: inline;
+            margin-left:20px;
+            /* this fix is needed for IE7- */
+        }
+    </style>
 @endsection
 
 
@@ -12,7 +23,9 @@
 
     <div class="row">
         <div class="col-lg-12">
+            {{-- content of button in top to content view --}}
             @include('part.trade_nav')
+
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <h5>{{trans('file.st')}}</h5>

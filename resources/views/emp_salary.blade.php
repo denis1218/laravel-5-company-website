@@ -7,7 +7,7 @@
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
 
-                        <h5>{{trans('file.total_paid_amount')}}</h5>
+                        <h5 style="color:#ee8f38">{{trans('file.total_paid_amount')}}</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins">{{$total_paid->sum('paid_amount')}}</h1>
@@ -18,7 +18,7 @@
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
 
-                        <h5>{{trans('file.this_month_paid')}}</h5>
+                        <h5 style="color:#ee343d">{{trans('file.this_month_paid')}}</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins">
@@ -36,7 +36,7 @@
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
 
-                        <h5>{{trans('file.remaining')}}</h5>
+                        <h5 style="color:#ee24a4">{{trans('file.remaining')}}</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins">
@@ -54,7 +54,7 @@
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
 
-                        <h5>{{trans('file.salary')}}</h5>
+                        <h5 style="color:#5464ee">{{trans('file.salary')}}</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins">{{$employee->salary}}</h1>
@@ -70,8 +70,11 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-sm-6">
-                                <button data-toggle="modal" data-target="#edit" class="btn btn-primary fa fa-dollar"
-                                        style="margin-left:30px">&nbsp;&nbsp;{{trans('file.pay_salary')}}</button>
+                                <button data-toggle="modal" data-target="#edit" class="btn btn-lg btn-info fa fa-dollar"
+                                        style="margin-left:30px; font-size: 15px;">&nbsp;&nbsp;{{trans('file.pay_salary')}}</button>
+                            </div>
+                            <div>
+                                <h4>List of paid salary to employee. with report</h4>
                             </div>
                         </div>
 
@@ -84,10 +87,10 @@
                                     <div class="form-group">
                                         <label class="font-noraml">{{trans('file.select_range')}}</label>
                                         <div class="input-daterange input-group" id="">
-                                            <span class="input-group-addon">{{trans('file.from')}} &nbsp;<i
+                                            <span class="input-group-addon" style="background-color:#8fb1ea">{{trans('file.from')}} &nbsp;<i
                                                         class="fa fa-arrow-right"></i></span>
                                             <input type="date" class="input-sm form-control" name="start" required>
-                                            <span class="input-group-addon">{{trans('file.to')}} &nbsp;<i
+                                            <span class="input-group-addon" style="background-color:#8cffd0">{{trans('file.to')}} &nbsp;<i
                                                         class="fa fa-arrow-right"></i></span>
                                             <input type="date" class="input-sm form-control" name="end" required="">
                                             <input type="hidden" name="emp_id" value="{{$employee->id}}">
@@ -163,7 +166,7 @@
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
                                     class="sr-only">Close</span></button>
                         <i class="fa fa-edit modal-icon text-primary"></i>
-                        <h4 class="modal-title">{{trans('file.edit_content')}}</h4>
+                        <h4 class="modal-title">{{ trans('file.pay_salary') }}</h4>
                     </div>
                     @if(isset($emp))
                         <form action="/pay_salary1" method="post">

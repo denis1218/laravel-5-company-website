@@ -25,7 +25,7 @@
         </div>
 
 
-    <div class="row" style="margin-top:40px;">
+    <div class="row animated fadeInRight" style="margin-top:40px;">
         <div class="col-md-6">
             <h1 class="text-success" style="margin-top:-10px;">404</h1>
         </div>

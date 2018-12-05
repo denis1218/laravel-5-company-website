@@ -1,4 +1,23 @@
 @extends('master')
+@section('style')
+    <style>
+        td{
+            color: black;
+        }
+
+        .list {
+            list-style-type: none;
+            margin: 10px;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        .list li {
+            float: left;
+            margin-left: 30px;
+        }
+    </style>
+@endsection
 @section('content')
 
 
@@ -6,47 +25,57 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Income Statment <i class="fa fa-info"></i></h5>
+
+                <h5>Expense Statment <i class="fa fa-info"></i></h5>
+
                 <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-wrench"></i>
-                    </a>
+                    <a href="/doctors" class="btn btn-primary btn-lg">Back &nbsp;<span
+                                class="fa fa-chavrone-left"></span></a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#">Config option 1</a>
                         </li>
                         <li><a href="#">Config option 2</a>
                         </li>
                     </ul>
-                    <a class="close-link" style="margin-right:20px;">
-                        <i class="fa fa-times"></i>
-                    </a>
-                    <button class="btn btn-primary btn-lg" onclick="PrintElem();">Print &nbsp;<span
+                    <button class="btn btn-primary btn-lg" onclick="PrintElem('divone');">Print &nbsp;<span
                                 class="fa fa-print"></span></button>
                 </div>
             </div>
             <div class="ibox-content" id="divone">
+                <table>
+                    <tr>
+                        <td><img src="{{ asset('img/print_logo.jpg') }}" style="width: 120px;height: 100px;"></td>
+                        <td>
+                            <ul style="list-style-type: none;">
+                                <li><h2>Hakim Alkozay Dental Clinic</h2></li>
+                                <li><h4>Expense Report
+                                        @if(!empty($category) > 0)
+                                            [ {{ $category }} ]
+                                            @else
+                                        [ General All ]
+                                            @endif
+                                        </h4></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+
+                <ul style="list-style-type: none;
+                        margin: 10px;
+                        padding: 10px;
+                        overflow: hidden;">
+                    <li style="float: left;
+                                margin-left: 30px;"><h6><strong>Dr.Zabihullah-Hakim Alkozay</strong></h6></li>
+                    <li style="float: left;
+                                margin-left: 30px;"><h6>Date: {{Carbon\Carbon::now()->timezone('Asia/Kabul')}}</h6></li>
+                    <li style="float: left;
+                                margin-left: 30px;"><h6>Contact : 0786003636  |  0706003636</h6></li>
+                </ul>
+
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="profile-image">
-                            <img src="{{asset('img/dentaa3.png')}}" class="img-responsive" style="width: 200px;">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-
-                        <h2> Hakim Alikozay Dental Clinic</h2>
-                        <h4>Income History File</h4>
-
-
-                    </div>
-
                 </div>
                 <div class="hr-line-solid"></div>
                 <br/>
-                {{--start condition of patient info--}}
-                {{--@if(isset($pinfo))--}}
                     <div class="row">
                         <div class="col-md-12">
                             <div class="row shadow p-3 mb-5 bg-white rounded"
@@ -54,7 +83,7 @@
                                 <h3 style="font-weight: bold">Expense Report</h3>
                             </div>
                             <div class="table-responsive">
-                            <table class="table table-hover">
+                            <table class="table table-hover table-stripped" cellpadding="5px">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
@@ -73,7 +102,6 @@
                                         <td>{{ $exp->amount}}</td>
                                         <td>{{$exp->category}}</td>
                                         <td>{{$exp->description}}</td>
-
                                         <td>{{ $exp->created_at }}</td>
                                     </tr>
                                 @endforeach
