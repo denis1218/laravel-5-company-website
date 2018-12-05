@@ -5,9 +5,10 @@
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5> Patient Prescription<i class="fa fa-info"></i></h5>
-
             </div>
             <div class="ibox-content" id="divone">
+                <a class="btn btn-primary pull-right" href="/prescription">{{trans('file.back')}}</a>
+
                 <div class="row">
                     <div class="col-md-7">
                         <div class="table-responsive">
