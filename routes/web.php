@@ -155,6 +155,8 @@ Route::middleware('auth','reception')->group(function () {
     Route::post('/dr_salary3','DSalaryController@PaySalary3');
 
     Route::resource('/expenditure', 'ExpenseController');
+    // search expenditure
+    Route::post('/expenditure/search', 'ExpenseController@search');
 
     Route::get('expenditure2/{id}', 'ExpenseController@destroy');
 

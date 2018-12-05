@@ -9,8 +9,7 @@ use App\Patient;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-
-
+use Illuminate\Support\Facades\DB;
 
 
 class ExpenseController extends Controller
@@ -24,9 +23,11 @@ class ExpenseController extends Controller
     {
         $dateNow = Carbon::now()->toDateString();
         $start = new Carbon('first day of this month');
+        $today = new Carbon('last day of this month');
         $expen =  Expense::whereBetween('created_at',[$start->toDateString(),$dateNow])->orderBy('id','desc')->paginate(10);
-        $totalExpense = $expen->sum('amount');
-        return view('expenditure',compact('expen','totalExpense'));
+        $total = Expense::whereBetween('created_at', [$start, $today]);
+        $totalExpense = $total->sum('amount');
+        return view('expenditure.expenditure',compact('expen','totalExpense'));
     }
 
     /**
@@ -38,7 +39,7 @@ class ExpenseController extends Controller
     {
         $expenseCategory = ExpenseCatagory::all();
         $capital= Expense::sum('amount');
-        return view('expense_form',compact('capital','expenseCategory'));
+        return view('expenditure.expense_form',compact('capital','expenseCategory'));
     }
 
     /**
@@ -81,6 +82,23 @@ class ExpenseController extends Controller
         $msg  = 'Successfully Inserted Into Database';
         return redirect()->back()->with(compact('msg'));
 
+    }
+
+    public function search(Request $request)
+    {
+        $dateNow = Carbon::now()->toDateString();
+        $start = new Carbon('first day of this month');
+        $today = new Carbon('last day of this month');
+        $expen =  Expense::whereBetween('created_at',[$start->toDateString(),$dateNow])->orderBy('id','desc')->paginate(10);
+        $total = Expense::whereBetween('created_at', [$start, $today]);
+        $totalExpense = $total->sum('amount');
+        $totalExpense_all = Expense::sum('amount');
+//      search query of result
+        $query = $request->search;
+        $data = DB::table('expenses')->where('receiver','like','%'.$query.'%')
+            ->orWhere('category','like','%'.$query.'%')
+            ->orWhere('description','like','%'.$query.'%')->get();
+        return view('expenditure.expenditure_search',compact('data','expen','totalExpense_all','totalExpense'));
     }
 
     /**

@@ -46,7 +46,7 @@ class HomeController extends Controller
         $id = Auth()->user()->doctor_id;
         $doctor = Doctor::find($id)->patient_for_today;
         $doct = Doctor::count();
-        $patient = Patient::where('doctor_id', '=', $id)->get();
+        $patient = Patient::all();
         return view('dash_doctor', compact('doctor', 'doct', 'patient'));
     }
 
@@ -88,7 +88,7 @@ class HomeController extends Controller
     public function total_expense()
     {
         $start = new Carbon('first day of this month');
-        $today = new Carbon('today');
+        $today = new Carbon('last day of this month');
         $expense = Expense::whereBetween('created_at', [$start, $today]);
         $totalExpense = $expense->sum('amount');
         return $totalExpense;
