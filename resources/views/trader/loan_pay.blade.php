@@ -147,11 +147,7 @@
                     </div>
                     <div class="modal-body">
                         <form id="form" method="post" action="/loan">
-                            {{csrf_field()}}
-                            <div class="form-group">
-                                <label>Receiver person</label>
-                                <div><input type="text" name="receiver" class="form-control" placeholder="To whom the money is paid" required></div>
-                            </div>
+                            <input type="hidden" value="{{ $trader->name }}" name="receiver"/>
                             <div class="form-group">
                                 <label>Payment Amount</label>
                                 <div><input type="number"  name="paid" class="form-control" placeholder="Loan payment amount" required></div>

@@ -98,9 +98,13 @@
                                     <li><a href="/finance_report_expenses"><i
                                                     class="fa fa-shopping-cart"></i>{{trans('file.expense')}}</a>
                                     </li>
+
                                     <li><a href="/finance_report_profit"><img src="{{ asset('img/profite.png') }}"
                                                                               width="15px"/>
                                             &nbsp;&nbsp;{{trans('file.profit')}}</a>
+                                    </li>
+                                    <li><a href="/finance_report_loan"><i class="fa fa-stack-overflow"></i>
+                                            &nbsp;&nbsp;Loans</a>
                                     </li>
                                 </ul>
                             </li>
@@ -331,9 +335,13 @@
                                     <li><a href="/finance_report_expenses"><i
                                                     class="fa fa-shopping-cart"></i>{{trans('file.expense')}}</a>
                                     </li>
+
                                     <li><a href="/finance_report_profit"><img src="{{ asset('img/profite.png') }}"
                                                                               width="15px"/>
                                             &nbsp;&nbsp;{{trans('file.profit')}}</a>
+                                    </li>
+                                    <li><a href="/finance_report_loan"><i class="fa fa-stack-overflow"></i>
+                                            &nbsp;&nbsp;{{ trans('file.loans') }}</a>
                                     </li>
                                 </ul>
                             </li>

@@ -68,6 +68,7 @@ return[
     'total_expenses_all'=>'مجموعه همه مصارف',
     'total_expenses'=>'مجموعه مصارف',
     'today'=>'امروز',
+    'loans'=>'قرضداری',
     'qee'=>'ثبت سریع مصارف',
     'money_receiver'=>'دریافت کننده پول',
     'paid_amount'=>'مقدار پول',

@@ -212,6 +212,13 @@ Route::middleware('auth','reception')->group(function () {
     //financial report profit range day
     Route::get('finance_report_profit2','FinanceReportProfitController@rangeDay');
 
+    /* Financial report Loan Route */
+    Route::get('finance_report_loan','FinanceReportLoan@report');
+
+    Route::get('finance_report_loan_all','FinanceReportLoan@all_loan');
+    Route::post('finance_report_loan/single/supplier','FinanceReportLoan@single_supplier');
+
+
     Route::resource('xrey_income', 'xrayincomeController');
 
     Route::get('xrey_income2', 'xrayincomeController@showComplete');
@@ -245,6 +252,15 @@ Route::middleware('auth','reception')->group(function () {
     Route::get('finance_report_profit1','FinanceReportProfitController@showSingle');
     //financial report profit range day
     Route::get('finance_report_profit2','FinanceReportProfitController@rangeDay');
+
+    Route::get('/patient-deleted','DeletedRecordsController@patient');
+    Route::get('/doctor-deleted','DeletedRecordsController@doctor');
+    Route::get('/expense-deleted','DeletedRecordsController@expense');
+    Route::get('/user-deleted','DeletedRecordsController@user');
+    Route::get('/patient-deleted/{id}','DeletedRecordsController@restorePatient');
+    Route::get('/doctor-deleted/{id}','DeletedRecordsController@restoreDoctor');
+    Route::get('/expense-deleted/{id}','DeletedRecordsController@restoreExpense');
+    Route::get('/user-deleted/{id}','DeletedRecordsController@restoreUser');
 
     Route::resource('xrey_income', 'xrayincomeController');
 

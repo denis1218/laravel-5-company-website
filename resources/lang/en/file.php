@@ -79,6 +79,7 @@ return[
     'total_incomes'=>'Total Incomes',
     'capital'=>'Capital',
     'total_profit'=>'Total Profit',
+    'loans'=>'Loans',
     'now'=>'Now',
     'next_appointments'=>'Next appointment',
     'deleted_at'=>'Deleted at',

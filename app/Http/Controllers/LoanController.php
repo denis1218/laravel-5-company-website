@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use DB;
 use App\Loan;
 use App\Trader;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class LoanController extends Controller
@@ -80,6 +81,7 @@ class LoanController extends Controller
     {
         //
     }
+
 
     /**
      * Show the form for editing the specified resource.

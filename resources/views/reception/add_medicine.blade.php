@@ -4,46 +4,48 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5> Patient Prescription<i class="fa fa-info"></i></h5>
+                <h5> Patient Prescription &nbsp;<i class="fa fa-info"></i></h5>
 
             </div>
             <div class="ibox-content" id="divone">
+
                 <div class="row">
+                    <div class="col-md-1">
+                        <img src="{{ asset('img/prescription2.png') }}" width="100px;"/>
+                    </div>
                     <div class="col-md-7">
                         <div class="table-responsive">
                             <table class="table small m-b-xs">
                                 <tbody>
                                 <tr>
                                     <td>
-                                        {{trans('file.name')}}:<b>&nbsp;{{ $patient->name }}</b>&nbsp;
-
+                                        <h5>{{trans('file.name')}}:<b>&nbsp;{{ $patient->name }}</b>&nbsp;</h5>
                                     </td>
                                     <td>
-                                        {{trans('file.date')}}:<b>&nbsp;{{\Carbon\Carbon::today()}}</b>&nbsp;<i
-                                                class="fa fa-calender"></i>
+                                        <h5>{{trans('file.date')}}:<b>&nbsp;{{\Carbon\Carbon::today()}}</b>&nbsp;<i
+                                                    class="fa fa-calender"></i></h5>
                                     </td>
-
                                 </tr>
                                 <tr>
-
                                     <td>
-                                        {{trans('file.age')}}:<b>&nbsp;{{ $patient->lastname }}</b>&nbsp;<i
-                                                class=""></i>
+                                        <h5>{{trans('file.age')}}:<b>&nbsp;{{ $patient->lastname }}</b>&nbsp;<i
+                                                    class=""></i></h5>
                                     </td>
                                     <td>
-                                        {{trans('file.p_id')}}:<b>&nbsp;{{ $patient->id_patient }}</b>&nbsp;<i
-                                                class=""></i>
+                                        <h5>{{trans('file.p_id')}}:<b>&nbsp;{{ $patient->id_patient }}</b>&nbsp;<i
+                                                    class=""></i></h5>
                                     </td>
                                 </tr>
-
                                 </tbody>
                             </table>
                         </div>
                     </div>
 
                 </div>
+
                 <div class="hr-line-solid"></div>
                 <br/>
+
                 <form action="/prescription" method="post">
                     {{csrf_field()}}
                     <input type="hidden" name="patient_id" value="{{$patient->id}}">

@@ -103,8 +103,9 @@ class TraderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Trader  $trader
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param Trader $trader
      */
     public function destroy($id)
     {

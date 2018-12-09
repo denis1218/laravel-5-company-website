@@ -15,21 +15,21 @@ class CreatePatientsTable extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('id_patient');
+            $table->string('id_patient')->nullable();
             $table->string('name');
-            $table->string('lastname');
+            $table->string('lastname')->nullable();
             $table->string('gender')->nullable();
             $table->integer('age')->nullable();
-            $table->string('phone');
+            $table->string('phone')->nullable();
             $table->longText('address')->nullable();
             $table->longText('problem_health')->nullable();
             $table->longText('job')->nullable();
             $table->longText('education')->nullable();
-            $table->string('status');
-            $table->date('next_appointment');
+            $table->string('status')->nullable();
+            $table->date('next_appointment')->nullable();
             $table->integer('time')->nullable();
             $table->string('meridiem')->nullable();
-            $table->unsignedInteger('doctor_id');
+            $table->unsignedInteger('doctor_id')->nullable();
             $table->timestamps();
             $table->foreign('doctor_id')
                 ->references('id')->on('doctors')
