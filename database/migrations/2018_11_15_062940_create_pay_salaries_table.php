@@ -16,7 +16,7 @@ class CreatePaySalariesTable extends Migration
         Schema::create('pay_salaries', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('paid_amount');
-            $table->unsignedInteger('emp_id');
+            $table->unsignedInteger('emp_id')->nullable();
             $table->date('created_at');
 
             $table->foreign('emp_id')

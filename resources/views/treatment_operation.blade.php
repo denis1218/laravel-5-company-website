@@ -703,8 +703,6 @@
                                     @endforeach
                                     <input type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
                                     <div class="col-md-6">
-
-
                                         {{--<input type="hidden" class="form-control" name="id_treatment" id="id_treatment">--}}
                                         <div class="form-group">
                                             <label for="nex">{{trans('file.treatment_cost')}} :</label>
@@ -1250,6 +1248,7 @@
                         <form id="form" action="/treatment/teeth" method="post">
 
                             <input type="hidden" name="type_treatment" value="General Treatment" />
+                            <input type="text" value="" id="#tooth_number" name="tooth_number"/>
                             <div class="form-group">
                                 <label>Dental Defect *</label>
                                 <select class="form-control" name="dentaldefect" required>
@@ -1339,6 +1338,7 @@
                     }
                     else {
                         $(this).removeClass('image-check-checked');
+
                     }
                 });
 
@@ -1353,8 +1353,10 @@
                     var $checkbox_lenght = $(this).find('input[type="checkbox"]').length;
                     $checkbox.prop("checked", !$checkbox.prop("checked"));
                     tooth_num = $checkbox.val();
+                    $('.modal-body #tooth_number').val($checkbox.val());
                     $('#general_treatment').modal('show');
-                    $('#tooth_number_3').val($checkbox.val());
+
+//                    $('#tooth_number_3').val($checkbox.val());
                     e.preventDefault();
                 });
 
