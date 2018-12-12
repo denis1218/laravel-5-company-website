@@ -190,6 +190,10 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="/log_activity"><i class="fa fa-tasks"></i> <span
+                                    class="nav-label">Log all activity</span></a>
+                    </li>
+                    <li>
                         <a href="/contact"><i class="fa fa-phone"></i> <span
                                     class="nav-label">{{trans('file.support')}}</span></a>
                     </li>
@@ -424,6 +428,7 @@
                             </li>
                         </ul>
                     </li>
+
                     {{--end of traders--}}
                     <li>
                         <a href="/contact"><i class="fa fa-phone"></i> <span

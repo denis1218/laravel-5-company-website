@@ -692,9 +692,6 @@
                                             src="{{ asset('img/xray.png') }}" width="20px"/></a>
 
                             <form id="form" action="/operation" method="POST">
-                                <input type="hidden" name="type_treatment" value="General Treatment" />
-
-                                <input type="text" hidden name="teeth_number_all" id="tooth_number_3"/>
 
                                 <div class="row" style="margin-top: 15px">
                                     <input type="checkbox" id="next" name="have_xray" value="yes"
@@ -707,28 +704,7 @@
                                     <input type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
                                     <div class="col-md-6">
 
-                                        <div class="form-group">
-                                            <label>{{trans('file.select_dental_defect')}} :</label>
-                                            <select class="form-control" name="dentaldefect" required>
-                                                <option disabled
-                                                        selected>{{trans('file.select_dental_defect')}}</option>
-                                                @foreach($dentalDefectList as $list)
-                                                    <option value="{{ $list->dental_defect }}">{{ $list->dental_defect }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>{{trans('file.treatment')}} :</label>
-                                            <select class="form-control" name="treatment"
-                                                    onchange="getFeeTreatment(this);" required>
-                                                <option disabled>{{trans('file.treatment')}}</option>
-                                                @foreach($treatementList as $listTreatement)
-                                                    <option value="{{ $listTreatement->treatment }}"
-                                                            id="{{ $listTreatement->estimated_fee }}">
-                                                        {{ $listTreatement->treatment }} </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
+
                                         {{--<input type="hidden" class="form-control" name="id_treatment" id="id_treatment">--}}
                                         <div class="form-group">
                                             <label for="nex">{{trans('file.treatment_cost')}} :</label>
@@ -1253,6 +1229,61 @@
 
                     <div class="modal-footer">
 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {{-- modal window gereral treatment --}}
+        <div class="modal inmodal" id="general_treatment" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content animated fadeIn">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span
+                                    aria-hidden="true">&times;</span><span
+                                    class="sr-only">{{trans('file.close')}}</span></button>
+                        <i class="fa fa-edit modal-icon text-primary"></i>
+                        <h4 class="modal-title">{{trans('file.xray')}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form" action="/treatment/teeth" method="post">
+
+                            <input type="hidden" name="type_treatment" value="General Treatment" />
+                            <div class="form-group">
+                                <label>Dental Defect *</label>
+                                <select class="form-control" name="dentaldefect" required>
+                                    <option disabled
+                                            selected>{{trans('file.select_dental_defect')}}</option>
+                                    @foreach($dentalDefectList as $list)
+                                        <option value="{{ $list->dental_defect }}">{{ $list->dental_defect }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>{{trans('file.treatment')}} :</label>
+                                <select class="form-control" name="treatment" required>
+                                    <option disabled>{{trans('file.treatment')}}</option>
+                                    @foreach($treatementList as $listTreatement)
+                                        <option value="{{ $listTreatement->treatment }}"
+                                                id="{{ $listTreatement->estimated_fee }}">
+                                            {{ $listTreatement->treatment }} </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <button type="button" class="btn btn-white pull-right" data-dismiss="modal"
+                                    style="margin-bottom: 10px;">{{trans('file.close')}}</button>
+                            <button type="submit" class="btn btn-primary pull-right" id="save" onclick=""
+                                    style="margin-bottom: 10px;margin-right: 20px;">{{trans('file.save')}}</button>
+
+                        </form>
+                        <br>
+
+                    </div>
+
+                    <div class="modal-footer">
 
                     </div>
                 </div>
@@ -1322,6 +1353,7 @@
                     var $checkbox_lenght = $(this).find('input[type="checkbox"]').length;
                     $checkbox.prop("checked", !$checkbox.prop("checked"));
                     tooth_num = $checkbox.val();
+                    $('#general_treatment').modal('show');
                     $('#tooth_number_3').val($checkbox.val());
                     e.preventDefault();
                 });

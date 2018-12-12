@@ -221,6 +221,9 @@ Route::middleware('auth','reception')->group(function () {
 
     Route::resource('xrey_income', 'xrayincomeController');
 
+    Route::get('/log_activity', 'HomeController@log_activity');
+    Route::post('/log_activity/search', 'HomeController@search_log_activity');
+
     Route::get('xrey_income2', 'xrayincomeController@showComplete');
 
     Route::patch('xrey_income3/{id}', 'xrayincomeController@update2');

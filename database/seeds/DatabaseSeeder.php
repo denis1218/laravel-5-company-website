@@ -21,12 +21,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 //        if(Underscore\.::count() == 0)$this->call(UserTableSeeder::class );
-//        if(\App\Doctor::count() == 0)$this->call(DoctorSeeder::class );
-//        if(TreatmentList::count() == 0)$this->call(TreatmentListTableSeeder::class );
-//        if(\App\DentalDefectList::count() == 0)$this->call(DentalDefectListTableSeeder::class );
-//        if(\App\DoctorDepartment::count() == 0)$this->call(DoctorDepartmentTableSeeder::class );
-//        if(\App\ExpenseCatagory::count() == 0)$this->call(ExpenseCategoryTableSeeder::class );
-//        if(\App\TeethCoverType::count() == 0)$this->call(TeethCoverTableSeeder::class );
+        if(\App\Doctor::count() == 0)$this->call(DoctorSeeder::class );
+        if(TreatmentList::count() == 0)$this->call(TreatmentListTableSeeder::class );
+        if(\App\DentalDefectList::count() == 0)$this->call(DentalDefectListTableSeeder::class );
+        if(\App\DoctorDepartment::count() == 0)$this->call(DoctorDepartmentTableSeeder::class );
+        if(\App\ExpenseCatagory::count() == 0)$this->call(ExpenseCategoryTableSeeder::class );
+        if(\App\TeethCoverType::count() == 0)$this->call(TeethCoverTableSeeder::class );
 
 
         DB::Table('users')->insert([
