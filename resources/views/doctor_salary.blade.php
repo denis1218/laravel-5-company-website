@@ -14,6 +14,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-3">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
@@ -32,6 +33,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-3">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
@@ -50,6 +52,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-3">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
@@ -61,6 +64,9 @@
                     </div>
                 </div>
             </div>
+
+
+            {{-- main content of doctor salary --}}
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">

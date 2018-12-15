@@ -17,10 +17,10 @@ class CreateMedicinesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('category');
-            $table->string('person');
-            $table->integer('buy');
-            $table->integer('sale');
-            $table->integer('unit');
+            $table->string('person')->nullable();
+            $table->integer('buy')->nullable();
+            $table->integer('sale')->nullable();
+            $table->integer('unit')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -129,12 +129,15 @@ class OutdatedPatientController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\OutdatedPatient  $outdatedPatient
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param OutdatedPatient $outdatedPatient
      */
     public function destroy($id)
     {
         $patient = OutdatedPatient::find($id);
+        $recieveOutdatedPatient = OutdatedReceive::where('outdated_id',$id)->get(['id']);
+        OutdatedReceive::destroy($recieveOutdatedPatient->toArray());
         $patient->delete();
         return redirect()->back();
     }

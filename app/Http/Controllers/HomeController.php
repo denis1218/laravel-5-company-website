@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
+use App\Audit;
 use App\Doctor;
 use App\Expense;
 use App\ExpenseCatagory;
@@ -46,7 +48,7 @@ class HomeController extends Controller
         $id = Auth()->user()->doctor_id;
         $doctor = Doctor::find($id)->patient_for_today;
         $doct = Doctor::count();
-        $patient = Patient::where('doctor_id', '=', $id)->get();
+        $patient = Patient::all();
         return view('dash_doctor', compact('doctor', 'doct', 'patient'));
     }
 
@@ -88,7 +90,7 @@ class HomeController extends Controller
     public function total_expense()
     {
         $start = new Carbon('first day of this month');
-        $today = new Carbon('today');
+        $today = new Carbon('last day of this month');
         $expense = Expense::whereBetween('created_at', [$start, $today]);
         $totalExpense = $expense->sum('amount');
         return $totalExpense;
@@ -118,6 +120,30 @@ class HomeController extends Controller
         } catch (Exception $ex) {
             return false;
         }
+    }
+
+
+    function log_activity()
+    {
+//        $all = Audit::all();
+        $all = Audit::select('audits.id','users.firstname','audits.event','audits.auditable_type','audits.new_values','audits.old_values','audits.url','audits.created_at')
+            ->join('users','users.id','=','audits.user_id')
+            ->orderBy('audits.id','desc')
+            ->get();
+//        return $all_join;
+        return view ('log_activity',compact('all'));
+
+    }
+
+    function search_log_activity(Request $request)
+    {
+        $all = Audit::select('audits.id','users.firstname','audits.event','audits.auditable_type','audits.new_values','audits.old_values','audits.url','audits.created_at')
+            ->join('users','users.id','=','audits.user_id')
+            ->where('users.firstname','like','%'.$request->search.'%')
+            ->orderBy('audits.id','desc')
+            ->get();
+
+        return view('log_activity_search',compact('all'));
     }
 
 

@@ -16,8 +16,8 @@ class CreateOincomsTable extends Migration
         Schema::create('oincoms', function (Blueprint $table) {
             $table->increments('id');
             $table->string('from_whom');
-            $table->integer('amount');
-            $table->string('purpose');
+            $table->integer('amount')->nullable();
+            $table->string('purpose')->nullable();
             $table->longText('description');
             $table->date('created_at');
             $table->softDeletes();

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Income;
 use App\Treatment;
 use App\TreatmentList;
+use App\Xray;
 use Illuminate\Http\Request;
 use App\Patient;
 use Illuminate\Support\Facades\DB;
@@ -51,12 +52,22 @@ class patientReportController extends Controller
      */
     public function show($id)
     {
-//        $treatment = Treatment::with('patient')->get()->find($id);
         $patient = Patient::with('doctor')->get()->find($id);
         $patient_income = Treatment::where('patient_id','=',$id)->get();
-//return $patient_income;
-        return view('patient.print_reception', compact('patient','treatment','patient_income'));
+        $patient_income_general = Treatment::where('patient_id','=',$id)
+            ->Where('type_treatment','=','General Treatment')->get();
+        $patient_income_prosthesis = Treatment::where('patient_id','=',$id)
+            ->Where('type_treatment','=','Prosthesis Treatment')->get();
+        $patient_income_xray = Xray::where('patient_id','=',$id)->get();
+
+
+        return view('patient.print_reception', compact('patient_income_xray','patient_income_general','patient_income_prosthesis','patient','treatment','patient_income'));
     }
+
+
+
+
+
 
     public function search_patient(Request $request)
     {
@@ -74,13 +85,7 @@ class patientReportController extends Controller
      * this method is for printing patient report
      * in PDF file
      */
-    public  function report($id){
-        $treatment = Treatment::with('patient')->get()->find($id);
-        $patient = Patient::with('doctor')->get()->find($id);
 
-        return view('patient.patientPrint', compact('patient','treatment'));
-
-    }
     /**
      * Show the form for editing the specified resource.
      *

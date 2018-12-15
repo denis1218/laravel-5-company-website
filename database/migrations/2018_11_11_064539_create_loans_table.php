@@ -17,11 +17,13 @@ class CreateLoansTable extends Migration
             $table->increments('id');
             $table->integer('paid')->nullable();
             $table->string('receiver')->nullable();
-            $table->integer('trader_id')->unsigned();
+            $table->unsignedInteger('trader_id')->nullable();
+
             $table->timestamps();
             $table->foreign('trader_id')
                   ->references('id')->on('traders')
-                  ->onUpdate('cascade');
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
         });
     }
 

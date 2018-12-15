@@ -100,7 +100,7 @@
                                                                 <th>{{trans('file.xray_id')}}</th>
                                                                 <th colspan="2">{{trans('file.teeth_number')}}</th>
 {{--                                                                <th>{{trans('file.tooth_position')}}</th>--}}
-                                                                <th>{{trans('file.patient_id')}}</th>
+{{--                                                                <th>{{trans('file.patient_id')}}</th>--}}
                                                                 <th>{{trans('file.patient_name')}}</th>
                                                                 <th>{{trans('file.doctor_name')}}</th>
                                                                 <th>{{trans('file.status_of_payment')}}</th>
@@ -110,13 +110,14 @@
                                                             </thead>
                                                             @if(count($count)>0)
                                                                 @foreach($patient as $pat)
+                                                                    <?php $i = 1 ;?>
                                                                     <tbody>
                                                                     @if($pat->xray_status=='not')
                                                                         <tr>
-                                                                            <td>{{$pat->id}}</td>
+                                                                            <td>{{ $i }}</td>
                                                                             <td colspan="2">{{$pat->tooth_number}}</td>
 {{--                                                                            <td>{{$pat->tooth_position}}</td>--}}
-                                                                            <td>{{$pat->patient_id}}</td>
+{{--                                                                            <td>{{$pat->patient_id}}</td>--}}
                                                                             <td>{{$pat->patient_name}}</td>
                                                                             <td>{{$pat->doctor_name}}</td>
                                                                             <td>{{$pat->paid_amount}}</td>
@@ -129,12 +130,12 @@
                                                                         </tr>
                                                                     @endif
                                                                     </tbody>
+                                                                    <?php $i++ ;?>
                                                                 @endforeach
                                                             @else
                                                                 <h1 class="text-center" style="color:red;font-size: 20px;">{{trans('file.nprfx')}}</h1>
                                                             @endif
                                                         </table>
-                                                        {{$patient->links()}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -157,7 +158,7 @@
                                                                 <th>{{trans('file.id')}}</th>
                                                                 <th colspan="2">{{trans('file.teeth_number')}}</th>
 {{--                                                                <th>{{trans('file.tooth_position')}}</th>--}}
-                                                                <th>{{trans('file.p_id')}}</th>
+{{--                                                                <th>{{trans('file.p_id')}}</th>--}}
                                                                 <th>{{trans('file.p_name')}}</th>
                                                                 <th>{{trans('file.doctor_name')}}</th>
                                                                 <th>{{trans('file.status_of_payment')}}</th>
@@ -165,14 +166,15 @@
                                                             </tr>
                                                             </thead>
                                                             @if(count($patient)>0)
+                                                            <?php $i = 1;?>
                                                                 @foreach($patient as $pat)
                                                                     <tbody>
                                                                     @if($pat->xray_status=='yes')
                                                                         <tr>
-                                                                            <td>{{$pat->id}}</td>
+                                                                            <td>{{ $i }}</td>
                                                                             <td colspan="2">{{$pat->tooth_number}}</td>
 {{--                                                                            <td>{{$pat->tooth_position}}</td>--}}
-                                                                            <td>{{$pat->patient_id}}</td>
+                                                                            {{--<td>{{$pat->patient_id}}</td>--}}
                                                                             <td>{{$pat->patient_name}}</td>
                                                                             <td>{{$pat->doctor_name}}</td>
                                                                             <td>{{$pat->paid_amount}}</td>
@@ -180,12 +182,13 @@
                                                                         </tr>
                                                                     @endif
                                                                     </tbody>
+                                                                    <?php $i++ ?>
                                                                 @endforeach
                                                             @else
                                                                 <h1 class="text-center" style="color:red;font-size: 20px;">{{trans('file.nprfx')}}</h1>
                                                             @endif
                                                         </table>
-                                                        {{$patient->links()}}
+
                                                     </div>
                                                 </div>
                                             </div>

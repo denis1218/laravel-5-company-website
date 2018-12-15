@@ -15,10 +15,10 @@ class CreatePrescriptionsTable extends Migration
     {
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('medicine_name');
-            $table->string('unit');
-            $table->string('sale');
-            $table->integer('total_fee');
+            $table->string('medicine_name')->nullable();
+            $table->string('unit')->nullable();
+            $table->string('sale')->nullable();
+            $table->integer('total_fee')->nullable();
             $table->unsignedInteger('patient_id')->nullable();
             $table->date('created_at');
 

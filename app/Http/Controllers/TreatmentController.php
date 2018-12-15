@@ -104,15 +104,26 @@ class TreatmentController extends Controller
         $treatment = new Treatment();
 
         $treatment->teeth_number = $request->teeth_number_all;
+        $treatment->type_prosthesis = $request->type_prosthesis;
+        $treatment->shade = $request->shade;
+        $treatment->type_cover = $request->type_cover;
         $treatment->description = $request->description;
+        $treatment->type_treatment = $request->type_treatment;
         $treatment->estimated_fee = $request->estimated_fee;
         $treatment->discount = $request->discount;
         $treatment->remaining_fee = $treatment->estimated_fee - $treatment->discount;
         $treatment->paid_amount = 0;
         $treatment->visits = $request->input('visits');
         $treatment->patient_id = $request->input('FK_id_patient');
-        $treatment->treatment = $request->input('treatment');
-        $treatment->dentaldefect = $request->input('dentaldefect');
+        if($request->dentaldefect == null)
+        {
+            $treatment->dentaldefect = 'Prosthesis';
+            $treatment->treatment = 'Prosthesis';
+        }else{
+            $treatment->treatment = $request->input('treatment');
+            $treatment->dentaldefect = $request->input('dentaldefect');
+        }
+
         $treatment->status_pay = true;
         $treatment->have_xray = $request->have_xray;
         $treatment->created_at = Carbon::now();
@@ -126,23 +137,11 @@ class TreatmentController extends Controller
         }
 
         $treatment->save();
-
-//        $last_treatment = Treatment::all();
-//        $max_treat = $last_treatment->max();
-
-//        foreach($request->teeth_number as $tooth)
-//        {
-//            $teeth = new Teeth();
-//            $teeth->tooth_number = $tooth;
-//            $teeth->treatment_id = $max_treat->id;
-//            $teeth->save();
-//        }
-        return redirect('/operation');
+        return redirect()->back();
     }
 
 
-    public
-    function checkVisits()
+    public function checkVisits()
     {
         $treatment = new Treatment();
         $count_visits = 0;
@@ -169,6 +168,16 @@ class TreatmentController extends Controller
     {
     }
 
+
+    public function take_xray_again($id)
+    {
+        $treatment = Treatment::find($id);
+        $treatment->have_xray = '0';
+        $treatment->update();
+        return redirect()->back();
+    }
+
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -176,10 +185,15 @@ class TreatmentController extends Controller
      * @return \Illuminate\Http\Response
      * @internal param Treatment $treatment
      */
-    public
-    function edit($id)
+    public function edit($id)
     {
-
+        $treatment = Treatment::find($id);
+        $treatementList = TreatmentList::all();
+        $dentalDefectList = DentalDefectList::all();
+        $teethShadeList = TeethShade::all();
+        $teethCoverList = TeethCoverType::all();
+        return view('treatment_operation_edit',compact('treatment','treatementList','dentalDefectList',
+            'teethCoverList','teethShadeList'));
     }
 
     public function edit_treatment($id, $patient_id)
@@ -226,6 +240,27 @@ class TreatmentController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $treatment = Treatment::find($id);
+        $treatment->teeth_number = $request->teeth_number_all;
+        $treatment->type_prosthesis = $request->type_prosthesis;
+        $treatment->shade = $request->shade;
+        $treatment->type_cover = $request->type_cover;
+        $treatment->description = $request->description;
+        $treatment->estimated_fee = $request->estimated_fee;
+        $treatment->discount = $request->discount;
+        if($request->dentaldefect == null)
+        {
+            $treatment->dentaldefect = 'Prosthesis';
+            $treatment->treatment = 'Prosthesis';
+        }else{
+            $treatment->treatment = $request->input('treatment');
+            $treatment->dentaldefect = $request->input('dentaldefect');
+        }
+        $treatment->status_visits = $request->status_visits;
+
+        $treatment->update();
+        return redirect('/operation');
+
 
     }
 
@@ -235,8 +270,10 @@ class TreatmentController extends Controller
      * @param  \App\Treatment $treatment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Treatment $treatment)
+    public function destroy($id)
     {
-        //
+        $treatment = Treatment::find($id);
+        $treatment->delete();
+        return redirect()->back();
     }
 }

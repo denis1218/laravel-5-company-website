@@ -14,7 +14,6 @@ class DoctorSeeder extends Seeder
             'phone' => '07803266958',
             'department' => 'Orthodontist',
             'gender' => 'male',
-            'salary_type' => 'fix',
             'salary_amount' => '15000',
             'max_patient' => '10',
         ]);
@@ -26,7 +25,6 @@ class DoctorSeeder extends Seeder
             'phone' => '0780325568',
             'department' => 'regular Basis',
             'gender' => 'male',
-            'salary_type' => 'percentage',
             'salary_amount' => '50',
             'max_patient' => '10',
         ]);
@@ -38,7 +36,6 @@ class DoctorSeeder extends Seeder
             'phone' => '0799015145',
             'department' => 'Periodotist',
             'gender' => 'male',
-            'salary_type' => 'fix',
             'salary_amount' => '20000',
             'max_patient' => '10',
         ]);

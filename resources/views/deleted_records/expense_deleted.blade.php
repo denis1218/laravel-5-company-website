@@ -7,7 +7,7 @@
 
 @section('content')
 
-    <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="wrapper wrapper-content  ">
 
         {{--Other income table--}}
 

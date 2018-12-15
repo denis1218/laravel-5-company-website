@@ -15,11 +15,11 @@ class CreateDSalariesTable extends Migration
     {
         Schema::create('d_salaries', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('paid_amount');
-            $table->unsignedInteger('doc_id');
-            $table->date('start');
-            $table->date('end');
-            $table->date('date');
+            $table->integer('paid_amount')->nullable();
+            $table->unsignedInteger('doc_id')->nullable();
+            $table->date('start')->nullable();
+            $table->date('end')->nullable();
+            $table->date('date')->nullable();
             $table->foreign('doc_id')
                 ->references('id')->on('doctors')
                 ->onUpdate('cascade');

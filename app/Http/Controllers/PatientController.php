@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Doctor;
 use App\DoctorDemo;
 use App\Patient;
+use App\Prescription;
 use App\Treatment;
+use App\Xray;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -165,8 +167,15 @@ class PatientController extends Controller
     public function destroy($id)
     {
         $patient = Patient::find($id);
+        $treatmentPatient = Treatment::where('patient_id',$id)->get(['id']);
+        $xrayPatient = Xray::where('patient_id',$id)->get(['id']);
+        $prescritionPatient = Prescription::where('patient_id',$id)->get(['id']);
+
+        Treatment::destroy($treatmentPatient->toArray());
+        Xray::destroy($xrayPatient->toArray());
+        Prescription::destroy($prescritionPatient->toArray());
         $patient->delete();
-        return redirect()->back()->with('success','Patient deleted from databae successfully');
+        return redirect()->back();
     }
 
 

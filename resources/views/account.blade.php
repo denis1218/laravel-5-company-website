@@ -105,7 +105,7 @@
                                     </td>
                                     <td>
                                         <form id="del" action="/user2/{{$user->id}}" id="myForm">
-                                            <button class="btn btn-xs btn-danger fa fa-remove demo3">&nbsp;{{trans('file.delete')}}</button>
+                                            <button class="btn btn-xs btn-danger  demo3"><i class="fa fa-remove"></i>&nbsp;{{trans('file.delete')}}</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -157,7 +157,7 @@
                     <div class="form-group"><label>{{trans('file.email')}}</label> <input type="email" name="email" placeholder="{{trans('file.email')}}"
                                                                         value="{{$usr->email}}"
                                                                         class="form-control"></div>
-                    <div class="form-group"><label>{{trans('file.department')}}</label> <input type="text" name="department" placeholder="{{trans('file.department')}}"
+                    <div class="form-group"> <input type="hidden" name="department" placeholder="{{trans('file.department')}}"
                                                                         value="{{$usr->department}}"
                                                                         class="form-control"></div>
 

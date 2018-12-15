@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Item;
+use App\Loan;
 use App\Trader;
 use Illuminate\Http\Request;
 
@@ -15,13 +17,13 @@ class TraderController extends Controller
     public function index()
     {
         $traders=Trader::orderBy('id','asc')->paginate(10);
-        return view('trader',compact('traders'));
+        return view('trader.trader',compact('traders'));
     }
 
 
     public function itemTrader(){
         $traders=Trader::orderBy('id','asc')->paginate(10);
-        return view('item_trade',compact('traders'));
+        return view('trader.item_trade',compact('traders'));
     }
 
     /**
@@ -31,7 +33,7 @@ class TraderController extends Controller
      */
     public function create()
     {
-        return view('trader_form');
+        return view('trader.trader_form');
     }
 
     /**
@@ -73,7 +75,7 @@ class TraderController extends Controller
     public function edit($id)
     {
         $trader=Trader::find($id);
-        return view('trader_edit',compact('trader'));
+        return view('trader.trader_edit',compact('trader'));
 //        return $trader;
     }
 
@@ -101,13 +103,18 @@ class TraderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Trader  $trader
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param Trader $trader
      */
     public function destroy($id)
     {
         $delete=Trader::find($id);
+        $itemTrader = Item::where('trader_id',$id)->get(['id']);
+        Item::destroy($itemTrader->toArray());
+        $loanTrader = Loan::where('trader_id',$id)->get(['id']);
+        Loan::destroy($loanTrader->toArray());
         $delete->delete();
-        return back();
+        return redirect()->back();
     }
 }

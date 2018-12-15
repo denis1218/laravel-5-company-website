@@ -7,7 +7,7 @@
 
 @section('content')
 
-    <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="wrapper wrapper-content  ">
 
         {{--Other income table--}}
 
@@ -62,7 +62,7 @@
                                 <td>{{$user->deleted_at}}</td>
                                 <td>
                                     <form action="/user-deleted/{{ $user->id }}">
-                                        <a  class="btn btn-sm btn-primary fa fa-refresh demo3"
+                                        <a   class="btn btn-sm btn-primary fa fa-refresh demo3"
                                                 >&nbsp;{{trans('file.restore')}}
                                         </a>
                                     </form>
@@ -77,51 +77,7 @@
                         </table>
                         {{$userDeleted->links()}}
                         </div>
-                        {{--Edit modal--}}
-                        {{--@foreach($patient as $other)--}}
-                            {{--<div class="modal inmodal" id="{{$other->id}}" tabindex="-1" role="dialog" aria-hidden="true">--}}
-                                {{--<div class="modal-dialog">--}}
-                                    {{--<div class="modal-content animated fadeIn">--}}
-                                        {{--<div class="modal-header">--}}
-                                            {{--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">{{trans('file.close')}}</span></button>--}}
-                                            {{--<h4 class="modal-title">{{trans('file.edit_content')}}</h4>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="modal-body">--}}
-                                            {{--<div class="row">--}}
-                                                {{--<form action="/other-income/{{$other->id}}" method="post">--}}
 
-                                                    {{--{{method_field('patch')}}--}}
-
-                                                    {{--<div class="form-group">--}}
-                                                        {{--<label for="p-name">{{trans('file.from_whom')}}</label>--}}
-                                                        {{--<input type="text" name="from_whom" class="form-control" value="{{$other->from_whom}}">--}}
-                                                    {{--</div>--}}
-                                                    {{--<div class="form-group">--}}
-                                                        {{--<label for="doctor-name">{{trans('file.amount')}}</label>--}}
-                                                        {{--<input type="text" name="amount" class="form-control"  value="{{$other->amount}}">--}}
-                                                    {{--</div>--}}
-                                                    {{--<div class="form-group">--}}
-                                                        {{--<label for="estimated-fee">{{trans('file.purpose')}}</label>--}}
-                                                        {{--<input type="text" name="purpose" class="form-control"  value="{{$other->purpose}}">--}}
-                                                    {{--</div>--}}
-                                                    {{--<div class="form-group">--}}
-                                                        {{--<label for="p-amount">{{trans('file.description')}}</label>--}}
-                                                        {{--<input type="text" name="description" class="form-control"  value="{{$other->description}}" style="resize: none">--}}
-                                                    {{--</div>--}}
-                                                    {{--<div class="modal-footer">--}}
-                                                        {{--<button type="button" class="btn btn-white" data-dismiss="modal">{{trans('file.close')}}</button>--}}
-                                                        {{--<button type="submit" class="btn btn-primary">{{trans('file.save')}}</button>--}}
-
-                                                    {{--</div>--}}
-                                                {{--</form>--}}
-                                            {{--</div>--}}
-
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--@endforeach--}}
-                        {{--end of edit modal--}}
 
                     </div>
                 </div>
@@ -154,6 +110,24 @@
                 }
             }
         }
+
+        $(document).ready(function () {
+            $('.demo3').on('click',function(e){
+                e.preventDefault();
+                var form = $(this).parents('form');
+                swal({
+                    title: "Do you want to restore this record ?",
+                    text: "It will be restored from database",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, restore it!",
+                    closeOnConfirm: false
+                }, function(isConfirm){
+                    if (isConfirm) form.submit();
+                });
+            });
+        });
 
     </script>
     @endsection

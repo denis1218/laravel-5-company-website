@@ -1,6 +1,17 @@
 @extends('master')
 
 @section('style')
+    <style>
+        .buttonList li
+        {
+            display: inline-block;
+            /* You can also add some margins here to make it look prettier */
+            zoom: 1;
+            *display: inline;
+            margin-left:20px;
+            /* this fix is needed for IE7- */
+        }
+    </style>
 @endsection
 
 
@@ -70,7 +81,11 @@
                             </div>
                         </div>
                         <div class="col-xs-12">
-                            <a href="/loan1/{{$t_id}}" class="btn btn-primary ">{{trans('file.pl')}}&nbsp;<img src="{{ asset('img/icon_paid.png') }}" width="25px"/></a>
+                            <button class="btn btn-md btn-primary" data-toggle="modal"
+                                    data-target="#p{{$trader->id}}">&nbsp;Paid Loan
+                                <img src="{{ asset('img/icon_paid.png') }}" width="25px"/></button>
+
+
                         </div>
                     </div>
                     <div class="row">
@@ -114,6 +129,47 @@
             </div>
         </div>
 
+
+    {{-- modal paid supplier --}}
+
+        <div class="modal inmodal" id="p{{ $trader->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content animated fadeIn">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span
+                                    aria-hidden="true">&times;</span><span
+                                    class="sr-only">{{trans('file.close')}}</span></button>
+                        <i class="fa fa-edit-o modal-icon text-primary"></i>
+
+                        <h4 class="modal-title">{{trans('file.pay_loan')}}</h4>
+
+                        <small>{{trans('file.enter_loan')}}</small>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form" method="post" action="/loan">
+                            <input type="hidden" value="{{ $trader->name }}" name="receiver"/>
+                            <div class="form-group">
+                                <label>Payment Amount</label>
+                                <div><input type="number"  name="paid" class="form-control" placeholder="Loan payment amount" required></div>
+                            </div>
+                            <div><input type="hidden" name="trader_id" value="{{ $trader->id }}"></div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <button class="btn btn-primary pull-right" type="submit">Pay loan</button>
+                                    <button type="button" class="btn btn-white pull-right" data-dismiss="modal"
+                                            style="margin-bottom: 10px;">{{trans('file.close')}}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
 @endsection
 @section('script')

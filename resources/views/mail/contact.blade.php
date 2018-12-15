@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="col-lg-12">
+    <div class="col-lg-12 animated fadeInRight">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>{{trans('file.support')}}</h5>

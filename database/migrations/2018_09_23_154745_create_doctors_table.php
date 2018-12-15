@@ -16,19 +16,16 @@ class CreateDoctorsTable extends Migration
         Schema::create('doctors', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->string('first_name');
-            $table->string('last_name');
-            $table->string('father_name');
-            $table->integer('age');
+            $table->string('last_name')->nullable();
+            $table->string('father_name')->nullable();
+            $table->integer('age')->nullable();
             $table->time('start_work_time')->nullable();
             $table->time('end_work_time')->nullable();
-            $table->date('from')->nullable();
-            $table->date('to')->nullable();
-            $table->string('phone');
-            $table->string('department');
-            $table->string('gender');
-            $table->string('salary_type')->nullable();
-            $table->integer('salary_amount');
-            $table->integer('max_patient');
+            $table->string('phone')->nullable();
+            $table->string('department')->nullable();
+            $table->string('gender')->nullable();
+            $table->integer('salary_amount')->nullable();
+            $table->integer('max_patient')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

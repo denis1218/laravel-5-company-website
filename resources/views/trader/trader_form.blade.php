@@ -2,7 +2,17 @@
 
 @section('style')
     <!-- Data Tables -->
-
+    <style>
+        .buttonList li
+        {
+            display: inline-block;
+            /* You can also add some margins here to make it look prettier */
+            zoom: 1;
+            *display: inline;
+            margin-left:20px;
+            /* this fix is needed for IE7- */
+        }
+    </style>
 
 @endsection
 
@@ -21,6 +31,7 @@
                         </div>
                     </div>
                     <div class="ibox-content">
+                        <a class="btn btn-primary" href="/trader"><i class="fa fa-arrow-left"></i>&nbsp; Back</a><br/>
                         <div class="row">
                             <div class="col-lg-5">
                                 <form id="form" method="post" action="/trader">
@@ -38,7 +49,7 @@
 
                                     <div class="form-group">
                                         <label>{{trans('file.phone')}}</label>
-                                        <div><input type="number" name="phone" class="form-control" placeholder="{{trans('file.phone')}}" required></div>
+                                        <div><input type="phone" maxlength="10" name="phone" class="form-control" placeholder="{{trans('file.phone')}}" required></div>
 
                                     </div>
                                     <div class="form-group">

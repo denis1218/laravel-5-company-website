@@ -17,7 +17,7 @@ class OincomController extends Controller
      */
     public function index()
     {
-
+        $others=Oincom::orderBy('id','asc')->paginate(10);
         $start = new Carbon('first day of this month');
         $end = new Carbon('last day of this month');
         $ptotal=DB::table('treatments')->whereBetween('created_at',[$start,$end])->sum('paid_amount');
@@ -25,9 +25,7 @@ class OincomController extends Controller
         $ototal=DB::table('oincoms')->whereBetween('created_at',[$start,$end])->sum('amount');
         $optotal=DB::table('outdated_receives')->whereBetween('created_at',[$start,$end])->sum('paid');
         $Gtotal=$ptotal+$xtotal+$ototal+$optotal;
-
-
-
+        $total=DB::table('oincoms')->sum('amount');
         return view('ext_table',compact('others','total','Gtotal'));
 
 //        return $others;

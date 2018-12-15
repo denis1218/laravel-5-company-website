@@ -16,11 +16,11 @@ class CreateTradersTable extends Migration
         Schema::create('traders', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('last_name');
-            $table->integer('phone');
-            $table->string('organization');
-            $table->string('address');
-            $table->string('payment_process');
+            $table->string('last_name')->nullable();
+            $table->integer('phone')->nullable();
+            $table->string('organization')->nullable();
+            $table->string('address')->nullable();
+            $table->string('payment_process')->nullable();
             $table->timestamps();
         });
     }

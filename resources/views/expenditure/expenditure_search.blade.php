@@ -2,49 +2,64 @@
 @extends('master')
 
 @section('style')
-
+    <style>
+        .shadow-box{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
 @endsection
 
 
 
 @section('content')
 
+    <div class="col-lg-4 col-xs-6 ">
+        <div class="ibox float-e-margins shadow-box">
+            <div class="ibox-title">
+                <span class="label pull-right" style="background-color: #c39200; color: #ffffff">{{trans('file.this_month')}}</span>
+                <h5>{{trans('file.total_expenses_month')}}</h5>
+            </div>
+            <div class="ibox-content">
+                <h1 class="no-margins">{{ $totalExpense }}<img src="{{ asset('img/expense_icon.png') }}" width="60px;"
+                                                                style="float: right;"/></h1>
+                <div class="stat-percent font-bold text-danger"></div>
+                <small>{{trans('file.total_expenses')}}
+                    <br>
+                </small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-xs-6">
+        <div class="ibox float-e-margins shadow-box">
+            <div class="ibox-title">
+                <span class="label pull-right" style="background-color: #c39200; color: #ffffff">{{trans('file.this_month')}}</span>
+                <h5>{{trans('file.total_expenses_all')}}</h5>
+            </div>
+            <div class="ibox-content">
+                <h1 class="no-margins">{{ $totalExpense_all }}<img src="{{ asset('img/expense_icon.png') }}" width="60px;"
+                                                               style="float: right;"/></h1>
+                <div class="stat-percent font-bold text-danger"></div>
+                <small>{{trans('file.total_expenses')}}
+                    <br>
+                </small>
+            </div>
+        </div>
+    </div>
 
         <div class="row">
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <h5>{{trans('file.expense_table')}}</h5>
-
                     </div>
                     <div class="ibox-content">
-                        <!-- Table -->
-                        <div class="table-responsive">
-                            <!-- Expenditure Table -->
                             <div class="row">
-                            <div class="col-md-8">
-                                <a href="/expenditure/create" class="btn btn-primary btn-md" style=""><i class="fa fa-plus"></i>&nbsp;&nbsp;{{trans('file.add_new_expense')}}</a>
-                                <div><h4>{{trans('file.saejf')}} (this month {{ \Carbon\Carbon::now()->month }})</h4></div>
-                            </div>
-
-                            <div class="col-md-4" style="margin-bottom: 30px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                                <div class="ibox ">
-                                    <div class="ibox-title">
-                                        <span class="label label-info pull-right">{{trans('file.all')}}</span>
-                                        <h5>{{trans('file.total_expense')}}</h5>
-                                    </div>
-                                    <div class="ibox-content">
-
-                                        <h1 class="no-margins">{{$totalExpense}}&nbsp;&nbsp;Afg<img  src="{{ asset('img/expense_icon.png') }}" width="60px;"style="float: right;"/></h1>
-                                        <small>{{trans('file.total_expense')}}</small>
-
-                                    </div>
+                                <div class="col-md-8">
+                                    <a href="/expenditure" class="btn btn-primary btn-md" style=""><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;{{trans('file.back')}}</a>
                                 </div>
-                            </div>
                             </div>
                             <div class="table-responsive">
                             <table class="table table-striped table-bordered table-hover " >
-
                                 <thead>
                                 <tr>
                                     <th>{{trans('file.exp_id')}}</th>
@@ -58,8 +73,8 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @if(isset($expen))
-                                @foreach($expen as $ex)
+                                @if(isset($data))
+                                @foreach($data as $ex)
                                 <tr class="gradeX">
                                     <td>{{$ex->id}}</td>
                                     <td>{{$ex->receiver}}</td>
@@ -83,7 +98,7 @@
                             </table>
                             </div>
                                 <!-- End of the table -->
-                            {{ $expen->links() }}
+
                         </div>
 
                     </div>
@@ -93,8 +108,8 @@
     </div>
 
     <!-- edit model -->
-        @if(isset($expen))
-        @foreach($expen as $exs)
+        @if(isset($data))
+        @foreach($data as $exs)
     <div class="modal inmodal" id="{{$exs->id}}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content animated fadeIn">

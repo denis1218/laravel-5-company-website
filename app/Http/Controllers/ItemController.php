@@ -17,9 +17,9 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $items=Item::orderBy('id','asc')->paginate(10);
-        $total=DB::table('items')->sum('total_price');
-        return view('item',compact('items','total'));
+        $items = Item::orderBy('id', 'asc')->paginate(10);
+        $total = DB::table('items')->sum('total_price');
+        return view('trader.item', compact('items', 'total'));
     }
 
     /**
@@ -29,27 +29,27 @@ class ItemController extends Controller
      */
     public function create($id)
     {
-        $trader=Trader::find($id);
-        return view('item_form',compact('trader'));
+        $trader = Trader::find($id);
+        return view('trader.item_form', compact('trader'));
 //        return $trader;
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $item=new Item();
-        $item->kind=$request->kind;
-        $item->quantity=$request->quantity;
-        $item->unit_price=$request->unit_price;
-        $item->total_price=$request->total_price;
-        $item->description=$request->description;
-        $item->bill_number=$request->bill_number;
-        $item->trader_id=$request->trader_id;
+        $item = new Item();
+        $item->kind = $request->kind;
+        $item->quantity = $request->quantity;
+        $item->unit_price = $request->unit_price;
+        $item->total_price = $request->total_price;
+        $item->description = $request->description;
+        $item->bill_number = $request->bill_number;
+        $item->trader_id = $request->trader_id;
         $item->save();
         return redirect()->back();
     }
@@ -57,49 +57,49 @@ class ItemController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Item $item
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $items=Trader::find($id)->item;
-        $loans=Trader::find($id)->loan;
-        $tid=Trader::find($id);
-        $t_id=$tid->id;
-        $itotal=$items->sum('total_price');
-        $ltotal=$loans->sum('paid');
-        $remaining=$itotal-$ltotal;
-        return view('loan_pay',compact('itotal','ltotal','items','loans','remaining','t_id'));
+        $items = Trader::find($id)->item;
+        $loans = Trader::find($id)->loan;
+        $trader = Trader::find($id);
+        $itotal = $items->sum('total_price');
+        $ltotal = $loans->sum('paid');
+        $remaining = $itotal - $ltotal;
+        $traders = Trader::all();
+        return view('trader.loan_pay', compact('itotal', 'ltotal','traders', 'items', 'loans', 'remaining', 'trader'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Item $item
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $item=Item::find($id);
-        return view('item_edit',compact('item'));
+        $item = Item::find($id);
+        return view('trader.item_edit', compact('item'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Item  $item
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Item $item
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $item=Item::find($id);
-        $item->kind=$request->kind;
-        $item->quantity=$request->quantity;
-        $item->unit_price=$request->unit_price;
-        $item->total_price=$request->total_price;
-        $item->description=$request->description;
-        $item->bill_number=$request->bill_number;
+        $item = Item::find($id);
+        $item->kind = $request->kind;
+        $item->quantity = $request->quantity;
+        $item->unit_price = $request->unit_price;
+        $item->total_price = $request->total_price;
+        $item->description = $request->description;
+        $item->bill_number = $request->bill_number;
         $item->save();
         return redirect('/item');
     }
@@ -107,12 +107,12 @@ class ItemController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Item $item
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $delete=Item::find($id);
+        $delete = Item::find($id);
         $delete->delete();
         return back();
     }

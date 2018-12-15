@@ -98,9 +98,13 @@
                                     <li><a href="/finance_report_expenses"><i
                                                     class="fa fa-shopping-cart"></i>{{trans('file.expense')}}</a>
                                     </li>
+
                                     <li><a href="/finance_report_profit"><img src="{{ asset('img/profite.png') }}"
                                                                               width="15px"/>
                                             &nbsp;&nbsp;{{trans('file.profit')}}</a>
+                                    </li>
+                                    <li><a href="/finance_report_loan"><i class="fa fa-stack-overflow"></i>
+                                            &nbsp;&nbsp;Loans</a>
                                     </li>
                                 </ul>
                             </li>
@@ -184,6 +188,10 @@
                                             class="nav-label">{{trans('file.expenses')}}</span></a>
                             </li>
                         </ul>
+                    </li>
+                    <li>
+                        <a href="/log_activity"><i class="fa fa-tasks"></i> <span
+                                    class="nav-label">Log all activity</span></a>
                     </li>
                     <li>
                         <a href="/contact"><i class="fa fa-phone"></i> <span
@@ -331,9 +339,13 @@
                                     <li><a href="/finance_report_expenses"><i
                                                     class="fa fa-shopping-cart"></i>{{trans('file.expense')}}</a>
                                     </li>
+
                                     <li><a href="/finance_report_profit"><img src="{{ asset('img/profite.png') }}"
                                                                               width="15px"/>
                                             &nbsp;&nbsp;{{trans('file.profit')}}</a>
+                                    </li>
+                                    <li><a href="/finance_report_loan"><i class="fa fa-stack-overflow"></i>
+                                            &nbsp;&nbsp;{{ trans('file.loans') }}</a>
                                     </li>
                                 </ul>
                             </li>
@@ -382,6 +394,29 @@
 
                         </ul>
                     </li>
+                    <li>
+                        <a href="setting"><i class="fa fa-trash"></i> <span
+                                    class="nav-label">{{trans('file.rd')}}</span><span
+                                    class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="/user-deleted"><i class="fa fa-user"></i> <span
+                                            class="nav-label">{{trans('file.users')}}</span></a>
+                            </li>
+                            <li>
+                                <a href="/patient-deleted"><i class="fa fa-user-secret"></i> <span
+                                            class="nav-label">{{trans('file.patients')}}</span></a>
+                            </li>
+                            <li>
+                                <a href="/doctor-deleted"><i class="fa fa-user-md"></i> <span
+                                            class="nav-label">{{trans('file.doctors')}}</span></a>
+                            </li>
+                            <li>
+                                <a href="/expense-deleted"><i class="fa fa-shopping-cart"></i> <span
+                                            class="nav-label">{{trans('file.expenses')}}</span></a>
+                            </li>
+                        </ul>
+                    </li>
 
                     {{--traders--}}
                     <li><a href=""><i class="fa fa-money"></i><span class="nav-lable">{{trans('file.salary')}}</span>
@@ -393,6 +428,7 @@
                             </li>
                         </ul>
                     </li>
+
                     {{--end of traders--}}
                     <li>
                         <a href="/contact"><i class="fa fa-phone"></i> <span

@@ -29,6 +29,9 @@ class PaySalaryController extends Controller
 
         return view('emp_salary',compact('emp','employee','total_paid'));
     }
+
+
+
     public function showPayment(Request $request){
         $startt = $request->start;
         $endd = $request->end;

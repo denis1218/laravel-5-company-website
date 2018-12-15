@@ -49,7 +49,7 @@
                                         <th>{{trans('file.discount')}}</th>
                                         <th>{{trans('file.remaining_fee')}}</th>
                                         <th>{{trans('file.p_details')}}</th>
-                                        <th>{{trans('file.print_bill')}}</th>
+{{--                                        <th>{{trans('file.print_bill')}}</th>--}}
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -68,10 +68,10 @@
                                                         data-target="#p{{$incom->id}}">&nbsp;{{trans('file.p_details')}}
                                                 </button>
                                             </td>
-                                            <td>
-                                                <a href="/patient_report/{{$incom->id}}" class="btn btn-xs btn btn-primary"><i
-                                                            class="fa fa-print"></i>&nbsp;&nbsp;{{trans('file.print_bill')}}</a>
-                                            </td>
+                                            {{--<td>--}}
+                                                {{--<a href="/patient_report/{{$incom->id}}" class="btn btn-xs btn btn-primary"><i--}}
+                                                            {{--class="fa fa-print"></i>&nbsp;&nbsp;{{trans('file.print_bill')}}</a>--}}
+                                            {{--</td>--}}
 
                                         </tr>
                                     @endforeach

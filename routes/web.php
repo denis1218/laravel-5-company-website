@@ -57,6 +57,7 @@ Route::middleware('auth','doctor')->group(function () {
     Route::get('/operation/create/{id}', 'TreatmentController@create');
 
     Route::get('/operation/{id}/edit/{patient_id}', 'TreatmentController@edit_treatment');
+    Route::get('/operation/take_xray_again/{id}', 'TreatmentController@take_xray_again');
 
     Route::resource('/medicine','MedicineController');
     Route::get('/medicine2','MedicineController@show');
@@ -154,6 +155,8 @@ Route::middleware('auth','reception')->group(function () {
     Route::post('/dr_salary3','DSalaryController@PaySalary3');
 
     Route::resource('/expenditure', 'ExpenseController');
+    // search expenditure
+    Route::post('/expenditure/search', 'ExpenseController@search');
 
     Route::get('expenditure2/{id}', 'ExpenseController@destroy');
 
@@ -170,6 +173,8 @@ Route::middleware('auth','reception')->group(function () {
     Route::resource('other-income', 'OincomController');
 
     Route::resource('income', 'IncomeController');
+
+    Route::post('/income/search', 'IncomeController@search');
 
     Route::get('income2', "incomeController@show");
 
@@ -207,7 +212,17 @@ Route::middleware('auth','reception')->group(function () {
     //financial report profit range day
     Route::get('finance_report_profit2','FinanceReportProfitController@rangeDay');
 
+    /* Financial report Loan Route */
+    Route::get('finance_report_loan','FinanceReportLoan@report');
+
+    Route::get('finance_report_loan_all','FinanceReportLoan@all_loan');
+    Route::post('finance_report_loan/single/supplier','FinanceReportLoan@single_supplier');
+
+
     Route::resource('xrey_income', 'xrayincomeController');
+
+    Route::get('/log_activity', 'HomeController@log_activity');
+    Route::post('/log_activity/search', 'HomeController@search_log_activity');
 
     Route::get('xrey_income2', 'xrayincomeController@showComplete');
 
@@ -240,6 +255,15 @@ Route::middleware('auth','reception')->group(function () {
     Route::get('finance_report_profit1','FinanceReportProfitController@showSingle');
     //financial report profit range day
     Route::get('finance_report_profit2','FinanceReportProfitController@rangeDay');
+
+    Route::get('/patient-deleted','DeletedRecordsController@patient');
+    Route::get('/doctor-deleted','DeletedRecordsController@doctor');
+    Route::get('/expense-deleted','DeletedRecordsController@expense');
+    Route::get('/user-deleted','DeletedRecordsController@user');
+    Route::get('/patient-deleted/{id}','DeletedRecordsController@restorePatient');
+    Route::get('/doctor-deleted/{id}','DeletedRecordsController@restoreDoctor');
+    Route::get('/expense-deleted/{id}','DeletedRecordsController@restoreExpense');
+    Route::get('/user-deleted/{id}','DeletedRecordsController@restoreUser');
 
     Route::resource('xrey_income', 'xrayincomeController');
 

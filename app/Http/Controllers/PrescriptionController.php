@@ -22,11 +22,6 @@ class PrescriptionController extends Controller
         return view('reception.prescription', compact('patient'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
     }

@@ -38,12 +38,12 @@
                         <div class="col-sm-9">
                             <div class="input-group" style="margin-top:25px;margin-left: 15px;">
                         <span class="input-group-btn">
-                        <button type="button" style="margin-left:17px;" disabled class="btn btn-sm btn-primary"><i class="fa fa-search"></i> </button></span>
-                                <input type="text" placeholder="{{trans('file.p_name')}}" class="input-sm form-control" id="search_otherIncome" onkeyup="search_otherIncome()">
+                                <button type="button" style="margin-left:17px;" disabled class="btn btn-sm btn-primary"><i class="fa fa-search"></i> </button></span>
+                                <input type="text" placeholder="Search" class="input-sm form-control" id="search_otherIncome" onkeyup="search_otherIncome()">
                             </div>
                         </div>
                         <div class="col-sm-3">
-                            <a href="/other-income/create" class="btn btn-primary text-right" style="margin-top: 20px;">{{trans('file.add_new_income')}}</a>
+                            <a href="/other-income/create" class="btn btn-sm btn-primary text-right" style="margin-top: 20px;">{{trans('file.add_new_income')}}</a>
                         </div>
                         <div class="col-sm-12">
                         <table class="table table-striped table-bordered table-hover" id="table_otherIncome"
@@ -81,7 +81,7 @@
                                 <td>{{$total}}</td>
                             </tr>
                             @else
-                            <h2 class="text-center" style="color: red;">{{trans('file.noiy')}}</h2>
+                            <h5 class="text-center" style="color: #9b96ff;">There aren't Other income. Add new income</h5>
                             @endif
                             </tbody>
                         </table>

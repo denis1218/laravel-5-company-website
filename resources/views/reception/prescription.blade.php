@@ -10,11 +10,9 @@
             <div class="ibox-content" id="divone">
                 <div class="container">
                     <div class="row">
-
-                        {{--first doctor--}}
-
+                        {{-- search --}}
                         <div class="row" style="">
-                            <div class="col-sm-5">
+                            <div class="col-sm-12 col-xs-12">
                                 <div class="input-group">
                                         <span class="input-group-btn">
                                         <button type="button" class="btn btn-sm btn-primary">{{trans('file.search')}}</button> </span>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Employee;
+use App\PaySalary;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -104,6 +105,8 @@ class EmployeeController extends Controller
     public function destroy($id)
     {
         $employee = Employee::find($id);
+        $employeeSalary = PaySalary::where('emp_id',$id)->get(['id']);
+        PaySalary::destroy($employeeSalary->toArray());
         $employee->delete();
         return back();
     }
