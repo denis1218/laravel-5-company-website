@@ -41,7 +41,7 @@ Route::middleware('auth','admin')->group(function (){
 
 // Route Group & Middleware for doctor
 Route::middleware('auth','doctor')->group(function () {
-
+    Route::resource('/treatment','TeethController');
     Route::resource('/dental-defect-list','DentalDefectListController');
 
     Route::resource('/treatment-list','TreatmentListController');
