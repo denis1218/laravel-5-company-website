@@ -39,6 +39,7 @@ class TreatmentListController extends Controller
         $treatment = new TreatmentList();
         $treatment->treatment = $request->treatment;
         $treatment->estimated_fee = $request->estimated_fee;
+        $treatment->color = $request->color;
         $treatment->save();
         Session::flash('success','inserted successfully');
         return redirect()->back();

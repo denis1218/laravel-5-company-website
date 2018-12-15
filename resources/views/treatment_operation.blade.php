@@ -240,7 +240,7 @@
                                 <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
                                     <div class="col-md-8">
                                         <div class="row" style="margin-top: -20px;">
-                                            @if($treats->paid_amount==0)
+                                            @if($treats->paid_amount == 0)
                                                 <div class="col-xs-12 alert alert-danger">
                                                     <h4 style="color: #850f36">This patient has not paid the treatment
                                                         fee</h4>
@@ -338,6 +338,14 @@
 
                             {{-- Upper Tooths --}}
                             <div class="container-fluid">
+
+                                <div class="row">
+                                    <ul class="ullist">
+                                        @foreach($treatementList as $tList)
+                                            <li>|<label>{{ $tList->treatment }} &nbsp;</label><label style="background: #{{ $tList->color }} ; width: 20px;height: 20px;" >.</label>|</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
 
                                 <div class="row" style="margin-left:-50px;">
                                     <div class="col-md-6 col-xs-6">
@@ -750,6 +758,7 @@
                             <br/>
 
                             <div class="container-fluid">
+
 
                                 <div class="row" style="margin-left:-50px;">
                                     <div class="col-md-6 col-xs-6">
@@ -1249,13 +1258,20 @@
                                     aria-hidden="true">&times;</span><span
                                     class="sr-only">{{trans('file.close')}}</span></button>
                         <i class="fa fa-edit modal-icon text-primary"></i>
-                        <h4 class="modal-title">{{trans('file.xray')}}</h4>
+                        <h4 class="modal-title">General Treatment</h4>
                     </div>
                     <div class="modal-body">
                         <form id="form" action="/treatment/teeth" method="post">
 
+
+
                             <input type="hidden" name="type_treatment" value="General Treatment"/>
-                            <input type="text" value="" id="tooth_number2" name="tooth_number2"/>
+
+                            <div class="form-group">
+                                <label>Tooth number</label>
+                                <input type="text" value="" id="tooth_number" name="tooth_number" class="form-control"/>
+                            </div>
+
                             <div class="form-group">
                                 <label>Dental Defect *</label>
                                 <select class="form-control" name="dentaldefect" required>
@@ -1269,11 +1285,11 @@
 
                             <div class="form-group">
                                 <label>{{trans('file.treatment')}} :</label>
-                                <select class="form-control" name="treatment" required>
+                                <select class="form-control" name="treatment" required id="treatment-select" onchange="getcolor(this)">
                                     <option disabled>{{trans('file.treatment')}}</option>
                                     @foreach($treatementList as $listTreatement)
-                                        <option value="{{ $listTreatement->treatment }}"
-                                                id="{{ $listTreatement->estimated_fee }}">
+                                        <option style="color: #{{ $listTreatement->color }}" value="{{ $listTreatement->treatment }}"
+                                                id="{{ $listTreatement->color }}">
                                             {{ $listTreatement->treatment }} </option>
                                     @endforeach
                                 </select>
@@ -1345,9 +1361,16 @@
                     }
                     else {
                         $(this).removeClass('image-check-checked');
-
                     }
                 });
+
+
+                function getcolor(e) {
+                    var treatment_select = document.getElementById("treatment-select");
+                    var getColor = treatment_select.options[e.selectedIndex].id;
+
+                }
+
 
 
                 // sync the state to the input
@@ -1360,8 +1383,7 @@
                     var $checkbox_lenght = $(this).find('input[type="checkbox"]').length;
                     $checkbox.prop("checked", !$checkbox.prop("checked"));
                     tooth_num = $checkbox.val();
-//                    alert(tooth_num);
-                    $('.modal-body #tooth_number2').val(tooth_num);
+                    $('.modal-body #tooth_number').val(tooth_num);
                     $('#general_treatment').modal('show');
                     e.preventDefault();
                 });

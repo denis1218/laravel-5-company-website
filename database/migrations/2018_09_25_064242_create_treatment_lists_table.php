@@ -16,7 +16,8 @@ class CreateTreatmentListsTable extends Migration
         Schema::create('treatment_lists', function (Blueprint $table) {
             $table->increments('id');
             $table->string('treatment');
-            $table->integer('estimated_fee');
+            $table->integer('estimated_fee')->nullable();
+            $table->string('color')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
