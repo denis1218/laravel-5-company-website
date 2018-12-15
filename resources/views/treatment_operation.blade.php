@@ -678,7 +678,33 @@
 
                             </div>
                             {{-- End of image Tooth--}}
+                            <br>
+                            <div class="table-responsive" id="divToReload">
+                                <table class="table table-striped table-bordered table-hover" id="mytable"
+                                       style="margin-left:30px;width:95%;">
+                                    <thead>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.teeth_number')}}</th>
+                                    <th>Type Treatment</th>
+                                    <th>Type Prosthesis</th>
+                                    <th>Treatment</th>
+                                    <th>Dentaldefect</th>
 
+                                    </thead>
+                                    <tbody>
+                                    @foreach($teeth as $te)
+                                        <tr>
+                                            <td>{{$te->id}}</td>
+                                            <td>{{$te->tooth_number}}</td>
+                                            <td>{{$te->type_treatment}}</td>
+                                            <td>{{$te->type_prosthesis}}</td>
+                                            <td>{{$te->treatment}}</td>
+                                            <td>{{$te->dentaldefect}}</td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
 
                             <a class="btn btn-primary" data-toggle="modal" id="xray_btn">XRay Teeth &nbsp;<img
                                         src="{{ asset('img/xray.png') }}" width="20px"/></a>
@@ -1004,84 +1030,24 @@
                                     </div>
                                     <div class="col-md-6 col-xs-6">
                                         <ul class="ullist">
+                                            @for($i = 1; $i<=8 ; $i++)
                                             <li>
                                                 <label class="image-check">
                                                     <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
+                                                         src="img/tooth_lower/{{$i}}.png" width="100%"
                                                          height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="1 Lower Right"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="{{$i}} Lower Right"/>
                                                     <i class="fa fa-check hidden"></i>
                                                 </label>
                                             </li>
-                                            <li>
-                                                <label class="image-check">
-                                                    <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/2.png') }}" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="2 Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="image-check">
-                                                    <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/3.png') }}" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="3 Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="image-check">
-                                                    <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/4.png') }}" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="4 Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="image-check">
-                                                    <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/5.png') }}" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="5 Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="image-check">
-                                                    <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/6.png') }}" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="6 Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="image-check">
-                                                    <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/7.png') }}" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="7 Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="image-check">
-                                                    <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/8.png') }}" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="8 Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
+                                            @endfor
 
                                         </ul>
                                     </div>
                                 </div>
 
                             </div>
+
 
                             <a class="btn btn-primary" data-toggle="modal" id="xray_btn">XRay Teeth &nbsp;<img
                                         src="{{ asset('img/xray.png') }}" width="20px"/></a>
@@ -1252,10 +1218,11 @@
                         <h4 class="modal-title">{{trans('file.xray')}}</h4>
                     </div>
                     <div class="modal-body">
-                        <form id="form" action="/treatment/teeth" method="post">
+                        <form id="myform" action="/treatment" method="post">
+                            <input type="hidden" name="patient_id" value="{{ $patient_in_treatment->id}}"/>
 
                             <input type="hidden" name="type_treatment" value="General Treatment"/>
-                            <input type="text" value="" id="tooth_number2" name="tooth_number2"/>
+                            <input type="text" value="" id="tooth_number2" class="form-control" name="tooth_number2"/>
                             <div class="form-group">
                                 <label>Dental Defect *</label>
                                 <select class="form-control" name="dentaldefect" required>
@@ -1281,7 +1248,7 @@
 
                             <button type="button" class="btn btn-white pull-right" data-dismiss="modal"
                                     style="margin-bottom: 10px;">{{trans('file.close')}}</button>
-                            <button type="submit" class="btn btn-primary pull-right" id="save" onclick=""
+                            <button type="submit" class="btn btn-primary pull-right" id="refresh-btn"
                                     style="margin-bottom: 10px;margin-right: 20px;">{{trans('file.save')}}</button>
 
                         </form>
@@ -1309,8 +1276,27 @@
                     document.getElementById('cost_treatment').value = e[e.selectedIndex].id
                 }
             </script>
+            <script>
 
-
+            </script>
+            <script>
+                $(document).ready(function () {
+                    $('#myform').on('submit', function(e) {
+                        e.preventDefault();
+                        $.ajax({
+                            url : $(this).attr('action') || window.location.pathname,
+                            type: "POST",
+                            data: $(this).serialize(),
+                            success: function (data) {
+                                $("#form_output").html(data);
+                            },
+                            error: function (jXHR, textStatus, errorThrown) {
+                                alert(errorThrown);
+                            }
+                        });
+                    });
+                });
+            </script>
             <script type="text/javascript">
                 $(function () {
                     $('#form').submit(function () {

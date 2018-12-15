@@ -22,13 +22,8 @@ class CreateTeethsTable extends Migration
             $table->string('dentaldefect')->nullable();
             $table->string('shade')->nullable();
             $table->string('type_cover')->nullable();
+            $table->integer('patient_id')->nullable();
             $table->unsignedInteger('treatment_id')->nullable();
-
-            $table->foreign('treatment_id')
-                ->references('id')->on('treatments')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
             $table->softDeletes();
             $table->timestamps();
         });

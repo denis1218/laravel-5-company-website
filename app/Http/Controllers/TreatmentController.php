@@ -83,10 +83,12 @@ class TreatmentController extends Controller
 
                 $patient_id = $patient_in_treatment->id;
 
+                $teeth = Teeth::where('patient_id','=',$id)->get();
 
+//                return $last_treatment;
                 return view('treatment_operation', compact('patient_in_treatment', 'patient_id', 'checkValue',
                     'treatementList', 'dentalDefectList', 'treatments','medicine','prescription' , 'teethShades',
-                    'teethTypeCovers'));
+                    'teethTypeCovers','teeth'));
 
     }
 
