@@ -19,6 +19,7 @@ class CreateTreatmentsTable extends Migration
 
             $table->integer('visits')->nullable();
             $table->string('status_visits');
+            $table->string('type_treatment')->nullable();
             $table->boolean('status_pay');
             $table->longText('description')->nullable();
             $table->string('have_xray')->nullable();

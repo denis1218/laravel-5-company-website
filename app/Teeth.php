@@ -8,5 +8,6 @@ use OwenIt\Auditing\Contracts\Auditable;
 class Teeth extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
-    //
+
+
 }

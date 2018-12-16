@@ -83,10 +83,12 @@ class TreatmentController extends Controller
 
                 $patient_id = $patient_in_treatment->id;
 
+                $teeth = Teeth::where('patient_id','=',$id)->paginate(32);
 
+//                return $last_treatment;
                 return view('treatment_operation', compact('patient_in_treatment', 'patient_id', 'checkValue',
                     'treatementList', 'dentalDefectList', 'treatments','medicine','prescription' , 'teethShades',
-                    'teethTypeCovers'));
+                    'teethTypeCovers','teeth'));
 
     }
 
@@ -103,10 +105,6 @@ class TreatmentController extends Controller
     {
         $treatment = new Treatment();
 
-        $treatment->teeth_number = $request->teeth_number_all;
-        $treatment->type_prosthesis = $request->type_prosthesis;
-        $treatment->shade = $request->shade;
-        $treatment->type_cover = $request->type_cover;
         $treatment->description = $request->description;
         $treatment->type_treatment = $request->type_treatment;
         $treatment->estimated_fee = $request->estimated_fee;
@@ -115,15 +113,6 @@ class TreatmentController extends Controller
         $treatment->paid_amount = 0;
         $treatment->visits = $request->input('visits');
         $treatment->patient_id = $request->input('FK_id_patient');
-        if($request->dentaldefect == null)
-        {
-            $treatment->dentaldefect = 'Prosthesis';
-            $treatment->treatment = 'Prosthesis';
-        }else{
-            $treatment->treatment = $request->input('treatment');
-            $treatment->dentaldefect = $request->input('dentaldefect');
-        }
-
         $treatment->status_pay = true;
         $treatment->have_xray = $request->have_xray;
         $treatment->created_at = Carbon::now();
