@@ -16,8 +16,6 @@ class CreateTeethsTable extends Migration
         Schema::create('teeths', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tooth_number')->nullable();
-            $table->string('type_treatment')->nullable();
-            $table->string('type_prosthesis')->nullable();
             $table->string('treatment')->nullable();
             $table->string('dentaldefect')->nullable();
             $table->string('shade')->nullable();

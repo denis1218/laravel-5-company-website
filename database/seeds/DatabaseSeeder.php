@@ -189,6 +189,7 @@ class TreatmentListTableSeeder extends Seeder
         DB::table('treatment_lists')->insert([
             'treatment' => 'PF Parmanent Filling',
             'estimated_fee' => 15000,
+            'color' => 15000,
         ]);
 
         DB::table('treatment_lists')->insert([

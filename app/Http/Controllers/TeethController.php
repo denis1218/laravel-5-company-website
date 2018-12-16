@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\TeethCoverType;
 use App\Treatment;
 use Illuminate\Http\Request;
 use App\Teeth;
@@ -40,8 +41,8 @@ class TeethController extends Controller
         $teeth = new Teeth();
         $nextId = DB::table('treatments')->max('id') + 1;
 
-        $teeth->tooth_number = $request->tooth_number2;
-        $teeth->type_treatment = $request->type_treatment;
+        $teeth->tooth_number = $request->tooth_number;
+//        $teeth->type_treatment = $request->type_treatment;
         $teeth->treatment = $request->treatment;
         $teeth->dentaldefect =  $request->dentaldefect;
         $teeth->treatment_id = $nextId;
@@ -93,6 +94,8 @@ class TeethController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $teeth = Teeth::find($id);
+        $teeth->delete();
+        return redirect()->back();
     }
 }

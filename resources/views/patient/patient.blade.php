@@ -113,20 +113,20 @@
 
                                 <div class="form-group">
                                     <label>{{trans('file.gender')}}&nbsp;&nbsp;&nbsp;</label>
-                                    <label>  <div class="i-checks"><input type="radio"  value="male" name="gender"></div></i> {{trans('file.male')}} </label>&nbsp;&nbsp;
+                                    <label>  <div class="i-checks"><input type="radio" checked value="male" name="gender"></div></i> {{trans('file.male')}} </label>&nbsp;&nbsp;
                                     <label>  <div class="i-checks"><input type="radio"  value="female" name="gender"></div></i> {{trans('file.female')}} </label>
                                 </div>
 
                                 <div class="form-group">
                                     <label>{{trans('file.age')}} *</label>
-                                    <input id="age" name="age" type="number" max="120" class="form-control" placeholder="Age">
+                                    <input id="age" name="age" type="number" maxlength="2" max="99" class="form-control" placeholder="Age">
                                 </div>
 
                             </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label>{{trans('file.phone')}} *</label>
-                                        <input id="phone" name="phone" type="phone" maxlength="10" class="form-control required" placeholder="Phone">
+                                        <input id="phone" name="phone" type="phone" maxlength="10" class="form-control" required placeholder="Phone">
                                     </div>
                                 <div class="form-group">
                                     <label>Job *</label>
