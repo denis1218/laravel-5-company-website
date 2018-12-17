@@ -67,7 +67,7 @@
                                             <tr>
                                                 <td>{{ $audit->id }}</td>
                                                 <td>{{ $audit->firstname }}</td>
-                                                <td ><span
+                                                <td><span
                                                             @if($audit->event == 'created')
                                                             class="label label-info"
                                                             @elseif($audit->event == 'deleted')
@@ -77,7 +77,7 @@
                                                             @endif
                                                             style="font-size: 15px"><label>{{ $audit->event }}</label></span></td>
                                                 <td>{{ $audit->auditable_type }}</td>
-                                                <td>{{ $audit->new_values }}</td>
+                                                <td>{{ $audit->newfu_values }}</td>
                                                 <td>{{ $audit->old_values }}</td>
                                                 <td>{{ $audit->url }}</td>
                                                 <td>{{ $audit->created_at }}</td>
