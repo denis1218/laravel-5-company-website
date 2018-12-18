@@ -29,8 +29,6 @@
             display: none;
         }
 
-
-
         .ullist {
             display: table;
             width: 100%;
@@ -336,7 +334,6 @@
 
                             {{-- Upper Tooths --}}
                             <div class="container-fluid">
-
 
 
                                 <div class="row" style="margin-left:-50px;">
@@ -679,18 +676,18 @@
                             </div>
                             {{-- End of image Tooth--}}
                             <br>
-                            <div class="table-responsive" id="divToReload">
-                                <table class="table table-striped table-bordered table-hover" id="mytable"
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="referesh"
                                        style="margin-left:30px;width:95%;">
                                     <thead>
-                                        <th>{{trans('file.id')}}</th>
-                                        <th>{{trans('file.teeth_number')}}</th>
-                                        <th>Treatment</th>
-                                        <th>Dentaldefect</th>
-                                        <th>Delete teeth</th>
+                                    <th>{{trans('file.id')}}</th>
+                                    <th>{{trans('file.teeth_number')}}</th>
+                                    <th>Treatment</th>
+                                    <th>Dentaldefect</th>
+                                    <th>Delete teeth</th>
                                     </thead>
                                     <tbody>
-                                    <?php $i = 1 ;?>
+                                    <?php $i = 1;?>
                                     @foreach($teeth as $te)
                                         <tr>
                                             <td>{{ $i }}</td>
@@ -700,7 +697,9 @@
                                             <td>
                                                 <form action="/treatment/{{ $te->id }}" method="post">
                                                     @method('delete')
-                                                    <button class="btn btn-xs btn-danger demo3" type="submit"><i class="fa fa-remove"></i>&nbsp;Delete</button>
+                                                    <button class="btn btn-xs btn-danger demo3" type="submit"><i
+                                                                class="fa fa-remove"></i>&nbsp;Delete
+                                                    </button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -1038,15 +1037,16 @@
                                     <div class="col-md-6 col-xs-6">
                                         <ul class="ullist">
                                             @for($i = 1; $i<=8 ; $i++)
-                                            <li>
-                                                <label class="image-check">
-                                                    <img class="img-responsive"
-                                                         src="img/tooth_lower/{{$i}}.png" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="{{$i}} Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
+                                                <li>
+                                                    <label class="image-check">
+                                                        <img class="img-responsive"
+                                                             src="img/tooth_lower/{{$i}}.png" width="100%"
+                                                             height="auto"/>
+                                                        <input type="checkbox" name="teeth_number[]"
+                                                               value="{{$i}} Lower Right"/>
+                                                        <i class="fa fa-check hidden"></i>
+                                                    </label>
+                                                </li>
                                             @endfor
 
                                         </ul>
@@ -1217,20 +1217,21 @@
         <div class="modal inmodal" id="general_treatment" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content animated fadeIn">
-                    <form id="myform" action="/treatment" method="post" name="myform" >
+                    <form id="myform" action="/treatment" method="post" name="myform">
 
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span
-                                    aria-hidden="true">&times;</span><span
-                                    class="sr-only">{{trans('file.close')}}</span></button>
-                        <i class="fa fa-edit modal-icon text-primary"></i>
-                        <h4 class="modal-title">General Treatment</h4>
-                    </div>
-                    <div class="modal-body">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span
+                                        aria-hidden="true">&times;</span><span
+                                        class="sr-only">{{trans('file.close')}}</span></button>
+                            <i class="fa fa-edit modal-icon text-primary"></i>
+                            <h4 class="modal-title">General Treatment</h4>
+                        </div>
+                        <div class="modal-body">
 
                             <input type="hidden" name="patient_id" value="{{ $patient_in_treatment->id}}"/>
 
                             {{--<input type="hidden" name="type_treatment" value="General Treatment"/>--}}
+                            <input type="hidden" name="teeth_id" value="null" id="teeth_id"/>
 
                             <div class="form-group">
                                 <label>Tooth number</label>
@@ -1239,7 +1240,7 @@
 
                             <div class="form-group">
                                 <label>Dental Defect *</label>
-                                <select class="form-control" name="dentaldefect" required>
+                                <select class="form-control" name="dentaldefect" id="dentaldefect" required>
                                     <option disabled
                                             selected>{{trans('file.select_dental_defect')}}</option>
                                     @foreach($dentalDefectList as $list)
@@ -1250,10 +1251,12 @@
 
                             <div class="form-group">
                                 <label>{{trans('file.treatment')}} :</label>
-                                <select class="form-control" name="treatment" required id="treatment-select" onchange="getcolor(this)">
+                                <select class="form-control" name="treatment" required id="treatment-select"
+                                        onchange="getcolor(this)">
                                     <option disabled>{{trans('file.treatment')}}</option>
                                     @foreach($treatementList as $listTreatement)
-                                        <option style="color: #{{ $listTreatement->color }}; font-weight: bold" value="{{ $listTreatement->treatment }}"
+                                        <option style="color: #{{ $listTreatement->color }}; font-weight: bold"
+                                                value="{{ $listTreatement->treatment }}"
                                                 id="{{ $listTreatement->color }}">
                                             {{ $listTreatement->treatment }} </option>
                                     @endforeach
@@ -1261,16 +1264,16 @@
                             </div>
 
 
-                        <br>
+                            <br>
 
-                    </div>
+                        </div>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-white pull-right" data-dismiss="modal"
-                                style="margin-bottom: 10px;">{{trans('file.close')}}</button>
-                        <button type="submit" class="btn btn-primary pull-right" id="refresh-btn"
-                                style="margin-bottom: 10px;margin-right: 20px;">{{trans('file.save')}}</button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-white pull-right" data-dismiss="modal"
+                                    style="margin-bottom: 10px;">{{trans('file.close')}}</button>
+                            <button type="submit" class="btn btn-primary pull-right" id="refresh-btn"
+                                    style="margin-bottom: 10px;margin-right: 20px;">{{trans('file.save')}}</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -1308,14 +1311,15 @@
 
             <script>
                 $(document).ready(function () {
-                    $('#myform').on('submit', function(e) {
+                    $('#myform').on('submit', function (e) {
                         e.preventDefault();
                         $.ajax({
-                            url : $(this).attr('action') || window.location.pathname,
+                            url: $(this).attr('action') || window.location.pathname,
                             type: "POST",
                             data: $(this).serialize(),
                             success: function (data) {
                                 $("#form_output").html(data);
+
                             },
                             error: function (jXHR, textStatus, errorThrown) {
                                 alert(errorThrown);
@@ -1323,6 +1327,9 @@
                         });
                     });
                 });
+
+
+
             </script>
             <script type="text/javascript">
                 $(function () {
@@ -1368,22 +1375,18 @@
                 });
 
 
-
                 $("#refresh-btn").on("click", function (e) {
                     var id = $('.modal-body #treatment-select').children(":selected").attr("id");
-                    $('.image-check-checked').css('background-color','#ea615a');
-                    $('.image-check-checked').css('border-radius','15px');
+                    $('.image-check-checked').css('background-color', '#ea615a');
+                    $('.image-check-checked').css('border-radius', '15px');
                 });
 
 
-                $('#myform').submit(function(e) {
+                $('#myform').submit(function (e) {
                     e.preventDefault();
                     $('#general_treatment').modal('toggle'); //or  $('#IDModal').modal('hide');
                     return false;
                 });
-
-
-
 
 
                 $("#btnsubmit").on("click", function (e) {
