@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\TeethCoverType;
 use App\Treatment;
+use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\Request;
 use App\Teeth;
 use Illuminate\Support\Facades\DB;
@@ -34,21 +35,25 @@ class TeethController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return string
      */
     public function store(Request $request)
     {
-        $teeth = new Teeth();
-        $nextId = DB::table('treatments')->max('id') + 1;
-
-        $teeth->tooth_number = $request->tooth_number;
-//        $teeth->type_treatment = $request->type_treatment;
-        $teeth->treatment = $request->treatment;
-        $teeth->dentaldefect =  $request->dentaldefect;
-        $teeth->treatment_id = $nextId;
-        $teeth->patient_id = $request->patient_id;
-        $teeth->save();
-        return back();
+//        if(Request::ajax()){
+            $teeth = new Teeth();
+            $nextId = DB::table('treatments')->max('id') + 1;
+            $teeth->tooth_number = $request->tooth_number;
+            $teeth->treatment = $request->treatment;
+            $teeth->dentaldefect =  $request->dentaldefect;
+            $teeth->treatment_id = $nextId;
+            $teeth->patient_id = $request->patient_id;
+            //==================================================
+            $teeth->type_prosthesis = $request->type_prosthesis;
+            $teeth->shade = $request->shade;
+            $teeth->type_cover = $request->type_cover;
+            $teeth->save();
+//            $teethTable = Teeth::all()->toJson();
+            return json_encode($teeth);
 
     }
 

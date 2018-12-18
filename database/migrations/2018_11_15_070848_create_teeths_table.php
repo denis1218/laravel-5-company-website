@@ -19,6 +19,7 @@ class CreateTeethsTable extends Migration
             $table->string('treatment')->nullable();
             $table->string('dentaldefect')->nullable();
             $table->string('shade')->nullable();
+            $table->string('type_prosthesis')->nullable();
             $table->string('type_cover')->nullable();
             $table->integer('patient_id')->nullable();
             $table->unsignedInteger('treatment_id')->nullable();
