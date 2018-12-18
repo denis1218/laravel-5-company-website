@@ -766,7 +766,7 @@
                                     <th>{{trans('file.id')}}</th>
                                     <th>{{trans('file.teeth_number')}}</th>
                                     <th>Treatment</th>
-                                    <th>Dentaldefect</th>
+                                    <th>Dental defect</th>
                                     <th>Delete teeth</th>
                                     </thead>
                                     <tbody>
@@ -795,6 +795,8 @@
 
                             <a class="btn btn-primary" data-toggle="modal" id="xray_btn">XRay Teeth &nbsp;<img
                                         src="{{ asset('img/xray.png') }}" width="20px"/></a>
+
+
 
                             <form id="form" action="/operation" method="POST">
 
@@ -1319,7 +1321,6 @@
                                    style="visibility: hidden;">
                             <input type="text" value="not" id="tooth" hidden name="xray_status"/>
 
-
                             <br/>
                             {{-- pass value tooth number using jquery --}}
                             <label class="control-label">Tooth Number</label>
@@ -1603,7 +1604,7 @@
 
                 $(".image-check").on("click", function (e) {
                     $(this).toggleClass('image-check-checked');
-                    var $checkbox = $(this).find('input[type="checkbox"]');
+                    var $checkbox = $(this).find('input[type="checkbox"]').attr('checked','checked');
                     tooth_num = $checkbox.val();
                     $('.modal-body #tooth_number').val(tooth_num);
                     $('#general_treatment').modal('show');
@@ -1614,7 +1615,7 @@
                 //                Image check box for prosthesis
                 $(".image-check_prosthesis").on("click", function (e) {
                     $(this).toggleClass('image-check-checked');
-                    var $checkbox = $(this).find('input[type="checkbox"]');
+                    var $checkbox = $(this).find('input[type="checkbox"]').attr('checked','checked');
                     tooth_num = $checkbox.val();
                     $('.modal-body #tooth_number').val(tooth_num);
                     $('#prosthesis_treatment').modal('show');
@@ -1659,10 +1660,11 @@
                     var valuesArray = $('input:checkbox:checked').map(function () {
                         return $(this).val();
                     }).get().join();
+                    alert(valuesArray);
                     $(".modal-body #tooth_number_3").val(valuesArray);
-                    $(".modal-body #tooth_position").val(tooth_pos);
+//                    $(".modal-body #tooth_position").val(tooth_pos);
                     $('#xray').modal('show');
-                    tooth_pos = null;
+
                 });
 
                 $(document).on("click", "#submitform", function () {
