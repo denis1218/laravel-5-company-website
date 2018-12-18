@@ -10,4 +10,7 @@ class Teeth extends Model implements Auditable
     use \OwenIt\Auditing\Auditable;
 
 
+    public function treatment(){
+        return $this->belongsTo(Teeth::class,'treatment_id','id');
+    }
 }

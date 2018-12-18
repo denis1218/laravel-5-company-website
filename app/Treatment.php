@@ -30,6 +30,10 @@ class Treatment extends Model implements Auditable
         return $this->hasOne(Xray::class);
     }
 
+    public function teeth(){
+        return $this->hasMany(Teeth::class,'treatment_id','id');
+    }
+
 
 
 }
