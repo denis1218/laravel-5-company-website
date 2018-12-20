@@ -778,9 +778,9 @@
                                             <td>{{$te->treatment}}</td>
                                             <td>{{$te->dentaldefect}}</td>
                                             <td>
-                                                <form action="/treatment/{{ $te->id }}" method="post">
+                                                <form action="/treatment/{{ $te->id }}" method="post" id="formDeleteTeeth">
                                                     @method('delete')
-                                                    <button class="btn btn-xs btn-danger demo3" type="submit"><i
+                                                    <button class="btn btn-xs btn-danger delete_teeth" type="submit" id="{{ $te->id }}" data-id="{{ $te->id }}"><i
                                                                 class="fa fa-remove"></i>&nbsp;Delete
                                                     </button>
                                                 </form>
@@ -1199,7 +1199,7 @@
                             <br/>
 
                             <div class="table-responsive" id="divToReload">
-                                <table class="table table-striped table-bordered table-hover" id="mytable"
+                                <table class="table table-striped table-bordered table-hover" id="mytableProsthesis"
                                        style="margin-left:30px;width:95%;">
                                     <thead>
                                         <th>{{trans('file.id')}}</th>
@@ -1219,9 +1219,9 @@
                                                 <td>{{ $te->shade }}</td>
                                                 <td>{{ $te->type_cover }}</td>
                                                 <td>
-                                                    <form action="/treatment/{{ $te->id }}" method="post">
+                                                    <form action="/treatment/{{ $te->id }}" method="post" id="formDeleteTeeth_prosthesis">
                                                         @method('delete')
-                                                        <button class="btn btn-xs btn-danger demo3" type="submit"><i
+                                                        <button class="btn btn-xs btn-danger delete_teeth_prosthesis" type="submit" data-id="{{ $te->id }}" id="{{ $te->id }}"><i
                                                                     class="fa fa-remove"></i>&nbsp;Delete
                                                         </button>
                                                     </form>
@@ -1536,8 +1536,14 @@
                             url: $(this).attr('action') || window.location.pathname,
                             type: "POST",
                             data: $(this).serialize(),
+                            dataType:"json",
                             success: function (data) {
                                 $("#form_output").html(data);
+                                $("#mytableProsthesis").append("<tr><td>"+data.id+"</td><td>"+data.tooth_number+"</td><td>"+data.type_prosthesis+"</td><td>"+data.shade+"</td><td>"+data.type_cover+"</td><td>" +
+                                    "<form action='/treatment/"+data.id+"'  method='post' id='formDeleteTeeth'>" +
+                                    "<input type='hidden' name='_method' value='delete' /> "+
+                                    "<button class='btn btn-xs btn-danger delete_teeth' type='submit' data-id='"+data.id+"'><i class='fa fa-remove'></i>&nbsp;Delete</button>" +
+                                    "</form></td></tr>");
                             },
                             error: function (jXHR, textStatus, errorThrown) {
                                 alert(errorThrown);
@@ -1545,6 +1551,52 @@
                         });
                     });
                 });
+
+
+                $('.delete_teeth').on('click', function(e) {
+                    var inputData = $('#formDeleteTeeth').serialize();
+
+                    var dataId = $(this).attr('data-id');
+                    var el = this;
+                    $.ajax({
+                        url: '{{ url('/treatment') }}' + '/' + dataId,
+                        type: 'POST',
+                        data: inputData,
+                        success: function( data ) {
+                            $(el).closest("tr").remove();
+                        },
+                        error: function( data ) {
+                            if ( data.status === 422 ) {
+                                toastr.error('Cannot delete the category');
+                            }
+                        }
+                    });
+
+                    return false;
+                });
+
+                $('.delete_teeth_prosthesis').on('click', function(e) {
+                    var inputData = $('#formDeleteTeeth_prosthesis').serialize();
+
+                    var dataId = $(this).attr('data-id');
+                    var el = this;
+                    $.ajax({
+                        url: '{{ url('/treatment') }}' + '/' + dataId,
+                        type: 'POST',
+                        data: inputData,
+                        success: function( data ) {
+                            $(el).closest("tr").remove();
+                        },
+                        error: function( data ) {
+                            if ( data.status === 422 ) {
+                                toastr.error('Cannot delete the category');
+                            }
+                        }
+                    });
+
+                    return false;
+                });
+
             </script>
 
             <script>
@@ -1552,21 +1604,6 @@
                     document.getElementById('cost_treatment').value = e[e.selectedIndex].id
                 }
 
-                $('.demo3').on('click', function (e) {
-                    e.preventDefault();
-                    var form = $(this).parents('form');
-                    swal({
-                        title: "Are you sure?",
-                        text: "To put this patient in queue for today!",
-                        type: "success",
-                        showCancelButton: true,
-                        confirmButtonColor: "#317cdd",
-                        confirmButtonText: "Yes, put it!",
-                        closeOnConfirm: false
-                    }, function (isConfirm) {
-                        if (isConfirm) form.submit();
-                    });
-                });
             </script>
 
             <script type="text/javascript">
@@ -1655,16 +1692,26 @@
                     e.preventDefault();
                 });
 
+//                $(document).on("click", ".delete_teeth" , function() {
+//                    var delete_id = $(this).data('id');
+//                    var el = this;
+//                    $.ajax({
+//                        url: '/treatment/'+delete_id,
+//                        type: 'POST',
+//                        success: function(response){
+////
+//                            alert(response);
+//                        }
+//                    });
+//                });
+
 
                 $(document).on("click", "#xray_btn", function () {
                     var valuesArray = $('input:checkbox:checked').map(function () {
                         return $(this).val();
                     }).get().join();
-                    alert(valuesArray);
                     $(".modal-body #tooth_number_3").val(valuesArray);
-//                    $(".modal-body #tooth_position").val(tooth_pos);
                     $('#xray').modal('show');
-
                 });
 
                 $(document).on("click", "#submitform", function () {
