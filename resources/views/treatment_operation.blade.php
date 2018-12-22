@@ -339,15 +339,18 @@
                                 <div class="row" style="margin-left:-50px;">
                                     <div class="col-md-6 col-xs-6">
                                         <ul class="ullist">
+
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check" id="upper_left8">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/8.png') }}" width="100%"
                                                          height="auto" style="border-bottom: 1px"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="8 Upper Left"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                                value="8 Upper Left"/>
                                                     <i class="fa fa-check hidden"></i>
                                                 </label>
                                             </li>
+
                                             <li>
                                                 <label class="image-check">
                                                     <img class="img-responsive"
@@ -790,7 +793,7 @@
                                                 <label class="image-check">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/8.png') }}" width="100%"
-                                                         height="auto" style="border-bottom: 1px"/>
+                                                         height="auto"/>
                                                     <input type="checkbox" name="teeth_number[]"
                                                            value="8 Upper Left"/>
                                                     <i class="fa fa-check hidden"></i>
@@ -1283,10 +1286,14 @@
         @endsection
 
         @section('script')
+
+
             <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
 
             {{--            <script src="{{ asset('js/tooths.js') }}" type="javascript"></script>--}}
+            <script>
 
+            </script>
             <script>
                 function getFeeTreatment(e) {
                     document.getElementById('cost_treatment').value = e[e.selectedIndex].id
@@ -1327,7 +1334,6 @@
                         });
                     });
                 });
-
 
 
             </script>
@@ -1379,8 +1385,18 @@
                     var id = $('.modal-body #treatment-select').children(":selected").attr("id");
                     $('.image-check-checked').css('background-color', '#ea615a');
                     $('.image-check-checked').css('border-radius', '15px');
-                });
 
+                });
+                {{--@foreach($teeth as $t)--}}
+                {{--@if($t->tooth_number == '8 Upper Left')--}}
+                {{--$(document).ready(function(){--}}
+
+                {{--$('#upper_left8').css('background-color', '#ea615a');--}}
+                {{--$('#upper_left8').css('border-radius', '15px');--}}
+
+                {{--});--}}
+                {{--@endif--}}
+                {{--@endforeach--}}
 
                 $('#myform').submit(function (e) {
                     e.preventDefault();
