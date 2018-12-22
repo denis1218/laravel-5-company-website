@@ -1,5 +1,5 @@
 <!-- Mainly scripts -->
-<script src="{{ asset('dashboard/js/jquery-2.1.1.js') }}"></script>
+<script src="{{ asset('dashboard/js/jquery-3.3.1.min.js') }}"></script>
 
 <script src="{{ asset('js/jquery-ui.js') }}"></script>
 <script src="{{ asset('dashboard/js/bootstrap.min.js') }}"></script>

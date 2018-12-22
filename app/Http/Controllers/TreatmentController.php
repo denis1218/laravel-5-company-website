@@ -84,13 +84,24 @@ class TreatmentController extends Controller
 
                 $patient_id = $patient_in_treatment->id;
 
+
                 $teeth = Teeth::where('patient_id','=',$id)->paginate(10);
                 $tee=   DB::table('teeths')->select('tooth_number')->where('patient_id','=',$id)->distinct()->get();
+
+                $nextId = DB::table('treatments')->max('id') + 1;
+
+//              return table general treatment
+                $teeth = Teeth::where('patient_id','=',$id)->where('treatment_id','=',$nextId)->where('type_cover','=',null)->paginate(32);
+
+//                return table prosthesis treatment
+                $teeth_pros = Teeth::where('patient_id','=',$id)->where('treatment','=',null)->paginate(32);
+
 
 //                return $last_treatment;
                 return view('treatment_operation', compact('patient_in_treatment', 'patient_id', 'checkValue',
                     'treatementList', 'dentalDefectList', 'treatments','medicine','prescription' , 'teethShades',
-                    'teethTypeCovers','teeth','tee'));
+                    'teethTypeCovers','teeth','tee','teeth_pros'));
+
 
     }
 
