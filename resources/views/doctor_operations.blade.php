@@ -5,6 +5,19 @@
 
 
     <style rel="stylesheet">
+
+        .ullist-nav {
+            display: table;
+            width: 50%;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        .ullist-nav li {
+            display: table-cell;
+        }
+
         .font-m {
             font-size: 1.5em;
         }

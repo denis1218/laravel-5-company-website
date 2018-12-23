@@ -1,5 +1,18 @@
 @extends('master')
 @section('content')
+    <style>
+        .ullist-nav {
+            display: table;
+            width: 50%;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        .ullist-nav li {
+            display: table-cell;
+        }
+    </style>
 
     @include('part.nav_doctor')
 

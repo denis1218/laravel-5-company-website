@@ -10,6 +10,7 @@ use App\Treatment;
 use App\Xray;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use PHPUnit\Framework\Exception;
 
 class PatientController extends Controller
 {
@@ -20,15 +21,14 @@ class PatientController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->date == null){
+            if($request->date == null){
 
-            $patient_all = Patient::whereDate('next_appointment',Carbon::today())->orderBy('updated_at', 'ASC')->get();
-        }else{
-            $patient_all = Patient::whereDate('next_appointment',$request->date)->orderBy('updated_at', 'ASC')->get();
-        }
-        $doctor_list = Doctor::all();
-        return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
-
+                $patient_all = Patient::whereDate('next_appointment',Carbon::today())->orderBy('updated_at', 'ASC')->get();
+            }else{
+                $patient_all = Patient::whereDate('next_appointment',$request->date)->orderBy('updated_at', 'ASC')->get();
+            }
+            $doctor_list = Doctor::all();
+            return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
     }
 
 

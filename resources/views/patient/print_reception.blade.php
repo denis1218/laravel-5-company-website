@@ -117,28 +117,20 @@
                                         <th>Tooth number</th>
                                         <th>Dental Defect</th>
                                         <th>Treatment</th>
-                                        <th>Estimated Fee</th>
-                                        <th>Discount Fee</th>
-                                        <th>Paid Fee</th>
-                                        <th>Date</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                         <?php $i = 1 ;?>
-                                        @foreach($patient_income_general as $patient_general)
+                                        @foreach($patient_income_general_teeth as $patient_general)
                                             <tr>
                                                 <td>{{ $i }}</td>
-                                                <td>{{ $patient_general->teeth_number }}</td>
+                                                <td>{{ $patient_general->tooth_number }}</td>
                                                 <td>{{ $patient_general->dentaldefect }}</td>
                                                 <td>{{ $patient_general->treatment }}</td>
-                                                <td>{{ $patient_general->estimated_fee }}</td>
-                                                <td>{{ $patient_general->discount }}</td>
-                                                <td>{{ $patient_general->paid_amount }}</td>
-                                                <td>{{ $patient_general->created_at }}</td>
                                             </tr>
                                             <?php $i++;?>
                                         @endforeach
-                                        <tr><td colspan="7"></td></tr>
+                                        <tr><td colspan="5"></td></tr>
                                         <tr>
                                             <td></td>
                                             <td></td>
@@ -198,29 +190,21 @@
                                         <th>Tooth number</th>
                                         <th>Shade</th>
                                         <th>Tooth Cover</th>
-                                        <th>Estimated Fee</th>
-                                        <th>Discount Fee</th>
-                                        <th>Paid Fee</th>
-                                        <th>Date</th>
                                     </tr>
                                     </thead>
                                     <tbody>
 
                                         <?php $i = 1 ;?>
-                                        @foreach($patient_income_prosthesis as $patient_prosthesis)
+                                        @foreach($patient_income_general_prost as $patient_prosthesis)
                                             <tr>
                                                 <td>{{ $i }}</td>
-                                                <td>{{ $patient_prosthesis->teeth_number }}</td>
+                                                <td>{{ $patient_prosthesis->tooth_number }}</td>
                                                 <td>{{ $patient_prosthesis->shade }}</td>
                                                 <td>{{ $patient_prosthesis->type_cover }}</td>
-                                                <td>{{ $patient_prosthesis->estimated_fee }}</td>
-                                                <td>{{ $patient_prosthesis->discount }}</td>
-                                                <td>{{ $patient_prosthesis->paid_amount }}</td>
-                                                <td>{{ $patient_prosthesis->created_at }}</td>
                                             </tr>
                                             <?php $i++;?>
                                         @endforeach
-                                        <tr><td colspan="7"></td></tr>
+                                        <tr><td colspan="5"></td></tr>
                                         <tr>
                                             <td></td>
                                             <td></td>
