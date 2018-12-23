@@ -1127,6 +1127,7 @@
                                     <div class="col-md-6 col-xs-6">
                                         <ul class="ullist">
 
+
                                         </ul>
                                     </div>
                                 </div>
@@ -1343,7 +1344,6 @@
                             <button type="submit" class="btn btn-primary pull-right" id="refresh-btn"
                                     style="margin-bottom: 10px;margin-right: 20px;">{{trans('file.save')}}</button>
                         </div>
-
                     </form>
                 </div>
             </div>
@@ -1442,6 +1442,10 @@
             <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
 
             {{--            <script src="{{ asset('js/tooths.js') }}" type="javascript"></script>--}}
+
+
+
+
 
             <script>
                 $(document).ready(function () {
@@ -1574,6 +1578,12 @@
 
 
 
+                $("#refresh-btn").on("click", function (e) {
+                    var id = $('.modal-body #treatment-select').children(":selected").attr("id");
+                    $('.image-check-checked').css('background-color', '#ea615a');
+                    $('.image-check-checked').css('border-radius', '15px');
+
+
                 //                Image check box for prosthesis
                 $(".image-check_prosthesis").on("click", function (e) {
                     $(this).toggleClass('image-check-checked');
@@ -1589,18 +1599,8 @@
                     $('.image-check-checked').css('background-color', '#ea615a');
                     $('.image-check-checked').css('border-radius', '15px');
 
+
                 });
-                {{--@foreach($teeth as $t)--}}
-                {{--@if($t->tooth_number == '8 Upper Left')--}}
-                {{--$(document).ready(function(){--}}
-
-                {{--$('#upper_left8').css('background-color', '#ea615a');--}}
-                {{--$('#upper_left8').css('border-radius', '15px');--}}
-
-
-                {{--});--}}
-                {{--@endif--}}
-                {{--@endforeach--}}
 
                 $("#refresh-btn-prosthesis").on("click", function (e) {
                     $('.image-check-checked').css('background-color', '#ea615a');
@@ -1615,13 +1615,12 @@
                 });
 
 
+
                 $('#myform_prosth').submit(function (e) {
                     e.preventDefault();
                     $('#prosthesis_treatment').modal('toggle'); //or  $('#IDModal').modal('hide');
                     return false;
                 });
-
-
                 $("#btnsubmit").on("click", function (e) {
                     var $checkbox = $("input[type='checkbox']");
                     var $checkbox_lenght = $('input[type="checkbox"]').length;
