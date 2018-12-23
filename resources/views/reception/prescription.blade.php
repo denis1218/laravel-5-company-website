@@ -57,6 +57,7 @@
                                     @endif
                                     </tbody>
                                 </table>
+                                    {{ $patient->links() }}
                                 </div>
                                 </div>
                         </div>

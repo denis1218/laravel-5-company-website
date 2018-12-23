@@ -17,8 +17,7 @@ class PrescriptionController extends Controller
      */
     public function index()
     {
-        $patient = Patient::where('status', '=', 'first')
-            ->whereDate('next_appointment', '=', Carbon::today())->get();
+        $patient = Patient::paginate(15);
         return view('reception.prescription', compact('patient'));
     }
 
