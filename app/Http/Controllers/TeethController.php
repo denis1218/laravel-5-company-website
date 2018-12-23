@@ -39,7 +39,6 @@ class TeethController extends Controller
      */
     public function store(Request $request)
     {
-//        if(Request::ajax()){
             $teeth = new Teeth();
             $nextId = DB::table('treatments')->max('id') + 1;
             $teeth->tooth_number = $request->tooth_number;
@@ -52,7 +51,6 @@ class TeethController extends Controller
             $teeth->shade = $request->shade;
             $teeth->type_cover = $request->type_cover;
             $teeth->save();
-//            $teethTable = Teeth::all()->toJson();
             return json_encode($teeth);
 
     }

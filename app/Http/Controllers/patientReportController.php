@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Income;
+use App\Teeth;
 use App\Treatment;
 use App\TreatmentList;
 use App\Xray;
@@ -54,14 +55,19 @@ class patientReportController extends Controller
     {
         $patient = Patient::with('doctor')->get()->find($id);
         $patient_income = Treatment::where('patient_id','=',$id)->get();
+
         $patient_income_general = Treatment::where('patient_id','=',$id)
-            ->Where('type_treatment','=','General Treatment')->get();
+                                            ->Where('type_treatment','=','General Treatment')->get();
+
+        $patient_income_general_teeth = Teeth::where('patient_id','=',$id)->where('treatment','!=','')->get();
+        $patient_income_general_prost = Teeth::where('patient_id','=',$id)->where('shade','!=','')->get();
+
         $patient_income_prosthesis = Treatment::where('patient_id','=',$id)
-            ->Where('type_treatment','=','Prosthesis Treatment')->get();
+                                ->Where('type_treatment','=','Prosthesis Treatment')->get();
         $patient_income_xray = Xray::where('patient_id','=',$id)->get();
 
 
-        return view('patient.print_reception', compact('patient_income_xray','patient_income_general','patient_income_prosthesis','patient','treatment','patient_income'));
+        return view('patient.print_reception', compact('patient_income_xray','patient_income_general_prost','patient_income_general_teeth','patient_income_general','patient_income_prosthesis','patient','treatment','patient_income'));
     }
 
 
