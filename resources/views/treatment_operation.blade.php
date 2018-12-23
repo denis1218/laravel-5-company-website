@@ -28,6 +28,21 @@
             outline: 0;
         }
 
+        .image-check-xray {
+            cursor: pointer;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            border: 4px solid transparent;
+            margin-bottom: 0;
+            outline: 0;
+        }
+
+        .image-check-checked-xray{
+            background-color: #ea615a;
+            border-radius: 15px;
+        }
+
         .image-check_prosthesis {
             cursor: pointer;
             box-sizing: border-box;
@@ -36,6 +51,10 @@
             border: 4px solid transparent;
             margin-bottom: 0;
             outline: 0;
+        }
+
+        .image-check-xray input[type="checkbox"] {
+            display: none;
         }
 
         .image-check input[type="checkbox"] {
@@ -55,6 +74,18 @@
         }
 
         .ullist li {
+            display: table-cell;
+        }
+
+        .ullist-nav {
+            display: table;
+            width: 50%;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        .ullist-nav li {
             display: table-cell;
         }
 
@@ -122,7 +153,6 @@
     @include('part.nav_doctor')
 
     <br/>
-
     {{--personal information patient--}}
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
@@ -196,15 +226,15 @@
         <div class="col-lg-12">
             <div class="tabs-container">
                 <ul class="nav nav-tabs" id="demoTabs">
-                    <li class=""><a data-toggle="tab" href="#tab-1"><i
+                    <li class=""><a data-toggle="tab" href="#tab-1" style="background-color: #ee7558;color: #000;"><i
                                     class="fa fa-history"></i>{{trans('file.past_history')}}</a></li>
-                    <li class="active"><a data-toggle="tab" id="test" href="#tab-2"><i
+                    <li class="active"><a data-toggle="tab" id="test" href="#tab-2" style="background-color: #959eee;color: #000;"><i
                                     class="fa fa-clock-o"></i>{{ trans('file.general_treatment') }}</a></li>
-                    <li class=""><a data-toggle="tab" id="test" href="#tab-3"><i
+                    <li class=""><a data-toggle="tab" id="test" href="#tab-3" style="background-color: #73eee4;color: #000;"><i
                                     class="fa fa-clock-o"></i>{{ trans('file.prosthesis_treatment') }}</a></li>
+                    <li class=""><a data-toggle="tab" id="test" href="#tab-4" style="background-color: #63ee75;color: #000;"><img src="{{ asset('img/xray.png') }}" width="15px"/>&nbsp;{{ trans('file.xray') }}</a></li>
                 </ul>
                 <div class="tab-content">
-
 
                     {{-- panel tab 1 past history --}}
                     <div id="tab-1" class="tab-pane">
@@ -406,18 +436,16 @@
                         <div class="panel-body" style="">
                             <br>
                             {{-- Header of title --}}
-                            <div class="row  bg-info"
-                                 style=" padding-left:20px; border-radius: 5px;margin-left:0px;margin-right: 10px;">
+                            <div class="row"
+                                 style=" padding-left:20px; border-radius: 5px;margin-left:0px;margin-right: 10px; background-color: #959eee; color:#000;">
                                 <h3 style="font-weight: bold;">{{ trans('file.general_treatment') }}</h3>
                             </div>
 
                             <br/>
 
                             {{-- Image Tooths --}}
-
-                            {{-- Upper Tooths --}}
+                            {{--  Tooths --}}
                             <div class="container-fluid">
-
 
                                 <div class="row" style="margin-left:-50px;">
                                     <div class="col-md-6 col-xs-6">
@@ -793,10 +821,6 @@
                                 {{ $teeth->links() }}
                             </div>
 
-                            <a class="btn btn-primary" data-toggle="modal" id="xray_btn">XRay Teeth &nbsp;<img
-                                        src="{{ asset('img/xray.png') }}" width="20px"/></a>
-
-
 
                             <form id="form" action="/operation" method="POST">
 
@@ -858,8 +882,8 @@
                         <div class="panel-body" style="">
                             <br>
                             {{-- Header of title --}}
-                            <div class="row  bg-info"
-                                 style=" padding-left:20px; border-radius: 5px;margin-left:0px;margin-right: 10px;">
+                            <div class="row"
+                                 style=" padding-left:20px; border-radius: 5px;margin-left:0px;margin-right: 10px; background-color: #73eee4; color: #000;">
                                 <h3 style="font-weight: bold;">{{ trans('file.prosthesis_treatment') }}</h3>
                             </div>
 
@@ -1234,8 +1258,7 @@
                                 {{ $teeth->links() }}
                             </div>
 
-                            <a class="btn btn-primary" data-toggle="modal" id="xray_btn">XRay Teeth &nbsp;<img
-                                        src="{{ asset('img/xray.png') }}" width="20px"/></a>
+
 
                             <form id="form" action="/operation" method="POST">
                                 <input type="hidden" name="type_treatment" value="Prosthesis Treatment"/>
@@ -1292,8 +1315,390 @@
                             </form>
                         </div>
                     </div>
-                    {{-- End of tab 3 --}}
 
+                    <div id="tab-4" class="tab-pane">
+                        <div class="panel-body" style="">
+                            <br>
+                            {{-- Header of title --}}
+                            <div class="row  bg-info"
+                                 style=" padding-left:20px; border-radius: 5px;margin-left:0px;margin-right: 10px; background-color: #63ee75; color:#000;">
+                                <h3 style="font-weight: bold;">X-Ray</h3>
+                            </div>
+
+                            <br/>
+
+                            <div class="container-fluid">
+                                <div class="row" style="margin-left:-50px;">
+                                    <div class="col-md-6 col-xs-6">
+                                        <ul class="ullist">
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooths/8.png') }}" width="100%"
+                                                         height="auto" style="border-bottom: 1px"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                           value="8 Upper Left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooths/7.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                           value="7 Upper Left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooths/6.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                           value="6 Upper left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooths/5.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                           value="5 Upper Left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooths/4.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                           value="4 Upper Left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooths/3.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                           value="3 Upper Left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooths/2.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                           value="2 Upper Left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooths/1.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                           value="1 Upper Left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6">
+                                        <ul class="ullist">
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooths/1.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                           value="1 Upper Right"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooths/2.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                           value="2 Upper Right"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooths/3.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                           value="3 Upper Right"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooths/4.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                           value="4 Upper Right"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooths/5.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                           value="5 Upper Right"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooths/6.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                           value="6 Upper Right"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooths/7.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                           value="7 Upper Right"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooths/8.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                           value="8 Upper Right"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                {{-- Lower Tooths--}}
+                                <div class="row" style="margin-left:-50px;">
+                                    <div class="col-md-6 col-xs-6">
+                                        <ul class="ullist">
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/8.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="8 Lower Left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/7.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="7 Lower Left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/6.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="6 Lower left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/5.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="5 Lower Left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/4.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="4 Lower Left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/3.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="3 Lower Left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/2.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="2 lower Left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="1 lower Left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6">
+                                        <ul class="ullist">
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="1 Lower Right"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/2.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="2 Lower Right"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/3.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="3 Lower Right"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/4.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="4 Lower Right"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/5.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="5 Lower Right"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/6.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="6 Lower Right"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/7.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="7 Lower Right"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="image-check-xray">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/8.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="8 Lower Right"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+
+                            <form id="form" action="/xray" method="POST">
+
+                                <input type="text" name="teeth_number_all" hidden id="tooth_number_ortho"/>
+
+                                <div class="row" style="margin-top: 15px">
+
+                                    <input type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
+                                    <div class="col-md-6">
+
+                                        <input type="text" name="doctor_name"
+                                               value="{{ $patient_in_treatment->doctor->first_name }}" style="visibility: hidden;">
+
+                                        <input type="text" name="patient_name" value="{{ $patient_in_treatment->name }}"
+                                               style="visibility: hidden;">
+
+                                        <input type="text" name="patient_id" value="{{ $patient_in_treatment->id }}"
+                                               style="visibility: hidden;">
+
+                                        <input type="hidden" value="not" id="tooth" hidden name="xray_status"/>
+
+                                        <input type="hidden" class="form-control" value="" id="tooth_number_3" name="tooth_number"
+                                               required>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <button type="submit" id="xray_btn"
+                                                class="btn btn-primary">Take X-Ray&nbsp;<i
+                                                    class="fa fa-save"></i>
+                                        </button>
+                                        <button type="reset" class="btn btn-white"> {{trans('file.cancel')}}&nbsp;
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    {{-- End of tab 3 --}}
 
                 </div>
             </div>
@@ -1312,14 +1717,8 @@
                         <h4 class="modal-title">{{trans('file.xray')}}</h4>
                     </div>
                     <div class="modal-body">
-                        <form id="form" action="/xray" method="post">
-                            <input type="text" name="doctor_name"
-                                   value="{{ $patient_in_treatment->doctor->first_name }}" style="visibility: hidden;">
-                            <input type="text" name="patient_name" value="{{ $patient_in_treatment->name }}"
-                                   style="visibility: hidden;">
-                            <input type="text" name="patient_id" value="{{ $patient_in_treatment->id }}"
-                                   style="visibility: hidden;">
-                            <input type="text" value="not" id="tooth" hidden name="xray_status"/>
+                        <form id="form" action="/xray" method="post" id="xray_form">
+
 
                             <br/>
                             {{-- pass value tooth number using jquery --}}
@@ -1346,7 +1745,6 @@
             </div>
         </div>
 
-
         {{-- modal window general treatment --}}
         <div class="modal inmodal" id="general_treatment" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
@@ -1357,7 +1755,7 @@
                             <button type="button" class="close" data-dismiss="modal"><span
                                         aria-hidden="true">&times;</span><span
                                         class="sr-only">{{trans('file.close')}}</span></button>
-                            <i class="fa fa-edit modal-icon text-primary"></i>
+                            <img src="{{ asset('img/general_treatment.png') }}" width="150px"/>
                             <h4 class="modal-title">General Treatment</h4>
                         </div>
                         <div class="modal-body">
@@ -1368,7 +1766,7 @@
 
                             <div class="form-group">
                                 <label>Tooth number</label>
-                                <input type="text" value="" id="tooth_number" name="tooth_number" class="form-control"/>
+                                <input type="text" value="" disabled="" id="tooth_number" name="tooth_number" class="form-control"/>
                             </div>
 
                             <div class="form-group">
@@ -1412,8 +1810,7 @@
             </div>
         </div>
 
-
-        {{-- Modal window Prosthises treatment --}}
+        {{-- Modal window Prosthise treatment --}}
         <div class="modal inmodal" id="prosthesis_treatment" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content animated fadeIn">
@@ -1423,18 +1820,16 @@
                             <button type="button" class="close" data-dismiss="modal"><span
                                         aria-hidden="true">&times;</span><span
                                         class="sr-only">{{trans('file.close')}}</span></button>
-                            <i class="fa fa-edit modal-icon text-primary"></i>
+                            <img src="{{ asset('img/prosth_img.jpg') }}" width="250px"/>
                             <h4 class="modal-title">Prosthesis Treatment</h4>
                         </div>
                         <div class="modal-body">
 
                             <input type="hidden" name="patient_id" value="{{ $patient_in_treatment->id}}"/>
 
-                            {{--<input type="hidden" name="type_treatment" value="General Treatment"/>--}}
-
                             <div class="form-group">
                                 <label>Tooth number</label>
-                                <input type="text" value="" id="tooth_number" name="tooth_number" class="form-control"/>
+                                <input type="text" value="" disabled id="tooth_number" name="tooth_number" class="form-control"/>
                             </div>
 
                             <div class="form-group">
@@ -1553,6 +1948,10 @@
                 });
 
 
+
+
+
+
                 $('.delete_teeth').on('click', function(e) {
                     var inputData = $('#formDeleteTeeth').serialize();
 
@@ -1648,6 +2047,13 @@
                     e.preventDefault();
                 });
 
+                $(".image-check-xray").on("click", function (e) {
+                    $(this).toggleClass('image-check-checked-xray');
+                    var $checkbox = $(this).find('input[type="checkbox"]').attr('checked','checked');
+                    tooth_num = $checkbox.val();
+                    e.preventDefault();
+                });
+
 
                 //                Image check box for prosthesis
                 $(".image-check_prosthesis").on("click", function (e) {
@@ -1673,6 +2079,12 @@
                 $('#myform').submit(function (e) {
                     e.preventDefault();
                     $('#general_treatment').modal('toggle'); //or  $('#IDModal').modal('hide');
+                    return false;
+                });
+
+                $('#xray_form').submit(function (e) {
+                    e.preventDefault();
+                    $('#xray').modal('toggle'); //or  $('#IDModal').modal('hide');
                     return false;
                 });
 
@@ -1710,8 +2122,7 @@
                     var valuesArray = $('input:checkbox:checked').map(function () {
                         return $(this).val();
                     }).get().join();
-                    $(".modal-body #tooth_number_3").val(valuesArray);
-                    $('#xray').modal('show');
+                    $("#tooth_number_3").val(valuesArray);
                 });
 
                 $(document).on("click", "#submitform", function () {

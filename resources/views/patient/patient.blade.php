@@ -45,7 +45,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="table-responsive">
-                                <table class="table table-hover table-borderd table-striped">
+                                <table class="table table-hover table-borderd table-striped table-doctor" >
                                     <thead>
                                     <tr>
                                         <th>{{trans('file.id')}}</th>
@@ -65,7 +65,7 @@
                                         <td>{{ $doctors->max_patient }}</td>
                                         <td>{{ count($doctors->patient) }}</td>
                                         <td>
-                                            <div class="i-checks"><input type="radio"  value="{{ $doctors->id }}" name="FK_id_Doctor" id="FK_id_Doctor" required></div>
+                                            <div class="i-checks"><input type="radio" checked="checked"  value="{{ $doctors->id }}" name="FK_id_Doctor" id="FK_id_Doctor" required></div>
                                         </td>
                                     </tr>
                                         @endforeach
@@ -104,8 +104,9 @@
                                 <div class="form-group">
                                     <div class="col-xs-12"><label style="margin-left: -14px;">Time Appointment *</label></div>
                                     <div class="col-xs-12">
-                                        <div class="col-xs-2" style="margin-left: -30px;"><input type="button" class="btn btn-primary" id="now"  value="Now"></div>
+
                                         <div class="col-xs-4"><label for="cur"><input id="cur" name="time" type="number" class="form-control" max="24" min="1" required></label></div>
+                                        <div class="col-xs-2" style="margin-left: -30px;"><input type="button" class="btn btn-primary" id="now"  value="Now"></div>
                                         <div class="col-xs-2" style="margin-top: -10px;"><label style="margin-left: 20px;">AM</label><div class="i-checks"><label class="checkbox-inline"><input id="meridiem" checked value="AM" name="meridiem" type="radio" class="form-control required"></label></div></div>
                                         <div class="col-xs-2" style="margin-top: -10px;"><label style="margin-left: 20px;">PM</label><div class="i-checks"><label class="checkbox-inline"><input id="meridiem" value="PM" name="meridiem" type="radio" class="form-control required"></label></div></div>
                                     </div>
@@ -119,7 +120,7 @@
 
                                 <div class="form-group">
                                     <label>{{trans('file.age')}} *</label>
-                                    <input id="age" name="age" type="number" maxlength="2" max="99" class="form-control" placeholder="Age">
+                                    <input id="age" name="age" value="0" type="number" maxlength="2" max="99" class="form-control" placeholder="Age">
                                 </div>
 
                             </div>
@@ -130,7 +131,7 @@
                                     </div>
                                 <div class="form-group">
                                     <label>Job *</label>
-                                    <input id="job" name="job" type="text" class="form-control" placeholder="Job">
+                                    <input id="job" name="job" type="text" value="Free job" class="form-control" placeholder="Job">
                                 </div>
                                 <div class="form-group">
                                     <label>Education level *</label>
@@ -145,7 +146,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>{{trans('file.address')}} *</label>
-                                    <textarea rows="5" id="address" name="address" type="text" class="form-control required" placeholder="Address"></textarea>
+                                    <textarea rows="5" id="address" name="address"  type="text" class="form-control required" placeholder="Address">Kabul, Afghanistan</textarea>
                                 </div>
                                 </div>
                         </div>
@@ -235,6 +236,12 @@
     <!-- Toastr script -->
     <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
     <script>
+
+            $('.table-doctor tbody tr').click(function() {
+                $(this).find('input[type=radio]').attr('checked', true);
+            });
+
+
         $(document).ready(function(){
             $("#wizard").steps();
             $("#form").steps({

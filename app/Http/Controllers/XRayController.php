@@ -56,7 +56,7 @@ class XrayController extends Controller
         $rey->created_at = Carbon::now();
         $rey->save();
 
-        return redirect('/operation')->with('success','Patient registered for x-ray successfully');
+        return redirect()->back();
 
 
     }
