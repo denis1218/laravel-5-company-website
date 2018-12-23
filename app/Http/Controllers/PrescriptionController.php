@@ -17,7 +17,7 @@ class PrescriptionController extends Controller
      */
     public function index()
     {
-        $patient = Patient::paginate(10);
+        $patient = Patient::paginate(20);
         return view('reception.prescription', compact('patient'));
     }
 
