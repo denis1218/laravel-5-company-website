@@ -83,44 +83,44 @@ Route::middleware('auth','xray')->group(function (){
 // Route Group & Middleware for reception
 Route::middleware('auth','reception')->group(function () {
 
+
+//    doctor treatment route
+    Route::resource('/treat', 'TreatmentController');
+    Route::resource('/operation', 'TreatmentController');
+    Route::get('/next_appointment_list', 'TreatmentController@next_appointment_list');
+    Route::get('/operation/create/{id}', 'TreatmentController@create');
+    Route::get('/operation/{id}/edit/{patient_id}', 'TreatmentController@edit_treatment');
+    Route::get('/operation/take_xray_again/{id}', 'TreatmentController@take_xray_again');
+//    end doctor
+
     Route::get('/dash_reception', 'HomeController@reception');
+    Route::resource('/medicine','MedicineController');
+    Route::get('/medicine2','MedicineController@show');
+    Route::resource('medicine_category','MedicineCategoryController');
+    Route::get('medicine2/{id}','MedicineController@delete');
+    Route::resource('prescription','PrescriptionController');
 
     Route::resource('/patient', 'PatientController');
     Route::post('/patient/storeFromDash','PatientController@storeFromDash');
     Route::get('/new-patient-today','PatientController@show_new_patients');
-
     Route::get('/next-appointment-patient','PatientController@show_next_appointment_patient');
     Route::patch('next-appointment-patient-edit/{id}','PatientController@updateNextappointmentPatient');
     Route::get('/miss-next-appointment-patient','PatientController@show_missing_next_appointment_patient');
-
-//    Route::get('/dash_reception', function () {
-//        return view('reception.dash_reception');
-//    });
-
     Route::resource('/expense-category','ExpenseCatagoryController');
-
-//    Route::get('/employee', function () {
-//        return view('/employee');
-//    });
-
     Route::get('/dash', 'HomeController@index')->name('home');
-// report doctors
+
     Route::get('/doctor_report', function () {
         return view('doctor_report');
     });
-// Financial report
     Route::get('/finance_report', function () {
         return view('finance_report');
     });
-// report docors
     Route::get('/report_doctors', function () {
         return view('report_doctors');
     });
-// Financial report daily
     Route::get('/finance_report_income', function () {
         return view('finance_report.finance_report_income');
     });
-
     Route::get('/date_report_patient', function () {
         return view('date_report_patient');
     });
@@ -128,26 +128,18 @@ Route::middleware('auth','reception')->group(function () {
     Route::get('/patient_history_print', function () {
         return view('patient.patient_history_print');
     });
-
-
     Route::get('/doctor_report_list', function () {
 
         return view('/doctor_report_list');
     });
-
     Route::get('expense_form', function () {
         $capital=DB::table('expenses')->sum('amount');
         return view('expense_form')->with('capital',$capital);
     });
-
     Route::get('/pdf', 'PdfGenerator@PDF');
-//doctor salary
     Route::get('/doctors2', 'DoctorController@show');
-//    Route::patch('/doctors3/{id}', 'DoctorController@PayAdvance');
-
-//    Patient Deletion
     Route::get('/patient/{id}/delete', 'PatientController@destroy');
-// Doctor Registrationexp
+// Doctor Registration
     Route::resource('/doctors', 'DoctorController');
     Route::resource('/dr_salary','DSalaryController');
     Route::post('/dr_salary1','DSalaryController@show');
@@ -218,7 +210,6 @@ Route::middleware('auth','reception')->group(function () {
     Route::get('finance_report_loan_all','FinanceReportLoan@all_loan');
     Route::post('finance_report_loan/single/supplier','FinanceReportLoan@single_supplier');
 
-
     Route::resource('xrey_income', 'xrayincomeController');
 
     Route::get('/log_activity', 'HomeController@log_activity');
@@ -273,21 +264,12 @@ Route::middleware('auth','reception')->group(function () {
 
     Route::resource('/doctor-department','DoctorDepartmentController');
 
-//    User Route
     Route::resource('/user','UserController');
     Route::get('/user2/{id}','UserController@delete');
-//    backup route
-    Route::get('/backup',function (){
-        return view('create_backups');
-    });
-
-// Help Route
     Route::get('/help',function (){
        return view('help');
     });
-
     Route::get('/doctors/{id}','DoctorController@edit');
-
     Route::post('/doctors7/{id}','DoctorController@update');
 
 //    Traders Route
@@ -296,20 +278,14 @@ Route::middleware('auth','reception')->group(function () {
 //    Item Route
     Route::resource('/item','ItemController');
     Route::get('/item2/{id}','ItemController@create');
-
 //    Loan Routes
     Route::resource('/loan','LoanController');
     Route::get('/loan1/{id}','LoanController@create');
-
 //    Teeth Shade Route
     Route::resource('/teeth-shade','TeethShadeController');
-
     //    Teeth cover Route
     Route::resource('/teeth-cover','TeethCoverTypeController');
-
-
     Route::post('/patient_report/search','patientReportController@search_patient');
-
     Route::resource('/medicine','MedicineController');
     //route for delet medicine
     Route::get('medicine2/{id}','MedicineController@delete');

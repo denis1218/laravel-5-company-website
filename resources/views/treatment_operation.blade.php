@@ -1896,10 +1896,6 @@
         @section('script')
             <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
 
-            {{--            <script src="{{ asset('js/tooths.js') }}" type="javascript"></script>--}}
-
-
-
             <script>
                 $(document).ready(function () {
                     $('#myform').on('submit', function (e) {
@@ -1947,11 +1943,6 @@
                     });
                 });
 
-
-
-
-
-
                 $('.delete_teeth').on('click', function(e) {
                     var inputData = $('#formDeleteTeeth').serialize();
 
@@ -1995,7 +1986,6 @@
 
                     return false;
                 });
-
             </script>
 
             <script>
