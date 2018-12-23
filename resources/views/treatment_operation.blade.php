@@ -61,9 +61,11 @@
             display: none;
         }
 
+
         .image-check_prosthesis input[type="checkbox"] {
             display: none;
         }
+
 
         .ullist {
             display: table;
@@ -450,15 +452,18 @@
                                 <div class="row" style="margin-left:-50px;">
                                     <div class="col-md-6 col-xs-6">
                                         <ul class="ullist">
+
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check" id="upper_left8">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/8.png') }}" width="100%"
                                                          height="auto" style="border-bottom: 1px"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="8 Upper Left"/>
+                                                    <input type="checkbox" name="teeth_number[]"
+                                                                value="8 Upper Left"/>
                                                     <i class="fa fa-check hidden"></i>
                                                 </label>
                                             </li>
+
                                             <li>
                                                 <label class="image-check">
                                                     <img class="img-responsive"
@@ -787,14 +792,15 @@
                             </div>
                             {{-- End of image Tooth--}}
                             <br>
-                            <div class="table-responsive" id="divToReload">
-                                <table class="table table-striped table-bordered table-hover" id="mytable"
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="referesh"
                                        style="margin-left:30px;width:95%;">
                                     <thead>
                                     <th>{{trans('file.id')}}</th>
                                     <th>{{trans('file.teeth_number')}}</th>
                                     <th>Treatment</th>
-                                    <th>Dental defect</th>
+                                    <th>Dentaldefect</th>
+
                                     <th>Delete teeth</th>
                                     </thead>
                                     <tbody>
@@ -897,7 +903,7 @@
                                                 <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/8.png') }}" width="100%"
-                                                         height="auto" style="border-bottom: 1px"/>
+                                                         height="auto"/>
                                                     <input type="checkbox" name="teeth_number[]"
                                                            value="8 Upper Left"/>
                                                     <i class="fa fa-check hidden"></i>
@@ -1143,78 +1149,6 @@
                                     </div>
                                     <div class="col-md-6 col-xs-6">
                                         <ul class="ullist">
-                                            <li>
-                                                <label class="image-check_prosthesis">
-                                                    <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="1 Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="image-check_prosthesis">
-                                                    <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/2.png') }}" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="2 Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="image-check_prosthesis">
-                                                    <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/3.png') }}" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="3 Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="image-check_prosthesis">
-                                                    <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/4.png') }}" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="4 Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="image-check_prosthesis">
-                                                    <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/5.png') }}" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="5 Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="image-check_prosthesis">
-                                                    <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/6.png') }}" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="6 Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="image-check_prosthesis">
-                                                    <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/7.png') }}" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="7 Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="image-check_prosthesis">
-                                                    <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/8.png') }}" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="8 Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
 
                                         </ul>
                                     </div>
@@ -1763,6 +1697,7 @@
                             <input type="hidden" name="patient_id" value="{{ $patient_in_treatment->id}}"/>
 
                             {{--<input type="hidden" name="type_treatment" value="General Treatment"/>--}}
+                            <input type="hidden" name="teeth_id" value="null" id="teeth_id"/>
 
                             <div class="form-group">
                                 <label>Tooth number</label>
@@ -1771,7 +1706,7 @@
 
                             <div class="form-group">
                                 <label>Dental Defect *</label>
-                                <select class="form-control" name="dentaldefect" required>
+                                <select class="form-control" name="dentaldefect" id="dentaldefect" required>
                                     <option disabled
                                             selected>{{trans('file.select_dental_defect')}}</option>
                                     @foreach($dentalDefectList as $list)
@@ -1805,6 +1740,7 @@
                             <button type="submit" class="btn btn-primary pull-right" id="refresh-btn"
                                     style="margin-bottom: 10px;margin-right: 20px;">{{trans('file.save')}}</button>
                         </div>
+
                     </form>
                 </div>
             </div>
@@ -1885,6 +1821,7 @@
                             <button type="submit" class="btn btn-primary pull-right" id="refresh-btn-prosthesis"
                                     style="margin-bottom: 10px;margin-right: 20px;">{{trans('file.save')}}</button>
                         </div>
+
                     </form>
                 </div>
             </div>
@@ -1894,7 +1831,13 @@
         @endsection
 
         @section('script')
+
+
+
             <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
+
+            {{--            <script src="{{ asset('js/tooths.js') }}" type="javascript"></script>--}}
+
 
             <script>
                 $(document).ready(function () {
@@ -1995,6 +1938,29 @@
 
             </script>
 
+
+            <script>
+                $(document).ready(function () {
+                    $('#myform').on('submit', function (e) {
+                        e.preventDefault();
+                        $.ajax({
+                            url: $(this).attr('action') || window.location.pathname,
+                            type: "POST",
+                            data: $(this).serialize(),
+                            success: function (data) {
+                                $("#form_output").html(data);
+
+                            },
+                            error: function (jXHR, textStatus, errorThrown) {
+                                alert(errorThrown);
+                            }
+                        });
+                    });
+                });
+
+
+            </script>
+
             <script type="text/javascript">
                 $(function () {
                     $('#form').submit(function () {
@@ -2045,6 +2011,7 @@
                 });
 
 
+
                 //                Image check box for prosthesis
                 $(".image-check_prosthesis").on("click", function (e) {
                     $(this).toggleClass('image-check-checked');
@@ -2059,12 +2026,25 @@
                 $("#refresh-btn").on("click", function (e) {
                     $('.image-check-checked').css('background-color', '#ea615a');
                     $('.image-check-checked').css('border-radius', '15px');
+
                 });
+                {{--@foreach($teeth as $t)--}}
+                {{--@if($t->tooth_number == '8 Upper Left')--}}
+                {{--$(document).ready(function(){--}}
+
+                {{--$('#upper_left8').css('background-color', '#ea615a');--}}
+                {{--$('#upper_left8').css('border-radius', '15px');--}}
+
+
+                {{--});--}}
+                {{--@endif--}}
+                {{--@endforeach--}}
 
                 $("#refresh-btn-prosthesis").on("click", function (e) {
                     $('.image-check-checked').css('background-color', '#ea615a');
                     $('.image-check-checked').css('border-radius', '15px');
                 });
+
 
                 $('#myform').submit(function (e) {
                     e.preventDefault();
@@ -2072,17 +2052,20 @@
                     return false;
                 });
 
+
                 $('#xray_form').submit(function (e) {
                     e.preventDefault();
                     $('#xray').modal('toggle'); //or  $('#IDModal').modal('hide');
                     return false;
                 });
 
+
                 $('#myform_prosth').submit(function (e) {
                     e.preventDefault();
                     $('#prosthesis_treatment').modal('toggle'); //or  $('#IDModal').modal('hide');
                     return false;
                 });
+
 
                 $("#btnsubmit").on("click", function (e) {
                     var $checkbox = $("input[type='checkbox']");
