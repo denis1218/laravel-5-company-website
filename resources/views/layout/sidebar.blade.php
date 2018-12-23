@@ -16,7 +16,6 @@
                                             class="font-bold">{{trans('file.hk_dental_clinic')}}</strong>
                              </span>  </span>
                         </a>
-
                     </div>
                     <div class="logo-element">
                         <img src="img/small_logo_denta.png" width="30px"/>
@@ -278,7 +277,15 @@
                         <a href="/dash"><i class="fa fa-home"></i> <span
                                     class="nav-label">{{trans('file.home')}}</span> </a>
                     </li>
-
+                    <li>
+                        <a><i class="fa fa-sitemap"></i> <span
+                                    class="nav-label">{{trans('file.department')}}</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="/operation"><i class="fa fa-user-md"></i>{{trans('file.doctor')}}</a></li>
+                            <li><a href="/xray"><img src="{{ asset('img/xray.png') }}"
+                                                     width="13px"/>&nbsp;{{trans('file.xray')}}</a></li>
+                        </ul>
+                    </li>
 
                     <li>
                         <a><i class="fa fa-book"></i> <span class="nav-label">{{trans('file.reception')}}</span><span

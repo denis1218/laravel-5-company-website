@@ -1833,12 +1833,10 @@
         @section('script')
 
 
+
             <script src="{{ asset('dashboard/js/plugins/toastr/toastr.min.js') }}"></script>
 
             {{--            <script src="{{ asset('js/tooths.js') }}" type="javascript"></script>--}}
-
-
-
 
 
             <script>
@@ -1888,11 +1886,6 @@
                     });
                 });
 
-
-
-
-
-
                 $('.delete_teeth').on('click', function(e) {
                     var inputData = $('#formDeleteTeeth').serialize();
 
@@ -1936,7 +1929,6 @@
 
                     return false;
                 });
-
             </script>
 
             <script>
@@ -2057,15 +2049,14 @@
                 });
 
 
-<<<<<<< HEAD
-=======
+
                 $('#xray_form').submit(function (e) {
                     e.preventDefault();
                     $('#xray').modal('toggle'); //or  $('#IDModal').modal('hide');
                     return false;
                 });
 
->>>>>>> 4aa1ae839bf0ad14b7be3cd42c18090e334b3365
+
 
                 $('#myform_prosth').submit(function (e) {
                     e.preventDefault();
