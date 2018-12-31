@@ -37,7 +37,6 @@
                 <a href="/login"  class="btn btn-success" style="margin-top:20px;">GO TO Dashboard</a>
             </div>
         </div>
-
     </div>
 
 </div>
