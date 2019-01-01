@@ -29,6 +29,30 @@
         body.fr{
             font-family: "B Yekan";
         }
+        input[type=number],
+        input[type=date],
+        input[type=time],
+        input[type=email],
+        input[type=color],
+        input[type=phone],
+        select[type=text],
+        textarea[type=text],
+        select,
+        input[type=text]{
+            border: 1.5px solid #56d9ba;
+            -webkit-box-shadow:
+                    inset 0 0 8px  rgba(0,0,0,0.1),
+                    0 0 16px rgba(0,0,0,0.1);
+            -moz-box-shadow:
+                    inset 0 0 8px  rgba(0,0,0,0.1),
+                    0 0 16px rgba(0,0,0,0.1);
+            box-shadow:
+                    inset 0 0 8px  rgba(0,0,0,0.1),
+                    0 0 16px rgba(0,0,0,0.1);
+            padding: 15px;
+            background: rgba(255,255,255,0.5);
+            margin: 0 0 10px 0;
+        }
     </style>
 
 

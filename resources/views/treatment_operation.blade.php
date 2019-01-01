@@ -147,6 +147,8 @@
         .well .list-group {
             margin-bottom: 0px;
         }
+
+
     </style>
 
 @endsection
@@ -1320,7 +1322,9 @@
                             </form>
                         </div>
                     </div>
+                    {{-- end of tab 3 --}}
 
+                    {{-- tab xray --}}
                     <div id="tab-4" class="tab-pane">
                         <div class="panel-body" style="">
                             <br>
@@ -1703,7 +1707,7 @@
                             </form>
                         </div>
                     </div>
-                    {{-- End of tab 3 --}}
+                    {{-- End of tab 4 --}}
 
                 </div>
             </div>
@@ -2007,28 +2011,6 @@
 
             </script>
 
-
-            <script>
-                $(document).ready(function () {
-                    $('#myform').on('submit', function (e) {
-                        e.preventDefault();
-                        $.ajax({
-                            url: $(this).attr('action') || window.location.pathname,
-                            type: "POST",
-                            data: $(this).serialize(),
-                            success: function (data) {
-                                $("#form_output").html(data);
-
-                            },
-                            error: function (jXHR, textStatus, errorThrown) {
-                                alert(errorThrown);
-                            }
-                        });
-                    });
-                });
-
-
-            </script>
 
             <script type="text/javascript">
                 $(function () {
