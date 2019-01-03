@@ -29,6 +29,7 @@
         body.fr{
             font-family: "B Yekan";
         }
+        /* style of inputs*/
         input[type=number],
         input[type=date],
         input[type=time],
