@@ -15,7 +15,7 @@ class DoctorDepartmentController extends Controller
     public function index()
     {
         $doctor_department = DoctorDepartment::all();
-        return view('doctor_department',compact('doctor_department'));
+        return view('doctor_department', compact('doctor_department'));
     }
 
     /**
@@ -31,21 +31,29 @@ class DoctorDepartmentController extends Controller
     /**
      * Store a newly created resource in storage.
      *return back to Doctor form
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $department = new DoctorDepartment();
-        $department->department = $request->department;
-        $department->save();
-        return redirect()->back();
+        try {
+
+            $department = new DoctorDepartment();
+            $department->department = $request->department;
+            $department->save();
+            return redirect()->back();
+        } catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\DoctorDepartment  $doctorDepartment
+     * @param  \App\DoctorDepartment $doctorDepartment
      * @return \Illuminate\Http\Response
      */
     public function show(DoctorDepartment $doctorDepartment)
@@ -56,7 +64,7 @@ class DoctorDepartmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\DoctorDepartment  $doctorDepartment
+     * @param  \App\DoctorDepartment $doctorDepartment
      * @return \Illuminate\Http\Response
      */
     public function edit(DoctorDepartment $doctorDepartment)
@@ -67,8 +75,8 @@ class DoctorDepartmentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\DoctorDepartment  $doctorDepartment
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\DoctorDepartment $doctorDepartment
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, DoctorDepartment $doctorDepartment)
@@ -79,12 +87,12 @@ class DoctorDepartmentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\DoctorDepartment  $doctorDepartment
+     * @param  \App\DoctorDepartment $doctorDepartment
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $delete=DoctorDepartment::find($id);
+        $delete = DoctorDepartment::find($id);
         $delete->delete();
         return back();
     }

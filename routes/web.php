@@ -83,7 +83,7 @@ Route::middleware('auth','xray')->group(function (){
 // Route Group & Middleware for reception
 Route::middleware('auth','reception')->group(function () {
 
-
+    Route::resource('/treatment','TeethController');
 //    doctor treatment route
     Route::resource('/treat', 'TreatmentController');
     Route::resource('/operation', 'TreatmentController');
@@ -101,6 +101,7 @@ Route::middleware('auth','reception')->group(function () {
     Route::resource('prescription','PrescriptionController');
 
     Route::resource('/patient', 'PatientController');
+    Route::get('/patient_fee/{id}','PatientController@patient_fee');
     Route::post('/patient/storeFromDash','PatientController@storeFromDash');
     Route::get('/new-patient-today','PatientController@show_new_patients');
     Route::get('/next-appointment-patient','PatientController@show_next_appointment_patient');
@@ -214,7 +215,6 @@ Route::middleware('auth','reception')->group(function () {
 
     Route::get('/log_activity', 'HomeController@log_activity');
     Route::post('/log_activity/search', 'HomeController@search_log_activity');
-
     Route::get('xrey_income2', 'xrayincomeController@showComplete');
 
     Route::patch('xrey_income3/{id}', 'xrayincomeController@update2');

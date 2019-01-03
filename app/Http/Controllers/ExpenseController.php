@@ -50,17 +50,25 @@ class ExpenseController extends Controller
      */
     public function store(Request $request)
     {
-        $expens = new Expense();
-        $expens->receiver = $request->receiver;
-        $expens->amount = $request->amount;
-        $expens->category = $request->category;
-        $expens->description = $request->description;
-        $expens->created_at = Carbon::now();
-        $expens->save();
-        $ex = Expense::max('id');
-        $expense = Expense::where('id','=',$ex)->get();
+        try {
+            $expens = new Expense();
+            $expens->receiver = $request->receiver;
+            $expens->amount = $request->amount;
+            $expens->category = $request->category;
+            $expens->description = $request->description;
+            $expens->created_at = Carbon::now();
+            $expens->save();
+            $ex = Expense::max('id');
+            $expense = Expense::where('id', '=', $ex)->get();
 
-        return view('print_pages.expense_print',compact('expense'));
+            return view('print_pages.expense_print', compact('expense'));
+        }
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
     }
 
 

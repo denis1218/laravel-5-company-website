@@ -17,8 +17,7 @@ class PrescriptionController extends Controller
      */
     public function index()
     {
-        $patient = Patient::where('status', '=', 'first')
-            ->whereDate('next_appointment', '=', Carbon::today())->get();
+        $patient = Patient::paginate(10);
         return view('reception.prescription', compact('patient'));
     }
 
@@ -34,37 +33,43 @@ class PrescriptionController extends Controller
      */
     public function store(Request $request)
     {
+        try {
+            $med = $request->medicine;
+            $patient_unit = $request->patient;
+            $patient_id = $request->patient_id;
+            $patient = Patient::find($patient_id);
 
-        $med = $request->medicine;
-        $patient_unit = $request->patient;
-        $patient_id = $request->patient_id;
-        $patient = Patient::find($patient_id);
+            foreach ($med as $index => $me) {
 
-        foreach ($med as $index => $me){
+                $medic = Medicine::find($me);
+                $medic->unit = $medic->unit - $patient_unit[$index];
+                $medic->save();
+            }
 
-            $medic = Medicine::find($me);
-            $medic->unit = $medic->unit - $patient_unit[$index];
-            $medic->save();
-        }
+            foreach ($med as $index => $medicin) {
+                $prescription = new Prescription();
+                $medice = Medicine::find($medicin);
+                $prescription->medicine_name = $medice->name;
+                $prescription->unit = $patient_unit[$index];
+                $prescription->sale = $medice->sale;
+                $prescription->patient_id = $patient_id;
+                $prescription->total_fee = $medice->sale * $patient_unit[$index];
+                $prescription->created_at = Carbon::now();
+                $prescription->save();
 
-        foreach ($med as $index => $medicin){
-            $prescription = new Prescription();
-            $medice = Medicine::find($medicin);
-            $prescription->medicine_name = $medice->name;
-            $prescription->unit = $patient_unit[$index];
-            $prescription->sale = $medice->sale;
-            $prescription->patient_id = $patient_id;
-            $prescription->total_fee = $medice->sale * $patient_unit[$index];
-            $prescription->created_at = Carbon::now();
-            $prescription->save();
-
-        }
-        $presc = Prescription::where('patient_id','=',$patient_id)->get();
+            }
+            $presc = Prescription::where('patient_id', '=', $patient_id)->get();
 //        return $presc;
-        $num = 1;
-        return view('print_pages.prescription_print',compact('presc','patient','num'));
+            $num = 1;
+            return view('print_pages.prescription_print', compact('presc', 'patient', 'num'));
 
-
+        }
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
 
 
     }

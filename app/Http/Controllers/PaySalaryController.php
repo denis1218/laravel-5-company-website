@@ -84,26 +84,34 @@ class PaySalaryController extends Controller
      */
     public function store(Request $request)
     {
-        $salary = new PaySalary();
-        $salary->paid_amount = $request->paid_amount;
-        $salary->emp_id = $request->emp_id;
-        $salary->created_at = Carbon::now();
-        $salary->save();
-         $id = $request->emp_id;
-        $employee  = Employee::find($id);
+        try {
 
-        $expens = new Expense();
-        $expens->receiver =  $employee->firstname;
-        $expens->amount = $request->paid_amount;
-        $expens->category = 'salary';
-        $expens->description = 'salary payment';
-        $expens->created_at = Carbon::now();
-        $expens->save();
-        $ex = Expense::max('id');
-        $expense = Expense::where('id','=',$ex)->get();
+            $salary = new PaySalary();
+            $salary->paid_amount = $request->paid_amount;
+            $salary->emp_id = $request->emp_id;
+            $salary->created_at = Carbon::now();
+            $salary->save();
+            $id = $request->emp_id;
+            $employee = Employee::find($id);
 
-        return view('print_pages.expense_print',compact('expense'));
+            $expens = new Expense();
+            $expens->receiver = $employee->firstname;
+            $expens->amount = $request->paid_amount;
+            $expens->category = 'salary';
+            $expens->description = 'salary payment';
+            $expens->created_at = Carbon::now();
+            $expens->save();
+            $ex = Expense::max('id');
+            $expense = Expense::where('id', '=', $ex)->get();
 
+            return view('print_pages.expense_print', compact('expense'));
+        }
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
 
 
     }

@@ -38,15 +38,23 @@ class MedicineController extends Controller
      */
     public function store(Request $request)
     {
-        $medicine = new Medicine();
-        $medicine->name = $request->name;
-        $medicine->unit = $request->unit;
-        $medicine->category = $request->category;
-        $medicine->person = $request->person;
-        $medicine->buy = $request->buy;
-        $medicine->sale = $request->sale;
-        $medicine->save();
-        return redirect('medicine2');
+        try {
+            $medicine = new Medicine();
+            $medicine->name = $request->name;
+            $medicine->unit = $request->unit;
+            $medicine->category = $request->category;
+            $medicine->person = $request->person;
+            $medicine->buy = $request->buy;
+            $medicine->sale = $request->sale;
+            $medicine->save();
+            return redirect('medicine2');
+        }
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
     }
 
     /**

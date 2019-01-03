@@ -53,18 +53,24 @@ class OincomController extends Controller
      */
     public function store(Request $request)
     {
-        $other=new Oincom();
-        $other->from_whom=$request->from_whom;
-        $other->amount=$request->amount;
-        $other->purpose=$request->purpose;
-        $other->description=$request->description;
-        $other->created_at = Carbon::now();
-        $other->save();
-        $print_id=Oincom::max('id');
-        $print=Oincom::where('id','=',$print_id)->get();
+        try {
+            $other = new Oincom();
+            $other->from_whom = $request->from_whom;
+            $other->amount = $request->amount;
+            $other->purpose = $request->purpose;
+            $other->description = $request->description;
+            $other->created_at = Carbon::now();
+            $other->save();
+            $print_id = Oincom::max('id');
+            $print = Oincom::where('id', '=', $print_id)->get();
 
-        return view('print_pages.oincome_print',compact('print'));
-
+            return view('print_pages.oincome_print', compact('print'));
+        }catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
 
     }
 

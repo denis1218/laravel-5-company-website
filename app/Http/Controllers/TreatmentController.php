@@ -110,30 +110,40 @@ class TreatmentController extends Controller
     public
     function store(Request $request)
     {
-        $treatment = new Treatment();
+        try {
+            $treatment = new Treatment();
 
-        $treatment->description = $request->description;
-        $treatment->type_treatment = $request->type_treatment;
-        $treatment->estimated_fee = $request->estimated_fee;
-        $treatment->discount = $request->discount;
-        $treatment->remaining_fee = $treatment->estimated_fee - $treatment->discount;
-        $treatment->paid_amount = 0;
-        $treatment->visits = $request->input('visits');
-        $treatment->patient_id = $request->input('FK_id_patient');
-        $treatment->status_pay = true;
-        $treatment->have_xray = $request->have_xray;
-        $treatment->created_at = Carbon::now();
-        if($treatment->have_xray==null){
-            $treatment->have_xray='no';
+            $treatment->description = $request->description;
+            $treatment->type_treatment = $request->type_treatment;
+            $treatment->estimated_fee = $request->estimated_fee;
+            $treatment->discount = $request->discount;
+            $treatment->remaining_fee = $treatment->estimated_fee - $treatment->discount;
+            $treatment->paid_amount = 0;
+            $treatment->visits = $request->input('visits');
+            $treatment->patient_id = $request->input('FK_id_patient');
+            $treatment->status_pay = true;
+            $treatment->have_xray = $request->have_xray;
+            $treatment->created_at = Carbon::now();
+            if ($treatment->have_xray == null) {
+                $treatment->have_xray = 'no';
+            }
+            if ($request->status_visits == null) {
+                $treatment->status_visits = 'not complete';
+            } else {
+                $treatment->status_visits = $request->status_visits;
+            }
+
+            $treatment->save();
+            return redirect()->back();
         }
-        if ($request->status_visits == null) {
-            $treatment->status_visits = 'not complete';
-        } else {
-            $treatment->status_visits = $request->status_visits;
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22'){
+                $column_not_found = 'column not found';
+                return view('errors_page',compact('column_not_found'));
+            }
         }
 
-        $treatment->save();
-        return redirect()->back();
+
     }
 
 

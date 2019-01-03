@@ -54,21 +54,29 @@ class LoanController extends Controller
      */
     public function store(Request $request)
     {
-        $Lon = new Loan();
-        $Lon->paid = $request->paid;
-        $Lon->receiver = $request->receiver;
-        $Lon->trader_id = $request->trader_id;
-        $Lon->save();
+        try {
+            $Lon = new Loan();
+            $Lon->paid = $request->paid;
+            $Lon->receiver = $request->receiver;
+            $Lon->trader_id = $request->trader_id;
+            $Lon->save();
 //        Also save in Expense Table for clearing Capital of money in clinic
 //        and also can get report of paid loan from trader
-        $expens = new Expense();
-        $expens->receiver = $request->receiver;
-        $expens->amount = $request->paid;
-        $expens->category = "paid loan";
-        $expens->description = "Paid Loan for receiver :`" . $request->receiver . "` at date : " . Carbon::now() . " ";
-        $expens->created_at = Carbon::now();
-        $expens->save();
-        return redirect()->back();
+            $expens = new Expense();
+            $expens->receiver = $request->receiver;
+            $expens->amount = $request->paid;
+            $expens->category = "paid loan";
+            $expens->description = "Paid Loan for receiver :`" . $request->receiver . "` at date : " . Carbon::now() . " ";
+            $expens->created_at = Carbon::now();
+            $expens->save();
+            return redirect()->back();
+        }
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
     }
 
     /**

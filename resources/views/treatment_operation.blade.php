@@ -1766,7 +1766,7 @@
 
                             <div class="form-group">
                                 <label>Tooth number</label>
-                                <input type="text" value="" disabled="" id="tooth_number" name="tooth_number" class="form-control"/>
+                                <input type="text" value=""  id="tooth_number" name="tooth_number" class="form-control"/>
                             </div>
 
                             <div class="form-group">
@@ -1829,7 +1829,7 @@
 
                             <div class="form-group">
                                 <label>Tooth number</label>
-                                <input type="text" value="" disabled id="tooth_number" name="tooth_number" class="form-control"/>
+                                <input type="text" value="" id="tooth_number" name="tooth_number" class="form-control"/>
                             </div>
 
                             <div class="form-group">

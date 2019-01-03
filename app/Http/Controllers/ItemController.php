@@ -42,16 +42,24 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        $item = new Item();
-        $item->kind = $request->kind;
-        $item->quantity = $request->quantity;
-        $item->unit_price = $request->unit_price;
-        $item->total_price = $request->total_price;
-        $item->description = $request->description;
-        $item->bill_number = $request->bill_number;
-        $item->trader_id = $request->trader_id;
-        $item->save();
-        return redirect()->back();
+        try {
+            $item = new Item();
+            $item->kind = $request->kind;
+            $item->quantity = $request->quantity;
+            $item->unit_price = $request->unit_price;
+            $item->total_price = $request->total_price;
+            $item->description = $request->description;
+            $item->bill_number = $request->bill_number;
+            $item->trader_id = $request->trader_id;
+            $item->save();
+            return redirect()->back();
+        }
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
     }
 
     /**

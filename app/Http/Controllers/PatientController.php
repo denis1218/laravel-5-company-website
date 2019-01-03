@@ -54,33 +54,42 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        $patient = new Patient();
-        $patient->name = $request->name;
-        $patient->lastname = $request->lastname;
-        $patient->gender = $request->gender;
-        $patient->age = $request->age;
-        $patient->phone = $request->phone;
-        $patient->address = $request->address;
+        try {
+            $patient = new Patient();
+            $patient->name = $request->name;
+            $patient->lastname = $request->lastname;
+            $patient->gender = $request->gender;
+            $patient->age = $request->age;
+            $patient->phone = $request->phone;
+            $patient->address = $request->address;
 
             $checkbox = $request->input('problem_health');
-            $string='';
-            foreach ($checkbox as $value){
-                $string .=  $value.',';
+            $string = '';
+            foreach ($checkbox as $value) {
+                $string .= $value . ',';
             }
 
-        $phonenumber = $request->phone;
-        $patient->doctor_id = $request->input('FK_id_Doctor');
-        $patient->next_appointment = $request->appointment;
-        $patient->time = $request->time;
-        $patient->meridiem = $request->meridiem;
-        $patient->job = $request->job;
-        $patient->education = $request->education;
-        $patient->status = 'first';
-        $patient->created_at = Carbon::today();
-        $patient->problem_health = $string;
-        $patient->id_patient = 'P-'.$phonenumber;
-        $patient->save();
-        return redirect('/patient')->with('success','patient registered successfully');
+            $phonenumber = $request->phone;
+            $patient->doctor_id = $request->input('FK_id_Doctor');
+            $patient->next_appointment = $request->appointment;
+            $patient->time = $request->time;
+            $patient->meridiem = $request->meridiem;
+            $patient->job = $request->job;
+            $patient->education = $request->education;
+            $patient->status = 'first';
+            $patient->created_at = Carbon::today();
+            $patient->problem_health = $string;
+            $patient->id_patient = 'P-' . $phonenumber;
+            $patient->save();
+            return redirect('/patient')->with('success', 'patient registered successfully');
+        }
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22'){
+                $column_not_found = 'column not found';
+                return view('errors_page',compact('column_not_found'));
+            }
+        }
+
     }
 
     public function storeFromDash(Request $request){
@@ -205,14 +214,23 @@ class PatientController extends Controller
 
     public function updateNextappointmentPatient($id,Request $request){
         $patient = Patient::find($id);
+        $patient->name = $request->name;
+        $patient->lastname = $request->lastname;
+        $patient->status = $request->visits;
+        $patient->phone = $request->phone;
         $patient->next_appointment = $request->next_appointment_date;
         $patient->time = $request->time;
         $patient->meridiem = $request->meridiem;
         $patient->update();
         return back();
     }
+    // patient fee paid
 
-
+    public  function patient_fee($id){
+        $patient_in_treatment = Patient::find($id);
+        $treatment = Treatment::where('patient_id','=',$id)->orderBy('id','desc')->get();
+        return view('patient_fee',compact('patient_in_treatment','treatment'));
+    }
 
 
     // show all patient have next appointment have missing

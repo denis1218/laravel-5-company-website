@@ -1,4 +1,4 @@
-@extends('master')
+ @extends('master')
 
 @section('style')
     <style>
@@ -111,7 +111,19 @@
                     <form id="form" action="/next-appointment-patient-edit/{{$patient->id}}" method="post">
                         {{method_field('patch')}}
                         <div class="modal-body">
+                            <div class="form-group"><label>{{trans('file.first_name')}}</label> <input type="text" name="name" placeholder="{{trans('file.first_name')}}"
+                                                                                                       value="{{$patient->name}}" class="form-control"></div>
 
+
+                            <div class="form-group"><label>{{trans('file.last_name')}}</label> <input type="text" name="lastname" placeholder="{{trans('file.last_name')}}"
+                                                                                                      value="{{$patient->lastname}}" class="form-control"></div>
+
+
+                            <div class="form-group"><label>{{trans('file.visits')}}</label> <input type="text" name="visits" placeholder="{{trans('file.visits')}}"
+                                                                                                   value="{{$patient->status}}" class="form-control"></div>
+
+                            <div class="form-group"><label>{{trans('file.phone')}}</label> <input type="text" name="phone" placeholder="{{trans('file.phone')}}"
+                                                                                                  value="{{$patient->phone}}" class="form-control"></div>
                             <div class="form-group"><label>{{trans('file.change_appointment')}}</label> <input type="date" name="next_appointment_date" placeholder="{{trans('file.next_appointment_date')}}"
                                                                                                                   value="{{$patient->next_appointment}}" class="form-control"></div>
                             <div class="form-group"><label>Time</label>

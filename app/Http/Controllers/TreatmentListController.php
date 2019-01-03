@@ -36,13 +36,21 @@ class TreatmentListController extends Controller
      */
     public function store(Request $request)
     {
-        $treatment = new TreatmentList();
-        $treatment->treatment = $request->treatment;
-        $treatment->estimated_fee = $request->estimated_fee;
-        $treatment->color = $request->color;
-        $treatment->save();
-        Session::flash('success','inserted successfully');
-        return redirect()->back();
+        try {
+            $treatment = new TreatmentList();
+            $treatment->treatment = $request->treatment;
+            $treatment->estimated_fee = $request->estimated_fee;
+            $treatment->color = $request->color;
+            $treatment->save();
+            Session::flash('success', 'inserted successfully');
+            return redirect()->back();
+        }
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
     }
 
     /**

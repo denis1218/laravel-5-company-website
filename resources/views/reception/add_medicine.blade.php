@@ -72,6 +72,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @if(count($medicine) > 0)
                                     @foreach($medicine as $medice)
                                         <tr>
                                             <td>{{ $medice->id }}</td>
@@ -88,6 +89,10 @@
                                             </td>
                                         </tr>
                                     @endforeach
+
+                                    @else
+                                    <h3 class="text-center" style="color: red;">No Medicine Registerd ! Please Go To Setting  Add Me    qdicine Category And Add Medicine </h3>
+                                    @endif
                                 </tbody>
                             </table>
                         </div>

@@ -39,11 +39,12 @@ class TeethController extends Controller
      */
     public function store(Request $request)
     {
+        try {
             $teeth = new Teeth();
             $nextId = DB::table('treatments')->max('id') + 1;
             $teeth->tooth_number = $request->tooth_number;
             $teeth->treatment = $request->treatment;
-            $teeth->dentaldefect =  $request->dentaldefect;
+            $teeth->dentaldefect = $request->dentaldefect;
             $teeth->treatment_id = $nextId;
             $teeth->patient_id = $request->patient_id;
             //==================================================
@@ -52,7 +53,13 @@ class TeethController extends Controller
             $teeth->type_cover = $request->type_cover;
             $teeth->save();
             return json_encode($teeth);
-
+        }
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
     }
 
     /**
