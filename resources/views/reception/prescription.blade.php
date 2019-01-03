@@ -58,6 +58,7 @@
                                     </tbody>
                                 </table>
                                     <h4 class="text-center">{{$patient->links()}}</h4>
+
                                 </div>
                                 </div>
                         </div>

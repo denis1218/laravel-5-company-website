@@ -168,7 +168,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Doctor *</label>
-                                    <select class="form-control" name="doctor_id">
+                                    <select class="form-control" type="text" name="doctor_id">
                                         <option value="{{ $patient->doctor_id }}"
                                                 selected>{{ $patient->doctor->first_name }}</option>
                                         @foreach($doctors as $doctor)

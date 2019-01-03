@@ -53,6 +53,7 @@ class TeethController extends Controller
             $teeth->type_cover = $request->type_cover;
             $teeth->save();
             return json_encode($teeth);
+
         }
         catch (\Exception $e) {
             if ($e->getCode() == '42S22') {
@@ -60,6 +61,7 @@ class TeethController extends Controller
                 return view('errors_page', compact('column_not_found'));
             }
         }
+
     }
 
     /**
