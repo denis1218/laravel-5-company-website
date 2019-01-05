@@ -76,6 +76,7 @@ class PatientController extends Controller
         $patient->job = $request->job;
         $patient->education = $request->education;
         $patient->status = 'first';
+        $patient->deposit = $request->deposit;
         $patient->created_at = Carbon::today();
         $patient->problem_health = $string;
         $patient->id_patient = 'P-'.$phonenumber;
