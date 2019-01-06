@@ -1,6 +1,7 @@
 <?php
 return[
 //    side bar words
+    'orthodensy' => 'زیبای دندان',
     'hk_dental_clinic'=>'کلینیک دندان حکیم الکوزی',
     'profile'=>'پروفایل',
     'logout'=>'خروج',

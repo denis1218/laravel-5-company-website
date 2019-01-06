@@ -34,7 +34,7 @@ class TreatmentController extends Controller
         $id = Auth()->user()->doctor_id;
         $operation = Doctor::find($id)->patient_for_today;
         }
-        $operations=Patient::whereDate('next_appointment',Carbon::today())->get();
+        $operations=Patient::paginate(10);
         $doctor = Doctor::all();
         return view('doctor_operations',compact('operation','doctor','operations'));
     }

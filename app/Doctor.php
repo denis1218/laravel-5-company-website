@@ -20,7 +20,7 @@ class Doctor extends Model implements Auditable
     }
 
     public function patient_for_today(){
-        return $this->hasMany(Patient::class,'doctor_id','id')->whereDate('next_appointment',Carbon::today());
+        return $this->hasMany(Patient::class,'doctor_id','id');
     }
 
     public function patient_for_next_day(){

@@ -74,7 +74,12 @@ Route::middleware('auth','doctor')->group(function () {
     Route::get('/update-system','HomeController@updateSystem');
     // about software company paypol and denta
     Route::get('/about-us','HomeController@about_us');
+
+    Route::post('/patient/search','PatientController@search_patient');
+
+
 });
+
 // End Route Doctor
 Route::middleware('auth','xray')->group(function (){
     Route::resource('xray', 'XrayController');
@@ -106,6 +111,7 @@ Route::middleware('auth','reception')->group(function () {
     Route::get('/new-patient-today','PatientController@show_new_patients');
     Route::get('/next-appointment-patient','PatientController@show_next_appointment_patient');
     Route::patch('next-appointment-patient-edit/{id}','PatientController@updateNextappointmentPatient');
+    Route::patch('next-appointment-patient-edit-appointment/{id}','PatientController@updateAppointment');
     Route::get('/miss-next-appointment-patient','PatientController@show_missing_next_appointment_patient');
     Route::resource('/expense-category','ExpenseCatagoryController');
     Route::get('/dash', 'HomeController@index')->name('home');

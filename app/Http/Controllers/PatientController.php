@@ -10,6 +10,7 @@ use App\Treatment;
 use App\Xray;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use PHPUnit\Framework\Exception;
 
 class PatientController extends Controller
@@ -31,6 +32,18 @@ class PatientController extends Controller
             return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
     }
 
+
+        public function search_patient(Request $request)
+        {
+            $query = $request->search_patient;
+            $data = DB::table('patients')->where('id_patient','like','%'.$query.'%')
+                ->orWhere('name','like','%'.$query.'%')
+                ->orWhere('lastname','like','%'.$query.'%')
+                ->orWhere('phone','like','%'.$query.'%')->get();
+
+            return view('patient.search_patient_from_doctor', compact('data'));
+
+        }
 
 
 
@@ -211,6 +224,14 @@ class PatientController extends Controller
 
 
 
+    public function updateAppointment($id, Request $request){
+        $patient = Patient::find($id);
+        $patient->next_appointment = $request->next_appointment;
+        $patient->time = $request->time;
+        $patient->meridiem = $request->meridiem;
+        $patient->update();
+        return back();
+    }
 
     public function updateNextappointmentPatient($id,Request $request){
         $patient = Patient::find($id);

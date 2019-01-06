@@ -74,7 +74,7 @@
                     </a>
                 </div>
             </div>
-            @if(Auth::user()->department='admin')
+
                 <div class="ibox-content">
                     <br/>
                     <div class="row">
@@ -86,64 +86,6 @@
                                     <input type="text"  name="search_patient"
                                            placeholder="{{trans('file.search_patient_id')}}"
                                            class=" form-control" required></div>
-                            </div>
-                        </form>
-                    </div>
-                    <br/>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h5>{{trans('file.sapftd')}}</h5>
-                            <div class="ibox float-e-margins">
-                                <div class="table-responsive">
-                                    <table class="table table-hover no-margins" id="table_patient">
-                                        <thead>
-                                        <tr>
-                                            <th>{{trans('file.p_id')}}</th>
-                                            <th>{{trans('file.patient_name')}}</th>
-                                            <th>{{trans('file.last_name')}}</th>
-                                            <th>{{trans('file.date_appointment')}}</th>
-                                            <th>{{trans('file.operation')}}</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        @if(count($operations)>0)
-                                            @foreach($operations as $opr)
-                                                <tr>
-                                                    <td>{{ $opr->id_patient }}</td>
-                                                    <td>{{ $opr->name }}</td>
-                                                    <td>{{ $opr->lastname }}</td>
-                                                    <td>{{ $opr->next_appointment }}</td>
-                                                    <td><a href="/operation/create/{{$opr->id}}"
-                                                           class="btn btn-sm btn-primary">{{trans('file.start_operation')}}</a>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-
-                                    </table>
-                                </div>
-                                {{--{{$operation->links()}}--}}
-                                @else
-                                    <h3 style="color:red;text-align: center;">{{trans('file.there_is_no')}}</h3>
-                                @endif
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            @endif
-            @if(Auth::user()->department=='doctor')
-                <div class="ibox-content">
-                    <br/>
-                    <div class="row">
-                        <form action="/patient/search" method="post">
-                            <div class="col-md-12">
-                                <div class="input-group"><span class="input-group-btn">
-                        <button type="submit"  class="btn btn-white"><i class="fa fa-search text-success"></i>
-                        </button> </span>
-                                    <input type="text"  name="search_patient"
-                                           placeholder="{{trans('file.search_patient_id')}}"
-                                           class=" form-control"></div>
                             </div>
                         </form>
                     </div>
@@ -165,8 +107,8 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @if(count($operation)>0)
-                                        @foreach($operation as $opr)
+                                    @if(count($data)>0)
+                                        @foreach($data as $opr)
                                             <tr>
                                                 <td>{{ $opr->id_patient }}</td>
                                                 <td>{{ $opr->name }}</td>
@@ -193,7 +135,7 @@
 
                     </div>
                 </div>
-            @endif
+
         </div>
     </div>
 @endsection

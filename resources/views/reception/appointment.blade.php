@@ -181,7 +181,7 @@
                                     aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                         <h4 class="modal-title"><i class="fa fa-history"></i>&nbsp;&nbsp;{{trans('file.change_appointment')}}</h4>
                     </div>
-                    <form id="form" action="/next-appointment-patient-edit/{{$patient->id}}" method="post">
+                    <form id="form" action="/next-appointment-patient-edit-appointment/{{$patient->id}}" method="post">
                         {{method_field('patch')}}
                         <div class="modal-body">
 

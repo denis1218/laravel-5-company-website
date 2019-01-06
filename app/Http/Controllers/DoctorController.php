@@ -140,7 +140,7 @@ class DoctorController extends Controller
     public function destroy($id)
     {
         $doctor = Doctor::find($id);
-        $doctor_salary = DSalary::where('doctor_id', $id)->get(['id']);
+        $doctor_salary = DSalary::where('doc_id', $id)->get(['id']);
         DSalary::destroy($doctor_salary->toArray());
         $doctor->delete();
         return redirect()->back();
