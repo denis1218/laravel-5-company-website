@@ -232,9 +232,9 @@
                 <ul class="nav nav-tabs" id="demoTabs">
                     <li class=""><a data-toggle="tab" href="#tab-1" style="background-color: #ee7558;color: #000;"><i
                                     class="fa fa-history"></i>{{trans('file.past_history')}}</a></li>
-                    <li class="active"><a data-toggle="tab" id="test" href="#tab-2" style="background-color: #959eee;color: #000;"><i
-                                    class="fa fa-clock-o"></i>{{ trans('file.general_treatment') }}</a></li>
-                          <li class=""><a data-toggle="tab" id="test" href="#tab-4" style="background-color: #63ee75;color: #000;"><img src="{{ asset('img/xray.png') }}" width="15px"/>&nbsp;{{ trans('file.xray') }}</a></li>
+                  <li class="active"><a data-toggle="tab" id="test" href="#tab-3" style="background-color: #73eee4;color: #000;"><i
+                                    class="fa fa-clock-o"></i>{{ trans('file.prosthesis_treatment') }}</a></li>
+                    <li class=""><a data-toggle="tab" id="test" href="#tab-4" style="background-color: #63ee75;color: #000;"><img src="{{ asset('img/xray.png') }}" width="15px"/>&nbsp;{{ trans('file.xray') }}</a></li>
                 </ul>
                 <div class="tab-content">
 
@@ -243,9 +243,9 @@
                         <div class="panel-body">
                             <br>
                             @foreach($patient_in_treatment->treatment->sortByDesc('id') as $treats)
-                                {{-- start for each here --}}
-                                @if($treats->type_treatment == 'General Treatment')
+                                @if($treats->type_treatment == 'Prosthesis Treatment')
 
+                                {{-- start for each here --}}
                                 <div class="col-lg-12" id="shadow" style="margin-bottom: 10px;">
                                     <div class="ibox float-e-margins">
                                         <div class="ibox-title">
@@ -297,7 +297,7 @@
                                                 @endif
                                             </div>
 
-                                            @if($treats->type_treatment == 'General Treatment')
+
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="table-responsive" id="divToReload">
@@ -306,8 +306,9 @@
                                                                 <thead>
                                                                 <th>{{trans('file.id')}}</th>
                                                                 <th>{{trans('file.teeth_number')}}</th>
-                                                                <th>Treatment</th>
-                                                                <th>Dental Defect</th>
+                                                                <th>Type Prosthesis</th>
+                                                                <th>Shade</th>
+                                                                <th>Type Cover</th>
                                                                 <th>Delete teeth</th>
                                                                 </thead>
                                                                 <tbody>
@@ -316,8 +317,9 @@
                                                                     <tr>
                                                                         <td>{{ $i }}</td>
                                                                         <td>{{$te->tooth_number}}</td>
-                                                                        <td>{{$te->treatment}}</td>
-                                                                        <td>{{$te->dentaldefect}}</td>
+                                                                        <td>{{$te->type_prosthesis}}</td>
+                                                                        <td>{{$te->shade}}</td>
+                                                                        <td>{{$te->type_cover}}</td>
                                                                         <td>
                                                                             <form action="/treatment/{{ $te->id }}" method="post">
                                                                                 @method('delete')
@@ -335,7 +337,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                @endif
 
 
                                             <div class="row " style="margin-top:15px;margin-right:10px;margin-left:10px;">
@@ -397,39 +398,36 @@
                     </div>
                     {{-- End of tap 3 --}}
 
-                    {{-- panel tab 2 new history --}}
-                    <div id="tab-2" class="tab-pane active">
+
+
+                    {{-- panel tab 3 orthondistst --}}
+                    <div id="tab-3" class="tab-pane active">
                         <div class="panel-body" style="">
                             <br>
                             {{-- Header of title --}}
                             <div class="row"
-                                 style=" padding-left:20px; border-radius: 5px;margin-left:0px;margin-right: 10px; background-color: #959eee; color:#000;">
-                                <h3 style="font-weight: bold;">{{ trans('file.general_treatment') }}</h3>
+                                 style=" padding-left:20px; border-radius: 5px;margin-left:0px;margin-right: 10px; background-color: #73eee4; color: #000;">
+                                <h3 style="font-weight: bold;">{{ trans('file.prosthesis_treatment') }}</h3>
                             </div>
 
                             <br/>
 
-                            {{-- Image Tooths --}}
-                            {{--  Tooths --}}
                             <div class="container-fluid">
-
                                 <div class="row" style="margin-left:-50px;">
                                     <div class="col-md-6 col-xs-6">
                                         <ul class="ullist">
-
                                             <li>
-                                                <label class="image-check" id="upper_left8">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/8.png') }}" width="100%"
-                                                         height="auto" style="border-bottom: 1px"/>
+                                                         height="auto"/>
                                                     <input type="checkbox" name="teeth_number[]"
-                                                                value="8 Upper Left"/>
+                                                           value="8 Upper Left"/>
                                                     <i class="fa fa-check hidden"></i>
                                                 </label>
                                             </li>
-
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/7.png') }}" width="100%"
                                                          height="auto"/>
@@ -439,7 +437,7 @@
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/6.png') }}" width="100%"
                                                          height="auto"/>
@@ -449,7 +447,7 @@
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/5.png') }}" width="100%"
                                                          height="auto"/>
@@ -459,7 +457,7 @@
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/4.png') }}" width="100%"
                                                          height="auto"/>
@@ -469,7 +467,7 @@
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/3.png') }}" width="100%"
                                                          height="auto"/>
@@ -479,7 +477,7 @@
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/2.png') }}" width="100%"
                                                          height="auto"/>
@@ -489,7 +487,7 @@
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/1.png') }}" width="100%"
                                                          height="auto"/>
@@ -504,7 +502,7 @@
                                     <div class="col-md-6 col-xs-6">
                                         <ul class="ullist">
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/1.png') }}" width="100%"
                                                          height="auto"/>
@@ -514,7 +512,7 @@
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/2.png') }}" width="100%"
                                                          height="auto"/>
@@ -524,7 +522,7 @@
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/3.png') }}" width="100%"
                                                          height="auto"/>
@@ -534,7 +532,7 @@
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/4.png') }}" width="100%"
                                                          height="auto"/>
@@ -544,7 +542,7 @@
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/5.png') }}" width="100%"
                                                          height="auto"/>
@@ -554,7 +552,7 @@
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/6.png') }}" width="100%"
                                                          height="auto"/>
@@ -564,7 +562,7 @@
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/7.png') }}" width="100%"
                                                          height="auto"/>
@@ -574,7 +572,7 @@
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooths/8.png') }}" width="100%"
                                                          height="auto"/>
@@ -592,82 +590,74 @@
                                     <div class="col-md-6 col-xs-6">
                                         <ul class="ullist">
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooth_lower/8.png') }}" width="100%"
                                                          height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]"
-                                                           value="8 Lower Left" id="8_Lower_Left"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="8 Lower Left"/>
                                                     <i class="fa fa-check hidden"></i>
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooth_lower/7.png') }}" width="100%"
                                                          height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]"
-                                                           value="7 Lower Left" id="7_Lower_Left"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="7 Lower Left"/>
                                                     <i class="fa fa-check hidden"></i>
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooth_lower/6.png') }}" width="100%"
                                                          height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]"
-                                                           value="6 Lower left" id="6_Lower_Left"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="6 Lower left"/>
                                                     <i class="fa fa-check hidden"></i>
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooth_lower/5.png') }}" width="100%"
                                                          height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]"
-                                                           value="5 Lower Left" id="5_Lower_Left"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="5 Lower Left"/>
                                                     <i class="fa fa-check hidden"></i>
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooth_lower/4.png') }}" width="100%"
                                                          height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]"
-                                                           value="4 Lower Left" id="4_Lower_Left"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="4 Lower Left"/>
                                                     <i class="fa fa-check hidden"></i>
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooth_lower/3.png') }}" width="100%"
                                                          height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]"
-                                                           value="3 Lower Left" id="3_Lower_Left"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="3 Lower Left"/>
                                                     <i class="fa fa-check hidden"></i>
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooth_lower/2.png') }}" width="100%"
                                                          height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]"
-                                                           value="2 lower Left" id="2_Lower_Left"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="2 lower Left"/>
                                                     <i class="fa fa-check hidden"></i>
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
                                                          height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]"
-                                                           value="1 lower Left" id="1_Lower_Left"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="1 lower Left"/>
                                                     <i class="fa fa-check hidden"></i>
                                                 </label>
                                             </li>
@@ -677,7 +667,7 @@
                                     <div class="col-md-6 col-xs-6">
                                         <ul class="ullist">
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
                                                          height="auto"/>
@@ -686,7 +676,7 @@
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooth_lower/2.png') }}" width="100%"
                                                          height="auto"/>
@@ -695,7 +685,7 @@
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooth_lower/3.png') }}" width="100%"
                                                          height="auto"/>
@@ -704,81 +694,81 @@
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
-                                                    <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/4.png') }}" width="100%"
-                                                         height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="4 Lower Right"/>
-                                                    <i class="fa fa-check hidden"></i>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
                                                          src="{{ asset('img/tooth_lower/5.png') }}" width="100%"
                                                          height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="5 Lower Right"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="5 Lower Left"/>
                                                     <i class="fa fa-check hidden"></i>
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/6.png') }}" width="100%"
+                                                         src="{{ asset('img/tooth_lower/4.png') }}" width="100%"
                                                          height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="6 Lower Right"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="4 Lower Left"/>
                                                     <i class="fa fa-check hidden"></i>
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/7.png') }}" width="100%"
+                                                         src="{{ asset('img/tooth_lower/3.png') }}" width="100%"
                                                          height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="7 Lower Right"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="3 Lower Left"/>
                                                     <i class="fa fa-check hidden"></i>
                                                 </label>
                                             </li>
                                             <li>
-                                                <label class="image-check">
+                                                <label class="image-check_prosthesis">
                                                     <img class="img-responsive"
-                                                         src="{{ asset('img/tooth_lower/8.png') }}" width="100%"
+                                                         src="{{ asset('img/tooth_lower/2.png') }}" width="100%"
                                                          height="auto"/>
-                                                    <input type="checkbox" name="teeth_number[]" value="8 Lower Right"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="2 lower Left"/>
                                                     <i class="fa fa-check hidden"></i>
                                                 </label>
                                             </li>
-
+                                            <li>
+                                                <label class="image-check_prosthesis">
+                                                    <img class="img-responsive"
+                                                         src="{{ asset('img/tooth_lower/1.png') }}" width="100%"
+                                                         height="auto"/>
+                                                    <input type="checkbox" name="teeth_number[]" value="1 lower Left"/>
+                                                    <i class="fa fa-check hidden"></i>
+                                                </label>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
-
                             </div>
-                            {{-- End of image Tooth--}}
-                            <br>
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="mytable"
+                            <br/>
+                            @if($treats->type_treatment == 'Prosthesis Treatment')
+
+                            <div class="table-responsive" id="divToReload">
+                                <table class="table table-striped table-bordered table-hover" id="mytableProsthesis"
                                        style="margin-left:30px;width:95%;">
                                     <thead>
                                     <th>{{trans('file.id')}}</th>
                                     <th>{{trans('file.teeth_number')}}</th>
-                                    <th>Treatment</th>
-                                    <th>Dentaldefect</th>
-
-                                    <th>Delete teeth</th>
+                                    <th>Type Prosthesis</th>
+                                    <th>Teeth shade</th>
+                                    <th>Teeth Cover</th>
+                                    <th>Delete</th>
                                     </thead>
                                     <tbody>
                                     <?php $i = 1;?>
-                                    @foreach($teeth as $te)
+                                    @foreach($teeth_pros as $te)
                                         <tr>
                                             <td>{{ $i }}</td>
-                                            <td>{{$te->tooth_number}}</td>
-                                            <td>{{$te->treatment}}</td>
-                                            <td>{{$te->dentaldefect}}</td>
+                                            <td>{{ $te->tooth_number }}</td>
+                                            <td>{{ $te->type_prosthesis }}</td>
+                                            <td>{{ $te->shade }}</td>
+                                            <td>{{ $te->type_cover }}</td>
                                             <td>
-                                                <form action="/treatment/{{ $te->id }}" method="post" id="formDeleteTeeth">
+                                                <form action="/treatment/{{ $te->id }}" method="post" id="formDeleteTeeth_prosthesis">
                                                     @method('delete')
-                                                    <button class="btn btn-xs btn-danger delete_teeth" type="submit" id="{{ $te->id }}" data-id="{{ $te->id }}"><i
+                                                    <button class="btn btn-xs btn-danger delete_teeth_prosthesis" type="submit" data-id="{{ $te->id }}" id="{{ $te->id }}"><i
                                                                 class="fa fa-remove"></i>&nbsp;Delete
                                                     </button>
                                                 </form>
@@ -790,24 +780,28 @@
                                 </table>
                                 {{ $teeth->links() }}
                             </div>
+                            @endif
+
 
 
                             <form id="form" action="/operation" method="POST">
+                                <input type="hidden" name="type_treatment" value="Prosthesis Treatment"/>
+                                <input type="text" name="teeth_number_all" hidden id="tooth_number_ortho"/>
 
                                 <div class="row" style="margin-top: 15px">
                                     <input type="checkbox" id="next" name="have_xray" value="yes"
                                            style="visibility:hidden;">
 
-
                                     @foreach($checkValue as $check)
                                         <input type="hidden" value="{{ $check->visits }}" name="visits">
                                     @endforeach
+
                                     <input type="hidden" name="FK_id_patient" value="{{ $patient_id }}"/>
-                                    <input type="hidden" name="type_treatment" value="General Treatment"/>
                                     <div class="col-md-6">
+
                                         {{--<input type="hidden" class="form-control" name="id_treatment" id="id_treatment">--}}
                                         <div class="form-group">
-                                            <label for="nex">{{trans('file.treatment_cost')}} :</label>
+                                            <label for="nex">Cost :</label>
                                             <input type="number" class="form-control" id="cost_treatment"
                                                    name="estimated_fee" value="" required>
                                         </div>
@@ -834,7 +828,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <button type="submit" id="submitform"
+                                        <button type="submit" id="submitformortho"
                                                 class="btn btn-primary">{{trans('file.save')}}&nbsp;<i
                                                     class="fa fa-save"></i>
                                         </button>
@@ -845,7 +839,7 @@
                             </form>
                         </div>
                     </div>
-                    {{-- End of tab 2 --}}
+                    {{-- end of tab 3 --}}
 
                     {{-- tab xray --}}
                     <div id="tab-4" class="tab-pane">
@@ -1278,74 +1272,87 @@
         </div>
 
         {{-- modal window general treatment --}}
-        <div class="modal inmodal" id="general_treatment" tabindex="-1" role="dialog" aria-hidden="true">
+
+        {{-- Modal window Prosthise treatment --}}
+        <div class="modal inmodal" id="prosthesis_treatment" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content animated fadeIn">
-                    <form id="myform" action="/treatment" method="post" name="myform">
+                    <form id="myform_prosth" action="/treatment" method="post" name="myform_prosth">
 
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"><span
                                         aria-hidden="true">&times;</span><span
                                         class="sr-only">{{trans('file.close')}}</span></button>
-                            <img src="{{ asset('img/general_treatment.png') }}" width="150px"/>
-                            <h4 class="modal-title">General Treatment</h4>
+                            <img src="{{ asset('img/prosth_img.jpg') }}" width="250px"/>
+                            <h4 class="modal-title">Prosthesis Treatment</h4>
                         </div>
                         <div class="modal-body">
 
                             <input type="hidden" name="patient_id" value="{{ $patient_in_treatment->id}}"/>
 
-                            {{--<input type="hidden" name="type_treatment" value="General Treatment"/>--}}
-                            <input type="hidden" name="teeth_id" value="null" id="teeth_id"/>
-
                             <div class="form-group">
                                 <label>Tooth number</label>
-
-
-                                <input type="text"   id="tooth_number" name="tooth_number" class="form-control"/>
-
+                                <input type="text" value="" id="tooth_number" name="tooth_number" class="form-control"/>
                             </div>
+
                             <div class="form-group">
-                                <label>Dental Defect *</label>
-                                <select class="form-control" name="dentaldefect" id="dentaldefect" required>
+                                <label>Type of Prosthesis</label>
+                                <ul class="prothisis">
+                                    <li>
+                                        <div class="i-checks"><label>Static &nbsp;<input type="radio"
+                                                                                         name="type_prosthesis"
+                                                                                         value="static"
+                                                                                         checked/></label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="i-checks"><label>Dynamic &nbsp;<input type="radio"
+                                                                                          name="type_prosthesis"
+                                                                                          value="dynamic"/></label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Select shade teeth</label>
+                                <select class="form-control" name="shade" required>
                                     <option disabled
-                                            selected>{{trans('file.select_dental_defect')}}</option>
-                                    @foreach($dentalDefectList as $list)
-                                        <option value="{{ $list->dental_defect }}">{{ $list->dental_defect }}</option>
+                                            selected>Select shade
+                                    </option>
+                                    @foreach($teethShades as $teethshade)
+                                        <option value="{{ $teethshade->shade }}">{{ $teethshade->shade }}</option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <label>{{trans('file.treatment')}} :</label>
-                                <select class="form-control" name="treatment" required id="treatment-select"
-                                        onchange="getcolor(this)">
-                                    <option disabled>{{trans('file.treatment')}}</option>
-                                    @foreach($treatementList as $listTreatement)
-                                        <option style="color: #{{ $listTreatement->color }}; font-weight: bold"
-                                                value="{{ $listTreatement->treatment }}"
-                                                id="{{ $listTreatement->color }}">
-                                            {{ $listTreatement->treatment }} </option>
+                                <label>Select Cover :</label>
+                                <select class="form-control" name="type_cover"
+                                        onchange="getFeeTreatment(this);" required>
+                                    <option disabled selected>Select Cover</option>
+                                    @foreach($teethTypeCovers as $cover)
+                                        <option value="{{ $cover->type }}"
+                                                id="{{ $cover->price }}">
+                                            {{ $cover->type }} </option>
                                     @endforeach
                                 </select>
                             </div>
-
 
                             <br>
-
                         </div>
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-white pull-right" data-dismiss="modal"
                                     style="margin-bottom: 10px;">{{trans('file.close')}}</button>
-                            <button type="submit" class="btn btn-primary pull-right" id="refresh-btn"
+                            <button type="submit" class="btn btn-primary pull-right" id="refresh-btn-prosthesis"
                                     style="margin-bottom: 10px;margin-right: 20px;">{{trans('file.save')}}</button>
                         </div>
+
                     </form>
                 </div>
             </div>
         </div>
-
-
 
 
         @endsection
@@ -1372,7 +1379,7 @@
                                 $("#form_output").html(data);
                                 $("#mytable").append("<tr><td>"+data.id+"</td><td>"+data.tooth_number+"</td><td>"+data.treatment+"</td><td>"+data.dentaldefect+"</td><td>" +
                                     "<form action='/treatment/"+data.id+"'  method='post'>" +
-                                        "<input type='hidden' name='_method' value='delete' /> "+
+                                    "<input type='hidden' name='_method' value='delete' /> "+
                                     "<button class='btn btn-xs btn-danger' type='submit'><i class='fa fa-remove'></i>&nbsp;Delete</button>" +
                                     "</form></td></tr>");
                             },
@@ -1571,18 +1578,18 @@
                     e.preventDefault();
                 });
 
-//                $(document).on("click", ".delete_teeth" , function() {
-//                    var delete_id = $(this).data('id');
-//                    var el = this;
-//                    $.ajax({
-//                        url: '/treatment/'+delete_id,
-//                        type: 'POST',
-//                        success: function(response){
-////
-//                            alert(response);
-//                        }
-//                    });
-//                });
+                //                $(document).on("click", ".delete_teeth" , function() {
+                //                    var delete_id = $(this).data('id');
+                //                    var el = this;
+                //                    $.ajax({
+                //                        url: '/treatment/'+delete_id,
+                //                        type: 'POST',
+                //                        success: function(response){
+                ////
+                //                            alert(response);
+                //                        }
+                //                    });
+                //                });
 
 
                 $(document).on("click", "#xray_btn", function () {

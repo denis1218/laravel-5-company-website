@@ -38,6 +38,61 @@ class TreatmentController extends Controller
         $doctor = Doctor::all();
         return view('doctor_operations',compact('operation','doctor','operations'));
     }
+    public function prosthesis(){
+        if (Auth()->user()->department=='doctor'){
+            $id = Auth()->user()->doctor_id;
+            $operation = Doctor::find($id)->patient_for_today;
+        }
+        $operations=Patient::paginate(10);
+        $doctor = Doctor::all();
+        return view('prosthesis_doctor_operation',compact('operation','doctor','operations'));
+
+    }
+    public function prosthesis_patient($id){
+        $patient_in_treatment = Patient::find($id);
+
+        $checkValue = Patient::find($id)->treatment;
+        foreach ($checkValue as $ch) {
+            if ($ch->visits == 0) {
+                $ch->visits = 1;
+            } else {
+                $ch->visits = $ch->visits + 1;
+            }
+        }
+        $prescription = Prescription::where('patient_id','=',$id)->get();
+        $medicine =  Medicine::all();
+        $treatments = Treatment::find($id);
+
+        $treatementList = TreatmentList::all();
+
+        $dentalDefectList = DentalDefectList::all();
+
+        $teethShades = TeethShade::all();
+
+        $teethTypeCovers = TeethCoverType::all();
+
+        $patient_id = $patient_in_treatment->id;
+
+
+        $teeth = Teeth::where('patient_id','=',$id)->paginate(10);
+        $tee=   DB::table('teeths')->select('tooth_number')->where('patient_id','=',$id)->distinct()->get();
+
+        $nextId = DB::table('treatments')->max('id') + 1;
+
+//              return table general treatment
+        $teeth = Teeth::where('patient_id','=',$id)->where('treatment_id','=',$nextId)->where('type_cover','=',null)->paginate(32);
+
+//                return table prosthesis treatment
+        $teeth_pros = Teeth::where('patient_id','=',$id)->where('treatment','=',null)->paginate(32);
+
+
+//                return $last_treatment;
+        return view('prosthesis_start_operation', compact('patient_in_treatment', 'patient_id', 'checkValue',
+            'treatementList', 'dentalDefectList', 'treatments','medicine','prescription' , 'teethShades',
+            'teethTypeCovers','teeth','tee','teeth_pros'));
+
+
+    }
 
     public function next_appointment_list(Request $request)
     {

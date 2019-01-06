@@ -51,10 +51,13 @@ Route::middleware('auth','doctor')->group(function () {
     Route::resource('/treat', 'TreatmentController');
 
     Route::resource('/operation', 'TreatmentController');
+    Route::get('/prosthesis', 'TreatmentController@prosthesis');
+
 
     Route::get('/next_appointment_list', 'TreatmentController@next_appointment_list');
 
     Route::get('/operation/create/{id}', 'TreatmentController@create');
+    Route::get('/prosthesis/create/{id}', 'TreatmentController@prosthesis_patient');
 
     Route::get('/operation/{id}/edit/{patient_id}', 'TreatmentController@edit_treatment');
     Route::get('/operation/take_xray_again/{id}', 'TreatmentController@take_xray_again');
@@ -92,6 +95,9 @@ Route::middleware('auth','reception')->group(function () {
 //    doctor treatment route
     Route::resource('/treat', 'TreatmentController');
     Route::resource('/operation', 'TreatmentController');
+    Route::get('/prosthesis', 'TreatmentController@prosthesis');
+    Route::get('/prosthesis/create/{id}', 'TreatmentController@prosthesis_patient');
+
     Route::get('/next_appointment_list', 'TreatmentController@next_appointment_list');
     Route::get('/operation/create/{id}', 'TreatmentController@create');
     Route::get('/operation/{id}/edit/{patient_id}', 'TreatmentController@edit_treatment');
