@@ -154,6 +154,7 @@
                                     @else
                                         <h3 class="text-danger">{{trans('file.there_is_no')}}</h3>
                                     @endif
+                                    {{ $patient_all->links() }}
                                     </tbody>
                                 </table>
                                 {{--                                                    {{ $patient_all->links() }}--}}

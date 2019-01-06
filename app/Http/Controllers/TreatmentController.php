@@ -119,7 +119,7 @@ class TreatmentController extends Controller
         $treatment = new Treatment();
 
         $treatment->description = $request->description;
-//        $treatment->type_treatment = $request->type_treatment;
+        $treatment->type_treatment = $request->type_treatment;
         $treatment->estimated_fee = $request->estimated_fee;
         $treatment->discount = $request->discount;
         $treatment->remaining_fee = $treatment->estimated_fee - $treatment->discount;

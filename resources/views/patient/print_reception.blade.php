@@ -59,6 +59,8 @@
                 </div>
                 <div class="hr-line-solid"></div>
                 <br/>
+
+
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row shadow p-3 mb-5 bg-white rounded"
@@ -100,6 +102,8 @@
                     </div>
 
                 </div>
+
+
                 {{-- General Treatment --}}
                 @if($patient_income_general != null)
                 <div class="row">
@@ -110,7 +114,7 @@
                         </div>
                         <div class="col-xs-12" style="margin-top: 20px;">
                             <div class="table-responsive">
-                                <table class="table table-stripped table-border">
+                                <table class="table table-stripped">
                                     <thead>
                                     <tr>
                                         <th>ID</th>
@@ -130,36 +134,19 @@
                                             </tr>
                                             <?php $i++;?>
                                         @endforeach
-                                        <tr><td colspan="5"></td></tr>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
                                             <td>Total Estimated Fee</td>
                                             <td>{{$totalFee = $patient_income_general->sum('estimated_fee')}}</td>
                                         </tr>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
                                             <td>Total Discount Fee</td>
                                             <td>{{$totalDiscount = $patient_income_general->sum('discount')}}</td>
                                         </tr>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
                                             <td>Total Paid Fee</td>
                                             <td>{{$totalPaid = $patient_income_general->sum('paid_amount')}}</td>
                                         </tr>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
                                             <td>Total Remaining Fee</td>
                                             <td style="background-color: #ff958f">{{ $totalFee - $totalDiscount - $totalPaid }}</td>
                                         </tr>
@@ -206,38 +193,21 @@
                                         @endforeach
                                         <tr><td colspan="5"></td></tr>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
                                             <td>Total Estimated Fee</td>
                                             <td>{{$totalFee = $patient_income_prosthesis->sum('estimated_fee')}}</td>
                                         </tr>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
                                             <td>Total Discount Fee</td>
                                             <td>{{$totalDiscount = $patient_income_prosthesis->sum('discount')}}</td>
                                         </tr>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
                                             <td>Total Paid Fee</td>
                                             <td>{{$totalPaid = $patient_income_prosthesis->sum('paid_amount')}}</td>
                                         </tr>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
                                             <td>Total Remaining Fee</td>
                                             <td style="background-color: #ff958f">{{ $totalFee - $totalDiscount - $totalPaid }}</td>
                                         </tr>
-
                                     </tbody>
                                 </table>
                             </div>
@@ -298,6 +268,9 @@
                     </div>
                 </div>
                 @endif
+
+
+
                 <h4>Powered by : PaypolSoftware.com Ltd</h4>
             </div>
         </div>
