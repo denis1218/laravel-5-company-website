@@ -4,6 +4,9 @@
         td {
             color: black;
         }
+        table{
+            font-size: 10px;
+        }
     </style>
 @endsection
 @section('content')
@@ -148,9 +151,8 @@
                                         </tr>
                                         <tr>
                                             <td>Total Remaining Fee</td>
-                                            <td style="background-color: #ff958f">{{ $totalFee - $totalDiscount - $totalPaid }}</td>
+                                            <td style="background-color: #acdaff">{{ $totalFee - $totalDiscount - $totalPaid }}</td>
                                         </tr>
-
                                     </tbody>
                                 </table>
                             </div>
@@ -191,7 +193,6 @@
                                             </tr>
                                             <?php $i++;?>
                                         @endforeach
-                                        <tr><td colspan="5"></td></tr>
                                         <tr>
                                             <td>Total Estimated Fee</td>
                                             <td>{{$totalFee = $patient_income_prosthesis->sum('estimated_fee')}}</td>
@@ -206,7 +207,7 @@
                                         </tr>
                                         <tr>
                                             <td>Total Remaining Fee</td>
-                                            <td style="background-color: #ff958f">{{ $totalFee - $totalDiscount - $totalPaid }}</td>
+                                            <td style="background-color: #8dd4ff">{{ $totalFee - $totalDiscount - $totalPaid }}</td>
                                         </tr>
                                     </tbody>
                                 </table>

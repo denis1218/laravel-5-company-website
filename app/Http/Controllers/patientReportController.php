@@ -65,6 +65,9 @@ class patientReportController extends Controller
 
         $patient_income_prosthesis = Treatment::where('patient_id','=',$id)
                                 ->Where('type_treatment','=','Prosthesis Treatment')->get();
+
+//        return $patient_income_general_prost;
+
         $patient_income_xray = Xray::where('patient_id','=',$id)->get();
 
         return view('patient.print_reception', compact('patient_income_xray','patient_income_general_prost','patient_income_general_teeth','patient_income_general','patient_income_prosthesis','patient','treatment','patient_income'));
