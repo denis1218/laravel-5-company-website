@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\DoctorDepartment;
 use App\DSalary;
 use App\Expense;
@@ -21,8 +22,8 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        $doctors = Doctor::orderBy('id','asc')->paginate(10);
-        return view('doctor_report_list')->with('doctors',$doctors);
+        $doctors = Doctor::orderBy('id', 'asc')->paginate(10);
+        return view('doctor_report_list')->with('doctors', $doctors);
     }
 
     /**
@@ -33,53 +34,59 @@ class DoctorController extends Controller
     public function create()
     {
         $doctor_department = DoctorDepartment::all();
-        return view('employee',compact('doctor_department'));
+        return view('employee', compact('doctor_department'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $doctor=new Doctor;
-        $doctor->first_name=$request->input('first_name');
-        $doctor->last_name=$request->input('last_name');
-        $doctor->father_name=$request->input('father_name');
-        $doctor->age=$request->input('age');
-        $doctor->start_work_time=$request->input('start_work_time');
-        $doctor->end_work_time=$request->input('end_work_time');
-        $doctor->phone=$request->input('phone');
-        $doctor->department=$request->input('department');
-        $doctor->gender=$request->input('gender');
-        $doctor->salary_amount=$request->input('salary_amount');
-        $doctor->max_patient=$request->input('max_patient');
-        $doctor->save();
-        $doct = Doctor::max('id');
-        $user = new User();
-        $user->firstname = $request->first_name;
-        $user->lastname = $request->last_name;
-        $user->password = Hash::make($request->password);
-        $user->email = $request->email;
-        $user->department = $request->role;
-        $user->doctor_id = $doct;
-        $user->save();
-        return redirect('/doctors')->with('success','Doctor registered successfully');
+        try {
+            $doctor = new Doctor;
+            $doctor->first_name = $request->input('first_name');
+            $doctor->last_name = $request->input('last_name');
+            $doctor->father_name = $request->input('father_name');
+            $doctor->age = $request->input('age');
+            $doctor->start_work_time = $request->input('start_work_time');
+            $doctor->end_work_time = $request->input('end_work_time');
+            $doctor->phone = $request->input('phone');
+            $doctor->department = $request->input('department');
+            $doctor->gender = $request->input('gender');
+            $doctor->salary_amount = $request->input('salary_amount');
+            $doctor->max_patient = $request->input('max_patient');
+            $doctor->save();
+            $doct = Doctor::max('id');
+            $user = new User();
+            $user->firstname = $request->first_name;
+            $user->lastname = $request->last_name;
+            $user->password = Hash::make($request->password);
+            $user->email = $request->email;
+            $user->department = $request->role;
+            $user->doctor_id = $doct;
+            $user->save();
+            return redirect('/doctors')->with('success', 'Doctor registered successfully');
+        } catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Doctor  $doctor
+     * @param  \App\Doctor $doctor
      * @return \Illuminate\Http\Response
      */
     public function show(Doctor $doctor)
     {
 
     }
-
 
 
     /**
@@ -89,36 +96,36 @@ class DoctorController extends Controller
      * @return \Illuminate\Http\Response
      * @internal param Doctor $doctor
      */
-    public function edit( $id)
+    public function edit($id)
     {
         $doctor = Doctor::find($id);
         $doctor_department = DoctorDepartment::all();
-        return view('doctor_edit',compact('doctor','doctor_department'));
+        return view('doctor_edit', compact('doctor', 'doctor_department'));
     }
 
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Doctor  $doctor
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Doctor $doctor
      * @return \Illuminate\Http\Response
      *
      */
     public function update(Request $request, $id)
     {
-        $doctor= Doctor::find($id);
-        $doctor->first_name=$request->input('first_name');
-        $doctor->last_name=$request->input('last_name');
-        $doctor->father_name=$request->input('father_name');
-        $doctor->age=$request->input('age');
-        $doctor->start_work_time=$request->input('start_work_time');
-        $doctor->end_work_time=$request->input('end_work_time');
-        $doctor->phone=$request->input('phone');
-        $doctor->department=$request->input('department');
-        $doctor->gender=$request->input('gender');
-        $doctor->salary_amount=$request->input('salary_amount');
-        $doctor->max_patient=$request->input('max_patient');
+        $doctor = Doctor::find($id);
+        $doctor->first_name = $request->input('first_name');
+        $doctor->last_name = $request->input('last_name');
+        $doctor->father_name = $request->input('father_name');
+        $doctor->age = $request->input('age');
+        $doctor->start_work_time = $request->input('start_work_time');
+        $doctor->end_work_time = $request->input('end_work_time');
+        $doctor->phone = $request->input('phone');
+        $doctor->department = $request->input('department');
+        $doctor->gender = $request->input('gender');
+        $doctor->salary_amount = $request->input('salary_amount');
+        $doctor->max_patient = $request->input('max_patient');
         $doctor->update();
         return redirect('/doctors');
     }
@@ -133,7 +140,7 @@ class DoctorController extends Controller
     public function destroy($id)
     {
         $doctor = Doctor::find($id);
-        $doctor_salary = DSalary::where('doctor_id',$id)->get(['id']);
+        $doctor_salary = DSalary::where('doc_id', $id)->get(['id']);
         DSalary::destroy($doctor_salary->toArray());
         $doctor->delete();
         return redirect()->back();

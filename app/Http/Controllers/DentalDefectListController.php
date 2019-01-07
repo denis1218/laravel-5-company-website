@@ -36,11 +36,20 @@ class DentalDefectListController extends Controller
      */
     public function store(Request $request)
     {
-        $dental = new DentalDefectList();
-        $dental->dental_defect = $request->dental_defect;
-        $dental->save();
-        return redirect()->back()->with('success','inserted');
-    }
+        try {
+
+            $dental = new DentalDefectList();
+            $dental->dental_defect = $request->dental_defect;
+            $dental->save();
+            return redirect()->back()->with('success', 'inserted');
+        }
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22'){
+                $column_not_found = 'column not found';
+                return view('errors_page',compact('column_not_found'));
+            }
+        }
+        }
 
     /**
      * Display the specified resource.

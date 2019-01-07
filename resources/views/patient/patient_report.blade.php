@@ -12,92 +12,101 @@
             <div class="ibox-title">
                 <h5>{{trans('file.patient_report_table')}}&nbsp;<i class="fa fa-info"></i></h5>
             </div>
+
             <div class="ibox-content" id="divone">
-                <div class="container">
-                  <div class="row">
+                <div class="row" style="margin-left: -20px;">
+                    <div class="col-md-2">
+                        <a class="btn btn-primary" href="/patient"><i class="fa fa-arrow-left"></i>{{trans('file.back')}}</a>
+                    </div>
+                </div>
+                <br>
+
+                    <div class="row">
                         <div class="row" style="">
                             <div class="col-sm-12">
-                              <form action="/patient_report/search" method="post">
-                                <div class="input-group">
+                                <form action="/patient_report/search" method="post">
+                                    <div class="input-group">
                                         <span class="input-group-btn">
-                                                <button type="submit" class="btn btn-sm btn-primary" ><i
+                                                <button type="submit" class="btn btn-sm btn-primary"><i
                                                             class="fa fa-search"></i>&nbsp;{{trans('file.search')}}</button> </span>
-                                                <input type="text" placeholder="{{trans('file.search_patient_name_id')}}"
-                                                       id="search" name="search"
-                                                       class="input-sm form-control">
+                                        <input type="text" placeholder="{{trans('file.search_patient_name_id')}}"
+                                               id="search" name="search"
+                                               class="input-sm form-control">
 
-                                </div>
-                              </form>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         <div class="row" style="margin-top:30px;">
                             <div class="col-md-12 col-xs-12">
                                 <div class="table-responsive col-xs-12">
 
-                                <table class="table table-hover  no-margins" id="table_all_patient">
-                                    <thead>
-                                    <tr class="bg-light">
-                                        <th>{{trans('file.id')}}</th>
-                                        <th>{{trans('file.p_id')}}</th>
-                                        <th>{{trans('file.patient_name')}}</th>
-                                        <th>{{trans('file.last_name')}}</th>
-                                        <th>{{trans('file.doctor_name')}}</th>
-                                        <th>{{trans('file.register')}}</th>
-                                        <th>{{trans('file.status')}}</th>
-                                        <th>{{trans('file.next_appointment_date')}}</th>
-                                        <th>{{trans('file.health_problem')}}</th>
-                                        <th>{{trans('file.report')}}</th>
-                                        <th>{{trans('file.edit')}}</th>
-                                        <th>{{trans('file.delete')}}</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @if(count($all_patient)>0)
-                                        @foreach($all_patient as $patient)
-                                            <tr>
-                                                <td>{{ $patient->id }}</td>
-                                                <td>{{ $patient->id_patient }}</td>
-                                                <td>{{ $patient->name }}</td>
-                                                <td>{{ $patient->lastname }}</td>\
-                                                @if($patient->doctor != null)
-                                                <td>{{ $patient->doctor->first_name }}</td>
-                                                @else
-                                                    <td>Null</td>
+                                    <table class="table table-hover  no-margins" id="table_all_patient">
+                                        <thead>
+                                        <tr class="bg-light">
+                                            <th>{{trans('file.id')}}</th>
+                                            <th>{{trans('file.p_id')}}</th>
+                                            <th>{{trans('file.patient_name')}}</th>
+                                            <th>{{trans('file.last_name')}}</th>
+                                            <th>{{trans('file.doctor_name')}}</th>
+                                            <th>{{trans('file.register')}}</th>
+                                            <th>{{trans('file.status')}}</th>
+                                            <th>{{trans('file.next_appointment_date')}}</th>
+                                            <th>{{trans('file.health_problem')}}</th>
+                                            <th>{{trans('file.report')}}</th>
+                                            <th>{{trans('file.edit')}}</th>
+                                            <th>{{trans('file.delete')}}</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @if($all_patient != null)
+                                            @foreach($all_patient as $patient)
+                                                <tr>
+                                                    <td>{{ $patient->id }}</td>
+                                                    <td>{{ $patient->id_patient }}</td>
+                                                    <td>{{ $patient->name }}</td>
+                                                    <td>{{ $patient->lastname }}</td>
+                                                    \
+                                                    @if($patient->doctor != null)
+                                                        <td>{{ $patient->doctor->first_name }}</td>
+                                                    @else
+                                                        <td>Null</td>
                                                     @endif
-                                                <td>{{ $patient->created_at }}</td>
-                                                <td>{{ $patient->status }}</td>
-                                                <td>{{$patient->next_appointment}}</td>
-                                                <td class="">{{$patient->problem_health}}</td>
-                                                <td><a class="btn btn-xs btn-primary"
-                                                       href="/patient_report/{{$patient->id}}"><i
-                                                                class="fa fa-print"></i>
-                                                        {{trans('file.print')}}</a></td>
-                                                <td><a class="btn btn-xs btn-success" data-toggle="modal"
-                                                       data-target="#e{{$patient->id}}"><i class="fa fa-edit"></i>
-                                                        {{trans('file.edit')}}</a></td>
-                                                <td>
-                                                    <form action="/patient_report/{{ $patient->id }}" method="post" id="myForm">
-                                                        @method('delete')
-                                                        <button class="btn btn-xs btn-danger demo3"><i class="fa fa-remove"></i>
-                                                            {{trans('file.delete')}}</button>
-                                                    </form>
-                                                </td>
+                                                    <td>{{ $patient->created_at }}</td>
+                                                    <td>{{ $patient->status }}</td>
+                                                    <td>{{$patient->next_appointment}}</td>
+                                                    <td class="">{{$patient->problem_health}}</td>
+                                                    <td><a class="btn btn-xs btn-primary"
+                                                           href="/patient_report/{{$patient->id}}"><i
+                                                                    class="fa fa-print"></i>
+                                                            {{trans('file.print')}}</a></td>
+                                                    <td><a class="btn btn-xs btn-success" data-toggle="modal"
+                                                           data-target="#e{{$patient->id}}"><i class="fa fa-edit"></i>
+                                                            {{trans('file.edit')}}</a></td>
+                                                    <td>
+                                                        <form action="/patient_report/{{ $patient->id }}" method="post"
+                                                              id="myForm">
+                                                            @method('delete')
+                                                            <button class="btn btn-xs btn-danger demo3"><i
+                                                                        class="fa fa-remove"></i>
+                                                                {{trans('file.delete')}}</button>
+                                                        </form>
+                                                    </td>
 
 
-                                            </tr>
-                                        @endforeach
-                                    @else
-                                        <h3 style="color:red;">{{trans('file.there_is_no')}}</h3>
-                                    @endif
-                                    </tbody>
-                                </table>
-                                {{ $all_patient->links() }}
+                                                </tr>
+                                            @endforeach
+                                        @else
+                                            <h3 style="color:red;">{{trans('file.there_is_no')}}</h3>
+                                        @endif
+                                        </tbody>
+                                    </table>
+                                    {{ $all_patient->links() }}
                                 </div>
                             </div>
                         </div>
-                  </div>
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
     @foreach($all_patient as $patient)
@@ -140,7 +149,8 @@
                             </div>
 
                             <div class="form-group"><label>{{trans('file.next_appointment')}}</label>
-                                <input type="date" name="next_appointment" placeholder="{{trans('file.next_appointment')}}"
+                                <input type="date" name="next_appointment"
+                                       placeholder="{{trans('file.next_appointment')}}"
                                        value="{{$patient->next_appointment}}"
                                        class="form-control"></div>
 
@@ -167,7 +177,7 @@
     {{-- Sweet alert for delete --}}
     <script>
         $(document).ready(function () {
-            $('.demo3').on('click',function(e){
+            $('.demo3').on('click', function (e) {
                 e.preventDefault();
                 var form = $(this).parents('form');
                 swal({
@@ -178,7 +188,7 @@
                     confirmButtonColor: "#DD6B55",
                     confirmButtonText: "Yes, delete it!",
                     closeOnConfirm: false
-                }, function(isConfirm){
+                }, function (isConfirm) {
                     if (isConfirm) form.submit();
                 });
             });

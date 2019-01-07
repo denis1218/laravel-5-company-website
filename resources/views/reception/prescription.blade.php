@@ -57,7 +57,8 @@
                                     @endif
                                     </tbody>
                                 </table>
-                                    <h5>{{$patient->links()}}</h5>
+                                    <h4 class="text-center">{{$patient->links()}}</h4>
+
                                 </div>
                                 </div>
                         </div>

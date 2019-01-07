@@ -1,6 +1,8 @@
 <?php
 return[
 //    side bar words
+    'orthodensy' => 'Orthodensy',
+    'prosthesis' => 'Prosthesis',
     'hk_dental_clinic'=>'HK Dental Clinic',
     'profile'=>'profile',
     'logout'=>'Logout',

@@ -120,6 +120,7 @@
                                         <th>{{trans('file.deposit')}}</th>
                                         <th>Set Appointment</th>
                                         <th>History</th>
+                                        <th>Fee</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
@@ -142,6 +143,9 @@
                                                 <td>{{ $patients->deposit }}</td>
                                                 <td><a class="btn btn-xs btn-primary" data-toggle="modal" data-target="#e{{$patients->id}}">Set appointment &nbsp;<i class="fa fa-history"></i></a></td>
                                                 <td><a class="btn btn-xs btn-success" href="/patient_report/{{ $patients->id }}">History &nbsp; <i class="fa fa-file-pdf-o"></i></a></td>
+                                                <td><a class="btn btn-xs btn-success" href="/patient_fee/{{ $patients->id }}">Fee &nbsp;&nbsp;<i class="fa fa-file-pdf-o"></i></a></td>
+
+
                                                 <td><a class="btn btn-xs btn-info" href="/patient/{{ $patients->id }}/edit">Edit &nbsp;<i class="fa fa-edit"></i></a></td>
                                                 <td>
                                                     <form action="/patient/{{ $patients->id }}" method="post">
@@ -181,7 +185,7 @@
                                     aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                         <h4 class="modal-title"><i class="fa fa-history"></i>&nbsp;&nbsp;{{trans('file.change_appointment')}}</h4>
                     </div>
-                    <form id="form" action="/next-appointment-patient-edit/{{$patient->id}}" method="post">
+                    <form id="form" action="/next-appointment-patient-edit-appointment/{{$patient->id}}" method="post">
                         {{method_field('patch')}}
                         <div class="modal-body">
 

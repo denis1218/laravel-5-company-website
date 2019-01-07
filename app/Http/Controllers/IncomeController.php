@@ -19,7 +19,7 @@ class IncomeController extends Controller
      */
     public function index()
     {
-        $income = Treatment::where('remaining_fee','>','0')->orderBy('id','DESC')->get();
+        $income = Patient::all();
 
         $start = new Carbon('first day of this month');
         $end = new Carbon('last day of this month');

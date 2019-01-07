@@ -51,10 +51,13 @@ Route::middleware('auth','doctor')->group(function () {
     Route::resource('/treat', 'TreatmentController');
 
     Route::resource('/operation', 'TreatmentController');
+    Route::get('/prosthesis', 'TreatmentController@prosthesis');
+
 
     Route::get('/next_appointment_list', 'TreatmentController@next_appointment_list');
 
     Route::get('/operation/create/{id}', 'TreatmentController@create');
+    Route::get('/prosthesis/create/{id}', 'TreatmentController@prosthesis_patient');
 
     Route::get('/operation/{id}/edit/{patient_id}', 'TreatmentController@edit_treatment');
     Route::get('/operation/take_xray_again/{id}', 'TreatmentController@take_xray_again');
@@ -74,7 +77,12 @@ Route::middleware('auth','doctor')->group(function () {
     Route::get('/update-system','HomeController@updateSystem');
     // about software company paypol and denta
     Route::get('/about-us','HomeController@about_us');
+
+    Route::post('/patient/search','PatientController@search_patient');
+
+
 });
+
 // End Route Doctor
 Route::middleware('auth','xray')->group(function (){
     Route::resource('xray', 'XrayController');
@@ -83,10 +91,13 @@ Route::middleware('auth','xray')->group(function (){
 // Route Group & Middleware for reception
 Route::middleware('auth','reception')->group(function () {
 
-
+    Route::resource('/treatment','TeethController');
 //    doctor treatment route
     Route::resource('/treat', 'TreatmentController');
     Route::resource('/operation', 'TreatmentController');
+    Route::get('/prosthesis', 'TreatmentController@prosthesis');
+    Route::get('/prosthesis/create/{id}', 'TreatmentController@prosthesis_patient');
+
     Route::get('/next_appointment_list', 'TreatmentController@next_appointment_list');
     Route::get('/operation/create/{id}', 'TreatmentController@create');
     Route::get('/operation/{id}/edit/{patient_id}', 'TreatmentController@edit_treatment');
@@ -101,10 +112,12 @@ Route::middleware('auth','reception')->group(function () {
     Route::resource('prescription','PrescriptionController');
 
     Route::resource('/patient', 'PatientController');
+    Route::get('/patient_fee/{id}','PatientController@patient_fee');
     Route::post('/patient/storeFromDash','PatientController@storeFromDash');
     Route::get('/new-patient-today','PatientController@show_new_patients');
     Route::get('/next-appointment-patient','PatientController@show_next_appointment_patient');
     Route::patch('next-appointment-patient-edit/{id}','PatientController@updateNextappointmentPatient');
+    Route::patch('next-appointment-patient-edit-appointment/{id}','PatientController@updateAppointment');
     Route::get('/miss-next-appointment-patient','PatientController@show_missing_next_appointment_patient');
     Route::resource('/expense-category','ExpenseCatagoryController');
     Route::get('/dash', 'HomeController@index')->name('home');
@@ -214,7 +227,6 @@ Route::middleware('auth','reception')->group(function () {
 
     Route::get('/log_activity', 'HomeController@log_activity');
     Route::post('/log_activity/search', 'HomeController@search_log_activity');
-
     Route::get('xrey_income2', 'xrayincomeController@showComplete');
 
     Route::patch('xrey_income3/{id}', 'xrayincomeController@update2');

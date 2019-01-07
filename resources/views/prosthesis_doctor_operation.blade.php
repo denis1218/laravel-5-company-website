@@ -113,7 +113,7 @@
                                                     <td>{{ $opr->name }}</td>
                                                     <td>{{ $opr->lastname }}</td>
                                                     <td>{{ $opr->next_appointment }}</td>
-                                                    <td><a href="/operation/create/{{$opr->id}}"
+                                                    <td><a href="/prosthesis/create/{{$opr->id}}"
                                                            class="btn btn-sm btn-primary">{{trans('file.start_operation')}}</a>
                                                     </td>
                                                 </tr>
@@ -175,7 +175,7 @@
                                                 <td>{{ $opr->next_appointment }}</td>
                                                 <td>{{ $opr->problem_health }}</td>
 
-                                                <td><a href="/operation/create/{{$opr->id}}"
+                                                <td><a href="/prosthesis/create/{{$opr->id}}"
                                                        class="btn btn-sm btn-primary">{{trans('file.start_operation')}}</a>
 
                                                 </td>

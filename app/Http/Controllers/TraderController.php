@@ -44,15 +44,23 @@ class TraderController extends Controller
      */
     public function store(Request $request)
     {
-        $trader=new Trader();
-        $trader->name=$request->name;
-        $trader->last_name=$request->last_name;
-        $trader->phone=$request->phone;
-        $trader->organization=$request->organization;
-        $trader->address=$request->address;
-        $trader->payment_process=$request->payment_process;
-        $trader->save();
-        return redirect('/trader');
+        try {
+            $trader = new Trader();
+            $trader->name = $request->name;
+            $trader->last_name = $request->last_name;
+            $trader->phone = $request->phone;
+            $trader->organization = $request->organization;
+            $trader->address = $request->address;
+            $trader->payment_process = $request->payment_process;
+            $trader->save();
+            return redirect('/trader');
+        }
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
     }
 
     /**

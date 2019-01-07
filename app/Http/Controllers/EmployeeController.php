@@ -16,7 +16,7 @@ class EmployeeController extends Controller
     public function index()
     {
         $employee = Employee::all();
-        return view('employee_list',compact('employee'));
+        return view('employee_list', compact('employee'));
 
     }
 
@@ -33,29 +33,35 @@ class EmployeeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $employee = new Employee();
-        $employee->firstname = $request->firstname;
-        $employee->lastname = $request->lastname;
-        $employee->gender = $request->gender;
-        $employee->age = $request->age;
-        $employee->phone = $request->phone;
-        $employee->salary = $request->salary;
-        $employee->address  = $request->address;
-        $employee->position  = $request->position;
-        $employee->save();
-        return redirect('employee');
-
+        try {
+            $employee = new Employee();
+            $employee->firstname = $request->firstname;
+            $employee->lastname = $request->lastname;
+            $employee->gender = $request->gender;
+            $employee->age = $request->age;
+            $employee->phone = $request->phone;
+            $employee->salary = $request->salary;
+            $employee->address = $request->address;
+            $employee->position = $request->position;
+            $employee->save();
+            return redirect('employee');
+        } catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Employee  $employee
+     * @param  \App\Employee $employee
      * @return \Illuminate\Http\Response
      */
     public function show(Employee $employee)
@@ -66,7 +72,7 @@ class EmployeeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Employee  $employee
+     * @param  \App\Employee $employee
      * @return \Illuminate\Http\Response
      */
     public function edit(Employee $employee)
@@ -77,8 +83,8 @@ class EmployeeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Employee  $employee
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Employee $employee
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -90,8 +96,8 @@ class EmployeeController extends Controller
         $employee->age = $request->age;
         $employee->phone = $request->phone;
         $employee->salary = $request->salary;
-        $employee->address  = $request->address;
-        $employee->position  = $request->position;
+        $employee->address = $request->address;
+        $employee->position = $request->position;
         $employee->save();
         return redirect('employee');
     }
@@ -99,13 +105,13 @@ class EmployeeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Employee  $employee
+     * @param  \App\Employee $employee
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         $employee = Employee::find($id);
-        $employeeSalary = PaySalary::where('emp_id',$id)->get(['id']);
+        $employeeSalary = PaySalary::where('emp_id', $id)->get(['id']);
         PaySalary::destroy($employeeSalary->toArray());
         $employee->delete();
         return back();

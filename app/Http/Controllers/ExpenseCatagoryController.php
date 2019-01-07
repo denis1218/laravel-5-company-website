@@ -36,10 +36,18 @@ class ExpenseCatagoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new ExpenseCatagory();
-        $category->category = $request->category;
-        $category->save();
-        return redirect()->back();
+        try {
+            $category = new ExpenseCatagory();
+            $category->category = $request->category;
+            $category->save();
+            return redirect()->back();
+        }
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
     }
 
     /**

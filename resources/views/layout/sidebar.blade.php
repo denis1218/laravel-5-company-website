@@ -33,9 +33,14 @@
                         <a><i class="fa fa-sitemap"></i> <span
                                     class="nav-label">{{trans('file.department')}}</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/operation"><i class="fa fa-user-md"></i>{{trans('file.doctor')}}</a></li>
+                            <li><a href="/operation"><i class="fa fa-user-md"></i>{{trans('file.general_treatment')}}</a></li>
+                            <li><a href="/prosthesis"><i class="fa fa-flash"></i>{{trans('file.prosthesis')}}</a></li>
+
                             <li><a href="/xray"><img src="{{ asset('img/xray.png') }}"
                                                      width="13px"/>&nbsp;{{trans('file.xray')}}</a></li>
+
+                            <li><a href="#"><i class="fa fa-user-md"></i>{{trans('file.orthodensy')}}</a></li>
+
                         </ul>
                     </li>
                     <li>
@@ -218,8 +223,11 @@
                         <a><i class="fa fa-sitemap"></i> <span
                                     class="nav-label">{{trans('file.department')}}</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="/dash_doctor"><i class="fa fa-user-md"></i>{{trans('file.doctor')}}</a></li>
-                            {{--<li><a href="/xray"><i class="fa fa-flash"></i>{{trans('file.xray')}}</a></li>--}}
+                            <li><a href="/dash_doctor"><i class="fa fa-user-md"></i>{{trans('file.general_treatment')}}</a></li>
+                            <li><a href="/prosthesis"><i class="fa fa-flash"></i>{{trans('file.prosthesis')}}</a></li>
+                            <li><a href="/xray"><i class="fa fa-flash"></i>{{trans('file.xray')}}</a></li>
+                            <li><a href="#"><i class="fa fa-user-md"></i>{{trans('file.orthodensy')}}</a></li>
+
                         </ul>
                     </li>
                     <li>

@@ -36,10 +36,18 @@ class MedicineCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new MedicineCategory();
-        $category->name = $request->name;
-        $category->save();
-        return redirect('medicine_category');
+        try {
+            $category = new MedicineCategory();
+            $category->name = $request->name;
+            $category->save();
+            return redirect('medicine_category');
+        }
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
     }
 
     /**

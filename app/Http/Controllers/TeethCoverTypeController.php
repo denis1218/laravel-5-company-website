@@ -36,11 +36,19 @@ class TeethCoverTypeController extends Controller
      */
     public function store(Request $request)
     {
-        $teethcover=new TeethCoverType();
-        $teethcover->type=$request->cover;
-        $teethcover->price=$request->price;
-        $teethcover->save();
-        return redirect()->back();
+        try {
+            $teethcover = new TeethCoverType();
+            $teethcover->type = $request->cover;
+            $teethcover->price = $request->price;
+            $teethcover->save();
+            return redirect()->back();
+        }
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
     }
 
     /**

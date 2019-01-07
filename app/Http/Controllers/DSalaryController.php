@@ -47,27 +47,35 @@ class DSalaryController extends Controller
      */
     public function store(Request $request)
     {
-        $salary = new DSalary();
-        $salary->paid_amount = $request->paid_amount;
-        $salary->doc_id = $request->doc_id;
-        $salary->start = $request->start;
-        $salary->end = $request->end;
-        $salary->date = Carbon::now();
-        $salary->save();
-        $id = $request->doc_id;
-        $doctor  = Doctor::find($id);
+        try {
+            $salary = new DSalary();
+            $salary->paid_amount = $request->paid_amount;
+            $salary->doc_id = $request->doc_id;
+            $salary->start = $request->start;
+            $salary->end = $request->end;
+            $salary->date = Carbon::now();
+            $salary->save();
+            $id = $request->doc_id;
+            $doctor = Doctor::find($id);
 
-        $expens = new Expense();
-        $expens->receiver =  $doctor->first_name;
-        $expens->amount = $request->paid_amount;
-        $expens->category = 'salary';
-        $expens->description = 'salary payment';
-        $expens->created_at = Carbon::now();
-        $expens->save();
-        $ex = Expense::max('id');
-        $expense = Expense::where('id','=',$ex)->get();
+            $expens = new Expense();
+            $expens->receiver = $doctor->first_name;
+            $expens->amount = $request->paid_amount;
+            $expens->category = 'salary';
+            $expens->description = 'salary payment';
+            $expens->created_at = Carbon::now();
+            $expens->save();
+            $ex = Expense::max('id');
+            $expense = Expense::where('id', '=', $ex)->get();
 
-        return view('print_pages.dsalary_print',compact('expense'));
+            return view('print_pages.dsalary_print', compact('expense'));
+        }
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22'){
+                $column_not_found = 'column not found';
+                return view('errors_page',compact('column_not_found'));
+            }
+        }
     }
 
 

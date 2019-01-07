@@ -29,7 +29,9 @@
         body.fr{
             font-family: "B Yekan";
         }
+
         /* style of inputs*/
+
         input[type=number],
         input[type=date],
         input[type=time],
@@ -54,6 +56,7 @@
             background: rgba(255,255,255,0.5);
             margin: 0 0 10px 0;
         }
+
     </style>
 
 

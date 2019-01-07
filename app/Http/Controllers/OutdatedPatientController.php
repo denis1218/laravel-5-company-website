@@ -39,18 +39,26 @@ class OutdatedPatientController extends Controller
      */
     public function store(Request $request)
     {
-        $patient = new OutdatedPatient();
-        $patient->bill_number = $request->bill_number;
-        $patient->firstname = $request->firstname;
-        $patient->lastname = $request->lastname;
-        $patient->phone = $request->phone;
-        $patient->treatment = $request->treatment;
-        $patient->date_register = $request->date_register;
-        $patient->fee = $request->fee;
-        $patient->paid = $request->paid;
-        $patient->remaining = $request->remaining;
-        $patient->save();
-        return redirect('/outdated_patient');
+        try {
+            $patient = new OutdatedPatient();
+            $patient->bill_number = $request->bill_number;
+            $patient->firstname = $request->firstname;
+            $patient->lastname = $request->lastname;
+            $patient->phone = $request->phone;
+            $patient->treatment = $request->treatment;
+            $patient->date_register = $request->date_register;
+            $patient->fee = $request->fee;
+            $patient->paid = $request->paid;
+            $patient->remaining = $request->remaining;
+            $patient->save();
+            return redirect('/outdated_patient');
+        }
+        catch (\Exception $e) {
+            if ($e->getCode() == '42S22') {
+                $column_not_found = 'column not found';
+                return view('errors_page', compact('column_not_found'));
+            }
+        }
     }
 
     /**
