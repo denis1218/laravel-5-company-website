@@ -397,7 +397,7 @@
                     </div>
                     {{-- End of tap 3 --}}
 
-                    {{-- panel tab 2 new history --}}
+                    {{-- panel tab 2 general treatment --}}
                     <div id="tab-2" class="tab-pane active">
                         <div class="panel-body" style="">
                             <br>
@@ -1301,6 +1301,7 @@
                                 <label>Tooth number</label>
 
 
+
                                 <input type="text"   id="tooth_number" name="tooth_number" class="form-control"/>
 
                             </div>
@@ -1344,7 +1345,6 @@
                 </div>
             </div>
         </div>
-
 
 
 

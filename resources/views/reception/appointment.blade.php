@@ -117,6 +117,7 @@
                                         <th>{{trans('file.doctor_name')}}</th>
                                         <th>{{trans('file.status')}}</th>
                                         <th>{{trans('file.appointment_date')}}</th>
+                                        <th>{{trans('file.deposit')}}</th>
                                         <th>Set Appointment</th>
                                         <th>History</th>
                                         <th>Fee</th>
@@ -139,6 +140,7 @@
                                                 @endif
                                                 <td>{{ $patients->status }}</td>
                                                 <td>{{ str_limit($patients->next_appointment,16 )}}, {{ $patients->time }} {{ $patients->meridiem }}</td>
+                                                <td>{{ $patients->deposit }}</td>
                                                 <td><a class="btn btn-xs btn-primary" data-toggle="modal" data-target="#e{{$patients->id}}">Set appointment &nbsp;<i class="fa fa-history"></i></a></td>
                                                 <td><a class="btn btn-xs btn-success" href="/patient_report/{{ $patients->id }}">History &nbsp; <i class="fa fa-file-pdf-o"></i></a></td>
                                                 <td><a class="btn btn-xs btn-success" href="/patient_fee/{{ $patients->id }}">Fee &nbsp;&nbsp;<i class="fa fa-file-pdf-o"></i></a></td>
@@ -156,6 +158,7 @@
                                     @else
                                         <h3 class="text-danger">{{trans('file.there_is_no')}}</h3>
                                     @endif
+                                    {{ $patient_all->links() }}
                                     </tbody>
                                 </table>
                                 {{--                                                    {{ $patient_all->links() }}--}}
@@ -170,6 +173,7 @@
 
     {{-- end of all box content --}}
 
+    {{-- modal window --}}
     @foreach($patient_all as $patient)
         {{--modal window to show editing detail of doctor--}}
         <div class="modal inmodal" id="e{{$patient ->id}}" tabindex="-1" role="dialog" aria-hidden="true">

@@ -29,6 +29,7 @@ class CreatePatientsTable extends Migration
             $table->date('next_appointment')->nullable();
             $table->integer('time')->nullable();
             $table->string('meridiem')->nullable();
+            $table->string('deposit')->nullable();
             $table->unsignedInteger('doctor_id')->nullable();
             $table->timestamps();
             $table->foreign('doctor_id')

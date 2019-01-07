@@ -24,9 +24,9 @@ class PatientController extends Controller
     {
             if($request->date == null){
 
-                $patient_all = Patient::whereDate('next_appointment',Carbon::today())->orderBy('updated_at', 'ASC')->get();
+                $patient_all = Patient::orderBy('updated_at', 'ASC')->paginate(15);
             }else{
-                $patient_all = Patient::whereDate('next_appointment',$request->date)->orderBy('updated_at', 'ASC')->get();
+                $patient_all = Patient::orderBy('updated_at', 'ASC')->paginate(15);
             }
             $doctor_list = Doctor::all();
             return view('reception.appointment',compact('patient_all','doctor','doctor_list'));
@@ -102,6 +102,7 @@ class PatientController extends Controller
                 return view('errors_page',compact('column_not_found'));
             }
         }
+
 
     }
 

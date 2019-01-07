@@ -148,10 +148,17 @@
                                     <label>{{trans('file.address')}} *</label>
                                     <textarea rows="5" id="address" name="address"  type="text" class="form-control required" placeholder="Address">Kabul, Afghanistan</textarea>
                                 </div>
+                                    <div class="form-group">
+                                        <label>{{trans('file.deposit')}} *</label>
+                                        <input  name="deposit" type="number" class="form-control" placeholder="Deposit"/>
+                                    </div>
                                 </div>
                         </div>
 
                     </fieldset>
+
+
+                    {{-- end of patient information --}}
                     <h1>{{trans('file.health_problem')}}</h1>
                     <fieldset>
 

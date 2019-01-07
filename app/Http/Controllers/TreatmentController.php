@@ -195,7 +195,7 @@ class TreatmentController extends Controller
 
 
             $treatment->description = $request->description;
-//        $treatment->type_treatment = $request->type_treatment;
+            $treatment->type_treatment = $request->type_treatment;
             $treatment->estimated_fee = $request->estimated_fee;
             $treatment->discount = $request->discount;
             $treatment->remaining_fee = $treatment->estimated_fee - $treatment->discount;
@@ -207,9 +207,8 @@ class TreatmentController extends Controller
             $treatment->created_at = Carbon::now();
             if ($treatment->have_xray == null) {
                 $treatment->have_xray = 'no';
+
             }
-            $treatment->save();
-            return redirect()->back();
         }
         catch (\Exception $e) {
             if ($e->getCode() == '42S22'){
