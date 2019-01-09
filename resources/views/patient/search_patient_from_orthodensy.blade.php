@@ -78,12 +78,12 @@
                 <div class="ibox-content">
                     <br/>
                     <div class="row">
-                        <form action="/prosthesis/search" method="post">
+                        <form action="/orthodensy/search" method="post">
                             <div class="col-md-12">
                                 <div class="input-group"><span class="input-group-btn">
-                        <button type="submit"  class="btn btn-white"><i class="fa fa-search text-success"></i>
+                        <button type="submit" class="btn btn-white"><i class="fa fa-search text-success"></i>
                         </button> </span>
-                                    <input type="text"  name="search_patient"
+                                    <input type="text" name="search_patient"
                                            placeholder="{{trans('file.search_patient_id')}}"
                                            class=" form-control" required></div>
                             </div>
@@ -106,8 +106,8 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @if(count($operations)>0)
-                                            @foreach($operations as $opr)
+                                        @if(count($data)>0)
+                                            @foreach($data as $opr)
                                                 <tr>
                                                     <td>{{ $opr->id_patient }}</td>
                                                     <td>{{ $opr->name }}</td>
@@ -136,12 +136,12 @@
                 <div class="ibox-content">
                     <br/>
                     <div class="row">
-                        <form action="/prosthesis/search" method="post">
+                        <form action="/orthodensy/search" method="post">
                             <div class="col-md-12">
                                 <div class="input-group"><span class="input-group-btn">
-                        <button type="submit"  class="btn btn-white"><i class="fa fa-search text-success"></i>
+                        <button type="submit" class="btn btn-white"><i class="fa fa-search text-success"></i>
                         </button> </span>
-                                    <input type="text"  name="search_patient"
+                                    <input type="text" name="search_patient"
                                            placeholder="{{trans('file.search_patient_id')}}"
                                            class=" form-control"></div>
                             </div>
@@ -165,8 +165,8 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @if(count($operation)>0)
-                                        @foreach($operation as $opr)
+                                    @if(count($data)>0)
+                                        @foreach($data as $opr)
                                             <tr>
                                                 <td>{{ $opr->id_patient }}</td>
                                                 <td>{{ $opr->name }}</td>
@@ -204,32 +204,6 @@
         var e = document.getElementById("ddlViewBy");
         var strUser = e.options[e.selectedIndex].value;
     </script>
-
-
-
-    {{-- filter search for patient name --}}
-    {{--<script>--}}
-    {{--function filter_search() {--}}
-    {{--// Declare variables--}}
-    {{--var input, filter, table, tr, td, i;--}}
-    {{--input = document.getElementById("search");--}}
-    {{--filter = input.value.toUpperCase();--}}
-    {{--table = document.getElementById("table_patient");--}}
-    {{--tr = table.getElementsByTagName("tr");--}}
-
-    {{--// Loop through all table rows, and hide those who don't match the search query--}}
-    {{--for (i = 0; i < tr.length; i++) {--}}
-    {{--td = tr[i].getElementsByTagName("td")[0];--}}
-    {{--if (td) {--}}
-    {{--if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {--}}
-    {{--tr[i].style.display = "";--}}
-    {{--} else {--}}
-    {{--tr[i].style.display = "none";--}}
-    {{--}--}}
-    {{--}--}}
-    {{--}--}}
-    {{--}--}}
-    {{--</script>--}}
 
     {{-- sweet alert --}}
     <script>

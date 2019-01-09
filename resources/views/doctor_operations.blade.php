@@ -78,7 +78,7 @@
                 <div class="ibox-content">
                     <br/>
                     <div class="row">
-                        <form action="/patient/search" method="post">
+                        <form action="/operation/search" method="post">
                             <div class="col-md-12">
                                 <div class="input-group"><span class="input-group-btn">
                         <button type="submit"  class="btn btn-white"><i class="fa fa-search text-success"></i>
@@ -136,7 +136,7 @@
                 <div class="ibox-content">
                     <br/>
                     <div class="row">
-                        <form action="/patient/search" method="post">
+                        <form action="/operation/search" method="post">
                             <div class="col-md-12">
                                 <div class="input-group"><span class="input-group-btn">
                         <button type="submit"  class="btn btn-white"><i class="fa fa-search text-success"></i>

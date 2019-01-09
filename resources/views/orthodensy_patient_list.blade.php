@@ -78,7 +78,7 @@
                 <div class="ibox-content">
                     <br/>
                     <div class="row">
-                        <form action="/prosthesis/search" method="post">
+                        <form action="/orthodensy/search" method="post">
                             <div class="col-md-12">
                                 <div class="input-group"><span class="input-group-btn">
                         <button type="submit"  class="btn btn-white"><i class="fa fa-search text-success"></i>
@@ -113,8 +113,9 @@
                                                     <td>{{ $opr->name }}</td>
                                                     <td>{{ $opr->lastname }}</td>
                                                     <td>{{ $opr->next_appointment }}</td>
-                                                    <td><a href="/prosthesis/create/{{$opr->id}}"
+                                                    <td><a href="/orthodensy/create/{{$opr->id}}"
                                                            class="btn btn-sm btn-primary">{{trans('file.start_operation')}}</a>
+
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -136,7 +137,7 @@
                 <div class="ibox-content">
                     <br/>
                     <div class="row">
-                        <form action="/prosthesis/search" method="post">
+                        <form action="/orthodensy/search" method="post">
                             <div class="col-md-12">
                                 <div class="input-group"><span class="input-group-btn">
                         <button type="submit"  class="btn btn-white"><i class="fa fa-search text-success"></i>
@@ -175,7 +176,7 @@
                                                 <td>{{ $opr->next_appointment }}</td>
                                                 <td>{{ $opr->problem_health }}</td>
 
-                                                <td><a href="/prosthesis/create/{{$opr->id}}"
+                                                <td><a href="/orthodensy/{{$opr->id}}"
                                                        class="btn btn-sm btn-primary">{{trans('file.start_operation')}}</a>
 
                                                 </td>

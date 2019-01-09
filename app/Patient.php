@@ -29,6 +29,10 @@ class Patient extends Model implements Auditable
     {
         return $this->hasMany(Income::class , 'patient_id','id');
     }
+    public function orthodensy(){
+        return $this->hasMany(Orthodensy::class , 'patient_id','id');
+
+    }
 
     public function prescription(){
         return $this->hasMany(Prescription::class,'patient_id','id');

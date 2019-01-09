@@ -83,7 +83,7 @@
                     <h3> {{trans('file.atir_range')}}</h3>
                 </div>
             </div>
-            <form action="finance_report_income2">
+            <form action="/finance_report_income2">
                 <div class="row">
                     <div class="col-xs-8">
                         <div class="form-group" style="margin-left:35px;">
@@ -117,7 +117,7 @@
                     <h3> {{trans('file.irs_type')}}</h3>
                 </div>
             </div>
-            <form action="finance_report_income3">
+            <form action="/finance_report_income3">
                 <div class="row">
                     <div class="col-md-7">
                         <div class="form-group" style="margin-left:35px;">
@@ -145,7 +145,7 @@
                             <div class="input-daterange input-group" id="">
                                 <span class="input-group-addon">&nbsp;  <i class="fa fa-bars"></i> &nbsp;<i
                                             class="fa fa-arrow-right"></i></span>
-                                <select type="text" class="input-sm form-control" name="select_type" required>
+                                <select class="input-sm form-control" name="select_type" required>
                                     <option class="item">patient</option>
                                     <option class="item">xray</option>
                                     <option class="item">other</option>
@@ -195,7 +195,7 @@
                             <div class="input-daterange input-group" id="">
                                 <span class="input-group-addon">&nbsp;  <i class="fa fa-bars"></i> &nbsp;<i
                                             class="fa fa-arrow-right"></i></span>
-                                <select type="text" class="input-sm form-control" name="rangeSelect" required>
+                                <select class="input-sm form-control" name="rangeSelect" required>
                                     <option class="item">patient</option>
                                     <option class="item">xray</option>
                                     <option class="item">other</option>
