@@ -59,6 +59,8 @@ Route::middleware('auth','doctor')->group(function () {
     Route::get('/operation/create/{id}', 'TreatmentController@create');
     Route::get('/prosthesis/create/{id}', 'TreatmentController@prosthesis_patient');
     Route::resource('/orthodensy','OrthodensyController');
+    Route::post('/orthodensy/save_treatment','OrthodensyController@save_treatment');
+    Route::get('/orthodensy/add_image/{id}','OrthodensyController@add_orthodensy_image');
     Route::get('/create_orthodensy/{id}','OrthodensyController@create_orthodensy');
     Route::get('/orthodensy/create/{id}','OrthodensyController@create');
     Route::get('/operation/{id}/edit/{patient_id}', 'TreatmentController@edit_treatment');

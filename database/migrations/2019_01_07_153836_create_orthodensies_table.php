@@ -16,6 +16,7 @@ class CreateOrthodensiesTable extends Migration
         Schema::create('orthodensies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('img');
+            $table->string('description');
             $table->unsignedInteger('treatment_id');
             $table->unsignedInteger('patient_id');
             $table->foreign('treatment_id')

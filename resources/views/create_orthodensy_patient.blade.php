@@ -29,7 +29,7 @@
                         <br>
                         <div class="row">
                             <div class="col-lg-5">
-                                <form id="form" method="post" action="/orthodensy" enctype="multipart/form-data">
+                                <form id="form" method="post" action="/orthodensy/save_treatment" enctype="multipart/form-data">
                                     {{csrf_field()}}
                                     <input type="hidden" value="{{$patient->id}}" name="patient_id">
                                     <div class="form-group">
@@ -49,10 +49,7 @@
                                             <textarea name="description" id="" cols="30" style="resize: none" placeholder="Description" class="form-control"></textarea>
 
                                     </div>
-                                    <div class="form-group">
-                                        <label>Add Image</label>
-                                        <button class="form-control btn btn-primary" id="click_btn" style="background-color: #1ab394;color: white;">Add Image</button>
-                                    </div>
+
 
                                     <div class="form-group">
                                         <div class="form-group">
@@ -61,8 +58,7 @@
                                             <button class="btn btn-white" type="reset">{{trans('file.reset')}}</button>
                                         </div>
                                     </div>
-                                    <input type="file" name="image" id="image_file" class="form-control"
-                                           required style="visibility: hidden;">
+
                                 </form>
 
                             </div>

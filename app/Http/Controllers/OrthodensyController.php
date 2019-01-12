@@ -36,13 +36,34 @@ class OrthodensyController extends Controller
     public function create($id)
     {
         $patient_in_treatment = Patient::find($id);
-        $orthodensy_treatment = Orthodensy::where('patient_id','=',$id)->with('treatment')->get();
+        $orthodensy_treatment = Treatment::where('patient_id','=',$id)->where('type_treatment','=','Orthodensy Treatment')->get();
 
         return view('orthodensy_table',compact('patient_in_treatment','orthodensy_treatment'));
     }
     public function create_orthodensy($id){
         $patient = Patient::find($id);
         return view('create_orthodensy_patient',compact('patient'));
+    }
+    public function add_orthodensy_image($id){
+            $treatment_id = Treatment::find($id);
+            $orthodensy = Orthodensy::where('treatment_id','=',$id)->get();
+            return view('add_orthodensy_image',compact('treatment_id','orthodensy'));
+
+    }
+    public function save_treatment(Request $request){
+        $treatment = new Treatment();
+        $treatment->type_treatment = 'Orthodensy Treatment';
+        $treatment->status_visits = 'first time';
+        $treatment->status_pay = '1';
+        $treatment->estimated_fee = $request->estimated_fee;
+        $treatment->paid_amount = 0;
+        $treatment->discount = $request->discount;
+        $treatment->patient_id  = $request->patient_id;
+        $treatment->remaining_fee = $request->estimated_fee - $request->discount;
+        $treatment->description = $request->description;
+        $treatment->created_at = Carbon::now();
+        $treatment->save();
+        return back();
     }
 
     /**
@@ -64,25 +85,15 @@ class OrthodensyController extends Controller
         else{
             $name = '';
         }
-        $treatment = new Treatment();
-        $treatment->type_treatment = 'Orthodensy Treatment';
-        $treatment->status_visits = 'first time';
-        $treatment->status_pay = '1';
-        $treatment->estimated_fee = $request->estimated_fee;
-        $treatment->paid_amount = 0;
-        $treatment->discount = $request->discount;
-        $treatment->patient_id  = $request->patient_id;
-        $treatment->remaining_fee = $request->estimated_fee - $request->discount;
-        $treatment->description = $request->description;
-        $treatment->created_at = Carbon::now();
-        $treatment->save();
-        $treat = Treatment::max('id');
         $orthodensy = new Orthodensy();
         $orthodensy->img = $name;
-        $orthodensy->treatment_id = $treat;
+        $orthodensy->description = $request->description;
+        $orthodensy->treatment_id = $request->treatment_id;
         $orthodensy->patient_id = $request->patient_id;
         $orthodensy->save();
         return back();
+
+
 
 
     }

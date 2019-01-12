@@ -72,7 +72,7 @@
             <div class="ibox-content">
                 <div class="row">
                     <a href="/create_orthodensy/{{$patient_in_treatment->id}}" class="btn btn-primary"
-                       style="margin-left: 30px;">Add New Image</a>
+                       style="margin-left: 30px;">Add New Treatment</a>
                     <br>
                     <br>
                     <div class="table-responsive">
@@ -93,16 +93,15 @@
                             @foreach($orthodensy_treatment as $treatment)
                                 <tr>
                                     <td>{{$treatment->id}}</td>
-                                    <td>{{$treatment->treatment->type_treatment}}</td>
-                                    <td>{{$treatment->treatment->estimated_fee}}</td>
-                                    <td>{{$treatment->treatment->discount}}</td>
-                                    <td>{{$treatment->treatment->paid_amount}}</td>
-                                    <td>{{$treatment->treatment->remaining_fee}}</td>
+                                    <td>{{$treatment->type_treatment}}</td>
+                                    <td>{{$treatment->estimated_fee}}</td>
+                                    <td>{{$treatment->discount}}</td>
+                                    <td>{{$treatment->paid_amount}}</td>
+                                    <td>{{$treatment->remaining_fee}}</td>
                                     <td>{{$treatment->created_at}}</td>
                                     <td>
-                                        <button class="btn btn-primary btn-sm" data-toggle="modal"
-                                                data-target="#{{$treatment->id}}">See Image
-                                        </button>
+                                        <a class="btn btn-primary btn-sm" href="/orthodensy/add_image/{{$treatment->id}}">Add New Image
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
