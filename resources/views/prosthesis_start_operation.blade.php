@@ -743,6 +743,7 @@
                                 </div>
                             </div>
                             <br/>
+                            @foreach($patient_in_treatment->treatment->sortByDesc('id') as $treats)
                             @if($treats->type_treatment == 'Prosthesis Treatment')
 
                             <div class="table-responsive" id="divToReload">
@@ -781,7 +782,7 @@
                                 {{ $teeth->links() }}
                             </div>
                             @endif
-
+                            @endforeach
 
 
                             <form id="form" action="/operation" method="POST">

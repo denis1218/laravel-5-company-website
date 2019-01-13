@@ -42,52 +42,60 @@
                             <tbody>
                             @if(isset($pinfo))
 
-                            <tr>
-                                <td style="margin-left: 30px"><b style="font-size: 20px">Patient Income Total</b></td>
-                                <td style="float: right;margin-right: 30px"><b style="font-size: 20px">{{$pinfo->sum('paid_amount')}}
-                                        &nbsp;afg</b>
-                                </td>
-                            </tr>
-                            @foreach($pinfo as $p)
-                            <tr>
+                                <tr>
+                                    <td style="margin-left: 30px"><b style="font-size: 20px">Patient Income Total</b>
+                                    </td>
+                                    <td style="float: right;margin-right: 30px"><b
+                                                style="font-size: 20px">{{$pinfo->sum('paid_amount')}}
+                                            &nbsp;afg</b>
+                                    </td>
+                                </tr>
+                                @foreach($pinfo as $p)
+                                    <tr>
 
-                                <td style="margin-left: 30px">{{$p->patient->name}}</td>
-                                <td style="float: right;margin-right: 30px">{{$p->paid_amount}}
-                                        &nbsp;afg
-                                </td>
-                            </tr>
-                            @endforeach
+                                        <td style="margin-left: 30px">{{$p->patient->name}}</td>
+                                        <td style="float: right;margin-right: 30px">{{$p->paid_amount}}
+                                            &nbsp;afg
+                                        </td>
+                                    </tr>
+                                @endforeach
                             @endif
                             @if(isset($xinfo))
-                            <tr>
-                                <td style="margin-left: 30px"><b style="font-size: 20px">Xray Income Total</b></td>
-                                <td style="float: right;margin-right: 30px"><b  style="font-size: 20px">{{$xinfo->sum('paid_amount')}}&nbsp;afg </b></td>
-                            </tr>
-                            @foreach($xinfo as $x)
-                            <tr>
+                                <tr>
+                                    <td style="margin-left: 30px"><b style="font-size: 20px">Xray Income Total</b></td>
+                                    <td style="float: right;margin-right: 30px"><b
+                                                style="font-size: 20px">{{$xinfo->sum('paid_amount')}}&nbsp;afg </b>
+                                    </td>
+                                </tr>
+                                @foreach($xinfo as $x)
+                                    <tr>
 
-                                <td style="margin-left: 30px">{{$x->patient_name}}</td>
-                                <td style="float: right;margin-right: 30px">{{$x->paid_amount}}&nbsp;afg</td>
-                            </tr>
-                            @endforeach
+                                        <td style="margin-left: 30px">{{$x->patient_name}}</td>
+                                        <td style="float: right;margin-right: 30px">{{$x->paid_amount}}&nbsp;afg</td>
+                                    </tr>
+                                @endforeach
                             @endif
                             @if(isset($oinfo))
-                            <tr>
-                                <td style="margin-left: 30px"><b style="font-size: 20px">Other Income Total</b></td>
-                                <td style="float: right;margin-right: 30px"><b style="font-size: 20px">{{$oinfo->sum('amount')}}&nbsp;afg</b></td>
-                            </tr>
-                            @foreach($oinfo as $on)
-                            <tr>
-                                <td style="margin-left: 30px">{{$on->from_whom}}</td>
-                                <td style="float: right;margin-right: 30px">{{$on->amount}}&nbsp;afg</td>
-                            </tr>
-                            @endforeach
+                                <tr>
+                                    <td style="margin-left: 30px"><b style="font-size: 20px">Other Income Total</b></td>
+                                    <td style="float: right;margin-right: 30px"><b
+                                                style="font-size: 20px">{{$oinfo->sum('amount')}}&nbsp;afg</b></td>
+                                </tr>
+                                @foreach($oinfo as $on)
+                                    <tr>
+                                        <td style="margin-left: 30px">{{$on->from_whom}}</td>
+                                        <td style="float: right;margin-right: 30px">{{$on->amount}}&nbsp;afg</td>
+                                    </tr>
+                                @endforeach
 
                             @endif
                             @if(isset($medicine))
                                 <tr>
-                                    <td style="margin-left: 30px"><b style="font-size: 20px">Medicine Income Total</b></td>
-                                    <td style="float: right;margin-right: 30px"><b style="font-size: 20px">{{$medicine->sum('total_fee')}}&nbsp;afg</b></td>
+                                    <td style="margin-left: 30px"><b style="font-size: 20px">Medicine Income Total</b>
+                                    </td>
+                                    <td style="float: right;margin-right: 30px"><b
+                                                style="font-size: 20px">{{$medicine->sum('total_fee')}}&nbsp;afg</b>
+                                    </td>
                                 </tr>
                                 @foreach($medicine as $medice)
                                     <tr>
@@ -99,8 +107,10 @@
                             @endif
                             @if(isset($outdate))
                                 <tr>
-                                    <td style="margin-left: 30px"><b style="font-size: 20px">Out Date Patient Total Income</b></td>
-                                    <td style="float: right;margin-right: 30px"><b style="font-size: 20px">{{$outdate->sum('paid')}}&nbsp;afg</b></td>
+                                    <td style="margin-left: 30px"><b style="font-size: 20px">Out Date Patient Total
+                                            Income</b></td>
+                                    <td style="float: right;margin-right: 30px"><b
+                                                style="font-size: 20px">{{$outdate->sum('paid')}}&nbsp;afg</b></td>
                                 </tr>
                                 @foreach($outdate as $out)
                                     <tr>
@@ -111,8 +121,8 @@
 
                             @endif
                             {{--<tr>--}}
-                                {{--<td style="margin-left: 30px"><b>Total Income</b></td>--}}
-                                {{--<td style="float: right;margin-right: 30px"><b>{{$total_income}}&nbsp;afg</b></td>--}}
+                            {{--<td style="margin-left: 30px"><b>Total Income</b></td>--}}
+                            {{--<td style="float: right;margin-right: 30px"><b>{{$total_income}}&nbsp;afg</b></td>--}}
 
                             {{--</tr>--}}
                             </tbody>

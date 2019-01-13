@@ -58,7 +58,11 @@ Route::middleware('auth','doctor')->group(function () {
 
     Route::get('/operation/create/{id}', 'TreatmentController@create');
     Route::get('/prosthesis/create/{id}', 'TreatmentController@prosthesis_patient');
-
+    Route::resource('/orthodensy','OrthodensyController');
+    Route::post('/orthodensy/save_treatment','OrthodensyController@save_treatment');
+    Route::get('/orthodensy/add_image/{id}','OrthodensyController@add_orthodensy_image');
+    Route::get('/create_orthodensy/{id}','OrthodensyController@create_orthodensy');
+    Route::get('/orthodensy/create/{id}','OrthodensyController@create');
     Route::get('/operation/{id}/edit/{patient_id}', 'TreatmentController@edit_treatment');
     Route::get('/operation/take_xray_again/{id}', 'TreatmentController@take_xray_again');
 
@@ -78,8 +82,9 @@ Route::middleware('auth','doctor')->group(function () {
     // about software company paypol and denta
     Route::get('/about-us','HomeController@about_us');
 
-    Route::post('/patient/search','PatientController@search_patient');
-
+    Route::post('/operation/search','PatientController@search_patient');
+    Route::post('/prosthesis/search','PatientController@search_prosthesis_patient');
+    Route::post('/orthodensy/search','PatientController@search_orthodensy_patient');
 
 });
 
@@ -95,6 +100,11 @@ Route::middleware('auth','reception')->group(function () {
 //    doctor treatment route
     Route::resource('/treat', 'TreatmentController');
     Route::resource('/operation', 'TreatmentController');
+
+    Route::resource('/orthodensy','OrthodensyController');
+    Route::get('/orthodensy/create/{id}','OrthodensyController@create');
+    Route::get('/orthodensy/create_orthodensy','OrthodensyController@create_orthodensy');
+
     Route::get('/prosthesis', 'TreatmentController@prosthesis');
     Route::get('/prosthesis/create/{id}', 'TreatmentController@prosthesis_patient');
 

@@ -41,7 +41,27 @@ class PatientController extends Controller
                 ->orWhere('lastname','like','%'.$query.'%')
                 ->orWhere('phone','like','%'.$query.'%')->get();
 
-            return view('patient.search_patient_from_doctor', compact('data'));
+            return view('patient.search_patient_from_general_treatment', compact('data'));
+
+        }
+        public function search_prosthesis_patient(Request $request){
+            $query = $request->search_patient;
+            $data = DB::table('patients')->where('id_patient','like','%'.$query.'%')
+                ->orWhere('name','like','%'.$query.'%')
+                ->orWhere('lastname','like','%'.$query.'%')
+                ->orWhere('phone','like','%'.$query.'%')->get();
+
+            return view('patient.search_patient_from_prosthesis', compact('data'));
+
+        }
+        public function search_orthodensy_patient(Request $request){
+            $query = $request->search_patient;
+            $data = DB::table('patients')->where('id_patient','like','%'.$query.'%')
+                ->orWhere('name','like','%'.$query.'%')
+                ->orWhere('lastname','like','%'.$query.'%')
+                ->orWhere('phone','like','%'.$query.'%')->get();
+
+            return view('patient.search_patient_from_orthodensy', compact('data'));
 
         }
 

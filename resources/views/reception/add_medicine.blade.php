@@ -91,7 +91,7 @@
                                     @endforeach
 
                                     @else
-                                    <h3 class="text-center" style="color: red;">No Medicine Registerd ! Please Go To Setting  Add Me    qdicine Category And Add Medicine </h3>
+                                    <h3 class="text-center" style="color: red;">No Medicine Registerd ! Please Go To Setting  Add Medicine Category And Add Medicine </h3>
                                     @endif
                                 </tbody>
                             </table>

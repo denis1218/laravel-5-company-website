@@ -106,8 +106,8 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @if(count($operations)>0)
-                                            @foreach($operations as $opr)
+                                        @if(count($data)>0)
+                                            @foreach($data as $opr)
                                                 <tr>
                                                     <td>{{ $opr->id_patient }}</td>
                                                     <td>{{ $opr->name }}</td>
@@ -165,8 +165,8 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @if(count($operation)>0)
-                                        @foreach($operation as $opr)
+                                    @if(count($data)>0)
+                                        @foreach($data as $opr)
                                             <tr>
                                                 <td>{{ $opr->id_patient }}</td>
                                                 <td>{{ $opr->name }}</td>
